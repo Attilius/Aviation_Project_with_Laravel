@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <Test></Test>
+    <Welcome></Welcome>
 @endsection
 
 @section('scripts')
