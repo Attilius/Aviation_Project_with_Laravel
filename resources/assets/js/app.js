@@ -15,8 +15,8 @@
   * or customize the JavaScript scaffolding to fit your unique needs.
   */
  
- Vue.component('Test', require('./components/Test.vue').default);
+ Vue.component('Welcome', require('./components/Welcome.vue').default);
  
  const app = new Vue({
-     el: '#app'
+     el: '#app',
  });
