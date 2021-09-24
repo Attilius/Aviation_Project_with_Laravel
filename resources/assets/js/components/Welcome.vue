@@ -1,58 +1,26 @@
 <template>
     <div class="wrapper">
-        <div class="content">
-            <div class="under-left">
+        <b-row class="content">
+            <b-col cols="12" md="5" class="under-left">
                 <div class="left">
-                    <b-img v-bind="mainProps" :src="'images/A320.png'"></b-img>>
+                    <b-img :src="'images/A320.png'" fluid alt="Plane"></b-img>
+                    <h1 class="mobile-title">Fly with us</h1>
                 </div>
-            </div>
-            <div class="right">
-                <h1>FLY WITH US</h1>
-                <b-form inline>
-                    <label class="sr-only" for="inline-form-input-name"
-                        >Name</label
-                    >
-                    <b-form-input
-                        id="inline-form-input-name"
-                        class="mb-2 mr-sm-2 mb-sm-0"
-                        placeholder="Jane Doe"
-                    ></b-form-input>
-
-                    <label class="sr-only" for="inline-form-input-username"
-                        >Username</label
-                    >
-                    <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
-                        <b-form-input
-                            id="inline-form-input-username"
-                            placeholder="Username"
-                        ></b-form-input>
-                    </b-input-group>
-
-                    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0"
-                        >Remember me</b-form-checkbox
-                    >
-
-                    <b-button variant="primary">Save</b-button>
-                </b-form>
-            </div>
-        </div>
+            </b-col>
+            <b-col cols="12" md="7" class="right">
+            </b-col>
+        </b-row>
     </div>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        mainProps: { class: 'm1 m2 m3 m4 m5'}
-      }
-    }
-  }
-</script>
+
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 .wrapper {
     width: 100%;
     height: 100hv;
+    font-family: Poppins;
 }
 .content {
     height: 80vh;
@@ -77,6 +45,11 @@
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
 }
+
+.mobile-title {
+    display: none;
+}
+
 .right {
     height: 80vh;
     width: 60%;
@@ -84,6 +57,40 @@
 img {
     height: 424px;
     width: 589px;
-    margin-left: 250px;
+    margin-top: 100px;
+    margin-left: 180px;
+}
+@media (max-width: 760px){
+    img {
+        margin-left: 0px;
+    }
+
+    .under-left {
+    height: 60vh;
+    width: 100%;
+    padding-right: 0;
+    background: none;
+    border-right: none;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    }
+
+    .left {
+    background: url("../../img/city.jpg");
+    height: 60vh;
+    width: 100%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    }
+
+    .mobile-title {
+        color: whitesmoke;
+        font-weight: 600;
+        display: inline-block;
+    }
+
+    .right {
+    padding-right: 0;
+    }
 }
 </style>
