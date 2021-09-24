@@ -3,8 +3,10 @@
         <b-row class="content">
             <b-col cols="12" md="5" class="under-left">
                 <div class="left">
+                    <div class="cover-bg">
                     <b-img :src="'images/A320.png'" fluid alt="Plane"></b-img>
-                    <h1 class="mobile-title">Fly with us</h1>
+                    <h1 class="mobile-title">Flying with us is fun and safety</h1>
+                    </div>
                 </div>
             </b-col>
             <b-col cols="12" md="7" class="right">
@@ -22,6 +24,7 @@
     height: 100hv;
     font-family: Poppins;
 }
+
 .content {
     height: 80vh;
     width: 100%;
@@ -30,6 +33,7 @@
     justify-content: space-between;
     background: whitesmoke;
 }
+
 .under-left {
     height: 80vh;
     width: 40%;
@@ -38,10 +42,19 @@
     border-top-right-radius: 200%;
     border-bottom-right-radius: 1000%;
 }
+
 .left {
     background: url("../../img/city.jpg");
     height: 80vh;
     width: 90%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 500%;
+}
+
+.cover-bg {
+    background: linear-gradient(135deg, white, rgba(255,255,255, .1), rgba(0, 0, 0, .7)) ;
+    height: 80vh;
+    width: 100%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
 }
@@ -59,6 +72,7 @@ img {
     width: 589px;
     margin-top: 100px;
     margin-left: 180px;
+    opacity: 0.9;
 }
 @media (max-width: 760px){
     img {
@@ -83,10 +97,24 @@ img {
     border-bottom-right-radius: 0%;
     }
 
+    .cover-bg {
+    background: linear-gradient(135deg, white, rgba(255,255,255, .1), rgba(0, 0, 0, .7)) ;
+    height: 60vh;
+    width: 100%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    }
+
     .mobile-title {
         color: whitesmoke;
         font-weight: 600;
         display: inline-block;
+        text-align: center;
+        text-shadow: 1px 1px black;
     }
 
     .right {
