@@ -37,7 +37,7 @@
 .under-left {
     height: 80vh;
     width: 40%;
-    background: linear-gradient(180deg, white, skyblue, white);
+    background: linear-gradient(90deg, rgb(155, 187, 236),rgb(155, 187, 236), white);
     border-right: 10px solid rgb(155, 187, 236);
     border-top-right-radius: 200%;
     border-bottom-right-radius: 1000%;
