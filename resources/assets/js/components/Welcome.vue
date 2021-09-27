@@ -5,11 +5,16 @@
                 <div class="left">
                     <div class="cover-bg">
                     <b-img :src="'images/A320.png'" fluid alt="Plane"></b-img>
-                    <h1 class="mobile-title">Flying with us is fun and safety</h1>
+                    <h2 class="mobile-title-top">Make your trip an <b>experience</b></h2>
+                    <h1 class="mobile-title-bottom">fly with us</h1>
                     </div>
                 </div>
             </b-col>
             <b-col cols="12" md="7" class="right">
+                <b-container class="open-page-content">
+                    <h2 class="title-top">Make your trip an <b>experience</b></h2>
+                    <h1 class="title-bottom">fly with us</h1>
+                </b-container>
             </b-col>
         </b-row>
     </div>
@@ -61,20 +66,41 @@
     border-bottom-right-radius: 500%;
 }
 
-.mobile-title {
+.mobile-title-top, .mobile-title-bottom {
     display: none;
 }
 
 .right {
     height: 100vh;
     width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.title-top {
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: rgb(9,55,115);
+    text-transform: capitalize;
+    text-shadow: 2px 2px 5px white;
+}
+
+.title-bottom {
+    font-size: 4rem;
+    font-weight: 500;
+    color: rgb(9,55,115);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px white;
+}
+
 img {
     height: 424px;
     width: 589px;
     margin-top: 100px;
     margin-left: 180px;
 }
+
 @media (max-width: 760px){
     img {
         margin-left: 0px;
@@ -110,16 +136,28 @@ img {
     align-items: center;
     }
 
-    .mobile-title {
+    .mobile-title-top, .mobile-title-bottom {
         color: whitesmoke;
-        font-weight: 600;
+        font-weight: 500;
         display: inline-block;
         text-align: center;
-        text-shadow: 1px 1px black;
+        text-shadow: 1px 1px rgb(9,55,115);
+    }
+
+    .mobile-title-top {
+        text-transform: capitalize;
+    }
+
+    .mobile-title-bottom {
+        text-transform: uppercase;
     }
 
     .right {
     padding-right: 0;
+    }
+
+    .title-top, .title-bottom{
+        display: none;
     }
 }
 </style>
