@@ -26,34 +26,36 @@
 }
 
 .content {
-    height: 80vh;
+    height: 100vh;
     width: 100%;
-    margin-top: 80px;
     display: flex;
     justify-content: space-between;
-    background: whitesmoke;
+    background: rgb(155, 187, 236);
+    margin-right: 0 !important;
+    margin-left: 0 !important;
 }
 
 .under-left {
-    height: 80vh;
+    height: 100vh;
     width: 40%;
-    background: linear-gradient(90deg, rgb(155, 187, 236),rgb(155, 187, 236), white);
+    background: whitesmoke;
     border-right: 10px solid rgb(155, 187, 236);
     border-top-right-radius: 200%;
     border-bottom-right-radius: 1000%;
+    padding: 0;
 }
 
 .left {
     background: url("../../img/city.jpg");
-    height: 80vh;
+    height: 100vh;
     width: 90%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
 }
 
 .cover-bg {
-    background: linear-gradient(135deg, white, rgba(255,255,255, .1), rgba(0, 0, 0, .7)) ;
-    height: 80vh;
+    background: linear-gradient(135deg, white, rgba(255,255,255, .1), rgba(0, 0, 0, .9)) ;
+    height: 100vh;
     width: 100%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
@@ -64,7 +66,7 @@
 }
 
 .right {
-    height: 80vh;
+    height: 100vh;
     width: 60%;
 }
 img {
@@ -72,7 +74,6 @@ img {
     width: 589px;
     margin-top: 100px;
     margin-left: 180px;
-    opacity: 0.9;
 }
 @media (max-width: 760px){
     img {
