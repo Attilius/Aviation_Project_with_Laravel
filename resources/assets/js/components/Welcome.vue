@@ -59,7 +59,7 @@
 }
 
 .cover-bg {
-    background: linear-gradient(135deg, white, rgba(255,255,255, .1), rgba(0, 0, 0, .9)) ;
+    background: linear-gradient(135deg, white, rgba(255,255,255, .1), rgba(0, 0, 0, .9));
     height: 100vh;
     width: 100%;
     border-top-right-radius: 100%;
@@ -76,6 +76,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.open-page-content {
+    width: 80%;
 }
 
 .title-top {
