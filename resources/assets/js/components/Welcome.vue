@@ -14,12 +14,46 @@
                 <b-container class="open-page-content">
                     <h2 class="title-top">Make your trip an <b>experience</b></h2>
                     <h1 class="title-bottom">fly with us</h1>
+                    <b-form>
+                        <label for="from">From</label>
+                        <b-form-select name="from" v-model="selected_from" :options="options_from"><i class="fas fa-plane-departure"></i></b-form-select>
+                        <label for="to">To</label>
+                        <b-form-select name="to" v-model="selected_to" :options="options_to"></b-form-select>
+                        <label for="date">Date</label>
+                        <b-form-input name="date" type="date"></b-form-input>
+                    </b-form>
                 </b-container>
             </b-col>
         </b-row>
     </div>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+        selected_from: null,
+        options_from: [
+          { value: null, text: 'Please select your location of departure' },
+          { value: 'a', text: 'Budapest' },
+          { value: 'b', text: 'London' },
+          { value: 'c', text: 'Paris' },
+          { value: 'd', text: 'Munich' },
+          { value: 'e', text: 'New York' },
+        ],
+        selected_to: null,
+        options_to: [
+          { value: null, text: 'Please select your destination' },
+          { value: 'a', text: 'Budapest' },
+          { value: 'b', text: 'London' },
+          { value: 'c', text: 'Paris' },
+          { value: 'd', text: 'Munich' },
+          { value: 'e', text: 'New York' },
+        ]
+      }
+    },
+}
+</script>
 
 
 <style>
