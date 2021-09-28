@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <b-row class="content">
-            <b-col cols="12" md="5" class="under-left">
+            <b-col cols="12" lg="5" class="under-left">
                 <div class="left">
                     <div class="cover-bg">
                         <b-img
@@ -9,21 +9,18 @@
                             fluid
                             alt="Plane"
                         ></b-img>
-                        <h2 class="mobile-title-top">
-                            Make your trip an <b>experience</b>
-                        </h2>
-                        <h1 class="mobile-title-bottom">fly with us</h1>
                     </div>
                 </div>
             </b-col>
-            <b-col cols="12" md="7" class="right">
+            <b-col cols="12" lg="7" class="right">
                 <b-container class="open-page-content">
                     <h2 class="title-top">
                         Make your trip an <b>experience</b>
                     </h2>
                     <h1 class="title-bottom">fly with us</h1>
                     <b-form>
-                        <div class="input-column">
+                        <b-row class="row1">
+                            <div class="input-column">
                             <label for="from">From</label>
                             <div class="form-icon">
                                 <div class="icon">
@@ -65,6 +62,24 @@
                                 type="date"
                             ></b-form-input>
                         </div>
+                        </b-row>
+                        
+                        <b-row class="row2">
+                            <b-form-radio class="radio"
+                            v-model="selected_radio"
+                            :aria-describedby="ariaDescribedby"
+                            name="trip-radios"
+                            value="ONE WAY"
+                            >ONE WAY</b-form-radio
+                        >
+                        <b-form-radio class="radio"
+                            v-model="selected_radio"
+                            :aria-describedby="ariaDescribedby"
+                            name="trip-radios"
+                            value="ROUND TRIP"
+                            >ROUND TRIP</b-form-radio
+                        >
+                        </b-row>
                     </b-form>
                 </b-container>
             </b-col>
@@ -78,22 +93,26 @@ export default {
         return {
             selected_from: null,
             options_from: [
-                { value: null, text: "Please select your location of departure" },
-                { value: "a", text: "Budapest" },
-                { value: "b", text: "London" },
-                { value: "c", text: "Paris" },
-                { value: "d", text: "Munich" },
-                { value: "e", text: "New York" }
+                {
+                    value: null,
+                    text: "Please select your location of departure"
+                },
+                { value: "Budapest", text: "Budapest" },
+                { value: "London", text: "London" },
+                { value: "Paris", text: "Paris" },
+                { value: "Munich", text: "Munich" },
+                { value: "New York", text: "New York" }
             ],
             selected_to: null,
             options_to: [
                 { value: null, text: "Please select your destination" },
-                { value: "a", text: "Budapest" },
-                { value: "b", text: "London" },
-                { value: "c", text: "Paris" },
-                { value: "d", text: "Munich" },
-                { value: "e", text: "New York" }
-            ]
+                { value: "Budapest", text: "Budapest" },
+                { value: "London", text: "London" },
+                { value: "Paris", text: "Paris" },
+                { value: "Munich", text: "Munich" },
+                { value: "New York", text: "New York" }
+            ],
+            selected_radio: '',
         };
     }
 };
@@ -122,7 +141,7 @@ export default {
     width: 40%;
     box-shadow: 2px 2px 5px silver;
     background: rgb(9, 55, 115);
-    border-right: 10px solid silver;
+    border-right: 10px solid whitesmoke;
     border-top-right-radius: 200%;
     border-bottom-right-radius: 1000%;
     padding: 0;
@@ -183,10 +202,18 @@ export default {
     text-shadow: 2px 2px 5px silver;
 }
 
-form {
-    display: flex;
-    justify-content: space-between;
+.row1, .row2 {
+    padding: 5px;
     width: 100%;
+}
+
+.row1 {
+    justify-content: space-between;
+    margin-left: 0;
+}
+
+.radio {
+    margin-left: 13px;
 }
 
 label {
@@ -247,22 +274,31 @@ img {
         flex-direction: column;
     }
 
-    .input, .input-column, .select, .form-icon {
+    .input,
+    .input-column,
+    .select,
+    .form-icon {
         width: 100%;
     }
 }
 
 @media (max-width: 1000px) {
-    
+    .title-top {
+        font-size: 3rem;
+    }
+
+    .title-bottom {
+        font-size: 3.5rem;
+    }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 991px) {
     img {
         margin-left: 0px;
     }
 
     .under-left {
-        height: 60vh;
+        height: 40vh;
         width: 100%;
         padding-right: 0;
         background: none;
@@ -273,7 +309,7 @@ img {
 
     .left {
         background: url("../../img/city.jpg");
-        height: 60vh;
+        height: 40vh;
         width: 100%;
         border-top-right-radius: 0%;
         border-bottom-right-radius: 0%;
@@ -286,7 +322,7 @@ img {
             rgba(255, 255, 255, 0.1),
             rgba(0, 0, 0, 0.7)
         );
-        height: 60vh;
+        height: 40vh;
         width: 100%;
         border-top-right-radius: 0%;
         border-bottom-right-radius: 0%;
@@ -296,30 +332,8 @@ img {
         align-items: center;
     }
 
-    .mobile-title-top,
-    .mobile-title-bottom {
-        color: whitesmoke;
-        font-weight: 500;
-        display: inline-block;
-        text-align: center;
-        text-shadow: 1px 1px rgb(9, 55, 115);
-    }
-
-    .mobile-title-top {
-        text-transform: capitalize;
-    }
-
-    .mobile-title-bottom {
-        text-transform: uppercase;
-    }
-
     .right {
         padding-right: 0;
-    }
-
-    .title-top,
-    .title-bottom {
-        display: none;
     }
 }
 </style>
