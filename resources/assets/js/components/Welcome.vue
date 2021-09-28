@@ -55,8 +55,18 @@
                         </div>
 
                         <div class="input-column">
-                            <label for="date">Date</label>
+                            <label for="date">Date of away</label>
                             <b-form-input
+                                class="input"
+                                name="date"
+                                type="date"
+                            ></b-form-input>
+                        </div>
+
+                        <div id="back-way" class="input-column">
+                            <label for="date">Date of back way</label>
+                            <b-form-input
+                                id="back-date"
                                 class="input"
                                 name="date"
                                 type="date"
@@ -70,6 +80,7 @@
                             :aria-describedby="ariaDescribedby"
                             name="trip-radios"
                             value="ONE WAY"
+                            v-on:change="showReturnDate('ONE WAY')"
                             >ONE WAY</b-form-radio
                         >
                         <b-form-radio class="radio"
@@ -77,6 +88,7 @@
                             :aria-describedby="ariaDescribedby"
                             name="trip-radios"
                             value="ROUND TRIP"
+                            v-on:change="showReturnDate('ROUND TRIP')"
                             >ROUND TRIP</b-form-radio
                         >
                         </b-row>
@@ -114,6 +126,17 @@ export default {
             ],
             selected_radio: '',
         };
+    },
+
+    methods: {
+        showReturnDate: function(selected_radio) {
+            if(selected_radio === "ROUND TRIP") {
+                document.getElementById("back-way").style.display = "flex";
+            } else {
+                document.getElementById("back-way").style.display = "none";
+                document.getElementById("back-date").value = "yyyy-mm-dd";
+            }
+        },
     }
 };
 </script>
@@ -167,11 +190,6 @@ export default {
     width: 100%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
-}
-
-.mobile-title-top,
-.mobile-title-bottom {
-    display: none;
 }
 
 .right {
@@ -228,18 +246,19 @@ label {
     border-bottom-left-radius: 0 !important;
 }
 
-.select:focus {
-    outline-style: none !important;
-}
-
 .input {
     width: 190px;
     box-shadow: 2px 2px 5px silver;
 }
 
+#back-way {
+    display: none;
+}
+
 .input-column {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
 }
 
 .icon {
@@ -279,6 +298,10 @@ img {
     .select,
     .form-icon {
         width: 100%;
+    }
+
+    img {
+        margin-left: 150px;
     }
 }
 
