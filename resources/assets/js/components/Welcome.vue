@@ -78,7 +78,7 @@ export default {
         return {
             selected_from: null,
             options_from: [
-                { value: null, text: "Please select" },
+                { value: null, text: "Please select your location of departure" },
                 { value: "a", text: "Budapest" },
                 { value: "b", text: "London" },
                 { value: "c", text: "Paris" },
@@ -87,7 +87,7 @@ export default {
             ],
             selected_to: null,
             options_to: [
-                { value: null, text: "Please select" },
+                { value: null, text: "Please select your destination" },
                 { value: "a", text: "Budapest" },
                 { value: "b", text: "London" },
                 { value: "c", text: "Paris" },
@@ -112,7 +112,7 @@ export default {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background: rgb(155, 187, 236);
+    background: whitesmoke;
     margin-right: 0 !important;
     margin-left: 0 !important;
 }
@@ -120,8 +120,9 @@ export default {
 .under-left {
     height: 100vh;
     width: 40%;
-    background: whitesmoke;
-    border-right: 10px solid rgb(155, 187, 236);
+    box-shadow: 2px 2px 5px silver;
+    background: rgb(9, 55, 115);
+    border-right: 10px solid silver;
     border-top-right-radius: 200%;
     border-bottom-right-radius: 1000%;
     padding: 0;
@@ -133,6 +134,7 @@ export default {
     width: 90%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
+    box-shadow: 2px 2px 5px silver;
 }
 
 .cover-bg {
@@ -170,7 +172,7 @@ export default {
     font-weight: 400;
     color: rgb(9, 55, 115);
     text-transform: capitalize;
-    text-shadow: 2px 2px 5px white;
+    text-shadow: 2px 2px 5px silver;
 }
 
 .title-bottom {
@@ -178,11 +180,18 @@ export default {
     font-weight: 500;
     color: rgb(9, 55, 115);
     text-transform: uppercase;
-    text-shadow: 2px 2px 5px white;
+    text-shadow: 2px 2px 5px silver;
 }
 
 form {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+label {
+    color: rgb(9, 55, 115);
+    text-shadow: 2px 2px 5px silver;
 }
 
 .select {
@@ -198,6 +207,7 @@ form {
 
 .input {
     width: 190px;
+    box-shadow: 2px 2px 5px silver;
 }
 
 .input-column {
@@ -221,7 +231,8 @@ form {
 
 .form-icon {
     display: flex;
-    width: 200px;
+    width: 180px;
+    box-shadow: 2px 2px 5px silver;
 }
 
 img {
@@ -229,6 +240,20 @@ img {
     width: 589px;
     margin-top: 100px;
     margin-left: 180px;
+}
+
+@media (max-width: 1200px) {
+    form {
+        flex-direction: column;
+    }
+
+    .input, .input-column, .select, .form-icon {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    
 }
 
 @media (max-width: 760px) {
