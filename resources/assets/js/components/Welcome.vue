@@ -79,7 +79,6 @@
                             <b-form-radio
                                 class="radio"
                                 v-model="selected_radio"
-                                :aria-describedby="ariaDescribedby"
                                 name="trip-radios"
                                 value="ONE WAY"
                                 v-on:change="showReturnDate('ONE WAY')"
@@ -88,7 +87,6 @@
                             <b-form-radio
                                 class="radio"
                                 v-model="selected_radio"
-                                :aria-describedby="ariaDescribedby"
                                 name="trip-radios"
                                 value="ROUND TRIP"
                                 v-on:change="showReturnDate('ROUND TRIP')"
