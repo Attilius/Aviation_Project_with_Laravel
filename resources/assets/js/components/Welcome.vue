@@ -21,77 +21,81 @@
                     <b-form>
                         <b-row class="row1">
                             <div class="input-column">
-                            <label for="from">From</label>
-                            <div class="form-icon">
-                                <div class="icon">
-                                    <font-awesome-icon
-                                        :icon="['fas', 'plane-departure']"
-                                    />
+                                <label for="from">From</label>
+                                <div class="form-icon">
+                                    <div class="icon">
+                                        <font-awesome-icon
+                                            :icon="['fas', 'plane-departure']"
+                                        />
+                                    </div>
+                                    <b-form-select
+                                        class="select"
+                                        name="from"
+                                        v-model="selected_from"
+                                        :options="options_from"
+                                    ></b-form-select>
                                 </div>
-                                <b-form-select
-                                    class="select"
-                                    name="from"
-                                    v-model="selected_from"
-                                    :options="options_from"
-                                ></b-form-select>
                             </div>
-                        </div>
 
-                        <div class="input-column">
-                            <label for="to">To</label>
-                            <div class="form-icon">
-                                <div class="icon">
-                                    <font-awesome-icon
-                                        :icon="['fas', 'plane-arrival']"
-                                    />
+                            <div class="input-column">
+                                <label for="to">To</label>
+                                <div class="form-icon">
+                                    <div class="icon">
+                                        <font-awesome-icon
+                                            :icon="['fas', 'plane-arrival']"
+                                        />
+                                    </div>
+                                    <b-form-select
+                                        class="select"
+                                        name="to"
+                                        v-model="selected_to"
+                                        :options="options_to"
+                                    ></b-form-select>
                                 </div>
-                                <b-form-select
-                                    class="select"
-                                    name="to"
-                                    v-model="selected_to"
-                                    :options="options_to"
-                                ></b-form-select>
                             </div>
-                        </div>
 
-                        <div class="input-column">
-                            <label for="date">Date of away</label>
-                            <b-form-input
-                                class="input"
-                                name="date"
-                                type="date"
-                            ></b-form-input>
-                        </div>
+                            <div class="input-column">
+                                <label for="date">Date of away</label>
+                                <b-form-input
+                                    class="input"
+                                    name="date"
+                                    type="date"
+                                ></b-form-input>
+                            </div>
 
-                        <div id="back-way" class="input-column">
-                            <label for="date">Date of back way</label>
-                            <b-form-input
-                                id="back-date"
-                                class="input"
-                                name="date"
-                                type="date"
-                            ></b-form-input>
-                        </div>
+                            <div id="back-way" class="input-column">
+                                <label for="date">Date of back way</label>
+                                <b-form-input
+                                    id="back-date"
+                                    class="input"
+                                    name="date"
+                                    type="date"
+                                ></b-form-input>
+                            </div>
                         </b-row>
-                        
+
                         <b-row class="row2">
-                            <b-form-radio class="radio"
-                            v-model="selected_radio"
-                            :aria-describedby="ariaDescribedby"
-                            name="trip-radios"
-                            value="ONE WAY"
-                            v-on:change="showReturnDate('ONE WAY')"
-                            >ONE WAY</b-form-radio
-                        >
-                        <b-form-radio class="radio"
-                            v-model="selected_radio"
-                            :aria-describedby="ariaDescribedby"
-                            name="trip-radios"
-                            value="ROUND TRIP"
-                            v-on:change="showReturnDate('ROUND TRIP')"
-                            >ROUND TRIP</b-form-radio
-                        >
+                            <b-form-radio
+                                class="radio"
+                                v-model="selected_radio"
+                                :aria-describedby="ariaDescribedby"
+                                name="trip-radios"
+                                value="ONE WAY"
+                                v-on:change="showReturnDate('ONE WAY')"
+                                >ONE WAY</b-form-radio
+                            >
+                            <b-form-radio
+                                class="radio"
+                                v-model="selected_radio"
+                                :aria-describedby="ariaDescribedby"
+                                name="trip-radios"
+                                value="ROUND TRIP"
+                                v-on:change="showReturnDate('ROUND TRIP')"
+                                >ROUND TRIP</b-form-radio
+                            >
                         </b-row>
+
+                        <b-button id="submit-btn">BOOK NOW</b-button>
                     </b-form>
                 </b-container>
             </b-col>
@@ -107,9 +111,10 @@ export default {
             options_from: [
                 {
                     value: null,
-                    text: "Please select your location of departure"
+                    text: "Please select your location of departure",
+                    disabled: true
                 },
-                { value: "Budapest", text: "Budapest" },
+                { value: "Budapest", text: "Budapest"},
                 { value: "London", text: "London" },
                 { value: "Paris", text: "Paris" },
                 { value: "Munich", text: "Munich" },
@@ -117,32 +122,43 @@ export default {
             ],
             selected_to: null,
             options_to: [
-                { value: null, text: "Please select your destination" },
+                {
+                    value: null,
+                    text: "Please select your destination",
+                    disabled: true
+                },
                 { value: "Budapest", text: "Budapest" },
                 { value: "London", text: "London" },
                 { value: "Paris", text: "Paris" },
                 { value: "Munich", text: "Munich" },
                 { value: "New York", text: "New York" }
             ],
-            selected_radio: '',
+            selected_radio: ""
         };
     },
 
     methods: {
         showReturnDate: function(selected_radio) {
-            if(selected_radio === "ROUND TRIP") {
+            if (selected_radio === "ROUND TRIP") {
                 document.getElementById("back-way").style.display = "flex";
             } else {
                 document.getElementById("back-way").style.display = "none";
                 document.getElementById("back-date").value = "yyyy-mm-dd";
             }
-        },
+        }
     }
 };
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+*:focus {
+    outline: 0px !important;
+    box-shadow: 2px 2px 5px silver !important;
+    border: 1px solid #ced4da !important;
+}
+
 .wrapper {
     width: 100%;
     height: 100hv;
@@ -220,7 +236,8 @@ export default {
     text-shadow: 2px 2px 5px silver;
 }
 
-.row1, .row2 {
+.row1,
+.row2 {
     padding: 5px;
     width: 100%;
 }
@@ -246,6 +263,11 @@ label {
     border-bottom-left-radius: 0 !important;
 }
 
+option:hover {
+    background: rebeccapurple;
+    color: white;
+}
+
 .input {
     width: 190px;
     box-shadow: 2px 2px 5px silver;
@@ -253,6 +275,20 @@ label {
 
 #back-way {
     display: none;
+}
+
+#submit-btn {
+    background: RebeccaPurple;
+    width: 230px;
+    box-shadow: 2px 2px 5px silver;
+    border: 1px solid #ced4da;
+    margin-left: 3px;
+}
+
+#submit-btn:active {
+    box-shadow: none;
+    background-color: whitesmoke;
+    color: RebeccaPurple;
 }
 
 .input-column {
