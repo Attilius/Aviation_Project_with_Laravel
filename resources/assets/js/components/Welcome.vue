@@ -159,6 +159,12 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
+*,*::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 *:focus {
     outline: 0px !important;
     box-shadow: 2px 2px 5px silver !important;
@@ -167,7 +173,7 @@ export default {
 
 .wrapper {
     width: 100%;
-    height: 100hv;
+    height: 100vh;
     font-family: Poppins;
 }
 
