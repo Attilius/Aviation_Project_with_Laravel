@@ -49,6 +49,12 @@ export default {
 </script>
 
 <style scoped>
+*,*::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .navbar{
     background: rgb(9, 55, 115) !important;
 }
@@ -96,4 +102,20 @@ a:hover, .select-lang:hover {
     box-shadow: 2px 2px 5px silver;
     border: 1px solid #ced4da;
 }
+
+@media (max-width: 974px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    li {
+        margin: 10px;
+        text-align: center;
+    }
+
+    .login .select-lang {
+       align-items: center;
+    }
+}
+
 </style>
