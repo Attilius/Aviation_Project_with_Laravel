@@ -1,5 +1,6 @@
 <template>
     <div class="wrapper">
+        <navbar />
         <b-row class="content">
             <b-col cols="12" lg="5" class="under-left">
                 <div class="left">
@@ -104,7 +105,14 @@
 </template>
 
 <script>
+import Navbar from './Navbar.vue'
+
 export default {
+
+    components: {
+        'navbar': Navbar,
+    },
+
     data() {
         return {
             selected_from: null,
