@@ -8,13 +8,15 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
+@yield('style')
         <style>
-@yield('style');
+            body {
+               background: whitesmoke; 
+            }
         </style>
     </head>
     
-    <body style="background: whitesmoke">
+    <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
