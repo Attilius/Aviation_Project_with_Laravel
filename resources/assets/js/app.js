@@ -19,6 +19,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import Home from "../js/components/Home.vue";
+import About from "../js/components/About.vue";
+import Services from "../js/components/Services.vue";
+import Contact from "../js/components/Contact.vue";
 
 library.add(faPlaneDeparture, faPlaneArrival, faCopyright);
 
@@ -35,8 +39,15 @@ Vue.use(IconsPlugin);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component("font-awesome-icon", FontAwesomeIcon);
-Vue.component("Home", require("./components/Home.vue").default);
+//Vue.component("Home", require("./components/Home.vue").default);
 
 const app = new Vue({
-    el: "#app"
+    el: "#app",
+
+    components: {
+        Home,
+        About,
+        Services,
+        Contact
+    }
 });
