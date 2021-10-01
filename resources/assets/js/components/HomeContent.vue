@@ -5,6 +5,7 @@
                 <div class="left">
                     <div class="cover-bg">
                         <b-img
+                            class="plane"
                             :src="'images/A320.png'"
                             fluid
                             alt="Plane"
@@ -320,11 +321,21 @@ option:hover {
     box-shadow: 2px 2px 5px silver;
 }
 
-img {
-    height: 424px;
-    width: 589px;
+.plane {
     margin-top: 100px;
-    margin-left: 180px;
+    margin-left: 250px;
+    position: relative;
+    animation: flight 1.5s ease-in-out;
+    -webkit-animation: flight 1.5s ease-in-out;
+}
+
+@keyframes flight {
+    from {
+        left: -1000px;
+    }
+    to {
+        left: 0px;
+    }
 }
 
 @media (max-width: 1200px) {
