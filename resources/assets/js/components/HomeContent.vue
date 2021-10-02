@@ -5,7 +5,7 @@
                 <div class="left">
                     <div class="cover-bg">
                         <b-img
-                            class="plane"
+                            class="A320"
                             :src="'images/A320.png'"
                             fluid
                             alt="Plane"
@@ -321,7 +321,7 @@ option:hover {
     box-shadow: 2px 2px 5px silver;
 }
 
-.plane {
+.A320 {
     margin-top: 100px;
     margin-left: 250px;
     position: relative;
@@ -338,6 +338,12 @@ option:hover {
     }
 }
 
+@media (max-width: 1355px) {
+    .A320 {
+        margin-left: 150px;
+    }
+}
+
 @media (max-width: 1200px) {
     form {
         flex-direction: column;
@@ -349,9 +355,11 @@ option:hover {
     .form-icon {
         width: 100%;
     }
+}
 
-    img {
-        margin-left: 150px;
+@media (max-width: 1100px) {
+    .A320 {
+        margin-left: 120px;
     }
 }
 
@@ -364,12 +372,13 @@ option:hover {
         font-size: 3.5rem;
     }
 
+    .A320 {
+        margin-left: 100px;
+    }
+
 }
 
 @media (max-width: 991px) {
-    img {
-        margin-left: 0px;
-    }
 
     .under-left {
         height: 40vh;
@@ -413,5 +422,20 @@ option:hover {
     .right {
         padding-right: 0;
     }
+
+    .A320 {
+        margin-left: 0px;
+    }
 }
+
+@media (max-width: 576px) {
+    .title-top {
+        font-size: 2rem;
+    }
+
+    .title-bottom {
+        font-size: 2.5rem;
+    }
+}
+
 </style>
