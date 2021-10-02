@@ -39,6 +39,11 @@
                 </b-row>
             </b-container>
         </div>
+        <div class="feedbacks">
+<div class="cover-sheet">
+
+</div>
+            </div>
     </div>
 </template>
 
@@ -124,6 +129,20 @@ article {
 
 .text-content {
     margin-right: 50px;
+}
+
+.feedbacks {
+    background: url("../../img/airport-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.cover-sheet {
+    width: 100%;
+    height: 100vh;
+    background: rgba(51, 100, 179, .7);
 }
 
 @media (max-width: 1350px) {
