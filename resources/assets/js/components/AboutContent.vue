@@ -11,6 +11,34 @@
                 ></b-img>
             </div>
         </div>
+        <div class="content">
+            <b-container class="main-content">
+                <b-row class="top">
+                    <b-img
+                        class="office"
+                        :src="'images/office.jpg'"
+                        fluid
+                        alt="Office"
+                    ></b-img>
+                    <b-col class="text-content">
+                        <h3>About us</h3>
+                        <article>
+                            Our company is the result of a recently formed
+                            airline partnership. Initially, we only supported
+                            our market-leading peers by providing ancillary
+                            flights. We now offer our own routes to customers
+                            who want to travel. We also operate charter flights
+                            to many destinations around the world. We work with
+                            our colleagues on a daily basis to provide a
+                            tailor-made solution for each of our customers.
+                            Whether it's a business trip or a holiday, all you
+                            need to do is choose a destination and a date, leave
+                            the rest to us!
+                        </article>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </div>
     </div>
 </template>
 
@@ -34,7 +62,6 @@ export default {
     height: 40vh;
     width: 100%;
     background-color: whitesmoke;
-    margin-bottom: 30px;
 }
 
 .color-box {
@@ -55,9 +82,67 @@ h1 {
     font-size: 3rem;
 }
 
-@media (max-width: 1200px) {
+h3 {
+    color: rgb(9, 55, 115);
+    text-shadow: 2px 2px 5px silver;
+    margin-bottom: 10px;
+}
 
-    .content-header, .color-box {
+.content {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(51, 100, 179);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top {
+    border-bottom: 1px solid silver;
+    background-color: whitesmoke;
+    padding: 25px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    right: 150px;
+    width: 113.2%;
+}
+
+.office {
+    width: 20%;
+    margin-right: 55px;
+}
+
+article {
+    line-height: 1.7rem;
+    text-align: justify;
+}
+
+.text-content {
+    margin-right: 50px;
+}
+
+@media (max-width: 1350px) {
+    .top {
+    border-bottom: 1px solid silver;
+    background-color: whitesmoke;
+    padding: 25px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    right: 0;
+    width: 100%;
+}
+}
+
+@media (max-width: 1200px) {
+    .content-header,
+    .color-box {
         height: 20%;
     }
 
@@ -77,6 +162,18 @@ h1 {
         width: 90%;
         margin: 0 auto;
     }
+
+    .office {
+        display: none;
+    }
+
+    .top {
+        position: absolute;
+    }
+
+    .text-content {
+    margin-right: 0;
+}
 }
 
 @media (max-width: 900px) {
@@ -96,5 +193,4 @@ h1 {
         font-size: 1rem;
     }
 }
-
 </style>
