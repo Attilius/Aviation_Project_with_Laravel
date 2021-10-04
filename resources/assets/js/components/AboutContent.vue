@@ -14,7 +14,8 @@
         <div class="content">
             <b-container class="main-content">
                 <b-row class="top">
-                    <b-img
+                    <div class="upper">
+                        <b-img
                         class="office"
                         :src="'images/office.jpg'"
                         fluid
@@ -36,14 +37,31 @@
                             the rest to us!
                         </article>
                     </b-col>
+                    </div>
+                    <div class="center">
+                        <b-img
+                        class="pilot"
+                        :src="'images/pilot.jpg'"
+                        fluid
+                        alt="Pilot"
+                    ></b-img>
+                    <b-col class="text-content">
+                        <article>
+                        With years of experience and thousands of hours flown,
+                        our experienced pilots guarantee the safety of our
+                        passengers. We develop them through a variety of
+                        training courses. They demonstrate their confident
+                        skills day in, day out, in small and large aircraft.
+                    </article>
+                    </b-col>
+                    </div>
+                    
                 </b-row>
             </b-container>
         </div>
         <div class="feedbacks">
-<div class="cover-sheet">
-
-</div>
-            </div>
+            <div class="cover-sheet"></div>
+        </div>
     </div>
 </template>
 
@@ -61,6 +79,11 @@ export default {
     margin: 0;
     box-sizing: border-box;
     font-family: Poppins;
+}
+
+.upper, .center {
+    display: flex;
+    margin-bottom: 50px;
 }
 
 .content-header {
@@ -109,6 +132,7 @@ h3 {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     position: relative;
     right: 150px;
@@ -119,7 +143,11 @@ h3 {
     width: 20%;
     margin-right: 55px;
     border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+}
+
+.pilot {
+    width: 20%;
+    margin-right: 55px;
 }
 
 article {
@@ -142,23 +170,23 @@ article {
 .cover-sheet {
     width: 100%;
     height: 100vh;
-    background: rgba(51, 100, 179, .7);
+    background: rgba(51, 100, 179, 0.7);
 }
 
 @media (max-width: 1350px) {
     .top {
-    border-bottom: 1px solid silver;
-    background-color: whitesmoke;
-    padding: 25px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    right: 0;
-    width: 100%;
-}
+        border-bottom: 1px solid silver;
+        background-color: whitesmoke;
+        padding: 25px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        right: 0;
+        width: 100%;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -193,13 +221,26 @@ article {
     }
 
     .text-content {
-    margin-right: 0;
-}
+        margin-right: 0;
+    }
 }
 
 @media (max-width: 900px) {
     h1 {
         font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 820px) {
+    .center {
+        flex-direction: column;
+    }
+    
+    .pilot {
+        margin: 0;
+        width: 150px;
+        height: 100px;
+        margin: 0 auto 10px ;
     }
 }
 
@@ -214,4 +255,7 @@ article {
         font-size: 1rem;
     }
 }
+
+
+
 </style>
