@@ -76,7 +76,22 @@
             </b-container>
         </div>
         <div class="feedbacks">
-            <div class="cover-sheet"></div>
+            <div class="cover-sheet">
+                <div class="awards">
+                    <b-img
+                            class="award"
+                            :src="'images/awards-2019.png'"
+                            fluid
+                            alt="Award-2019"
+                        ></b-img>
+                        <b-img
+                            class="award"
+                            :src="'images/awards-2021.png'"
+                            fluid
+                            alt="Award-2021"
+                        ></b-img>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -197,6 +212,20 @@ article {
     width: 100%;
     height: 100vh;
     background: rgba(51, 100, 179, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.awards {
+    display: flex;
+}
+
+.award {
+    height: 150px;
+    width: 150px;
+    margin: 10px 50px;
 }
 
 @media (max-width: 1350px) {
