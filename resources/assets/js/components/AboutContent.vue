@@ -16,46 +16,62 @@
                 <b-row class="top">
                     <div class="upper">
                         <b-img
-                        class="office"
-                        :src="'images/office.jpg'"
-                        fluid
-                        alt="Office"
-                    ></b-img>
-                    <b-col class="text-content">
-                        <h3>About us</h3>
-                        <article>
-                            Our company is the result of a recently formed
-                            airline partnership. Initially, we only supported
-                            our market-leading peers by providing ancillary
-                            flights. We now offer our own routes to customers
-                            who want to travel. We also operate charter flights
-                            to many destinations around the world. We work with
-                            our colleagues on a daily basis to provide a
-                            tailor-made solution for each of our customers.
-                            Whether it's a business trip or a holiday, all you
-                            need to do is choose a destination and a date, leave
-                            the rest to us!
-                        </article>
-                    </b-col>
+                            class="office"
+                            :src="'images/office.jpg'"
+                            fluid
+                            alt="Office"
+                        ></b-img>
+                        <b-col class="text-content">
+                            <h3>About us</h3>
+                            <article>
+                                Our company is the result of a recently formed
+                                airline partnership. Initially, we only
+                                supported our market-leading peers by providing
+                                ancillary flights. We now offer our own routes
+                                to customers who want to travel. We also operate
+                                charter flights to many destinations around the
+                                world. We work with our colleagues on a daily
+                                basis to provide a tailor-made solution for each
+                                of our customers. Whether it's a business trip
+                                or a holiday, all you need to do is choose a
+                                destination and a date, leave the rest to us!
+                            </article>
+                        </b-col>
                     </div>
                     <div class="center">
                         <b-img
-                        class="pilot"
-                        :src="'images/pilot.jpg'"
-                        fluid
-                        alt="Pilot"
-                    ></b-img>
-                    <b-col class="text-content">
-                        <article>
-                        With years of experience and thousands of hours flown,
-                        our experienced pilots guarantee the safety of our
-                        passengers. We develop them through a variety of
-                        training courses. They demonstrate their confident
-                        skills day in, day out, in small and large aircraft.
-                    </article>
-                    </b-col>
+                            class="pilot"
+                            :src="'images/pilot.jpg'"
+                            fluid
+                            alt="Pilot"
+                        ></b-img>
+                        <b-col class="text-content">
+                            <article>
+                                With years of experience and thousands of hours
+                                flown, our experienced pilots guarantee the
+                                safety of our passengers. We develop them
+                                through a variety of training courses. They
+                                demonstrate their confident skills day in, day
+                                out, in small and large aircraft.
+                            </article>
+                        </b-col>
                     </div>
-                    
+                    <div class="under">
+                        <b-img
+                            class="stewardess"
+                            :src="'images/stewardess.jpg'"
+                            fluid
+                            alt="Stewardess"
+                        ></b-img>
+                        <b-col class="text-content">
+                            <article>
+                                Our friendly and helpful cabin crew will ensure
+                                the comfort of our passengers. They will do
+                                their utmost to make your journey, even if it
+                                takes several hours, a pleasant one.
+                            </article>
+                        </b-col>
+                    </div>
                 </b-row>
             </b-container>
         </div>
@@ -81,11 +97,15 @@ export default {
     font-family: Poppins;
 }
 
-.upper, .center {
+.upper,
+.center {
     display: flex;
     margin-bottom: 50px;
 }
 
+.under {
+    display: flex;
+}
 .content-header {
     height: 40vh;
     width: 100%;
@@ -148,6 +168,12 @@ h3 {
 .pilot {
     width: 20%;
     margin-right: 55px;
+}
+
+.stewardess {
+    width: 20%;
+    margin-right: 55px;
+    border-bottom-left-radius: 30px;
 }
 
 article {
@@ -232,15 +258,19 @@ article {
 }
 
 @media (max-width: 820px) {
-    .center {
+    .center, .under {
         flex-direction: column;
     }
-    
-    .pilot {
+
+    .pilot, .stewardess {
         margin: 0;
         width: 150px;
         height: 100px;
-        margin: 0 auto 10px ;
+        margin: 0 auto 10px;
+    }
+
+    .stewardess {
+        border-radius: 0;
     }
 }
 
@@ -255,7 +285,4 @@ article {
         font-size: 1rem;
     }
 }
-
-
-
 </style>
