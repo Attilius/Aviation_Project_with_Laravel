@@ -113,6 +113,9 @@
                         </div>
                     </div>
                 </section>
+
+                <div class="reviews"></div>
+
             </div>
         </div>
     </div>
