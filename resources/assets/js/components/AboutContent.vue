@@ -93,7 +93,27 @@
         </div>
 
         <div class="feedbacks">
-            <div class="cover-sheet"></div>
+            <div class="cover-sheet">
+                <section class="counters">
+                    <div class="container">
+                        <div>
+                            <font-awesome-icon class="icon" :icon="['fas', 'users']" />
+                            <div class="counter" data-target="150000">0</div>
+                            <h3>Customers</h3>
+                        </div>
+                        <div>
+                            <font-awesome-icon class="icon" :icon="['fas', 'plane']" />
+                            <div class="counter" data-target="5500">0</div>
+                            <h3>Flights</h3>
+                        </div>
+                        <div>
+                            <font-awesome-icon class="icon" :icon="['fas', 'map-marked-alt']" />
+                            <div class="counter" data-target="2000">0</div>
+                            <h3>Route</h3>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 </template>
@@ -111,7 +131,7 @@ export default {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
 }
 
 .upper,
@@ -219,9 +239,35 @@ article {
     height: 100vh;
     background: rgba(51, 100, 179, 0.7);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
+}
+
+.counters .container h3 {
+    color: whitesmoke;
+}
+
+.counters .container {
+    display: grid;
+    grid-gap: 300px;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    color: whitesmoke;
+}
+
+.counter {
+    padding: 40px 20px;
+}
+
+.icon {
+    font-size: 2.5rem;
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+}
+
+.counter {
+    font-size: 2rem;
 }
 
 .awards {
@@ -348,6 +394,10 @@ article {
     h1 {
         font-size: 1rem;
     }
+
+    .counters .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 @media (max-width: 380px) {
@@ -355,5 +405,4 @@ article {
         height: 190vh;
     }
 }
-
 </style>
