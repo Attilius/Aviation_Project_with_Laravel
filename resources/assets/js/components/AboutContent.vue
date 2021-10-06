@@ -11,7 +11,23 @@
                 ></b-img>
             </div>
         </div>
+
         <div class="content">
+            <div class="awards">
+                <b-img
+                    class="award"
+                    :src="'images/awards-2019.png'"
+                    fluid
+                    alt="Award-2019"
+                ></b-img>
+                <b-img
+                    class="award"
+                    :src="'images/awards-2021.png'"
+                    fluid
+                    alt="Award-2021"
+                ></b-img>
+            </div>
+
             <b-container class="main-content">
                 <b-row class="top">
                     <div class="upper">
@@ -75,23 +91,9 @@
                 </b-row>
             </b-container>
         </div>
+
         <div class="feedbacks">
-            <div class="cover-sheet">
-                <div class="awards">
-                    <b-img
-                            class="award"
-                            :src="'images/awards-2019.png'"
-                            fluid
-                            alt="Award-2019"
-                        ></b-img>
-                        <b-img
-                            class="award"
-                            :src="'images/awards-2021.png'"
-                            fluid
-                            alt="Award-2021"
-                        ></b-img>
-                </div>
-            </div>
+            <div class="cover-sheet"></div>
         </div>
     </div>
 </template>
@@ -153,10 +155,14 @@ h3 {
 
 .content {
     width: 100%;
-    height: 100vh;
+    height: 86vh;
     background-color: rgb(51, 100, 179);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.main-content {
+    width: 80%;
 }
 
 .top {
@@ -220,12 +226,16 @@ article {
 
 .awards {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: transparent;
+    align-items: center;
+    width: 20%;
 }
 
 .award {
     height: 150px;
     width: 150px;
-    margin: 10px 50px;
 }
 
 @media (max-width: 1350px) {
@@ -271,6 +281,18 @@ article {
         display: none;
     }
 
+    .content {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    .awards {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
     .top {
         position: absolute;
     }
@@ -287,11 +309,16 @@ article {
 }
 
 @media (max-width: 820px) {
-    .center, .under {
+    .content {
+        height: 120vh;
+    }
+    .center,
+    .under {
         flex-direction: column;
     }
 
-    .pilot, .stewardess {
+    .pilot,
+    .stewardess {
         margin: 0;
         width: 150px;
         height: 100px;
@@ -304,14 +331,29 @@ article {
 }
 
 @media (max-width: 750px) {
+    .content {
+        height: 150vh;
+    }
+
     h1 {
         font-size: 2rem;
     }
 }
 
 @media (max-width: 576px) {
+    .content {
+        height: 170vh;
+    }
+
     h1 {
         font-size: 1rem;
     }
 }
+
+@media (max-width: 380px) {
+    .content {
+        height: 190vh;
+    }
+}
+
 </style>
