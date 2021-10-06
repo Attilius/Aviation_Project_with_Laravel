@@ -15,7 +15,10 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
     faPlaneDeparture,
-    faPlaneArrival
+    faPlaneArrival,
+    faPlane,
+    faMapMarkedAlt,
+    faUsers
 } from "@fortawesome/free-solid-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -24,7 +27,7 @@ import About from "../js/components/About.vue";
 import Services from "../js/components/Services.vue";
 import Contact from "../js/components/Contact.vue";
 
-library.add(faPlaneDeparture, faPlaneArrival, faCopyright);
+library.add(faPlaneDeparture, faPlaneArrival, faCopyright, faPlane, faMapMarkedAlt, faUsers);
 
 Vue.config.productionTip = false;
 
