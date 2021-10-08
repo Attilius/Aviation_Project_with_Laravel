@@ -123,7 +123,11 @@
                 </div>
             </section>
 
-            <div class="reviews"></div>
+            <div class="reviews">
+                <div class="feedback"></div>
+                <div class="feedback"></div>
+                <div class="feedback"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -350,6 +354,21 @@ article {
 .enter {
     opacity: 1;
     transform: translateY(0px);
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 25%;
+    margin-top: 150px;
+}
+
+.feedback {
+    background-color: whitesmoke;
+    height: 100%;
+    width: 20%;
+    margin: 0 70px;
 }
 
 @media (max-width: 1350px) {
