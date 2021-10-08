@@ -26,6 +26,9 @@ import Home from "../js/components/Home.vue";
 import About from "../js/components/About.vue";
 import Services from "../js/components/Services.vue";
 import Contact from "../js/components/Contact.vue";
+import ScrollAnimation from './scrollAnimation';
+
+Vue.directive('scrollanimation', ScrollAnimation);
 
 library.add(faPlaneDeparture, faPlaneArrival, faCopyright, faPlane, faMapMarkedAlt, faUsers);
 
