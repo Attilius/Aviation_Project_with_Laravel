@@ -93,30 +93,38 @@
         </div>
 
         <div class="img-box"></div>
-            <div class="bottom-box">
-                <section class="counters">
-                    <div class="container">
-                        <div>
-                            <font-awesome-icon class="icon" :icon="['fas', 'users']" />
-                            <div class="counter">{{ val1 }}</div>
-                            <h3>Customers</h3>
-                        </div>
-                        <div>
-                            <font-awesome-icon class="icon" :icon="['fas', 'plane']" />
-                            <div class="counter">{{ val2 }}</div>
-                            <h3>Flights</h3>
-                        </div>
-                        <div>
-                            <font-awesome-icon class="icon" :icon="['fas', 'map-marked-alt']" />
-                            <div class="counter">{{ val3 }}</div>
-                            <h3>Route</h3>
-                        </div>
+        <div class="bottom-box">
+            <section class="counters">
+                <div v-scrollanimation id="counters-container" class="container">
+                    <div>
+                        <font-awesome-icon
+                            class="icon"
+                            :icon="['fas', 'users']"
+                        />
+                        <div class="counter">{{ val1 }}</div>
+                        <h3>Customers</h3>
                     </div>
-                </section>
+                    <div>
+                        <font-awesome-icon
+                            class="icon"
+                            :icon="['fas', 'plane']"
+                        />
+                        <div class="counter">{{ val2 }}</div>
+                        <h3>Flights</h3>
+                    </div>
+                    <div>
+                        <font-awesome-icon
+                            class="icon"
+                            :icon="['fas', 'map-marked-alt']"
+                        />
+                        <div class="counter">{{ val3 }}</div>
+                        <h3>Routes</h3>
+                    </div>
+                </div>
+            </section>
 
-                <div class="reviews"></div>
-
-            </div>
+            <div class="reviews"></div>
+        </div>
     </div>
 </template>
 
@@ -130,27 +138,30 @@ export default {
             value2: 0,
             value3: 0,
             speed: 200,
-            targets: [
-                150000,
-                5500,
-                2000
-            ]
-        }
+            targets: [150000, 5500, 2000]
+        };
     },
 
     created() {
         let intval = setInterval(() => {
-                let inc1 = this.targets[0] / this.speed;
-                let inc2 = this.targets[1] / this.speed;
-                let inc3 = this.targets[2] / this.speed;
-            if (this.value1 < this.targets[0] || this.value2 < this.targets[1] || this.value3 < this.targets[2]) {
-                this.value1 += inc1;
-                this.value2 += inc2;
-                this.value3 += inc3;
-            } else {
-                clearInterval(intval);
+            const counters_container = document.getElementById("counters-container");
+            let inc1 = this.targets[0] / this.speed;
+            let inc2 = this.targets[1] / this.speed;
+            let inc3 = this.targets[2] / this.speed;
+            if (counters_container.classList.contains("enter")) {
+                if (
+                    this.value1 < this.targets[0] ||
+                    this.value2 < this.targets[1] ||
+                    this.value3 < this.targets[2]
+                ) {
+                    this.value1 += inc1;
+                    this.value2 += inc2;
+                    this.value3 += inc3;
+                } else {
+                    clearInterval(intval);
+                }
             }
-        }, 1);
+        }, 10);
     },
 
     computed: {
@@ -164,7 +175,6 @@ export default {
             return this.value3.toFixed();
         }
     }
-    
 };
 </script>
 
@@ -297,7 +307,7 @@ article {
 .counters .container {
     display: grid;
     grid-gap: 300px;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     text-align: center;
     color: whitesmoke;
 }
@@ -329,6 +339,17 @@ article {
 .award {
     height: 150px;
     width: 150px;
+}
+
+.before-enter {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 2s ease-out;
+}
+
+.enter {
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 @media (max-width: 1350px) {
