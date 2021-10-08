@@ -92,23 +92,23 @@
             </b-container>
         </div>
 
-        <div class="feedbacks">
-            <div class="cover-sheet">
+        <div class="img-box"></div>
+            <div class="bottom-box">
                 <section class="counters">
                     <div class="container">
                         <div>
                             <font-awesome-icon class="icon" :icon="['fas', 'users']" />
-                            <div class="counter">{{val1}}</div>
+                            <div class="counter">{{ val1 }}</div>
                             <h3>Customers</h3>
                         </div>
                         <div>
                             <font-awesome-icon class="icon" :icon="['fas', 'plane']" />
-                            <div class="counter">{{val2}}</div>
+                            <div class="counter">{{ val2 }}</div>
                             <h3>Flights</h3>
                         </div>
                         <div>
                             <font-awesome-icon class="icon" :icon="['fas', 'map-marked-alt']" />
-                            <div id="co" class="counter">{{val3}}</div>
+                            <div class="counter">{{ val3 }}</div>
                             <h3>Route</h3>
                         </div>
                     </div>
@@ -117,7 +117,6 @@
                 <div class="reviews"></div>
 
             </div>
-        </div>
     </div>
 </template>
 
@@ -271,26 +270,28 @@ article {
     margin-right: 50px;
 }
 
-.feedbacks {
+.img-box {
     background: url("../../img/airport-bg.jpg");
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
 }
 
-.cover-sheet {
+.bottom-box {
     width: 100%;
     height: 100vh;
-    background: rgba(51, 100, 179, 0.7);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background-color: rgb(51, 100, 179);
+    padding-top: 110px;
 }
 
 .counters .container h3 {
     color: whitesmoke;
+    font-size: 1.2rem;
 }
 
 .counters .container {
@@ -302,7 +303,7 @@ article {
 }
 
 .counter {
-    padding: 40px 20px;
+    padding: 10px 20px;
 }
 
 .icon {
