@@ -98,17 +98,17 @@
                     <div class="container">
                         <div>
                             <font-awesome-icon class="icon" :icon="['fas', 'users']" />
-                            <div class="counter" data-target="150000">0</div>
+                            <div class="counter">{{val1}}</div>
                             <h3>Customers</h3>
                         </div>
                         <div>
                             <font-awesome-icon class="icon" :icon="['fas', 'plane']" />
-                            <div class="counter" data-target="5500">0</div>
+                            <div class="counter">{{val2}}</div>
                             <h3>Flights</h3>
                         </div>
                         <div>
                             <font-awesome-icon class="icon" :icon="['fas', 'map-marked-alt']" />
-                            <div class="counter" data-target="2000">0</div>
+                            <div id="co" class="counter">{{val3}}</div>
                             <h3>Route</h3>
                         </div>
                     </div>
@@ -123,7 +123,49 @@
 
 <script>
 export default {
-    name: "AboutContent"
+    name: "AboutContent",
+
+    data() {
+        return {
+            value1: 0,
+            value2: 0,
+            value3: 0,
+            speed: 200,
+            targets: [
+                150000,
+                5500,
+                2000
+            ]
+        }
+    },
+
+    created() {
+        let intval = setInterval(() => {
+                let inc1 = this.targets[0] / this.speed;
+                let inc2 = this.targets[1] / this.speed;
+                let inc3 = this.targets[2] / this.speed;
+            if (this.value1 < this.targets[0] || this.value2 < this.targets[1] || this.value3 < this.targets[2]) {
+                this.value1 += inc1;
+                this.value2 += inc2;
+                this.value3 += inc3;
+            } else {
+                clearInterval(intval);
+            }
+        }, 1);
+    },
+
+    computed: {
+        val1() {
+            return this.value1.toFixed();
+        },
+        val2() {
+            return this.value2.toFixed();
+        },
+        val3() {
+            return this.value3.toFixed();
+        }
+    }
+    
 };
 </script>
 
@@ -242,8 +284,9 @@ article {
     height: 100vh;
     background: rgba(51, 100, 179, 0.7);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .counters .container h3 {
