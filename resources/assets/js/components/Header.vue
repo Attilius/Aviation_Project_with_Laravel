@@ -9,10 +9,10 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
                     <ul class="menu">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a v-currentpage href="/">Home</a></li>
+                        <li><a v-currentpage href="/about">About</a></li>
+                        <li><a v-currentpage href="/services">Services</a></li>
+                        <li><a v-currentpage href="/contact">Contact</a></li>
                         <li>
                             <select class="select-lang" name="lang">
                                 <option value="EN">EN</option>
@@ -78,12 +78,52 @@ export default {
 
 .menu {
     display: flex;
-    margin-top: 8px;
+    height: 60.55px;
 }
 
 li {
     list-style: none;
-    margin: 0 10px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    transition: 0.15s all ease-in 0s;
+    position: relative;
+    z-index: 1;
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    background-color: rebeccapurple;
+    transition: 0.15s all ease-in 0s;
+}
+
+li:hover::before {
+    top: 0;
+    bottom: unset;
+    height: 100%;
+    border-top: 2px solid whitesmoke;
+    height: 58.55px;
+}
+
+li:hover .select-lang:focus{
+    background-color: rebeccapurple;
+}
+
+li:hover .select-lang {
+    background-color: rebeccapurple;
+    transition: 0.1s all ease-out 0s;
+}
+
+.active {
+    color: lightskyblue;
 }
 
 .select-lang {
@@ -92,7 +132,6 @@ li {
     border: none;
     padding-bottom: 3px;
     box-shadow: none;
-    margin: 0 10px 0 10px;
 }
 
 .select-lang:focus {
@@ -103,16 +142,24 @@ li {
 a,
 .login {
     text-decoration: none;
-    padding: 8px;
     color: whitesmoke;
-    border-radius: 3px;
+    height: 100%;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a:hover,
 .select-lang:hover {
     color: whitesmoke;
-    box-shadow: 2px 2px 5px silver;
-    border: 1px solid #ced4da;
+}
+
+a:focus {
+    border: none !important;
+    box-shadow: none !important;
 }
 
 @media (max-width: 974px) {
