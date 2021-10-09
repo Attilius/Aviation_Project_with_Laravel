@@ -27,8 +27,10 @@ import About from "../js/components/About.vue";
 import Services from "../js/components/Services.vue";
 import Contact from "../js/components/Contact.vue";
 import ScrollAnimation from './directives/scrollAnimation';
+import CurrentPage from './directives/currentPage'
 
 Vue.directive('scrollanimation', ScrollAnimation);
+Vue.directive('currentpage', CurrentPage);
 
 library.add(faPlaneDeparture, faPlaneArrival, faCopyright, faPlane, faMapMarkedAlt, faUsers);
 
