@@ -95,21 +95,26 @@
         <div class="img-box"></div>
         <div class="bottom-box">
             <section class="counters">
-                <div v-scrollanimation id="counters-container" class="container">
+                <h2>More than...</h2>
+                <div
+                    v-scrollanimation
+                    id="counters-container"
+                    class="container"
+                >
                     <div>
                         <font-awesome-icon
                             class="icon"
                             :icon="['fas', 'users']"
                         />
-                        <div class="counter">{{ val1 }}</div>
-                        <h3>Customers</h3>
+                        <div class="counter">{{ values1 }}</div>
+                        <h3>Satisfied customers</h3>
                     </div>
                     <div>
                         <font-awesome-icon
                             class="icon"
                             :icon="['fas', 'plane']"
                         />
-                        <div class="counter">{{ val2 }}</div>
+                        <div class="counter">{{ values2 }}</div>
                         <h3>Flights</h3>
                     </div>
                     <div>
@@ -117,51 +122,65 @@
                             class="icon"
                             :icon="['fas', 'map-marked-alt']"
                         />
-                        <div class="counter">{{ val3 }}</div>
+                        <div class="counter">{{ values3 }}</div>
                         <h3>Routes</h3>
+                    </div>
+                    <div>
+                        <font-awesome-icon
+                            class="icon"
+                            :icon="['fas', 'handshake']"
+                        />
+                        <div class="counter">{{ values4 }}</div>
+                        <h3>Partners</h3>
                     </div>
                 </div>
             </section>
 
-            <div class="reviews">
-                <div class="feedback"></div>
-                <div class="feedback"></div>
-                <div class="feedback"></div>
-                <div class="feedback"></div>
-            </div>
+            <FeedbacksCarousel v-scrollanimation />
         </div>
     </div>
 </template>
 
 <script>
+import FeedbacksCarousel from "./FeedbacksCarousel.vue";
 export default {
     name: "AboutContent",
+
+    components: {
+        FeedbacksCarousel
+    },
 
     data() {
         return {
             value1: 0,
             value2: 0,
             value3: 0,
+            value4: 0,
             speed: 200,
-            targets: [150000, 5500, 2000]
+            targets: [150000, 5500, 2000, 600],
         };
     },
 
     created() {
         let intval = setInterval(() => {
-            const counters_container = document.getElementById("counters-container");
+            const counters_container = document.getElementById(
+                "counters-container"
+            );
             let inc1 = this.targets[0] / this.speed;
             let inc2 = this.targets[1] / this.speed;
             let inc3 = this.targets[2] / this.speed;
+            let inc4 = this.targets[3] / this.speed;
             if (counters_container.classList.contains("enter")) {
                 if (
                     this.value1 < this.targets[0] ||
                     this.value2 < this.targets[1] ||
-                    this.value3 < this.targets[2]
+                    this.value3 < this.targets[2] ||
+                    this.value4 < this.targets[3]
                 ) {
                     this.value1 += inc1;
                     this.value2 += inc2;
                     this.value3 += inc3;
+                    this.value4 += inc4;
                 } else {
                     clearInterval(intval);
                 }
@@ -170,14 +189,17 @@ export default {
     },
 
     computed: {
-        val1() {
+        values1() {
             return this.value1.toFixed();
         },
-        val2() {
+        values2() {
             return this.value2.toFixed();
         },
-        val3() {
+        values3() {
             return this.value3.toFixed();
+        },
+        values4() {
+            return this.value4.toFixed();
         }
     }
 };
@@ -238,6 +260,7 @@ h3 {
     background-color: rgb(51, 100, 179);
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid rgb(51, 100, 179);
 }
 
 .main-content {
@@ -299,9 +322,8 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
     background-color: rgb(51, 100, 179);
-    padding-top: 110px;
 }
 
 .counters .container h3 {
@@ -309,10 +331,18 @@ article {
     font-size: 1.2rem;
 }
 
+.counters h2 {
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 70px;
+    text-shadow: 2px 2px 5px silver;
+    padding-bottom: 50px;
+}
+
 .counters .container {
     display: grid;
-    grid-gap: 300px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
     text-align: center;
     color: whitesmoke;
 }
@@ -355,21 +385,6 @@ article {
 .enter {
     opacity: 1;
     transform: translateY(0px);
-}
-
-.reviews {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 25%;
-    margin-top: 150px;
-}
-
-.feedback {
-    background-color: whitesmoke;
-    height: 100%;
-    width: 20%;
-    margin: 0 70px;
 }
 
 @media (max-width: 1350px) {
