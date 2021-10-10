@@ -94,49 +94,51 @@
 
         <div class="img-box"></div>
         <div class="bottom-box">
-            <section class="counters">
-                <h2>More than...</h2>
-                <div
-                    v-scrollanimation
-                    id="counters-container"
-                    class="container"
-                >
-                    <div>
-                        <font-awesome-icon
-                            class="icon"
-                            :icon="['fas', 'users']"
-                        />
-                        <div class="counter">{{ values1 }}</div>
-                        <h3>Satisfied customers</h3>
+            <div class="skin">
+                <section class="counters">
+                    <h2>More than...</h2>
+                    <div
+                        v-scrollanimation
+                        id="counters-container"
+                        class="container"
+                    >
+                        <div>
+                            <font-awesome-icon
+                                class="icon"
+                                :icon="['fas', 'users']"
+                            />
+                            <div class="counter">{{ values1 }}+</div>
+                            <h3>Satisfied customers</h3>
+                        </div>
+                        <div>
+                            <font-awesome-icon
+                                class="icon"
+                                :icon="['fas', 'plane']"
+                            />
+                            <div class="counter">{{ values2 }}+</div>
+                            <h3>Flights</h3>
+                        </div>
+                        <div>
+                            <font-awesome-icon
+                                class="icon"
+                                :icon="['fas', 'map-marked-alt']"
+                            />
+                            <div class="counter">{{ values3 }}+</div>
+                            <h3>Routes</h3>
+                        </div>
+                        <div>
+                            <font-awesome-icon
+                                class="icon"
+                                :icon="['fas', 'handshake']"
+                            />
+                            <div class="counter">{{ values4 }}+</div>
+                            <h3>Partners</h3>
+                        </div>
                     </div>
-                    <div>
-                        <font-awesome-icon
-                            class="icon"
-                            :icon="['fas', 'plane']"
-                        />
-                        <div class="counter">{{ values2 }}</div>
-                        <h3>Flights</h3>
-                    </div>
-                    <div>
-                        <font-awesome-icon
-                            class="icon"
-                            :icon="['fas', 'map-marked-alt']"
-                        />
-                        <div class="counter">{{ values3 }}</div>
-                        <h3>Routes</h3>
-                    </div>
-                    <div>
-                        <font-awesome-icon
-                            class="icon"
-                            :icon="['fas', 'handshake']"
-                        />
-                        <div class="counter">{{ values4 }}</div>
-                        <h3>Partners</h3>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <FeedbacksCarousel v-scrollanimation />
+                <FeedbacksCarousel v-scrollanimation />
+            </div>
         </div>
     </div>
 </template>
@@ -157,7 +159,7 @@ export default {
             value3: 0,
             value4: 0,
             speed: 200,
-            targets: [150000, 5500, 2000, 600],
+            targets: [150000, 5500, 2000, 600]
         };
     },
 
@@ -309,21 +311,30 @@ article {
 }
 
 .img-box {
-    background: url("../../img/airport-bg.jpg");
+    background: url("../../img/plane-front.jpg");
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
 }
 
 .bottom-box {
+    width: 100%;
+    height: 100vh;
+    background: url("../../img/sky.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.skin {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(51, 100, 179);
+    background: rgba(0, 0, 0, .2);
 }
 
 .counters .container h3 {
@@ -347,8 +358,15 @@ article {
     color: whitesmoke;
 }
 
+.counters .container div {
+    background: rgba(51, 100, 179, .7);
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .counter {
-    padding: 10px 20px;
+    margin: 10px 20px;
+    background: transparent !important;
 }
 
 .icon {
