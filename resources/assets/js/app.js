@@ -18,7 +18,11 @@ import {
     faPlaneArrival,
     faPlane,
     faMapMarkedAlt,
-    faUsers
+    faUsers,
+    faStar,
+    faQuoteLeft,
+    faQuoteRight,
+    faHandshake
 } from "@fortawesome/free-solid-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -26,13 +30,24 @@ import Home from "../js/components/Home.vue";
 import About from "../js/components/About.vue";
 import Services from "../js/components/Services.vue";
 import Contact from "../js/components/Contact.vue";
-import ScrollAnimation from './directives/scrollAnimation';
-import CurrentPage from './directives/currentPage'
+import ScrollAnimation from "./directives/scrollAnimation";
+import CurrentPage from "./directives/currentPage";
 
-Vue.directive('scrollanimation', ScrollAnimation);
-Vue.directive('currentpage', CurrentPage);
+Vue.directive("scrollanimation", ScrollAnimation);
+Vue.directive("currentpage", CurrentPage);
 
-library.add(faPlaneDeparture, faPlaneArrival, faCopyright, faPlane, faMapMarkedAlt, faUsers);
+library.add(
+    faPlaneDeparture,
+    faPlaneArrival,
+    faCopyright,
+    faPlane,
+    faMapMarkedAlt,
+    faUsers,
+    faStar,
+    faQuoteLeft,
+    faQuoteRight,
+    faHandshake
+);
 
 Vue.config.productionTip = false;
 
