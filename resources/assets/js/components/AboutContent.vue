@@ -469,6 +469,33 @@ article {
     }
 }
 
+@media (max-width: 1000px) {
+    .counters .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    .counter {
+        font-size: 1.5rem;
+    }
+
+    .counters .container h3 {
+        font-size: 1rem;
+    }
+
+    .icon {
+        font-size: 2rem;
+    }
+
+    .counters h2 {
+        padding-bottom: 50px;
+    }
+
+    .bottom-box, .skin {
+        height: 110vh;
+    }
+}
+
 @media (max-width: 900px) {
     h1 {
         font-size: 2.5rem;
@@ -518,6 +545,22 @@ article {
 
     .counters .container {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .counter {
+        font-size: 1rem;
+    }
+
+    .counters .container h3 {
+        font-size: 0.7rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    .bottom-box, .skin {
+        height: 150vh;
     }
 }
 
