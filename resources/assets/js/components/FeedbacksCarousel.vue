@@ -294,4 +294,58 @@ h4 {
     font-size: 0.5rem;
     color: whitesmoke;
 }
+
+@media (max-width: 1000px) {
+    .slide {
+        width: 450px;
+        height: 220px;
+    }
+
+    .slide p {
+        font-size: 13px;
+    }
+
+    .customer {
+        height: 60px;
+        width: 60px;
+    }
+
+    h4 {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    .icon {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .slide {
+        width: 350px;
+        height: 180px;
+    }
+
+    .slide p {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .person {
+        padding: 0;
+    }
+
+    .customer {
+        height: 40px;
+        width: 40px;
+    }
+
+    h4 {
+        font-size: 0.8rem;
+    }
+
+    .icon {
+        font-size: 0.6rem;
+    }
+}
 </style>
