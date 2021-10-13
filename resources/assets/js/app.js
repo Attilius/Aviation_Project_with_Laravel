@@ -22,9 +22,14 @@ import {
     faStar,
     faQuoteLeft,
     faQuoteRight,
-    faHandshake
+    faHandshake,
+    faPassport,
+    faSuitcaseRolling,
+    faMugHot,
+    faBan,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
+import { faAvianex } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Home from "../js/components/Home.vue";
 import About from "../js/components/About.vue";
@@ -46,7 +51,12 @@ library.add(
     faStar,
     faQuoteLeft,
     faQuoteRight,
-    faHandshake
+    faHandshake,
+    faPassport,
+    faSuitcaseRolling,
+    faMugHot,
+    faAvianex,
+    faBan
 );
 
 Vue.config.productionTip = false;
