@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header />
+        <Header class="header" />
         <ServicesContent />
         <Footer />
     </div>
@@ -21,3 +21,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .header {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+</style>
