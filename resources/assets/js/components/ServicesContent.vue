@@ -1,119 +1,176 @@
 <template>
     <div class="wrapper">
-        <div class="services-header">
-            <b-img
-                class="services"
-                :src="'images/services.jpg'"
-                fluid
-                alt="Services-image"
-            ></b-img>
-        </div>
-        <b-container class="services-content">
-            <div class="service">
+        <b-container>
+            <div class="services-header">
                 <b-img
-                    class="service-img"
-                    :src="'images/travel-insurance.jpg'"
+                    class="services"
+                    :src="'images/services.jpg'"
                     fluid
-                    alt="Services"
+                    alt="Services-image"
                 ></b-img>
-                <h4>Travel insurance</h4>
-                <p>
-                    The safety of our passengers is important to us. We give you
-                    the option to request the service before you travel, or even
-                    at the moment of boarding, so it's just a click away. We
-                    take care of the administrative paperwork for you <br>
-                    <a class="more" href="/services"
-                        >read more <span> <strong> > </strong></span></a
-                    >
-                </p>
             </div>
-            <div class="service">
-                <b-img
-                    class="service-img"
-                    :src="'images/luggage-insurance.jpg'"
-                    fluid
-                    alt="Services"
-                ></b-img>
-                <h4>Luggage insurance</h4>
-                <p>
-                    Carrying luggage is essential when travelling. We provide
-                    separate insurance for your luggage. We take care of your
-                    personal valuables. In the event of loss, we offer a full
-                    refund <br>
-                    <a class="more" href="/services"
-                        >read more <span> <strong> > </strong></span></a
-                    >
-                </p>
-            </div>
-            <div class="service">
-                <b-img
-                    class="service-img"
-                    :src="'images/premium-confort.png'"
-                    fluid
-                    alt="Services"
-                ></b-img>
-                <h4>Premium confort</h4>
-                <p>
-                    If you want extra comfort on a longer journey that crosses
-                    continents. Or you want to make your journey more
-                    comfortable after a tiring business meeting. We can do that
-                    for you too <br>
-                    <a class="more" href="/services"
-                        >read more <span> <strong> > </strong></span></a
-                    >
-                </p>
-            </div>
-            <div class="service">
-                <b-img
-                    class="service-img"
-                    :src="'images/private-jet.jpg'"
-                    fluid
-                    alt="Services"
-                ></b-img>
-                <h4>Private jet rent</h4>
-                <p>
-                    Do you have an urgent and unavoidable trip? Do you need to
-                    travel to a special place? Our company offers you the
-                    possibility to rent a private jet <br>
-                    <a class="more" href="/services"
-                        >read more <span> <strong> > </strong></span></a
-                    >
-                </p>
-            </div>
-            <div class="service">
-                <b-img
-                    class="service-img"
-                    :src="'images/plane-group.jpg'"
-                    fluid
-                    alt="Services"
-                ></b-img>
-                <h4>Group discount</h4>
-                <p>
-                    Share the experience with your friends. We offer a special
-                    discount for groups. Whether it's a team building training
-                    or a holiday with a group of friends <br>
-                    <a class="more" href="/services"
-                        >read more <span> <strong> > </strong></span></a
-                    >
-                </p>
-            </div>
-            <div class="service">
-                <b-img
-                    class="service-img"
-                    :src="'images/travel-cancellation.jpg'"
-                    fluid
-                    alt="Services"
-                ></b-img>
-                <h4>Booking cancellation</h4>
-                <p>
-                    Did something unexpected happen before departure? No
-                    problem. We understand it. In this case, you can cancel your
-                    booking at any time before departure and we will refund the
-                    full amount of your booking
-                    <a class="more" href="/services"
-                        >read more <span> <strong> > </strong></span></a
-                    >
-                </p>
+            <div class="services-content">
+                <div class="service">
+                    <div class="container-1">
+                        <b-img
+                            class="service-img"
+                            :src="'images/travel-insurance.jpg'"
+                            fluid
+                            alt="Services"
+                        ></b-img>
+                        <div class="overlay">
+                            <div class="text">
+                                <font-awesome-icon
+                                    class="icon"
+                                    :icon="['fas', 'passport']"
+                                />
+                                <h4 class="title">Travel insurance</h4>
+                            </div>
+                            <div class="hover-content">
+                                <p>
+                                    The safety of our passengers is important to
+                                    us.
+                                </p>
+                                <a class="more" href="/services">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="container-1">
+                        <b-img
+                            class="service-img"
+                            :src="'images/luggage-insurance.jpg'"
+                            fluid
+                            alt="Services"
+                        ></b-img>
+                        <div class="overlay">
+                            <div class="text">
+                                <font-awesome-icon
+                                    class="icon"
+                                    :icon="['fas', 'suitcase-rolling']"
+                                />
+                                <h4 class="title">Luggage insurance</h4>
+                            </div>
+                            <div class="hover-content">
+                                <p>
+                                    We provide separate insurance for your
+                                    luggage.
+                                </p>
+                                <a class="more" href="/services">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="container-1">
+                        <b-img
+                            class="service-img"
+                            :src="'images/premium-confort.png'"
+                            fluid
+                            alt="Services"
+                        ></b-img>
+                        <div class="overlay">
+                            <div class="text">
+                                <font-awesome-icon
+                                    class="icon"
+                                    :icon="['fas', 'mug-hot']"
+                                />
+                                <h4 class="title">Premium confort</h4>
+                            </div>
+                            <div class="hover-content">
+                                <p>
+                                    If you want extra comfort on a longer
+                                    journey that crosses continents.
+                                </p>
+                                <a class="more" href="/services">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="container-1">
+                        <b-img
+                            class="service-img"
+                            :src="'images/private-jet.jpg'"
+                            fluid
+                            alt="Services"
+                        ></b-img>
+                        <div class="overlay">
+                            <div class="text">
+                                <font-awesome-icon
+                                    class="icon"
+                                    :icon="['fab', 'avianex']"
+                                />
+                                <h4 class="title">Private jet rent</h4>
+                            </div>
+                            <div class="hover-content">
+                                <p>
+                                    Our company offers you the possibility to
+                                    rent a private jet.
+                                </p>
+                                <a class="more" href="/services">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="container-1">
+                        <b-img
+                            class="service-img"
+                            :src="'images/plane-group.jpg'"
+                            fluid
+                            alt="Services"
+                        ></b-img>
+                        <div class="overlay">
+                            <div class="text">
+                                <font-awesome-icon
+                                    class="icon"
+                                    :icon="['fas', 'users']"
+                                />
+                                <h4 class="title">Group discount</h4>
+                            </div>
+                            <div class="hover-content">
+                                <p>
+                                    Share the experience with your friends. We
+                                    offer a special discount for groups.
+                                </p>
+                                <a class="more" href="/services">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="container-1">
+                        <b-img
+                            class="service-img"
+                            :src="'images/travel-cancellation.jpg'"
+                            fluid
+                            alt="Services"
+                        ></b-img>
+                        <div class="overlay">
+                            <div class="text">
+                                <font-awesome-icon
+                                    class="icon"
+                                    :icon="['fas', 'ban']"
+                                />
+                                <h4 class="title">Booking cancellation</h4>
+                            </div>
+                            <div class="hover-content">
+                                <p>
+                                    In this case, you can cancel your booking at
+                                    any time before departure.
+                                </p>
+                                <a class="more" href="/services">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </b-container>
     </div>
@@ -128,6 +185,10 @@ export default {
 <style scoped>
 .wrapper {
     background: rgb(51, 100, 179);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .services-header {
@@ -138,7 +199,7 @@ export default {
 }
 
 .services-content {
-    height: 130vh;
+    height: 101vh;
     width: 100%;
     background: whitesmoke;
     display: grid;
@@ -149,7 +210,7 @@ export default {
 
 .service {
     width: 100%;
-    height: 450px;
+    height: 300px;
     place-self: center;
     display: flex;
     flex-direction: column;
@@ -157,62 +218,173 @@ export default {
     padding: 0 15px;
 }
 
-.service-img {
-    margin: 0 auto;
-    width: 100%;
-    height: 45%;
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px rgb(33, 33, 33);
-    cursor: pointer;
-}
-
-.service-img:hover {
-    box-shadow: none;
-}
-
-.service h4::before {
-    content: "";
-    position: absolute;
-    background-color: rebeccapurple;
-    width: 20%;
-    height: 7px;
-    top: 0px;
-    left: 0;
-}
-
-.service h4 {
-    padding: 15px 0 5px;
+.container-1 {
     position: relative;
-    margin-top: 20px;
-    color: rgb(9, 55, 115);
-    text-transform: capitalize;
-    text-shadow: 2px 2px 5px silver;
+    display: inline-block;
+    width: 100%;
+    height: 76%;
+    padding: 0;
 }
 
-.service p {
-    text-align: justify;
-    line-height: 1.6rem;
+.more {
+    display: none;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    transition: all 0.3s ease-out;
+    opacity: 1;
+    background: rgba(9, 55, 115, 0.8);
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.hover-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -50px;
+    left: 95px;
+    display: none;
+}
+
+p {
+    font-size: 16px;
+    color: white;
+    text-align: left;
+    width: 60%;
+    display: none;
+    padding-top: 10px;
+    font-weight: 300;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: rgb(9, 55, 115);
+}
+
+.icon {
+    font-size: 40px;
+    background: transparent;
+    color: lightskyblue;
+    border: none;
+    margin-top: 15px;
+}
+
+.title {
+    margin-top: 5px;
+    padding: 15px 0;
+    position: relative;
+    color: white;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: 0.3s all ease;
+    z-index: 1;
+    text-align: center;
+    display: block;
+    font-size: 1.2rem;
 }
 
 .more {
     color: rgb(51, 100, 179);
 }
 
-.more:hover {
-    color: rebeccapurple;
-    text-decoration: none;
+/* Travel insurance settings */
+
+.container-1:hover .overlay,
+.service:hover .overlay {
+    height: 100%;
+    opacity: 1;
 }
 
-.more:focus {
+.container-1:hover .text,
+.service:hover .text {
+    background: transparent;
+}
+
+.container-1:hover p,
+.service:hover p {
+    display: inline;
+}
+
+.container-1:hover .more,
+.service:hover .more {
+    color: lightskyblue;
+    transition: all 0.4s ease 0.2s;
+    display: block;
+}
+
+.container-1:hover .more:focus,
+.service:hover .more:focus {
     border: none !important;
     box-shadow: none !important;
 }
 
-.more span {
-    color: rebeccapurple;
-    font-size: 18px;
+.container-1 .hover-content,
+.service:hover .hover-content {
+    display: flex;
+    flex-direction: column;
 }
 
+.service:hover .more:hover {
+    text-decoration: none;
+    color: white;
+    -webkit-transition: 0.4s ease-in-out 0s;
+    -moz-transition: 0.4s ease-in-out 0s;
+    -o-transition: 0.4s ease-in-out 0s;
+    transition: 0.4s ease-in-out 0s;
+}
 
+/* Scroll alimation class settings */
 
+.before-enter {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 2s ease-out;
+}
+
+.enter {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* Responsive settings */
+
+@media (max-width: 1200px) {
+    .services-content {
+        height: 150vh;
+        grid-template-columns: repeat(2, 3fr);
+    }
+
+    .service {
+        height: 300px;
+        width: 70%;
+    }
+}
+
+@media (max-width: 976px) {
+    .service {
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .services-content {
+        height: 270vh;
+        grid-template-columns: repeat(1, 6fr);
+    }
+}
 </style>
