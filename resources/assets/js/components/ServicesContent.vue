@@ -19,11 +19,13 @@
                             alt="Services"
                         ></b-img>
                         <div class="overlay">
-                            <div class="text">
-                                <font-awesome-icon
-                                    class="icon"
-                                    :icon="['fas', 'passport']"
-                                />
+                            <div class="services-title">
+                                <div class="icon-box">
+                                    <font-awesome-icon
+                                        class="icon"
+                                        :icon="['fas', 'passport']"
+                                    />
+                                </div>
                                 <h4 class="title">Travel insurance</h4>
                             </div>
                             <div class="hover-content">
@@ -46,11 +48,13 @@
                             alt="Services"
                         ></b-img>
                         <div class="overlay">
-                            <div class="text">
-                                <font-awesome-icon
-                                    class="icon"
-                                    :icon="['fas', 'suitcase-rolling']"
-                                />
+                            <div class="services-title">
+                                <div class="icon-box">
+                                    <font-awesome-icon
+                                        class="icon"
+                                        :icon="['fas', 'suitcase-rolling']"
+                                    />
+                                </div>
                                 <h4 class="title">Luggage insurance</h4>
                             </div>
                             <div class="hover-content">
@@ -73,11 +77,13 @@
                             alt="Services"
                         ></b-img>
                         <div class="overlay">
-                            <div class="text">
-                                <font-awesome-icon
-                                    class="icon"
-                                    :icon="['fas', 'mug-hot']"
-                                />
+                            <div class="services-title">
+                                <div class="icon-box">
+                                    <font-awesome-icon
+                                        class="icon"
+                                        :icon="['fas', 'mug-hot']"
+                                    />
+                                </div>
                                 <h4 class="title">Premium confort</h4>
                             </div>
                             <div class="hover-content">
@@ -100,11 +106,13 @@
                             alt="Services"
                         ></b-img>
                         <div class="overlay">
-                            <div class="text">
-                                <font-awesome-icon
-                                    class="icon"
-                                    :icon="['fab', 'avianex']"
-                                />
+                            <div class="services-title">
+                                <div class="icon-box">
+                                    <font-awesome-icon
+                                        class="icon"
+                                        :icon="['fab', 'avianex']"
+                                    />
+                                </div>
                                 <h4 class="title">Private jet rent</h4>
                             </div>
                             <div class="hover-content">
@@ -127,11 +135,13 @@
                             alt="Services"
                         ></b-img>
                         <div class="overlay">
-                            <div class="text">
-                                <font-awesome-icon
-                                    class="icon"
-                                    :icon="['fas', 'users']"
-                                />
+                            <div class="services-title">
+                                <div class="icon-box">
+                                    <font-awesome-icon
+                                        class="icon"
+                                        :icon="['fas', 'users']"
+                                    />
+                                </div>
                                 <h4 class="title">Group discount</h4>
                             </div>
                             <div class="hover-content">
@@ -154,12 +164,16 @@
                             alt="Services"
                         ></b-img>
                         <div class="overlay">
-                            <div class="text">
-                                <font-awesome-icon
-                                    class="icon"
-                                    :icon="['fas', 'ban']"
-                                />
-                                <h4 class="title">Booking cancellation</h4>
+                            <div class="services-title">
+                                <div class="icon-box">
+                                    <font-awesome-icon
+                                        class="icon"
+                                        :icon="['fas', 'ban']"
+                                    />
+                                </div>
+                                <h4 class="title">
+                                    Booking cancellation
+                                </h4>
                             </div>
                             <div class="hover-content">
                                 <p>
@@ -172,6 +186,7 @@
                     </div>
                 </div>
             </div>
+            <div class="bottom-box"></div>
         </b-container>
     </div>
 </template>
@@ -184,7 +199,7 @@ export default {
 
 <style scoped>
 .wrapper {
-    background: rgb(51, 100, 179);
+    background: rgba(9, 55, 115, .8);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,7 +210,8 @@ export default {
     width: 100%;
     display: flex;
     justify-content: center;
-    background: rgb(51, 100, 179);
+    /*background: rgb(51, 100, 179);*/
+    background: whitesmoke;
 }
 
 .services-content {
@@ -268,12 +284,21 @@ p {
     font-weight: 300;
 }
 
-.text {
+.services-title {
     position: absolute;
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    background: rgb(9, 55, 115);
+    justify-content: flex-start;
+    background: rgba(9, 55, 115, .9);
+}
+
+.icon-box {
+    width: 66px;
+    height: 66px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 28px;
 }
 
 .icon {
@@ -281,7 +306,6 @@ p {
     background: transparent;
     color: lightskyblue;
     border: none;
-    margin-top: 15px;
 }
 
 .title {
@@ -298,6 +322,12 @@ p {
     font-size: 1.2rem;
 }
 
+.bottom-box {
+    height: 8vh;
+    width: 100%;
+    background: whitesmoke;
+}
+
 /* Services item hover settings */
 
 .service:hover .overlay {
@@ -305,7 +335,7 @@ p {
     opacity: 1;
 }
 
-.service:hover .text {
+.service:hover .services-title {
     background: transparent;
 }
 
@@ -319,6 +349,7 @@ p {
     transition: all 0.4s ease 0.2s;
     display: block;
     cursor: default;
+    font-weight: 600;
 }
 
 .service:hover .more:focus {
@@ -375,9 +406,81 @@ p {
 }
 
 @media (max-width: 750px) {
+    .wrapper {
+        background: whitesmoke;
+    }
     .services-content {
         height: 270vh;
         grid-template-columns: repeat(1, 6fr);
     }
+
+    .overlay {
+        height: 100%;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hover-content {
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        bottom: -100px;
+    }
+
+    .icon-box {
+        margin: 0;
+    }
+
+    .services-title {
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+    }
+
+    .title {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        display: inline;
+        cursor: default;
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 0.8rem;
+    }
+
+    .more {
+        color: lightskyblue !important;
+        display: block;
+        cursor: default;
+        font-weight: 600;
+        text-align: center;
+        padding-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    .services-content {
+        height: 250vh;
+    }
 }
+
+@media (max-width: 390px) {
+    .title {
+        font-size: 1rem;
+    }
+
+    p, .more {
+        font-size: 12px;
+    }
+}
+
 </style>
