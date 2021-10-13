@@ -31,7 +31,7 @@
                                     The safety of our passengers is important to
                                     us.
                                 </p>
-                                <a class="more" href="/services">read more</a>
+                                <a class="more" href="/services">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                                     We provide separate insurance for your
                                     luggage.
                                 </p>
-                                <a class="more" href="/services">read more</a>
+                                <a class="more" href="/services">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                                     If you want extra comfort on a longer
                                     journey that crosses continents.
                                 </p>
-                                <a class="more" href="/services">read more</a>
+                                <a class="more" href="/services">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                                     Our company offers you the possibility to
                                     rent a private jet.
                                 </p>
-                                <a class="more" href="/services">read more</a>
+                                <a class="more" href="/services">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                                     Share the experience with your friends. We
                                     offer a special discount for groups.
                                 </p>
-                                <a class="more" href="/services">read more</a>
+                                <a class="more" href="/services">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                                     In this case, you can cancel your booking at
                                     any time before departure.
                                 </p>
-                                <a class="more" href="/services">read more</a>
+                                <a class="more" href="/services">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -199,7 +199,7 @@ export default {
 }
 
 .services-content {
-    height: 101vh;
+    height: 100vh;
     width: 100%;
     background: whitesmoke;
     display: grid;
@@ -210,19 +210,19 @@ export default {
 
 .service {
     width: 100%;
-    height: 300px;
+    height: 310px;
     place-self: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0 15px;
+    padding: 0;
 }
 
 .container-1 {
     position: relative;
     display: inline-block;
     width: 100%;
-    height: 76%;
+    height: 77%;
     padding: 0;
 }
 
@@ -260,7 +260,7 @@ export default {
 
 p {
     font-size: 16px;
-    color: white;
+    color: whitesmoke;
     text-align: left;
     width: 60%;
     display: none;
@@ -298,42 +298,34 @@ p {
     font-size: 1.2rem;
 }
 
-.more {
-    color: rgb(51, 100, 179);
-}
+/* Services item hover settings */
 
-/* Travel insurance settings */
-
-.container-1:hover .overlay,
 .service:hover .overlay {
     height: 100%;
     opacity: 1;
 }
 
-.container-1:hover .text,
 .service:hover .text {
     background: transparent;
 }
 
-.container-1:hover p,
 .service:hover p {
     display: inline;
+    cursor: default;
 }
 
-.container-1:hover .more,
 .service:hover .more {
-    color: lightskyblue;
+    color: whitesmoke;
     transition: all 0.4s ease 0.2s;
     display: block;
+    cursor: default;
 }
 
-.container-1:hover .more:focus,
 .service:hover .more:focus {
     border: none !important;
     box-shadow: none !important;
 }
 
-.container-1 .hover-content,
 .service:hover .hover-content {
     display: flex;
     flex-direction: column;
@@ -341,14 +333,15 @@ p {
 
 .service:hover .more:hover {
     text-decoration: none;
-    color: white;
+    color: lightskyblue;
+    cursor: pointer;
     -webkit-transition: 0.4s ease-in-out 0s;
     -moz-transition: 0.4s ease-in-out 0s;
     -o-transition: 0.4s ease-in-out 0s;
     transition: 0.4s ease-in-out 0s;
 }
 
-/* Scroll alimation class settings */
+/* Scroll alimation classes settings */
 
 .before-enter {
     opacity: 0;
