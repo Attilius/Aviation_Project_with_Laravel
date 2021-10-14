@@ -1,5 +1,6 @@
 <template>
     <div class="wrapper">
+        <div class="skin">
         <b-container>
             <div class="services-header">
                 <b-img
@@ -186,8 +187,14 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-box"></div>
+            <div class="bottom-box">
+                <div class="individual">
+                    <h4>Do you have a personalised need?</h4>
+                    <a href="/contact">Get a quote <span> > </span></a>
+                </div>
+            </div>
         </b-container>
+        </div>
     </div>
 </template>
 
@@ -199,11 +206,19 @@ export default {
 
 <style scoped>
 .wrapper {
-    background: rgba(9, 55, 115, .8);
+    /*background: rgba(9, 55, 115, .8);*/
+    background: url("../../img/airport-bg.jpg");
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.skin {
+    height: 100%;
+    width: 100%;
+    background: rgba(9, 55, 115, 0.8);
 }
 
 .services-header {
@@ -323,9 +338,55 @@ p {
 }
 
 .bottom-box {
-    height: 8vh;
+    height: 20vh;
     width: 100%;
     background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.individual {
+    width: 100%;
+    height: 80px;
+    background: lightskyblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.individual h4 {
+    color: white;
+    padding-top: 5px;
+}
+
+.individual a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    background: rebeccapurple;
+    padding: 8px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    width: 170px;
+    text-align: center;
+}
+
+.individual a span {
+    color: lightskyblue;
+    padding-left: 5px;
+}
+
+.individual a:hover {
+    border: 3px solid white;
+    color: rebeccapurple;
+    background: transparent;
+    font-weight: 600;
+}
+
+.individual a:hover span {
+    color: rebeccapurple;
 }
 
 /* Services item hover settings */
@@ -470,6 +531,23 @@ p {
 
     .services-content {
         height: 250vh;
+        margin-bottom: 60px;
+    }
+
+    .individual {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 120px;
+    }
+
+    .individual h4 {
+        font-size: 1.2rem;
+    }
+
+    .individual a {
+        margin-bottom: 20px;
     }
 }
 
