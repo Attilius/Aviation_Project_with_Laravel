@@ -85,7 +85,7 @@
                                         :icon="['fas', 'mug-hot']"
                                     />
                                 </div>
-                                <h4 class="title">Premium confort</h4>
+                                <h4 class="title">Premium comfort</h4>
                             </div>
                             <div class="hover-content">
                                 <p>
