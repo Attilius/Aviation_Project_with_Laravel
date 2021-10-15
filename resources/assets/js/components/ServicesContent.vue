@@ -92,7 +92,7 @@
                                     If you want extra comfort on a longer
                                     journey that crosses continents.
                                 </p>
-                                <a class="more" href="/services">read more ></a>
+                                <a class="more" href="/services/premium-comfort">read more ></a>
                             </div>
                         </div>
                     </div>
