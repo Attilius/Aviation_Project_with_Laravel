@@ -34,9 +34,11 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Home from "../js/components/Home.vue";
 import About from "../js/components/About.vue";
 import Services from "../js/components/Services.vue";
+import Premium_comfort from "../js/components/Premium_comfort.vue";
 import Contact from "../js/components/Contact.vue";
 import ScrollAnimation from "./directives/scrollAnimation";
 import CurrentPage from "./directives/currentPage";
+
 
 Vue.directive("scrollanimation", ScrollAnimation);
 Vue.directive("currentpage", CurrentPage);
@@ -81,6 +83,7 @@ const app = new Vue({
         Home,
         About,
         Services,
+        Premium_comfort,
         Contact
     }
 });
