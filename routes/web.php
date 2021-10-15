@@ -23,6 +23,10 @@ Route::get('/services', function () {
     return view('services');
 });
 
+Route::get('/services/premium-comfort', function () {
+    return view('premium-comfort');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
