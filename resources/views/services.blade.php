@@ -1,4 +1,4 @@
-@extends('layouts.services')
+@extends('layouts.layout')
 
 @section('style')
     
