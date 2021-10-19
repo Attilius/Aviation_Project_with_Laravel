@@ -1,4 +1,4 @@
-@extends('layouts.premium-comfort')
+@extends('layouts.layout')
 
 @section('style')
     
