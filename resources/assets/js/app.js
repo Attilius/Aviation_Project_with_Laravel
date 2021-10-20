@@ -34,7 +34,12 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Home from "../js/components/Home.vue";
 import About from "../js/components/About.vue";
 import Services from "../js/components/Services.vue";
+import Travel_insurance from "../js/components/Travel_insurance.vue";
+import Luggage_insurance from "../js/components/Luggage_insurance.vue";
 import Premium_comfort from "../js/components/Premium_comfort.vue";
+import Private_jet_rent from "../js/components/Private_jet_rent.vue";
+import Group_discount from "../js/components/Group_discount.vue";
+import Booking_cancellation from "../js/components/Booking_cancellation.vue";
 import Contact from "../js/components/Contact.vue";
 import ScrollAnimation from "./directives/scrollAnimation";
 import CurrentPage from "./directives/currentPage";
@@ -83,7 +88,12 @@ const app = new Vue({
         Home,
         About,
         Services,
+        Travel_insurance,
+        Luggage_insurance,
         Premium_comfort,
+        Private_jet_rent,
+        Group_discount,
+        Booking_cancellation,
         Contact
     }
 });
