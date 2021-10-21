@@ -41,7 +41,8 @@ export default {
                 fourth: {
                     backgroundImage: `url(${require("../../img/comfort-4.jpg")})`
                 },
-            }
+            },
+            text: "If you want extra comfort on a longer journey that crosses continents. Or you want to make your journey more comfortable after a tiring business meeting. We can do that for you too."
         };
     }
 };
