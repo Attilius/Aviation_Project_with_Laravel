@@ -41,7 +41,8 @@ export default {
                 fourth: {
                     backgroundImage: `url(${require("../../img/private-4.jpg")})`
                 },
-            }
+            },
+            text: "Do you have an urgent and unavoidable trip? Do you need to travel to a special place? Our company offers you the possibility to rent a private jet."
         };
     }
 };
