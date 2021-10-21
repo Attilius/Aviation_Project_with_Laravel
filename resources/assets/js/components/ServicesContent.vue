@@ -34,7 +34,7 @@
                                     The safety of our passengers is important to
                                     us.
                                 </p>
-                                <a class="more" href="/services">read more ></a>
+                                <a class="more" href="/services/travel-insurance">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                     We provide separate insurance for your
                                     luggage.
                                 </p>
-                                <a class="more" href="/services">read more ></a>
+                                <a class="more" href="/services/luggage-insurance">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                                     Our company offers you the possibility to
                                     rent a private jet.
                                 </p>
-                                <a class="more" href="/services">read more ></a>
+                                <a class="more" href="/services/private-jet-rent">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                                     Share the experience with your friends. We
                                     offer a special discount for groups.
                                 </p>
-                                <a class="more" href="/services">read more ></a>
+                                <a class="more" href="/services/group-discount">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                                     In this case, you can cancel your booking at
                                     any time before departure.
                                 </p>
-                                <a class="more" href="/services">read more ></a>
+                                <a class="more" href="/services/booking-cancellation">read more ></a>
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,6 @@ export default {
 
 <style scoped>
 .wrapper {
-    /*background: rgba(9, 55, 115, .8);*/
     background: url("../../img/airport-bg.jpg");
     background-size: cover;
     display: flex;
@@ -225,7 +224,6 @@ export default {
     width: 100%;
     display: flex;
     justify-content: center;
-    /*background: rgb(51, 100, 179);*/
     background: whitesmoke;
 }
 
