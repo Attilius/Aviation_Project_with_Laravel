@@ -19,7 +19,7 @@
                         Make your trip an <b>experience</b>
                     </h2>
                     <h1 class="title-bottom">fly with us</h1>
-                    <b-form>
+                    <b-form @submit="onBooking">
                         <b-row class="row1">
                             <div class="input-column">
                                 <label for="from">From</label>
@@ -94,7 +94,7 @@
                             >
                         </b-row>
 
-                        <b-button id="submit-btn">BOOK NOW</b-button>
+                        <b-button type="submit" id="submit-btn">BOOK NOW</b-button>
                     </b-form>
                 </b-container>
             </b-col>
@@ -146,6 +146,11 @@ export default {
                 document.getElementById("back-way").style.display = "none";
                 document.getElementById("back-date").value = "yyyy-mm-dd";
             }
+        },
+
+        onBooking(event) {
+            event.preventDefault();
+            alert("Booking Successful!")
         }
     }
 };
