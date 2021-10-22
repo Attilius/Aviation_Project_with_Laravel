@@ -48,7 +48,8 @@ export default {
                 fourth: {
                     backgroundImage: `url(${require("../../img/cancelled-4.jpg")})`
                 },
-            }
+            },
+            text: "Did something unexpected happen before departure? No problem. We understand it. In this case, you can cancel your booking at any time before departure."
         };
     }
 };
