@@ -149,12 +149,12 @@ export default {
 .wrapper {
     background: url("../../img/airport-bg.jpg");
     background-size: cover;
-    height: 150vh;
+    height: 200vh;
     width: 100%;
 }
 
 .skin {
-    height: 150vh;
+    height: 200vh;
     width: 100%;
     background: rgba(9, 55, 115, 0.8);
     display: flex;
