@@ -289,15 +289,26 @@ option:hover {
 #submit-btn {
     background: RebeccaPurple;
     width: 230px;
+    height: 40px;
     box-shadow: 2px 2px 5px silver;
     border: 1px solid #ced4da;
     margin-left: 3px;
+    color: whitesmoke;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 #submit-btn:active {
-    box-shadow: none;
-    background-color: whitesmoke;
-    color: RebeccaPurple;
+    box-shadow: none !important;
+    background-color: rebeccapurple !important;
+    color: whitesmoke !important;
+}
+
+#submit-btn:hover {
+    color: rebeccapurple;
+    background: transparent;
+    border: 1px solid rebeccapurple;
+    transition: 0.4s ease-in-out 0s;
 }
 
 .input-column {
