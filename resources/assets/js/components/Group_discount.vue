@@ -48,7 +48,8 @@ export default {
                 fourth: {
                     backgroundImage: `url(${require("../../img/group-4.jpg")})`
                 },
-            }
+            },
+            text: "Share the experience with your friends. We offer a special discount for groups. Whether it's a team building training or a holiday with a group of friends."
         };
     }
 };
