@@ -4,6 +4,7 @@
         <div class="wrapper">
             <div class="skin">
                 <AnimatedHeader :titles="titles" :images="images" />
+                <ServicesMainContent :titles="titles" :text="text" />
             </div>
         </div>
         <Footer />
@@ -13,12 +14,14 @@
 <script>
 import Header from "./Header.vue";
 import AnimatedHeader from "./AnimatedHeader.vue";
+import ServicesMainContent from "./ServicesMainContent.vue";
 import Footer from "./Footer.vue";
 export default {
     name: "Premium_comfort",
     components: {
         Header,
         AnimatedHeader,
+        ServicesMainContent,
         Footer
     },
 
@@ -59,12 +62,12 @@ export default {
 .wrapper {
     background: url("../../img/airport-bg.jpg");
     background-size: cover;
-    height: 150vh;
+    height: 100vh;
     width: 100%;
 }
 
 .skin {
-    height: 150vh;
+    height: 100vh;
     width: 100%;
     background: rgba(9, 55, 115, 0.8);
     display: flex;
