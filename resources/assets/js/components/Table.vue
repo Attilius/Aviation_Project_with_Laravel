@@ -22,16 +22,16 @@
                     <b-td>
                         <b-form-checkbox
                             id="checkbox-1"
-                            v-model="checked_1"
+                            v-model="switching[0].checked_1"
                             name="check-button"
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(checked_1)"
+                            @change="onChange(switching[0].checked_1)"
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
-                        <template v-if="checked_1 == true">
+                        <template v-if="switching[0].checked_1 == true">
                             <b-form-input
                                 v-model.number="piece_1"
                                 id="first"
@@ -68,16 +68,16 @@
                     <b-td>
                         <b-form-checkbox
                             id="checkbox-2"
-                            v-model="checked_2"
+                            v-model="switching[1].checked_2"
                             name="check-button"
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(checked_2)"
+                            @change="onChange(switching[1].checked_2)"
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
-                        <template v-if="checked_2 == true">
+                        <template v-if="switching[1].checked_2 == true">
                             <b-form-input
                                 v-model.number="piece_2"
                                 id="second"
@@ -114,16 +114,16 @@
                     <b-td>
                         <b-form-checkbox
                             id="checkbox-3"
-                            v-model="checked_3"
+                            v-model="switching[2].checked_3"
                             name="check-button"
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(checked_3)"
+                            @change="onChange(switching[2].checked_3)"
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
-                        <template v-if="checked_3 == true">
+                        <template v-if="switching[2].checked_3 == true">
                             <b-form-input
                                 v-model.number="piece_3"
                                 id="third"
@@ -160,16 +160,16 @@
                     <b-td>
                         <b-form-checkbox
                             id="checkbox-4"
-                            v-model="checked_4"
+                            v-model="switching[3].checked_4"
                             name="check-button"
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(checked_4)"
+                            @change="onChange(switching[3].checked_4)"
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
-                        <template v-if="checked_4 == true">
+                        <template v-if="switching[3].checked_4 == true">
                             <b-form-input
                                 v-model.number="piece_4"
                                 id="fourth"
@@ -206,16 +206,16 @@
                     <b-td>
                         <b-form-checkbox
                             id="checkbox-5"
-                            v-model="checked_5"
+                            v-model="switching[4].checked_5"
                             name="check-button"
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(checked_5)"
+                            @change="onChange(switching[4].checked_5)"
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
-                        <template v-if="checked_5 == true">
+                        <template v-if="switching[4].checked_5 == true">
                             <b-form-input
                                 v-model.number="piece_5"
                                 id="fifth"
@@ -252,16 +252,16 @@
                     <b-td>
                         <b-form-checkbox
                             id="checkbox-6"
-                            v-model="checked_6"
+                            v-model="switching[5].checked_6"
                             name="check-button"
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(checked_6)"
+                            @change="onChange(switching[5].checked_6)"
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
-                        <template v-if="checked_6 == true">
+                        <template v-if="switching[5].checked_6 == true">
                             <b-form-input
                                 v-model.number="piece_6"
                                 id="sixth"
@@ -295,14 +295,13 @@
             <fieldset id="item-list">
                 <legend>Selected item(s)</legend>
                 <ul>
-                <li v-for="item in form" :key="item.size">
-                    {{ item.size }} {{ item.price }} ×
-                    {{ item.piece }} => <strong>{{ item.amount }} €</strong> 
-                </li>
-            </ul>
-            <h5 id="total">Total amount: {{ getTotalAmount() }} €</h5>
+                    <li v-for="item in form" :key="item.size">
+                        {{ item.size }} {{ item.price }} × {{ item.piece }} =>
+                        <strong>{{ item.amount }} €</strong>
+                    </li>
+                </ul>
+                <h5 id="total">Total amount: {{ getTotalAmount() }} €</h5>
             </fieldset>
-            
         </div>
 
         <b-form @submit="onSubmit">
@@ -333,12 +332,15 @@ export default {
             piece_4: "",
             piece_5: "",
             piece_6: "",
-            checked_1: false,
-            checked_2: false,
-            checked_3: false,
-            checked_4: false,
-            checked_5: false,
-            checked_6: false
+
+            switching: [
+                { checked_1: false },
+                { checked_2: false },
+                { checked_3: false },
+                { checked_4: false },
+                { checked_5: false },
+                { checked_6: false }
+            ]
         };
     },
 
@@ -351,8 +353,14 @@ export default {
             let totalAmount = 0;
             this.form.forEach(item => {
                 totalAmount += item.amount;
-            })
+            });
             return totalAmount;
+        },
+
+        deleteItem() {
+            if (this.form.length === 1) {
+                this.form.splice(0, 1);
+            }
         },
 
         resetPieces() {
@@ -364,12 +372,22 @@ export default {
             this.piece_6 = "";
         },
 
+        setOpenState() {
+            document.getElementById("open-message").style.display = "inline";
+            document.getElementById("total").style.display = "none";
+            document.getElementById("item-list").style.display = "none";
+        },
+
         // third step
         confirmPiece() {
             document.getElementById("open-message").style.display = "none";
             document.getElementById("total").style.display = "inline";
             document.getElementById("item-list").style.display = "block";
-            if (this.newPiece == "") alert("Missing data!");
+            if (this.newPiece == "") {
+                alert("Missing data!");
+                this.newPrice = 0;
+                this.setOpenState();
+            }
             if (this.counter < 1) {
                 this.addNewForm();
                 this.counter++;
@@ -460,6 +478,10 @@ export default {
             this.counter = 0;
             this.newPiece = "";
             this.resetPieces();
+            if (!event && this.form.length > 0) {
+                this.deleteItem();
+            }
+            if (this.form.length === 0) this.setOpenState();
         }
     }
 };
@@ -543,7 +565,9 @@ export default {
     display: none;
 }
 
-.input-enabled, #total, #item-list {
+.input-enabled,
+#total,
+#item-list {
     display: none;
 }
 
