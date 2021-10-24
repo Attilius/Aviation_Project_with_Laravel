@@ -450,6 +450,9 @@ export default {
 
         onSubmit(event) {
             event.preventDefault();
+            this.form.forEach(element => {
+                delete element.state;
+            })
             alert(JSON.stringify(this.form));
         },
         // second step
