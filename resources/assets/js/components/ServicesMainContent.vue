@@ -2,6 +2,12 @@
     <div class="text-content">
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
+
+        <b-form @submit="onSubmit">
+            <b-button id="submit-btn" type="submit" variant="primary"
+                >Submit</b-button
+            >
+        </b-form>
     </div>
 </template>
 
@@ -54,6 +60,32 @@ h2 {
 article {
     padding: 25px;
     margin: 5px;
+}
+
+#submit-btn {
+    background: RebeccaPurple;
+    width: 230px;
+    height: 40px;
+    box-shadow: 2px 2px 5px silver;
+    border: 1px solid #ced4da;
+    margin-left: 3px;
+    color: whitesmoke;
+    margin: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#submit-btn:active {
+    box-shadow: none !important;
+    background-color: rebeccapurple !important;
+    color: whitesmoke !important;
+}
+
+#submit-btn:hover {
+    color: rebeccapurple;
+    background: transparent;
+    border: 1px solid rebeccapurple;
+    transition: 0.4s ease-in-out 0s;
 }
 
 </style>
