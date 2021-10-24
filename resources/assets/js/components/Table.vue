@@ -292,6 +292,7 @@
 
         <div class="selected-item">
             <p id="open-message">You have not selected any item yet*</p>
+            <h5 id="success-message">Thank you for requesting our service!</h5>
             <fieldset id="item-list">
                 <legend>Selected item(s)</legend>
                 <ul>
@@ -333,6 +334,7 @@ export default {
             piece_4: "",
             piece_5: "",
             piece_6: "",
+
             checked_1: false,
             checked_2: false,
             checked_3: false,
@@ -398,6 +400,15 @@ export default {
             this.piece_6 = "";
         },
 
+        resetCheckSwitchStates() {
+            this.checked_1 = false;
+            this.checked_2 = false;
+            this.checked_3 = false;
+            this.checked_4 = false;
+            this.checked_5 = false;
+            this.checked_6 = false;
+        },
+
         setOpenState() {
             document.getElementById("open-message").style.display = "inline";
             document.getElementById("total").style.display = "none";
@@ -453,6 +464,11 @@ export default {
             this.form.forEach(element => {
                 delete element.state;
             })
+            this.resetCheckSwitchStates();
+            document.getElementById("open-message").style.display = "none";
+            document.getElementById("total").style.display = "none";
+            document.getElementById("item-list").style.display = "none";
+            document.getElementById("success-message").style.display = "inline";
             alert(JSON.stringify(this.form));
         },
         // second step
@@ -603,7 +619,8 @@ export default {
 
 .input-enabled,
 #total,
-#item-list {
+#item-list,
+#success-message {
     display: none;
 }
 
@@ -641,4 +658,11 @@ export default {
 #open-message {
     padding-top: 25px;
 }
+
+#success-message {
+    color: #292b2c;
+    padding: 10px 0;
+    margin: 10px auto;
+}
+
 </style>
