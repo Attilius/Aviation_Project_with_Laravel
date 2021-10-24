@@ -413,6 +413,7 @@ export default {
             document.getElementById("open-message").style.display = "inline";
             document.getElementById("total").style.display = "none";
             document.getElementById("item-list").style.display = "none";
+            document.getElementById("success-message").style.display = "none";
         },
 
         // third step
@@ -470,6 +471,7 @@ export default {
             document.getElementById("item-list").style.display = "none";
             document.getElementById("success-message").style.display = "inline";
             alert(JSON.stringify(this.form));
+            this.form = [];
         },
         // second step
         addNumber(item) {
