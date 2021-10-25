@@ -163,7 +163,7 @@ export default {
     justify-content: space-around;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 770px) {
     .animated-header {
         display: none;
     }
