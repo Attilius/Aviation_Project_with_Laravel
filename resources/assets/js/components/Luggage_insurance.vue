@@ -3,8 +3,9 @@
         <Header class="header" />
         <div class="wrapper">
             <div class="skin">
-                <AnimatedHeader :titles="titles" :images="images" />
+                <AnimatedHeader class="animated-header" :titles="titles" :images="images" />
                 <ServiceMainContent
+                class="main-content"
                     :titles="titles"
                     :text="text"
                     :important_text="important_text"
@@ -162,6 +163,15 @@ export default {
     justify-content: space-around;
 }
 
+@media (max-width: 750px) {
+    .animated-header {
+        display: none;
+    }
+
+    .wrapper, .skin {
+        height: 500vh;
+    }
+}
 
 
 </style>
