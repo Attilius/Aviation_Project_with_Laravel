@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-table-simple responsive striped hover :fields="fields" class="table">
+        <b-table-simple stacked="md" striped hover :fields="fields" class="table">
             <b-thead>
                 <b-tr>
                     <b-th
@@ -560,6 +560,10 @@ export default {
 </script>
 
 <style scoped>
+.table-stacked {
+    display: none !important;
+}
+
 .table,
 .selected-item {
     width: 95%;
@@ -684,4 +688,15 @@ export default {
     padding: 10px 0;
     margin: 10px auto;
 }
+
+@media (max-width: 930px) {
+    .table-responsive {
+        display: none !important;
+    }
+
+    .table-stacked {
+        display: block !important;
+    }
+}
+
 </style>
