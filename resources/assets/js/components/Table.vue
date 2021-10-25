@@ -363,31 +363,40 @@ export default {
             } else {
                 this.form.forEach(item => {
                     let index;
-                    if(item.size === "Small Cabin suitcase" && !this.checked_1) {
-                        index = this.form.indexOf(item)
+                    if (
+                        item.size === "Small Cabin suitcase" &&
+                        !this.checked_1
+                    ) {
+                        index = this.form.indexOf(item);
                         this.form.splice(index, 1);
                     }
-                    if(item.size === "Large Cabin Suitcase" && !this.checked_2) {
-                        index = this.form.indexOf(item)
+                    if (
+                        item.size === "Large Cabin Suitcase" &&
+                        !this.checked_2
+                    ) {
+                        index = this.form.indexOf(item);
                         this.form.splice(index, 1);
                     }
-                    if(item.size === "X-large Cabin Suitcase" && !this.checked_3) {
-                        index = this.form.indexOf(item)
+                    if (
+                        item.size === "X-large Cabin Suitcase" &&
+                        !this.checked_3
+                    ) {
+                        index = this.form.indexOf(item);
                         this.form.splice(index, 1);
                     }
-                    if(item.size === "Medium Suitcase" && !this.checked_4) {
-                        index = this.form.indexOf(item)
+                    if (item.size === "Medium Suitcase" && !this.checked_4) {
+                        index = this.form.indexOf(item);
                         this.form.splice(index, 1);
                     }
-                    if(item.size === "Large Suitcase" && !this.checked_5) {
-                        index = this.form.indexOf(item)
+                    if (item.size === "Large Suitcase" && !this.checked_5) {
+                        index = this.form.indexOf(item);
                         this.form.splice(index, 1);
                     }
-                    if(item.size === "X-Large Suitcase" && !this.checked_6) {
-                        index = this.form.indexOf(item)
+                    if (item.size === "X-Large Suitcase" && !this.checked_6) {
+                        index = this.form.indexOf(item);
                         this.form.splice(index, 1);
                     }
-                })
+                });
             }
         },
 
@@ -462,16 +471,25 @@ export default {
 
         onSubmit(event) {
             event.preventDefault();
-            this.form.forEach(element => {
-                delete element.state;
-            })
-            this.resetCheckSwitchStates();
-            document.getElementById("open-message").style.display = "none";
-            document.getElementById("total").style.display = "none";
-            document.getElementById("item-list").style.display = "none";
-            document.getElementById("success-message").style.display = "inline";
-            alert(JSON.stringify(this.form));
-            this.form = [];
+            if (this.form.length < 1) {
+                document.getElementById("open-message").style.display =
+                    "inline";
+                document.getElementById("success-message").style.display =
+                    "none";
+                alert("Empty form");
+            } else {
+                this.form.forEach(element => {
+                    delete element.state;
+                });
+                this.resetCheckSwitchStates();
+                document.getElementById("open-message").style.display = "none";
+                document.getElementById("total").style.display = "none";
+                document.getElementById("item-list").style.display = "none";
+                document.getElementById("success-message").style.display =
+                    "inline";
+                alert(JSON.stringify(this.form));
+                this.form = [];
+            }
         },
         // second step
         addNumber(item) {
@@ -481,32 +499,32 @@ export default {
                     case "first":
                         this.piece_1 = input[0].valueAsNumber;
                         this.setForm(this.piece_1, item);
-                        this.state = "checked_"+(i+1);
+                        this.state = "checked_" + (i + 1);
                         break;
                     case "second":
                         this.piece_2 = input[1].valueAsNumber;
                         this.setForm(this.piece_2, item);
-                        this.state = "checked_"+(i+1);
+                        this.state = "checked_" + (i + 1);
                         break;
                     case "third":
                         this.piece_3 = input[2].valueAsNumber;
                         this.setForm(this.piece_3, item);
-                        this.state = "checked_"+(i+1);
+                        this.state = "checked_" + (i + 1);
                         break;
                     case "fourth":
                         this.piece_4 = input[3].valueAsNumber;
                         this.setForm(this.piece_4, item);
-                        this.state = "checked_"+(i+1);
+                        this.state = "checked_" + (i + 1);
                         break;
                     case "fifth":
                         this.piece_5 = input[4].valueAsNumber;
                         this.setForm(this.piece_5, item);
-                        this.state = "checked_"+(i+1);
+                        this.state = "checked_" + (i + 1);
                         break;
                     case "sixth":
                         this.piece_6 = input[5].valueAsNumber;
                         this.setForm(this.piece_6, item);
-                        this.state = "checked_"+(i+1);
+                        this.state = "checked_" + (i + 1);
                         break;
                     default:
                         break;
@@ -666,5 +684,4 @@ export default {
     padding: 10px 0;
     margin: 10px auto;
 }
-
 </style>
