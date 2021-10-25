@@ -689,14 +689,4 @@ export default {
     margin: 10px auto;
 }
 
-@media (max-width: 930px) {
-    .table-responsive {
-        display: none !important;
-    }
-
-    .table-stacked {
-        display: block !important;
-    }
-}
-
 </style>
