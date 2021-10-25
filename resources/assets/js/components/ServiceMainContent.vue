@@ -61,22 +61,9 @@ article {
     margin: 5px;
 }
 
-.table-desktop {
-    width: 95%;
-    margin: 10px auto;
-}
-
-.table-mobile {
-    display: none !important;
-}
-
-@media (max-width: 675px) {
-    .table-desktop {
-        display: none !important;
-    }
-
-    .table-mobile {
-        display: block !important;
+@media (max-width: 750px){
+    .text-content {
+        height: 500vh;
     }
 }
 
