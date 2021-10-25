@@ -63,7 +63,8 @@ article {
 
 @media (max-width: 750px){
     .text-content {
-        height: 500vh;
+        height: 440vh;
+        top: -100px
     }
 }
 
