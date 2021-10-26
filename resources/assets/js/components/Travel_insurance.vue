@@ -45,7 +45,13 @@ export default {
                     backgroundImage: `url(${require("../../img/travel-4.jpg")})`
                 },
             },
-            text: "The safety of our passengers is important to us. We give you the option to request the service before you travel, or even at the moment of boarding, so it's just a click away."
+            text: "The safety of our passengers is important to us. We give you the option to request the service before you travel, or even at the moment of boarding, so it's just a click away.",
+
+            insured: [
+                child= "",
+                adult= "",
+                group= ""
+            ]
         };
     }
 };
