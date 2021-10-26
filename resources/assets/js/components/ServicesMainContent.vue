@@ -30,7 +30,7 @@ export default {
 .text-content {
     background: whitesmoke;
     width: 80%;
-    height: 275px;
+    height: 400px;
     margin: 0 auto;
     position: relative;
     top: 90px;
