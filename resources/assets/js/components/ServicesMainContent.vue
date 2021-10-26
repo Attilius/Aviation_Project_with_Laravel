@@ -2,7 +2,7 @@
     <div class="text-content">
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
-
+        <RadioForm />
         <b-form @submit="onSubmit">
             <b-button id="submit-btn" type="submit" variant="primary"
                 >Submit</b-button
@@ -12,9 +12,13 @@
 </template>
 
 <script>
+import RadioForm from "./Radio-form.vue";
 export default {
     name: "ServiceMainContent",
     props: ['titles', 'text'],
+    components: {
+        RadioForm
+    }
 };
 </script>
 
