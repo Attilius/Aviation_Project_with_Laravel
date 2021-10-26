@@ -34,7 +34,7 @@ export default {
 .text-content {
     background: whitesmoke;
     width: 80%;
-    height: 400px;
+    height: 500px;
     margin: 0 auto;
     position: relative;
     top: 90px;
