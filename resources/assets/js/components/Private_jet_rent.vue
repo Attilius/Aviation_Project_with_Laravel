@@ -48,7 +48,7 @@ export default {
             text: "Do you have an urgent and unavoidable trip? Do you need to travel to a special place? Our company offers you the possibility to rent a private jet.",
 
             planes: [
-                {type: "", staff: "", price: ""}
+                {type: "", staff: "", price: "", distance: ""}
             ]
 
         };
