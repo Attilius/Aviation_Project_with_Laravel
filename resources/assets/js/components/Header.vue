@@ -173,5 +173,13 @@ a:focus {
         text-align: center;
     }
 
+    li:hover::before {
+    top: 0;
+    bottom: unset;
+    height: 0;
+    border-top: none;
+    height: 0;
+}
+
 }
 </style>
