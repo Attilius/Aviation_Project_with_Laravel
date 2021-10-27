@@ -181,5 +181,9 @@ a:focus {
     height: 0;
 }
 
+li:hover .select-lang:focus{
+    background-color: transparent;
+}
+
 }
 </style>
