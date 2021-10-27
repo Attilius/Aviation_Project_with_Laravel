@@ -165,6 +165,7 @@ a:focus {
 @media (max-width: 974px) {
     .menu {
         flex-direction: column;
+        height: 300px;
     }
 
     li {
