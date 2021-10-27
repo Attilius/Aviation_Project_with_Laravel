@@ -182,6 +182,10 @@ a:focus {
 }
 
 li:hover .select-lang:focus{
+    background: rgb(9, 55, 115);
+}
+
+li:hover .select-lang {
     background-color: transparent;
 }
 
