@@ -189,5 +189,9 @@ li:hover .select-lang {
     background-color: transparent;
 }
 
+.navbar-light .navbar-toggler {
+    color: white !important;
+}
+
 }
 </style>
