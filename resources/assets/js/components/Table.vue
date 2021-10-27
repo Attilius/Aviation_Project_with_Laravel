@@ -32,7 +32,8 @@
                     </b-td>
                     <b-td class="add-piece">
                         <template v-if="checked_1 == true">
-                            <b-form-input
+                            <div class="input-cell">
+                                 <b-form-input
                                 v-model.number="piece_1"
                                 id="first"
                                 type="number"
@@ -45,6 +46,7 @@
                             <button @click="confirmPiece" class="btn">
                                 OK
                             </button>
+                            </div>
                         </template>
 
                         <template v-else>
@@ -78,7 +80,8 @@
                     </b-td>
                     <b-td class="add-piece">
                         <template v-if="checked_2 == true">
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 v-model.number="piece_2"
                                 id="second"
                                 type="number"
@@ -91,6 +94,7 @@
                             <button @click="confirmPiece" class="btn">
                                 OK
                             </button>
+                            </div>
                         </template>
 
                         <template v-else>
@@ -124,7 +128,8 @@
                     </b-td>
                     <b-td class="add-piece">
                         <template v-if="checked_3 == true">
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 v-model.number="piece_3"
                                 id="third"
                                 type="number"
@@ -137,6 +142,7 @@
                             <button @click="confirmPiece" class="btn">
                                 OK
                             </button>
+                            </div>
                         </template>
 
                         <template v-else>
@@ -170,7 +176,8 @@
                     </b-td>
                     <b-td class="add-piece">
                         <template v-if="checked_4 == true">
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 v-model.number="piece_4"
                                 id="fourth"
                                 type="number"
@@ -183,6 +190,7 @@
                             <button @click="confirmPiece" class="btn">
                                 OK
                             </button>
+                            </div>
                         </template>
 
                         <template v-else>
@@ -216,6 +224,7 @@
                     </b-td>
                     <b-td class="add-piece">
                         <template v-if="checked_5 == true">
+                            <div class="input-cell">
                             <b-form-input
                                 v-model.number="piece_5"
                                 id="fifth"
@@ -229,6 +238,7 @@
                             <button @click="confirmPiece" class="btn">
                                 OK
                             </button>
+                            </div>
                         </template>
 
                         <template v-else>
@@ -262,7 +272,8 @@
                     </b-td>
                     <b-td class="add-piece">
                         <template v-if="checked_6 == true">
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 v-model.number="piece_6"
                                 id="sixth"
                                 type="number"
@@ -275,6 +286,7 @@
                             <button @click="confirmPiece" class="btn">
                                 OK
                             </button>
+                            </div>
                         </template>
 
                         <template v-else>
@@ -658,6 +670,12 @@ export default {
 
 .add-piece {
     display: flex;
+}
+
+.input-cell, .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
