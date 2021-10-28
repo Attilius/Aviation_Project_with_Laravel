@@ -733,5 +733,9 @@ export default {
         color: #292b2c;
         font-weight: 700;
     }
+
+    .add-piece {
+        background: #292b2c;
+    }
 }
 </style>
