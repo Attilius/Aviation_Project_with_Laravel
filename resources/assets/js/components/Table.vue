@@ -1,6 +1,12 @@
 <template>
     <div>
-        <b-table-simple stacked="md" striped hover :fields="fields" class="table">
+        <b-table-simple
+            stacked="md"
+            striped
+            hover
+            :fields="fields"
+            class="table"
+        >
             <b-thead>
                 <b-tr>
                     <b-th
@@ -33,19 +39,19 @@
                     <b-td class="add-piece">
                         <template v-if="checked_1 == true">
                             <div class="input-cell">
-                                 <b-form-input
-                                v-model.number="piece_1"
-                                id="first"
-                                type="number"
-                                min="1"
-                                max="10"
-                                placeholder="Max 10"
-                                class="piece-input"
-                                @input="addNumber(items.first)"
-                            ></b-form-input>
-                            <button @click="confirmPiece" class="btn">
-                                OK
-                            </button>
+                                <b-form-input
+                                    v-model.number="piece_1"
+                                    id="first"
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                    placeholder="Max 10"
+                                    class="piece-input"
+                                    @input="addNumber(items.first)"
+                                ></b-form-input>
+                                <button @click="confirmPiece" class="btn">
+                                    OK
+                                </button>
                             </div>
                         </template>
 
@@ -82,18 +88,18 @@
                         <template v-if="checked_2 == true">
                             <div class="input-cell">
                                 <b-form-input
-                                v-model.number="piece_2"
-                                id="second"
-                                type="number"
-                                min="1"
-                                max="10"
-                                placeholder="Max 10"
-                                class="piece-input"
-                                @input="addNumber(items.second)"
-                            ></b-form-input>
-                            <button @click="confirmPiece" class="btn">
-                                OK
-                            </button>
+                                    v-model.number="piece_2"
+                                    id="second"
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                    placeholder="Max 10"
+                                    class="piece-input"
+                                    @input="addNumber(items.second)"
+                                ></b-form-input>
+                                <button @click="confirmPiece" class="btn">
+                                    OK
+                                </button>
                             </div>
                         </template>
 
@@ -130,18 +136,18 @@
                         <template v-if="checked_3 == true">
                             <div class="input-cell">
                                 <b-form-input
-                                v-model.number="piece_3"
-                                id="third"
-                                type="number"
-                                min="1"
-                                max="10"
-                                placeholder="Max 10"
-                                class="piece-input"
-                                @input="addNumber(items.third)"
-                            ></b-form-input>
-                            <button @click="confirmPiece" class="btn">
-                                OK
-                            </button>
+                                    v-model.number="piece_3"
+                                    id="third"
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                    placeholder="Max 10"
+                                    class="piece-input"
+                                    @input="addNumber(items.third)"
+                                ></b-form-input>
+                                <button @click="confirmPiece" class="btn">
+                                    OK
+                                </button>
                             </div>
                         </template>
 
@@ -178,18 +184,18 @@
                         <template v-if="checked_4 == true">
                             <div class="input-cell">
                                 <b-form-input
-                                v-model.number="piece_4"
-                                id="fourth"
-                                type="number"
-                                min="1"
-                                max="10"
-                                placeholder="Max 10"
-                                class="piece-input"
-                                @input="addNumber(items.fourth)"
-                            ></b-form-input>
-                            <button @click="confirmPiece" class="btn">
-                                OK
-                            </button>
+                                    v-model.number="piece_4"
+                                    id="fourth"
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                    placeholder="Max 10"
+                                    class="piece-input"
+                                    @input="addNumber(items.fourth)"
+                                ></b-form-input>
+                                <button @click="confirmPiece" class="btn">
+                                    OK
+                                </button>
                             </div>
                         </template>
 
@@ -225,19 +231,19 @@
                     <b-td class="add-piece">
                         <template v-if="checked_5 == true">
                             <div class="input-cell">
-                            <b-form-input
-                                v-model.number="piece_5"
-                                id="fifth"
-                                type="number"
-                                min="1"
-                                max="10"
-                                placeholder="Max 10"
-                                class="piece-input"
-                                @input="addNumber(items.fifth)"
-                            ></b-form-input>
-                            <button @click="confirmPiece" class="btn">
-                                OK
-                            </button>
+                                <b-form-input
+                                    v-model.number="piece_5"
+                                    id="fifth"
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                    placeholder="Max 10"
+                                    class="piece-input"
+                                    @input="addNumber(items.fifth)"
+                                ></b-form-input>
+                                <button @click="confirmPiece" class="btn">
+                                    OK
+                                </button>
                             </div>
                         </template>
 
@@ -274,18 +280,18 @@
                         <template v-if="checked_6 == true">
                             <div class="input-cell">
                                 <b-form-input
-                                v-model.number="piece_6"
-                                id="sixth"
-                                type="number"
-                                min="1"
-                                max="10"
-                                placeholder="Max 10"
-                                class="piece-input"
-                                @input="addNumber(items.sixth)"
-                            ></b-form-input>
-                            <button @click="confirmPiece" class="btn">
-                                OK
-                            </button>
+                                    v-model.number="piece_6"
+                                    id="sixth"
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                    placeholder="Max 10"
+                                    class="piece-input"
+                                    @input="addNumber(items.sixth)"
+                                ></b-form-input>
+                                <button @click="confirmPiece" class="btn">
+                                    OK
+                                </button>
                             </div>
                         </template>
 
@@ -672,10 +678,11 @@ export default {
     display: flex;
 }
 
-.input-cell, .cell {
+.input-cell {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .btn {
@@ -707,4 +714,18 @@ export default {
     margin: 10px auto;
 }
 
+@media (max-width: 768px) {
+    #first-row,
+    #second-row,
+    #third-row,
+    #fourth-row,
+    #fifth-row,
+    #sixth-row {
+        text-align: center;
+    }
+
+    .piece-input {
+        margin: 0 auto;
+    }
+}
 </style>
