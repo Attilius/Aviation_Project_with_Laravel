@@ -725,7 +725,8 @@ export default {
     }
 
     .piece-input {
-        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
     }
 
     .focus {
@@ -736,6 +737,11 @@ export default {
 
     .add-piece {
         background: #292b2c;
+    }
+
+    .input-cell {
+        display: flex;
+        justify-content: center;
     }
 }
 </style>
