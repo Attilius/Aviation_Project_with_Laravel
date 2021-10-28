@@ -727,5 +727,9 @@ export default {
     .piece-input {
         margin: 0 auto;
     }
+
+    .focus {
+        background: transparent;
+    }
 }
 </style>
