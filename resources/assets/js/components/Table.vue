@@ -731,6 +731,7 @@ export default {
     .focus {
         background: transparent;
         color: #292b2c;
+        font-weight: 700;
     }
 }
 </style>
