@@ -730,6 +730,7 @@ export default {
 
     .focus {
         background: transparent;
+        color: #292b2c;
     }
 }
 </style>
