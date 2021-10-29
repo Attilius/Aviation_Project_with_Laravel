@@ -755,5 +755,9 @@ export default {
         display: flex;
         justify-content: center;
     }
+
+    #submit-btn {
+        margin: 20px auto;
+    }
 }
 </style>
