@@ -21,7 +21,7 @@
 <script>
 import Header from "./Header.vue";
 import AnimatedHeader from "./AnimatedHeader.vue";
-import ServiceMainContent from "./ServiceMainContent.vue";
+import ServiceMainContent from "./LuggageInsuranceMainContent.vue";
 import Footer from "./Footer.vue";
 export default {
     name: "Luggage_insurance",
