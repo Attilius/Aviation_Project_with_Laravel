@@ -759,5 +759,9 @@ export default {
     #submit-btn {
         margin: 20px auto;
     }
+
+    #success-message {
+        font-size: 1rem;
+    }
 }
 </style>
