@@ -56,12 +56,14 @@
                         </template>
 
                         <template v-else>
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 type="number"
                                 placeholder="Max 10"
                                 class="piece-input"
                                 disabled
                             ></b-form-input>
+                            </div>
                         </template>
                     </b-td>
                 </b-tr>
@@ -104,12 +106,14 @@
                         </template>
 
                         <template v-else>
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 type="number"
                                 placeholder="Max 10"
                                 class="piece-input"
                                 disabled
                             ></b-form-input>
+                            </div>
                         </template>
                     </b-td>
                 </b-tr>
@@ -152,12 +156,14 @@
                         </template>
 
                         <template v-else>
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 type="number"
                                 placeholder="Max 10"
                                 class="piece-input"
                                 disabled
                             ></b-form-input>
+                            </div>
                         </template>
                     </b-td>
                 </b-tr>
@@ -200,12 +206,14 @@
                         </template>
 
                         <template v-else>
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 type="number"
                                 placeholder="Max 10"
                                 class="piece-input"
                                 disabled
                             ></b-form-input>
+                            </div>
                         </template>
                     </b-td>
                 </b-tr>
@@ -248,12 +256,14 @@
                         </template>
 
                         <template v-else>
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 type="number"
                                 placeholder="Max 10"
                                 class="piece-input"
                                 disabled
                             ></b-form-input>
+                            </div>
                         </template>
                     </b-td>
                 </b-tr>
@@ -296,12 +306,14 @@
                         </template>
 
                         <template v-else>
-                            <b-form-input
+                            <div class="input-cell">
+                                <b-form-input
                                 type="number"
                                 placeholder="Max 10"
                                 class="piece-input"
                                 disabled
                             ></b-form-input>
+                            </div>
                         </template>
                     </b-td>
                 </b-tr>
