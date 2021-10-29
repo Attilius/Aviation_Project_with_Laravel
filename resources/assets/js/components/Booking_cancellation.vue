@@ -14,7 +14,7 @@
 <script>
 import Header from "./Header.vue";
 import AnimatedHeader from "./AnimatedHeader.vue";
-import ServicesMainContent from "./ServicesMainContent.vue"
+import ServicesMainContent from "./CancelledContent.vue"
 import Footer from "./Footer.vue";
 export default {
     name: "Premium_comfort",
