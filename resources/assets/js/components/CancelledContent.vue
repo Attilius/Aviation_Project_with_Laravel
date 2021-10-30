@@ -2,7 +2,7 @@
     <div class="text-content">
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
-
+        <h5 class="logged-out-message">Currently don't logged in or don't have booking*</h5>
     </div>
 </template>
 
@@ -53,8 +53,14 @@ h2 {
 }
 
 article {
-    padding: 25px;
-    margin: 5px;
+    width: 95%;
+    padding: 25px 0;
+    margin: 5px auto;
+    border-bottom: 1px solid #292b2c;
+}
+
+.logged-out-message {
+    padding: 15px 30px;
 }
 
 </style>
