@@ -68,4 +68,12 @@ article {
     display: none;
 }
 
+@media(max-width: 768px) {
+    .text-content {
+        height: 400px;
+        position: relative;
+        top: -200px;
+    }
+}
+
 </style>
