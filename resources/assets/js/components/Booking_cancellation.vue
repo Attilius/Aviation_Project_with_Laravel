@@ -3,7 +3,7 @@
         <Header class="header" />
         <div class="wrapper">
             <div class="skin">
-                <AnimatedHeader :titles="titles" :images="images" />
+                <AnimatedHeader class="animated-header" :titles="titles" :images="images" />
                 <ServicesMainContent :titles="titles" :text="text" />
             </div>
         </div>
@@ -74,4 +74,11 @@ export default {
     flex-direction: column;
     justify-content: space-around;
 }
+
+@media(max-width: 768px) {
+    .animated-header {
+        display: none;
+    }
+}
+
 </style>
