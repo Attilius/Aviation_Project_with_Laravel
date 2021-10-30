@@ -2,7 +2,7 @@
     <div class="text-content">
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
-        <h5 class="logged-out-message">Currently don't logged in or don't have booking*</h5>
+        <h6 class="logged-out-message">Currently don't logged in or don't have booking*</h6>
     </div>
 </template>
 
