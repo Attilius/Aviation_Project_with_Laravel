@@ -3,6 +3,7 @@
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
         <h6 class="logged-out-message">Currently don't logged in or don't have booking*</h6>
+        <h6 class="logged-in-without-booking-message">You not have booking*</h6>
     </div>
 </template>
 
@@ -61,6 +62,10 @@ article {
 
 .logged-out-message {
     padding: 15px 30px;
+}
+
+.logged-in-without-booking-message {
+    display: none;
 }
 
 </style>
