@@ -70,9 +70,14 @@ article {
 
 @media(max-width: 768px) {
     .text-content {
-        height: 400px;
-        position: relative;
-        top: -200px;
+        height: 100%;
+        top: 0;
+        width: 100%;
+    }
+
+    article {
+        width: 85%;
+        margin: 0 30px;
     }
 }
 
