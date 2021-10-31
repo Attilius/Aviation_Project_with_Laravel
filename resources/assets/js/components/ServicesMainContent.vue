@@ -3,11 +3,6 @@
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
         <RadioForm />
-        <b-form @submit="onSubmit">
-            <b-button id="submit-btn" type="submit" variant="primary"
-                >Submit</b-button
-            >
-        </b-form>
     </div>
 </template>
 
@@ -18,12 +13,6 @@ export default {
     props: ['titles', 'text'],
     components: {
         RadioForm
-    },
-    methods: {
-        onSubmit(event) {
-            event.preventDefault();
-                alert("Empty form");
-        },
     }
 };
 </script>
