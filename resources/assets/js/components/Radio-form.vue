@@ -11,7 +11,7 @@
       ></b-form-radio-group>
     </b-form-group>
 
-    <div class="mt-3">Selected: <strong>{{ selected }}</strong></div>
+    <div class="mt-3">Selected: You get <strong>{{ selected }} % </strong> discount from the full price of ticket.</div>
 
     <b-form @submit="onSubmit">
             <b-button id="submit-btn" type="submit" variant="primary"
@@ -26,13 +26,14 @@
       name: "RadioForm",
     data() {
       return {
-        selected: 'first',
+        selected: "",
         form: [],
       
         options: [
-          { text: 'First radio', value: 'first' },
-          { text: 'Second radio', value: 'second' },
-          { text: 'Third radio', value: 'third' }
+          { text: 'Small group (10-15 person)', value: 10 },
+          { text: 'Medium group (15-20 person)', value: 15 },
+          { text: 'Large group (20-25 person)', value: 20 },
+          { text: 'X-Large group (more than 25 person)', value: 25 },
         ]
       }
     },
