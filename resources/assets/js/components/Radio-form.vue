@@ -12,6 +12,12 @@
     </b-form-group>
 
     <div class="mt-3">Selected: <strong>{{ selected }}</strong></div>
+    
+    <b-form @submit="onSubmit">
+            <b-button id="submit-btn" type="submit" variant="primary"
+                >Submit</b-button
+            >
+        </b-form>
   </div>
 </template>
 
@@ -27,6 +33,14 @@
           { text: 'Third radio', value: 'third' }
         ]
       }
+    },
+
+    methods: {
+        onSubmit(event) {
+            event.preventDefault();
+                alert("Empty form");
+        },
     }
+
   }
 </script>
