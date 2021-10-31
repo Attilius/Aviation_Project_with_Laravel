@@ -18,6 +18,12 @@ export default {
     props: ['titles', 'text'],
     components: {
         RadioForm
+    },
+    methods: {
+        onSubmit(event) {
+            event.preventDefault();
+                alert("Empty form");
+        },
     }
 };
 </script>
