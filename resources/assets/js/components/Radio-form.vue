@@ -12,7 +12,7 @@
     </b-form-group>
 
     <div class="mt-3">Selected: <strong>{{ selected }}</strong></div>
-    
+
     <b-form @submit="onSubmit">
             <b-button id="submit-btn" type="submit" variant="primary"
                 >Submit</b-button
@@ -27,6 +27,8 @@
     data() {
       return {
         selected: 'first',
+        form: [],
+      
         options: [
           { text: 'First radio', value: 'first' },
           { text: 'Second radio', value: 'second' },
