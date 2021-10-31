@@ -61,10 +61,11 @@ article {
     margin: 5px;
 }
 
-@media (max-width: 750px){
+@media (max-width: 768px){
     .text-content {
-        height: 440vh;
-        top: -100px
+        height: 100%;
+        width: 100%;
+        top: 0;
     }
 }
 
