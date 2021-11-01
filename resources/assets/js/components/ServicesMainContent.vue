@@ -2,7 +2,7 @@
     <div class="text-content">
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
-        <RadioForm />
+        <RadioForm class="radio-form" />
     </div>
 </template>
 
@@ -57,8 +57,10 @@ h2 {
 }
 
 article {
-    padding: 25px;
-    margin: 5px;
+    width: 95%;
+    margin: 0px auto;
+    padding: 25px 0;
+    border-bottom: 2px solid #ced4da;
 }
 
 #submit-btn {
@@ -85,6 +87,10 @@ article {
     background: transparent;
     border: 1px solid rebeccapurple;
     transition: 0.4s ease-in-out 0s;
+}
+
+.radio-form {
+    padding: 30px;
 }
 
 </style>
