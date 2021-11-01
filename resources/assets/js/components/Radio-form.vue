@@ -1,17 +1,46 @@
 <template>
     <div>
-        <b-form-group label="Selecting discount" v-slot="{ ariaDescribedby }">
-            <b-form-radio-group
+        <b-form-group v-slot="{ ariaDescribedby }">
+            <h5>Selecting discount</h5>
+            <b-form-radio
                 v-model="selected"
-                :options="options"
                 :aria-describedby="ariaDescribedby"
-                name="radios-stacked"
-                stacked
-            ></b-form-radio-group>
+                name="some-radios"
+                value="5"
+                >Family (5-9 person) - 5%</b-form-radio
+            >
+            <b-form-radio
+                v-model="selected"
+                :aria-describedby="ariaDescribedby"
+                name="some-radios"
+                value="10"
+                >Small group (10-14 person) - 10%</b-form-radio
+            >
+            <b-form-radio
+                v-model="selected"
+                :aria-describedby="ariaDescribedby"
+                name="some-radios"
+                value="15"
+                >Medium group (15-20 person) - 15%</b-form-radio
+            >
+            <b-form-radio
+                v-model="selected"
+                :aria-describedby="ariaDescribedby"
+                name="some-radios"
+                value="20"
+                >Large group (21-25 person) - 20%</b-form-radio
+            >
+            <b-form-radio
+                v-model="selected"
+                :aria-describedby="ariaDescribedby"
+                name="some-radios"
+                value="25"
+                >X-Large group (more than 25 person) - 25%</b-form-radio
+            >
         </b-form-group>
 
         <div class="mt-3">
-            Selected: You get <strong>{{ selected }} % </strong> discount from
+            You get <strong>{{ selected }} % </strong> discount from
             the full price of ticket.
         </div>
 
@@ -30,13 +59,6 @@ export default {
         return {
             selected: "",
             form: [],
-
-            options: [
-                { text: "Small group (10-15 person) - 10%", value: 10 },
-                { text: "Medium group (15-20 person) - 15%", value: 15 },
-                { text: "Large group (20-25 person) - 20%", value: 20 },
-                { text: "X-Large group (more than 25 person) - 25%", value: 25 }
-            ]
         };
     },
 
@@ -52,5 +74,10 @@ export default {
 <style scoped>
 #submit-btn {
     margin: 20px 0;
+}
+
+.radio:focus {
+    border: none !important;
+    box-shadow: none !important;
 }
 </style>
