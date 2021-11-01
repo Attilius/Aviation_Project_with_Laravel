@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-form-group v-slot="{ ariaDescribedby }">
-            <h5>Selecting discount</h5>
+            <h5 class="radio-form-label">Selecting discount</h5>
             <b-form-radio
                 v-model="selected"
                 :aria-describedby="ariaDescribedby"
@@ -46,10 +46,10 @@
 
         <p id="welcome-message">You don't selected any discount yet*</p>
 
-        <div class="mt-3" id="selected-message">
+        <p id="selected-message">
             You get <strong>{{ selected }} % </strong> discount from
             the full price of ticket.
-        </div>
+        </p>
 
         <b-form @submit="onSubmit">
             <b-button id="submit-btn" type="submit" variant="primary"
@@ -80,9 +80,11 @@ export default {
 
         onChange(event) {
             this.viewMessage();
-            
             if (this.form.length === 0) this.form.push(event); 
-            else this.selected = "";
+            else {
+               this.form = [];
+               this.form.push(event);
+            }
         },
 
         viewMessage() {
@@ -103,15 +105,18 @@ export default {
     margin: 20px 0;
 }
 
-.radio:focus {
-    border: none !important;
-    box-shadow: none !important;
+.radio-form-label {
+    background: #292b2c;
+    color: whitesmoke;
+    width: 25%;
+    padding: 10px;
+    text-align: center;
 }
 
 #selected-message {
     display: none;
-    border: 2px solid #ced4da;
-    padding: 15px;
+    border: 1px solid #292b2c;
+    padding: 10px;
 }
 
 </style>
