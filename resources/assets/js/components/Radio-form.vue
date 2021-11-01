@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-form-group label="Stacked radios" v-slot="{ ariaDescribedby }">
+        <b-form-group label="Selecting discount" v-slot="{ ariaDescribedby }">
             <b-form-radio-group
                 v-model="selected"
                 :options="options"
@@ -32,10 +32,10 @@ export default {
             form: [],
 
             options: [
-                { text: "Small group (10-15 person)", value: 10 },
-                { text: "Medium group (15-20 person)", value: 15 },
-                { text: "Large group (20-25 person)", value: 20 },
-                { text: "X-Large group (more than 25 person)", value: 25 }
+                { text: "Small group (10-15 person) - 10%", value: 10 },
+                { text: "Medium group (15-20 person) - 15%", value: 15 },
+                { text: "Large group (20-25 person) - 20%", value: 20 },
+                { text: "X-Large group (more than 25 person) - 25%", value: 25 }
             ]
         };
     },
@@ -48,3 +48,9 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+#submit-btn {
+    margin: 20px 0;
+}
+</style>
