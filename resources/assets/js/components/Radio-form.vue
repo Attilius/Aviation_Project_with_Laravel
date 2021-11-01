@@ -44,6 +44,8 @@
             >
         </b-form-group>
 
+        <p id="welcome-message">You don't selected any discount yet*</p>
+
         <div class="mt-3" id="selected-message">
             You get <strong>{{ selected }} % </strong> discount from
             the full price of ticket.
@@ -72,13 +74,25 @@ export default {
             event.preventDefault();
             alert(JSON.stringify(this.form));
             this.form = [];
+            this.selected = "";
+            this.viewMessage();
         },
 
         onChange(event) {
-            document.getElementById("selected-message").style.display = "inline";
+            this.viewMessage();
             
             if (this.form.length === 0) this.form.push(event); 
             else this.selected = "";
+        },
+
+        viewMessage() {
+            if (this.selected === "") {
+                document.getElementById("selected-message").style.display = "none";
+                document.getElementById("welcome-message").style.display = "inline";
+            } else {
+                document.getElementById("selected-message").style.display = "inline";
+                document.getElementById("welcome-message").style.display = "none";
+            }
         }
     }
 };
@@ -96,6 +110,8 @@ export default {
 
 #selected-message {
     display: none;
+    border: 2px solid #ced4da;
+    padding: 15px;
 }
 
 </style>
