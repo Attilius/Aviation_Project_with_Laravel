@@ -20,7 +20,7 @@
             {{ message[0] }} <strong>{{ selected }}</strong> {{ message[1] }}
         </p>
 
-        <b-form @submit="onSubmit">
+        <b-form @submit="onSubmit" class="submit-btn">
             <b-button id="submit-btn" type="submit" variant="primary"
                 >Submit</b-button
             >
@@ -118,4 +118,22 @@ export default {
     border: 1px solid #292b2c;
     padding: 10px;
 }
+
+@media(max-width: 768px) {
+    .radio-form-label {
+        width: 100%;
+    }
+
+    #selected-message {
+        padding: 0;
+        border: none;
+    }
+
+    .submit-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 </style>
