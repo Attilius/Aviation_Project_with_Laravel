@@ -3,7 +3,7 @@
         <Header class="header" />
         <div class="wrapper">
             <div class="skin">
-                <AnimatedHeader :titles="titles" :images="images" />
+                <AnimatedHeader class="animated-header" :titles="titles" :images="images" />
                 <ServicesMainContent
                     :titles="titles"
                     :text="text"
@@ -96,16 +96,22 @@ export default {
 .wrapper {
     background: url("../../img/airport-bg.jpg");
     background-size: cover;
-    height: 100vh;
+    height: 130vh;
     width: 100%;
 }
 
 .skin {
-    height: 100vh;
+    height: 130vh;
     width: 100%;
     background: rgba(9, 55, 115, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+@media(max-width: 768px) {
+    .animated-header {
+        display: none;
+    }
 }
 </style>
