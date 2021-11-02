@@ -17,7 +17,7 @@ import AnimatedHeader from "./AnimatedHeader.vue";
 import ServicesMainContent from "./ServicesMainContent.vue";
 import Footer from "./Footer.vue";
 export default {
-    name: "Premium_comfort",
+    name: "Group_discount",
     components: {
         Header,
         AnimatedHeader,
@@ -43,17 +43,10 @@ export default {
                 },
                 fourth: {
                     backgroundImage: `url(${require("../../img/group-4.jpg")})`
-                },
+                }
             },
-            text: "Share the experience with your friends. We offer a special discount for groups. Whether it's a team building training or a holiday with a group of friends.",
-
-            discounts: [
-                {small: "15%"},
-                {medium: "20%"},
-                {large: "25%"},
-                {x_large: "30%"}
-            ]
-
+            text:
+                "Share the experience with your friends. We offer a special discount for groups. Whether it's a team building training or a holiday with a group of friends."
         };
     }
 };
@@ -61,11 +54,11 @@ export default {
 
 <style scoped>
 .header {
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 
 .wrapper {
     background: url("../../img/airport-bg.jpg");
