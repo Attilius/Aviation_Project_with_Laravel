@@ -97,4 +97,36 @@ article {
 .radio-form {
     padding: 30px;
 }
+
+@media(max-width: 1350px) {
+    .text-content {
+        height: 550px;
+    }
+}
+
+@media(max-width: 1250px) {
+    .text-content {
+        height: 600px;
+    }
+}
+
+@media(max-width: 900px) {
+    .text-content {
+        height: 620px;
+    }
+}
+
+@media(max-width: 768px) {
+    .text-content {
+        height: 100%;
+        top: 0;
+        width: 100%;
+    }
+
+    article {
+        width: 85%;
+        margin: 0 30px;
+    }
+}
+
 </style>
