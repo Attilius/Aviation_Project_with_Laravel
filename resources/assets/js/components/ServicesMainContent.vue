@@ -9,7 +9,7 @@
 <script>
 import RadioForm from "./Radio-form.vue";
 export default {
-    name: "ServiceMainContent",
+    name: "ServicesMainContent",
     props: ['titles', 'text'],
     components: {
         RadioForm
@@ -29,7 +29,7 @@ export default {
 .text-content {
     background: whitesmoke;
     width: 80%;
-    height: 500px;
+    height: 520px;
     margin: 0 auto;
     position: relative;
     top: 90px;
