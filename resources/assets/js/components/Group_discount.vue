@@ -4,7 +4,13 @@
         <div class="wrapper">
             <div class="skin">
                 <AnimatedHeader :titles="titles" :images="images" />
-                <ServicesMainContent :titles="titles" :text="text" />
+                <ServicesMainContent
+                    :titles="titles"
+                    :text="text"
+                    :radio_datas="radio_datas"
+                    :label="label"
+                    :message="message"
+                />
             </div>
         </div>
         <Footer />
@@ -46,7 +52,34 @@ export default {
                 }
             },
             text:
-                "Share the experience with your friends. We offer a special discount for groups. Whether it's a team building training or a holiday with a group of friends."
+                "Share the experience with your friends. We offer a special discount for groups. Whether it's a team building training or a holiday with a group of friends.",
+
+            radio_datas: [
+                {
+                    text: "Family (5-9 person) - 5%",
+                    value: 5
+                },
+                {
+                    text: "Small group (10-14 person) - 10%",
+                    value: 10
+                },
+                {
+                    text: "Medium group (15-20 person) - 15%",
+                    value: 15
+                },
+                {
+                    text: "Large group (21-25 person) - 20%",
+                    value: 20
+                },
+                {
+                    text: "X-Large group (more than 25 person) - 25%",
+                    value: 25
+                }
+            ],
+
+            label: "discount",
+
+            message: ["You get", "% discount from the full price of ticket."]
         };
     }
 };
