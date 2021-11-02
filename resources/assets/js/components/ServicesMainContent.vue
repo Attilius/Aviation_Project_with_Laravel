@@ -2,7 +2,12 @@
     <div class="text-content">
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
-        <RadioForm class="radio-form" />
+        <RadioForm
+            class="radio-form"
+            :radio_datas="radio_datas"
+            :label="label"
+            :message="message"
+        />
     </div>
 </template>
 
@@ -10,7 +15,7 @@
 import RadioForm from "./Radio-form.vue";
 export default {
     name: "ServicesMainContent",
-    props: ['titles', 'text'],
+    props: ["titles", "text", "radio_datas", "label", "message"],
     components: {
         RadioForm
     }
@@ -92,5 +97,4 @@ article {
 .radio-form {
     padding: 30px;
 }
-
 </style>
