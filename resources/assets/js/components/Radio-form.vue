@@ -1,6 +1,7 @@
 <template>
     <div>
-        <b-form-group v-slot="{ ariaDescribedby }">
+        <div class="jet-information"></div>
+        <b-form-group class="form" v-slot="{ ariaDescribedby }">
             <h5 class="radio-form-label">Selecting {{ label }}</h5>
             <b-form-radio
                 v-model="selected"
@@ -117,6 +118,16 @@ export default {
     display: none;
     border: 1px solid #292b2c;
     padding: 10px;
+}
+
+.jet-information {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    display: none;
 }
 
 @media(max-width: 768px) {
