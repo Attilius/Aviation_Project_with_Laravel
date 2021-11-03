@@ -4,7 +4,7 @@
         <div class="wrapper">
             <div class="skin">
                 <AnimatedHeader :titles="titles" :images="images" />
-                <ServicesMainContent :titles="titles" :text="text" />
+                <ServicesMainContent :titles="titles" :text="text" :radio_datas="radio_datas" :label="label" :message="message" />
             </div>
         </div>
         <Footer />
@@ -36,21 +36,59 @@ export default {
                     backgroundImage: `url(${require("../../img/private-1.jpg")})`
                 },
                 second: {
-                    backgroundImage: `url(${require("../../img/private-2.jpg")})`
+                    backgroundImage: `url(${require("../../img/private-2.jpeg")})`
                 },
                 third: {
                     backgroundImage: `url(${require("../../img/private-3.jpg")})`
                 },
                 fourth: {
                     backgroundImage: `url(${require("../../img/private-4.jpg")})`
-                },
+                }
             },
-            text: "Do you have an urgent and unavoidable trip? Do you need to travel to a special place? Our company offers you the possibility to rent a private jet.",
+            text:
+                "Do you have an urgent and unavoidable trip? Do you need to travel to a special place? Our company offers you the possibility to rent a private jet.",
 
-            planes: [
-                {type: "", staff: "", price: "", distance: ""}
-            ]
+            radio_datas: [
+                {
+                    img: "images/eclipse-500.jpg",
+                    text: "Eclipse 500",
+                    staff: "3 person",
+                    passenger_capacity: "4 people",
+                    value: 1
+                },
+                {
+                    img: "images/embraer-phenom-100.jpg",
+                    text: "Embraer Phenom 100",
+                    staff: "3 person",
+                    passenger_capacity: "4-7 people",
+                    value: 2
+                },
+                {
+                    img: "images/cessna-citation-latitude.jpg",
+                    text: "Cessna Citation Latitude",
+                    staff: "4 person",
+                    passenger_capacity: "7-9 people",
+                    value: 3
+                },
+                {
+                    img: "images/bombardier-challenger-605.png",
+                    text: "Bombardier Challenger 605",
+                    staff: "4 person",
+                    passenger_capacity: "9-12 people",
+                    value: 4
+                },
+                {
+                    img: "images/dassault-falcon-7X.jpg",
+                    text: "Dassault Falcon 7X",
+                    staff: "5 person",
+                    passenger_capacity: "12-16 people",
+                    value: 5
+                }
+            ],
 
+            label: "from our jet offer",
+
+            message: "Test"
         };
     }
 };
@@ -58,11 +96,11 @@ export default {
 
 <style scoped>
 .header {
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 
 .wrapper {
     background: url("../../img/airport-bg.jpg");
