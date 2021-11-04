@@ -50,39 +50,39 @@ export default {
 
             radio_datas: [
                 {
-                    img: "images/eclipse-500.jpg",
+                    img: "/images/eclipse-500.jpg",
                     text: "Eclipse 500",
                     staff: "3 person",
                     passenger_capacity: "4 people",
-                    value: 1
+                    value: 100
                 },
                 {
-                    img: "images/embraer-phenom-100.jpg",
+                    img: "/images/embraer-phenom-100.jpg",
                     text: "Embraer Phenom 100",
                     staff: "3 person",
                     passenger_capacity: "4-7 people",
-                    value: 2
+                    value: 200
                 },
                 {
-                    img: "images/cessna-citation-latitude.jpg",
+                    img: "/images/cessna-citation-latitude.jpg",
                     text: "Cessna Citation Latitude",
                     staff: "4 person",
                     passenger_capacity: "7-9 people",
-                    value: 3
+                    value: 300
                 },
                 {
-                    img: "images/bombardier-challenger-605.png",
+                    img: "/images/bombardier-challenger-605.png",
                     text: "Bombardier Challenger 605",
                     staff: "4 person",
                     passenger_capacity: "9-12 people",
-                    value: 4
+                    value: 400
                 },
                 {
-                    img: "images/dassault-falcon-7X.jpg",
+                    img: "/images/dassault-falcon-7X.jpg",
                     text: "Dassault Falcon 7X",
                     staff: "5 person",
                     passenger_capacity: "12-16 people",
-                    value: 5
+                    value: 500
                 }
             ],
 
