@@ -97,6 +97,8 @@ export default {
         select() {
             document.getElementById("jet").style.display = "none";
             document.getElementById("label").style.marginBottom = "20px";
+            document.getElementById("selected-message").style.display =
+                "inline";
         },
 
         addText(event) {
@@ -129,44 +131,31 @@ export default {
             this.exceptionalDisplay(index);
         },
 
+        displayOffer(index) {
+            if (window.innerWidth <= 768)
+                document.getElementById("label").style.marginBottom = "110px";
+            document.getElementById("selected-message").style.display = "none";
+            this.showCard(index);
+        },
+
         onChange(event) {
             this.viewMessage();
             if (event > 25) {
                 switch (event) {
                     case 100:
-                        if (window.innerWidth <= 768)
-                            document.getElementById(
-                                "label"
-                            ).style.marginBottom = "110px";
-                        this.showCard(0);
+                        this.displayOffer(0);
                         break;
                     case 200:
-                        if (window.innerWidth <= 768)
-                            document.getElementById(
-                                "label"
-                            ).style.marginBottom = "110px";
-                        this.showCard(1);
+                        this.displayOffer(1);
                         break;
                     case 300:
-                        if (window.innerWidth <= 768)
-                            document.getElementById(
-                                "label"
-                            ).style.marginBottom = "110px";
-                        this.showCard(2);
+                        this.displayOffer(2);
                         break;
                     case 400:
-                        if (window.innerWidth <= 768)
-                            document.getElementById(
-                                "label"
-                            ).style.marginBottom = "110px";
-                        this.showCard(3);
+                        this.displayOffer(3);
                         break;
                     case 500:
-                        if (window.innerWidth <= 768)
-                            document.getElementById(
-                                "label"
-                            ).style.marginBottom = "110px";
-                        this.showCard(4);
+                        this.displayOffer(4);
                         break;
 
                     default:
