@@ -1,6 +1,5 @@
 <template>
     <div>
-        <div class="jet-information"></div>
         <b-form-group class="form" v-slot="{ ariaDescribedby }">
             <h5 class="radio-form-label">Selecting {{ label }}</h5>
             <b-form-radio
@@ -13,6 +12,31 @@
                 :value="radio_data.value"
                 >{{ radio_data.text }}</b-form-radio
             >
+            <div id="jet">
+                <div
+                    v-for="radio_data in radio_datas"
+                    :key="radio_data.value"
+                    class="jet-information"
+                >
+                    <img class="jet-img" :src="radio_data.img" alt="plane" />
+                    <div class="data">
+                        <p class="radio-form-key">Type:</p>
+                        {{ radio_data.text }}
+                    </div>
+                    <div class="data">
+                        <p class="radio-form-key">Staff:</p>
+                        {{ radio_data.staff }}
+                    </div>
+                    <div class="data">
+                        <p class="radio-form-key">Passenger capacity:</p>
+                        {{ radio_data.passenger_capacity }}
+                    </div>
+                    <div class="buttons">
+                        <button class="btn" @click="select">Ok</button>
+                        <button class="btn" @click="close">Cancel</button>
+                    </div>
+                </div>
+            </div>
         </b-form-group>
 
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
@@ -49,6 +73,28 @@ export default {
             this.viewMessage();
         },
 
+        close() {
+            document.getElementById("jet").style.display = "none";
+            this.selected = "";
+            this.form = [];
+            this.viewMessage();
+            for (let i = 0; i < 5; i++) {
+                document.getElementById("jet").children[i].style.display = "none";
+            }
+        },
+       // TODO rename this function
+        close2(index) {
+            for (let i = 0; i < 5; i++) {
+                if (i != index) {
+                    document.getElementById("jet").children[i].style.display = "none";
+                }
+            }
+        },
+
+        select() {
+            document.getElementById("jet").style.display = "none";
+        },
+
         addText(event) {
             switch (event) {
                 case 5:
@@ -74,6 +120,39 @@ export default {
 
         onChange(event) {
             this.viewMessage();
+            if (event > 25) {
+                switch (event) {
+                    case 100:
+                        document.getElementById("jet").style.display = "block";
+                        document.getElementById("jet").firstChild.style.display = "block";
+                        this.close2(0);
+                        break;
+                    case 200:
+                        document.getElementById("jet").style.display = "block";
+                        document.getElementById("jet").children[1].style.display = "block";
+                        this.close2(1);
+                        break;
+                    case 300:
+                        document.getElementById("jet").style.display = "block";
+                        document.getElementById("jet").children[2].style.display = "block";
+                        this.close2(2);
+                        break;
+                    case 400:
+                        document.getElementById("jet").style.display = "block";
+                        document.getElementById("jet").children[3].style.display = "block";
+                        this.close2(3);
+                        break;
+                    case 500:
+                        document.getElementById("jet").style.display = "block";
+                        document.getElementById("jet").lastChild.style.display = "block";
+                        this.close2(4);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
             if (this.form.length === 0) {
                 this.addText(event);
                 this.form.push(event);
@@ -120,17 +199,66 @@ export default {
     padding: 10px;
 }
 
-.jet-information {
-    width: 400px;
-    height: 400px;
-    border: 1px solid black;
-    position: sticky;
-    top: 50%;
-    left: 50%;
+#jet {
+    border: 1px solid #292b2c;
+    box-shadow: 2px 2px 5px black;
+    background: whitesmoke;
+    position: absolute;
+    top: 20%;
+    left: 40%;
     display: none;
 }
 
-@media(max-width: 768px) {
+.jet-information{
+    width: 400px;
+    height: 400px;
+    display: none;
+}
+
+.jet-img {
+    width: 100%;
+    height: 60%;
+    padding: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn {
+    height: 30px;
+    width: 100px;
+    color: whitesmoke;
+    background: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    color: rebeccapurple;
+    background: transparent;
+    border: 1px solid rebeccapurple;
+    transition: 0.4s ease-in-out 0s;
+}
+
+.radio-form-key {
+    background: rgb(9, 55, 115);
+    color: whitesmoke;
+    padding: 0 10px;
+    margin: 5px 10px;
+}
+
+.data {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
     .radio-form-label {
         width: 100%;
     }
@@ -146,5 +274,4 @@ export default {
         justify-content: center;
     }
 }
-
 </style>
