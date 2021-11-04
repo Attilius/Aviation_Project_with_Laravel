@@ -84,8 +84,8 @@ export default {
                     "none";
             }
         },
-        // TODO rename this function
-        close2(index) {
+
+        exceptionalDisplay(index) {
             for (let i = 0; i < 5; i++) {
                 if (i != index) {
                     document.getElementById("jet").children[i].style.display =
@@ -122,48 +122,51 @@ export default {
             }
         },
 
+        showCard(index) {
+            document.getElementById("jet").style.display = "block";
+            document.getElementById("jet").children[index].style.display =
+                "block";
+            this.exceptionalDisplay(index);
+        },
+
         onChange(event) {
             this.viewMessage();
             if (event > 25) {
                 switch (event) {
                     case 100:
-                    if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
-                        document.getElementById("jet").style.display = "block";
-                        document.getElementById(
-                            "jet"
-                        ).firstChild.style.display = "block";
-                        this.close2(0);
+                        if (window.innerWidth <= 768)
+                            document.getElementById(
+                                "label"
+                            ).style.marginBottom = "110px";
+                        this.showCard(0);
                         break;
                     case 200:
-                        if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
-                        document.getElementById("jet").style.display = "block";
-                        document.getElementById(
-                            "jet"
-                        ).children[1].style.display = "block";
-                        this.close2(1);
+                        if (window.innerWidth <= 768)
+                            document.getElementById(
+                                "label"
+                            ).style.marginBottom = "110px";
+                        this.showCard(1);
                         break;
                     case 300:
-                        if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
-                        document.getElementById("jet").style.display = "block";
-                        document.getElementById(
-                            "jet"
-                        ).children[2].style.display = "block";
-                        this.close2(2);
+                        if (window.innerWidth <= 768)
+                            document.getElementById(
+                                "label"
+                            ).style.marginBottom = "110px";
+                        this.showCard(2);
                         break;
                     case 400:
-                        if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
-                        document.getElementById("jet").style.display = "block";
-                        document.getElementById(
-                            "jet"
-                        ).children[3].style.display = "block";
-                        this.close2(3);
+                        if (window.innerWidth <= 768)
+                            document.getElementById(
+                                "label"
+                            ).style.marginBottom = "110px";
+                        this.showCard(3);
                         break;
                     case 500:
-                        if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
-                        document.getElementById("jet").style.display = "block";
-                        document.getElementById("jet").lastChild.style.display =
-                            "block";
-                        this.close2(4);
+                        if (window.innerWidth <= 768)
+                            document.getElementById(
+                                "label"
+                            ).style.marginBottom = "110px";
+                        this.showCard(4);
                         break;
 
                     default:
