@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-form-group class="form" v-slot="{ ariaDescribedby }">
-            <h5 class="radio-form-label">Selecting {{ label }}</h5>
+            <h5 id="label" class="radio-form-label">Selecting {{ label }}</h5>
             <b-form-radio
                 v-model="selected"
                 :aria-describedby="ariaDescribedby"
@@ -75,24 +75,28 @@ export default {
 
         close() {
             document.getElementById("jet").style.display = "none";
+            document.getElementById("label").style.marginBottom = "20px";
             this.selected = "";
             this.form = [];
             this.viewMessage();
             for (let i = 0; i < 5; i++) {
-                document.getElementById("jet").children[i].style.display = "none";
+                document.getElementById("jet").children[i].style.display =
+                    "none";
             }
         },
-       // TODO rename this function
+        // TODO rename this function
         close2(index) {
             for (let i = 0; i < 5; i++) {
                 if (i != index) {
-                    document.getElementById("jet").children[i].style.display = "none";
+                    document.getElementById("jet").children[i].style.display =
+                        "none";
                 }
             }
         },
 
         select() {
             document.getElementById("jet").style.display = "none";
+            document.getElementById("label").style.marginBottom = "20px";
         },
 
         addText(event) {
@@ -123,28 +127,42 @@ export default {
             if (event > 25) {
                 switch (event) {
                     case 100:
+                    if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
                         document.getElementById("jet").style.display = "block";
-                        document.getElementById("jet").firstChild.style.display = "block";
+                        document.getElementById(
+                            "jet"
+                        ).firstChild.style.display = "block";
                         this.close2(0);
                         break;
                     case 200:
+                        if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
                         document.getElementById("jet").style.display = "block";
-                        document.getElementById("jet").children[1].style.display = "block";
+                        document.getElementById(
+                            "jet"
+                        ).children[1].style.display = "block";
                         this.close2(1);
                         break;
                     case 300:
+                        if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
                         document.getElementById("jet").style.display = "block";
-                        document.getElementById("jet").children[2].style.display = "block";
+                        document.getElementById(
+                            "jet"
+                        ).children[2].style.display = "block";
                         this.close2(2);
                         break;
                     case 400:
+                        if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
                         document.getElementById("jet").style.display = "block";
-                        document.getElementById("jet").children[3].style.display = "block";
+                        document.getElementById(
+                            "jet"
+                        ).children[3].style.display = "block";
                         this.close2(3);
                         break;
                     case 500:
+                        if (window.innerWidth <= 768) document.getElementById("label").style.marginBottom = "110px";
                         document.getElementById("jet").style.display = "block";
-                        document.getElementById("jet").lastChild.style.display = "block";
+                        document.getElementById("jet").lastChild.style.display =
+                            "block";
                         this.close2(4);
                         break;
 
@@ -209,7 +227,7 @@ export default {
     display: none;
 }
 
-.jet-information{
+.jet-information {
     width: 400px;
     height: 400px;
     display: none;
@@ -261,6 +279,7 @@ export default {
 @media (max-width: 768px) {
     .radio-form-label {
         width: 100%;
+        margin-bottom: 25px;
     }
 
     #selected-message {
@@ -272,6 +291,22 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    #jet {
+        border: 1px solid #292b2c;
+        box-shadow: none;
+        background: whitesmoke;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        display: none;
+    }
+
+    .jet-information {
+        width: 100%;
+        height: 500px;
+        display: none;
     }
 }
 </style>
