@@ -10,7 +10,7 @@
                 :key="radio_data.text"
                 @change="onChange"
                 :value="radio_data.value"
-                >{{ radio_data.text }}</b-form-radio
+                ><div class="radio-content">{{ radio_data.text }}</div></b-form-radio
             >
             <div id="jet">
                 <div
@@ -200,22 +200,27 @@ export default {
 }
 
 .radio-form-label {
-    background: #292b2c;
     color: whitesmoke;
     width: 25%;
     padding: 10px;
     text-align: center;
 }
 
+#welcome-message {
+    color: #ced4da;
+}
+
 #selected-message {
     display: none;
     border: 1px solid #292b2c;
     padding: 10px;
+    color: #ced4da;
 }
 
 #jet {
     border: 1px solid #292b2c;
     box-shadow: 3px 3px 9px black;
+    border-radius: 5px;
     background: linear-gradient(180deg, lightskyblue, lightskyblue, rgb(51, 100, 179), rgb(9, 55, 115));
     position: absolute;
     top: 0%;
@@ -247,7 +252,7 @@ export default {
     width: 100px;
     color: whitesmoke;
     background: rebeccapurple;
-    box-shadow: 1px 1px 5px whitesmoke;
+    box-shadow: 1px 1px 5px black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -271,6 +276,16 @@ export default {
     display: flex;
     align-items: center;
     color: whitesmoke;
+}
+
+.radio-content {
+    color: whitesmoke;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.radio-content:hover {
+    color: lime;
 }
 
 @media (max-width: 768px) {
