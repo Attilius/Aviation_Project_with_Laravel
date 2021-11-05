@@ -32,18 +32,18 @@ export default {
 }
 
 .text-content {
-    background: whitesmoke;
+    background: transparent;
     width: 80%;
     height: 520px;
     margin: 0 auto;
     position: relative;
-    top: 90px;
+    top: 105px;
 }
 
 h2::after {
     content: "";
     position: absolute;
-    background-color: rebeccapurple;
+    background-color: lightskyblue;
     width: 20%;
     height: 7px;
     bottom: -10px;
@@ -55,7 +55,7 @@ h2 {
     padding: 15px 20px 25px 30px;
     position: relative;
     margin-top: 20px;
-    color: rgb(9, 55, 115);
+    color: whitesmoke;
     text-transform: capitalize;
     text-shadow: 2px 2px 5px silver;
     width: 30%;
@@ -65,7 +65,8 @@ article {
     width: 95%;
     margin: 0px auto;
     padding: 25px 0;
-    border-bottom: 2px solid #ced4da;
+    color: #ced4da;
+    border-bottom: 2px solid lightskyblue;
 }
 
 #submit-btn {
@@ -89,7 +90,7 @@ article {
 
 #submit-btn:hover {
     color: rebeccapurple;
-    background: transparent;
+    background: whitesmoke;
     border: 1px solid rebeccapurple;
     transition: 0.4s ease-in-out 0s;
 }
