@@ -49,6 +49,7 @@ h2::after {
     bottom: -10px;
     left: 30px;
     margin-bottom: 20px;
+    box-shadow: 2px 2px 5px black;
 }
 
 h2 {
@@ -57,7 +58,7 @@ h2 {
     margin-top: 20px;
     color: whitesmoke;
     text-transform: capitalize;
-    text-shadow: 2px 2px 5px silver;
+    text-shadow: 2px 2px 5px black;
     width: 30%;
 }
 
