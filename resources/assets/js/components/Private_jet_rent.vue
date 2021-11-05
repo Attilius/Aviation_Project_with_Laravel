@@ -54,6 +54,7 @@ export default {
                     text: "Eclipse 500",
                     staff: "3 person",
                     passenger_capacity: "4 people",
+                    price: "1500 €/h",
                     value: 100
                 },
                 {
@@ -61,6 +62,7 @@ export default {
                     text: "Embraer Phenom 100",
                     staff: "3 person",
                     passenger_capacity: "4-7 people",
+                    price: "1800 €/h",
                     value: 200
                 },
                 {
@@ -68,6 +70,7 @@ export default {
                     text: "Cessna Citation Latitude",
                     staff: "4 person",
                     passenger_capacity: "7-9 people",
+                    price: "2100 €/h",
                     value: 300
                 },
                 {
@@ -75,6 +78,7 @@ export default {
                     text: "Bombardier Challenger 605",
                     staff: "4 person",
                     passenger_capacity: "9-12 people",
+                    price: "2500 €/h",
                     value: 400
                 },
                 {
@@ -82,6 +86,7 @@ export default {
                     text: "Dassault Falcon 7X",
                     staff: "5 person",
                     passenger_capacity: "12-16 people",
+                    price: "2800 €/h",
                     value: 500
                 }
             ],
