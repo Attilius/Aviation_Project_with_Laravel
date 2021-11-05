@@ -31,6 +31,10 @@
                         <p class="radio-form-key">Passenger capacity:</p>
                         {{ radio_data.passenger_capacity }}
                     </div>
+                    <div class="data">
+                        <p class="radio-form-key">Price:</p>
+                        {{ radio_data.price }}
+                    </div>
                     <div class="buttons">
                         <button class="btn" @click="select">Ok</button>
                         <button class="btn" @click="close">Cancel</button>
@@ -211,17 +215,17 @@ export default {
 
 #jet {
     border: 1px solid #292b2c;
-    box-shadow: 2px 2px 5px black;
-    background: whitesmoke;
+    box-shadow: 3px 3px 9px black;
+    background: linear-gradient(180deg, lightskyblue, lightskyblue, rgb(51, 100, 179), rgb(9, 55, 115));
     position: absolute;
-    top: 20%;
+    top: 0%;
     left: 40%;
     display: none;
 }
 
 .jet-information {
     width: 400px;
-    height: 400px;
+    height: 500px;
     display: none;
 }
 
@@ -243,6 +247,7 @@ export default {
     width: 100px;
     color: whitesmoke;
     background: rebeccapurple;
+    box-shadow: 1px 1px 5px whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -251,21 +256,21 @@ export default {
 
 .btn:hover {
     color: rebeccapurple;
-    background: transparent;
+    background: whitesmoke;
     border: 1px solid rebeccapurple;
-    transition: 0.4s ease-in-out 0s;
+    box-shadow: none;
 }
 
 .radio-form-key {
-    background: rgb(9, 55, 115);
     color: whitesmoke;
-    padding: 0 10px;
+    padding: 0 5px;
     margin: 5px 10px;
 }
 
 .data {
     display: flex;
     align-items: center;
+    color: whitesmoke;
 }
 
 @media (max-width: 768px) {
@@ -288,7 +293,7 @@ export default {
     #jet {
         border: 1px solid #292b2c;
         box-shadow: none;
-        background: whitesmoke;
+        background: linear-gradient(180deg, lightskyblue, lightskyblue, rgb(51, 100, 179), rgb(9, 55, 115));
         position: absolute;
         top: 0%;
         left: 0%;
