@@ -197,6 +197,17 @@ export default {
 <style scoped>
 #submit-btn {
     margin: 20px 0;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+    transition: all 0.3s ease;
+}
+
+#submit-btn:hover {
+    color: rebeccapurple;
+    background: whitesmoke;
+    border: 1px solid rebeccapurple;
+    box-shadow: none;
+    transition: 0.4s ease-in-out 0s;
 }
 
 .radio-form-label {
