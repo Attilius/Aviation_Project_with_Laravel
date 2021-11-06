@@ -55,7 +55,7 @@ h2::after {
 h2 {
     padding: 15px 20px 25px 30px;
     position: relative;
-    margin-top: 20px;
+    margin-top: 50px;
     color: whitesmoke;
     text-transform: capitalize;
     text-shadow: 2px 2px 5px black;
