@@ -55,10 +55,10 @@ export default {
 .slider-3,
 .slider-4 {
     height: 60vh;
-    width: 80%;
+    width: 76%;
     position: absolute;
-    top: 61px;
-    left: 10%;
+    top: 80px;
+    left: 12%;
     overflow: hidden;
 }
 
