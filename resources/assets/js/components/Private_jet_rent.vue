@@ -58,7 +58,7 @@ export default {
                     value: 100
                 },
                 {
-                    img: "/images/embraer-phenom-100.jpg",
+                    img: "/images/embraer-phenom-100.png",
                     text: "Embraer Phenom 100",
                     staff: "1 person",
                     passenger_capacity: "4-7 people",
@@ -74,7 +74,7 @@ export default {
                     value: 300
                 },
                 {
-                    img: "/images/bombardier-challenger-605.png",
+                    img: "/images/bombardier-challenger-605.jpg",
                     text: "Bombardier Challenger 605",
                     staff: "2 person",
                     passenger_capacity: "9-12 people",
