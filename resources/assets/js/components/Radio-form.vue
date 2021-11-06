@@ -75,6 +75,7 @@ export default {
             this.form = [];
             this.selected = "";
             this.viewMessage();
+            this.removeMarker();
         },
 
         close() {
@@ -87,6 +88,7 @@ export default {
                 document.getElementById("jet").children[i].style.display =
                     "none";
             }
+            this.removeMarker();
         },
 
         exceptionalDisplay(index) {
@@ -94,6 +96,7 @@ export default {
                 if (i != index) {
                     document.getElementById("jet").children[i].style.display =
                         "none";
+                    document.getElementsByClassName("radio-content")[i].style.color = "whitesmoke";
                 }
             }
         },
@@ -128,6 +131,13 @@ export default {
             }
         },
 
+        removeMarker() {
+            const radioContent = document.getElementsByClassName("radio-content");
+            for (let i = 0; i < radioContent.length; i++) {
+                radioContent[i].style.color = "whitesmoke";
+            }
+        },
+
         showCard(index) {
             document.getElementById("jet").style.display = "block";
             document.getElementById("jet").children[index].style.display =
@@ -139,6 +149,7 @@ export default {
             if (window.innerWidth <= 768)
                 document.getElementById("label").style.marginBottom = "110px";
             document.getElementById("selected-message").style.display = "none";
+            document.getElementsByClassName("radio-content")[index].style.color = "lime"
             this.showCard(index);
         },
 
