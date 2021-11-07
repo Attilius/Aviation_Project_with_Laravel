@@ -3,52 +3,65 @@
         <Header class="header" />
         <div class="wrapper">
             <div class="skin">
-                <AnimatedHeader class="animated-header" :titles="titles" :images="images" />
-                <ServicesMainContent :titles="titles" :text="text" :radio_datas="radio_datas" :label="label" :message="message" />
+                <AnimatedHeader
+                    class="animated-header"
+                    :titles="titles"
+                    :images="images"
+                />
+                <ServicesMainContent
+                    :titles="titles"
+                    :text="text"
+                    :radio_datas="radio_datas"
+                    :label="label"
+                    :message="message"
+                />
                 <div class="input-box">
-            <div class="input-column">
-                <label for="from">From</label>
-                <div class="form-icon">
-                    <div class="icon">
-                        <font-awesome-icon :icon="['fas', 'plane-departure']" />
+                    <div class="input-column">
+                        <label for="from">From</label>
+                        <div class="form-icon">
+                            <div class="icon">
+                                <font-awesome-icon
+                                    :icon="['fas', 'plane-departure']"
+                                />
+                            </div>
+                            <b-form-input
+                                id="from"
+                                class="input"
+                                name="from"
+                                type="text"
+                            ></b-form-input>
+                        </div>
                     </div>
-                    <b-form-input
-                    id="from"
-                        class="input"
-                        name="from"
-                        type="text"
-                    ></b-form-input>
-                </div>
-            </div>
 
-            <div class="input-column">
-                <label for="to">To</label>
-                <div class="form-icon">
-                    <div class="icon">
-                        <font-awesome-icon :icon="['fas', 'plane-arrival']" />
+                    <div class="input-column">
+                        <label for="to">To</label>
+                        <div class="form-icon">
+                            <div class="icon">
+                                <font-awesome-icon
+                                    :icon="['fas', 'plane-arrival']"
+                                />
+                            </div>
+                            <b-form-input
+                                id="to"
+                                class="input"
+                                name="to"
+                                type="text"
+                            ></b-form-input>
+                        </div>
                     </div>
-                    <b-form-input
-                    id="to"
-                        class="input"
-                        name="to"
-                        type="text"
-                    ></b-form-input>
-                </div>
-            </div>
 
-            <div class="input-column">
-                <label for="date">Date of away</label>
-                <b-form-input
-                    class="input-date"
-                    name="date"
-                    type="date"
-                ></b-form-input>
-            </div>
-            <b-form @submit="onSubmit">
-                <button type="submit" id="submit-btn">Send</button>
-            </b-form>
-            
-        </div>
+                    <div class="input-column">
+                        <label for="date">Date of away</label>
+                        <b-form-input
+                            class="input-date"
+                            name="date"
+                            type="date"
+                        ></b-form-input>
+                    </div>
+                    <b-form @submit="onSubmit">
+                        <button type="submit" id="submit-btn">Send</button>
+                    </b-form>
+                </div>
             </div>
         </div>
         <Footer />
@@ -150,7 +163,7 @@ export default {
             message: [],
 
             from: "",
-            to: "",
+            to: ""
         }
     },
 
@@ -159,11 +172,20 @@ export default {
             event.preventDefault();
             this.from = document.getElementById("from").value;
             this.to = document.getElementById("to").value;
+            this.fetchData();
             document.getElementById("from").value = "";
-            document.getElementById("to").value ="";
+            document.getElementById("to").value = "";
         },
+
+        fetchData() {
+            fetch(`/api/private-jet-rent?departure_location=${this.from}&destination=${this.to}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.distance);
+                });
+        }
     }
-}
+};
 </script>
 
 <style scoped>
@@ -264,10 +286,9 @@ label {
     transition: 0.4s ease-in-out 0s;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     .animated-header {
         display: none;
     }
 }
-
 </style>
