@@ -151,8 +151,18 @@ export default {
 
             from: "",
             to: "",
-        };
+        }
     },
+
+    methods: {
+        onSubmit(event) {
+            event.preventDefault();
+            this.from = document.getElementById("from").value;
+            this.to = document.getElementById("to").value;
+            document.getElementById("from").value = "";
+            document.getElementById("to").value ="";
+        },
+    }
 }
 </script>
 
