@@ -14,6 +14,7 @@
                     :radio_datas="radio_datas"
                     :label="label"
                     :message="message"
+                    :distance_="distance_"
                 />
                 <div class="input-box">
                     <div class="input-column">
@@ -163,7 +164,8 @@ export default {
             message: [],
 
             from: "",
-            to: ""
+            to: "",
+            distance_: ""
         }
     },
 
@@ -181,7 +183,7 @@ export default {
             fetch(`/api/private-jet-rent?departure_location=${this.from}&destination=${this.to}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data.distance);
+                    this.distance_ = data.distance;
                 });
         }
     }
