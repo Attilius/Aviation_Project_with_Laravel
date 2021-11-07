@@ -7,6 +7,7 @@
             :radio_datas="radio_datas"
             :label="label"
             :message="message"
+            :distance_="distance_"
         />
     </div>
 </template>
@@ -15,7 +16,7 @@
 import RadioForm from "./Radio-form.vue";
 export default {
     name: "ServicesMainContent",
-    props: ["titles", "text", "radio_datas", "label", "message"],
+    props: ["titles", "text", "radio_datas", "label", "message", "distance_"],
     components: {
         RadioForm
     }
