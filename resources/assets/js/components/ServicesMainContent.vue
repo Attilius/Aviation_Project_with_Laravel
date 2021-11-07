@@ -19,7 +19,7 @@ export default {
     components: {
         RadioForm
     }
-};
+}
 </script>
 
 <style scoped>
@@ -38,6 +38,7 @@ export default {
     margin: 0 auto;
     position: relative;
     top: 105px;
+    margin-bottom: 100px;
 }
 
 h2::after {
@@ -70,55 +71,29 @@ article {
     border-bottom: 2px solid lightskyblue;
 }
 
-#submit-btn {
-    background: RebeccaPurple;
-    width: 230px;
-    height: 40px;
-    box-shadow: 2px 2px 5px silver;
-    border: 1px solid #ced4da;
-    margin-left: 3px;
-    color: whitesmoke;
-    margin: 30px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-#submit-btn:active {
-    box-shadow: none !important;
-    background-color: rebeccapurple !important;
-    color: whitesmoke !important;
-}
-
-#submit-btn:hover {
-    color: rebeccapurple;
-    background: whitesmoke;
-    border: 1px solid rebeccapurple;
-    transition: 0.4s ease-in-out 0s;
-}
-
 .radio-form {
     padding: 30px;
 }
 
-@media(max-width: 1350px) {
+@media (max-width: 1350px) {
     .text-content {
         height: 550px;
     }
 }
 
-@media(max-width: 1250px) {
+@media (max-width: 1250px) {
     .text-content {
         height: 600px;
     }
 }
 
-@media(max-width: 900px) {
+@media (max-width: 900px) {
     .text-content {
         height: 620px;
     }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     .text-content {
         height: 100%;
         top: 0;
@@ -130,5 +105,4 @@ article {
         margin: 0 30px;
     }
 }
-
 </style>
