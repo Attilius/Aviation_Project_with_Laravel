@@ -33,7 +33,7 @@
                     </div>
                     <div class="data">
                         <p class="radio-form-key">Price:</p>
-                        {{ radio_data.price }}
+                        {{ radio_data.price }} €/h
                     </div>
                     <div class="buttons">
                         <button class="btn" @click="select">Ok</button>
