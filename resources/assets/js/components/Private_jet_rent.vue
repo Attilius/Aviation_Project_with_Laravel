@@ -114,7 +114,7 @@ export default {
 
             label: "from our jet offer",
 
-            message: []
+            message: ["Total cost is", "€"]
         }
     },
 
