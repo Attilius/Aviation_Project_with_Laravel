@@ -60,7 +60,7 @@
 <script>
 export default {
     name: "RadioForm",
-    props: ["radio_datas", "label", "message"],
+    props: ["radio_datas", "label", "message", "distance_"],
     data() {
         return {
             selected: "",
@@ -92,7 +92,7 @@ export default {
         },
 
         exceptionalDisplay(index) {
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < this.radio_datas.length; i++) {
                 if (i != index) {
                     document.getElementById("jet").children[i].style.display =
                         "none";
@@ -106,6 +106,8 @@ export default {
             document.getElementById("label").style.marginBottom = "20px";
             document.getElementById("selected-message").style.display =
                 "inline";
+            this.selected = this.distance_;
+            this.form.push(this.selected);
         },
 
         addText(event) {
@@ -146,8 +148,6 @@ export default {
         },
 
         displayOffer(index) {
-            if (window.innerWidth <= 768)
-                document.getElementById("label").style.marginBottom = "110px";
             document.getElementById("selected-message").style.display = "none";
             document.getElementsByClassName("radio-content")[index].style.color = "lime"
             this.showCard(index);
@@ -178,13 +178,15 @@ export default {
                 }
             }
 
-            if (this.form.length === 0) {
+            if (this.form.length === 0 && event >= 5 && event <= 25) {
+                this.addText(event);
+                this.form.push(event);
+            } else if (this.form.length > 0 && event >= 5 && event <= 25) {
+                this.form = [];
                 this.addText(event);
                 this.form.push(event);
             } else {
                 this.form = [];
-                this.addText(event);
-                this.form.push(event);
             }
         },
 
@@ -248,6 +250,7 @@ export default {
     top: 0%;
     left: 40%;
     display: none;
+    z-index: 1;
 }
 
 .jet-information {
@@ -307,7 +310,15 @@ export default {
 }
 
 .radio-content:hover {
-    color: lime;
+    color: lime !important;
+}
+
+#label{
+    background: whitesmoke;
+    color: rgb(9, 55, 115);
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -332,7 +343,7 @@ export default {
         box-shadow: none;
         background: linear-gradient(180deg, lightskyblue, lightskyblue, rgb(51, 100, 179), rgb(9, 55, 115));
         position: absolute;
-        top: 0%;
+        top: 19%;
         left: 0%;
         display: none;
     }
