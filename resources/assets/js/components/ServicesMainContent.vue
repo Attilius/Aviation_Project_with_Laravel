@@ -4,52 +4,61 @@
         <article>{{ text }}</article>
 
         <div class="input-box">
-                    <div class="input-column">
-                        <label for="from">From</label>
-                        <div class="form-icon">
-                            <div class="icon">
-                                <font-awesome-icon
-                                    :icon="['fas', 'plane-departure']"
-                                />
-                            </div>
-                            <b-form-input
-                                id="from"
-                                class="input"
-                                name="from"
-                                type="text"
-                            ></b-form-input>
-                        </div>
+            <div class="input-column">
+                <label for="from">From</label>
+                <div class="form-icon">
+                    <div class="icon">
+                        <font-awesome-icon :icon="['fas', 'plane-departure']" />
                     </div>
-
-                    <div class="input-column">
-                        <label for="to">To</label>
-                        <div class="form-icon">
-                            <div class="icon">
-                                <font-awesome-icon
-                                    :icon="['fas', 'plane-arrival']"
-                                />
-                            </div>
-                            <b-form-input
-                                id="to"
-                                class="input"
-                                name="to"
-                                type="text"
-                            ></b-form-input>
-                        </div>
-                    </div>
-
-                    <div class="input-column">
-                        <label for="date">Date of away</label>
-                        <b-form-input
-                            class="input-date"
-                            name="date"
-                            type="date"
-                        ></b-form-input>
-                    </div>
-                    <b-form @submit="onSubmit">
-                        <button type="submit" id="submit-btn">Send</button>
-                    </b-form>
+                    <b-form-input
+                        id="from"
+                        class="input"
+                        name="from"
+                        type="text"
+                    ></b-form-input>
                 </div>
+            </div>
+
+            <div class="input-column">
+                <label for="to">To</label>
+                <div class="form-icon">
+                    <div class="icon">
+                        <font-awesome-icon :icon="['fas', 'plane-arrival']" />
+                    </div>
+                    <b-form-input
+                        id="to"
+                        class="input"
+                        name="to"
+                        type="text"
+                    ></b-form-input>
+                </div>
+            </div>
+
+            <div class="date-and-time">
+                 <div class="input-column">
+                <label for="date">Date</label>
+                <b-form-input
+                    class="input-date"
+                    name="date"
+                    type="date"
+                ></b-form-input>
+            </div>
+
+            <div class="input-column">
+                <label for="date">Time</label>
+                <b-form-input
+                    class="input-date"
+                    name="time"
+                    type="time"
+                ></b-form-input>
+            </div>
+            </div>
+
+           
+            <b-form @submit="onSubmit">
+                <button type="submit" id="submit-btn">Send</button>
+            </b-form>
+        </div>
 
         <RadioForm
             class="radio-form"
@@ -75,7 +84,7 @@ export default {
             from: "",
             to: "",
             distance_: ""
-        }
+        };
     },
 
     methods: {
@@ -89,14 +98,16 @@ export default {
         },
 
         fetchData() {
-            fetch(`/api/private-jet-rent?departure_location=${this.from}&destination=${this.to}`)
+            fetch(
+                `/api/private-jet-rent?departure_location=${this.from}&destination=${this.to}`
+            )
                 .then(response => response.json())
                 .then(data => {
                     this.distance_ = data.distance;
                 });
         }
     }
-}
+};
 </script>
 
 <style scoped>
@@ -224,6 +235,10 @@ label {
     transition: 0.4s ease-in-out 0s;
 }
 
+.date-and-time {
+    display: flex;
+}
+
 @media (max-width: 1350px) {
     .text-content {
         height: 550px;
@@ -245,13 +260,36 @@ label {
 @media (max-width: 768px) {
     .text-content {
         height: 100%;
-        top: 0;
+        top: 50px;
         width: 100%;
     }
 
     article {
         width: 85%;
         margin: 0 30px;
+    }
+
+    .input-box {
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .date-and-time {
+        width: 103%;
+    }
+
+    .input-date {
+        width: 100%;
+    }
+
+    .form-icon {
+        width: 100%;
     }
 }
 </style>
