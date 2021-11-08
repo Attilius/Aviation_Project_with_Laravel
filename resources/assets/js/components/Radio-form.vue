@@ -64,11 +64,25 @@ export default {
     data() {
         return {
             selected: "",
-            form: []
+            form: [],
+            speed: "",
+            price: ""
+            
         };
     },
 
     methods: {
+        getAllFlightTime() {
+            const totalDistance = this.distance_ * 2;
+            const jetSpeed = this.speed;
+            const result = totalDistance / jetSpeed;
+            return result;
+        },
+
+        getCost(allFlightTime, price) {
+            return allFlightTime * price;
+        },
+
         onSubmit(event) {
             event.preventDefault();
             alert(JSON.stringify(this.form));
@@ -106,8 +120,8 @@ export default {
             document.getElementById("label").style.marginBottom = "20px";
             document.getElementById("selected-message").style.display =
                 "inline";
-            this.selected = this.distance_;
-            this.form.push(this.selected);
+            this.selected = this.getCost(this.getAllFlightTime(), this.price).toFixed(2);
+            this.form.push(this.selected); 
         },
 
         addText(event) {
@@ -145,6 +159,8 @@ export default {
             document.getElementById("jet").children[index].style.display =
                 "block";
             this.exceptionalDisplay(index);
+            this.speed = this.radio_datas[index].speed;
+            this.price = this.radio_datas[index].price;
         },
 
         displayOffer(index) {
