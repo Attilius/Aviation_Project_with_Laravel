@@ -1,5 +1,5 @@
 <template>
-    <div class="text-content">
+    <div id="content" class="text-content">
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
 
@@ -89,13 +89,23 @@ export default {
 
     mounted() {
         this.hideInputs();
+        this.setContentHeight();
     },
 
     methods: {
         hideInputs() {
             const inputs = document.getElementById("inputs");
+            const content = document.getElementById("content");
             if (location.pathname != "/services/private-jet-rent") {
                 inputs.style.display = "none";
+                content.style.height = "300px"
+            }
+        },
+
+        setContentHeight() {
+            const content = document.getElementById("content");
+            if (location.pathname != "/services/private-jet-rent") {
+                content.style.height = "300px"
             }
         },
 
