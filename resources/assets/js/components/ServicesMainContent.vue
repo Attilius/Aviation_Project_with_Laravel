@@ -3,7 +3,7 @@
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
 
-        <div class="input-box">
+        <div id="inputs" class="input-box">
             <div class="input-column">
                 <label for="from">From</label>
                 <div class="form-icon">
@@ -87,7 +87,18 @@ export default {
         };
     },
 
+    mounted() {
+        this.hideInputs();
+    },
+
     methods: {
+        hideInputs() {
+            const inputs = document.getElementById("inputs");
+            if (location.pathname != "/services/private-jet-rent") {
+                inputs.style.display = "none";
+            }
+        },
+
         onSubmit(event) {
             event.preventDefault();
             this.from = document.getElementById("from").value;
