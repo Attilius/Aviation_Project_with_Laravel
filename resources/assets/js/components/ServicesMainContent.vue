@@ -109,6 +109,12 @@ export default {
             const content = document.getElementById("content");
 
             switch (location.pathname) {
+                case "/services/travel-insurance":
+                    if (window.innerWidth > 768) {
+                        content.style.height = "20px";
+                    }
+                    break;
+
                 case "/services/private-jet-rent":
                     if (window.innerWidth > 768) {
                         content.style.height = "520px";
