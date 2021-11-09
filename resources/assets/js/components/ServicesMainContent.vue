@@ -95,10 +95,8 @@ export default {
     methods: {
         hideInputs() {
             const inputs = document.getElementById("inputs");
-            const content = document.getElementById("content");
             if (location.pathname != "/services/private-jet-rent") {
                 inputs.style.display = "none";
-                content.style.height = "300px"
             }
         },
 
