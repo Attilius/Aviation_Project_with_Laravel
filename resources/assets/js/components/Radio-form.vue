@@ -60,11 +60,16 @@
 <script>
 export default {
     name: "RadioForm",
-    props: ["radio_datas", "label", "message", "distance_"],
+    props: ["radio_datas", "label", "message", "travelling_data"],
     data() {
         return {
             selected: "",
             form: [],
+            departure_place: "",
+            destination: "",
+            departure_date: "",
+            departure_time: "",
+            type_of_jet: "",
             speed: "",
             price: ""
             
@@ -73,7 +78,7 @@ export default {
 
     methods: {
         getAllFlightTime() {
-            const totalDistance = this.distance_ * 2;
+            const totalDistance = this.travelling_data.distance_ * 2;
             const jetSpeed = this.speed;
             const result = totalDistance / jetSpeed;
             return result;
@@ -120,7 +125,16 @@ export default {
             document.getElementById("label").style.marginBottom = "20px";
             document.getElementById("selected-message").style.display =
                 "inline";
+            this.departure_place = this.travelling_data.from;
+            this.destination = this.travelling_data.to;
+            this.departure_date = this.travelling_data.date;
+            this.departure_time = this.travelling_data.time;
             this.selected = this.getCost(this.getAllFlightTime(), this.price).toFixed(2);
+            this.form.push(this.departure_place); 
+            this.form.push(this.destination); 
+            this.form.push(this.departure_date); 
+            this.form.push(this.departure_time); 
+            this.form.push(this.type_of_jet); 
             this.form.push(this.selected); 
         },
 
@@ -161,6 +175,7 @@ export default {
             this.exceptionalDisplay(index);
             this.speed = this.radio_datas[index].speed;
             this.price = this.radio_datas[index].price;
+            this.type_of_jet = this.radio_datas[index].text;
         },
 
         displayOffer(index) {
