@@ -102,9 +102,21 @@ export default {
 
         setContentHeight() {
             const content = document.getElementById("content");
-            if (location.pathname != "/services/private-jet-rent") {
-                content.style.height = "300px"
+
+            switch (location.pathname) {
+                case "/services/private-jet-rent":
+                    if (window.innerWidth > 768) {
+                      content.style.height = "520px";  
+                    }
+                    break;
+                    
+                case "/services/group-discount":
+                    if (window.innerWidth > 768) {
+                    content.style.height = "400px";
+                    }
+                    break;
             }
+
         },
 
         onSubmit(event) {
@@ -141,11 +153,9 @@ export default {
 .text-content {
     background: transparent;
     width: 80%;
-    height: 520px;
     margin: 0 auto;
     position: relative;
-    top: 105px;
-    margin-bottom: 250px;
+    margin-bottom: 150px;
 }
 
 h2::after {
@@ -279,7 +289,6 @@ label {
 @media (max-width: 768px) {
     .text-content {
         height: 100%;
-        top: 50px;
         width: 100%;
     }
 
