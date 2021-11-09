@@ -10,7 +10,9 @@
                 :key="radio_data.text"
                 @change="onChange"
                 :value="radio_data.value"
-                ><div class="radio-content">{{ radio_data.text }}</div></b-form-radio
+                ><div class="radio-content">
+                    {{ radio_data.text }}
+                </div></b-form-radio
             >
             <div id="jet">
                 <div
@@ -72,7 +74,6 @@ export default {
             type_of_jet: "",
             speed: "",
             price: ""
-            
         };
     },
 
@@ -129,13 +130,18 @@ export default {
             this.destination = this.travelling_data.to;
             this.departure_date = this.travelling_data.date;
             this.departure_time = this.travelling_data.time;
-            this.selected = this.getCost(this.getAllFlightTime(), this.price).toFixed(2);
-            this.form.push(this.departure_place); 
-            this.form.push(this.destination); 
-            this.form.push(this.departure_date); 
-            this.form.push(this.departure_time); 
-            this.form.push(this.type_of_jet); 
-            this.form.push(this.selected); 
+            this.selected = this.getCost(
+                this.getAllFlightTime(),
+                this.price
+            ).toFixed(2);
+            this.form.push(
+                this.departure_place,
+                this.destination,
+                this.departure_date,
+                this.departure_time,
+                this.type_of_jet,
+                this.selected
+            );
         },
 
         addText(event) {
@@ -170,8 +176,7 @@ export default {
 
         showCard(index) {
             document.getElementById("jet").style.display = "block";
-            document.getElementById("jet").children[index].style.display =
-                "block";
+            document.getElementById("jet").children[index].style.display = "block";
             this.exceptionalDisplay(index);
             this.speed = this.radio_datas[index].speed;
             this.price = this.radio_datas[index].price;
@@ -180,7 +185,7 @@ export default {
 
         displayOffer(index) {
             document.getElementById("selected-message").style.display = "none";
-            document.getElementsByClassName("radio-content")[index].style.color = "lime"
+            document.getElementsByClassName("radio-content")[index].style.color = "lime";
             this.showCard(index);
         },
 
@@ -276,7 +281,13 @@ export default {
     border: 1px solid #292b2c;
     box-shadow: 3px 3px 9px black;
     border-radius: 5px;
-    background: linear-gradient(180deg, lightskyblue, lightskyblue, rgb(51, 100, 179), rgb(9, 55, 115));
+    background: linear-gradient(
+        180deg,
+        lightskyblue,
+        lightskyblue,
+        rgb(51, 100, 179),
+        rgb(9, 55, 115)
+    );
     position: absolute;
     top: 0%;
     left: 40%;
@@ -344,7 +355,7 @@ export default {
     color: lime !important;
 }
 
-#label{
+#label {
     background: whitesmoke;
     color: rgb(9, 55, 115);
     font-weight: 600;
@@ -372,7 +383,13 @@ export default {
     #jet {
         border: 1px solid #292b2c;
         box-shadow: none;
-        background: linear-gradient(180deg, lightskyblue, lightskyblue, rgb(51, 100, 179), rgb(9, 55, 115));
+        background: linear-gradient(
+            180deg,
+            lightskyblue,
+            lightskyblue,
+            rgb(51, 100, 179),
+            rgb(9, 55, 115)
+        );
         position: absolute;
         top: 19%;
         left: 0%;
