@@ -4,7 +4,13 @@
         <div class="wrapper">
             <div class="skin">
                 <AnimatedHeader :titles="titles" :images="images" />
-                <ServicesMainContent :titles="titles" :text="text" />
+                <ServicesMainContent
+                    :titles="titles"
+                    :text="text"
+                    :radio_datas="radio_datas"
+                    :label="label"
+                    :message="message"
+                />
             </div>
         </div>
         <Footer />
@@ -31,6 +37,7 @@ export default {
                 first: "Travel insurance",
                 second: "Safe your travel"
             },
+
             images: {
                 first: {
                     backgroundImage: `url(${require("../../img/travel-1.jpg")})`
@@ -45,9 +52,20 @@ export default {
                     backgroundImage: `url(${require("../../img/travel-4.jpg")})`
                 }
             },
+
             text:
                 "The safety of our passengers is important to us. We give you the option to request the service before you travel, or even at the moment of boarding, so it's just a click away.",
 
+            insurences: {
+                baby: "0-2 age",
+                child: "3-17 age",
+                adult: "18-65 age",
+                retired: "65-120 age"
+            },
+
+            radio_datas: [],
+            label: "",
+            message: []
         };
     }
 };
