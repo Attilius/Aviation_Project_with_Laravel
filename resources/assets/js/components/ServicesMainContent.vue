@@ -35,26 +35,27 @@
             </div>
 
             <div class="date-and-time">
-                 <div class="input-column">
-                <label for="date">Date</label>
-                <b-form-input
-                    class="input-date"
-                    name="date"
-                    type="date"
-                ></b-form-input>
+                <div class="input-column">
+                    <label for="date">Date</label>
+                    <b-form-input
+                        id="date"
+                        class="input-date"
+                        name="date"
+                        type="date"
+                    ></b-form-input>
+                </div>
+
+                <div class="input-column">
+                    <label for="date">Time</label>
+                    <b-form-input
+                        id="time"
+                        class="input-date"
+                        name="time"
+                        type="time"
+                    ></b-form-input>
+                </div>
             </div>
 
-            <div class="input-column">
-                <label for="date">Time</label>
-                <b-form-input
-                    class="input-date"
-                    name="time"
-                    type="time"
-                ></b-form-input>
-            </div>
-            </div>
-
-           
             <b-form @submit="onSubmit">
                 <button type="submit" id="submit-btn">Send</button>
             </b-form>
@@ -65,7 +66,7 @@
             :radio_datas="radio_datas"
             :label="label"
             :message="message"
-            :distance_="distance_"
+            :travelling_data="travelling_data"
         />
     </div>
 </template>
@@ -81,9 +82,13 @@ export default {
 
     data() {
         return {
-            from: "",
-            to: "",
-            distance_: ""
+            travelling_data: {
+                from: "",
+                to: "",
+                date: "",
+                time: "",
+                distance_: ""
+            }
         };
     },
 
@@ -106,35 +111,38 @@ export default {
             switch (location.pathname) {
                 case "/services/private-jet-rent":
                     if (window.innerWidth > 768) {
-                      content.style.height = "520px";  
+                        content.style.height = "520px";
                     }
                     break;
-                    
+
                 case "/services/group-discount":
                     if (window.innerWidth > 768) {
-                    content.style.height = "400px";
+                        content.style.height = "400px";
                     }
                     break;
             }
-
         },
 
         onSubmit(event) {
             event.preventDefault();
-            this.from = document.getElementById("from").value;
-            this.to = document.getElementById("to").value;
+            this.travelling_data.from = document.getElementById("from").value;
+            this.travelling_data.to = document.getElementById("to").value;
+            this.travelling_data.date = document.getElementById("date").value;
+            this.travelling_data.time = document.getElementById("time").value;
             this.fetchData();
             document.getElementById("from").value = "";
             document.getElementById("to").value = "";
+            document.getElementById("date").value = "";
+            document.getElementById("time").value = "";
         },
 
         fetchData() {
             fetch(
-                `/api/private-jet-rent?departure_location=${this.from}&destination=${this.to}`
+                `/api/private-jet-rent?departure_location=${this.travelling_data.from}&destination=${this.travelling_data.to}`
             )
                 .then(response => response.json())
                 .then(data => {
-                    this.distance_ = data.distance;
+                    this.travelling_data.distance_ = data.distance;
                 });
         }
     }
