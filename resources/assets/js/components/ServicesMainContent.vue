@@ -67,6 +67,7 @@
             :label="label"
             :message="message"
             :travelling_data="travelling_data"
+            :insurences="insurences"
         />
     </div>
 </template>
@@ -75,7 +76,7 @@
 import RadioForm from "./Radio-form.vue";
 export default {
     name: "ServicesMainContent",
-    props: ["titles", "text", "radio_datas", "label", "message"],
+    props: ["titles", "text", "radio_datas", "label", "message", "insurences"],
     components: {
         RadioForm
     },
@@ -111,7 +112,7 @@ export default {
             switch (location.pathname) {
                 case "/services/travel-insurance":
                     if (window.innerWidth > 768) {
-                        content.style.height = "20px";
+                        content.style.height = "400px";
                     }
                     break;
 
