@@ -125,7 +125,7 @@ export default {
                 case "/services/group-discount":
                     if (window.innerWidth > 768) {
                         content.style.height = "400px";
-                    } 
+                    }
                     break;
             }
         },
