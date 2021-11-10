@@ -22,7 +22,7 @@
                     <b-form @submit="onBooking">
                         <b-row class="row1">
                             <div class="input-column">
-                                <label for="from">From</label>
+                                <label class="label" for="from">From</label>
                                 <div class="form-icon">
                                     <div class="icon">
                                         <font-awesome-icon
@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="input-column">
-                                <label for="to">To</label>
+                                <label class="label" for="to">To</label>
                                 <div class="form-icon">
                                     <div class="icon">
                                         <font-awesome-icon
@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="input-column">
-                                <label for="date">Date of away</label>
+                                <label class="label" for="date">Date of away</label>
                                 <b-form-input
                                     class="input"
                                     name="date"
@@ -65,7 +65,7 @@
                             </div>
 
                             <div id="back-way" class="input-column">
-                                <label for="date">Date of back way</label>
+                                <label class="label" for="date">Date of back way</label>
                                 <b-form-input
                                     id="back-date"
                                     class="input"
@@ -260,7 +260,7 @@ export default {
     margin-left: 13px;
 }
 
-label {
+.label {
     color: rgb(9, 55, 115);
     text-shadow: 2px 2px 5px silver;
 }
