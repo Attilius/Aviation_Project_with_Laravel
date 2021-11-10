@@ -94,8 +94,8 @@ export default {
     },
 
     methods: {
-        onChangeCheckbox() {  
-            console.log(this.checked)
+        onChangeCheckbox() {
+            console.log(this.checked);
         },
 
         getAllFlightTime() {
