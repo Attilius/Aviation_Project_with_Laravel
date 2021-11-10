@@ -289,7 +289,7 @@ export default {
         rgb(9, 55, 115)
     );
     position: absolute;
-    top: 0%;
+    top: 15%;
     left: 40%;
     display: none;
     z-index: 1;
