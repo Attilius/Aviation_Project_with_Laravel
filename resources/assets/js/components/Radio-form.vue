@@ -45,22 +45,19 @@
             </div>
         </b-form-group>
 
-        <b-form-group
-            class="form"
-            v-slot="{ ariaDescribedby }"
-        >
-            <b-form-checkbox
-                v-for="insurence in insurences"
+        <b-form-group class="checkbox-form" v-slot="{ ariaDescribedby }">
+            <b-form-checkbox-group
                 v-model="checked"
-                :key="insurence.text"
-                :value="insurence.value"
                 :aria-describedby="ariaDescribedby"
-                name="insurence"
+                :options="insurences"
+                name="insurences"
                 class="insurences-content"
+                button-variant="outline-light"
+                @change="onChangeCheckbox"
+                buttons
                 stacked
             >
-                {{ insurence.text }} {{ insurence.value }} €/person
-            </b-form-checkbox>
+            </b-form-checkbox-group>
         </b-form-group>
 
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
@@ -91,11 +88,16 @@ export default {
             departure_time: "",
             type_of_jet: "",
             speed: "",
-            price: ""
+            price: "",
+            checked: []
         };
     },
 
     methods: {
+        onChangeCheckbox() {  
+            console.log(this.checked)
+        },
+
         getAllFlightTime() {
             const totalDistance = this.travelling_data.distance_ * 2;
             const jetSpeed = this.speed;
@@ -370,10 +372,15 @@ export default {
     color: whitesmoke;
 }
 
-.radio-content, .insurences-content {
+.radio-content {
     color: whitesmoke;
     text-shadow: none;
     cursor: pointer;
+}
+
+.insurences-content:focus {
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .radio-content:hover {
