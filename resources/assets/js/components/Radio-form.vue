@@ -45,6 +45,24 @@
             </div>
         </b-form-group>
 
+        <b-form-group
+            class="form"
+            v-slot="{ ariaDescribedby }"
+        >
+            <b-form-checkbox
+                v-for="insurence in insurences"
+                v-model="checked"
+                :key="insurence.text"
+                :value="insurence.value"
+                :aria-describedby="ariaDescribedby"
+                name="insurence"
+                class="insurences-content"
+                stacked
+            >
+                {{ insurence.text }} {{ insurence.value }} €/person
+            </b-form-checkbox>
+        </b-form-group>
+
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
 
         <p id="selected-message">
@@ -62,7 +80,7 @@
 <script>
 export default {
     name: "RadioForm",
-    props: ["radio_datas", "label", "message", "travelling_data"],
+    props: ["radio_datas", "label", "message", "travelling_data", "insurences"],
     data() {
         return {
             selected: "",
@@ -116,7 +134,9 @@ export default {
                 if (i != index) {
                     document.getElementById("jet").children[i].style.display =
                         "none";
-                    document.getElementsByClassName("radio-content")[i].style.color = "whitesmoke";
+                    document.getElementsByClassName("radio-content")[
+                        i
+                    ].style.color = "whitesmoke";
                 }
             }
         },
@@ -168,7 +188,9 @@ export default {
         },
 
         removeMarker() {
-            const radioContent = document.getElementsByClassName("radio-content");
+            const radioContent = document.getElementsByClassName(
+                "radio-content"
+            );
             for (let i = 0; i < radioContent.length; i++) {
                 radioContent[i].style.color = "whitesmoke";
             }
@@ -176,7 +198,8 @@ export default {
 
         showCard(index) {
             document.getElementById("jet").style.display = "block";
-            document.getElementById("jet").children[index].style.display = "block";
+            document.getElementById("jet").children[index].style.display =
+                "block";
             this.exceptionalDisplay(index);
             this.speed = this.radio_datas[index].speed;
             this.price = this.radio_datas[index].price;
@@ -185,7 +208,9 @@ export default {
 
         displayOffer(index) {
             document.getElementById("selected-message").style.display = "none";
-            document.getElementsByClassName("radio-content")[index].style.color = "lime";
+            document.getElementsByClassName("radio-content")[
+                index
+            ].style.color = "lime";
             this.showCard(index);
         },
 
@@ -345,7 +370,7 @@ export default {
     color: whitesmoke;
 }
 
-.radio-content {
+.radio-content, .insurences-content {
     color: whitesmoke;
     text-shadow: none;
     cursor: pointer;
