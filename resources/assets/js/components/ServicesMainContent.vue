@@ -124,22 +124,30 @@ export default {
                 case "/services/group-discount":
                     if (window.innerWidth > 768) {
                         content.style.height = "400px";
-                    }
+                    } 
                     break;
             }
         },
 
-        onSubmit(event) {
-            event.preventDefault();
+        addValue() {
             this.travelling_data.from = document.getElementById("from").value;
             this.travelling_data.to = document.getElementById("to").value;
             this.travelling_data.date = document.getElementById("date").value;
             this.travelling_data.time = document.getElementById("time").value;
-            this.fetchData();
+        },
+
+        dataReset() {
             document.getElementById("from").value = "";
             document.getElementById("to").value = "";
             document.getElementById("date").value = "";
             document.getElementById("time").value = "";
+        },
+
+        onSubmit(event) {
+            event.preventDefault();
+            this.addValue();
+            this.fetchData();
+            this.dataReset();
         },
 
         fetchData() {
@@ -167,9 +175,8 @@ export default {
 .text-content {
     background: transparent;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 150px;
     position: relative;
-    margin-bottom: 150px;
 }
 
 h2::after {
@@ -304,6 +311,8 @@ label {
     .text-content {
         height: 100%;
         width: 100%;
+        position: absolute;
+        top: 5%;
     }
 
     article {
