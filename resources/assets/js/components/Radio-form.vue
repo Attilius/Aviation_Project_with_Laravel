@@ -69,6 +69,8 @@
         </b-form-group>
 
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
+        
+        <h5 id="success-message">Thank you for requesting our service!</h5>
 
         <p id="selected-message">
             {{ message[0] }} <strong>{{ selected }}</strong> {{ message[1] }}
