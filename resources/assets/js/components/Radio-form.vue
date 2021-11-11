@@ -502,6 +502,12 @@ export default {
         display: none;
     }
 
+    .checkbox-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .number-form {
         top: 280px;
         left: 60px;
