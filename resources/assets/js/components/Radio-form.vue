@@ -58,6 +58,11 @@
                 stacked
             >
             </b-form-checkbox-group>
+            <div id="number-form" class="number-form">
+                <h6 class="insured-text"> {{ selected }} </h6>
+                <b-form-input id="numbers-input" type="number" placeholder="Number of persons" min="1"></b-form-input>
+                <button id="btn" type="submit" class="btn">Send</button>
+            </div>
         </b-form-group>
 
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
@@ -95,7 +100,15 @@ export default {
 
     methods: {
         onChangeCheckbox() {
-            console.log(this.checked);
+            document.getElementById("number-form").style.display = "block"
+            if(this.checked.length === 1) {
+               for(let i = 0; i < this.insurences.length; i++) {
+                   if (this.insurences[i].value == this.checked[0]) {
+                      this.selected = this.insurences[i].text;  
+                   }
+               } 
+               this.checked = [];
+            }
         },
 
         getAllFlightTime() {
@@ -393,6 +406,39 @@ export default {
     font-weight: 600;
     border-radius: 0.25rem;
     margin-bottom: 20px;
+}
+
+.number-form {
+    width: 300px;
+    height: 149px;
+    position: absolute;
+    top: 338px;
+    left: 250px;
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 5px black;
+    background: linear-gradient(180deg, royalblue, rgb(9, 55, 115));
+}
+
+#number-form {
+    display: none;
+}
+
+#numbers-input {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#btn {
+    margin: 10px auto;
+}
+
+.insured-text {
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 15px;
 }
 
 @media (max-width: 768px) {
