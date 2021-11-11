@@ -61,7 +61,7 @@
             <div id="number-form" class="number-form">
                 <h6 class="insured-text"> {{ selected }} </h6>
                 <b-form-input id="numbers-input" type="number" placeholder="Number of persons" min="1"></b-form-input>
-                <button id="btn" type="submit" class="btn">Send</button>
+                <button id="btn" type="submit" class="btn" @click="onSubmitNumberOfPersons">Send</button>
             </div>
         </b-form-group>
 
@@ -94,21 +94,35 @@ export default {
             type_of_jet: "",
             speed: "",
             price: "",
-            checked: []
+            checked: [],
+            numbers: ""
         };
     },
 
     methods: {
         onChangeCheckbox() {
-            document.getElementById("number-form").style.display = "block"
+            document.getElementById("number-form").style.display = "block";
             if(this.checked.length === 1) {
                for(let i = 0; i < this.insurences.length; i++) {
                    if (this.insurences[i].value == this.checked[0]) {
-                      this.selected = this.insurences[i].text;  
+                      this.selected = this.insurences[i].text;
+                      this.price = this.insurences[i].value;
+                      this.form.push(this.insurences[i].text);
                    }
                } 
                this.checked = [];
             }
+        },
+
+        onSubmitNumberOfPersons() {
+            this.numbers = document.getElementById("numbers-input").value;
+            this.form.push(
+                this.numbers,
+                this.getCost(this.price, this.numbers)
+                );
+            document.getElementById("numbers-input").value = "";
+            this.price = "";
+            document.getElementById("number-form").style.display = "none";
         },
 
         getAllFlightTime() {
