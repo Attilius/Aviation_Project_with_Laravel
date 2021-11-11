@@ -61,7 +61,10 @@
             <div id="number-form" class="number-form">
                 <h6 class="insured-text"> {{ selected }} </h6>
                 <b-form-input id="numbers-input" type="number" placeholder="Number of persons" min="1"></b-form-input>
-                <button id="btn" type="submit" class="btn" @click="onSubmitNumberOfPersons">Send</button>
+                <div class="buttons">
+                <button id="btn" class="btn" @click="onSubmitNumberOfPersons">Send</button>
+                <button id="btn" class="btn" @click="onCancel">Cancel</button>
+                </div>
             </div>
         </b-form-group>
 
@@ -123,6 +126,11 @@ export default {
             document.getElementById("numbers-input").value = "";
             this.price = "";
             document.getElementById("number-form").style.display = "none";
+        },
+
+        onCancel() {
+            document.getElementById("number-form").style.display = "none";
+            this.form.pop(this.form[this.form.length-1]);
         },
 
         getAllFlightTime() {
