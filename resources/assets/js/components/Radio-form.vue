@@ -501,5 +501,10 @@ export default {
         height: 500px;
         display: none;
     }
+
+    .number-form {
+        top: 280px;
+        left: 60px;
+    }
 }
 </style>
