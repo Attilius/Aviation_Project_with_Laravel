@@ -107,6 +107,8 @@ export default {
     methods: {
         onChangeCheckbox() {
             document.getElementById("number-form").style.display = "block";
+            document.getElementById("welcome-message").style.display = "inline";
+            document.getElementById("success-message").style.display = "none";
             if(this.checked.length === 1) {
                for(let i = 0; i < this.insurences.length; i++) {
                    if (this.insurences[i].value == this.checked[0]) {
@@ -153,6 +155,8 @@ export default {
             this.selected = "";
             this.viewMessage();
             this.removeMarker();
+            document.getElementById("welcome-message").style.display = "none";
+            document.getElementById("success-message").style.display = "inline";
         },
 
         close() {
@@ -185,6 +189,8 @@ export default {
             document.getElementById("label").style.marginBottom = "20px";
             document.getElementById("selected-message").style.display =
                 "inline";
+                document.getElementById("welcome-message").style.display =
+                    "none";
             this.departure_place = this.travelling_data.from;
             this.destination = this.travelling_data.to;
             this.departure_date = this.travelling_data.date;
@@ -239,14 +245,18 @@ export default {
             document.getElementById("jet").style.display = "block";
             document.getElementById("jet").children[index].style.display =
                 "block";
+            document.getElementById("success-message").style.display = "none";
             this.exceptionalDisplay(index);
             this.speed = this.radio_datas[index].speed;
             this.price = this.radio_datas[index].price;
             this.type_of_jet = this.radio_datas[index].text;
+           
         },
 
         displayOffer(index) {
             document.getElementById("selected-message").style.display = "none";
+            document.getElementById("welcome-message").style.display =
+                    "inline";
             document.getElementsByClassName("radio-content")[
                 index
             ].style.color = "lime";
@@ -301,6 +311,7 @@ export default {
                     "inline";
                 document.getElementById("welcome-message").style.display =
                     "none";
+                    document.getElementById("success-message").style.display = "none";
             }
         }
     }
@@ -463,6 +474,13 @@ export default {
     text-align: center;
     padding-top: 15px;
     margin-bottom: 15px;
+}
+
+#success-message {
+    color: whitesmoke;
+    padding: 10px 0;
+    margin: 10px auto;
+    display: none;
 }
 
 @media (max-width: 768px) {
