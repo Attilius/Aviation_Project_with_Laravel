@@ -3,8 +3,18 @@
         <Header class="header" />
         <div class="wrapper">
             <div class="skin">
-                <AnimatedHeader :titles="titles" :images="images" />
-                <ServicesMainContent :titles="titles" :text="text" />
+                <AnimatedHeader
+                    class="animated-header"
+                    :titles="titles"
+                    :images="images"
+                />
+                <ServicesMainContent
+                    :titles="titles"
+                    :text="text"
+                    :radio_datas="radio_datas"
+                    :label="label"
+                    :message="message"
+                />
             </div>
         </div>
         <Footer />
@@ -43,9 +53,14 @@ export default {
                 },
                 fourth: {
                     backgroundImage: `url(${require("../../img/comfort-4.jpg")})`
-                },
+                }
             },
-            text: "If you want extra comfort on a longer journey that crosses continents. Or you want to make your journey more comfortable after a tiring business meeting. We can do that for you too."
+            text:
+                "If you want extra comfort on a longer journey that crosses continents. Or you want to make your journey more comfortable after a tiring business meeting. We can do that for you too.",
+
+            radio_datas: [],
+            label: "",
+            message: []
         };
     }
 };
@@ -53,11 +68,11 @@ export default {
 
 <style scoped>
 .header {
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 
 .wrapper {
     background: url("../../img/airport-bg.jpg");
@@ -73,5 +88,11 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+    .animated-header {
+        display: none;
+    }
 }
 </style>
