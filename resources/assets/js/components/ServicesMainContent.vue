@@ -116,6 +116,12 @@ export default {
                     }
                     break;
 
+                case "/services/premium-comfort":
+                    if (window.innerWidth > 768) {
+                        content.style.height = "400px";
+                    }
+                    break;
+
                 case "/services/private-jet-rent":
                     if (window.innerWidth > 768) {
                         content.style.height = "520px";
