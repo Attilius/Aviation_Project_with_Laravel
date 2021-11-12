@@ -45,7 +45,7 @@
             </div>
         </b-form-group>
 
-        <b-form-group class="checkbox-form" v-slot="{ ariaDescribedby }">
+        <b-form-group id="form-2" class="checkbox-form" v-slot="{ ariaDescribedby }">
             <b-form-checkbox-group
                 v-model="checked"
                 :aria-describedby="ariaDescribedby"
@@ -104,7 +104,18 @@ export default {
         };
     },
 
+    mounted() {
+        this.hideNumberForm();
+    },
+
     methods: {
+        hideNumberForm() {
+            const formDiv = document.getElementById("form-2");
+            if (location.pathname != "/services/travel-insurance") {
+                formDiv.style.display = "none";
+            }
+        },
+
         onChangeCheckbox() {
             document.getElementById("number-form").style.display = "block";
             document.getElementById("welcome-message").style.display = "inline";
@@ -480,6 +491,10 @@ export default {
     color: whitesmoke;
     padding: 10px 0;
     margin: 10px auto;
+    display: none;
+}
+
+#form-2 {
     display: none;
 }
 
