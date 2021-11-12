@@ -494,10 +494,6 @@ export default {
     display: none;
 }
 
-#form-2 {
-    display: none;
-}
-
 @media (max-width: 768px) {
     .radio-form-label {
         width: 100%;
