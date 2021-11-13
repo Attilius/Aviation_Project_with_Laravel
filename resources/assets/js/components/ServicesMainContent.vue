@@ -3,6 +3,8 @@
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
 
+<!-- Private jet rent travel datas form -->
+
         <div id="inputs" class="input-box">
             <div class="input-column">
                 <label for="from">From</label>
@@ -67,7 +69,8 @@
             :label="label"
             :message="message"
             :travelling_data="travelling_data"
-            :insurences="insurences"
+            :insurances="insurances"
+            :comfort_services="comfort_services"
         />
     </div>
 </template>
@@ -76,7 +79,7 @@
 import RadioForm from "./Radio-form.vue";
 export default {
     name: "ServicesMainContent",
-    props: ["titles", "text", "radio_datas", "label", "message", "insurences"],
+    props: ["titles", "text", "radio_datas", "label", "message", "insurances", "comfort_services"],
     components: {
         RadioForm
     },
