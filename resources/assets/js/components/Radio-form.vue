@@ -45,7 +45,11 @@
             </div>
         </b-form-group>
 
-        <b-form-group id="form-2" class="checkbox-form" v-slot="{ ariaDescribedby }">
+        <b-form-group
+            id="form-2"
+            class="checkbox-form"
+            v-slot="{ ariaDescribedby }"
+        >
             <b-form-checkbox-group
                 v-model="checked"
                 :aria-describedby="ariaDescribedby"
@@ -59,17 +63,30 @@
             >
             </b-form-checkbox-group>
             <div id="number-form" class="number-form">
-                <h6 class="insured-text"> {{ selected }} </h6>
-                <b-form-input id="numbers-input" type="number" placeholder="Number of persons" min="1"></b-form-input>
+                <h6 class="insured-text">{{ selected }}</h6>
+                <b-form-input
+                    id="numbers-input"
+                    type="number"
+                    placeholder="Number of persons"
+                    min="1"
+                ></b-form-input>
                 <div class="buttons">
-                <button id="btn" class="btn" @click="onSubmitNumberOfPersons">Send</button>
-                <button id="btn" class="btn" @click="onCancel">Cancel</button>
+                    <button
+                        id="btn-s"
+                        class="btn"
+                        @click="onSubmitNumberOfPersons"
+                    >
+                        Send
+                    </button>
+                    <button id="btn-c" class="btn" @click="onCancel">
+                        Cancel
+                    </button>
                 </div>
             </div>
         </b-form-group>
 
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
-        
+
         <h5 id="success-message">Thank you for requesting our service!</h5>
 
         <p id="selected-message">
@@ -120,24 +137,32 @@ export default {
             document.getElementById("number-form").style.display = "block";
             document.getElementById("welcome-message").style.display = "inline";
             document.getElementById("success-message").style.display = "none";
-            if(this.checked.length === 1) {
-               for(let i = 0; i < this.insurences.length; i++) {
-                   if (this.insurences[i].value == this.checked[0]) {
-                      this.selected = this.insurences[i].text;
-                      this.price = this.insurences[i].value;
-                      this.form.push(this.insurences[i].text);
-                   }
-               } 
-               this.checked = [];
+            if (this.checked.length === 1) {
+                for (let i = 0; i < this.insurences.length; i++) {
+                    if (this.insurences[i].value == this.checked[0]) {
+                        this.selected = this.insurences[i].text;
+                        this.price = this.insurences[i].value;
+                        this.form.push(this.insurences[i].text);
+                    }
+                }
+                this.checked = [];
             }
         },
 
+        contolledSend() {
+            if (document.getElementById("numbers-input").value == 0)
+                document.getElementById("btn-s").setAttribute("disabled");
+            if (document.getElementById("btn-s").getAttribute("disabled"))
+                document.getElementById("btn-s").removeAttribute("disabled");
+        },
+
         onSubmitNumberOfPersons() {
+            this.contolledSend();
             this.numbers = document.getElementById("numbers-input").value;
             this.form.push(
                 this.numbers,
                 this.getCost(this.price, this.numbers)
-                );
+            );
             document.getElementById("numbers-input").value = "";
             this.price = "";
             document.getElementById("number-form").style.display = "none";
@@ -145,7 +170,7 @@ export default {
 
         onCancel() {
             document.getElementById("number-form").style.display = "none";
-            this.form.pop(this.form[this.form.length-1]);
+            this.form.pop(this.form[this.form.length - 1]);
         },
 
         getAllFlightTime() {
@@ -200,8 +225,7 @@ export default {
             document.getElementById("label").style.marginBottom = "20px";
             document.getElementById("selected-message").style.display =
                 "inline";
-                document.getElementById("welcome-message").style.display =
-                    "none";
+            document.getElementById("welcome-message").style.display = "none";
             this.departure_place = this.travelling_data.from;
             this.destination = this.travelling_data.to;
             this.departure_date = this.travelling_data.date;
@@ -261,13 +285,11 @@ export default {
             this.speed = this.radio_datas[index].speed;
             this.price = this.radio_datas[index].price;
             this.type_of_jet = this.radio_datas[index].text;
-           
         },
 
         displayOffer(index) {
             document.getElementById("selected-message").style.display = "none";
-            document.getElementById("welcome-message").style.display =
-                    "inline";
+            document.getElementById("welcome-message").style.display = "inline";
             document.getElementsByClassName("radio-content")[
                 index
             ].style.color = "lime";
@@ -322,7 +344,8 @@ export default {
                     "inline";
                 document.getElementById("welcome-message").style.display =
                     "none";
-                    document.getElementById("success-message").style.display = "none";
+                document.getElementById("success-message").style.display =
+                    "none";
             }
         }
     }
@@ -476,7 +499,8 @@ export default {
     margin-bottom: 15px;
 }
 
-#btn {
+#btn-s,
+#btn-c {
     margin: 10px auto;
 }
 
