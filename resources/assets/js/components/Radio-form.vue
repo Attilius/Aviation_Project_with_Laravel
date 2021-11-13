@@ -1,6 +1,6 @@
 <template>
     <div>
-<!-- Private jet rent radio button form -->
+        <!-- Private jet rent radio button form -->
         <b-form-group class="form" v-slot="{ ariaDescribedby }">
             <h5 id="label" class="radio-form-label">Selecting {{ label }}</h5>
             <b-form-radio
@@ -46,7 +46,7 @@
             </div>
         </b-form-group>
 
-<!-- Travel insurance checkbox form --> 
+        <!-- Travel insurance checkbox form -->
 
         <b-form-group
             id="form-2"
@@ -88,25 +88,24 @@
             </div>
         </b-form-group>
 
-<!-- Premium comfort checkbox form -->  
+        <!-- Premium comfort checkbox form -->
 
-<b-form-group
-      v-slot="{ ariaDescribedby }"
-    >
-      <b-form-checkbox
-        v-for="comfort_service in comfort_services"
-        v-model="checked"
-        :key="comfort_service.text"
-        :value="comfort_service.value"
-        :aria-describedby="ariaDescribedby"
-        name="comfort-services"
-        class="comfort-services"
-      >
-        {{ comfort_service.text }}
-      </b-form-checkbox>
-    </b-form-group>
+        <b-form-group v-slot="{ ariaDescribedby }">
+            <b-form-checkbox
+                v-for="comfort_service in comfort_services"
+                v-model="checked"
+                :key="comfort_service.text"
+                :value="comfort_service.value"
+                :aria-describedby="ariaDescribedby"
+                name="comfort-services"
+                class="comfort-services"
+                @change="onChecked"
+            >
+                {{ comfort_service.text }}
+            </b-form-checkbox>
+        </b-form-group>
 
-<!-- Transaction messages -->
+        <!-- Transaction messages -->
 
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
 
@@ -127,7 +126,14 @@
 <script>
 export default {
     name: "RadioForm",
-    props: ["radio_datas", "label", "message", "travelling_data", "insurances", "comfort_services"],
+    props: [
+        "radio_datas",
+        "label",
+        "message",
+        "travelling_data",
+        "insurances",
+        "comfort_services"
+    ],
     data() {
         return {
             selected: "",
@@ -149,6 +155,20 @@ export default {
     },
 
     methods: {
+        onChecked() {
+            for (let i = 0; i < this.checked.length; i++) {
+                for (let j = 0; j < this.comfort_services.length; j++) {
+                    if (this.checked[i] == this.comfort_services[j].value) {
+                        this.form.push(
+                            this.comfort_services[j].text,
+                            this.checked[i]
+                        );
+                        this.form = [...new Set(this.form)];
+                    }
+                }
+            }
+        },
+
         hideNumberForm() {
             const formDiv = document.getElementById("form-2");
             if (location.pathname != "/services/travel-insurance") {
