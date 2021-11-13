@@ -151,7 +151,7 @@ export default {
     methods: {
         hideNumberForm() {
             const formDiv = document.getElementById("form-2");
-            if (location.pathname != "/services/travel-insurance" && location.pathname != "/services/premium-comfort") {
+            if (location.pathname != "/services/travel-insurance") {
                 formDiv.style.display = "none";
             }
         },
