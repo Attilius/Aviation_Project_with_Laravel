@@ -14,7 +14,7 @@
                     :radio_datas="radio_datas"
                     :label="label"
                     :message="message"
-                    :insurences="insurences"
+                    :insurances="insurances"
                 />
             </div>
         </div>
@@ -61,7 +61,7 @@ export default {
             text:
                 "The safety of our passengers is important to us. We give you the option to request the service before you travel, or even at the moment of boarding, so it's just a click away.",
 
-            insurences: [
+            insurances: [
                 { text: "Baby: ( 0-2 age )", value: 100 },
                 { text: "Child: ( 3-17 age )", value: 150 },
                 { text: "Adult: ( 18-64 age )", value: 250 },
