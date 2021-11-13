@@ -14,6 +14,7 @@
                     :radio_datas="radio_datas"
                     :label="label"
                     :message="message"
+                    :comfort_services="comfort_services"
                 />
             </div>
         </div>
@@ -59,7 +60,11 @@ export default {
                 "If you want extra comfort on a longer journey that crosses continents. Or you want to make your journey more comfortable after a tiring business meeting. We can do that for you too.",
 
             radio_datas: [],
-            label: "",
+            label: "types of comfort",
+            comfort_services: [
+                {text: "Mini bar 100 €", value: 100},
+                {text: "Game console 150 €", value: 150}
+            ],
             message: []
         };
     }
