@@ -1,5 +1,6 @@
 <template>
     <div>
+<!-- Private jet rent radio button form -->
         <b-form-group class="form" v-slot="{ ariaDescribedby }">
             <h5 id="label" class="radio-form-label">Selecting {{ label }}</h5>
             <b-form-radio
@@ -45,6 +46,8 @@
             </div>
         </b-form-group>
 
+<!-- Travel insurance checkbox form --> 
+
         <b-form-group
             id="form-2"
             class="checkbox-form"
@@ -53,8 +56,8 @@
             <b-form-checkbox-group
                 v-model="checked"
                 :aria-describedby="ariaDescribedby"
-                :options="insurences"
-                name="insurences"
+                :options="insurances"
+                name="insurances"
                 class="insurences-content"
                 button-variant="outline-light"
                 @change="onChangeCheckbox"
@@ -85,6 +88,26 @@
             </div>
         </b-form-group>
 
+<!-- Premium comfort checkbox form -->  
+
+<b-form-group
+      v-slot="{ ariaDescribedby }"
+    >
+      <b-form-checkbox
+        v-for="comfort_service in comfort_services"
+        v-model="checked"
+        :key="comfort_service.text"
+        :value="comfort_service.value"
+        :aria-describedby="ariaDescribedby"
+        name="comfort-services"
+        class="comfort-services"
+      >
+        {{ comfort_service.text }}
+      </b-form-checkbox>
+    </b-form-group>
+
+<!-- Transaction messages -->
+
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
 
         <h5 id="success-message">Thank you for requesting our service!</h5>
@@ -104,7 +127,7 @@
 <script>
 export default {
     name: "RadioForm",
-    props: ["radio_datas", "label", "message", "travelling_data", "insurences"],
+    props: ["radio_datas", "label", "message", "travelling_data", "insurances", "comfort_services"],
     data() {
         return {
             selected: "",
@@ -128,7 +151,7 @@ export default {
     methods: {
         hideNumberForm() {
             const formDiv = document.getElementById("form-2");
-            if (location.pathname != "/services/travel-insurance") {
+            if (location.pathname != "/services/travel-insurance" && location.pathname != "/services/premium-comfort") {
                 formDiv.style.display = "none";
             }
         },
@@ -138,11 +161,11 @@ export default {
             document.getElementById("welcome-message").style.display = "inline";
             document.getElementById("success-message").style.display = "none";
             if (this.checked.length === 1) {
-                for (let i = 0; i < this.insurences.length; i++) {
-                    if (this.insurences[i].value == this.checked[0]) {
-                        this.selected = this.insurences[i].text;
-                        this.price = this.insurences[i].value;
-                        this.form.push(this.insurences[i].text);
+                for (let i = 0; i < this.insurances.length; i++) {
+                    if (this.insurances[i].value == this.checked[0]) {
+                        this.selected = this.insurances[i].text;
+                        this.price = this.insurances[i].value;
+                        this.form.push(this.insurances[i].text);
                         this.contolledSend();
                     }
                 }
@@ -526,6 +549,10 @@ export default {
     padding: 10px 0;
     margin: 10px auto;
     display: none;
+}
+
+.comfort-services {
+    color: whitesmoke;
 }
 
 @media (max-width: 768px) {
