@@ -143,6 +143,7 @@ export default {
                         this.selected = this.insurences[i].text;
                         this.price = this.insurences[i].value;
                         this.form.push(this.insurences[i].text);
+                        this.contolledSend();
                     }
                 }
                 this.checked = [];
@@ -150,14 +151,19 @@ export default {
         },
 
         contolledSend() {
-            if (document.getElementById("numbers-input").value == 0)
-                document.getElementById("btn-s").setAttribute("disabled");
-            if (document.getElementById("btn-s").getAttribute("disabled"))
-                document.getElementById("btn-s").removeAttribute("disabled");
+            document
+                .getElementById("numbers-input")
+                .addEventListener("change", e => {
+                    if (e.target.value > 0)
+                        document.getElementById("btn-s").style.display = "flex";
+                    else {
+                        document.getElementById("btn-s").style.display = "none";
+                        e.target.value = "";
+                    }
+                });
         },
 
         onSubmitNumberOfPersons() {
-            this.contolledSend();
             this.numbers = document.getElementById("numbers-input").value;
             this.form.push(
                 this.numbers,
@@ -502,6 +508,10 @@ export default {
 #btn-s,
 #btn-c {
     margin: 10px auto;
+}
+
+#btn-s {
+    display: none;
 }
 
 .insured-text {
