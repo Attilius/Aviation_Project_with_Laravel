@@ -172,6 +172,7 @@ export default {
 
     methods: {
         onCheckedIndependent() {
+            document.getElementById("welcome-message").style.display = "none";
             document.getElementById("all").disabled = true;
             for (let i = 0; i < this.checked.length; i++) {
                 for (let j = 0; j < this.comfort_services.length; j++) {
@@ -187,6 +188,7 @@ export default {
         },
 
         onCheckedAll() {
+            document.getElementById("welcome-message").style.display = "none";
             document.getElementById("independent").disabled = true;
             this.form.push(this.comfort_services_all[0].text, this.checked[0]);
         },
