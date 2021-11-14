@@ -60,10 +60,13 @@ export default {
                 "If you want extra comfort on a longer journey that crosses continents. Or you want to make your journey more comfortable after a tiring business meeting. We can do that for you too.",
 
             radio_datas: [],
-            label: "types of comfort",
+            label: "comfort services",
             comfort_services: [
-                {text: "Mini bar 100 €", value: 100},
-                {text: "Game console 150 €", value: 150}
+                {text: "Mini bar 180 €", value: 180},
+                {text: "Game console 220 €", value: 220},
+                {text: "Massage seat 250 €", value: 250},
+                {text: "Individual seating 620 €", value: 620},
+                {text: "All-inclusive cabin 1250 €", value: 1250}
             ],
             message: []
         };
