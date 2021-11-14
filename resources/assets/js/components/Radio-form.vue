@@ -90,7 +90,7 @@
 
         <!-- Premium comfort checkbox form -->
 
-        <b-form-group v-slot="{ ariaDescribedby }">
+        <b-form-group id="independent" v-slot="{ ariaDescribedby }">
             <b-form-checkbox
                 v-for="comfort_service in comfort_services"
                 v-model="checked"
@@ -99,9 +99,24 @@
                 :aria-describedby="ariaDescribedby"
                 name="comfort-services"
                 class="comfort-services"
-                @change="onChecked"
+                @change="onCheckedIndependent"
             >
                 {{ comfort_service.text }}
+            </b-form-checkbox>
+        </b-form-group>
+
+        <b-form-group id="all" v-slot="{ ariaDescribedby }">
+            <b-form-checkbox
+                v-for="comfort_service_all in comfort_services_all"
+                v-model="checked"
+                :key="comfort_service_all.text"
+                :value="comfort_service_all.value"
+                :aria-describedby="ariaDescribedby"
+                name="comfort-services_all"
+                class="comfort-services"
+                @change="onCheckedAll"
+            >
+                {{ comfort_service_all.text }}
             </b-form-checkbox>
         </b-form-group>
 
@@ -132,7 +147,8 @@ export default {
         "message",
         "travelling_data",
         "insurances",
-        "comfort_services"
+        "comfort_services",
+        "comfort_services_all"
     ],
     data() {
         return {
@@ -155,7 +171,8 @@ export default {
     },
 
     methods: {
-        onChecked() {
+        onCheckedIndependent() {
+            document.getElementById("all").disabled = true;
             for (let i = 0; i < this.checked.length; i++) {
                 for (let j = 0; j < this.comfort_services.length; j++) {
                     if (this.checked[i] == this.comfort_services[j].value) {
@@ -167,6 +184,11 @@ export default {
                     }
                 }
             }
+        },
+
+        onCheckedAll() {
+            document.getElementById("independent").disabled = true;
+            this.form.push(this.comfort_services_all[0].text, this.checked[0]);
         },
 
         hideNumberForm() {
@@ -243,6 +265,8 @@ export default {
             this.removeMarker();
             document.getElementById("welcome-message").style.display = "none";
             document.getElementById("success-message").style.display = "inline";
+            document.getElementById("independent").disabled = false;
+            document.getElementById("all").disabled = false;
         },
 
         close() {
@@ -574,6 +598,12 @@ export default {
 
 .comfort-services {
     color: whitesmoke;
+}
+
+#all {
+    position: relative;
+    top: -15px;
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
