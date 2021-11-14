@@ -15,6 +15,7 @@
                     :label="label"
                     :message="message"
                     :comfort_services="comfort_services"
+                    :comfort_services_all="comfort_services_all"
                 />
             </div>
         </div>
@@ -65,7 +66,10 @@ export default {
                 {text: "Mini bar 180 €", value: 180},
                 {text: "Game console 220 €", value: 220},
                 {text: "Massage seat 250 €", value: 250},
-                {text: "Individual seating 620 €", value: 620},
+                {text: "Individual seating 620 €", value: 620}
+                
+            ],
+            comfort_services_all:[
                 {text: "All-inclusive cabin 1250 €", value: 1250}
             ],
             message: []
