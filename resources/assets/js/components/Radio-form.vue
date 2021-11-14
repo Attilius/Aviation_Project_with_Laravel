@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="radioForm">
         <!-- Private jet rent radio button form -->
         <b-form-group class="form" v-slot="{ ariaDescribedby }">
             <h5 id="label" class="radio-form-label">Selecting {{ label }}</h5>
@@ -132,7 +132,7 @@
 
         <b-form @submit="onSubmit" class="submit-btn">
             <b-button id="submit-btn" type="submit" variant="primary"
-                >Submit</b-button
+               v-on:submit="changeDisplay">Submit</b-button
             >
         </b-form>
     </div>
@@ -171,6 +171,10 @@ export default {
     },
 
     methods: {
+        changeDisplay() {
+            this.$emit('changeDisplay', 'flex');
+        },
+
         onCheckedIndependent() {
             document.getElementById("welcome-message").style.display = "none";
             document.getElementById("all").disabled = true;
@@ -269,6 +273,8 @@ export default {
             document.getElementById("success-message").style.display = "inline";
             document.getElementById("independent").disabled = false;
             document.getElementById("all").disabled = false;
+            document.getElementById("radioForm").style.display = "none";
+            this.changeDisplay();
         },
 
         close() {
