@@ -71,6 +71,7 @@
             :travelling_data="travelling_data"
             :insurances="insurances"
             :comfort_services="comfort_services"
+            :comfort_services_all="comfort_services_all"
         />
     </div>
 </template>
@@ -79,7 +80,7 @@
 import RadioForm from "./Radio-form.vue";
 export default {
     name: "ServicesMainContent",
-    props: ["titles", "text", "radio_datas", "label", "message", "insurances", "comfort_services"],
+    props: ["titles", "text", "radio_datas", "label", "message", "insurances", "comfort_services", "comfort_services_all"],
     components: {
         RadioForm
     },
