@@ -236,6 +236,7 @@ export default {
         onSubmit(event) {
             event.preventDefault();
             alert(JSON.stringify(this.form));
+            this.checked = [];
             this.form = [];
             this.selected = "";
             this.viewMessage();
