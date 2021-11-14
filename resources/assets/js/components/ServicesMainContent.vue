@@ -62,7 +62,11 @@
                 <button type="submit" id="submit-btn">Send</button>
             </b-form>
         </div>
-
+        <div id="success">
+            <h5>Thank you for requesting our service!</h5>
+            <a class="link" href="/services">Back</a>
+        </div>
+            
         <RadioForm
             class="radio-form"
             :radio_datas="radio_datas"
@@ -72,6 +76,7 @@
             :insurances="insurances"
             :comfort_services="comfort_services"
             :comfort_services_all="comfort_services_all"
+            v-on:changeDisplay="updateDisplay($event)"
         />
     </div>
 </template>
@@ -103,6 +108,11 @@ export default {
     },
 
     methods: {
+        updateDisplay(updatedDisplay) {
+           document.getElementById("success").style.display = updatedDisplay;
+           document.getElementById("inputs").style.display = "none";
+        },
+
         hideInputs() {
             const inputs = document.getElementById("inputs");
             if (location.pathname != "/services/private-jet-rent") {
@@ -299,6 +309,36 @@ label {
 .date-and-time {
     display: flex;
 }
+
+#success {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.link {
+    width: 100px;
+    height: 30px;
+    background: rebeccapurple;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    margin-top: 20px;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px black;
+}
+
+.link:hover {
+    border: 1px solid rebeccapurple;
+    background: whitesmoke;
+    color: rebeccapurple;
+};
 
 @media (max-width: 1350px) {
     .text-content {
