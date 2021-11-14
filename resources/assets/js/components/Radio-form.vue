@@ -124,8 +124,6 @@
 
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
 
-        <h5 id="success-message">Thank you for requesting our service!</h5>
-
         <p id="selected-message">
             {{ message[0] }} <strong>{{ selected }}</strong> {{ message[1] }}
         </p>
@@ -207,7 +205,6 @@ export default {
         onChangeCheckbox() {
             document.getElementById("number-form").style.display = "block";
             document.getElementById("welcome-message").style.display = "inline";
-            document.getElementById("success-message").style.display = "none";
             if (this.checked.length === 1) {
                 for (let i = 0; i < this.insurances.length; i++) {
                     if (this.insurances[i].value == this.checked[0]) {
@@ -270,7 +267,6 @@ export default {
             this.viewMessage();
             this.removeMarker();
             document.getElementById("welcome-message").style.display = "none";
-            document.getElementById("success-message").style.display = "inline";
             document.getElementById("independent").disabled = false;
             document.getElementById("all").disabled = false;
             document.getElementById("radioForm").style.display = "none";
@@ -362,7 +358,6 @@ export default {
             document.getElementById("jet").style.display = "block";
             document.getElementById("jet").children[index].style.display =
                 "block";
-            document.getElementById("success-message").style.display = "none";
             this.exceptionalDisplay(index);
             this.speed = this.radio_datas[index].speed;
             this.price = this.radio_datas[index].price;
@@ -425,8 +420,6 @@ export default {
                 document.getElementById("selected-message").style.display =
                     "inline";
                 document.getElementById("welcome-message").style.display =
-                    "none";
-                document.getElementById("success-message").style.display =
                     "none";
             }
         }
@@ -595,13 +588,6 @@ export default {
     text-align: center;
     padding-top: 15px;
     margin-bottom: 15px;
-}
-
-#success-message {
-    color: whitesmoke;
-    padding: 10px 0;
-    margin: 10px auto;
-    display: none;
 }
 
 .comfort-services {
