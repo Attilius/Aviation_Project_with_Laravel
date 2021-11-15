@@ -702,7 +702,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1px 1px 0 0;
+    padding: 1px 0 0 0;
     border: none;
     margin: auto 10px;
     font-weight: 700;
