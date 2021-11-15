@@ -1,7 +1,12 @@
 <template>
     <div id="radioForm">
         <!-- Private jet rent radio button form -->
-        <b-form-group class="form" v-slot="{ ariaDescribedby }">
+
+        <b-form-group
+            id="jet-select-form"
+            class="form"
+            v-slot="{ ariaDescribedby }"
+        >
             <h5 id="label" class="radio-form-label">Selecting {{ label }}</h5>
             <b-form-radio
                 v-model="selected"
@@ -45,6 +50,20 @@
                 </div>
             </div>
         </b-form-group>
+
+        <!-- Required warning box -->
+
+        <div id="warning-box">
+            <b-img
+                class="alert-icon"
+                fluid
+                :src="'../images/alert.png'"
+                alt="alert-icon"
+            ></b-img>
+            <h3>Alert</h3>
+            <p>Missing requered data(s)!</p>
+            <button style="margin: 10px" class="btn" @click="onClick">Ok</button>
+        </div>
 
         <!-- Travel insurance checkbox form -->
 
@@ -129,8 +148,12 @@
         </p>
 
         <b-form @submit="onSubmit" class="submit-btn">
-            <b-button id="submit-btn" type="submit" variant="primary"
-               v-on:submit="changeDisplay">Submit</b-button
+            <b-button
+                id="submit-btn"
+                type="submit"
+                variant="primary"
+                @submit="changeDisplay"
+                >Submit</b-button
             >
         </b-form>
     </div>
@@ -169,8 +192,14 @@ export default {
     },
 
     methods: {
+        onClick() {
+            this.$emit('onClick')
+            document.getElementById("warning-box").style.display = "none";
+            
+        },
+
         changeDisplay() {
-            this.$emit('changeDisplay', 'flex');
+            this.$emit("changeDisplay", "flex");
         },
 
         onCheckedIndependent() {
@@ -298,28 +327,38 @@ export default {
             }
         },
 
+        getObjectValues(obj) {
+            for (const property in obj) return `${obj[property]}`;
+        },
+
         select() {
-            document.getElementById("jet").style.display = "none";
-            document.getElementById("label").style.marginBottom = "20px";
-            document.getElementById("selected-message").style.display =
-                "inline";
-            document.getElementById("welcome-message").style.display = "none";
-            this.departure_place = this.travelling_data.from;
-            this.destination = this.travelling_data.to;
-            this.departure_date = this.travelling_data.date;
-            this.departure_time = this.travelling_data.time;
-            this.selected = this.getCost(
-                this.getAllFlightTime(),
-                this.price
-            ).toFixed(2);
-            this.form.push(
-                this.departure_place,
-                this.destination,
-                this.departure_date,
-                this.departure_time,
-                this.type_of_jet,
-                this.selected
-            );
+            if (this.getObjectValues(this.travelling_data) === "") {
+                this.close();
+                document.getElementById("warning-box").style.display = "flex";
+            } else {
+                document.getElementById("jet").style.display = "none";
+                document.getElementById("label").style.marginBottom = "20px";
+                document.getElementById("selected-message").style.display =
+                    "inline";
+                document.getElementById("welcome-message").style.display =
+                    "none";
+                this.departure_place = this.travelling_data.from;
+                this.destination = this.travelling_data.to;
+                this.departure_date = this.travelling_data.date;
+                this.departure_time = this.travelling_data.time;
+                this.selected = this.getCost(
+                    this.getAllFlightTime(),
+                    this.price
+                ).toFixed(2);
+                this.form.push(
+                    this.departure_place,
+                    this.destination,
+                    this.departure_date,
+                    this.departure_time,
+                    this.type_of_jet,
+                    this.selected
+                );
+            }
         },
 
         addText(event) {
@@ -598,6 +637,29 @@ export default {
     position: relative;
     top: -15px;
     margin-bottom: 0;
+}
+
+#warning-box {
+    background: whitesmoke;
+    color: rgb(9, 55, 115);
+    border: 3px solid red;
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 5px black;
+    width: 300px;
+    height: 250px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    z-index: 3;
+}
+
+.alert-icon {
+    width: 50px;
+    height: 50px;
 }
 
 @media (max-width: 768px) {
