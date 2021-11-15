@@ -54,12 +54,20 @@
         <!-- Required warning box -->
 
         <div id="warning-box">
-            <b-img
+            <div class="warning-header">
+                <div class="icon-title">
+                    <b-img
                 class="alert-icon"
                 fluid
                 :src="'../images/alert.png'"
                 alt="alert-icon"
             ></b-img>
+            <h5>warning</h5>
+                </div>
+                
+            <button id="close-btn" @click="onClick">X</button>
+            </div>
+            
             <h3>Alert</h3>
             <p>Missing requered data(s)!</p>
             <button style="margin: 10px" class="btn" @click="onClick">Ok</button>
@@ -642,11 +650,10 @@ export default {
 #warning-box {
     background: whitesmoke;
     color: rgb(9, 55, 115);
-    border: 3px solid red;
     border-radius: 0.25rem;
     box-shadow: 2px 2px 5px black;
     width: 300px;
-    height: 250px;
+    height: 200px;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -658,8 +665,52 @@ export default {
 }
 
 .alert-icon {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+.warning-header {
+    width: 100%;
+    height: 40px;
+    background: rgb(250, 230, 100);
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+}
+
+.icon-title {
+    display: flex;
+    justify-content: flex-start;
+    margin: auto 10px;
+    height: 40px;
+    align-items: center;
+}
+
+.icon-title h5 {
+    text-transform: uppercase;
+    margin: auto 10px;
+}
+
+#close-btn {
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    color: whitesmoke;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 1px 0 0;
+    border: none;
+    margin: auto 10px;
+    font-weight: 700;
+}
+
+#close-btn:focus {
+    box-shadow: none !important;
+    border: none !important;
 }
 
 @media (max-width: 768px) {
@@ -710,6 +761,10 @@ export default {
     .number-form {
         top: 280px;
         left: 60px;
+    }
+
+    #warning-box {
+        left: 14%;
     }
 }
 </style>
