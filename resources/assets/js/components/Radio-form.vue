@@ -183,10 +183,6 @@ export default {
         return {
             selected: "",
             form: [],
-            departure_place: "",
-            destination: "",
-            departure_date: "",
-            departure_time: "",
             type_of_jet: "",
             speed: "",
             price: "",
@@ -350,19 +346,15 @@ export default {
                     "inline";
                 document.getElementById("welcome-message").style.display =
                     "none";
-                this.departure_place = this.travelling_data.from;
-                this.destination = this.travelling_data.to;
-                this.departure_date = this.travelling_data.date;
-                this.departure_time = this.travelling_data.time;
                 this.selected = this.getCost(
                     this.getAllFlightTime(),
                     this.price
                 ).toFixed(2);
                 this.form.push(
-                    this.departure_place,
-                    this.destination,
-                    this.departure_date,
-                    this.departure_time,
+                    this.travelling_data.from,
+                    this.travelling_data.to,
+                    this.travelling_data.date,
+                    this.travelling_data.time,
                     this.type_of_jet,
                     this.selected
                 );
@@ -393,9 +385,7 @@ export default {
         },
 
         removeMarker() {
-            const radioContent = document.getElementsByClassName(
-                "radio-content"
-            );
+            const radioContent = document.getElementsByClassName("radio-content");
             for (let i = 0; i < radioContent.length; i++) {
                 radioContent[i].style.color = "whitesmoke";
             }
