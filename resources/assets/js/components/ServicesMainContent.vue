@@ -3,70 +3,80 @@
         <h2>{{ titles.first }}</h2>
         <article>{{ text }}</article>
 
-<!-- Private jet rent travel datas form -->
+        <!-- Private jet rent travel datas form -->
 
         <div id="inputs" class="input-box">
-            <div class="input-column">
-                <label for="from">From</label>
-                <div class="form-icon">
-                    <div class="icon">
-                        <font-awesome-icon :icon="['fas', 'plane-departure']" />
-                    </div>
-                    <b-form-input
-                        id="from"
-                        class="input"
-                        name="from"
-                        type="text"
-                    ></b-form-input>
-                </div>
-            </div>
-
-            <div class="input-column">
-                <label for="to">To</label>
-                <div class="form-icon">
-                    <div class="icon">
-                        <font-awesome-icon :icon="['fas', 'plane-arrival']" />
-                    </div>
-                    <b-form-input
-                        id="to"
-                        class="input"
-                        name="to"
-                        type="text"
-                    ></b-form-input>
-                </div>
-            </div>
-
-            <div class="date-and-time">
+            <b-form id="inputs-line" @submit="onSubmit">
                 <div class="input-column">
-                    <label for="date">Date</label>
-                    <b-form-input
-                        id="date"
-                        class="input-date"
-                        name="date"
-                        type="date"
-                    ></b-form-input>
+                    <label for="from">From</label>
+                    <div class="form-icon">
+                        <div class="icon">
+                            <font-awesome-icon
+                                :icon="['fas', 'plane-departure']"
+                            />
+                        </div>
+                        <b-form-input
+                            id="from"
+                            class="input"
+                            name="from"
+                            type="text"
+                            required
+                        ></b-form-input>
+                    </div>
                 </div>
 
                 <div class="input-column">
-                    <label for="date">Time</label>
-                    <b-form-input
-                        id="time"
-                        class="input-date"
-                        name="time"
-                        type="time"
-                    ></b-form-input>
+                    <label for="to">To</label>
+                    <div class="form-icon">
+                        <div class="icon">
+                            <font-awesome-icon
+                                :icon="['fas', 'plane-arrival']"
+                            />
+                        </div>
+                        <b-form-input
+                            id="to"
+                            class="input"
+                            name="to"
+                            type="text"
+                            required
+                        ></b-form-input>
+                    </div>
                 </div>
-            </div>
 
-            <b-form @submit="onSubmit">
+                <div class="date-and-time">
+                    <div class="input-column">
+                        <label for="date">Date</label>
+                        <b-form-input
+                            id="date"
+                            class="input-date"
+                            name="date"
+                            type="date"
+                            required
+                        ></b-form-input>
+                    </div>
+
+                    <div class="input-column">
+                        <label for="time">Time</label>
+                        <b-form-input
+                            id="time"
+                            class="input-date"
+                            name="time"
+                            type="time"
+                            required
+                        ></b-form-input>
+                    </div>
+                </div>
                 <button type="submit" id="submit-btn">Send</button>
             </b-form>
         </div>
+
+        <!-- Success message -->
+
         <div id="success">
             <h5>Thank you for requesting our service!</h5>
             <a class="link" href="/services">Back</a>
         </div>
-            
+
         <RadioForm
             class="radio-form"
             :radio_datas="radio_datas"
@@ -76,7 +86,7 @@
             :insurances="insurances"
             :comfort_services="comfort_services"
             :comfort_services_all="comfort_services_all"
-            v-on:changeDisplay="updateDisplay($event)"
+            @changeDisplay="updateDisplay($event)"
         />
     </div>
 </template>
@@ -85,7 +95,16 @@
 import RadioForm from "./Radio-form.vue";
 export default {
     name: "ServicesMainContent",
-    props: ["titles", "text", "radio_datas", "label", "message", "insurances", "comfort_services", "comfort_services_all"],
+    props: [
+        "titles",
+        "text",
+        "radio_datas",
+        "label",
+        "message",
+        "insurances",
+        "comfort_services",
+        "comfort_services_all"
+    ],
     components: {
         RadioForm
     },
@@ -109,8 +128,8 @@ export default {
 
     methods: {
         updateDisplay(updatedDisplay) {
-           document.getElementById("success").style.display = updatedDisplay;
-           document.getElementById("inputs").style.display = "none";
+            document.getElementById("success").style.display = updatedDisplay;
+            document.getElementById("inputs").style.display = "none";
         },
 
         hideInputs() {
@@ -241,6 +260,10 @@ article {
     padding-top: 30px;
 }
 
+#inputs-line {
+    display: flex;
+}
+
 .input {
     width: 150px;
     border-left: none !important;
@@ -338,7 +361,7 @@ label {
     border: 1px solid rebeccapurple;
     background: whitesmoke;
     color: rebeccapurple;
-};
+}
 
 @media (max-width: 1350px) {
     .text-content {
