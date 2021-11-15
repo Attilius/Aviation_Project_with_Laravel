@@ -6,7 +6,11 @@
         <!-- Private jet rent travel datas form -->
 
         <div id="inputs" class="input-box">
-            <b-form id="inputs-line" @submit="onSubmit">
+            <b-form
+                id="inputs-line"
+                @submit="onSubmit"
+                @click="resetAlertBackground"
+            >
                 <div class="input-column">
                     <label for="from">From</label>
                     <div class="form-icon">
@@ -87,6 +91,7 @@
             :comfort_services="comfort_services"
             :comfort_services_all="comfort_services_all"
             @changeDisplay="updateDisplay($event)"
+            @onClick="setFromAlert($event)"
         />
     </div>
 </template>
@@ -127,6 +132,22 @@ export default {
     },
 
     methods: {
+        resetAlertBackground() {
+            const inputs = document.querySelectorAll("input");
+            inputs.forEach(input => {
+                input.addEventListener("input", () => {
+                    input.classList.remove("alert-bg");
+                });
+            });
+        },
+
+        setFromAlert() {
+            const inputs = document.querySelectorAll("input");
+            inputs.forEach(input => {
+                input.classList.add("alert-bg");
+            });
+        },
+
         updateDisplay(updatedDisplay) {
             document.getElementById("success").style.display = updatedDisplay;
             document.getElementById("inputs").style.display = "none";
@@ -361,6 +382,10 @@ label {
     border: 1px solid rebeccapurple;
     background: whitesmoke;
     color: rebeccapurple;
+}
+
+.alert-bg {
+    background: red;
 }
 
 @media (max-width: 1350px) {
