@@ -385,7 +385,7 @@ label {
 }
 
 .alert-bg {
-    background: red;
+    background: gold;
 }
 
 @media (max-width: 1350px) {
