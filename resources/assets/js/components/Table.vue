@@ -629,8 +629,9 @@ export default {
 }
 
 .selected-item fieldset {
-    border: 1px solid lightskyblue;
     padding-bottom: 10px;
+    box-shadow: 3px 3px 9px black;
+    background: linear-gradient(135deg, rgb(9, 55, 115), rgb(51, 100, 179));
 }
 
 .selected-item legend {
