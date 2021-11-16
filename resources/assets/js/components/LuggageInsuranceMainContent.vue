@@ -27,45 +27,53 @@ export default {
 }
 
 .text-content {
-    background: whitesmoke;
+    background: transparent;
     width: 80%;
-    height: 1030px;
-    margin: 0 auto;
+    margin: 0 auto 150px;
     position: relative;
-    top: 90px;
 }
 
 h2::after {
     content: "";
     position: absolute;
-    background-color: rebeccapurple;
+    background-color: lightskyblue;
     width: 20%;
     height: 7px;
     bottom: -10px;
     left: 30px;
     margin-bottom: 20px;
+    box-shadow: 2px 2px 5px black;
 }
 
 h2 {
     padding: 15px 20px 25px 30px;
     position: relative;
-    margin-top: 20px;
-    color: rgb(9, 55, 115);
+    margin-top: 50px;
+    color: whitesmoke;
     text-transform: capitalize;
-    text-shadow: 2px 2px 5px silver;
+    text-shadow: 2px 2px 5px black;
     width: 30%;
 }
 
 article {
-    padding: 25px;
-    margin: 5px;
+    width: 95%;
+    margin: 0px auto;
+    padding: 25px 0;
+    color: #ced4da;
+    border-bottom: 2px solid lightskyblue;
 }
 
 @media (max-width: 768px){
     .text-content {
         height: 100%;
         width: 100%;
-        top: 0;
+        position: absolute;
+        top: 5%;
+    }
+
+    article {
+        width: 85%;
+        margin: 0 30px;
     }
 }
 
