@@ -196,45 +196,76 @@ export default {
     },
 
     methods: {
+// Required warning box        
         onClick() {
             this.$emit('onClick')
             document.getElementById("warning-box").style.display = "none";
             
         },
-
+// Success message in the parent (ServicesMainContent.vue) component
         changeDisplay() {
             this.$emit("changeDisplay", "flex");
         },
-
+// Premium comfort checkbox form
         onCheckedIndependent() {
-            document.getElementById("welcome-message").style.display = "none";
-            document.getElementById("all").disabled = true;
-            for (let i = 0; i < this.checked.length; i++) {
-                for (let j = 0; j < this.comfort_services.length; j++) {
-                    if (this.checked[i] == this.comfort_services[j].value) {
-                        this.form.push(
-                            this.comfort_services[j].text,
-                            this.checked[i]
-                        );
-                        this.form = [...new Set(this.form)];
-                    }
+            document.getElementById("independent").addEventListener("change", (e) => {
+                if (e.target.checked) {
+                    document.getElementById("welcome-message").style.display = "none";
+                    document.getElementById("all").disabled = true;
+                    this.addDataToForm(e, this.form, this.comfort_services);
+                    this.form = [...new Set(this.form)];
+                } else {
+                    this.removeDataFrom_Form(e, this.form);
+                }
+                if (this.form.length == 0) {
+                    document.getElementById("all").disabled = false;
+                    document.getElementById("welcome-message").style.display = "inline";
+                }
+            });
+        },
+
+        addDataToForm(event, arrayOfSubmit, arrayFromProps) {
+            for (let j = 0; j < arrayFromProps.length; j++) {
+                if (event.target._value == arrayFromProps[j].value) {
+                    arrayOfSubmit.push(
+                        arrayFromProps[j].text,
+                        event.target._value
+                    );
                 }
             }
         },
 
-        onCheckedAll() {
-            document.getElementById("welcome-message").style.display = "none";
-            document.getElementById("independent").disabled = true;
-            this.form.push(this.comfort_services_all[0].text, this.checked[0]);
+        removeDataFrom_Form(event, arrayOfSubmit) {
+            if (!event.target.checked) {
+                for (let i = 0; i < arrayOfSubmit.length; i++) {
+                    if (event.target._value == arrayOfSubmit[i]) {
+                        arrayOfSubmit.splice(i-1, 2);
+                    }
+                }
+            }    
         },
-
+// Premium comfort checkbox form
+        onCheckedAll() {
+            document.getElementById("all").addEventListener("change", (e) => {
+                if (e.target.checked) {
+                    document.getElementById("welcome-message").style.display = "none";
+                    document.getElementById("independent").disabled = true;
+                    this.form.push(this.comfort_services_all[0].text, this.checked[0]);
+                } else {
+                    document.getElementById("welcome-message").style.display = "inline";
+                    document.getElementById("independent").disabled = false;
+                    this.form = [];
+                }
+            });
+        },
+// Travel insurance checkbox form
         hideNumberForm() {
             const formDiv = document.getElementById("form-2");
             if (location.pathname != "/services/travel-insurance") {
                 formDiv.style.display = "none";
             }
         },
-
+// Travel insurence
         onChangeCheckbox() {
             document.getElementById("number-form").style.display = "block";
             document.getElementById("welcome-message").style.display = "inline";
@@ -250,7 +281,7 @@ export default {
                 this.checked = [];
             }
         },
-
+// Travel insurance
         contolledSend() {
             document
                 .getElementById("numbers-input")
@@ -263,7 +294,7 @@ export default {
                     }
                 });
         },
-
+// Travel insurance numbers of person
         onSubmitNumberOfPersons() {
             this.numbers = document.getElementById("numbers-input").value;
             this.form.push(
@@ -274,19 +305,19 @@ export default {
             this.price = "";
             document.getElementById("number-form").style.display = "none";
         },
-
+// Travel insurance numbers of person
         onCancel() {
             document.getElementById("number-form").style.display = "none";
             this.form.pop(this.form[this.form.length - 1]);
         },
-
+// Private jet rent
         getAllFlightTime() {
             const totalDistance = this.travelling_data.distance_ * 2;
             const jetSpeed = this.speed;
             const result = totalDistance / jetSpeed;
             return result;
         },
-
+// Private jet rent & Travel insurance
         getCost(allFlightTime, price) {
             return allFlightTime * price;
         },
@@ -305,7 +336,7 @@ export default {
             document.getElementById("radioForm").style.display = "none";
             this.changeDisplay();
         },
-
+// Private jet rent (selecting jet)
         close() {
             document.getElementById("jet").style.display = "none";
             document.getElementById("label").style.marginBottom = "20px";
@@ -318,7 +349,7 @@ export default {
             }
             this.removeMarker();
         },
-
+// Private jet rent
         exceptionalDisplay(index) {
             for (let i = 0; i < this.radio_datas.length; i++) {
                 if (i != index) {
@@ -334,7 +365,7 @@ export default {
         getObjectValues(obj) {
             for (const property in obj) return `${obj[property]}`;
         },
-
+// Private jet rent
         select() {
             if (this.getObjectValues(this.travelling_data) === "") {
                 this.close();
@@ -360,7 +391,7 @@ export default {
                 );
             }
         },
-
+// Group discount
         addText(event) {
             switch (event) {
                 case 5:
@@ -383,14 +414,14 @@ export default {
                     break;
             }
         },
-
+// Private jet rent
         removeMarker() {
             const radioContent = document.getElementsByClassName("radio-content");
             for (let i = 0; i < radioContent.length; i++) {
                 radioContent[i].style.color = "whitesmoke";
             }
         },
-
+// Private jet rent
         showCard(index) {
             document.getElementById("jet").style.display = "block";
             document.getElementById("jet").children[index].style.display =
@@ -400,7 +431,7 @@ export default {
             this.price = this.radio_datas[index].price;
             this.type_of_jet = this.radio_datas[index].text;
         },
-
+// Private jet rent
         displayOffer(index) {
             document.getElementById("selected-message").style.display = "none";
             document.getElementById("welcome-message").style.display = "inline";
@@ -409,7 +440,7 @@ export default {
             ].style.color = "lime";
             this.showCard(index);
         },
-
+// Private jet rent
         onChange(event) {
             this.viewMessage();
             if (event > 25) {
@@ -434,7 +465,7 @@ export default {
                         break;
                 }
             }
-
+// TODO reorganized to an independent method!!! (Group discount)
             if (this.form.length === 0 && event >= 5 && event <= 25) {
                 this.addText(event);
                 this.form.push(event);
