@@ -17,7 +17,7 @@
                     >
                 </b-tr>
             </b-thead>
-            <b-tbody>
+            <b-tbody class="t-body">
                 <b-tr id="first-row">
                     <b-td>{{ items.first.size }}</b-td>
                     <b-td>{{ items.first.height }}</b-td>
@@ -600,8 +600,21 @@ export default {
     margin: 0 auto;
 }
 
+.table{
+    margin-top: 30px;
+    box-shadow: 2px 2px 10px black;
+}
+
+#first-row ,
+#second-row ,
+#third-row ,
+#fourth-row ,
+#fifth-row ,
+#sixth-row {
+    color: rgb(9, 55, 115);
+}
+
 .selected-item {
-    border-top: 1px solid #ced4da;
     padding-top: 25px;
 }
 
@@ -612,24 +625,32 @@ export default {
 .selected-item li {
     list-style: none;
     margin-left: 10px;
+    color: whitesmoke;
 }
 
 .selected-item fieldset {
-    border: 1px solid #292b2c;
+    border: 1px solid lightskyblue;
     padding-bottom: 10px;
 }
 
 .selected-item legend {
     text-align: center;
-    border: 1px solid #292b2c;
-    background: #ced4da;
-    color: #292b2c;
+    border: 1px solid lightskyblue;
+    background: lightskyblue;
+    color: rgb(9, 55, 115);
     font-size: 20px;
     width: 200px;
 }
 
 .t-head {
     text-transform: capitalize;
+    color: whitesmoke;
+    border: none;
+    background: rgb(9, 55, 115);
+}
+
+.t-body {
+    background: lightskyblue;
 }
 
 .check-switch {
@@ -645,8 +666,8 @@ export default {
     background: RebeccaPurple;
     width: 230px;
     height: 40px;
-    box-shadow: 2px 2px 5px silver;
-    border: 1px solid #ced4da;
+    box-shadow: 2px 2px 5px black;
+    border: none;
     margin-left: 3px;
     color: whitesmoke;
     margin: 30px;
@@ -662,8 +683,9 @@ export default {
 
 #submit-btn:hover {
     color: rebeccapurple;
-    background: transparent;
+    background: whitesmoke;
     border: 1px solid rebeccapurple;
+    box-shadow: none;
     transition: 0.4s ease-in-out 0s;
 }
 
@@ -680,8 +702,8 @@ export default {
 
 #total {
     width: 230px;
-    background: #292b2c;
-    color: whitesmoke;
+    background: lightskyblue;
+    color: rgb(9, 55, 115);
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -711,13 +733,14 @@ export default {
 }
 
 .focus {
-    background: #292b2c;
+    background: rgb(9, 55, 115);
     color: white;
     text-align: center;
 }
 
 #open-message {
     padding-top: 25px;
+    color: #ced4da;
 }
 
 #success-message {
