@@ -465,7 +465,7 @@ export default {
                         break;
                 }
             }
-// TODO reorganized to an independent method!!! (Group discount)
+// (Group discount)
             if (this.form.length === 0 && event >= 5 && event <= 25) {
                 this.addText(event);
                 this.form.push(event);
