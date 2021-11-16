@@ -152,7 +152,7 @@
         <p id="welcome-message">You don't selected any {{ label }} yet*</p>
 
         <p id="selected-message">
-            {{ message[0] }} <strong>{{ selected }}</strong> {{ message[1] }}
+            {{ message[0] }} <span id="selected-value"><strong>{{ selected }}</strong></span> {{ message[1] }}
         </p>
 
         <b-form @submit="onSubmit" class="submit-btn">
@@ -524,9 +524,14 @@ export default {
 
 #selected-message {
     display: none;
-    border: 1px solid #292b2c;
+    box-shadow: 3px 3px 9px black;
     padding: 10px;
-    color: #ced4da;
+    color: whitesmoke;
+    background: linear-gradient(135deg, rgb(51, 100, 179), rgb(9, 55, 115));
+}
+
+#selected-value {
+    color: lightgreen;
 }
 
 #jet {
