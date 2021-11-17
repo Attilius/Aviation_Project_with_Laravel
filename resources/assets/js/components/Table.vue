@@ -336,7 +336,7 @@
 
         <b-form @submit="onSubmit">
             <b-button id="submit-btn" type="submit" variant="primary"
-                >Submit</b-button
+                @click="changeDisplay">Submit</b-button
             >
         </b-form>
     </div>
@@ -374,6 +374,10 @@ export default {
     },
 
     methods: {
+        changeDisplay() {
+            this.$emit("changeDisplay", "flex");
+        },
+
         getAmount(piece, price) {
             return piece * parseInt(price);
         },
