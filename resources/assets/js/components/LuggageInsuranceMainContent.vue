@@ -1,8 +1,16 @@
 <template>
-    <div class="text-content">
+    <div id="content" class="text-content">
         <h2>{{ titles.first }}</h2>
         <article>{{ text }} <strong>{{ important_text }}</strong></article>
-        <Table :items="items" :fields="fields" />
+
+        <!-- Success message -->
+
+        <div id="success">
+            <h5>Thank you for requesting our service!</h5>
+            <a class="link" href="/services">Back</a>
+        </div>
+
+        <Table id="table" :items="items" :fields="fields" @changeDisplay="updateDisplay($event)" />
     </div>
 </template>
 
@@ -13,6 +21,35 @@ export default {
     props: ['titles', 'text', 'important_text', 'items', 'fields'],
     components: {
         Table
+    },
+
+    mounted() {
+        this.setContentHeight();
+    },
+
+    methods: {
+        updateDisplay(updatedDisplay) {
+            document.getElementById("success").style.display = updatedDisplay;
+            document.getElementById("table").style.display = "none";
+            document.getElementById("content").style.height = "100vh";
+            this.changeDisplay();
+        },
+
+        changeDisplay() {
+            this.$emit("changeDisplay", "200vh");
+        },
+
+        setContentHeight() {
+            const content = document.getElementById("content");
+
+            switch (location.pathname) {
+                case "/services/luggage-insurance":
+                    if (window.innerWidth > 768) {
+                        content.style.height = "780px";
+                    }
+                break;
+            }
+        },
     }
 };
 </script>
@@ -61,6 +98,37 @@ article {
     padding: 25px 0;
     color: #ced4da;
     border-bottom: 2px solid lightskyblue;
+}
+
+#success {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.link {
+    width: 100px;
+    height: 30px;
+    background: rebeccapurple;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    margin-top: 20px;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px black;
+}
+
+.link:hover {
+    border: 1px solid rebeccapurple;
+    background: whitesmoke;
+    color: rebeccapurple;
 }
 
 @media (max-width: 768px){
