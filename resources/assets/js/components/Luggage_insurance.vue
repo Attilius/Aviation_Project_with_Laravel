@@ -1,8 +1,8 @@
 <template>
     <div>
         <Header class="header" />
-        <div class="wrapper">
-            <div class="skin">
+        <div id="wrapper" class="wrapper">
+            <div id="skin" class="skin">
                 <AnimatedHeader class="animated-header" :titles="titles" :images="images" />
                 <ServiceMainContent
                 class="main-content"
@@ -11,6 +11,7 @@
                     :important_text="important_text"
                     :items="items"
                     :fields="fields"
+                    @changeDisplay="updateDisplay($event)"
                 />
             </div>
         </div>
@@ -135,7 +136,15 @@ export default {
                 }
             },
         };
+    },
+
+    methods: {
+        updateDisplay(updatedDisplay) {
+            document.getElementById("wrapper").style.height = updatedDisplay;
+            document.getElementById("skin").style.height = updatedDisplay;
+        },
     }
+    
 };
 </script>
 
