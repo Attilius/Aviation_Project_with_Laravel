@@ -322,7 +322,6 @@
 
         <div class="selected-item">
             <p id="open-message">You have not selected any item yet*</p>
-            <h5 id="success-message">Thank you for requesting our service!</h5>
             <fieldset id="item-list">
                 <legend>Selected item(s)</legend>
                 <ul>
@@ -452,7 +451,6 @@ export default {
             document.getElementById("open-message").style.display = "inline";
             document.getElementById("total").style.display = "none";
             document.getElementById("item-list").style.display = "none";
-            document.getElementById("success-message").style.display = "none";
         },
 
         // third step
@@ -504,8 +502,6 @@ export default {
             if (this.form.length < 1) {
                 document.getElementById("open-message").style.display =
                     "inline";
-                document.getElementById("success-message").style.display =
-                    "none";
                 alert("Empty form");
             } else {
                 this.form.forEach(element => {
@@ -515,8 +511,6 @@ export default {
                 document.getElementById("open-message").style.display = "none";
                 document.getElementById("total").style.display = "none";
                 document.getElementById("item-list").style.display = "none";
-                document.getElementById("success-message").style.display =
-                    "inline";
                 alert(JSON.stringify(this.form));
                 this.form = [];
             }
@@ -740,14 +734,7 @@ export default {
 }
 
 #open-message {
-    padding-top: 25px;
     color: #ced4da;
-}
-
-#success-message {
-    color: #292b2c;
-    padding: 10px 0;
-    margin: 10px auto;
 }
 
 @media (max-width: 768px) {
@@ -784,8 +771,5 @@ export default {
         margin: 20px auto;
     }
 
-    #success-message {
-        font-size: 1rem;
-    }
 }
 </style>
