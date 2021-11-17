@@ -251,6 +251,7 @@ export default {
                     document.getElementById("welcome-message").style.display = "none";
                     document.getElementById("independent").disabled = true;
                     this.form.push(this.comfort_services_all[0].text, this.checked[0]);
+                    this.form = [...new Set(this.form)];
                 } else {
                     document.getElementById("welcome-message").style.display = "inline";
                     document.getElementById("independent").disabled = false;
