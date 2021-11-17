@@ -24,44 +24,45 @@ export default {
 }
 
 .text-content {
-    background: whitesmoke;
+    background: transparent;
     width: 80%;
-    height: 300px;
-    margin: 0 auto;
+    margin: 0 auto 150px;
     position: relative;
-    top: 90px;
 }
 
 h2::after {
     content: "";
     position: absolute;
-    background-color: rebeccapurple;
+    background-color: lightskyblue;
     width: 20%;
     height: 7px;
     bottom: -10px;
     left: 30px;
     margin-bottom: 20px;
+    box-shadow: 2px 2px 5px black;
 }
 
 h2 {
     padding: 15px 20px 25px 30px;
     position: relative;
-    margin-top: 20px;
-    color: rgb(9, 55, 115);
+    margin-top: 50px;
+    color: whitesmoke;
     text-transform: capitalize;
-    text-shadow: 2px 2px 5px silver;
+    text-shadow: 2px 2px 5px black;
     width: 30%;
 }
 
 article {
     width: 95%;
+    margin: 0px auto;
     padding: 25px 0;
-    margin: 5px auto;
-    border-bottom: 1px solid #292b2c;
+    color: #ced4da;
+    border-bottom: 2px solid lightskyblue;
 }
 
 .logged-out-message {
     padding: 15px 30px;
+    color: #ced4da;
 }
 
 .logged-in-without-booking-message {
