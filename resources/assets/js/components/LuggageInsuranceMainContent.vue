@@ -32,6 +32,7 @@ export default {
             document.getElementById("success").style.display = updatedDisplay;
             document.getElementById("table").style.display = "none";
             document.getElementById("content").style.height = "100vh";
+            window.scrollTo(0, 0);
             this.changeDisplay();
         },
 
