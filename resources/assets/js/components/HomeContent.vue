@@ -284,7 +284,7 @@ export default {
     margin-left: 13px;
 }
 
-.label {
+.label, .row2 {
     color: rgb(9, 55, 115);
     text-shadow: 2px 2px 5px silver;
 }
