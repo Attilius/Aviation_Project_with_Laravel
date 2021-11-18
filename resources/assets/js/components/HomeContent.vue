@@ -12,9 +12,9 @@
                         ></b-img>
                     </div>
                 </div>
-                <div class="chat">
+                <b-button class="chat">
                     <font-awesome-icon :icon="['far', 'comments']" />
-                </div>
+                </b-button>
             </b-col>
             <b-col cols="12" lg="7" class="right">
                 <b-container class="open-page-content">
@@ -239,6 +239,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(9, 55, 115);
+    border: none;
+}
+
+.chat:hover {
+    background: rgb(9, 55, 115);
+    box-shadow: 0 0 10px rgb(9, 55, 115);
 }
 
 .right {
