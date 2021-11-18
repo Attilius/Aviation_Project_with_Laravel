@@ -151,6 +151,8 @@ export default {
         updateDisplay(updatedDisplay) {
             document.getElementById("success").style.display = updatedDisplay;
             document.getElementById("inputs").style.display = "none";
+            if (window.innerWidth > 768) window.scrollTo(0, 500);
+            else window.scrollTo(0, 0);
         },
 
         hideInputs() {
@@ -357,9 +359,10 @@ label {
 #success {
     width: 100%;
     height: 100%;
+    padding-top: 50px;
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: whitesmoke;
 }
