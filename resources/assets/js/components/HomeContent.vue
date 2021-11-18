@@ -12,6 +12,9 @@
                         ></b-img>
                     </div>
                 </div>
+                <div class="chat">
+                    <font-awesome-icon :icon="['far', 'comments']" />
+                </div>
             </b-col>
             <b-col cols="12" lg="7" class="right">
                 <b-container class="open-page-content">
@@ -56,7 +59,9 @@
                             </div>
 
                             <div class="input-column">
-                                <label class="label" for="date">Date of away</label>
+                                <label class="label" for="date"
+                                    >Date of away</label
+                                >
                                 <b-form-input
                                     class="input"
                                     name="date"
@@ -65,7 +70,9 @@
                             </div>
 
                             <div id="back-way" class="input-column">
-                                <label class="label" for="date">Date of back way</label>
+                                <label class="label" for="date"
+                                    >Date of back way</label
+                                >
                                 <b-form-input
                                     id="back-date"
                                     class="input"
@@ -94,7 +101,9 @@
                             >
                         </b-row>
 
-                        <b-button type="submit" id="submit-btn">BOOK NOW</b-button>
+                        <b-button type="submit" id="submit-btn"
+                            >BOOK NOW</b-button
+                        >
                     </b-form>
                 </b-container>
             </b-col>
@@ -150,7 +159,7 @@ export default {
 
         onBooking(event) {
             event.preventDefault();
-            alert("Booking Successful!")
+            alert("Booking Successful!");
         }
     }
 };
@@ -215,6 +224,21 @@ export default {
     width: 100%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
+}
+
+.chat {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background: rgb(9, 55, 115);
+    color: whitesmoke;
+    font-size: 30px;
+    position: absolute;
+    bottom: 80px;
+    left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .right {
@@ -391,11 +415,9 @@ option:hover {
     .A320 {
         margin-left: 100px;
     }
-
 }
 
 @media (max-width: 991px) {
-
     .under-left {
         height: 40vh;
         width: 100%;
@@ -453,5 +475,4 @@ option:hover {
         font-size: 2.5rem;
     }
 }
-
 </style>
