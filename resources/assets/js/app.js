@@ -27,6 +27,8 @@ import {
     faSuitcaseRolling,
     faMugHot,
     faBan,
+    faPaperPlane,
+    faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { faCopyright, faComments } from "@fortawesome/free-regular-svg-icons";
 import { faAvianex } from "@fortawesome/free-brands-svg-icons";
@@ -64,7 +66,9 @@ library.add(
     faMugHot,
     faAvianex,
     faBan,
-    faComments
+    faComments,
+    faPaperPlane,
+    faTimes
 );
 
 Vue.config.productionTip = false;
