@@ -20,33 +20,51 @@
                 ></b-img>
                 <div class="msg">Got any questions? I'm happy to help.</div>
             </div>
-            <form>
+            <div id="message">
                 <textarea
+                    id="text"
                     name="message"
-                    id="message"
                     cols="30"
                     rows="10"
                     placeholder="Write a message"
                 ></textarea>
-            </form>
+                <button id="send" type="submit">
+                    <font-awesome-icon :icon="['fas', 'paper-plane']" />
+                </button>
+            </div>
         </div>
-        <b-button id="chat" class="chat" @click="onClick">
-            <font-awesome-icon :icon="['far', 'comments']" />
-        </b-button>
+        <button id="chat" class="chat" @click="onClick">
+            <font-awesome-icon id="default" :icon="['far', 'comments']" />
+            <font-awesome-icon id="active" :icon="['fas', 'times']" />
+        </button>
     </div>
 </template>
 
 <script>
 export default {
     name: "Chat",
+    data() {
+        return {
+            counter: 0
+        };
+    },
 
     methods: {
         onClick() {
-            document.getElementById("chat").addEventListener("click", () => {
+            this.counter++;
+            if (this.counter === 1) {
+                document.getElementById("default").style.display = "none";
+                document.getElementById("active").style.display = "flex";
                 document.getElementById("chat-window").style.display = "block";
-            });
+            } else {
+                document.getElementById("default").style.display = "flex";
+                document.getElementById("active").style.display = "none";
+                document.getElementById("chat-window").style.display = "none";
+                this.counter = 0;
+            }
         }
     }
+
 };
 </script>
 
@@ -55,7 +73,12 @@ export default {
     width: 60px;
     height: 60px;
     border-radius: 50px;
-    background: rgb(9, 55, 115);
+    background: linear-gradient(
+        135deg,
+        lightskyblue,
+        rgb(51, 100, 179),
+        rgb(9, 55, 115)
+    );
     color: whitesmoke;
     font-size: 30px;
     position: absolute;
@@ -66,7 +89,15 @@ export default {
     align-items: center;
     cursor: pointer;
     box-shadow: 0 0 5px rgb(9, 55, 115);
-    border: none;
+    border: 2px double whitesmoke;
+}
+
+#active {
+    display: none;
+}
+
+#default {
+    display: flex;
 }
 
 .chat-window {
@@ -83,7 +114,12 @@ export default {
 .head {
     width: 100%;
     height: 70px;
-    background: linear-gradient(135deg, rgb(51, 100, 179), rgb(9, 55, 115));
+    background: linear-gradient(
+        135deg,
+        lightskyblue,
+        rgb(51, 100, 179),
+        rgb(9, 55, 115)
+    );
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     display: flex;
@@ -129,8 +165,34 @@ export default {
     bottom: 0;
     background: whitesmoke;
     border-top: 1px solid #ced4da;
-    padding: 10px;
     border-radius: 0 0 0.75rem 0.75rem;
+}
+
+#text {
+    width: 100%;
+    height: 100%;
+    padding: 10px 50px 10px 10px;
+    border: none;
+    background: whitesmoke;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+#text:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#send {
+    width: 15%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 255px;
+    border: none;
+    background: whitesmoke;
+    color: rebeccapurple;
+    border-bottom-right-radius: 0.5rem;
 }
 
 .online {
@@ -153,7 +215,17 @@ export default {
 .chat:hover,
 .chat:active,
 .chat:focus {
-    background: rgb(9, 55, 115);
+    background: linear-gradient(
+        135deg,
+        lightskyblue,
+        rgb(51, 100, 179),
+        rgb(9, 55, 115)
+    );
     box-shadow: 0 0 10px rgb(9, 55, 115);
+    border: 2px double whitesmoke;
+}
+
+.active {
+    display: block;
 }
 </style>
