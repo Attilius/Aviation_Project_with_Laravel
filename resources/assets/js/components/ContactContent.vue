@@ -241,4 +241,10 @@ input {
     border: 2px solid rebeccapurple;
 }
 
+@media(max-width: 768px) {
+    .content, .skin {
+        height: 150vh;
+    }
+}
+
 </style>
