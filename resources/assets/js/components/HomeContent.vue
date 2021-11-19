@@ -12,9 +12,7 @@
                         ></b-img>
                     </div>
                 </div>
-                <b-button class="chat">
-                    <font-awesome-icon :icon="['far', 'comments']" />
-                </b-button>
+                <Chat />
             </b-col>
             <b-col cols="12" lg="7" class="right">
                 <b-container class="open-page-content">
@@ -112,8 +110,13 @@
 </template>
 
 <script>
+import Chat from "./Chat.vue";
 export default {
     name: "HomeContent",
+
+    components: {
+        Chat
+    },
 
     data() {
         return {
@@ -224,29 +227,6 @@ export default {
     width: 100%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
-}
-
-.chat {
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    background: rgb(9, 55, 115);
-    color: whitesmoke;
-    font-size: 30px;
-    position: absolute;
-    bottom: 80px;
-    left: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgb(9, 55, 115);
-    border: none;
-}
-
-.chat:hover {
-    background: rgb(9, 55, 115);
-    box-shadow: 0 0 10px rgb(9, 55, 115);
 }
 
 .right {
