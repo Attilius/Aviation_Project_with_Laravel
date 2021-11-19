@@ -112,15 +112,15 @@ export default {
 .middle {
     width: 50%;
     height: 5rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
     margin: 40px auto;
 }
 
 .contact-data {
     display: flex;
     flex-direction: column;
-    width: 20%;
     height: 5rem;
     color: rebeccapurple;
     justify-content: center;
@@ -244,6 +244,10 @@ input {
 @media(max-width: 768px) {
     .content, .skin {
         height: 150vh;
+    }
+
+    .middle {
+        grid-template-columns: repeat(2, 2fr);
     }
 }
 
