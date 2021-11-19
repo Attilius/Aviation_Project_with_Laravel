@@ -206,7 +206,7 @@ p, .email {
 
 #message:focus, #name:focus, #tel:focus, #email:focus {
     border: 2px solid rebeccapurple !important;
-    box-shadow: none;
+    box-shadow: none !important;
     background: white;
 }
 
