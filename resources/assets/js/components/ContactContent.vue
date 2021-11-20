@@ -6,20 +6,30 @@
             </div>
             <div class="middle">
                 <div class="contact-data">
-                    <font-awesome-icon class="icon" :icon="['fas', 'phone-alt']" />
+                    <font-awesome-icon
+                        class="icon"
+                        :icon="['fas', 'phone-alt']"
+                    />
                     <div class="text-data">
-                        <p class="phone">+1 234 567 8900
-                        <span>+1 234 567 9800</span></p>
+                        <p class="phone">
+                            +1 234 567 8900 <span>+1 234 567 9800</span>
+                        </p>
                     </div>
                 </div>
                 <div class="contact-data">
-                    <font-awesome-icon class="icon" :icon="['fas', 'envelope']" />
+                    <font-awesome-icon
+                        class="icon"
+                        :icon="['fas', 'envelope']"
+                    />
                     <div class="text-data">
                         <a class="email" href="">info@loremairlines.com</a>
                     </div>
                 </div>
                 <div class="contact-data">
-                    <font-awesome-icon class="icon" :icon="['fas', 'map-marker-alt']" />
+                    <font-awesome-icon
+                        class="icon"
+                        :icon="['fas', 'map-marker-alt']"
+                    />
                     <div class="text-data">
                         <p>1010 Avenue of the Moon New York, NY 10018 US.</p>
                     </div>
@@ -35,18 +45,36 @@
                 <form id="form" action="" method="post">
                     <div class="fields">
                         <div class="person-datas">
-                        <input type="text" name="name" id="name" placeholder="Name*">
-                        <input type="tel" name="tel" id="tel" placeholder="Phone*">
-                        <input type="email" name="email" id="email" placeholder="Email*">
-                    </div>
-                    <div class="message">
-                        <textarea name="message" id="message" placeholder="Your message*"></textarea>
-                    </div>
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Name*"
+                            />
+                            <input
+                                type="tel"
+                                name="tel"
+                                id="tel"
+                                placeholder="Phone*"
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Email*"
+                            />
+                        </div>
+                        <div class="message">
+                            <textarea
+                                name="message"
+                                id="message"
+                                placeholder="Your message*"
+                            ></textarea>
+                        </div>
                     </div>
                     <div class="btn_">
-                        <input id="s-btn" type="button" value="Submit >">
+                        <input id="s-btn" type="button" value="Submit >" />
                     </div>
-                    
                 </form>
             </div>
         </div>
@@ -55,8 +83,8 @@
 
 <script>
 export default {
-    name: "ContactContent",
-}
+    name: "ContactContent"
+};
 </script>
 
 <style scoped>
@@ -92,10 +120,10 @@ export default {
     content: "";
     position: absolute;
     background-color: rebeccapurple;
-    width: 5%;
+    width: 3%;
     height: 7px;
     bottom: -10px;
-    left: 47.45%;
+    left: 48.5%;
     margin-bottom: 20px;
     box-shadow: 2px 2px 5px black;
     border-radius: 50px;
@@ -122,6 +150,7 @@ export default {
     display: flex;
     flex-direction: column;
     height: 5rem;
+    width: auto;
     color: rebeccapurple;
     justify-content: center;
     align-items: center;
@@ -138,7 +167,8 @@ export default {
     border: none;
 }
 
-p, .email {
+p,
+.email {
     color: whitesmoke;
     font-size: 0.8rem;
     margin: 5px auto;
@@ -204,7 +234,10 @@ p, .email {
     border-radius: 0.25rem;
 }
 
-#message:focus, #name:focus, #tel:focus, #email:focus {
+#message:focus,
+#name:focus,
+#tel:focus,
+#email:focus {
     border: 2px solid rebeccapurple !important;
     box-shadow: none !important;
     background: white;
@@ -241,14 +274,53 @@ input {
     border: 2px solid rebeccapurple;
 }
 
-@media(max-width: 768px) {
-    .content, .skin {
+@media (max-width: 768px) {
+    .content,
+    .skin {
         height: 150vh;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .title::after {
+        width: 10%;
     }
 
     .middle {
         grid-template-columns: repeat(2, 2fr);
+        grid-gap: 10px;
+        margin: 40px auto;
+        height: 11rem;
+        width: 100%;
     }
-}
 
+    .contact-data {
+        width: 100%;
+    }
+
+    .bottom {
+        width: 95%;
+    }
+
+    #form {
+        width: 80%;
+    }
+
+    .fields {
+        flex-direction: column;
+    }
+
+    .person-datas,
+    .message {
+        width: 100%;
+        padding: 0;
+    }
+
+    .message {
+        margin-top: 25px;
+    }
+
+}
 </style>
