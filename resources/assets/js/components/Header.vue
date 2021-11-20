@@ -73,12 +73,13 @@ export default {
 .logo {
     height: 50px;
     width: 61px;
-    margin: 0;
+    margin: 0 0 0 50px;
 }
 
 .menu {
     display: flex;
     height: 60.55px;
+    margin-right: 50px;
 }
 
 li {
