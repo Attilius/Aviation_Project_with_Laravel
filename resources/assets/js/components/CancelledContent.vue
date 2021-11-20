@@ -26,6 +26,7 @@ export default {
 .text-content {
     background: transparent;
     width: 80%;
+    height: 53vh;
     margin: 0 auto 150px;
     position: relative;
 }
