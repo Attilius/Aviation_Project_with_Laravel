@@ -253,8 +253,8 @@ input {
 
 .btn_ {
     width: 100%;
-    height: 70px;
-    margin-top: 10px;
+    height: 50px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
