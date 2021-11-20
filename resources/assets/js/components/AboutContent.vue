@@ -314,6 +314,7 @@ article {
     background: url("../../img/plane-front.jpg");
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     width: 100%;
     height: 60vh;
 }
