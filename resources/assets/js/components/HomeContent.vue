@@ -12,7 +12,7 @@
                         ></b-img>
                     </div>
                 </div>
-                <Chat />
+                <Chat id="chat" />
             </b-col>
             <b-col cols="12" lg="7" class="right">
                 <b-container class="open-page-content">
@@ -451,6 +451,10 @@ option:hover {
 
     .A320 {
         margin-left: 0px;
+    }
+
+    #chat {
+        display: none;
     }
 }
 
