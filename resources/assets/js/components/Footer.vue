@@ -1,10 +1,14 @@
 <template>
     <footer>
-        <div class="content">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+       <!-- <div class="content">
             <span>Site design</span>
             <font-awesome-icon class="icon" :icon="['far', 'copyright']" />
             <span>2021 Attilus</span>
-        </div>
+        </div> -->
     </footer>
 </template>
 
@@ -29,18 +33,15 @@ footer {
     height: 50vh;
     background: rgb(9, 55, 115);
     display: flex;
-    align-items: center;
-    text-align: center;
 }
 
 .content {
-    width: 17%;
-    height: 10%;
-    display: flex;
-    height: auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: 100%;
     background: transparent;
-    justify-content: center;
-    align-items: center;
 }
 
 span,
@@ -50,5 +51,12 @@ span,
     border: none;
     margin: 0 5px;
     height: 90%;
+}
+
+.box {
+    height: 90%;
+    width: 22%;
+    border: 1px solid whitesmoke;
+    margin: auto;
 }
 </style>
