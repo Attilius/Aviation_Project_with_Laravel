@@ -34,6 +34,8 @@ footer {
 }
 
 .content {
+    width: 17%;
+    height: 10%;
     display: flex;
     height: auto;
     background: transparent;
