@@ -26,7 +26,7 @@ export default {
 
 footer {
     width: 100%;
-    height: 5vh;
+    height: 50vh;
     background: rgb(9, 55, 115);
     display: flex;
     align-items: center;
