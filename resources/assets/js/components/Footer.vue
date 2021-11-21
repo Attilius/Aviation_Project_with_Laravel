@@ -4,6 +4,7 @@
             <div class="logo">
                 <b-img class="logo" :src="'../images/logo.png'" alt="logo"></b-img>
             </div>
+            <h5 class="footer-title">Subscribe to our newsletter</h5>
         </div>
         <div class="box"></div>
         <div class="box"></div>
@@ -65,6 +66,11 @@ span,
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.footer-title {
+    color: whitesmoke;
+    text-align: center;
 }
 
 
