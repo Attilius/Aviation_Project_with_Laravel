@@ -1,6 +1,10 @@
 <template>
     <footer>
-        <div class="box"></div>
+        <div class="box">
+            <div class="logo">
+                <b-img class="logo" :src="'../images/logo.png'" alt="logo"></b-img>
+            </div>
+        </div>
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -58,5 +62,10 @@ span,
     width: 22%;
     border: 1px solid whitesmoke;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+
 </style>
