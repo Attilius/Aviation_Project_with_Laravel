@@ -5,7 +5,11 @@
                 <b-img class="logo" :src="'../images/logo.png'" alt="logo"></b-img>
             </div>
             <h5 class="footer-title">Subscribe to our newsletter</h5>
-            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <b-form class="newsletter">
+                <input type="email" name="email" id="email" placeholder="Enter your email">
+                <button class="news-btn"></button>
+            </b-form>
+            
         </div>
         <div class="box"></div>
         <div class="box"></div>
@@ -77,6 +81,18 @@ span,
 #email {
     width: 60%;
     padding: 10px;
+}
+
+.newsletter {
+    display: flex;
+    height: 50px;
+    width: 80%;
+}
+
+.news-btn {
+    height: 50px;
+    width: 50px;
+    background: rebeccapurple;
 }
 
 </style>
