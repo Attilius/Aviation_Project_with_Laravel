@@ -5,7 +5,7 @@
                 <b-img class="logo" :src="'../images/logo.png'" alt="logo"></b-img>
             </div>
             <h5 class="footer-title">Subscribe to our newsletter</h5>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" placeholder="Enter your email">
         </div>
         <div class="box"></div>
         <div class="box"></div>
