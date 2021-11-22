@@ -90,13 +90,13 @@ span,
 
 .newsletter {
     display: flex;
-    height: 50px;
-    width: 80%;
+    height: 40px;
+    width: 100%;
 }
 
 .news-btn {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     background: rebeccapurple;
     color: whitesmoke;
     display: flex;
