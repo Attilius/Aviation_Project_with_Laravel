@@ -76,6 +76,7 @@ span,
 
 #email {
     width: 60%;
+    padding: 10px;
 }
 
 </style>
