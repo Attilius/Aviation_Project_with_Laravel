@@ -7,7 +7,12 @@
             <h5 class="footer-title">Subscribe to our newsletter</h5>
             <b-form class="newsletter">
                 <input type="email" name="email" id="email" placeholder="Enter your email">
-                <button class="news-btn"></button>
+                <button class="news-btn">
+                    <font-awesome-icon
+                        class="icon"
+                        :icon="['fas', 'external-link-alt']"
+                    />
+                    </button>
             </b-form>
             
         </div>
@@ -93,6 +98,16 @@ span,
     height: 50px;
     width: 50px;
     background: rebeccapurple;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.icon {
+    background: none;
+    border: none;
 }
 
 </style>
