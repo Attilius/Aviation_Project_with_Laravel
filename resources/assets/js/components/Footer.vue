@@ -74,5 +74,8 @@ span,
     text-align: center;
 }
 
+#email {
+    width: 60%;
+}
 
 </style>
