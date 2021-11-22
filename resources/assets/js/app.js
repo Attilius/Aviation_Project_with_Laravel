@@ -32,7 +32,8 @@ import {
     faPhoneAlt,
     faEnvelope,
     faMapMarkerAlt,
-    faClock
+    faClock,
+    faExternalLinkAlt
 } from "@fortawesome/free-solid-svg-icons";
 import { faCopyright, faComments } from "@fortawesome/free-regular-svg-icons";
 import { faAvianex } from "@fortawesome/free-brands-svg-icons";
@@ -76,7 +77,8 @@ library.add(
     faPhoneAlt,
     faEnvelope,
     faMapMarkerAlt,
-    faClock
+    faClock,
+    faExternalLinkAlt
 );
 
 Vue.config.productionTip = false;
