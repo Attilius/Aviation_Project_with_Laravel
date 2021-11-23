@@ -82,6 +82,8 @@ span,
 .footer-title {
     color: whitesmoke;
     font-weight: 200;
+    border-bottom: 1px solid #ced4da;
+    padding: 20px;
 }
 
 .footer-text {
