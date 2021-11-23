@@ -19,6 +19,44 @@
         </div>
         <div class="box">
             <h4 class="footer-title">Locations</h4>
+            <div class="bottom1">
+                <ul>
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">Services</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom2">
+                <ul>
+                    <li>
+                        <a href="">Travel insurance</a>
+                    </li>
+                    <li>
+                        <a href="">Luggage insurance</a>
+                    </li>
+                    <li>
+                        <a href="">Premium comfort</a>
+                    </li>
+                    <li>
+                        <a href="">Private jet rent</a>
+                    </li>
+                    <li>
+                        <a href="">Group discount</a>
+                    </li>
+                    <li>
+                        <a href="">Booking cancellation</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="box"></div>
         <div class="box"></div>
@@ -119,5 +157,6 @@ span,
     background: none;
     border: none;
 }
+
 
 </style>
