@@ -17,7 +17,9 @@
             </b-form>
             
         </div>
-        <div class="box"></div>
+        <div class="box">
+            <h4 class="footer-title">Locations</h4>
+        </div>
         <div class="box"></div>
         <div class="box"></div>
        <!-- <div class="content">
