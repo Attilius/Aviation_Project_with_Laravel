@@ -5,7 +5,7 @@
                 <b-img class="logo" :src="'../images/logo.png'" alt="logo"></b-img>
             </div>
             <h4 class="footer-title">Notifications</h4>
-            
+            <p class="footer-text">Sign up for our newsletter</p>
             <b-form class="newsletter">
                 <input type="email" name="email" id="email" placeholder="Enter your email">
                 <button class="news-btn">
@@ -81,8 +81,12 @@ span,
 
 .footer-title {
     color: whitesmoke;
-    text-align: center;
     font-weight: 200;
+}
+
+.footer-text {
+    color: whitesmoke;
+    font-weight: 100;
 }
 
 #email {
