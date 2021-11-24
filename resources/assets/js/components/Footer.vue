@@ -19,7 +19,8 @@
         </div>
         <div class="box">
             <h4 class="footer-title">Locations</h4>
-            <div class="bottom1">
+            <div class="bottom-menu">
+                <div class="bottom1">
                 <ul>
                     <li>
                         <a href="">Home</a>
@@ -57,6 +58,8 @@
                     </li>
                 </ul>
             </div>
+            </div>
+            
         </div>
         <div class="box"></div>
         <div class="box"></div>
