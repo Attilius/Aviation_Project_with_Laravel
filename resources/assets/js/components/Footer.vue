@@ -164,6 +164,7 @@ li {
     list-style: none;
     display: block;
     width: 100%;
+    line-height: 35px;
 }
 
 a {
@@ -183,6 +184,7 @@ a {
 
 .bottom-menu {
     display: flex;
+    padding-top: 35px;
 }
 
 </style>
