@@ -158,9 +158,12 @@ span,
     border: none;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
-    list-style: none;
     color: whitesmoke;
     font-size: 14px;
     font-weight: 100;
