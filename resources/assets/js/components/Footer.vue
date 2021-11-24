@@ -160,6 +160,8 @@ span,
 
 li {
     list-style: none;
+    display: block;
+    width: 50%;
 }
 
 a {
@@ -167,6 +169,10 @@ a {
     color: whitesmoke;
     font-size: 14px;
     font-weight: 100;
+}
+
+.bottom1, .bottom2 {
+    width: 50%;
 }
 
 </style>
