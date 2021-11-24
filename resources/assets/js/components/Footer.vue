@@ -119,7 +119,6 @@ span,
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .footer-title {
@@ -164,7 +163,7 @@ span,
 li {
     list-style: none;
     display: block;
-    width: 50%;
+    width: 100%;
 }
 
 a {
@@ -174,8 +173,16 @@ a {
     font-weight: 100;
 }
 
-.bottom1, .bottom2 {
-    width: 50%;
+.bottom1 {
+    width: 40%;
+}
+
+.bottom2 {
+    width: 60%;
+}
+
+.bottom-menu {
+    display: flex;
 }
 
 </style>
