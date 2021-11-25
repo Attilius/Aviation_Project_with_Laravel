@@ -174,6 +174,9 @@ a {
     font-size: 14px;
     font-weight: 100;
 }
+a:hover {
+    color: lightskyblue;
+}
 
 .bottom1 {
     width: 40%;
