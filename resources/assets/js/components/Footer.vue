@@ -64,6 +64,7 @@
         <div class="box"></div>
         <div class="box">
             <h4 class="footer-title">Would you like to booking?</h4>
+            <p class="footer-text">You can book your flight with us in just a few clicks, and we also offer a range of services.</p>
         </div>
        <!-- <div class="content">
             <span>Site design</span>
@@ -117,7 +118,6 @@ span,
 .box {
     height: 90%;
     width: 22%;
-    border: 1px solid whitesmoke;
     margin: auto;
     display: flex;
     flex-direction: column;
