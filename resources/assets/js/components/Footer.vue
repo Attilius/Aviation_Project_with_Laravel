@@ -188,4 +188,9 @@ a {
     padding-top: 35px;
 }
 
+.logo {
+    width: 120px;
+    height: 120px;
+}
+
 </style>
