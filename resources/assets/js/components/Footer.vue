@@ -131,6 +131,7 @@ span,
 .footer-text {
     color: whitesmoke;
     font-weight: 100;
+    padding: 20px 0;
 }
 
 #email {
