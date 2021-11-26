@@ -203,6 +203,8 @@ a:hover {
     width: 50%;
     height: 50px;
     border: 2px solid rebeccapurple;
+    text-align: center;
+    padding-top: 12px;
 }
 
 </style>
