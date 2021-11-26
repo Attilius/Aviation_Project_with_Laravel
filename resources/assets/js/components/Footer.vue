@@ -65,7 +65,7 @@
         <div class="box">
             <h4 class="footer-title">Would you like to booking?</h4>
             <p class="footer-text">You can book your flight with us in just a few clicks, and we also offer a range of services.</p>
-            <a href="/">Booking now</a>
+            <a href="/"><font-awesome-icon :icon="['far', 'edit']"/> Booking now</a>
         </div>
        <!-- <div class="content">
             <span>Site design</span>
