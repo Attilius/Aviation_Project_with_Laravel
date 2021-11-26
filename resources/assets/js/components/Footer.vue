@@ -201,7 +201,8 @@ a:hover {
 
 .booking-btn {
     width: 50%;
-    height: 40px;
+    height: 50px;
+    border: 2px solid rebeccapurple;
 }
 
 </style>
