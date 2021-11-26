@@ -65,7 +65,7 @@
         <div class="box">
             <h4 class="footer-title">Would you like to booking?</h4>
             <p class="footer-text">You can book your flight with us in just a few clicks, and we also offer a range of services.</p>
-            <a class="booking-btn" href="/"><font-awesome-icon :icon="['far', 'edit']"/> Booking now</a>
+            <a class="booking-btn" href="/"><font-awesome-icon class="icon_" :icon="['far', 'edit']"/> Booking now</a>
         </div>
        <!-- <div class="content">
             <span>Site design</span>
@@ -205,6 +205,13 @@ a:hover {
     border: 2px solid rebeccapurple;
     text-align: center;
     padding-top: 12px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+.icon_ {
+    color: rebeccapurple;
 }
 
 </style>
