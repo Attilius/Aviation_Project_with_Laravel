@@ -244,6 +244,7 @@ a:hover {
     text-transform: uppercase;
     font-size: 1rem;
     color: whitesmoke;
+    border-radius: 0.25rem;
     transition: all 0.3s ease;
 }
 
