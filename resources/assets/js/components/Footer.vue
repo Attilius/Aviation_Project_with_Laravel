@@ -104,7 +104,9 @@ export default {
             const booking_btn = document.getElementById("booking-btn");
 
             booking_btn.addEventListener("mouseover", () => {
-                icon.style.color = "whitesmoke";
+                setTimeout(() => {
+                   icon.style.color = "whitesmoke"; 
+                }, 150);
             });
 
             booking_btn.addEventListener("mouseout", () => {
@@ -242,11 +244,13 @@ a:hover {
     text-transform: uppercase;
     font-size: 1rem;
     color: whitesmoke;
+    transition: all 0.3s ease;
 }
 
 .booking-btn:hover {
     background: rebeccapurple;
     color: whitesmoke;
+    transition: 0.4s ease-in-out 0s;
 }
 
 #icon_ {
