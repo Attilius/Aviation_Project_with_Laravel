@@ -251,6 +251,7 @@ a:hover {
 
 #icon_ {
     color: rebeccapurple;
+    font-size: 1.2rem;
 }
 
 .copy {
