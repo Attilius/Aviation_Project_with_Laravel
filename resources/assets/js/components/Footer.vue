@@ -2,83 +2,116 @@
     <footer>
         <div class="box">
             <div class="logo">
-                <b-img class="logo" :src="'../images/logo.png'" alt="logo"></b-img>
+                <b-img
+                    class="logo"
+                    :src="'../images/logo.png'"
+                    alt="logo"
+                ></b-img>
             </div>
             <h4 class="footer-title">Notifications</h4>
             <p class="footer-text">Sign up for our newsletter</p>
             <b-form class="newsletter">
-                <input type="email" name="email" id="email" placeholder="Enter your email">
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enter your email"
+                />
                 <button class="news-btn">
                     <font-awesome-icon
                         class="icon"
                         :icon="['fas', 'external-link-alt']"
                     />
-                    </button>
+                </button>
             </b-form>
-            
         </div>
         <div class="box">
             <h4 class="footer-title">Locations</h4>
             <div class="bottom-menu">
                 <div class="bottom1">
-                <ul>
-                    <li>
-                        <a href="">Home</a>
-                    </li>
-                    <li>
-                        <a href="">About</a>
-                    </li>
-                    <li>
-                        <a href="">Services</a>
-                    </li>
-                    <li>
-                        <a href="">Contact</a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li>
+                            <a href="">Home</a>
+                        </li>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">Services</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom2">
+                    <ul>
+                        <li>
+                            <a href="">Travel insurance</a>
+                        </li>
+                        <li>
+                            <a href="">Luggage insurance</a>
+                        </li>
+                        <li>
+                            <a href="">Premium comfort</a>
+                        </li>
+                        <li>
+                            <a href="">Private jet rent</a>
+                        </li>
+                        <li>
+                            <a href="">Group discount</a>
+                        </li>
+                        <li>
+                            <a href="">Booking cancellation</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="bottom2">
-                <ul>
-                    <li>
-                        <a href="">Travel insurance</a>
-                    </li>
-                    <li>
-                        <a href="">Luggage insurance</a>
-                    </li>
-                    <li>
-                        <a href="">Premium comfort</a>
-                    </li>
-                    <li>
-                        <a href="">Private jet rent</a>
-                    </li>
-                    <li>
-                        <a href="">Group discount</a>
-                    </li>
-                    <li>
-                        <a href="">Booking cancellation</a>
-                    </li>
-                </ul>
-            </div>
-            </div>
-            
         </div>
         <div class="box"></div>
         <div class="box">
             <h4 class="footer-title">Would you like to booking?</h4>
-            <p class="footer-text">You can book your flight with us in just a few clicks, and we also offer a range of services.</p>
-            <a class="booking-btn" href="/"><font-awesome-icon id="icon_" :icon="['far', 'edit']"/> Booking now</a>
+            <p class="footer-text">
+                You can book your flight with us in just a few clicks, and we
+                also offer a range of services.
+            </p>
+
+            <a id="booking-btn" class="booking-btn" href="/"
+                ><font-awesome-icon id="icon_" :icon="['far', 'edit']" />
+                Booking now</a
+            >
+
             <div class="copy">
-            <span>Site design</span>
-            <font-awesome-icon class="icon" :icon="['far', 'copyright']" />
-            <span>2021 Attilus</span>
+                <span>Site design</span>
+                <font-awesome-icon class="icon" :icon="['far', 'copyright']" />
+                <span>2021 Attilus</span>
+            </div>
         </div>
-        </div>
-        
     </footer>
 </template>
 
 <script>
 export default {
-    name: "Footer"
+    name: "Footer",
+
+    mounted() {
+        this.setHover();
+    },
+
+    methods: {
+        setHover() {
+            const icon = document.getElementById("icon_");
+            const booking_btn = document.getElementById("booking-btn");
+
+            booking_btn.addEventListener("mouseover", () => {
+                icon.style.color = "whitesmoke";
+            });
+
+            booking_btn.addEventListener("mouseout", () => {
+                icon.style.color = "rebeccapurple";
+            });
+        }
+    }
 };
 </script>
 
@@ -224,5 +257,4 @@ a:hover {
     display: flex;
     margin-top: 60px;
 }
-
 </style>
