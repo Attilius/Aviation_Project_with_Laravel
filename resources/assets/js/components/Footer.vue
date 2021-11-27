@@ -66,12 +66,13 @@
             <h4 class="footer-title">Would you like to booking?</h4>
             <p class="footer-text">You can book your flight with us in just a few clicks, and we also offer a range of services.</p>
             <a class="booking-btn" href="/"><font-awesome-icon id="icon_" :icon="['far', 'edit']"/> Booking now</a>
-        </div>
-       <!-- <div class="content">
+            <div class="copy">
             <span>Site design</span>
             <font-awesome-icon class="icon" :icon="['far', 'copyright']" />
             <span>2021 Attilus</span>
-        </div> -->
+        </div>
+        </div>
+        
     </footer>
 </template>
 
@@ -219,5 +220,9 @@ a:hover {
     color: rebeccapurple;
 }
 
+.copy {
+    display: flex;
+    margin-top: 60px;
+}
 
 </style>
