@@ -281,6 +281,10 @@ a:hover {
     .booking-btn {
         font-size: 0.8rem;
     }
+
+    p {
+        font-size: 0.75rem;
+    }
 }
 
 </style>
