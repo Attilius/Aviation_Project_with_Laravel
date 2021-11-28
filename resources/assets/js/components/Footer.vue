@@ -269,6 +269,10 @@ a:hover {
         flex-direction: column;
         height: 200vh;
     }
+
+    .box {
+        width: 70%;
+    }
 }
 
 </style>
