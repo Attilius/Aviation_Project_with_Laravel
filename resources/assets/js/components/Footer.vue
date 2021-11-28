@@ -267,6 +267,7 @@ a:hover {
 @media(max-width: 768px) {
     footer {
         flex-direction: column;
+        height: 200vh;
     }
 }
 
