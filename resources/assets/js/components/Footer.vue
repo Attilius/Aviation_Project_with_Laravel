@@ -273,6 +273,10 @@ a:hover {
     .box {
         width: 70%;
     }
+
+    .newsletter {
+        flex-direction: row;
+    }
 }
 
 </style>
