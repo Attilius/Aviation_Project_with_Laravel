@@ -277,6 +277,10 @@ a:hover {
     .newsletter {
         flex-direction: row;
     }
+
+    .booking-btn {
+        font-size: 0.8rem;
+    }
 }
 
 </style>
