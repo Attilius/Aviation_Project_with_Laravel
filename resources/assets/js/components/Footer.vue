@@ -270,6 +270,10 @@ p {
     font-size: 0.85rem;
 }
 
+.copy {
+    margin-top: 90px;
+}
+
 @media(max-width: 768px) {
     footer {
         flex-direction: column;
