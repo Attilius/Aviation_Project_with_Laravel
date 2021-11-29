@@ -165,6 +165,7 @@ span,
     font-weight: 200;
     border-bottom: 1px solid #ced4da;
     padding: 20px 0;
+    font-size: 1.2rem;
 }
 
 .footer-text {
