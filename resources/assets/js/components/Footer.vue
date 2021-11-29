@@ -68,7 +68,9 @@
                 </div>
             </div>
         </div>
-        <div class="box"></div>
+        <div class="box">
+            <h4 class="footer-title">Our partners</h4>
+        </div>
         <div class="box">
             <h4 class="footer-title">Would you like to booking?</h4>
             <p class="footer-text">
