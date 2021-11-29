@@ -264,6 +264,10 @@ a:hover {
     margin-top: 60px;
 }
 
+p {
+    font-size: 0.85rem;
+}
+
 @media(max-width: 768px) {
     footer {
         flex-direction: column;
