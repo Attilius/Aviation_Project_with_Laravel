@@ -210,7 +210,7 @@ li {
 a {
     text-decoration: none;
     color: whitesmoke;
-    font-size: 14px;
+    font-size: 0.85rem;
     font-weight: 100;
 }
 a:hover {
