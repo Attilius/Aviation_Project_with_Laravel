@@ -69,7 +69,11 @@
             </div>
         </div>
         <div class="box">
-            <h4 class="footer-title">Our partners</h4>
+            <h4 class="footer-title">Our partners
+                <ul>
+                    <li v-for="partner in partners" :key="partner">{{ partner }}</li>
+                </ul>
+            </h4>
         </div>
         <div class="box">
             <h4 class="footer-title">Would you like to booking?</h4>
