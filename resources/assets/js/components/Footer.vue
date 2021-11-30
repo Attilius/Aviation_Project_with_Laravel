@@ -98,7 +98,20 @@ export default {
 
     data() {
         return {
-            
+            partners: [
+                "Air Canada",
+                "Air France",
+                "American Airlines",
+                "British Airways",
+                "Easy Jet",
+                "Emirates",
+                "KLM",
+                "Lufthansa",
+                "Ryanair",
+                "Swiss",
+                "Turkish Airlines",
+                "Wizz Air"
+            ]
         }
     },
 
