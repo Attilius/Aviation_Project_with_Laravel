@@ -96,6 +96,12 @@
 export default {
     name: "Footer",
 
+    data() {
+        return {
+            
+        }
+    },
+
     mounted() {
         this.setHover();
     },
