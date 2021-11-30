@@ -301,6 +301,11 @@ p {
 .partners {
     font-size: 0.8rem;
     line-height: 20px;
+    color: whitesmoke;
+}
+
+ul {
+    margin-top: 20px;
 }
 
 @media(max-width: 768px) {
