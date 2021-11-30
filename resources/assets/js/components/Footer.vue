@@ -71,7 +71,7 @@
         <div class="box">
             <h4 class="footer-title">Our partners</h4>
             <ul>
-                <li v-for="partner in partners" :key="partner">{{ partner }}</li>
+                <li class="partners" v-for="partner in partners" :key="partner">{{ partner }}</li>
             </ul>
         </div>
         <div class="box">
@@ -296,6 +296,11 @@ p {
 
 .copy {
     margin-top: 90px;
+}
+
+.partners {
+    font-size: 0.8rem;
+    line-height: 20px;
 }
 
 @media(max-width: 768px) {
