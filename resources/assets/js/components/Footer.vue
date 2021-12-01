@@ -87,7 +87,7 @@
 
             <b-img
                 class="pay"
-                :src="'images/pay.png'"
+                :src="'../images/pay.png'"
                 alt="pay"
             ></b-img>
 
