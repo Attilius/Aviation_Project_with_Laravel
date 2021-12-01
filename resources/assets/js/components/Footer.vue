@@ -83,8 +83,13 @@
 
             <a id="booking-btn" class="booking-btn" href="/"
                 ><font-awesome-icon id="icon_" :icon="['far', 'edit']" />
-                Booking now</a
-            >
+                Booking now</a>
+
+            <b-img
+                class="pay"
+                :src="'images/pay.png'"
+                alt="pay"
+            ></b-img>
 
             <div class="copy">
                 <span>Site design</span>
@@ -286,15 +291,11 @@ a:hover {
 
 .copy {
     display: flex;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 p {
     font-size: 0.8rem;
-}
-
-.copy {
-    margin-top: 90px;
 }
 
 .partners {
@@ -304,6 +305,11 @@ p {
 }
 
 ul {
+    margin-top: 20px;
+}
+
+.pay {
+    width: 60%;
     margin-top: 20px;
 }
 
