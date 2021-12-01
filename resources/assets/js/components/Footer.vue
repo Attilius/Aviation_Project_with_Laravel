@@ -236,7 +236,7 @@ li {
 a {
     text-decoration: none;
     color: whitesmoke;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 100;
 }
 a:hover {
@@ -290,7 +290,7 @@ a:hover {
 }
 
 p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .copy {
