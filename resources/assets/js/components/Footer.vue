@@ -302,6 +302,7 @@ p {
     font-size: 0.8rem;
     line-height: 20px;
     color: whitesmoke;
+    line-height: 22px;
 }
 
 ul {
