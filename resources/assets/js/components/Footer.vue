@@ -230,7 +230,7 @@ li {
     list-style: none;
     display: block;
     width: 100%;
-    line-height: 35px;
+    line-height: 30px;
 }
 
 a {
