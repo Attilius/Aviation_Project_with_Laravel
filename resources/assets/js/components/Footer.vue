@@ -253,7 +253,6 @@ a:hover {
 
 .bottom-menu {
     display: flex;
-    padding-top: 35px;
 }
 
 .logo {
