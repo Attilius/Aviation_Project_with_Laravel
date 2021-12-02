@@ -250,6 +250,8 @@ span {
 .icon {
     background: none;
     border: none;
+    font-size: 1.5rem;
+    margin: 0 10px;
 }
 
 li {
