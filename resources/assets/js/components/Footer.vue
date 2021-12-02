@@ -24,6 +24,9 @@
                     />
                 </button>
             </b-form>
+            <div class="social">
+                
+            </div>
         </div>
         <div class="box">
             <h4 class="footer-title">Locations</h4>
