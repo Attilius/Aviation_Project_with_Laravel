@@ -36,7 +36,7 @@ import {
     faExternalLinkAlt
 } from "@fortawesome/free-solid-svg-icons";
 import { faCopyright, faComments, faEdit } from "@fortawesome/free-regular-svg-icons";
-import { faAvianex } from "@fortawesome/free-brands-svg-icons";
+import { faAvianex, faFacebookF, faInstagram, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Home from "../js/components/Home.vue";
 import About from "../js/components/About.vue";
@@ -79,7 +79,11 @@ library.add(
     faMapMarkerAlt,
     faClock,
     faExternalLinkAlt,
-    faEdit
+    faEdit,
+    faLinkedinIn,
+    faFacebookF,
+    faInstagram,
+    faTwitter
 );
 
 Vue.config.productionTip = false;
