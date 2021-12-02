@@ -25,7 +25,22 @@
                 </button>
             </b-form>
             <div class="social">
-                
+                <font-awesome-icon
+                        class="icon"
+                        :icon="['fab', 'linkedin-in']"
+                    />
+                <font-awesome-icon
+                        class="icon"
+                        :icon="['fab', 'facebook-f']"
+                    />
+                <font-awesome-icon
+                        class="icon"
+                        :icon="['fab', 'instagram']"
+                    />
+                <font-awesome-icon
+                        class="icon"
+                        :icon="['fab', 'twitter']"
+                    />
             </div>
         </div>
         <div class="box">
