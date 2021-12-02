@@ -26,19 +26,19 @@
             </b-form>
             <div class="social">
                 <font-awesome-icon
-                        class="icon"
+                        class="social-icon"
                         :icon="['fab', 'linkedin-in']"
                     />
                 <font-awesome-icon
-                        class="icon"
+                        class="social-icon"
                         :icon="['fab', 'facebook-f']"
                     />
                 <font-awesome-icon
-                        class="icon"
+                        class="social-icon"
                         :icon="['fab', 'instagram']"
                     />
                 <font-awesome-icon
-                        class="icon"
+                        class="social-icon"
                         :icon="['fab', 'twitter']"
                     />
             </div>
@@ -197,9 +197,6 @@ span,
     border: none;
     margin: 0 5px;
     height: 90%;
-}
-
-span {
     font-size: 0.8rem;
 }
 
@@ -250,8 +247,18 @@ span {
 .icon {
     background: none;
     border: none;
+}
+
+.social-icon {
+    background: none;
+    border: none;
     font-size: 1.5rem;
     margin: 0 10px;
+    color: whitesmoke;
+}
+
+.social-icon:hover {
+    color: lightskyblue;
 }
 
 li {
