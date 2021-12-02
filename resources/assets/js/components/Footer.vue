@@ -197,6 +197,9 @@ span,
     border: none;
     margin: 0 5px;
     height: 90%;
+}
+
+span {
     font-size: 0.8rem;
 }
 
@@ -330,6 +333,12 @@ ul {
 .pay {
     width: 60%;
     margin-top: 20px;
+}
+
+.social {
+    display: flex;
+    margin: 20px;
+    padding: 10px;
 }
 
 @media(max-width: 768px) {
