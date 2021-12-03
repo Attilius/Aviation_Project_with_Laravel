@@ -80,7 +80,7 @@
                             <a href="/services/group-discount">Group discount</a>
                         </li>
                         <li>
-                            <a href="">Booking cancellation</a>
+                            <a href="/services/booking-cancellation">Booking cancellation</a>
                         </li>
                     </ul>
                 </div>
