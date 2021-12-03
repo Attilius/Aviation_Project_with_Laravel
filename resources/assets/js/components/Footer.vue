@@ -77,7 +77,7 @@
                             <a href="/services/private-jet-rent">Private jet rent</a>
                         </li>
                         <li>
-                            <a href="">Group discount</a>
+                            <a href="/services/group-discount">Group discount</a>
                         </li>
                         <li>
                             <a href="">Booking cancellation</a>
