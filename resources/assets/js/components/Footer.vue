@@ -74,7 +74,7 @@
                             <a href="/services/premium-comfort">Premium comfort</a>
                         </li>
                         <li>
-                            <a href="">Private jet rent</a>
+                            <a href="/services/private-jet-rent">Private jet rent</a>
                         </li>
                         <li>
                             <a href="">Group discount</a>
