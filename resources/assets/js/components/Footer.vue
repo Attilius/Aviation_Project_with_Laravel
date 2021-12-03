@@ -68,7 +68,7 @@
                             <a href="/services/travel-insurance">Travel insurance</a>
                         </li>
                         <li>
-                            <a href="">Luggage insurance</a>
+                            <a href="/services/lugagge-insurance">Luggage insurance</a>
                         </li>
                         <li>
                             <a href="">Premium comfort</a>
