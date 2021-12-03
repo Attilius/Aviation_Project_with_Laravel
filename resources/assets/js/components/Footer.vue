@@ -68,10 +68,10 @@
                             <a href="/services/travel-insurance">Travel insurance</a>
                         </li>
                         <li>
-                            <a href="/services/lugagge-insurance">Luggage insurance</a>
+                            <a href="/services/luggage-insurance">Luggage insurance</a>
                         </li>
                         <li>
-                            <a href="">Premium comfort</a>
+                            <a href="/services/premium-comfort">Premium comfort</a>
                         </li>
                         <li>
                             <a href="">Private jet rent</a>
