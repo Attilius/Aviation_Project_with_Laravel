@@ -65,7 +65,7 @@
                 <div class="bottom2">
                     <ul>
                         <li>
-                            <a href="">Travel insurance</a>
+                            <a href="/services/travel-insurance">Travel insurance</a>
                         </li>
                         <li>
                             <a href="">Luggage insurance</a>
