@@ -156,7 +156,7 @@ export default {
                 }, 150);
             });
 
-            booking_btn.addEventListener("mouseout", () => {
+            booking_btn.addEventListener("mouseleave", () => {
                 icon.style.color = "rebeccapurple";
             });
         }
