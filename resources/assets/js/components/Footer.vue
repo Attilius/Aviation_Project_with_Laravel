@@ -196,8 +196,8 @@ span,
     color: whitesmoke;
     border: none;
     margin: 0 5px;
-    height: 90%;
-    font-size: 0.8rem;
+    height: 100%;
+    font-size: 0.9rem;
 }
 
 .box {
