@@ -80,8 +80,20 @@
                             </div>
                             
                             <div class="input-column">
+                                <label class="label" for="passengers">Passengers</label>
+                                <div class="form-icon">
+                                <b-form-select
+                                    class="input"
+                                    name="passengers"
+                                    v-model="selected_passengers"
+                                    :options="options_passengers"
+                                ></b-form-select>
+                                </div>
+                            </div>
+                            
+                            <div class="input-column">
                                 <label class="label" for="cabin">Cabin</label>
-                                <div style="" class="form-icon">
+                                <div class="form-icon">
                                 <b-form-select
                                     class="input"
                                     name="cabin"
