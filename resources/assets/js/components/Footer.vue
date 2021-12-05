@@ -274,6 +274,11 @@ a {
     font-size: 0.8rem;
     font-weight: 100;
 }
+
+a:focus {
+    border: none !important;
+}
+
 a:hover {
     color: lightskyblue;
 }
