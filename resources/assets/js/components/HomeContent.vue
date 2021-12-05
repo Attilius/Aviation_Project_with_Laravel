@@ -57,16 +57,6 @@
                             </div>
 
                             <div class="input-column">
-                                <label class="label" for="cabin">Cabin</label>
-                                <b-form-select
-                                    class="select"
-                                    name="cabin"
-                                    v-model="selected_cabin"
-                                    :options="options_cabin"
-                                ></b-form-select>
-                            </div>
-
-                            <div class="input-column">
                                 <label class="label" for="date"
                                     >Date of away</label
                                 >
@@ -87,6 +77,18 @@
                                     name="date"
                                     type="date"
                                 ></b-form-input>
+                            </div>
+                            
+                            <div class="input-column">
+                                <label class="label" for="cabin">Cabin</label>
+                                <div style="" class="form-icon">
+                                <b-form-select
+                                    class="input"
+                                    name="cabin"
+                                    v-model="selected_cabin"
+                                    :options="options_cabin"
+                                ></b-form-select>
+                                </div>
                             </div>
                         </b-row>
 
@@ -301,7 +303,7 @@ export default {
 }
 
 .select {
-    width: 150px;
+    width: 100%;
     border-left: none !important;
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
@@ -313,7 +315,7 @@ option:hover {
 }
 
 .input {
-    width: 190px;
+    width: 200px;
     box-shadow: 2px 2px 5px silver;
 }
 
@@ -368,7 +370,7 @@ option:hover {
 
 .form-icon {
     display: flex;
-    width: 180px;
+    width: 200px;
     box-shadow: 2px 2px 5px silver;
 }
 
