@@ -775,5 +775,9 @@ export default {
         margin: 20px auto;
     }
 
+    table {
+        width: 85% !important;
+    }
+
 }
 </style>
