@@ -763,7 +763,7 @@ export default {
     }
 
     .add-piece {
-        background: #292b2c;
+        background: rgb(9, 55, 115);
     }
 
     .input-cell {
@@ -778,6 +778,7 @@ export default {
     table {
         width: 85% !important;
     }
+
 
 }
 </style>
