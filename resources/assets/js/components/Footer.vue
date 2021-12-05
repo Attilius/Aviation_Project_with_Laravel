@@ -277,6 +277,7 @@ a {
 
 a:focus {
     border: none !important;
+    box-shadow: none !important;
 }
 
 a:hover {
