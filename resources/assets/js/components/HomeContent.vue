@@ -57,6 +57,16 @@
                             </div>
 
                             <div class="input-column">
+                                <label class="label" for="cabin">Cabin</label>
+                                <b-form-select
+                                    class="select"
+                                    name="cabin"
+                                    v-model="selected_cabin"
+                                    :options="options_cabin"
+                                ></b-form-select>
+                            </div>
+
+                            <div class="input-column">
                                 <label class="label" for="date"
                                     >Date of away</label
                                 >
@@ -272,7 +282,8 @@ export default {
     margin-left: 13px;
 }
 
-.label, .row2 {
+.label,
+.row2 {
     color: rgb(9, 55, 115);
     text-shadow: 2px 2px 5px silver;
 }
