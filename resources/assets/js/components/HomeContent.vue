@@ -156,6 +156,18 @@ export default {
                 { value: "Munich", text: "Munich" },
                 { value: "New York", text: "New York" }
             ],
+            selected_cabin: null,
+            options_cabin: [
+                {
+                    value: null,
+                    text: "Please select cabin",
+                    disabled: true
+                },
+                { value: "Economy", text: "Economy" },
+                { value: "Premium Economy", text: "Premium Economy" },
+                { value: "Business", text: "Business" },
+                { value: "First", text: "First" }
+            ],
             selected_radio: ""
         };
     },
