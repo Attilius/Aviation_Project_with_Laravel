@@ -433,7 +433,7 @@ option:hover {
 
 .card {
     height: 300px;
-    width: 150px;
+    width: 250px;
     border: 1px solid rgb(9, 55, 115);
 }
 
