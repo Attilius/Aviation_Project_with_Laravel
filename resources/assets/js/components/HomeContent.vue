@@ -131,7 +131,16 @@
             </b-col>
         </b-row>
         <div class="top-destinations">
-
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
         </div>
     </div>
 </template>
@@ -416,6 +425,12 @@ option:hover {
     height: 100vh;
     width: 100%;
     background: whitesmoke;
+}
+
+.card {
+    height: 300px;
+    width: 150px;
+    border: 1px solid rgb(9, 55, 115);
 }
 
 @keyframes flight {
