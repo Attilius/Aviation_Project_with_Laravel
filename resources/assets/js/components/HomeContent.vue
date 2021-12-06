@@ -131,16 +131,36 @@
             </b-col>
         </b-row>
         <div class="top-destinations">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
+            <div class="card">
+                <img src="" alt="">
+            </div>
         </div>
     </div>
 </template>
