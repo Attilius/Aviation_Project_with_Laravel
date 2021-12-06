@@ -431,12 +431,6 @@ option:hover {
     padding: 50px 100px;
 }
 
-.card {
-    height: 300px;
-    width: 250px;
-    border: 1px solid rgb(9, 55, 115);
-}
-
 @keyframes flight {
     from {
         left: -1000px;
