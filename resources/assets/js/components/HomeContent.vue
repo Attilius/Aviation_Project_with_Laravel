@@ -130,6 +130,9 @@
                 </b-container>
             </b-col>
         </b-row>
+        <div class="top-destinations">
+
+        </div>
     </div>
 </template>
 
@@ -407,6 +410,12 @@ option:hover {
     position: relative;
     animation: flight 1.5s ease-in-out;
     -webkit-animation: flight 1.5s ease-in-out;
+}
+
+.top-destinations {
+    height: 100vh;
+    width: 100%;
+    background: whitesmoke;
 }
 
 @keyframes flight {
