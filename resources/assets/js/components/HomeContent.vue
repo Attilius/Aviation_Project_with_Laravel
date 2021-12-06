@@ -174,13 +174,28 @@ export default {
             options_cabin: [
                 {
                     value: null,
-                    text: "Please select cabin",
+                    text: "Please select",
                     disabled: true
                 },
                 { value: "Economy", text: "Economy" },
                 { value: "Premium Economy", text: "Premium Economy" },
                 { value: "Business", text: "Business" },
                 { value: "First", text: "First" }
+            ],
+            selected_passengers: null,
+            options_passengers: [
+                {
+                    value: null,
+                    text: "Please select",
+                    disabled: true
+                },
+                { value: "Infant (0-23 months)", text: "Infant (0-23 months)" },
+                { value: "Child (2-11 years)", text: "Child (2-11 years)" },
+                { value: "Youth (12-17 years)", text: "Youth (12-17 years)" },
+                { value: "Youth (18-24 years)", text: "Youth (18-24 years)" },
+                { value: "Student (18-29 years)", text: "Student (18-29 years)" },
+                { value: "Adult", text: "Adult" },
+                { value: "Senior (65 years and Older)", text: "Senior (65 years and Older)" }
             ],
             selected_radio: ""
         };
