@@ -425,6 +425,10 @@ option:hover {
     height: 100vh;
     width: 100%;
     background: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    grid-gap: 20px;
+    padding: 50px 100px;
 }
 
 .card {
