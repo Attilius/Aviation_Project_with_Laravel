@@ -136,7 +136,7 @@
             <div id="barcelona" class="card">
                 <img src="" alt="">
             </div>
-            <div class="card">
+            <div id="cairo" class="card">
                 <img src="" alt="">
             </div>
             <div class="card">
@@ -297,14 +297,21 @@ export default {
     border-bottom-right-radius: 500%;
     box-shadow: 2px 2px 5px rgb(9, 55, 115);
 }
-
+/* Cities settings */
 #athen {
     background: url("../../img/athen.jpg");
     background-position-x: -120px;
+    background-size: cover;
 }
 
 #barcelona {
     background: url("../../img/barcelona.jpg");
+    background-position-x: -120px;
+    background-size: cover;
+}
+
+#cairo {
+    background: url("../../img/cairo.png");
     background-position-x: -120px;
     background-size: cover;
 }
