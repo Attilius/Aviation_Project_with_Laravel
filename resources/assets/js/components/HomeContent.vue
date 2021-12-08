@@ -131,8 +131,7 @@
             </b-col>
         </b-row>
         <div class="top-destinations">
-            <div class="card">
-                <img src="" alt="">
+            <div id="athen" class="card">
             </div>
             <div class="card">
                 <img src="" alt="">
@@ -297,6 +296,11 @@ export default {
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
     box-shadow: 2px 2px 5px rgb(9, 55, 115);
+}
+
+#athen {
+    background: url("../../img/athen.jpg");
+    background-position-x: -120px;
 }
 
 .cover-bg {
