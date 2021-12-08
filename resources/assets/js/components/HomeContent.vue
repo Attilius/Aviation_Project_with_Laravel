@@ -133,7 +133,7 @@
         <div class="top-destinations">
             <div id="athen" class="card">
             </div>
-            <div class="card">
+            <div id="barcelona" class="card">
                 <img src="" alt="">
             </div>
             <div class="card">
@@ -301,6 +301,12 @@ export default {
 #athen {
     background: url("../../img/athen.jpg");
     background-position-x: -120px;
+}
+
+#barcelona {
+    background: url("../../img/barcelona.jpg");
+    background-position-x: -120px;
+    background-size: cover;
 }
 
 .cover-bg {
