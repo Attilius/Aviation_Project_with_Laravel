@@ -139,7 +139,7 @@
             <div id="cairo" class="card">
                 <img src="" alt="">
             </div>
-            <div class="card">
+            <div id="istanbul" class="card">
                 <img src="" alt="">
             </div>
             <div class="card">
@@ -313,6 +313,12 @@ export default {
 #cairo {
     background: url("../../img/cairo.png");
     background-position-x: -120px;
+    background-size: cover;
+}
+
+#istanbul {
+    background: url("../../img/istanbul.jpg");
+    background-position-x: 0;
     background-size: cover;
 }
 
