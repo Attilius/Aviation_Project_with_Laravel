@@ -145,7 +145,7 @@
             <div id="lisboa" class="card">
                 <img src="" alt="">
             </div>
-            <div class="card">
+            <div id="london" class="card">
                 <img src="" alt="">
             </div>
             <div class="card">
@@ -324,7 +324,13 @@ export default {
 
 #lisboa {
     background: url("../../img/lisboa.png");
-    background-position-x: 0;
+    background-position-x: -120px;
+    background-size: cover;
+}
+
+#london {
+    background: url("../../img/london.jpeg");
+    background-position-x: -180px;
     background-size: cover;
 }
 
