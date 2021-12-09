@@ -151,7 +151,7 @@
             <div id="montreal" class="card">
                 <img src="" alt="">
             </div>
-            <div class="card">
+            <div id="munich" class="card">
                 <img src="" alt="">
             </div>
             <div class="card">
@@ -337,6 +337,12 @@ export default {
 #montreal {
    background: url("../../img/montreal.jpg");
     background-position-x: -50px;
+    background-size: cover;
+}
+
+#munich {
+   background: url("../../img/munich.jpg");
+    background-position-x: -80px;
     background-size: cover;
 }
 
