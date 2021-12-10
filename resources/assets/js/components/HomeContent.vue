@@ -157,7 +157,13 @@
             <div id="new_york" class="card">
                 <img src="" alt="">
             </div>
-            <div class="card">
+            <div id="paris" class="card">
+                <img src="" alt="">
+            </div>
+            <div id="" class="card">
+                <img src="" alt="">
+            </div>
+            <div id="" class="card">
                 <img src="" alt="">
             </div>
         </div>
@@ -348,7 +354,13 @@ export default {
 
 #new_york {
    background: url("../../img/new_york.jpg");
-    background-position-x: -100px;
+    background-position-x: -70px;
+    background-size: cover;
+}
+
+#paris {
+   background: url("../../img/paris.jpg");
+    background-position-x: -80px;
     background-size: cover;
 }
 
@@ -495,11 +507,11 @@ option:hover {
 }
 
 .top-destinations {
-    height: 100vh;
+    height: 150vh;
     width: 100%;
     background: whitesmoke;
     display: grid;
-    grid-template-columns: repeat(5, 2fr);
+    grid-template-columns: repeat(4, 3fr);
     grid-gap: 20px;
     padding: 50px 100px;
 }
