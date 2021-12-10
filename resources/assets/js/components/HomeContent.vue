@@ -130,7 +130,13 @@
                 </b-container>
             </b-col>
         </b-row>
-        <div class="top-destinations">
+
+        <main>
+            <h3>Popular destinations</h3>
+            <h5>We fly you to the place of your dreams</h5>
+        </main>
+        
+        <div class="top-destinations">      
             <div id="athen" class="card">
                 
             </div>
@@ -275,6 +281,10 @@ export default {
     border: 1px solid #ced4da !important;
 }
 
+body {
+    background: whitesmoke;
+}
+
 .content {
     height: 100vh;
     width: 100%;
@@ -303,6 +313,16 @@ export default {
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
     box-shadow: 2px 2px 5px rgb(9, 55, 115);
+}
+
+main {
+    margin: 20px 0 0 100px;
+    color: rgb(9, 55, 115);
+    text-shadow: 2px 2px 5px silver;
+}
+
+main h3 {
+    text-transform: uppercase;
 }
 /* Cities settings */
 #athen {
