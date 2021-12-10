@@ -160,7 +160,7 @@
             <div id="paris" class="card">
                 <img src="" alt="">
             </div>
-            <div id="" class="card">
+            <div id="rome" class="card">
                 <img src="" alt="">
             </div>
             <div id="" class="card">
@@ -361,6 +361,12 @@ export default {
 #paris {
    background: url("../../img/paris.jpg");
     background-position-x: -80px;
+    background-size: cover;
+}
+
+#rome {
+   background: url("../../img/rome.jpg");
+    background-position-x: -70px;
     background-size: cover;
 }
 
