@@ -132,39 +132,40 @@
         </b-row>
         <div class="top-destinations">
             <div id="athen" class="card">
+                
             </div>
             <div id="barcelona" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="cairo" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="istanbul" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="lisboa" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="london" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="montreal" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="munich" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="new_york" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="paris" class="card">
-                <img src="" alt="">
+
             </div>
             <div id="rome" class="card">
-                <img src="" alt="">
+
             </div>
-            <div id="" class="card">
-                <img src="" alt="">
+            <div id="zurich" class="card">
+
             </div>
         </div>
     </div>
@@ -366,6 +367,12 @@ export default {
 
 #rome {
    background: url("../../img/rome.jpg");
+    background-position-x: -70px;
+    background-size: cover;
+}
+
+#zurich {
+   background: url("../../img/zurich.jpg");
     background-position-x: -70px;
     background-size: cover;
 }
