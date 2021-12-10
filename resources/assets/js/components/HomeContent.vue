@@ -154,7 +154,7 @@
             <div id="munich" class="card">
                 <img src="" alt="">
             </div>
-            <div class="card">
+            <div id="new_york" class="card">
                 <img src="" alt="">
             </div>
             <div class="card">
@@ -300,7 +300,7 @@ export default {
 /* Cities settings */
 #athen {
     background: url("../../img/athen.jpg");
-    background-position-x: -120px;
+    background-position-x: -80px;
     background-size: cover;
 }
 
@@ -343,6 +343,12 @@ export default {
 #munich {
    background: url("../../img/munich.jpg");
     background-position-x: -80px;
+    background-size: cover;
+}
+
+#new_york {
+   background: url("../../img/new_york.jpg");
+    background-position-x: -100px;
     background-size: cover;
 }
 
