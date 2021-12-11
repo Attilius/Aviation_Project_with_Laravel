@@ -138,7 +138,11 @@
         
         <div class="top-destinations">      
             <div id="athen" class="card">
-                
+                <h4><span>from</span>100 €*</h4>
+                <div class="skin-cover">
+                    <h6>greece</h6>
+                    <h3>athen</h3>
+                </div>
             </div>
             <div id="barcelona" class="card">
 
@@ -165,7 +169,7 @@
 
             </div>
             <div id="paris" class="card">
-
+                
             </div>
             <div id="rome" class="card">
 
@@ -316,7 +320,7 @@ body {
 }
 
 main {
-    margin: 20px 0 0 100px;
+    margin: 60px 0 0 100px;
     color: rgb(9, 55, 115);
     text-shadow: 2px 2px 5px silver;
 }
@@ -375,13 +379,13 @@ main h3 {
 
 #new_york {
    background: url("../../img/new_york.jpg");
-    background-position-x: -70px;
+    background-position-x: -50px;
     background-size: cover;
 }
 
 #paris {
    background: url("../../img/paris.jpg");
-    background-position-x: -80px;
+    background-position-x: -70px;
     background-size: cover;
 }
 
@@ -395,6 +399,62 @@ main h3 {
    background: url("../../img/zurich.jpg");
     background-position-x: -70px;
     background-size: cover;
+}
+
+/* Card settings */
+
+.card {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card:hover .skin-cover {
+    transform: translateY(0rem);
+}
+
+.card h4 {
+    background: rebeccapurple;
+    height: 2.4rem;
+    color: whitesmoke;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    margin: 0 0 50px 150px;
+    transform: rotate(45deg);
+}
+
+.card h4 span {
+    font-size: 0.8rem;
+    padding-right: 10px;
+}
+
+.skin-cover {
+    background: linear-gradient(180deg, transparent, rgb(5, 55, 115));
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-radius: 0.5rem;
+    transform: translateY(1rem);
+}
+
+.skin-cover h3 {
+    padding-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.skin-cover h6 {
+    text-transform: capitalize;
 }
 
 .cover-bg {
