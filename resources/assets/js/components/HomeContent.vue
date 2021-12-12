@@ -201,7 +201,11 @@
                 </div>
             </div>
             <div id="paris" class="card">
-                
+                <h4><span>from</span>100 €*</h4>
+                <div class="skin-cover">
+                    <h6>france</h6>
+                    <h3>paris</h3>
+                </div>
             </div>
             <div id="rome" class="card">
 
