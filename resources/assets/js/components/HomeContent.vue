@@ -194,7 +194,11 @@
                 </div>
             </div>
             <div id="new_york" class="card">
-
+                <h4><span>from</span>100 €*</h4>
+                <div class="skin-cover">
+                    <h6>united states of america</h6>
+                    <h3>new york</h3>
+                </div>
             </div>
             <div id="paris" class="card">
                 
