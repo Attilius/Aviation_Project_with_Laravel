@@ -187,7 +187,11 @@
                 </div>
             </div>
             <div id="munich" class="card">
-
+                <h4><span>from</span>100 €*</h4>
+                <div class="skin-cover">
+                    <h6>germany</h6>
+                    <h3>munich</h3>
+                </div>
             </div>
             <div id="new_york" class="card">
 
