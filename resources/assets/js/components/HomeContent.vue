@@ -671,6 +671,11 @@ option:hover {
         grid-template-columns: repeat(3, 4fr);
         height: 200vh;
     }
+
+    #barcelona {
+        background-position: -110px;
+    }
+
 }
 
 @media (max-width: 1200px) {
