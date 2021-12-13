@@ -666,6 +666,10 @@ option:hover {
     .A320 {
         margin-left: 150px;
     }
+
+    .top-destinations {
+        grid-template-columns: repeat(3, 4fr);
+    }
 }
 
 @media (max-width: 1200px) {
