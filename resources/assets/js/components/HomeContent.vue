@@ -669,6 +669,7 @@ option:hover {
 
     .top-destinations {
         grid-template-columns: repeat(3, 4fr);
+        height: 200vh;
     }
 }
 
