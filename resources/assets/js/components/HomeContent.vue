@@ -680,6 +680,10 @@ option:hover {
         background-position-x: -140px;
     }
 
+    #new_york {
+        background-position-x: -20px;
+    }
+
 }
 
 @media (max-width: 1200px) {
