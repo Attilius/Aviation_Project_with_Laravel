@@ -676,6 +676,10 @@ option:hover {
         background-position: -110px;
     }
 
+    #london {
+        background-position-x: -140px;
+    }
+
 }
 
 @media (max-width: 1200px) {
