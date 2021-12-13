@@ -684,6 +684,10 @@ option:hover {
         background-position-x: -20px;
     }
 
+    #rome {
+        background-position-x: -60px;
+    }
+
 }
 
 @media (max-width: 1200px) {
