@@ -468,7 +468,7 @@ main h3 {
     width: 100%;
     text-align: center;
     padding-top: 5px;
-    margin: 0 0 50px 150px;
+    margin: 0 0 50px 200px;
     transform: rotate(45deg);
 }
 
