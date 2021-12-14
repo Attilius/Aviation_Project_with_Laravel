@@ -462,6 +462,10 @@ main h3 {
     transform: translateY(0rem);
 }
 
+.card:hover {
+    box-shadow: 2px 2px 10px rgb(5, 55, 115);
+}
+
 .card h4 {
     background: rebeccapurple;
     height: 2.4rem;
