@@ -132,7 +132,7 @@
         </b-row>
 
         <main>
-            <h3>Popular destinations</h3>
+            <h2>Popular destinations</h2>
             <h5>We fly you to the place of your dreams</h5>
         </main>
         
