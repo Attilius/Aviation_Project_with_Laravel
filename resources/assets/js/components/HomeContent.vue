@@ -455,6 +455,7 @@ main h3 {
     justify-content: flex-end;
     border-radius: 0.5rem;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .card:hover .skin-cover {
