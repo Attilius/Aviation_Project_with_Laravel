@@ -37,10 +37,13 @@
                         class="social-icon"
                         :icon="['fab', 'instagram']"
                     />
-                <font-awesome-icon
+                    <a href="https://twitter.com">
+                    <font-awesome-icon
                         class="social-icon"
                         :icon="['fab', 'twitter']"
                     />
+                    </a>
+                
             </div>
         </div>
         <div class="box">
