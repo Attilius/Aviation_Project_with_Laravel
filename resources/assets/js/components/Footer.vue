@@ -29,10 +29,13 @@
                         class="social-icon"
                         :icon="['fab', 'linkedin-in']"
                     />
-                <font-awesome-icon
+                    <a href="https://www.facebook.com">
+                    <font-awesome-icon
                         class="social-icon"
                         :icon="['fab', 'facebook-f']"
                     />
+                    </a>
+                
                     <a href="https://www.instagram.com/" target="blank_">
                     <font-awesome-icon
                         class="social-icon"
