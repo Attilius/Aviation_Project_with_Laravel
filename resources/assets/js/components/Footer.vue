@@ -33,7 +33,7 @@
                         class="social-icon"
                         :icon="['fab', 'facebook-f']"
                     />
-                    <a href="https://www.instagram.com/">
+                    <a href="https://www.instagram.com/" target="blank_">
                     <font-awesome-icon
                         class="social-icon"
                         :icon="['fab', 'instagram']"
