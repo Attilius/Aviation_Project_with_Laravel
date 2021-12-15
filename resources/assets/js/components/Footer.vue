@@ -33,10 +33,13 @@
                         class="social-icon"
                         :icon="['fab', 'facebook-f']"
                     />
-                <font-awesome-icon
+                    <a href="https://www.instagram.com/">
+                    <font-awesome-icon
                         class="social-icon"
                         :icon="['fab', 'instagram']"
                     />
+                    </a>
+                
                     <a href="https://twitter.com" target="blank_">
                     <font-awesome-icon
                         class="social-icon"
