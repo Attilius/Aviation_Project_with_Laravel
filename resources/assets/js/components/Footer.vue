@@ -37,7 +37,7 @@
                         class="social-icon"
                         :icon="['fab', 'instagram']"
                     />
-                    <a href="https://twitter.com">
+                    <a href="https://twitter.com" target="blank_">
                     <font-awesome-icon
                         class="social-icon"
                         :icon="['fab', 'twitter']"
