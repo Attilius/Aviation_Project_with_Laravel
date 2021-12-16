@@ -99,7 +99,7 @@ export default {
 .skin {
     height: 87vh;
     width: 100%;
-    background: rgba(7, 5, 5, 0.9);
+    background: rgba(5, 16, 57, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
