@@ -342,7 +342,6 @@ body {
     margin-right: 0 !important;
     margin-left: 0 !important;
     border-bottom: 2px solid rgb(5, 55, 115);
-    box-shadow: 2px 0 5px rgb(5, 55, 115);
 }
 
 .under-left {
