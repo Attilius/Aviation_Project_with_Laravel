@@ -25,30 +25,32 @@
                 </button>
             </b-form>
             <div class="social">
+                <a href="https://www.linkedin.com">
                 <font-awesome-icon
-                        class="social-icon"
-                        :icon="['fab', 'linkedin-in']"
-                    />
-                    <a href="https://www.facebook.com" target="blank_">
-                    <font-awesome-icon
-                        class="social-icon"
-                        :icon="['fab', 'facebook-f']"
-                    />
-                    </a>
-                
-                    <a href="https://www.instagram.com/" target="blank_">
-                    <font-awesome-icon
-                        class="social-icon"
-                        :icon="['fab', 'instagram']"
-                    />
-                    </a>
-                
-                    <a href="https://twitter.com" target="blank_">
-                    <font-awesome-icon
-                        class="social-icon"
-                        :icon="['fab', 'twitter']"
-                    />
-                    </a>
+                    class="social-icon"
+                    :icon="['fab', 'linkedin-in']"
+                />
+                </a>
+                <a href="https://www.facebook.com" target="blank_">
+                <font-awesome-icon
+                    class="social-icon"
+                    :icon="['fab', 'facebook-f']"
+                />
+                </a>
+            
+                <a href="https://www.instagram.com/" target="blank_">
+                <font-awesome-icon
+                    class="social-icon"
+                    :icon="['fab', 'instagram']"
+                />
+                </a>
+            
+                <a href="https://twitter.com" target="blank_">
+                <font-awesome-icon
+                    class="social-icon"
+                    :icon="['fab', 'twitter']"
+                />
+                </a>
                 
             </div>
         </div>
