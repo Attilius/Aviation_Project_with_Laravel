@@ -25,7 +25,7 @@
                 </button>
             </b-form>
             <div class="social">
-                <a href="https://www.linkedin.com">
+                <a href="https://www.linkedin.com" target="blank_">
                 <font-awesome-icon
                     class="social-icon"
                     :icon="['fab', 'linkedin-in']"
