@@ -341,7 +341,6 @@ body {
     background: whitesmoke;
     margin-right: 0 !important;
     margin-left: 0 !important;
-    border-bottom: 2px solid rgb(5, 55, 115);
 }
 
 .under-left {
