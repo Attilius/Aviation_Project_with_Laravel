@@ -92,7 +92,9 @@
             </b-container>
         </div>
 
-        <div class="img-box"></div>
+        <div class="img-box">
+            <div class="skin"></div>
+        </div>
         <div class="bottom-box">
             <div class="skin">
                 <section class="counters">
