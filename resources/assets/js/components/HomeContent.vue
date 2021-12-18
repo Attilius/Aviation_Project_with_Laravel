@@ -310,6 +310,12 @@ export default {
                     country: "egypt",
                     name: "cairo"
                 },
+                {
+                    id: "istanbul",
+                    travelPrice: "100 €",
+                    country: "turkey",
+                    name: "istanbul"
+                },
             ]
         };
     },
