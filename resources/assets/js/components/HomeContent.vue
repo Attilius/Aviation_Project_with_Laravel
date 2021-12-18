@@ -304,6 +304,12 @@ export default {
                     country: "spain",
                     name: "barcelona"
                 },
+                {
+                    id: "cairo",
+                    travelPrice: "100 €",
+                    country: "egypt",
+                    name: "cairo"
+                },
             ]
         };
     },
