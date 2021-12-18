@@ -297,7 +297,13 @@ export default {
                     travelPrice: "100 €",
                     country: "greece",
                     name: "athen"
-                }
+                },
+                {
+                    id: "barcelona",
+                    travelPrice: "100 €",
+                    country: "spain",
+                    name: "barcelona"
+                },
             ]
         };
     },
