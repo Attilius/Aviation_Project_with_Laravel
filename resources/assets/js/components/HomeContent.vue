@@ -289,7 +289,16 @@ export default {
                 { value: "Adult", text: "Adult" },
                 { value: "Senior (65 years and Older)", text: "Senior (65 years and Older)" }
             ],
-            selected_radio: ""
+            selected_radio: "",
+
+            city: [
+                {
+                    id: "athen",
+                    travelPrice: "100 €",
+                    country: "greece",
+                    name: "athen"
+                }
+            ]
         };
     },
 
