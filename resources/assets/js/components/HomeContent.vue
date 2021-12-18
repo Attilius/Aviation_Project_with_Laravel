@@ -316,6 +316,12 @@ export default {
                     country: "turkey",
                     name: "istanbul"
                 },
+                {
+                    id: "lisbon",
+                    travelPrice: "100 €",
+                    country: "portugal",
+                    name: "lisbon"
+                },
             ]
         };
     },
