@@ -322,6 +322,12 @@ export default {
                     country: "portugal",
                     name: "lisbon"
                 },
+                {
+                    id: "london",
+                    travelPrice: "100 €",
+                    country: "united kingdom",
+                    name: "london"
+                },
             ]
         };
     },
