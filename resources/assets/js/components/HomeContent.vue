@@ -346,6 +346,12 @@ export default {
                     country: "united states of america",
                     name: "new-york"
                 },
+                {
+                    id: "paris",
+                    travelPrice: "100 €",
+                    country: "france",
+                    name: "paris"
+                },
             ]
         };
     },
