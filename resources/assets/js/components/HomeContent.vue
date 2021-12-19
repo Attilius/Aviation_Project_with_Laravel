@@ -328,6 +328,12 @@ export default {
                     country: "united kingdom",
                     name: "london"
                 },
+                {
+                    id: "montreal",
+                    travelPrice: "100 €",
+                    country: "canada",
+                    name: "montreal"
+                },
             ]
         };
     },
