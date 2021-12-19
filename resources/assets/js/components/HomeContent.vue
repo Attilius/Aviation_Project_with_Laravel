@@ -352,6 +352,12 @@ export default {
                     country: "france",
                     name: "paris"
                 },
+                {
+                    id: "rome",
+                    travelPrice: "100 €",
+                    country: "italy",
+                    name: "rome"
+                },
             ]
         };
     },
