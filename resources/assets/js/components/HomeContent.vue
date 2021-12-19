@@ -340,6 +340,12 @@ export default {
                     country: "germany",
                     name: "munich"
                 },
+                {
+                    id: "new-york",
+                    travelPrice: "100 €",
+                    country: "united states of america",
+                    name: "new-york"
+                },
             ]
         };
     },
