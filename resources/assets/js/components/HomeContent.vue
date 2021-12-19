@@ -358,6 +358,12 @@ export default {
                     country: "italy",
                     name: "rome"
                 },
+                {
+                    id: "zurich",
+                    travelPrice: "100 €",
+                    country: "switzerland",
+                    name: "zurich"
+                },
             ]
         };
     },
