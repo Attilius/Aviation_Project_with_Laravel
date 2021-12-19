@@ -334,6 +334,12 @@ export default {
                     country: "canada",
                     name: "montreal"
                 },
+                {
+                    id: "munich",
+                    travelPrice: "100 €",
+                    country: "germany",
+                    name: "munich"
+                },
             ]
         };
     },
