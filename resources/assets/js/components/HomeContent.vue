@@ -137,11 +137,11 @@
         </main>
         
         <div class="top-destinations">      
-            <div id="athen" class="card">
-                <h4><span>from</span>100 €*</h4>
+            <div :id="city.id" class="card" v-for="city in cities" :key="city.id">
+                <h4><span>from</span>{{ city.travelPrice }}</h4>
                 <div class="skin-cover">
-                    <h6>greece</h6>
-                    <h3>athen</h3>
+                    <h6>{{ city.country }}</h6>
+                    <h3>{{ city.name }}</h3>
                 </div>
             </div>
         </div>
@@ -214,7 +214,7 @@ export default {
             ],
             selected_radio: "",
 
-            city: [
+            cities: [
                 {
                     id: "athen",
                     travelPrice: "100 €",
@@ -264,10 +264,10 @@ export default {
                     name: "munich"
                 },
                 {
-                    id: "new-york",
+                    id: "new_york",
                     travelPrice: "100 €",
                     country: "united states of america",
-                    name: "new-york"
+                    name: "new york"
                 },
                 {
                     id: "paris",
@@ -395,7 +395,7 @@ main h3 {
     background-size: cover;
 }
 
-#lisboa {
+#lisbon {
     background: url("../../img/lisboa.png");
     background-position-x: -120px;
     background-size: cover;
