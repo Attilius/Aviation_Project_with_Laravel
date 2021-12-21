@@ -172,13 +172,6 @@
                     <h3>lisbon</h3>
                 </div>
             </div>
-            <div id="london" class="card">
-                <h4><span>from</span>100 €*</h4>
-                <div class="skin-cover">
-                    <h6>united kingdom</h6>
-                    <h3>london</h3>
-                </div>
-            </div>
         </div>
     </div>
 </template>
