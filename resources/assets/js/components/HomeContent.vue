@@ -165,13 +165,6 @@
                     <h3>istanbul</h3>
                 </div>
             </div>
-            <div id="lisboa" class="card">
-                <h4><span>from</span>100 €*</h4>
-                <div class="skin-cover">
-                    <h6>portugal</h6>
-                    <h3>lisbon</h3>
-                </div>
-            </div>
         </div>
     </div>
 </template>
