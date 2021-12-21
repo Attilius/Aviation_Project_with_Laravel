@@ -151,13 +151,6 @@
                     <h3>barcelona</h3>
                 </div>
             </div>
-            <div id="cairo" class="card">
-                <h4><span>from</span>100 €*</h4>
-                <div class="skin-cover">
-                    <h6>egypt</h6>
-                    <h3>cairo</h3>
-                </div>
-            </div>
         </div>
     </div>
 </template>
