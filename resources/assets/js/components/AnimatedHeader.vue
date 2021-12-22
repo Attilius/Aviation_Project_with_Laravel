@@ -43,7 +43,28 @@ export default {
         return {
             sliders: [
                 {
-                    
+                    mainClass: "slider-1",
+                    subClass: "slider-1-img",
+                    style: this.images.first,
+                    title: this.titles.first
+                },
+                {
+                    mainClass: "slider-2",
+                    subClass: "slider-2-img",
+                    style: this.images.second,
+                    title: this.titles.second
+                },
+                {
+                    mainClass: "slider-3",
+                    subClass: "slider-3-img",
+                    style: this.images.third,
+                    title: this.titles.first
+                },
+                {
+                    mainClass: "slider-4",
+                    subClass: "slider-4-img",
+                    style: this.images.fourth,
+                    title: this.titles.second
                 }
             ]
         }
