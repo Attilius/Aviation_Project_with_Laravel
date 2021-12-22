@@ -23,14 +23,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="slider-4">
-            <div class="slider-4-img" :style="images.fourth">
-                <div class="slider-text">
-                    <h3>{{ titles.second }}</h3>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
