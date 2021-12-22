@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="slider-1">
-            <div class="slider-1-img" :style="images.first">
+        <div :class="slider.mainClass" v-for="slider in sliders" :key="slider.mainClass">
+            <div :class="slider.subClass" :style="slider.style">
                 <div class="slider-text">
-                    <h3>{{ titles.first }}</h3>
+                    <h3>{{ slider.title }}</h3>
                 </div>
             </div>
         </div>
