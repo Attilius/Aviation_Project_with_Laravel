@@ -37,7 +37,17 @@
 <script>
 export default {
     name: "AnimatedHeader",
-    props: ["titles", "images"]
+    props: ["titles", "images"],
+
+    data() {
+        return {
+            sliders: [
+                {
+                    
+                }
+            ]
+        }
+    }
 };
 </script>
 
