@@ -15,14 +15,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="slider-3">
-            <div class="slider-3-img" :style="images.third">
-                <div class="slider-text">
-                    <h3>{{ titles.first }}</h3>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
