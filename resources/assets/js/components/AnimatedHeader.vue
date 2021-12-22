@@ -7,14 +7,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="slider-2">
-            <div class="slider-2-img" :style="images.second">
-                <div class="slider-text">
-                    <h3>{{ titles.second }}</h3>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
