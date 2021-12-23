@@ -387,7 +387,23 @@ export default {
                             input_parameter: this.items.first
                         }
                     }
-                }
+                },
+                {
+                    id: "second-row",
+                    tableDatas: {
+                        size: this.items.second.size,
+                        height: this.items.second.height,
+                        width: this.items.second.width,
+                        depth: this.items.second.depth,
+                        capacity: this.items.second.capacity,
+                        price: this.items.second.price,
+                        checkbox: {
+                            id: "checkbox-2",
+                            model: this.checked_2,
+                            input_parameter: this.items.second
+                        }
+                    }
+                },
             ]
         };
     },
