@@ -436,6 +436,22 @@ export default {
                         }
                     }
                 },
+                {
+                    id: "fifth-row",
+                    tableDatas: {
+                        size: this.items.fifth.size,
+                        height: this.items.fifth.height,
+                        width: this.items.fifth.width,
+                        depth: this.items.fifth.depth,
+                        capacity: this.items.fifth.capacity,
+                        price: this.items.fifth.price,
+                        checkbox: {
+                            id: "checkbox-5",
+                            model: this.checked_5,
+                            input_parameter: this.items.fifth
+                        }
+                    }
+                },
             ]
         };
     },
