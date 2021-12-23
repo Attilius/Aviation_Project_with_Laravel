@@ -371,9 +371,22 @@ export default {
             checked_5: false,
             checked_6: false,
 
-            tableDatas: [
+            tableRows: [
                 {
-                    
+                    id: "first-row",
+                    tableDatas: {
+                        size: this.items.first.size,
+                        height: this.items.first.height,
+                        width: this.items.first.width,
+                        depth: this.items.first.depth,
+                        capacity: this.items.first.capacity,
+                        price: this.items.first.price,
+                        checkbox: {
+                            id: "checkbox-1",
+                            model: this.checked_1,
+                            input_parameter: this.items.first
+                        }
+                    }
                 }
             ]
         };
