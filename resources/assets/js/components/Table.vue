@@ -369,7 +369,13 @@ export default {
             checked_3: false,
             checked_4: false,
             checked_5: false,
-            checked_6: false
+            checked_6: false,
+
+            tableDatas: [
+                {
+                    
+                }
+            ]
         };
     },
 
