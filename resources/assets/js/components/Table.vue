@@ -420,6 +420,22 @@ export default {
                         }
                     }
                 },
+                {
+                    id: "fourth-row",
+                    tableDatas: {
+                        size: this.items.fourth.size,
+                        height: this.items.fourth.height,
+                        width: this.items.fourth.width,
+                        depth: this.items.fourth.depth,
+                        capacity: this.items.fourth.capacity,
+                        price: this.items.fourth.price,
+                        checkbox: {
+                            id: "checkbox-4",
+                            model: this.checked_4,
+                            input_parameter: this.items.fourth
+                        }
+                    }
+                },
             ]
         };
     },
