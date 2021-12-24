@@ -152,8 +152,11 @@ export default {
                         price: this.items.second.price,
                         checkbox: {
                             id: "checkbox-2",
-                            model: this.checked_2,
-                            input_parameter: this.items.second
+                            model: this.checked_2, 
+                        },
+                        input: {
+                            model_number: this.piece_2,
+                            parameter: this.items.second
                         }
                     }
                 },
@@ -168,8 +171,11 @@ export default {
                         price: this.items.third.price,
                         checkbox: {
                             id: "checkbox-3",
-                            model: this.checked_3,
-                            input_parameter: this.items.third
+                            model: this.checked_3, 
+                        },
+                        input: {
+                            model_number: this.piece_3,
+                            parameter: this.items.third
                         }
                     }
                 },
@@ -184,8 +190,11 @@ export default {
                         price: this.items.fourth.price,
                         checkbox: {
                             id: "checkbox-4",
-                            model: this.checked_4,
-                            input_parameter: this.items.fourth
+                            model: this.checked_4, 
+                        },
+                        input: {
+                            model_number: this.piece_4,
+                            parameter: this.items.fourth
                         }
                     }
                 },
@@ -200,8 +209,11 @@ export default {
                         price: this.items.fifth.price,
                         checkbox: {
                             id: "checkbox-5",
-                            model: this.checked_5,
-                            input_parameter: this.items.fifth
+                            model: this.checked_5, 
+                        },
+                        input: {
+                            model_number: this.piece_5,
+                            parameter: this.items.fifth
                         }
                     }
                 },
@@ -216,8 +228,11 @@ export default {
                         price: this.items.sixth.price,
                         checkbox: {
                             id: "checkbox-6",
-                            model: this.checked_6,
-                            input_parameter: this.items.sixth
+                            model: this.checked_6, 
+                        },
+                        input: {
+                            model_number: this.piece_6,
+                            parameter: this.items.sixth
                         }
                     }
                 },
