@@ -18,7 +18,7 @@
                 </b-tr>
             </b-thead>
             <b-tbody class="t-body">
-                <b-tr id="first-row">
+                <b-tr v-for="row in tablerows" :key="row.id" :id="row.id">
                     <b-td>{{ items.first.size }}</b-td>
                     <b-td>{{ items.first.height }}</b-td>
                     <b-td>{{ items.first.width }}</b-td>
