@@ -27,13 +27,13 @@
                     <b-td class="focus">{{ row.tableDatas.items.first.price }}</b-td>
                     <b-td>
                         <b-form-checkbox
-                            id="checkbox-1"
-                            v-model="checked_1"
+                            :id="row.tableDatas.checkbox.id"
+                            v-model="row.tabledatas.checkbox.model"
                             name="check-button"
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(checked_1)"
+                            @change="onChange(row.tabledatas.checkbox.model)"
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
