@@ -67,56 +67,6 @@
                         </template>
                     </b-td>
                 </b-tr>
-
-                <b-tr id="second-row">
-                    <b-td>{{ items.second.size }}</b-td>
-                    <b-td>{{ items.second.height }}</b-td>
-                    <b-td>{{ items.second.width }}</b-td>
-                    <b-td>{{ items.second.depth }}</b-td>
-                    <b-td>{{ items.second.capacity }}</b-td>
-                    <b-td class="focus">{{ items.second.price }}</b-td>
-                    <b-td>
-                        <b-form-checkbox
-                            id="checkbox-2"
-                            v-model="checked_2"
-                            name="check-button"
-                            switch
-                            size="lg"
-                            class="check-switch"
-                            @change="onChange(checked_2)"
-                        ></b-form-checkbox>
-                    </b-td>
-                    <b-td class="add-piece">
-                        <template v-if="checked_2 == true">
-                            <div class="input-cell">
-                                <b-form-input
-                                    v-model.number="piece_2"
-                                    id="second"
-                                    type="number"
-                                    min="1"
-                                    max="10"
-                                    placeholder="Max 10"
-                                    class="piece-input"
-                                    @input="addNumber(items.second)"
-                                ></b-form-input>
-                                <button @click="confirmPiece" class="btn">
-                                    OK
-                                </button>
-                            </div>
-                        </template>
-
-                        <template v-else>
-                            <div class="input-cell">
-                                <b-form-input
-                                type="number"
-                                placeholder="Max 10"
-                                class="piece-input"
-                                disabled
-                            ></b-form-input>
-                            </div>
-                        </template>
-                    </b-td>
-                </b-tr>
             </b-tbody>
         </b-table-simple>
 
