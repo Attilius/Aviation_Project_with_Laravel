@@ -19,12 +19,12 @@
             </b-thead>
             <b-tbody class="t-body">
                 <b-tr v-for="row in tablerows" :key="row.id" :id="row.id">
-                    <b-td>{{ items.first.size }}</b-td>
-                    <b-td>{{ items.first.height }}</b-td>
-                    <b-td>{{ items.first.width }}</b-td>
-                    <b-td>{{ items.first.depth }}</b-td>
-                    <b-td>{{ items.first.capacity }}</b-td>
-                    <b-td class="focus">{{ items.first.price }}</b-td>
+                    <b-td>{{ row.tableDatas.items.first.size }}</b-td>
+                    <b-td>{{ row.tableDatas.items.first.height }}</b-td>
+                    <b-td>{{ row.tableDatas.items.first.width }}</b-td>
+                    <b-td>{{ row.tableDatas.items.first.depth }}</b-td>
+                    <b-td>{{ row.tableDatas.items.first.capacity }}</b-td>
+                    <b-td class="focus">{{ row.tableDatas.items.first.price }}</b-td>
                     <b-td>
                         <b-form-checkbox
                             id="checkbox-1"
