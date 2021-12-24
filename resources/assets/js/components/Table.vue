@@ -40,14 +40,14 @@
                         <template v-if="checked_1 == true">
                             <div class="input-cell">
                                 <b-form-input
-                                    v-model.number="piece_1"
+                                    v-model.number="row.tableDatas.input.model_number"
                                     id="first"
                                     type="number"
                                     min="1"
                                     max="10"
                                     placeholder="Max 10"
                                     class="piece-input"
-                                    @input="addNumber(items.first)"
+                                    @input="addNumber(row.tableDatas.input.parameter)"
                                 ></b-form-input>
                                 <button @click="confirmPiece" class="btn">
                                     OK
@@ -133,8 +133,11 @@ export default {
                         price: this.items.first.price,
                         checkbox: {
                             id: "checkbox-1",
-                            model: this.checked_1,
-                            input_parameter: this.items.first
+                            model: this.checked_1, 
+                        },
+                        input: {
+                            model_number: this.piece_1,
+                            parameter: this.items.first
                         }
                     }
                 },
