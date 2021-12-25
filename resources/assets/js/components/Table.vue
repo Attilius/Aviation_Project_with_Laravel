@@ -20,7 +20,7 @@
             <b-tbody class="t-body">
                 <b-tr v-for="row in tableRows" :key="row.id" :id="row.id">
                     <b-td>{{ row.tableDatas.size }}</b-td>
-                    <b-td>{{ row.tableDatas.items.first.height }}</b-td>
+                    <b-td>{{ row.tableDatas.height }}</b-td>
                     <b-td>{{ row.tableDatas.items.first.width }}</b-td>
                     <b-td>{{ row.tableDatas.items.first.depth }}</b-td>
                     <b-td>{{ row.tableDatas.items.first.capacity }}</b-td>
