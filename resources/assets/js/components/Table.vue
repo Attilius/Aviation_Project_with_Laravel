@@ -24,7 +24,7 @@
                     <b-td>{{ row.tableDatas.width }}</b-td>
                     <b-td>{{ row.tableDatas.depth }}</b-td>
                     <b-td>{{ row.tableDatas.capacity }}</b-td>
-                    <b-td class="focus">{{ row.tableDatas.items.first.price }}</b-td>
+                    <b-td class="focus">{{ row.tableDatas.price }}</b-td>
                     <b-td>
                         <b-form-checkbox
                             :id="row.tableDatas.checkbox.id"
