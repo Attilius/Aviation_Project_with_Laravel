@@ -28,7 +28,7 @@
                     <b-td>
                         <b-form-checkbox
                             :id="row.tableDatas.checkbox.id"
-                            v-model="row.tabledatas.checkbox.model"
+                            v-model="row.tableDatas.checkbox.model"
                             name="check-button"
                             switch
                             size="lg"
