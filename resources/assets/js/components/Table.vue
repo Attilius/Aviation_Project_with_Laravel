@@ -37,7 +37,7 @@
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
-                        <template v-if="checked_1 == true">
+                        <template v-if="row.tableDatas.checkbox.model == true">
                             <div class="input-cell">
                                 <b-form-input
                                     v-model.number="row.tableDatas.input.model_number"
