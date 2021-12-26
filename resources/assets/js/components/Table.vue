@@ -41,7 +41,7 @@
                             <div class="input-cell">
                                 <b-form-input
                                     v-model.number="row.tableDatas.input.model_number"
-                                    id="first"
+                                    :id="row.tableDatas.input.id"
                                     type="number"
                                     min="1"
                                     max="10"
@@ -136,6 +136,7 @@ export default {
                             model: this.checked_1, 
                         },
                         input: {
+                            id: "first",
                             model_number: this.piece_1,
                             parameter: this.items.first
                         }
