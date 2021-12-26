@@ -33,7 +33,7 @@
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(row.tabledatas.checkbox.model)"
+                            @change="onChange(row.tableDatas.checkbox.model)"
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
