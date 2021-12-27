@@ -156,6 +156,16 @@ export default {
 
     data() {
         return {
+            awards:[
+                {
+                    source: "images/awards-2019.png",
+                    alt: "Award-2019"
+                },
+                {
+                    source: "images/awards-2021.png",
+                    alt: "Award-2021"
+                }
+            ],
             value1: 0,
             value2: 0,
             value3: 0,
