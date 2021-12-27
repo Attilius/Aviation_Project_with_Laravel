@@ -176,6 +176,7 @@ export default {
                             model: this.checked_3, 
                         },
                         input: {
+                            id: "third",
                             model_number: this.piece_3,
                             parameter: this.items.third
                         }
