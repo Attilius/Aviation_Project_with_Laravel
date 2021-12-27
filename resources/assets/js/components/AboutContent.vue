@@ -15,16 +15,12 @@
         <div class="content">
             <div class="awards">
                 <b-img
+                    v-for="award in awards"
+                    :key="award.alt"
                     class="award"
-                    :src="'images/awards-2019.png'"
+                    :src="award.source"
                     fluid
-                    alt="Award-2019"
-                ></b-img>
-                <b-img
-                    class="award"
-                    :src="'images/awards-2021.png'"
-                    fluid
-                    alt="Award-2021"
+                    :alt="award.alt"
                 ></b-img>
             </div>
 
