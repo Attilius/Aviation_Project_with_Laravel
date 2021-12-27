@@ -216,6 +216,7 @@ export default {
                             model: this.checked_5, 
                         },
                         input: {
+                            id: "fifth",
                             model_number: this.piece_5,
                             parameter: this.items.fifth
                         }
