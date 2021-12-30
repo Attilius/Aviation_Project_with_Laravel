@@ -177,6 +177,11 @@ export default {
                     icon: ['fas', 'map-marked-alt'],
                     counter: values3,
                     title: "Routes"
+                },
+                {
+                    icon: ['fas', 'handshaket'],
+                    counter: values4,
+                    title: "Partners"
                 }
             ],
             value1: 0,
