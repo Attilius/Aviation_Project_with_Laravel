@@ -172,6 +172,11 @@ export default {
                     icon: ['fas', 'plane'],
                     counter: values2,
                     title: "Flights"
+                },
+                {
+                    icon: ['fas', 'map-marked-alt'],
+                    counter: values3,
+                    title: "Routes"
                 }
             ],
             value1: 0,
