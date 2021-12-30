@@ -162,6 +162,7 @@ export default {
                     alt: "Award-2021"
                 }
             ],
+
             countersData: [
                 {
                     icon: ['fas', 'users'],
@@ -184,6 +185,7 @@ export default {
                     title: "Partners"
                 }
             ],
+            
             value1: 0,
             value2: 0,
             value3: 0,
