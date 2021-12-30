@@ -162,6 +162,13 @@ export default {
                     alt: "Award-2021"
                 }
             ],
+            countersData: [
+                {
+                    icon: ['fas', 'users'],
+                    counter: values1,
+                    title: "Satisfied customers"
+                }
+            ],
             value1: 0,
             value2: 0,
             value3: 0,
