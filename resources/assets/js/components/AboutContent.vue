@@ -167,6 +167,11 @@ export default {
                     icon: ['fas', 'users'],
                     counter: values1,
                     title: "Satisfied customers"
+                },
+                {
+                    icon: ['fas', 'plane'],
+                    counter: values2,
+                    title: "Flights"
                 }
             ],
             value1: 0,
