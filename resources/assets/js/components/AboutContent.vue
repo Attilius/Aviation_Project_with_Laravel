@@ -124,14 +124,6 @@
                             <div class="counter">{{ values3 }}+</div>
                             <h3>Routes</h3>
                         </div>
-                        <div>
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'handshake']"
-                            />
-                            <div class="counter">{{ values4 }}+</div>
-                            <h3>Partners</h3>
-                        </div>
                     </div>
                 </section>
 
