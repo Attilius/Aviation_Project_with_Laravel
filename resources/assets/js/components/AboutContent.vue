@@ -108,14 +108,6 @@
                             <div class="counter">{{ values1 }}+</div>
                             <h3>Satisfied customers</h3>
                         </div>
-                        <div>
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'plane']"
-                            />
-                            <div class="counter">{{ values2 }}+</div>
-                            <h3>Flights</h3>
-                        </div>
                     </div>
                 </section>
 
