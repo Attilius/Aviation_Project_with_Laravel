@@ -116,14 +116,6 @@
                             <div class="counter">{{ values2 }}+</div>
                             <h3>Flights</h3>
                         </div>
-                        <div>
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'map-marked-alt']"
-                            />
-                            <div class="counter">{{ values3 }}+</div>
-                            <h3>Routes</h3>
-                        </div>
                     </div>
                 </section>
 
