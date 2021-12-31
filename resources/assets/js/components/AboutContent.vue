@@ -100,7 +100,7 @@
                         id="counters-container"
                         class="container"
                     >
-                        <div>
+                        <div v-for="counter in counters" :key="counter.title">
                             <font-awesome-icon
                                 class="icon"
                                 :icon="['fas', 'users']"
@@ -139,7 +139,7 @@ export default {
                 }
             ],
 
-            countersData: [
+            counters: [
                 {
                     icon: ['fas', 'users'],
                     counter: values1,
