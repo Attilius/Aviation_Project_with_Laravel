@@ -103,7 +103,7 @@
                         <div v-for="counter in counters" :key="counter.title">
                             <font-awesome-icon
                                 class="icon"
-                                :icon="['fas', 'users']"
+                                :icon="counter.icon"
                             />
                             <div class="counter">{{ values1 }}+</div>
                             <h3>Satisfied customers</h3>
