@@ -105,8 +105,8 @@
                                 class="icon"
                                 :icon="counter.icon"
                             />
-                            <div class="counter">{{ values1 }}+</div>
-                            <h3>Satisfied customers</h3>
+                            <div class="counter">{{ counter.counter }}+</div>
+                            <h3>{{ counter.title }}</h3>
                         </div>
                     </div>
                 </section>
