@@ -142,7 +142,7 @@ export default {
             counters: [
                 {
                     icon: ['fas', 'users'],
-                    counter: values1,
+                    counter: this.values1,
                     title: "Satisfied customers"
                 },
                 {
