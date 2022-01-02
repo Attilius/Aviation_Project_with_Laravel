@@ -152,7 +152,7 @@ export default {
                 },
                 {
                     icon: ['fas', 'map-marked-alt'],
-                    counter: values3,
+                    counter: this.values3,
                     title: "Routes"
                 },
                 {
