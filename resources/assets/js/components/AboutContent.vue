@@ -147,7 +147,7 @@ export default {
                 },
                 {
                     icon: ['fas', 'plane'],
-                    counter: values2,
+                    counter: this.values2,
                     title: "Flights"
                 },
                 {
