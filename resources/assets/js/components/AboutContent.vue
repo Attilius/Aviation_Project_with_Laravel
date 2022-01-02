@@ -156,7 +156,7 @@ export default {
                     title: "Routes"
                 },
                 {
-                    icon: ['fas', 'handshaket'],
+                    icon: ['fas', 'handshake'],
                     counter: this.values4,
                     title: "Partners"
                 }
