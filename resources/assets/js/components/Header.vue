@@ -25,19 +25,6 @@
                             <b-link class="login" href="/">Login</b-link>
                         </li>
                     </ul>
-
-                    <!-- <b-nav-item-dropdown text="Lang" right>
-                        <b-dropdown-item href="#">HU</b-dropdown-item>
-                        <b-dropdown-item href="#">EN</b-dropdown-item>
-                        <b-dropdown-item href="#">FR</b-dropdown-item>
-                        <b-dropdown-item href="#">DE</b-dropdown-item>
-                    </b-nav-item-dropdown> -->
-
-                    <!-- <b-nav-item-dropdown text="Login" right>
-                        // Using 'button-content' slot 
-                        <b-dropdown-item href="#">Profile</b-dropdown-item>
-                        <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-                    </b-nav-item-dropdown> -->
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
