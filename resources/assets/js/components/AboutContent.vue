@@ -157,7 +157,7 @@ export default {
                 },
                 {
                     icon: ['fas', 'handshaket'],
-                    counter: values4,
+                    counter: this.values4,
                     title: "Partners"
                 }
             ],
