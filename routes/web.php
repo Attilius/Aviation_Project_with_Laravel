@@ -12,41 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::prefix('auth')->group(function () {
+    Route::get('init', 'AppController@init');
 
-Route::get('/services', function () {
-    return view('services');
-});
-
-Route::get('/services/travel-insurance', function () {
-    return view('travel-insurance');
-});
-
-Route::get('/services/luggage-insurance', function () {
-    return view('luggage-insurance');
-});
-
-Route::get('/services/premium-comfort', function () {
-    return view('premium-comfort');
-});
-
-Route::get('/services/private-jet-rent', function () {
-    return view('private-jet-rent');
-});
-
-Route::get('/services/group-discount', function () {
-    return view('group-discount');
-});
-
-Route::get('/services/booking-cancellation', function () {
-    return view('booking-cancellation');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
+    Route::post('login', 'AppController@login');
+    Route::post('register', 'AppController@register');
+    Route::post('logout', 'AppController@logout');
 });
