@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 |
 */
 
+$uris = ['/', '/travel-guide'];
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -25,3 +27,21 @@ Route::get('/private-jet-rent', function() {
     $response = Zttp::get("https://www.distance24.org/route.json?stops=$departure_location|$destination");
     return $response -> json();
 });
+
+Route::get('/new-york', function() {
+    $service = request('service');
+    $cityName = request('cityName');
+
+    $response = Zttp::get("https://travelguide-api.herokuapp.com/addresses/$service/$cityName");
+    return $response -> json();
+});
+
+foreach($uris as &$uri){
+    Route::get($uri, function() {
+        $area = request('area');
+        $location = request('location');
+    
+        $response = Zttp::get("https://www.timeapi.io/api/Time/current/zone?timeZone=$area/$location");
+        return $response -> json();
+    });
+}
