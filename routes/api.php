@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 |
 */
 
-$uris = ['/', '/travel-guide'];
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -36,12 +35,10 @@ Route::get('/new-york', function() {
     return $response -> json();
 });
 
-foreach($uris as &$uri){
-    Route::get($uri, function() {
-        $area = request('area');
-        $location = request('location');
-    
-        $response = Zttp::get("https://www.timeapi.io/api/Time/current/zone?timeZone=$area/$location");
-        return $response -> json();
-    });
-}
+Route::get('/', function() {
+    $area = request('area');
+    $location = request('location');
+
+    $response = Zttp::get("https://www.timeapi.io/api/Time/current/zone?timeZone=$area/$location");
+    return $response -> json();
+});
