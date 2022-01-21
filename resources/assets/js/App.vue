@@ -2,13 +2,18 @@
     <div>
         <spinner :app="app" v-if="loading"></spinner>
         <div v-else-if="initiated">
-            <router-view :app="app" @onClickLogin="updateLoginPath($event)" />
+            <router-view
+                :app="app"
+                @onClickLogin="updateLoginPath($event)"
+                @onChangePageContent="updatePageContent($event)"
+                @onChangeAreaAndLocation="udateAreaAndLocation($event)"
+            />
         </div>
     </div>
 </template>
 
 <script>
-import M from 'materialize-css'
+import M from "materialize-css";
 export default {
     name: "app",
 
@@ -21,13 +26,125 @@ export default {
             req: axios.create({
                 baseUrl: BASE_URL
             }),
-            loginPath: "/"
+            loginPath: "/",
+            current_time: "",
+
+            cards: [
+                {
+                    id: "athens",
+                    country: "greece",
+                    city: "athens",
+                    price: "150 €*",
+                    area: "Europe",
+                    location: "Athens"
+                },
+                {
+                    id: "barcelona",
+                    country: "spain",
+                    city: "barcelona",
+                    price: "160 €*",
+                    area: "Europe",
+                    location: "Madrid"
+                },
+                {
+                    id: "cairo",
+                    country: "egypt",
+                    city: "cairo",
+                    price: "935 €*",
+                    area: "Africa",
+                    location: "Cairo"
+                },
+                {
+                    id: "istanbul",
+                    country: "turkey",
+                    city: "istanbul",
+                    price: "180 €*",
+                    area: "Europe",
+                    location: "Istanbul"
+                },
+                {
+                    id: "lisbon",
+                    country: "portugal",
+                    city: "lisbon",
+                    price: "160 €*",
+                    area: "Europe",
+                    location: "Lisbon"
+                },
+                {
+                    id: "london",
+                    country: "united kingdom",
+                    city: "london",
+                    price: "159 €*",
+                    area: "Europe",
+                    location: "London"
+                },
+                {
+                    id: "montreal",
+                    country: "canada",
+                    city: "montreal",
+                    price: "535 €*",
+                    area: "America",
+                    location: "Montreal"
+                },
+                {
+                    id: "munich",
+                    country: "germany",
+                    city: "munich",
+                    price: "170 €*",
+                    area: "Europe",
+                    location: "Berlin"
+                },
+                {
+                    id: "new-york",
+                    country: "united states of america",
+                    city: "new york",
+                    price: "497 €*",
+                    area: "America",
+                    location: "New_York"
+                },
+                {
+                    id: "paris",
+                    country: "france",
+                    city: "paris",
+                    price: "100 €*",
+                    area: "Europe",
+                    location: "Paris"
+                },
+                {
+                    id: "rome",
+                    country: "italy",
+                    city: "rome",
+                    price: "160 €*",
+                    area: "Europe",
+                    location: "Rome"
+                },
+                {
+                    id: "zurich",
+                    country: "switzerland",
+                    city: "zurich",
+                    price: "165 €*",
+                    area: "Europe",
+                    location: "Zurich"
+                }
+            ],
         };
     },
 
     mounted() {
-        M.AutoInit()
+        M.AutoInit();
         this.init();
+
+        if (location.reload) {
+            this.cards.forEach(card => {
+                if (location.hash.split("/")[2] === card.id) {
+                    this.setCurrent_time(card.area, card.location);
+                }
+            }); 
+        }
+
+        if (location.hash === "#/") {
+            this.pageContent = "";
+        }
     },
 
     methods: {
@@ -43,11 +160,27 @@ export default {
 
         updateLoginPath(updateLoginPath) {
             this.loginPath = updateLoginPath;
+        },
+
+        udateAreaAndLocation(udateAreaAndLocation) {
+            this.setCurrent_time(udateAreaAndLocation[0], udateAreaAndLocation[1]);
+        },
+
+        updatePageContent(updatePageContent) {
+            setTimeout(() => {
+                location.hash = `#/travel-guide/${updatePageContent}`;
+            }, 600);
+        },
+
+        setCurrent_time(area, location) {
+            fetch(`/api/?area=${area}&location=${location}`)
+                .then(response => response.json())
+                .then(data => {
+                    this.current_time = data.time;
+                });
         }
     }
 };
 </script>
 
-<style scoped>
- 
-</style>
+<style scoped></style>
