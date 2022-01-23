@@ -21,127 +21,111 @@
                     </h2>
                     <h1 class="title-bottom">fly with us</h1>
                     <b-form @submit="onBooking">
-                        <b-row class="row1">
-                            <div class="input-column">
-                                <label class="label" for="from">From</label>
-                                <div class="form-icon">
-                                    <div class="icon">
-                                        <font-awesome-icon
-                                            :icon="['fas', 'plane-departure']"
-                                        />
-                                    </div>
-                                    <b-form-select
-                                        class="select"
-                                        name="from"
-                                        v-model="selected_from"
-                                        :options="options_from"
-                                    ></b-form-select>
-                                </div>
-                            </div>
-
-                            <div class="input-column">
-                                <label class="label" for="to">To</label>
-                                <div class="form-icon">
-                                    <div class="icon">
-                                        <font-awesome-icon
-                                            :icon="['fas', 'plane-arrival']"
-                                        />
-                                    </div>
-                                    <b-form-select
-                                        class="select"
-                                        name="to"
-                                        v-model="selected_to"
-                                        :options="options_to"
-                                    ></b-form-select>
-                                </div>
-                            </div>
-
-                            <div class="input-column">
-                                <label class="label" for="date"
-                                    >Date of away</label
+                        <b-row class="travelling-datas">
+                            <div class="input-field">
+                                <i class="material-icons prefix"
+                                    >flight_takeoff</i
                                 >
-                                <b-form-input
-                                    class="input"
-                                    name="date"
-                                    type="date"
-                                ></b-form-input>
-                            </div>
-
-                            <div id="back-way" class="input-column">
-                                <label class="label" for="date"
-                                    >Date of back way</label
+                                <input
+                                    id="departure_place"
+                                    type="text"
+                                    class="validate"
+                                />
+                                <label id="label-departure" for="from"
+                                    >Departure from*</label
                                 >
-                                <b-form-input
-                                    id="back-date"
-                                    class="input"
-                                    name="date"
-                                    type="date"
-                                ></b-form-input>
+                                <span
+                                    class="helper-text"
+                                    data-error="Please enter a departure city."
+                                    data-success=""
+                                ></span>
                             </div>
-                            
-                            <div class="input-column">
-                                <label class="label" for="passengers">Passengers</label>
-                                <div class="form-icon">
-                                <b-form-select
-                                    class="input"
-                                    name="passengers"
-                                    v-model="selected_passengers"
-                                    :options="options_passengers"
-                                ></b-form-select>
-                                </div>
-                            </div>
-                            
-                            <div class="input-column">
-                                <label class="label" for="cabin">Cabin</label>
-                                <div class="form-icon">
-                                <b-form-select
-                                    class="input"
-                                    name="cabin"
-                                    v-model="selected_cabin"
-                                    :options="options_cabin"
-                                ></b-form-select>
-                                </div>
-                            </div>
-                        </b-row>
 
-                        <b-row class="row2">
-                            <b-form-radio
-                                class="radio"
-                                v-model="selected_radio"
-                                name="trip-radios"
-                                value="ONE WAY"
-                                v-on:change="showReturnDate('ONE WAY')"
-                                >ONE WAY</b-form-radio
-                            >
-                            <b-form-radio
-                                class="radio"
-                                v-model="selected_radio"
-                                name="trip-radios"
-                                value="ROUND TRIP"
-                                v-on:change="showReturnDate('ROUND TRIP')"
-                                >ROUND TRIP</b-form-radio
+                            <div class="input-field">
+                                <i class="material-icons prefix">flight_land</i>
+                                <input
+                                    id="arriving_place"
+                                    type="text"
+                                    class="validate"
+                                />
+                                <label id="label-arriving" for="from"
+                                    >Arriving at*</label
+                                >
+                                <span
+                                    class="helper-text"
+                                    data-error="Please enter an arrival city."
+                                    data-success=""
+                                ></span>
+                            </div>
+
+                            <div class="input-field">
+                                <i class="material-icons prefix">today</i>
+                                <label id="label-date-away" for="date"
+                                    >Departure date*</label
+                                >
+                                <input
+                                    id="departure_date"
+                                    type="text"
+                                    class="datepicker"
+                                />
+                            </div>
+
+                            <div id="back-way" class="input-field">
+                                <i class="material-icons prefix">today</i>
+                                <label id="label-date-return" for="date"
+                                    >Return date*</label
+                                >
+                                <input
+                                    id="return_date"
+                                    type="text"
+                                    class="datepicker"
+                                />
+                            </div>
+
+                            <b-row class="travel-type">
+                                <b-form-radio
+                                    class="radio"
+                                    v-model="selected_radio"
+                                    name="trip-radios"
+                                    value="ONE WAY"
+                                    v-on:change="showReturnDate('ONE WAY')"
+                                    >ONE WAY</b-form-radio
+                                >
+                                <b-form-radio
+                                    class="radio"
+                                    v-model="selected_radio"
+                                    name="trip-radios"
+                                    value="ROUND TRIP"
+                                    v-on:change="showReturnDate('ROUND TRIP')"
+                                    >ROUND TRIP</b-form-radio
+                                >
+                            </b-row>
+                            <b-button type="submit" id="submit-btn"
+                                >BOOK NOW</b-button
                             >
                         </b-row>
-
-                        <b-button type="submit" id="submit-btn"
-                            >BOOK NOW</b-button
-                        >
                     </b-form>
                 </b-container>
             </b-col>
         </b-row>
 
         <main>
-            <h2>Popular destinations</h2>
-            <h5>We fly you to the place of your dreams</h5>
+            <h5>Popular destinations</h5>
+            <h6>Explore the world with us</h6>
         </main>
-        
-        <div class="top-destinations">      
-            <div :id="city.id" class="card" v-for="city in cities" :key="city.id">
-                <h4><span>from</span>{{ city.travelPrice }}</h4>
+
+        <div class="top-destinations">
+            <div
+                v-for="card in app.cards"
+                :key="card.id"
+                :id="card.id"
+                class="card"
+                @click="onChangePageContent(card.id), onChangeAreaAndLocation([card.area, card.location])"
+            >
+                <h4><span>from</span>{{ card.price }}</h4>
                 <div class="skin-cover">
-                    <h6>{{ city.country }}</h6>
-                    <h3>{{ city.name }}</h3>
+                    <h6>{{ card.country }}</h6>
+                    <h5>{{ card.city }}</h5>
                 </div>
             </div>
         </div>
@@ -152,9 +136,9 @@
 import Chat from "./Chat.vue";
 export default {
     name: "HomeContent",
-
+    props: ["app"],
     components: {
-        Chat
+        Chat,
     },
 
     data() {
@@ -185,125 +169,98 @@ export default {
                 { value: "Munich", text: "Munich" },
                 { value: "New York", text: "New York" }
             ],
-            selected_cabin: null,
-            options_cabin: [
-                {
-                    value: null,
-                    text: "Please select",
-                    disabled: true
-                },
-                { value: "Economy", text: "Economy" },
-                { value: "Premium Economy", text: "Premium Economy" },
-                { value: "Business", text: "Business" },
-                { value: "First", text: "First" }
-            ],
-            selected_passengers: null,
-            options_passengers: [
-                {
-                    value: null,
-                    text: "Please select",
-                    disabled: true
-                },
-                { value: "Infant (0-23 months)", text: "Infant (0-23 months)" },
-                { value: "Child (2-11 years)", text: "Child (2-11 years)" },
-                { value: "Youth (12-17 years)", text: "Youth (12-17 years)" },
-                { value: "Youth (18-24 years)", text: "Youth (18-24 years)" },
-                { value: "Student (18-29 years)", text: "Student (18-29 years)" },
-                { value: "Adult", text: "Adult" },
-                { value: "Senior (65 years and Older)", text: "Senior (65 years and Older)" }
-            ],
             selected_radio: "",
 
-            cities: [
-                {
-                    id: "athen",
-                    travelPrice: "100 €",
-                    country: "greece",
-                    name: "athen"
-                },
-                {
-                    id: "barcelona",
-                    travelPrice: "100 €",
-                    country: "spain",
-                    name: "barcelona"
-                },
-                {
-                    id: "cairo",
-                    travelPrice: "100 €",
-                    country: "egypt",
-                    name: "cairo"
-                },
-                {
-                    id: "istanbul",
-                    travelPrice: "100 €",
-                    country: "turkey",
-                    name: "istanbul"
-                },
-                {
-                    id: "lisbon",
-                    travelPrice: "100 €",
-                    country: "portugal",
-                    name: "lisbon"
-                },
-                {
-                    id: "london",
-                    travelPrice: "100 €",
-                    country: "united kingdom",
-                    name: "london"
-                },
-                {
-                    id: "montreal",
-                    travelPrice: "100 €",
-                    country: "canada",
-                    name: "montreal"
-                },
-                {
-                    id: "munich",
-                    travelPrice: "100 €",
-                    country: "germany",
-                    name: "munich"
-                },
-                {
-                    id: "new_york",
-                    travelPrice: "100 €",
-                    country: "united states of america",
-                    name: "new york"
-                },
-                {
-                    id: "paris",
-                    travelPrice: "100 €",
-                    country: "france",
-                    name: "paris"
-                },
-                {
-                    id: "rome",
-                    travelPrice: "100 €",
-                    country: "italy",
-                    name: "rome"
-                },
-                {
-                    id: "zurich",
-                    travelPrice: "100 €",
-                    country: "switzerland",
-                    name: "zurich"
-                },
-            ]
+            
+
+            cityUri: ""
+            
         };
     },
 
+    mounted() {
+        this.scrollPage(0, 0);
+        this.setFocusedInputLabelColor();
+        const calendar = document.querySelectorAll(".datepicker");
+        M.Datepicker.init(calendar, {
+            minDate: new Date(Date.now())
+        });
+        this.getCityName();
+    },
+
     methods: {
+        onChangeAreaAndLocation([cardArea, cardLocation]) {
+            this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation])
+        },
+
+        onChangePageContent(cardId) {
+            this.$emit("onChangePageContent", cardId);
+        },
+
+        scrollPage(positionY, positionX) {
+            window.scroll({
+                top: positionY,
+                left: positionX
+            });
+        },
+
+        getCityName() {
+            const cards = document.querySelectorAll(".card");
+
+            cards.forEach(card => {
+                card.addEventListener("mousedown", () => {
+                    this.cityUri = card.lastChild.lastChild.textContent.replace(
+                        " ",
+                        "-"
+                    );
+                });
+            });
+        },
+
         showReturnDate: function(selected_radio) {
             if (selected_radio === "ROUND TRIP") {
                 document.getElementById("back-way").style.display = "flex";
             } else {
                 document.getElementById("back-way").style.display = "none";
-                document.getElementById("back-date").value = "yyyy-mm-dd";
             }
         },
 
         onBooking(event) {
             event.preventDefault();
             alert("Booking Successful!");
+        },
+
+        getInputs() {
+            const inputs = [
+                {
+                    activeInput: document.getElementById("departure_place"),
+                    label: document.getElementById("label-departure")
+                },
+                {
+                    activeInput: document.getElementById("arriving_place"),
+                    label: document.getElementById("label-arriving")
+                },
+                {
+                    activeInput: document.getElementById("departure_date"),
+                    label: document.getElementById("label-date-away")
+                },
+                {
+                    activeInput: document.getElementById("return_date"),
+                    label: document.getElementById("label-date-return")
+                }
+            ];
+            return inputs;
+        },
+
+        setFocusedInputLabelColor() {
+            this.getInputs().forEach(input => {
+                input.activeInput.addEventListener("focusin", () => {
+                    input.label.style.color = "#6a1b9a";
+                });
+                input.activeInput.addEventListener("focusout", () => {
+                    input.label.style.color = "#9e9e9e";
+                });
+            });
         }
     }
 };
@@ -337,8 +294,9 @@ body {
     display: flex;
     justify-content: space-between;
     background: whitesmoke;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgb(9, 55, 115);
+    box-shadow: 2px 2px 10px rgb(9, 55, 115);
 }
 
 .under-left {
@@ -359,149 +317,6 @@ body {
     border-top-right-radius: 100%;
     border-bottom-right-radius: 500%;
     box-shadow: 2px 2px 5px rgb(9, 55, 115);
-}
-
-main {
-    margin: 60px 0 0 100px;
-    color: rgb(9, 55, 115);
-    text-shadow: 2px 2px 5px silver;
-}
-
-main h3 {
-    text-transform: uppercase;
-}
-/* Cities settings */
-#athen {
-    background: url("../../img/athen.jpg");
-    background-position-x: -80px;
-    background-size: cover;
-}
-
-#barcelona {
-    background: url("../../img/barcelona.jpg");
-    background-position-x: -120px;
-    background-size: cover;
-}
-
-#cairo {
-    background: url("../../img/cairo.png");
-    background-position-x: -120px;
-    background-size: cover;
-}
-
-#istanbul {
-    background: url("../../img/istanbul.jpg");
-    background-position-x: 0;
-    background-size: cover;
-}
-
-#lisbon {
-    background: url("../../img/lisboa.png");
-    background-position-x: -120px;
-    background-size: cover;
-}
-
-#london {
-    background: url("../../img/london.jpeg");
-    background-position-x: -180px;
-    background-size: cover;
-}
-
-#montreal {
-   background: url("../../img/montreal.jpg");
-    background-position-x: -50px;
-    background-size: cover;
-}
-
-#munich {
-   background: url("../../img/munich.jpg");
-    background-position-x: -80px;
-    background-size: cover;
-}
-
-#new_york {
-   background: url("../../img/new_york.jpg");
-    background-position-x: -50px;
-    background-size: cover;
-}
-
-#paris {
-   background: url("../../img/paris.jpg");
-    background-position-x: -70px;
-    background-size: cover;
-}
-
-#rome {
-   background: url("../../img/rome.jpg");
-    background-position-x: -70px;
-    background-size: cover;
-}
-
-#zurich {
-   background: url("../../img/zurich.jpg");
-    background-position-x: -70px;
-    background-size: cover;
-}
-
-/* Card settings */
-
-.card {
-    height: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.card:hover .skin-cover {
-    transform: translateY(0rem);
-}
-
-.card:hover {
-    box-shadow: 2px 2px 10px rgb(5, 55, 115);
-}
-
-.card h4 {
-    background: rebeccapurple;
-    height: 2.4rem;
-    color: whitesmoke;
-    width: 100%;
-    text-align: center;
-    padding-top: 5px;
-    margin: 0 0 50px 200px;
-    transform: rotate(45deg);
-}
-
-.card h4 span {
-    font-size: 0.8rem;
-    padding-right: 10px;
-}
-
-.skin-cover {
-    background: linear-gradient(180deg, transparent, rgb(5, 55, 115));
-    height: 60%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    color: whitesmoke;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    border-radius: 0.5rem;
-    transform: translateY(1rem);
-}
-
-.skin-cover h3 {
-    padding-bottom: 40px;
-    text-transform: uppercase;
-}
-
-.skin-cover h6 {
-    text-transform: capitalize;
 }
 
 .cover-bg {
@@ -545,13 +360,13 @@ main h3 {
     text-shadow: 2px 2px 5px silver;
 }
 
-.row1,
-.row2 {
+.travelling-datas,
+.travel-type {
     padding: 5px;
     width: 100%;
 }
 
-.row1 {
+.travelling-datas {
     justify-content: space-between;
     margin-left: 0;
 }
@@ -561,26 +376,86 @@ main h3 {
 }
 
 .label,
-.row2 {
+.travel-type {
     color: rgb(9, 55, 115);
+}
+
+#departure_date,
+#return_date {
+    width: 150px;
+}
+
+label {
+    color: #9e9e9e;
+}
+
+input {
+    width: 190px;
+    padding: 20px;
+}
+
+.input-field input[type="text"]:focus {
+    border-bottom: 1px solid #6a1b9a !important;
+    box-shadow: 0 1px 0 0 #6a1b9a !important;
+}
+
+.input-field input[type="text"]:focus + label {
+    color: #6a1b9a !important;
     text-shadow: 2px 2px 5px silver;
 }
 
-.select {
-    width: 100%;
-    border-left: none !important;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+.input-field .prefix.active {
+    color: #6a1b9a;
 }
 
-option:hover {
+input:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.datepicker-date-display {
+    background: rgb(9, 55, 115);
+}
+
+.datepicker-cancel,
+.datepicker-done,
+.datepicker-table td.is-today {
+    color: rebeccapurple;
+}
+
+.datepicker-table td.is-today .datepicker-day-button {
+    color: royalblue;
+    font-weight: 600;
+}
+
+.month-prev:active,
+.month-next:active {
     background: rebeccapurple;
-    color: white;
+    opacity: 0.8;
 }
 
-.input {
-    width: 200px;
-    box-shadow: 2px 2px 5px silver;
+.is-selected,
+.is-selected .datepicker-day-button {
+    background: rebeccapurple !important;
+    color: whitesmoke !important;
+    font-weight: 400 !important;
+}
+
+.datepicker-day-button:active {
+    background: rebeccapurple !important;
+    color: whitesmoke;
+    opacity: 0.7;
+}
+
+.modal {
+    background: transparent;
+    box-shadow: none !important;
+    height: 46.8%;
+    border: none !important;
+}
+
+.modal-content .datepicker-container {
+    border: none !important;
 }
 
 #back-way {
@@ -634,7 +509,7 @@ option:hover {
 
 .form-icon {
     display: flex;
-    width: 200px;
+    width: 180px;
     box-shadow: 2px 2px 5px silver;
 }
 
@@ -644,6 +519,157 @@ option:hover {
     position: relative;
     animation: flight 1.5s ease-in-out;
     -webkit-animation: flight 1.5s ease-in-out;
+}
+
+/*---------Main content settings-------*/
+
+main {
+    margin: 50px 0 0 100px;
+}
+
+main h5 {
+    text-transform: uppercase;
+}
+/* Cities settings */
+#athens {
+    background: url("../../img/athens.jpg");
+    background-position-x: -80px;
+    background-size: cover;
+}
+
+#barcelona {
+    background: url("../../img/barcelona.jpg");
+    background-position-x: -120px;
+    background-size: cover;
+}
+
+#cairo {
+    background: url("../../img/cairo.png");
+    background-position-x: -120px;
+    background-size: cover;
+}
+
+#istanbul {
+    background: url("../../img/istanbul.jpg");
+    background-position-x: 0;
+    background-size: cover;
+}
+
+#lisbon {
+    background: url("../../img/lisbon.png");
+    background-position-x: -120px;
+    background-size: cover;
+}
+
+#london {
+    background: url("../../img/london.jpeg");
+    background-position-x: -180px;
+    background-size: cover;
+}
+
+#montreal {
+    background: url("../../img/montreal.jpg");
+    background-position-x: -50px;
+    background-size: cover;
+}
+
+#munich {
+    background: url("../../img/munich.jpg");
+    background-position-x: -80px;
+    background-size: cover;
+}
+
+#new-york {
+    background: url("../../img/new-york.jpg");
+    background-position-x: -50px;
+    background-size: cover;
+}
+
+#paris {
+    background: url("../../img/paris.jpg");
+    background-position-x: -70px;
+    background-size: cover;
+}
+
+#rome {
+    background: url("../../img/rome.jpg");
+    background-position-x: -70px;
+    background-size: cover;
+}
+
+#zurich {
+    background: url("../../img/zurich.jpg");
+    background-position-x: -70px;
+    background-size: cover;
+}
+
+/* Card settings */
+
+.card {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 10px rgb(5, 55, 115);
+}
+
+.card:hover .skin-cover {
+    transform: translateY(0rem);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.card h4 {
+    background: rebeccapurple;
+    height: 3rem;
+    color: whitesmoke;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0 0 70px;
+    margin: 0 0 70px 150px;
+    transform: rotate(45deg);
+}
+
+.card h4 span {
+    font-size: 0.8rem;
+    padding-right: 10px;
+}
+
+.skin-cover {
+    background: linear-gradient(180deg, transparent, rgb(5, 55, 115));
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-radius: 0.5rem;
+    transform: translateY(1rem);
+}
+
+.skin-cover h5 {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.skin-cover h6 {
+    text-transform: capitalize;
+    margin: 0;
 }
 
 .top-destinations {
@@ -669,28 +695,6 @@ option:hover {
     .A320 {
         margin-left: 150px;
     }
-
-    .top-destinations {
-        grid-template-columns: repeat(3, 4fr);
-        height: 200vh;
-    }
-
-    #barcelona {
-        background-position: -110px;
-    }
-
-    #london {
-        background-position-x: -140px;
-    }
-
-    #new_york {
-        background-position-x: -20px;
-    }
-
-    #rome {
-        background-position-x: -60px;
-    }
-
 }
 
 @media (max-width: 1200px) {
