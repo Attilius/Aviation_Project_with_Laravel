@@ -31,7 +31,7 @@
                         :icon="['fas', 'map-marker-alt']"
                     />
                     <div class="text-data">
-                        <p>1010 Avenue of the Moon New York, NY 10018 US.</p>
+                        <p>1234 Avenue of the Sun New York, NY 10018 US.</p>
                     </div>
                 </div>
                 <div class="contact-data">
@@ -45,35 +45,37 @@
                 <form id="form" action="" method="post">
                     <div class="fields">
                         <div class="person-datas">
-                            <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                placeholder="Name*"
-                            />
-                            <input
-                                type="tel"
-                                name="tel"
-                                id="tel"
-                                placeholder="Phone*"
-                            />
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="Email*"
-                            />
+                            <div class="input-field">
+                                <i class="material-icons prefix">account_circle</i>
+                                <label id="label-name" for="icon_prefix">Name*</label>
+                                <input type="text" name="name" id="icon_prefix" class="validate" />
+                            </div>
+
+                            <div class="input-field">
+                                <i class="material-icons prefix">phone</i>
+                                <label id="label-phone" for="icon_telephone">Phone*</label>
+                                <input type="tel" name="tel" id="icon_telephone" class="validate" />
+                            </div>
+
+                            <div class="input-field">
+                                <i class="material-icons prefix">mail_outline</i>
+                                <label id="label-email" for="icon_email">Email*</label>
+                                <input type="email" name="email" id="icon_email" class="validate" />
+                                <span class="helper-text" data-error="Invalid email address" data-success="Correct"></span>
+                            </div>
                         </div>
-                        <div class="message">
+                        <div class="input-field message">
+                            <i class="material-icons prefix">mode_edit</i>
                             <textarea
                                 name="message"
-                                id="message"
-                                placeholder="Your message*"
+                                id="icon_message"
+                                class="materialize-textarea"
                             ></textarea>
+                            <label id="label-message" for="icon_message">Your message*</label>
                         </div>
                     </div>
                     <div class="btn_">
-                        <input id="s-btn" type="button" value="Submit >" />
+                        <input id="s-btn" type="button" value="Submit" />
                     </div>
                 </form>
             </div>
@@ -82,8 +84,49 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
-    name: "ContactContent"
+    name: "ContactContent",
+
+    mounted() {
+        this.setInputFocusLabelColor();
+        $('#icon_message').val();
+        M.textareaAutoResize($('#icon_message'));
+    },
+
+    methods: {
+        getInputs() {
+           const inputs = [
+                {
+                    activeInput: document.getElementById("icon_prefix"),
+                    label: document.getElementById("label-name")
+                },
+                {
+                    activeInput: document.getElementById("icon_telephone"),
+                    label: document.getElementById("label-phone")
+                },
+                {
+                    activeInput: document.getElementById("icon_email"),
+                    label: document.getElementById("label-email")
+                },
+                {
+                    activeInput: document.getElementById("icon_message"),
+                    label: document.getElementById("label-message")
+                }];
+            return inputs;
+        },
+
+        setInputFocusLabelColor() {
+            this.getInputs().forEach(input => {
+                input.activeInput.addEventListener("focusin", () => {
+                    input.label.style.color = "#6a1b9a";
+                });
+                input.activeInput.addEventListener("focusout", () => {
+                    input.label.style.color = "#9e9e9e";
+                });
+            });
+        }
+    }
 };
 </script>
 
@@ -99,7 +142,7 @@ export default {
 .skin {
     height: 87vh;
     width: 100%;
-    background: rgba(5, 16, 57, 0.9);
+    background: rgba(7, 5, 5, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -190,7 +233,7 @@ p,
 
 .bottom {
     width: 50%;
-    height: 50%;
+    height: 53%;
     background: whitesmoke;
     margin: 10px auto;
     border-radius: 0.25rem;
@@ -210,37 +253,37 @@ p,
     justify-content: space-around;
 }
 
+.input-field {
+    height: 20%;
+}
+
 .person-datas {
     width: 44%;
-    height: 200px;
+    height: 230px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-left: 8px;
+    padding-bottom: 10px;
 }
 
 .message {
-    width: 44%;
-    height: 200px;
-    padding-right: 8px;
+    width: 40%;
+    height: 100px;
+    padding: 0;
+    margin-right: 70px;
 }
 
-#message {
+#icon_message {
     width: 100%;
-    height: 100%;
-    background: lightgrey;
-    border: none;
-    padding: 15px;
-    border-radius: 0.25rem;
+    height: 20%;
+    border-bottom: 1px solid #9e9e9e;
+    padding-top: 10px;
+    max-height: 200px;
 }
 
-#message:focus,
-#name:focus,
-#tel:focus,
-#email:focus {
-    border: 2px solid rebeccapurple !important;
-    box-shadow: none !important;
-    background: white;
+label {
+    color: #9e9e9e;
 }
 
 input {
@@ -251,13 +294,31 @@ input {
     border-radius: 0.25rem;
 }
 
+input:focus, textarea:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.input-field input[type=text]:focus,
+.input-field input[type=tel]:focus,
+.input-field input[type=email]:focus,
+.input-field textarea[name=message]:focus {
+     border-bottom: 1px solid #6a1b9a !important;
+     box-shadow: 0 1px 0 0 #6a1b9a !important;
+}
+
+.input-field .prefix.active {
+     color: #6a1b9a;
+}
+
 .btn_ {
     width: 100%;
     height: 50px;
-    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    bottom: 20px;
+    position: relative;
 }
 
 #s-btn {
@@ -266,6 +327,7 @@ input {
     background: rebeccapurple;
     border-radius: 0.25rem;
     color: whitesmoke;
+    margin-top: 50px;
 }
 
 #s-btn:hover {
@@ -322,5 +384,8 @@ input {
         margin-top: 25px;
     }
 
+    #icon_message {
+        width: 86%;
+    }
 }
 </style>
