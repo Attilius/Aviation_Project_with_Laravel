@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="wrapper" v-if="content === 'default'">
+        <div class="wrapper">
             <Header id="header" class="header" />
             <div class="content_">
                 <div class="skin">
@@ -38,24 +38,18 @@
                 </div>
             </div>
             <div class="main">
-                <h3 @click="something">Discover all over the world with us</h3>
+                <h3>Discover all over the world with us</h3>
             </div>
-        </div>
-
-        <div v-else>
-            <City :current_time="current_time" />
         </div>
     </div>
 </template>
 
 <script>
 import Header from "../components/travel_guide/TravelGuideHeader.vue";
-import City from "./cities/NewYork.vue";
 export default {
     name: "TravelGuide",
     components: {
         Header,
-        City
     },
 
     data() {
@@ -65,37 +59,10 @@ export default {
                 name: "",
                 positionAndSize: ""
             },
-
-            content: "default",
-            area: "America",
-            location: "New_York",
-            current_time: ""
         };
     },
 
     methods: {
-        something() {
-            this.fetchData();
-            setTimeout(() => {
-                this.changeContent();
-            }, 500);
-        },
-
-        changeContent() {
-            this.content = "new-york";
-        },
-
-        fetchData() {
-            fetch(
-                `/api/travel-guide?area=${this.area}&location=${this.location}`
-            )
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data.time);
-                    this.current_time = data.time;
-                });
-        },
-
         setPopup(url, name, settings) {
             this.popupWindow.url = url;
             this.popupWindow.name = name;
