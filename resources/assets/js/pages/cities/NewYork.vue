@@ -8,7 +8,11 @@
                 @onChangeIsPlayStatus="updateIsPlayStatus($event)"
             />
             <Navbar class="navbar_" />
-            <Header :city="city" :current_time="current_time" />
+            <Header
+                :city="city"
+                :app="app"
+                @onChangePageContent="updatePageContent($event)"
+            />
             <div class="content-top">
                 <h5>{{ city.name }}: {{ city.adjective }}</h5>
                 <div class="container">
@@ -33,17 +37,17 @@
             <div class="content-bottom">
                 <h5>{{ city.name }} Addresses</h5>
                 <div class="container">
-                    <ul class="addresses-menu">
-                        <li>See all</li>
-                        <li>Attractions</li>
-                        <li>Hotels</li>
-                        <li>Restaurants</li>
+                    <ul id="addresses-menu">
+                        <li class="menu-item active">See all</li>
+                        <li class="menu-item">Attractions</li>
+                        <li class="menu-item">Hotels</li>
+                        <li class="menu-item">Restaurants</li>
                     </ul>
 
-                    <div class="card-container">
+                    <div class="card-container" v-if="!show_more">
                         <div
                             class="card_"
-                            v-for="address in addresses"
+                            v-for="address in addresses_all"
                             :key="address.id"
                         >
                             <img
@@ -55,9 +59,6 @@
                                 <i
                                     :id="address.id"
                                     class="large material-icons favorite"
-                                    @mouseover="
-                                        saveAddress(address.id, address.name)
-                                    "
                                     >favorite_border</i
                                 >
                                 <span class="name">{{ address.name }}</span>
@@ -67,6 +68,33 @@
                             </span>
                         </div>
                     </div>
+
+                    <div class="card-container" v-else>
+                        <div
+                            class="card_"
+                            v-for="address in addresses_less"
+                            :key="address.id"
+                        >
+                            <img
+                                class="addresses_img"
+                                :src="address.image"
+                                alt="hotel"
+                            />
+                            <div class="marking-title">
+                                <i
+                                    :id="address.id"
+                                    class="large material-icons favorite"
+                                    >favorite_border</i
+                                >
+                                <span class="name">{{ address.name }}</span>
+                            </div>
+                            <span class="label">
+                                {{ address.label }}
+                            </span>
+                        </div>
+                    </div>
+                    <span id="show-more">Show more</span>
+                    <h5>Another destinations</h5>
                 </div>
             </div>
         </div>
@@ -83,7 +111,7 @@ import InfoCard from "../../components/travel_guide/city_components/InfoCard.vue
 import PublicInformations from "../../components/travel_guide/city_components/PublicInformations.vue";
 export default {
     name: "NewYork",
-    props: ['current_time'],
+    props: ["app"],
     components: {
         Navbar,
         Header,
@@ -124,8 +152,11 @@ export default {
                     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d193614.05059428743!2d-74.0614249!3d40.6911623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2shu!4v1639769543137!5m2!1sen!2shu"
             },
             cityName: "New-York",
-            service: "all",
-            addresses: []
+            addresses_all: [],
+            addresses_less: [],
+            show_more: true,
+            area: "America",
+            location: "New_York"
         };
     },
 
@@ -133,39 +164,99 @@ export default {
         this.scrollPage(0, 0);
         this.openInfoCard();
         this.changeShadowClickState();
-        this.fetchData();
+        this.fetchData("see all");
+        
     },
 
     methods: {
-        fetchData() {
+        showMoreOrLess(array_length) {
+            const showMore = document.getElementById("show-more");
+
+            if (array_length > 9) {
+                showMore.style.visibility = "visible";
+                showMore.addEventListener("click", () => {
+                    if (!this.show_more) {
+                        this.show_more = true;
+                        showMore.textContent = "Show more";
+                    } else {
+                        this.show_more = false;
+                        showMore.textContent = "Show less";
+                    }
+                });
+            } else showMore.style.visibility = "hidden";
+        },
+
+        showAddresses() {
+            const addressesMenu = document.getElementById("addresses-menu");
+            const menuItems = addressesMenu.getElementsByClassName("menu-item");
+
+            for (let i = 0; i < menuItems.length; i++) {
+                menuItems[i].addEventListener("click", () => {
+                    menuItems[i].classList.add("active");
+                    for (let sibling of menuItems[i].parentNode.children) {
+                        if (sibling !== menuItems[i])
+                            sibling.classList.remove("active");
+                        else
+                            this.fetchData(
+                                menuItems[i].textContent.toLowerCase()
+                            );
+                            this.addresses = menuItems[i].textContent.toLowerCase();
+                    }
+                });
+            }
+        },
+
+        fetchData(addressesItem) {
+            this.showAddresses(); 
             setTimeout(() => {
-                fetch(
-                    `/api/new-york?service=${this.service}&cityName=${this.cityName}`
-                )
-                    .then(response => response.json())
-                    .then(data => {
-                        for (let i = 0; i < data.attractions.length; i++) {
+                if (addressesItem === "see all") {
+                    fetch(`/api/new-york?service=all&cityName=${this.cityName}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            this.addresses_all = [];
+                            this.addresses_less = [];
+                            this.showMoreOrLess(data.attractions.length + data.hotels.length + data.restaurants.length);
                             
-                            this.addresses.push(
-                                data.attractions[i]
-                            );
-                        }
+                            for (let i = 0; i < data.attractions.length; i++) {
+                                this.addresses_all.push(data.attractions[i]);
+                            }
 
-                        for (let i = 0; i < data.hotels.length; i++) {
-                            
-                            this.addresses.push(
-                                data.hotels[i]
-                            );
-                        }
+                            for (let l = 0; l < 3; l++) {
+                                this.addresses_less.push(data.attractions[l]);
+                            }
 
-                        for (let i = 0; i < data.restaurants.length; i++) {
-                            
-                            this.addresses.push(
-                                data.restaurants[i]
-                            );
-                        }
-                        
-                    });
+                            for (let i = 0; i < data.hotels.length; i++) {
+                                this.addresses_all.push(data.hotels[i]);
+                            }
+
+                            for (let l = 0; l < 3; l++) {
+                                this.addresses_less.push(data.hotels[l]);
+                            }
+
+                            for (let i = 0; i < data.restaurants.length; i++) {
+                                this.addresses_all.push(data.restaurants[i]);
+                            }
+
+                            for (let l = 0; l < 3; l++) {
+                                this.addresses_less.push(data.restaurants[l]);
+                            }
+
+                        });
+                } else {
+                    fetch(
+                        `/api/new-york?service=${addressesItem}&cityName=${this.cityName}`
+                    )
+                        .then(response => response.json())
+                        .then(data => {
+                            this.addresses_all = data;
+                            this.showMoreOrLess(data.length);
+                            this.addresses_less = [];
+
+                            for (let l = 0; l < 9; l++) {
+                                this.addresses_less.push(data[l]);
+                            }
+                        });
+                }
             }, 100);
         },
 
@@ -266,13 +357,29 @@ article {
     transition: all 0.8s ease 0s;
 }
 
-.addresses-menu {
+#addresses-menu {
     display: flex;
     align-items: flex-start;
 }
 
-.addresses-menu li {
-    padding-right: 50px;
+.menu-item {
+    background: none;
+    border: none;
+    outline: none;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.menu-item:focus {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.active {
+    color: #0984e3;
+    border-bottom: 1px solid #0984e3;
 }
 
 .card-container {
@@ -292,6 +399,13 @@ article {
 
 .card_:hover {
     box-shadow: 5px 5px 8px #c4c4c4;
+}
+
+#show-more {
+    color: #0984e3;
+    float: right;
+    padding: 15px;
+    cursor: pointer;
 }
 
 #shadow {
