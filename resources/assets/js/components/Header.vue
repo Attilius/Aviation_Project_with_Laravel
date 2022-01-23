@@ -9,22 +9,48 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
                     <ul class="menu">
-                        <li><a v-currentpage href="/">Home</a></li>
-                        <li><a v-currentpage href="/about">About</a></li>
-                        <li><a v-currentpage href="/services">Services</a></li>
-                        <li><a v-currentpage href="/contact">Contact</a></li>
                         <li>
-                            <select class="select-lang" name="lang">
-                                <option value="EN">EN</option>
-                                <option value="HU">HU</option>
-                                <option value="FR">FR</option>
-                                <option value="DE">DE</option>
-                            </select>
+                            <router-link to="/" v-currentpage>Home</router-link>
                         </li>
                         <li>
-                            <b-link class="login" href="/">Login</b-link>
+                            <router-link to="/about" v-currentpage>About</router-link>
                         </li>
+                        <li>
+                            <router-link to="/services" v-currentpage>Services</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/contact" v-currentpage>Contact</router-link>
+                        </li>
+                        <b-nav-item-dropdown>
+                            <template #button-content>
+                                <a class="menu-item">
+                                    {{ app.user ? app.user.name : "Login" }}
+                                </a>
+                            </template>
+                            <div class="dropdown_menu">
+                                <div v-if="!app.user">
+                                    <router-link
+                                        to="/login"
+                                        class="dropdown-item"
+                                        >Login</router-link
+                                    >
+                                    <router-link
+                                        to="/register"
+                                        class="dropdown-item"
+                                        >Register</router-link
+                                    >
+                                </div>
+                                <a
+                                    v-else
+                                    @click="logout"
+                                    href="javascript:;"
+                                    class="dropdown-item"
+                                    >Logout</a
+                                >
+                            </div>
+                        </b-nav-item-dropdown>
                     </ul>
+                    <font-awesome-icon class="icon" :icon="['far', 'user']" />
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
@@ -33,7 +59,26 @@
 
 <script>
 export default {
-    name: "Navbar"
+    name: "Navbar",
+    props: ["app"],
+
+    data() {
+        return {};
+    },
+
+    methods: {
+        logout() {
+            this.app.req.post("auth/logout").then(() => {
+                this.app.user = null;
+                this.$router.push("/login");
+            });
+            this.onClickLogin();
+        },
+
+        onClickLogin() {
+            this.$emit("onClickLogin", "/");
+        }
+    }
 };
 </script>
 
@@ -66,7 +111,7 @@ export default {
 .menu {
     display: flex;
     height: 60.55px;
-    margin-right: 50px;
+    margin-right: 70px;
 }
 
 li {
@@ -101,13 +146,9 @@ li:hover::before {
     height: 58.55px;
 }
 
-li:hover .select-lang:focus{
+li:hover,
+.dropdown-item:hover {
     background-color: rebeccapurple;
-}
-
-li:hover .select-lang {
-    background-color: rebeccapurple;
-    transition: 0.1s all ease-out 0s;
 }
 
 .active {
@@ -150,6 +191,30 @@ a:focus {
     box-shadow: none !important;
 }
 
+.dropdown-item {
+    background: transparent;
+}
+.icon {
+    background: transparent;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+}
+
+.menu-item {
+    display: inline;
+}
+
+.dropdown_menu {
+    background-color: rgb(9, 55, 115);
+}
+
 @media (max-width: 974px) {
     .menu {
         flex-direction: column;
@@ -162,24 +227,23 @@ a:focus {
     }
 
     li:hover::before {
-    top: 0;
-    bottom: unset;
-    height: 0;
-    border-top: none;
-    height: 0;
-}
+        top: 0;
+        bottom: unset;
+        height: 0;
+        border-top: none;
+        height: 0;
+    }
 
-li:hover .select-lang:focus{
-    background: rgb(9, 55, 115);
-}
+    li:hover .select-lang:focus {
+        background: rgb(9, 55, 115);
+    }
 
-li:hover .select-lang {
-    background-color: transparent;
-}
+    li:hover .select-lang {
+        background-color: transparent;
+    }
 
-.navbar-light .navbar-toggler {
-    color: white !important;
-}
-
+    .navbar-light .navbar-toggler {
+        color: white !important;
+    }
 }
 </style>
