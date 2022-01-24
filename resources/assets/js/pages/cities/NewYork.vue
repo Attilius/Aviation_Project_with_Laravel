@@ -56,12 +56,20 @@
                                 alt="hotel"
                             />
                             <div class="marking-title">
-                                <i
+                                <div class="favorite-marker"
+                                    @mouseover="showHoverLabel"
+                                >
+                                    <i
                                     :id="address.id"
                                     class="large material-icons favorite"
+                                    @click="markFavoriteAddress(address.id)"
                                     >favorite_border</i
                                 >
+                                
+                                </div>
+    
                                 <span class="name">{{ address.name }}</span>
+                                <span class="hover-label">Add/remove this item for your favorites</span>
                             </div>
                             <span class="label">
                                 {{ address.label }}
@@ -81,12 +89,19 @@
                                 alt="hotel"
                             />
                             <div class="marking-title">
-                                <i
+                                <div class="favorite-marker"
+                                    @mouseover="showHoverLabel"
+                                >
+                                    <i
                                     :id="address.id"
                                     class="large material-icons favorite"
+                                    @click="markFavoriteAddress(address.id)"
                                     >favorite_border</i
                                 >
+                                
+                                </div>
                                 <span class="name">{{ address.name }}</span>
+                                <span class="hover-label">Add/remove this item for your favorites</span>
                             </div>
                             <span class="label">
                                 {{ address.label }}
@@ -165,25 +180,53 @@ export default {
         this.openInfoCard();
         this.changeShadowClickState();
         this.fetchData("see all");
-        
+        this.showAddresses();
+        this.showMoreOrLess();
     },
 
     methods: {
-        showMoreOrLess(array_length) {
+        showHoverLabel() {
+            const favorite_markers = document.querySelectorAll(".favorite-marker");
+            const hover_label = document.getElementsByClassName("hover-label");
+            const favorites = document.querySelectorAll(".favorite");
+
+            favorite_markers.forEach((marker, index) => {
+                marker.addEventListener("mouseover", () => {
+                    hover_label[index].style.display = "flex";
+                    favorites[index].textContent = "favorite";
+                });
+
+                marker.addEventListener("mouseleave", () => {
+                    hover_label[index].style.display = "none";
+                    favorites[index].textContent = "favorite_border";
+                });
+            });
+        },
+
+        markFavoriteAddress(id){
+            const favorites = document.querySelectorAll(".favorite");
+
+            favorites.forEach(favorite => {
+                if (favorite.id === id && favorite.textContent != "favorite") {
+                    favorite.textContent = "favorite";
+                } else {
+                    favorite.textContent = "favorite_border";
+                }
+            });     
+        },
+
+        showMoreOrLess() {
             const showMore = document.getElementById("show-more");
 
-            if (array_length > 9) {
-                showMore.style.visibility = "visible";
-                showMore.addEventListener("click", () => {
-                    if (!this.show_more) {
-                        this.show_more = true;
-                        showMore.textContent = "Show more";
-                    } else {
-                        this.show_more = false;
-                        showMore.textContent = "Show less";
-                    }
-                });
-            } else showMore.style.visibility = "hidden";
+            showMore.addEventListener("click", () => {
+                if (!this.show_more) {
+                    this.show_more = true;
+                    showMore.textContent = "Show more";
+                } else {
+                    this.show_more = false;
+                    showMore.textContent = "Show less";
+                }
+            });
         },
 
         showAddresses() {
@@ -196,18 +239,13 @@ export default {
                     for (let sibling of menuItems[i].parentNode.children) {
                         if (sibling !== menuItems[i])
                             sibling.classList.remove("active");
-                        else
-                            this.fetchData(
-                                menuItems[i].textContent.toLowerCase()
-                            );
-                            this.addresses = menuItems[i].textContent.toLowerCase();
+                        else this.fetchData(menuItems[i].textContent.toLowerCase());
                     }
                 });
             }
         },
 
         fetchData(addressesItem) {
-            this.showAddresses(); 
             setTimeout(() => {
                 if (addressesItem === "see all") {
                     fetch(`/api/new-york?service=all&cityName=${this.cityName}`)
@@ -215,8 +253,11 @@ export default {
                         .then(data => {
                             this.addresses_all = [];
                             this.addresses_less = [];
-                            this.showMoreOrLess(data.attractions.length + data.hotels.length + data.restaurants.length);
-                            
+                            this.array_length =
+                                data.attractions.length +
+                                data.hotels.length +
+                                data.restaurants.length;
+
                             for (let i = 0; i < data.attractions.length; i++) {
                                 this.addresses_all.push(data.attractions[i]);
                             }
@@ -240,7 +281,6 @@ export default {
                             for (let l = 0; l < 3; l++) {
                                 this.addresses_less.push(data.restaurants[l]);
                             }
-
                         });
                 } else {
                     fetch(
@@ -249,7 +289,7 @@ export default {
                         .then(response => response.json())
                         .then(data => {
                             this.addresses_all = data;
-                            this.showMoreOrLess(data.length);
+                            this.array_length = data.length;
                             this.addresses_less = [];
 
                             for (let l = 0; l < 9; l++) {
@@ -401,6 +441,24 @@ article {
     box-shadow: 5px 5px 8px #c4c4c4;
 }
 
+.hover-label {
+    padding: 20px;
+    border: 1px solid #c4c4c4;
+    border-radius: 3px;
+    color: rgb(5, 55, 115);
+    display: none;
+    position: absolute;
+    margin: 5px 0 0 45px;
+    width: 290px;
+    height: 50px;
+    background: whitesmoke;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 1px 1px 2px #c4c4c4;
+}
+
 #show-more {
     color: #0984e3;
     float: right;
@@ -432,11 +490,20 @@ article {
     margin-top: 5px;
 }
 
+.favorite-marker {
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid rgb(5, 55, 115);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .favorite {
     color: red;
     font-size: 25px;
     font-weight: 100;
-    padding: 0 10px;
 }
 
 .name {
