@@ -56,20 +56,22 @@
                                 alt="hotel"
                             />
                             <div class="marking-title">
-                                <div class="favorite-marker"
+                                <div
+                                    class="favorite-marker"
                                     @mouseover="showHoverLabel"
                                 >
                                     <i
-                                    :id="address.id"
-                                    class="large material-icons favorite"
-                                    @click="markFavoriteAddress(address.id)"
-                                    >favorite_border</i
-                                >
-                                
+                                        :id="address.id"
+                                        class="large material-icons favorite"
+                                        @mouseenter="markFavoriteAddress"
+                                        >favorite_border</i
+                                    >
                                 </div>
-    
                                 <span class="name">{{ address.name }}</span>
-                                <span class="hover-label">Add/remove this item for your favorites</span>
+                                <span class="hover-label"
+                                    >Click add or remove this item for your
+                                    favorites</span
+                                >
                             </div>
                             <span class="label">
                                 {{ address.label }}
@@ -89,19 +91,22 @@
                                 alt="hotel"
                             />
                             <div class="marking-title">
-                                <div class="favorite-marker"
+                                <div
+                                    class="favorite-marker"
                                     @mouseover="showHoverLabel"
                                 >
                                     <i
-                                    :id="address.id"
-                                    class="large material-icons favorite"
-                                    @click="markFavoriteAddress(address.id)"
-                                    >favorite_border</i
-                                >
-                                
+                                        :id="address.id"
+                                        class="large material-icons favorite"
+                                        @mouseenter="markFavoriteAddress"
+                                        >favorite_border</i
+                                    >
                                 </div>
                                 <span class="name">{{ address.name }}</span>
-                                <span class="hover-label">Add/remove this item for your favorites</span>
+                                <span class="hover-label"
+                                    >Click add or remove this item for your
+                                    favorites</span
+                                >
                             </div>
                             <span class="label">
                                 {{ address.label }}
@@ -186,33 +191,37 @@ export default {
 
     methods: {
         showHoverLabel() {
-            const favorite_markers = document.querySelectorAll(".favorite-marker");
+            const favorite_markers = document.querySelectorAll(
+                ".favorite-marker"
+            );
             const hover_label = document.getElementsByClassName("hover-label");
-            const favorites = document.querySelectorAll(".favorite");
 
             favorite_markers.forEach((marker, index) => {
                 marker.addEventListener("mouseover", () => {
                     hover_label[index].style.display = "flex";
-                    favorites[index].textContent = "favorite";
                 });
 
                 marker.addEventListener("mouseleave", () => {
                     hover_label[index].style.display = "none";
-                    favorites[index].textContent = "favorite_border";
                 });
             });
         },
 
-        markFavoriteAddress(id){
+        markFavoriteAddress() {
             const favorites = document.querySelectorAll(".favorite");
+            const names = document.querySelectorAll(".name");
 
-            favorites.forEach(favorite => {
-                if (favorite.id === id && favorite.textContent != "favorite") {
-                    favorite.textContent = "favorite";
-                } else {
-                    favorite.textContent = "favorite_border";
-                }
-            });     
+            favorites.forEach((favorite, index) => {
+                favorite.addEventListener("click", () => {
+                    if (favorite.textContent !== "favorite") {
+                        favorite.textContent = "favorite";
+                        console.log(names[index].textContent)
+                    }
+                    else {
+                        favorite.textContent = "favorite_border";
+                    }
+                });
+            });
         },
 
         showMoreOrLess() {
@@ -239,7 +248,10 @@ export default {
                     for (let sibling of menuItems[i].parentNode.children) {
                         if (sibling !== menuItems[i])
                             sibling.classList.remove("active");
-                        else this.fetchData(menuItems[i].textContent.toLowerCase());
+                        else
+                            this.fetchData(
+                                menuItems[i].textContent.toLowerCase()
+                            );
                     }
                 });
             }
