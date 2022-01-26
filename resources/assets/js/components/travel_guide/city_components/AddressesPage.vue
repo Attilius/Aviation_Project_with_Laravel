@@ -133,4 +133,8 @@ h3, h6 {
     margin: 0;
 }
 
+.title h6 {
+    text-transform: uppercase;
+}
+
 </style>
