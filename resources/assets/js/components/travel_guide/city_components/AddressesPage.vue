@@ -15,10 +15,8 @@
                 </i>
             </nav>
             <div class="title">
-                <div>
-                    <h3>Title</h3>
-                    <h6>label</h6>
-                </div>
+                <h3>Title</h3>
+                <h6>label</h6>
             </div>
 
             
@@ -118,17 +116,13 @@ nav p {
 
 .title {
     width: 100%;
-    height: 60px;
+    height: 100px;
     background: whitesmoke;
     color: rgb(9, 55, 115);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.title div {
-    display: flex;
-    flex-direction: column;
 }
 
 </style>
