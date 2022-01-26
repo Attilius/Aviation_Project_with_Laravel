@@ -123,6 +123,13 @@ nav p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+}
+
+h3, h6 {
+    margin: 0;
 }
 
 </style>
