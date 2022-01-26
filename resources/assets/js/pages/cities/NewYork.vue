@@ -2,6 +2,10 @@
     <div>
         <div id="wrapper" class="wrapper">
             <div id="shadow"></div>
+            <AddressesPage 
+                v-if="openAddressPage"
+                @changeOpenAddressPageState="updateOpenAddressPageState($event)"
+            />
             <VideoPlayer
                 :isPlay="isPlay"
                 :city="city"
@@ -49,6 +53,7 @@
                             class="card_"
                             v-for="address in addresses_all"
                             :key="address.id"
+                            @click="showAddressesContent"
                         >
                             <img
                                 class="addresses_img"
@@ -84,6 +89,7 @@
                             class="card_"
                             v-for="address in addresses_less"
                             :key="address.id"
+                            @click="showAddressesContent"
                         >
                             <img
                                 class="addresses_img"
@@ -129,6 +135,7 @@ import VideoBox from "../../components/travel_guide/city_components/VideoBox.vue
 import DescriptionOfCity from "../../components/travel_guide/city_components/DescriptionOfCity.vue";
 import InfoCard from "../../components/travel_guide/city_components/InfoCard.vue";
 import PublicInformations from "../../components/travel_guide/city_components/PublicInformations.vue";
+import AddressesPage from "../../components/travel_guide/city_components/AddressesPage.vue";
 export default {
     name: "NewYork",
     props: ["app"],
@@ -139,7 +146,8 @@ export default {
         VideoBox,
         DescriptionOfCity,
         InfoCard,
-        PublicInformations
+        PublicInformations,
+        AddressesPage
     },
 
     data() {
@@ -174,9 +182,11 @@ export default {
             cityName: "New-York",
             addresses_all: [],
             addresses_less: [],
+            collection_of_favorites: [],
             show_more: true,
             area: "America",
-            location: "New_York"
+            location: "New_York",
+            openAddressPage: false
         };
     },
 
@@ -190,6 +200,14 @@ export default {
     },
 
     methods: {
+        updateOpenAddressPageState(updateOpenAddressPageState) {
+            this.openAddressPage = updateOpenAddressPageState;
+        },
+
+        showAddressesContent() {
+            this.openAddressPage = true;
+        },
+
         showHoverLabel() {
             const favorite_markers = document.querySelectorAll(
                 ".favorite-marker"
@@ -215,10 +233,13 @@ export default {
                 favorite.addEventListener("click", () => {
                     if (favorite.textContent !== "favorite") {
                         favorite.textContent = "favorite";
-                        console.log(names[index].textContent)
+                        this.collection_of_favorites.push(this.cityName + '_' + names[index].textContent);
+                        this.collection_of_favorites = [...new Set(this.collection_of_favorites)]; //makes array with unique content
                     }
                     else {
                         favorite.textContent = "favorite_border";
+                        const removeIndex = this.collection_of_favorites.indexOf(this.cityName + '_' + names[index].textContent);
+                        this.collection_of_favorites.splice(removeIndex, 1);
                     }
                 });
             });
