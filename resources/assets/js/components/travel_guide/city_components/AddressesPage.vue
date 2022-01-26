@@ -126,6 +126,7 @@ nav p {
     position: absolute;
     top: 60px;
     left: 0;
+    border-top: 1px solid rgb(9, 55, 115);
 }
 
 h3, h6 {
