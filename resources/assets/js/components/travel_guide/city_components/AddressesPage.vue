@@ -1,7 +1,6 @@
 <template>
     <div>
         <div id="addresses-page">
-            <!-- Content will be here -->
             <nav>
                 <b-img
                     class="logo"
@@ -15,8 +14,11 @@
                 </i>
             </nav>
             <div class="title">
-                <h3>Title</h3>
-                <h6>label</h6>
+                <h3>{{addressesPageContent.name}}</h3>
+                <h6>{{addressesPageContent.label}}</h6>
+            </div>
+            <div class="iamge-container">
+                <img :src="addressesPageContent.image" alt="img">
             </div>
 
             
@@ -27,7 +29,7 @@
 <script>
 export default {
     name: "AddressesPage",
-    props: [""],
+    props: ["addressesPageContent"],
 
     methods: {
         closePage() {
@@ -43,28 +45,13 @@ export default {
 </script>
 
 <style scoped>
-body {
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-    overflow-y: hidden;
-}
-
-body::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-}
-
 #addresses-page {
     width: 100%;
     height: 100vh;
-    background: royalblue;
-    position: fixed;
-    top: 0;
-    left: 0;
+    background: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    z-index: 11;
 }
 
 #close_btn {
@@ -135,6 +122,16 @@ h3, h6 {
 
 .title h6 {
     text-transform: uppercase;
+}
+
+.iamge-container {
+    width: 85%;
+    height: 900px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
 }
 
 </style>
