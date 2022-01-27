@@ -167,6 +167,7 @@ h3, h6 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 30px;
 }
 
 .text-content {
