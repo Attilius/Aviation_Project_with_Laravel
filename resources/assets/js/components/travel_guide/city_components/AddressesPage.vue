@@ -18,7 +18,8 @@
                 <h6>{{addressesPageContent.label}}</h6>
             </div>
             <div class="content-container">
-                <img :src="addressesPageContent.image" alt="img">
+                <!--<b-img class="img" :src="addressesPageContent.image" fluid alt="Responsive image"></b-img>-->
+                <div class="img" :style="{backgroundImage:`url(${addressesPageContent.image})`}"></div>
                 <div class="text-content">
                     <article>
                         {{addressesPageContent.description}}
@@ -58,7 +59,6 @@ export default {
         },
 
         closePage() {
-            document.getElementById("addresses-page").style.display = "none";
             this.changeOpenAddressPageState();
         },
 
@@ -161,9 +161,12 @@ h3, h6 {
     height: 150vh;
 }
 
-img {
+.img {
     height: 100%;
     width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .text-content {
