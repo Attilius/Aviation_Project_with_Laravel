@@ -31,6 +31,10 @@ export default {
     name: "AddressesPage",
     props: ["addressesPageContent"],
 
+    mounted() {
+        this.setRenderPosition();
+    },
+
     methods: {
         closePage() {
             document.getElementById("addresses-page").style.display = "none";
@@ -39,6 +43,13 @@ export default {
 
         changeOpenAddressPageState() {
             this.$emit("changeOpenAddressPageState", false);
+        },
+
+        setRenderPosition() {
+            window.scroll({
+                top: 0,
+                left: 0
+            });
         }
     }
 };
