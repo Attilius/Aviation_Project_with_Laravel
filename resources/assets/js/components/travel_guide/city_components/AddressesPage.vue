@@ -17,11 +17,18 @@
                 <h3>{{addressesPageContent.name}}</h3>
                 <h6>{{addressesPageContent.label}}</h6>
             </div>
-            <div class="iamge-container">
+            <div class="content-container">
                 <img :src="addressesPageContent.image" alt="img">
+                <div class="text-content">
+                    <article>
+                        {{addressesPageContent.description}}
+                    </article>
+                    <h6 v-if="addressesPageContent.address"><b>Address:</b>{{addressesPageContent.address}}</h6>
+                    <h6 v-if="addressesPageContent.tel"><b>Phone:</b>{{addressesPageContent.tel}}</h6>
+                    <h6 v-if="addressesPageContent.web"><b>Website:</b>{{addressesPageContent.web}}</h6>
+                    <h6 v-if="addressesPageContent.email"><b>E-mail:</b>{{addressesPageContent.email}}</h6>
+                </div>
             </div>
-
-            
         </div>
     </div>
 </template>
@@ -135,14 +142,27 @@ h3, h6 {
     text-transform: uppercase;
 }
 
-.iamge-container {
+.content-container {
     width: 85%;
-    height: 900px;
+    height: 150vh;
 }
 
 img {
     height: 100%;
     width: 100%;
+}
+
+.text-content {
+    width: 70%;
+    height: 100%;
+}
+
+.text-content h6 {
+    margin-top: 15px;
+}
+
+article {
+    text-align: justify;
 }
 
 </style>
