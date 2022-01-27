@@ -1,11 +1,16 @@
 <template>
     <div>
-        <div id="wrapper" class="wrapper">
-            <div id="shadow"></div>
+        <div v-if="openAddressPage">
             <AddressesPage 
                 v-if="openAddressPage"
+                :addressesPageContent="addressesPageContent"
                 @changeOpenAddressPageState="updateOpenAddressPageState($event)"
             />
+        </div>
+        
+        <div id="wrapper" class="wrapper" v-else>
+            <div id="shadow"></div>
+            
             <VideoPlayer
                 :isPlay="isPlay"
                 :city="city"
@@ -89,7 +94,7 @@
                             class="card_"
                             v-for="address in addresses_less"
                             :key="address.id"
-                            @click="showAddressesContent"
+                            @click="showAddressesContent(address.id)"
                         >
                             <img
                                 class="addresses_img"
@@ -183,6 +188,7 @@ export default {
             addresses_all: [],
             addresses_less: [],
             collection_of_favorites: [],
+            addressesPageContent: {},
             show_more: true,
             area: "America",
             location: "New_York",
@@ -204,8 +210,14 @@ export default {
             this.openAddressPage = updateOpenAddressPageState;
         },
 
-        showAddressesContent() {
+        showAddressesContent(id) {
             this.openAddressPage = true;
+
+            this.addresses_less.forEach(address => {
+                if (address.id === id) {
+                    this.addressesPageContent = address;
+                }
+            })
         },
 
         showHoverLabel() {
