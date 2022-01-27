@@ -58,7 +58,7 @@
                             class="card_"
                             v-for="address in addresses_all"
                             :key="address.id"
-                            @click="showAddressesContent"
+                            @click="showAddressesContent(address.id)"
                         >
                             <img
                                 class="addresses_img"
@@ -213,11 +213,19 @@ export default {
         showAddressesContent(id) {
             this.openAddressPage = true;
 
-            this.addresses_less.forEach(address => {
-                if (address.id === id) {
-                    this.addressesPageContent = address;
-                }
-            })
+            if (this.show_more) {
+                this.addresses_less.forEach(address => {
+                    if (address.id === id) {
+                        this.addressesPageContent = address;
+                    }
+                });
+            } else {
+                this.addresses_all.forEach(address => {
+                    if (address.id === id) {
+                        this.addressesPageContent = address;
+                    }
+                });
+            }
         },
 
         showHoverLabel() {
