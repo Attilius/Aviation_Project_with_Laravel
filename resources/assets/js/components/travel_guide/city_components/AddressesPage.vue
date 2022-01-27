@@ -23,10 +23,13 @@
                     <article>
                         {{addressesPageContent.description}}
                     </article>
-                    <h6 v-if="addressesPageContent.address"><b>Address:</b>{{addressesPageContent.address}}</h6>
-                    <h6 v-if="addressesPageContent.tel"><b>Phone:</b>{{addressesPageContent.tel}}</h6>
-                    <h6 v-if="addressesPageContent.web"><b>Website:</b>{{addressesPageContent.web}}</h6>
-                    <h6 v-if="addressesPageContent.email"><b>E-mail:</b>{{addressesPageContent.email}}</h6>
+                    <div class="contanct-datas">
+                        <h6 v-if="addressesPageContent.address"><b>Address: </b>{{addressesPageContent.address}}</h6>
+                        <h6 v-if="addressesPageContent.tel"><b>Phone: </b>{{addressesPageContent.tel}}</h6>
+                        <h6 v-if="addressesPageContent.web"><b>Website: </b><a :href="url">{{addressesPageContent.web}}</a></h6>
+                        <h6 v-if="addressesPageContent.email"><b>E-mail: </b>{{addressesPageContent.email}}</h6>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -38,11 +41,22 @@ export default {
     name: "AddressesPage",
     props: ["addressesPageContent"],
 
+    data() {
+        return {
+            url: ""
+        }
+    },
+
     mounted() {
         this.setRenderPosition();
+        this.setUrl();
     },
 
     methods: {
+        setUrl() {
+            this.url = location.hash;
+        },
+
         closePage() {
             document.getElementById("addresses-page").style.display = "none";
             this.changeOpenAddressPageState();
@@ -163,6 +177,10 @@ img {
 
 article {
     text-align: justify;
+}
+
+.contanct-datas {
+    margin-top: 50px;
 }
 
 </style>
