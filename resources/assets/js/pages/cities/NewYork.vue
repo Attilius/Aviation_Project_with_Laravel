@@ -202,6 +202,13 @@ export default {
             openAddressPage: false
         };
     },
+    
+    watch: {
+        openAddressPage: function(newValue, oldValue) {
+            if (newValue) return;
+            if (oldValue) location.reload();
+        }
+    },
 
     mounted() {
         this.scrollPage(0, 0);
