@@ -26,6 +26,7 @@
                     }"
                 ></div>
                 <div class="text-content">
+                    <h5>Subtitle for this addresses</h5>
                     <article>
                         {{ addressesPageContent.description }}
                     </article>
@@ -199,5 +200,10 @@ article {
 
 .contanct-datas {
     margin-top: 50px;
+}
+
+h5 {
+    color: rgb(9, 55, 115);
+    padding: 5px 0;
 }
 </style>
