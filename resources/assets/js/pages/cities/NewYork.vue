@@ -64,6 +64,7 @@
                                 class="addresses_img"
                                 :src="address.image"
                                 alt="hotel"
+                                @click="showAddressesContent(address.id)"
                             />
                             <div class="marking-title">
                                 <div
@@ -77,7 +78,10 @@
                                         >favorite_border</i
                                     >
                                 </div>
-                                <span class="name">{{ address.name }}</span>
+                                <span 
+                                    class="name"
+                                    @click="showAddressesContent(address.id)"
+                                >{{ address.name }}</span>
                                 <span class="hover-label"
                                     >Click add or remove this item for your
                                     favorites</span
@@ -94,12 +98,12 @@
                             class="card_"
                             v-for="address in addresses_less"
                             :key="address.id"
-                            @click="showAddressesContent(address.id)"
                         >
                             <img
                                 class="addresses_img"
                                 :src="address.image"
                                 alt="hotel"
+                                @click="showAddressesContent(address.id)"
                             />
                             <div class="marking-title">
                                 <div
@@ -113,7 +117,10 @@
                                         >favorite_border</i
                                     >
                                 </div>
-                                <span class="name">{{ address.name }}</span>
+                                <span 
+                                    class="name" 
+                                    @click="showAddressesContent(address.id)"
+                                >{{ address.name }}</span>
                                 <span class="hover-label"
                                     >Click add or remove this item for your
                                     favorites</span
