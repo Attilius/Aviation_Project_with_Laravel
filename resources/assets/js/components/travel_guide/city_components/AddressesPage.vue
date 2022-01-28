@@ -14,23 +14,36 @@
                 </i>
             </nav>
             <div class="title">
-                <h3>{{addressesPageContent.name}}</h3>
-                <h6>{{addressesPageContent.label}}</h6>
+                <h3>{{ addressesPageContent.name }}</h3>
+                <h6>{{ addressesPageContent.label }}</h6>
             </div>
             <div class="content-container">
-                <!--<b-img class="img" :src="addressesPageContent.image" fluid alt="Responsive image"></b-img>-->
-                <div class="img" :style="{backgroundImage:`url(${addressesPageContent.image})`}"></div>
+                <!--  <b-img class="img" :src="addressesPageContent.image" fluid alt="Responsive image"></b-img>-->
+                <div
+                    class="img"
+                    :style="{
+                        backgroundImage: `url(${addressesPageContent.image})`
+                    }"
+                ></div>
                 <div class="text-content">
                     <article>
-                        {{addressesPageContent.description}}
+                        {{ addressesPageContent.description }}
                     </article>
                     <div class="contanct-datas">
-                        <h6 v-if="addressesPageContent.address"><b>Address: </b>{{addressesPageContent.address}}</h6>
-                        <h6 v-if="addressesPageContent.tel"><b>Phone: </b>{{addressesPageContent.tel}}</h6>
-                        <h6 v-if="addressesPageContent.web"><b>Website: </b><a :href="url">{{addressesPageContent.web}}</a></h6>
-                        <h6 v-if="addressesPageContent.email"><b>E-mail: </b>{{addressesPageContent.email}}</h6>
+                        <h6 v-if="addressesPageContent.address">
+                            <b>Address: </b>{{ addressesPageContent.address }}
+                        </h6>
+                        <h6 v-if="addressesPageContent.tel">
+                            <b>Phone: </b>{{ addressesPageContent.tel }}
+                        </h6>
+                        <h6 v-if="addressesPageContent.web">
+                            <b>Website: </b
+                            ><a :href="url">{{ addressesPageContent.web }}</a>
+                        </h6>
+                        <h6 v-if="addressesPageContent.email">
+                            <b>E-mail: </b>{{ addressesPageContent.email }}
+                        </h6>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -45,7 +58,7 @@ export default {
     data() {
         return {
             url: ""
-        }
+        };
     },
 
     mounted() {
@@ -79,7 +92,7 @@ export default {
 <style scoped>
 #addresses-page {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: whitesmoke;
     display: flex;
     align-items: center;
@@ -148,30 +161,31 @@ nav p {
     border-top: 1px solid rgb(9, 55, 115);
 }
 
-h3, h6 {
+h3,
+h6 {
     margin: 0;
 }
 
 .title h6 {
     text-transform: uppercase;
+    margin-top: 15px;
 }
 
 .content-container {
     width: 85%;
-    height: 150vh;
+    height: 120vh;
 }
 
 .img {
     height: 100%;
     width: 100%;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 30px;
 }
 
 .text-content {
-    width: 70%;
+    width: 100%;
     height: 100%;
 }
 
@@ -186,5 +200,4 @@ article {
 .contanct-datas {
     margin-top: 50px;
 }
-
 </style>
