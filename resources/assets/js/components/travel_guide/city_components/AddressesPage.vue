@@ -210,8 +210,17 @@ article {
     margin-top: 50px;
 }
 
+.contanct-datas h6 {
+    margin: 15px 0;
+}
+
 h5 {
     color: rgb(9, 55, 115);
     padding: 5px 0;
 }
+
+a:focus {
+    border: none !important;
+}
+
 </style>
