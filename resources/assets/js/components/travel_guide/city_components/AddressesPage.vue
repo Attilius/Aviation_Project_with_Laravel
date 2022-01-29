@@ -202,10 +202,6 @@ h6 {
     margin: 0 auto;
 }
 
-#text-content h6 {
-    margin-top: 15px;
-}
-
 article {
     text-align: justify;
 }
