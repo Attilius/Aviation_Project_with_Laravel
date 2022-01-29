@@ -20,12 +20,13 @@
             <div class="content-container">
                 <!--  <b-img class="img" :src="addressesPageContent.image" fluid alt="Responsive image"></b-img>-->
                 <div
+                    id="img"
                     class="img"
                     :style="{
                         backgroundImage: `url(${addressesPageContent.image})`
                     }"
                 ></div>
-                <div class="text-content">
+                <div id="text-content">
                     <h5>Subtitle for this addresses</h5>
                     <article>
                         {{ addressesPageContent.description }}
@@ -65,9 +66,18 @@ export default {
     mounted() {
         this.setRenderPosition();
         this.setUrl();
+        this.setContentWidth();
     },
 
     methods: {
+        setContentWidth() {
+            const imgWidth = this.addressesPageContent.image.split('&')[4].split("=")[1];
+            const imageBox = document.getElementById("img");
+            const textBox = document.getElementById("text-content");
+
+            textBox.style.width = imgWidth + "px";
+            imageBox.style.width = imgWidth + "px";
+        },
         setUrl() {
             this.url = location.hash;
         },
@@ -183,14 +193,16 @@ h6 {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0 auto;
 }
 
-.text-content {
+#text-content {
     width: 100%;
     height: 100%;
+    margin: 0 auto;
 }
 
-.text-content h6 {
+#text-content h6 {
     margin-top: 15px;
 }
 
