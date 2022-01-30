@@ -603,6 +603,10 @@ footer {
     padding: 0 10px;
 }
 
+.footer-menu:hover {
+    text-decoration: underline;
+}
+
 .footer-menu:first-child {
     border-right: 1px solid whitesmoke;
 }
