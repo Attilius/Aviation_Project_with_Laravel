@@ -28,6 +28,7 @@ export default {
             }),
             loginPath: "/",
             current_time: "",
+            current_year: "",
 
             cards: [
                 {
@@ -133,6 +134,7 @@ export default {
     mounted() {
         M.AutoInit();
         this.init();
+        this.setCurrent_year();
 
         if (location.reload) {
             this.cards.forEach(card => {
@@ -179,6 +181,11 @@ export default {
                     const time = data.datetime.split("T")[1].split(".")[0].split(":");
                     this.current_time = time[0] + ":" + time[1];
                 });
+        },
+
+        setCurrent_year() {
+            const today = new Date();
+            this.current_year = today.getFullYear();
         }
     }
 };
