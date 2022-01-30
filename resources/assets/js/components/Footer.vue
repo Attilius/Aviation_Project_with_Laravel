@@ -121,9 +121,9 @@
             ></b-img>
 
             <div class="copy">
-                <span>Site design</span>
+                <span>Created by</span>
                 <font-awesome-icon class="icon" :icon="['far', 'copyright']" />
-                <span>2021 Attilus</span>
+                <span>{{ app.current_year }} Attilus</span>
             </div>
         </div>
     </footer>
@@ -132,6 +132,7 @@
 <script>
 export default {
     name: "Footer",
+    props: ["app"],
 
     data() {
         return {
