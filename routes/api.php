@@ -39,6 +39,6 @@ Route::get('/', function() {
     $area = request('area');
     $location = request('location');
 
-    $response = Zttp::get("https://www.timeapi.io/api/Time/current/zone?timeZone=$area/$location");
+    $response = Zttp::get("https://worldtimeapi.org/api/timezone/$area/$location");
     return $response -> json();
 });
