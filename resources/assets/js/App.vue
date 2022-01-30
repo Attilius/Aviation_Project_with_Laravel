@@ -176,7 +176,8 @@ export default {
             fetch(`/api/?area=${area}&location=${location}`)
                 .then(response => response.json())
                 .then(data => {
-                    this.current_time = data.time;
+                    const time = data.datetime.split("T")[1].split(".")[0].split(":");
+                    this.current_time = time[0] + ":" + time[1];
                 });
         }
     }
