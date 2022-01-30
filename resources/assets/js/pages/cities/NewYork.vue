@@ -132,9 +132,13 @@
                         </div>
                     </div>
                     <span id="show-more">Show more</span>
-                    <h5>Another destinations</h5>
                 </div>
             </div>
+            <footer>
+                <router-link to="/">Lorem Airlines</router-link>
+                <p>|</p>
+                <router-link to="/">Travel Guide</router-link>
+            </footer>
         </div>
     </div>
 </template>
