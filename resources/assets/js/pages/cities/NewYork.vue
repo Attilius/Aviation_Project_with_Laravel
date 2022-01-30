@@ -135,9 +135,8 @@
                 </div>
             </div>
             <footer>
-                <router-link to="/">Lorem Airlines</router-link>
-                <p>|</p>
-                <router-link to="/">Travel Guide</router-link>
+                <router-link class="footer-menu" to="/">Lorem Airlines</router-link>
+                <router-link class="footer-menu" to="/travel-guide">Travel Guide</router-link>
             </footer>
         </div>
     </div>
@@ -594,6 +593,18 @@ footer {
     height: 60px;
     background: rgb(5, 55, 115);
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-menu {
+    color: whitesmoke;
+    padding: 0 10px;
+}
+
+.footer-menu:first-child {
+    border-right: 1px solid whitesmoke;
 }
 
 </style>
