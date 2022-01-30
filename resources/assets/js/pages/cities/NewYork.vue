@@ -588,4 +588,12 @@ article {
     bottom: -5px;
     color: rgb(5, 55, 115);
 }
+
+footer {
+    width: 100%;
+    height: 60px;
+    background: rgb(5, 55, 115);
+    margin-top: 20px;
+}
+
 </style>
