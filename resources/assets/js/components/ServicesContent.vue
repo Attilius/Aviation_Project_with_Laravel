@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="skin">
-        <b-container>
+        <b-container class="container">
             <div class="services-header">
                 <b-img
                     class="services"
@@ -34,7 +34,7 @@
                                     The safety of our passengers is important to
                                     us.
                                 </p>
-                                <a class="more" href="/services/travel-insurance">read more ></a>
+                                <router-link class="more" to="/services/travel-insurance">read more ></router-link>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                     We provide separate insurance for your
                                     luggage.
                                 </p>
-                                <a class="more" href="/services/luggage-insurance">read more ></a>
+                                <router-link class="more" to="/services/luggage-insurance">read more ></router-link>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                                     If you want extra comfort on a longer
                                     journey that crosses continents.
                                 </p>
-                                <a class="more" href="/services/premium-comfort">read more ></a>
+                                <router-link class="more" to="/services/premium-comfort">read more ></router-link>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                                     Our company offers you the possibility to
                                     rent a private jet.
                                 </p>
-                                <a class="more" href="/services/private-jet-rent">read more ></a>
+                                <router-link class="more" to="/services/private-jet-rent">read more ></router-link>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                                     Share the experience with your friends. We
                                     offer a special discount for groups.
                                 </p>
-                                <a class="more" href="/services/group-discount">read more ></a>
+                                <router-link class="more" to="/services/group-discount">read more ></router-link>
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                                     In this case, you can cancel your booking at
                                     any time before departure.
                                 </p>
-                                <a class="more" href="/services/booking-cancellation">read more ></a>
+                                <router-link class="more" to="/services/booking-cancellation">read more ></router-link>
                             </div>
                         </div>
                     </div>
@@ -190,7 +190,7 @@
             <div class="bottom-box">
                 <div class="individual">
                     <h4>Do you have a personalised need?</h4>
-                    <a href="/contact">Get a quote <span> > </span></a>
+                    <router-link to="/contact" v-currentpage>Get a quote <span> > </span></router-link>
                 </div>
             </div>
         </b-container>
@@ -468,8 +468,12 @@ p {
     .wrapper {
         background: whitesmoke;
     }
+
+    .container {
+        background: whitesmoke;
+    }
+
     .services-content {
-        height: 270vh;
         grid-template-columns: repeat(1, 6fr);
     }
 
