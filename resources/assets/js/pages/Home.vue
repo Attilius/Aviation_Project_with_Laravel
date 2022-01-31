@@ -11,7 +11,7 @@
                 @onChangePageContent="updatePageContent($event)"
                 @onChangeAreaAndLocation="udateAreaAndLocation($event)"
             />
-            <Footer />
+            <Footer :app="app" />
         </div>
     </div>
 </template>
