@@ -76,22 +76,22 @@
                 <div class="bottom2">
                     <ul>
                         <li>
-                            <a href="/services/travel-insurance">Travel insurance</a>
+                            <router-link to="/services/travel-insurance">Travel insurance</router-link>
                         </li>
                         <li>
-                            <a href="/services/luggage-insurance">Luggage insurance</a>
+                            <router-link to="/services/luggage-insurance">Luggage insurance</router-link>
                         </li>
                         <li>
-                            <a href="/services/premium-comfort">Premium comfort</a>
+                            <router-link to="/services/premium-comfort">Premium comfort</router-link>
                         </li>
                         <li>
-                            <a href="/services/private-jet-rent">Private jet rent</a>
+                            <router-link to="/services/private-jet-rent">Private jet rent</router-link>
                         </li>
                         <li>
-                            <a href="/services/group-discount">Group discount</a>
+                            <router-link to="/services/group-discount">Group discount</router-link>
                         </li>
                         <li>
-                            <a href="/services/booking-cancellation">Booking cancellation</a>
+                            <router-link to="/services/booking-cancellation">Booking cancellation</router-link>
                         </li>
                     </ul>
                 </div>
