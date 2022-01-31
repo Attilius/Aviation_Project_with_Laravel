@@ -2,7 +2,7 @@
     <div>
         <Header class="header" :app="app" @onClickLogin="updateLoginPath($event)" />
         <ServicesContent :app="app" />
-        <Footer />
+        <Footer :app="app" />
     </div>
 </template>
 
