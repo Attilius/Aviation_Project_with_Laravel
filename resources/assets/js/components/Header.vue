@@ -114,6 +114,10 @@ export default {
     margin-right: 70px;
 }
 
+a:hover{
+    background: none;
+}
+
 li {
     list-style: none;
     padding: 0 10px;
