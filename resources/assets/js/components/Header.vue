@@ -96,6 +96,7 @@ export default {
     background: rgb(9, 55, 115) !important;
     height: 8vh;
     z-index: 1;
+    box-shadow: none;
 }
 
 #nav-collapse {
