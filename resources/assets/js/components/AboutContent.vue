@@ -100,14 +100,10 @@
                         id="counters-container"
                         class="container"
                     >
-                        <div v-for="counter in counters" :key="counter.title">
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="counter.icon"
-                            />
-                            <div class="counter">{{ counter.counter }}+</div>
-                            <h3>{{ counter.title }}</h3>
-                        </div>
+                        <Counter :counter_data="counters[0]" :counter_function="value1" />
+                        <Counter :counter_data="counters[1]" :counter_function="value2" />
+                        <Counter :counter_data="counters[2]" :counter_function="value3" />
+                        <Counter :counter_data="counters[3]" :counter_function="value4" />
                     </div>
                 </section>
 
@@ -118,17 +114,19 @@
 </template>
 
 <script>
+import Counter from "./Counter.vue";
 import FeedbacksCarousel from "./FeedbacksCarousel.vue";
 export default {
     name: "AboutContent",
 
     components: {
+        Counter,
         FeedbacksCarousel
     },
 
     data() {
         return {
-            awards:[
+            awards: [
                 {
                     source: "images/awards-2019.png",
                     alt: "Award-2019"
@@ -141,31 +139,23 @@ export default {
 
             counters: [
                 {
-                    icon: ['fas', 'users'],
-                    counter: this.values1,
+                    icon: ["fas", "users"],
                     title: "Satisfied customers"
                 },
                 {
-                    icon: ['fas', 'plane'],
-                    counter: this.values2,
+                    icon: ["fas", "plane"],
                     title: "Flights"
                 },
                 {
-                    icon: ['fas', 'map-marked-alt'],
-                    counter: this.values3,
+                    icon: ["fas", "map-marked-alt"],
                     title: "Routes"
                 },
                 {
-                    icon: ['fas', 'handshake'],
-                    counter: this.values4,
+                    icon: ["fas", "handshake"],
                     title: "Partners"
                 }
             ],
-            
-            value1: 0,
-            value2: 0,
-            value3: 0,
-            value4: 0,
+            values: [{ value: 0 }, { value: 0 }, { value: 0 }, { value: 0 }],
             speed: 200,
             targets: [150000, 5500, 2000, 600]
         };
@@ -173,43 +163,40 @@ export default {
 
     created() {
         let intval = setInterval(() => {
-            const counters_container = document.getElementById(
-                "counters-container"
-            );
-            let inc1 = this.targets[0] / this.speed;
-            let inc2 = this.targets[1] / this.speed;
-            let inc3 = this.targets[2] / this.speed;
-            let inc4 = this.targets[3] / this.speed;
-            if (counters_container.classList.contains("enter")) {
-                if (
-                    this.value1 < this.targets[0] ||
-                    this.value2 < this.targets[1] ||
-                    this.value3 < this.targets[2] ||
-                    this.value4 < this.targets[3]
-                ) {
-                    this.value1 += inc1;
-                    this.value2 += inc2;
-                    this.value3 += inc3;
-                    this.value4 += inc4;
-                } else {
-                    clearInterval(intval);
-                }
+            for (let i = 0; i < this.values.length; i++) {
+                this.count(i, this.values[i], intval);
             }
         }, 10);
     },
 
+    methods: {
+        count(index, item, intval) {
+            const counters_container = document.getElementById(
+                "counters-container"
+            );
+            let inc = this.targets[index] / this.speed;
+            if (counters_container.classList.contains("enter")) {
+                if (item.value < this.targets[index]) {
+                    item.value += inc;
+                } else {
+                    clearInterval(intval);
+                }
+            }
+        }
+    },
+
     computed: {
-        values1() {
-            return this.value1.toFixed();
+        value1() {
+            return this.values[0].value.toFixed();
         },
-        values2() {
-            return this.value2.toFixed();
+        value2() {
+            return this.values[1].value.toFixed();
         },
-        values3() {
-            return this.value3.toFixed();
+        value3() {
+            return this.values[2].value.toFixed();
         },
-        values4() {
-            return this.value4.toFixed();
+        value4() {
+            return this.values[3].value.toFixed();
         }
     }
 };
@@ -271,10 +258,11 @@ h3 {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid rgb(51, 100, 179);
+    box-shadow: none;
 }
 
 .main-content {
-    width: 80%;
+    width: 72%;
 }
 
 .top {
@@ -343,12 +331,7 @@ article {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background: rgba(0, 0, 0, .2);
-}
-
-.counters .container h3 {
-    color: whitesmoke;
-    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .counters h2 {
@@ -368,25 +351,9 @@ article {
 }
 
 .counters .container div {
-    background: rgba(51, 100, 179, .7);
+    background: rgba(51, 100, 179, 0.7);
     padding: 10px;
     border-radius: 10px;
-}
-
-.counter {
-    margin: 10px 20px;
-    background: transparent !important;
-}
-
-.icon {
-    font-size: 2.5rem;
-    background-color: transparent;
-    border: none;
-    margin: 0 auto;
-}
-
-.counter {
-    font-size: 2rem;
 }
 
 .awards {
@@ -500,7 +467,8 @@ article {
         padding-bottom: 50px;
     }
 
-    .bottom-box, .skin {
+    .bottom-box,
+    .skin {
         height: 110vh;
     }
 }
@@ -568,7 +536,8 @@ article {
         font-size: 1.5rem;
     }
 
-    .bottom-box, .skin {
+    .bottom-box,
+    .skin {
         height: 150vh;
     }
 }
