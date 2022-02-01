@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="test">
         <font-awesome-icon class="icon" :icon="counter_data.icon" />
         <div class="counter">{{ counter_function }}+</div>
         <h3>{{ counter_data.title }}</h3>
@@ -14,6 +14,9 @@ export default {
 </script>
 
 <style scoped>
+.test {
+    width: 250px;
+}
 .counter {
     margin: 10px 20px;
     background: transparent !important;
@@ -35,5 +38,15 @@ export default {
     font-size: 1.2rem;
 }
 
+@media(max-width:1111px) {
+    .test {
+        width: 200px;
+    }
+}
 
+@media(max-width:570px) {
+    .test {
+        margin: 0 auto;
+    }
+}
 </style>
