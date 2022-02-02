@@ -94,7 +94,7 @@
         <div class="bottom-box">
             <div class="skin">
                 <section class="counters">
-                    <h2>More than...</h2>
+                    <h3>More than...</h3>
                     <div
                         v-scrollanimation
                         id="counters-container"
@@ -334,7 +334,7 @@ article {
     background: rgba(0, 0, 0, 0.2);
 }
 
-.counters h2 {
+.counters h3 {
     color: whitesmoke;
     text-align: center;
     padding-top: 70px;
