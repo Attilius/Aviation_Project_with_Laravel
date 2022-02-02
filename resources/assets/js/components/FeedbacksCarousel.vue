@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <p :key="data.comment">
+                <p class="comment" :key="data.comment">
                     <font-awesome-icon
                         class="quote-sign"
                         :icon="['fas', 'quote-left']"
@@ -111,10 +111,8 @@ export default {
     },
 
     mounted() {
-        const carousel = document.getElementById("carousel");
-        //carousel.classList.remove("carousel-fade");
-
         const names = document.querySelectorAll(".customerName");
+        const comments = document.querySelectorAll(".comment");
 
         names.forEach((name, index) => {
             let counter = 0;
@@ -122,8 +120,10 @@ export default {
             setInterval(() => {
                 if (index === counter+1) {
                     name.style.visibility = "visible";
+                    comments[index].style.visibility = "visible";
                 } else {
                     name.style.visibility = "hidden";
+                    comments[index].style.visibility = "hidden";
                 }
                 if (counter !== names.length-1) counter++;
                 else counter = 0;
