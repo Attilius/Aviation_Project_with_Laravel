@@ -115,7 +115,7 @@ export default {
     margin-right: 70px;
 }
 
-a:hover{
+a:hover {
     background: none;
 }
 
@@ -158,19 +158,6 @@ li:hover,
 
 .active {
     color: lightskyblue;
-}
-
-.select-lang {
-    background: rgb(9, 55, 115);
-    color: whitesmoke;
-    border: none;
-    padding-bottom: 3px;
-    box-shadow: none;
-}
-
-.select-lang:focus {
-    border: none !important;
-    box-shadow: none !important;
 }
 
 a,
