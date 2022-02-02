@@ -29,6 +29,8 @@ export default {
             loginPath: "/",
             current_time: "",
             current_year: "",
+            area: "",
+            location: "",
 
             cards: [
                 {
@@ -143,9 +145,11 @@ export default {
                 }
             }); 
         }
+    },
 
-        if (location.hash === "#/") {
-            this.pageContent = "";
+    created() {
+        if (this.area && this.location) {
+           this.setCurrent_time(this.area, this.location); 
         }
     },
 
@@ -165,6 +169,8 @@ export default {
         },
 
         udateAreaAndLocation(udateAreaAndLocation) {
+            this.area = udateAreaAndLocation[0];
+            this.location = udateAreaAndLocation[1];
             this.setCurrent_time(udateAreaAndLocation[0], udateAreaAndLocation[1]);
         },
 
