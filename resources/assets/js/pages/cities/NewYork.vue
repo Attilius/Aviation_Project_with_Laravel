@@ -611,4 +611,9 @@ footer {
     border-right: 1px solid whitesmoke;
 }
 
+.footer-menu:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
 </style>
