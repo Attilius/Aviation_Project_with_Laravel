@@ -1,7 +1,7 @@
 require("./bootstrap");
 
 import Vue from "vue";
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import { BootstrapVue, IconsPlugin, BCarousel, BCarouselSlide, CarouselPlugin } from "bootstrap-vue";
 import '@material-design-icons/font';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -82,10 +82,18 @@ library.add(
 
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue, IconsPlugin);
+Vue.use(CarouselPlugin);
 Vue.use(VueRouter);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component('spinner', require('vue-simple-spinner'));
+Vue.component('b-carousel', BCarousel);
+Vue.component('b-carousel-slide', BCarouselSlide);
+
+import * as mdbvue from 'mdbvue'
+for (const component in mdbvue) {
+    Vue.component(component, mdbvue[component])
+  }
 
 const router = new VueRouter({ routes });
 
