@@ -1,31 +1,19 @@
 <template>
     <div>
-        <b-carousel
+        <mdb-carousel
             id="carousel"
-            v-model="slide"
-            :interval="5000"
-            controls
-            indicators
-            background="linear-gradient(135deg, lightblue, rgb(51, 100, 179), rgb(51, 100, 179), lightblue)"
-            img-width="500"
-            img-height="250"
-            @sliding-start="onSlideStart"
-            @sliding-end="onSlideEnd"
+            class="slide"
+            :interval="8000"
+            slide
+            :items="carouselData.length"
         >
-            <b-carousel-slide
-                class="slide"
-                caption=""
-                img-blank
-                img-alt="Blank image"
-                ><div class="person">
-                    <b-img
-                        class="customer"
-                        :src="'images/victor.jpg'"
-                        fluid
-                        alt="Person"
-                    ></b-img>
+            <template #[data.id] v-for="data in carouselData">
+                <div :key="data.name" class="slide-top">
+                    <img class="customer" :src="data.src" :alt="data.alt" />
                     <div>
-                        <h4>Victor Blastique</h4>
+                        <h4 class="customerName">
+                            {{ data.name }}
+                        </h4>
                         <div class="stars">
                             <font-awesome-icon
                                 class="icon"
@@ -50,199 +38,97 @@
                         </div>
                     </div>
                 </div>
-                <p>
+                <p :key="data.comment">
                     <font-awesome-icon
                         class="quote-sign"
                         :icon="['fas', 'quote-left']"
                     />
-                    When I travel for business, I always arrive on time and it's
-                    almost relaxing to travel. In some cases, I had to plan a
-                    specific itinerary, and they helped me with that as well.
+                    {{ data.comment }}
                     <font-awesome-icon
                         class="quote-sign"
                         :icon="['fas', 'quote-right']"
                     />
                 </p>
-            </b-carousel-slide>
-
-            <b-carousel-slide
-                class="slide"
-                caption=""
-                img-blank
-                img-alt="Blank image"
-                ><div class="person">
-                    <b-img
-                        class="customer"
-                        :src="'images/jennifer.jpg'"
-                        fluid
-                        alt="Person"
-                    ></b-img>
-                    <div>
-                        <h4>Jennifer Oregano</h4>
-                        <div class="stars">
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <p>
-                    <font-awesome-icon
-                        class="quote-sign"
-                        :icon="['fas', 'quote-left']"
-                    />
-                    I am absolutely satisfied. My journeys have always gone
-                    smoothly. Friendly and courteous service. If I have to
-                    travel I will choose them without question.
-                    <font-awesome-icon
-                        class="quote-sign"
-                        :icon="['fas', 'quote-right']"
-                    />
-                </p>
-            </b-carousel-slide>
-
-            <b-carousel-slide
-                class="slide"
-                caption=""
-                img-blank
-                img-alt="Blank image"
-                ><div class="person">
-                    <b-img
-                        class="customer"
-                        :src="'images/john.jpg'"
-                        fluid
-                        alt="Person"
-                    ></b-img>
-                    <div>
-                        <h4>Jonathan Doe</h4>
-                        <div class="stars">
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <p>
-                    <font-awesome-icon
-                        class="quote-sign"
-                        :icon="['fas', 'quote-left']"
-                    />
-                    We came across their advertisement during our last holiday.
-                    We chose them and have no regrets. It was very pleasant on
-                    the way in. I look forward to travelling with them again.
-                    <font-awesome-icon
-                        class="quote-sign"
-                        :icon="['fas', 'quote-right']"
-                    />
-                </p>
-            </b-carousel-slide>
-
-            <b-carousel-slide
-                class="slide"
-                caption=""
-                img-blank
-                img-alt="Blank image"
-                ><div class="person">
-                    <b-img
-                        class="customer"
-                        :src="'images/valerie.png'"
-                        fluid
-                        alt="Person"
-                    ></b-img>
-                    <div>
-                        <h4>Valerie Pavilioni</h4>
-                        <div class="stars">
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                            <font-awesome-icon
-                                class="icon"
-                                :icon="['fas', 'star']"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <p>
-                    <font-awesome-icon
-                        class="quote-sign"
-                        :icon="['fas', 'quote-left']"
-                    />
-                    The best at a good price. Maybe that says it all. I've only
-                    travelled short distances with them so far, but I'm sure my
-                    next destination will be further afield.
-                    <font-awesome-icon
-                        class="quote-sign"
-                        :icon="['fas', 'quote-right']"
-                    />
-                </p>
-            </b-carousel-slide>
-        </b-carousel>
+            </template>
+        </mdb-carousel>
     </div>
 </template>
 
 <script>
+import { mdbCarousel } from "mdbvue";
 export default {
     name: "FeedbacksCarousel",
+
+    components: {
+        mdbCarousel
+    },
     data() {
         return {
-            slide: 0,
-            sliding: null
+            carousel: 0,
+            carouselData: [
+                {
+                    id: 1,
+                    img: true,
+                    name: "Victor Blastique",
+                    src: "images/victor.jpg",
+                    alt: "Victor Blastique iamge",
+                    comment: `When I travel for business, I always arrive on time and it's
+                    almost relaxing to travel. In some cases, I had to plan a
+                    specific itinerary, and they helped me with that as well.`
+                },
+                {
+                    id: 2,
+                    img: true,
+                    name: "Jennifer Oregano",
+                    src: "images/jennifer.jpg",
+                    alt: "Jennifer Oregano image",
+                    comment: `I am absolutely satisfied. My journeys have always gone
+                    smoothly. Friendly and courteous service. If I have to
+                    travel I will choose them without question.`
+                },
+                {
+                    id: 3,
+                    img: true,
+                    name: "Jonathan Doe",
+                    src: "images/john.jpg",
+                    alt: "Jonathan Doe image",
+                    comment: `We came across their advertisement during our last holiday.
+                    We chose them and have no regrets. It was very pleasant on
+                    the way in. I look forward to travelling with them again.`
+                },
+                {
+                    id: 4,
+                    img: true,
+                    name: "Valerie Pavilioni",
+                    src: "images/valerie.png",
+                    alt: "Valerie Pavilioni image",
+                    comment: `The best at a good price. Maybe that says it all. I've only
+                    travelled short distances with them so far, but I'm sure my
+                    next destination will be further afield.`
+                }
+            ]
         };
     },
-    methods: {
-        onSlideStart(slide) {
-            this.sliding = true;
-        },
-        onSlideEnd(slide) {
-            this.sliding = false;
-        }
+
+    mounted() {
+        const carousel = document.getElementById("carousel");
+        //carousel.classList.remove("carousel-fade");
+
+        const names = document.querySelectorAll(".customerName");
+
+        names.forEach((name, index) => {
+            let counter = 0;
+            
+            setInterval(() => {
+                if (index === counter+1) {
+                    name.style.visibility = "visible";
+                } else {
+                    name.style.visibility = "hidden";
+                }
+                if (counter !== names.length-1) counter++;
+                else counter = 0;
+            }, 8000);
+        });
     }
 };
 </script>
@@ -251,7 +137,15 @@ export default {
 #carousel {
     box-shadow: 5px 5px 5px rgb(39, 39, 39);
     border: 1px solid whitesmoke;
+    background: linear-gradient(
+        135deg,
+        lightblue,
+        rgb(51, 100, 179),
+        rgb(51, 100, 179),
+        lightblue
+    );
 }
+
 .slide {
     width: 580px;
     height: 290px;
@@ -259,6 +153,14 @@ export default {
 
 .slide p {
     color: whitesmoke;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.slide-top {
+    width: 100%;
+    height: 33%;
+    display: flex;
 }
 
 .person {
@@ -270,12 +172,13 @@ export default {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin: 20px;
 }
 
 h4 {
     color: whitesmoke;
     font-size: 1.2rem;
+    width: 100%;
 }
 
 .stars {
