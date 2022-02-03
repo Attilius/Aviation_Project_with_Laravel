@@ -19,7 +19,7 @@
                 />
             </div>
         </div>
-        <Footer />
+        <Footer :app="app" />
     </div>
 </template>
 
