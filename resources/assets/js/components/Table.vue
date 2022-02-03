@@ -76,7 +76,7 @@
                 <legend>Selected item(s)</legend>
                 <ul>
                     <li v-for="item in form" :key="item.size">
-                        {{ item.size }} {{ item.price }} × {{ item.piece }} =>
+                        {{ item.size }} {{ item.price }} x {{ item.piece }} =>
                         <strong>{{ item.amount }} €</strong>
                     </li>
                 </ul>
@@ -612,6 +612,20 @@ export default {
 
 #open-message {
     color: #ced4da;
+}
+
+input[type=number]:not(.browser-default) {
+    margin: 0;
+    font-size: 16px;
+    background-color: whitesmoke;
+    height: 30px;
+    width: 50px;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+}
+
+td, th {
+    vertical-align: middle;
 }
 
 @media (max-width: 768px) {
