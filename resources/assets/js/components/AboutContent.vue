@@ -107,7 +107,7 @@
                     </div>
                 </section>
 
-                <FeedbacksCarousel v-scrollanimation />
+                <FeedbacksCarousel />
             </div>
         </div>
     </div>
