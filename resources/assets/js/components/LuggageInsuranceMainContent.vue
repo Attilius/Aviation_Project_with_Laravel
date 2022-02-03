@@ -44,8 +44,8 @@ export default {
         setContentHeight() {
             const content = document.getElementById("content");
 
-            switch (location.pathname) {
-                case "/services/luggage-insurance":
+            switch (location.hash) {
+                case "#/services/luggage-insurance":
                     if (window.innerWidth > 768) {
                         content.style.height = "780px";
                     }
