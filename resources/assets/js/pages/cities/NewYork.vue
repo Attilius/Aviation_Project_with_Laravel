@@ -58,7 +58,6 @@
                             class="card_"
                             v-for="address in addresses_all"
                             :key="address.id"
-                            @click="showAddressesContent(address.id)"
                         >
                             <img
                                 class="addresses_img"
