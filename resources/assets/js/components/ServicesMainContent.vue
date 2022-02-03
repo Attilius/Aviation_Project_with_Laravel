@@ -157,7 +157,7 @@ export default {
 
         hideInputs() {
             const inputs = document.getElementById("inputs");
-            if (location.pathname != "/services/private-jet-rent") {
+            if (location.hash != "#/services/private-jet-rent") {
                 inputs.style.display = "none";
             }
         },
@@ -165,26 +165,26 @@ export default {
         setContentHeight() {
             const content = document.getElementById("content");
 
-            switch (location.pathname) {
-                case "/services/travel-insurance":
+            switch (location.hash) {
+                case "#/services/travel-insurance":
                     if (window.innerWidth > 768) {
                         content.style.height = "400px";
                     }
                     break;
 
-                case "/services/premium-comfort":
+                case "#/services/premium-comfort":
                     if (window.innerWidth > 768) {
                         content.style.height = "400px";
                     }
                     break;
 
-                case "/services/private-jet-rent":
+                case "#/services/private-jet-rent":
                     if (window.innerWidth > 768) {
                         content.style.height = "520px";
                     }
                     break;
 
-                case "/services/group-discount":
+                case "#/services/group-discount":
                     if (window.innerWidth > 768) {
                         content.style.height = "400px";
                     }
