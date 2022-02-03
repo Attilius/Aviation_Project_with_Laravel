@@ -7,7 +7,7 @@
                 <CancelledContent :app="app" :titles="titles" :text="text" />
             </div>
         </div>
-        <Footer />
+        <Footer :app="app" />
     </div>
 </template>
 
