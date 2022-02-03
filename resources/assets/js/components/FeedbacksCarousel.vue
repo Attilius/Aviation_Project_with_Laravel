@@ -115,10 +115,10 @@ export default {
         const comments = document.querySelectorAll(".comment");
 
         names.forEach((name, index) => {
-            let counter = 0;
+            let counter = 1;
             
             setInterval(() => {
-                if (index === counter+1) {
+                if (index === counter) {
                     name.style.visibility = "visible";
                     comments[index].style.visibility = "visible";
                 } else {
