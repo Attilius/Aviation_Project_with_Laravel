@@ -20,7 +20,7 @@
                     :important_text="important_text"
                     :items="items"
                     :fields="fields"
-                    @changeDisplay="updateDisplay($event)"
+                    @onChangeDisplay="updateDisplay($event)"
                     @onClickLogin="updateLoginPath($event)"
                 />
             </div>
