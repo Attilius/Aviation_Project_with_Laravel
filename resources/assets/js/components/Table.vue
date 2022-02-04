@@ -49,9 +49,9 @@
                                     class="piece-input"
                                     @input="addNumber(row.tableDatas.input.parameter)"
                                 ></b-form-input>
-                                <button @click="confirmPiece" class="btn">
+                                <b-button @click="confirmPiece" class="confirm-btn">
                                     OK
-                                </button>
+                                </b-button>
                             </div>
                         </template>
 
@@ -70,38 +70,92 @@
             </b-tbody>
         </b-table-simple>
 
-        <div class="selected-item">
-            <p id="open-message">You have not selected any item yet*</p>
-            <fieldset id="item-list">
-                <legend>Selected item(s)</legend>
-                <ul>
-                    <li v-for="item in form" :key="item.size">
-                        {{ item.size }} {{ item.price }} x {{ item.piece }} =>
-                        <strong>{{ item.amount }} €</strong>
-                    </li>
-                </ul>
-                <h5 id="total">Total amount: {{ getTotalAmount() }} €</h5>
-            </fieldset>
-        </div>
+        <!-- Required warning box -->
 
-        <b-form @submit="onSubmit">
-            <b-button id="submit-btn" type="submit" variant="primary"
-                @click="changeDisplay">Submit</b-button
+        <div id="warning-box">
+            <div class="warning-header">
+                <div class="icon-title">
+                    <b-img
+                        class="alert-icon"
+                        fluid
+                        :src="'../images/alert.png'"
+                        alt="alert-icon"
+                    ></b-img>
+                    <h5>warning</h5>
+                </div>
+
+                <button id="close-btn" @click="onClickCancel" v-if="!app.user">
+                    X
+                </button>
+                <button id="close-btn" @click="onClick" v-else>X</button>
+            </div>
+
+            <br />
+            <p id="warning-message" v-if="!app.user">
+                You must have been logged in before use this service!
+            </p>
+            <p v-else-if="wrong_data.state">
+                The value could at least 1 or at most 10!
+            </p>
+            <p id="warning-message" v-else>
+                Must have been selected at least one item of insurance before
+                submitting!
+            </p>
+            <div class="btn-group" v-if="!app.user">
+                <button
+                    style="marginRight: 30px"
+                    class="btn"
+                    @click="onClickLogin"
+                >
+                    Login
+                </button>
+                <button
+                    id="cancel-btn"
+                    style="marginLeft: 30px"
+                    class="btn"
+                    @click="onClickCancel"
+                >
+                    Cancel
+                </button>
+            </div>
+            <button
+                style="margin: 10px"
+                class="btn"
+                @click="inputReset"
+                v-else-if="wrong_data.state"
             >
-        </b-form>
+                Ok
+            </button>
+            <button style="margin: 10px" class="btn" @click="onClick" v-else>
+                Ok
+            </button>
+        </div>
+        <SelectedItemDisplay :form="form" />
+        <ServiceSubmit :form="form" @onCangeFormContent="updateFormContent($event)" @onChangeDisplay="updateDisplay($event)" />
     </div>
 </template>
 
 <script>
+import SelectedItemDisplay from "./SelectedItemDisplay.vue";
+import ServiceSubmit from "./ServiceSubmit.vue";
 export default {
     name: "Table",
-    props: ["items", "fields"],
+    props: ["app", "items", "fields"],
+    components: {
+        SelectedItemDisplay,
+        ServiceSubmit
+    },
+
     data() {
         return {
             newSize: "",
             newPrice: "",
             newPiece: "",
             state: "",
+            wrong_data: {
+                state: false,
+                input_id: ""
+            },
 
             form: [],
 
@@ -246,21 +300,80 @@ export default {
         };
     },
 
+   mounted() {
+        //this.checkSwitchUseController();
+    },
+
     methods: {
-        changeDisplay() {
-            this.$emit("changeDisplay", "flex");
+        updateFormContent(updateFormContent) {
+            this.form = updateFormContent;
         },
+
+        updateDisplay(updateDisplay) {
+            this.$emit("onChangeDisplay", updateDisplay);
+        },
+
+
+
+
+
+
+        onClick() {
+            this.setDisplay("warning-box", "none");
+            document.getElementById("insurances").style.border =
+                "2px solid gold";
+            document.getElementById("insurances").style.borderRadius =
+                "0.25rem";
+        },
+
+        onClickCancel() {
+            this.setDisplay("warning-box", "none");
+        },
+
+        onClickLogin() {
+            const path = location.hash.split("#");
+            this.$emit("onClickLogin", path[1]);
+            this.$router.push("/login");
+        },
+
+        setDisplay(element, property) {
+            document.getElementById(element).style.display = property;
+        },
+
+        setConfirmBtnVisible(cell_index, property) {
+            document.querySelectorAll(".input-cell")[cell_index].lastChild.style.visibility = property;
+        },
+
+        /*checkSwitchUseController() {
+            const checkSwitches = [
+                "checkbox-1",
+                "checkbox-2",
+                "checkbox-3",
+                "checkbox-4",
+                "checkbox-5",
+                "checkbox-6"
+            ];
+
+            checkSwitches.forEach(checkSwitch => {
+                document
+                    .getElementById(checkSwitch)
+                    .addEventListener("mouseover", () => {
+                        if (!this.app.user) {
+                            checkSwitches.forEach(checkSwitch => {
+                                document.getElementById(
+                                    checkSwitch
+                                ).disabled = true;
+                            });
+                            this.setDisplay("warning-box", "flex");
+                        }
+                    });
+            });
+        },*/
+
+        
 
         getAmount(piece, price) {
             return piece * parseInt(price);
-        },
-
-        getTotalAmount() {
-            let totalAmount = 0;
-            this.form.forEach(item => {
-                totalAmount += item.amount;
-            });
-            return totalAmount;
         },
 
         deleteItem() {
@@ -324,42 +437,72 @@ export default {
             this.checked_6 = false;
         },
 
-        setOpenState() {
-            document.getElementById("open-message").style.display = "inline";
-            document.getElementById("total").style.display = "none";
-            document.getElementById("item-list").style.display = "none";
+        inputReset() {
+            this.onClickCancel();
+            this.setConfirmBtnVisible("btn_", "hidden");
+            document.getElementById(this.wrong_data.input_id).value = "";
+            this.wrong_data.state = false;
+            this.wrong_data.input_id = "";
+        },
+
+        inputValueController(inputId, cell_index) {
+            const inputValueChecker = e => {
+                if (!e.target._value || e.target.valueAsNumber > 10) {
+                    e.target.value = "";
+                    this.wrong_data.state = true;
+                    this.wrong_data.input_id = inputId;
+                    this.setDisplay("warning-box", "flex");
+                    this.setConfirmBtnVisible(cell_index, "hidden");
+                } else this.setConfirmBtnVisible(cell_index, "visible");
+            };
+
+            document.getElementById(inputId).addEventListener("keyup", e => {
+                if (e.key !== "Backspace") inputValueChecker(e);
+                else this.setConfirmBtnVisible(cell_index, "hidden");
+            });
+
+            document.getElementById(inputId).addEventListener("keydown", e => {
+                if (e.key === "Backspace") e.target._value = "";
+            });
+
+            document.getElementById(inputId).addEventListener("paste", e => {
+                inputValueChecker(e);
+            });
+
+            document.getElementById(inputId).addEventListener("change", e => {
+                if (e.target._value > 10)
+                    this.setConfirmBtnVisible(cell_index, "hidden");
+                else this.setConfirmBtnVisible(cell_index, "visible");
+            });
         },
 
         // third step
         confirmPiece() {
-            document.getElementById("open-message").style.display = "none";
-            document.getElementById("total").style.display = "inline";
-            document.getElementById("item-list").style.display = "block";
-            if (this.newPiece == "") {
-                alert("Missing data!");
-                this.newPrice = 0;
-                this.setOpenState();
-            }
-            if (this.counter < 1) {
-                this.addNewForm();
-                this.counter++;
-            } else {
-                this.updatePiece();
-                this.newPiece = "";
-            }
+            this.setDisplay("open-message", "none");
+            this.setDisplay("total", "inline");
+            this.setDisplay("item-list", "block");
+            this.addNewForm();
+            this.resetCheckSwitchStates();
+            this.submitBtnController();
         },
         // third-(b) step
-        updatePiece() {
-            this.resetPieces();
+        updatePiece(newPiece, size) {
+            //this.resetPieces();
             this.form.forEach(item => {
-                if (item.size == this.newSize) {
-                    item.piece = this.newPiece;
-                    item.amount = this.getAmount(this.newPiece, item.price);
-                    this.newPiece = "";
-                    this.counter++;
+                if (item.size == size) {
+                    item.piece = newPiece;
+                    item.amount = this.getAmount(newPiece, item.price);
+                    //this.newPiece = "";
+                    //this.counter++;
                 }
             });
-            this.resetPieces();
+            //this.resetPieces();
+        },
+
+        destroyItem(item) {
+            let index;
+            index = this.form.indexOf(item);
+            this.form.splice(index, 1);
         },
         // third-(a) step
         addNewForm() {
@@ -374,23 +517,33 @@ export default {
             this.resetPieces();
         },
 
-        onSubmit(event) {
-            event.preventDefault();
-            if (this.form.length < 1) {
-                document.getElementById("open-message").style.display =
-                    "inline";
-                alert("Empty form");
-            } else {
-                this.form.forEach(element => {
-                    delete element.state;
-                });
-                this.resetCheckSwitchStates();
-                document.getElementById("open-message").style.display = "none";
-                document.getElementById("total").style.display = "none";
-                document.getElementById("item-list").style.display = "none";
-                alert(JSON.stringify(this.form));
-                this.form = [];
+        setIdAttribute(index, btnIndex, attrValue) {
+            document
+                .getElementById("list")
+                .children[index].children[btnIndex].setAttribute("id", attrValue);
+        },
+
+        identifyTheButton(event, children, child, identifyString, piece) {
+            for (let i = 0; i < children.length; i++) {
+                if (
+                    event.target.parentElement.id ===
+                        this.form[i].state + identifyString &&
+                    child.innerText.split(" ")[0] ===
+                        this.form[i].size.split(" ")[0]
+                ) {
+                    if (identifyString === "edit") this.updatePiece(piece, this.form[i].size);
+                    else this.destroyItem(this.form[i]);
+                }
             }
+        },
+
+        
+        setValue(key, inputId, input, item, i) {
+            this.inputValueController(inputId, i);
+            key = input[i].valueAsNumber;
+            if (!key) return;
+            else this.setDatas(key, item);
+            this.state = "checked_" + (i + 1);
         },
         // second step
         addNumber(item) {
@@ -398,34 +551,64 @@ export default {
             for (let i = 0; i < 6; i++) {
                 switch (input[i].id) {
                     case "first":
-                        this.piece_1 = input[0].valueAsNumber;
-                        this.setForm(this.piece_1, item);
-                        this.state = "checked_" + (i + 1);
+                        this.setValue(
+                            this.piece_1,
+                            
+                            "first",
+                            input,
+                            item,
+                            i
+                        );
                         break;
                     case "second":
-                        this.piece_2 = input[1].valueAsNumber;
-                        this.setForm(this.piece_2, item);
-                        this.state = "checked_" + (i + 1);
+                        this.setValue(
+                            this.piece_2,
+                            
+                            "second",
+                            input,
+                            item,
+                            i
+                        );
                         break;
                     case "third":
-                        this.piece_3 = input[2].valueAsNumber;
-                        this.setForm(this.piece_3, item);
-                        this.state = "checked_" + (i + 1);
+                        this.setValue(
+                            this.piece_3,
+                            
+                            "third",
+                            input,
+                            item,
+                            i
+                        );
                         break;
                     case "fourth":
-                        this.piece_4 = input[3].valueAsNumber;
-                        this.setForm(this.piece_4, item);
-                        this.state = "checked_" + (i + 1);
+                        this.setValue(
+                            this.piece_4,
+                            
+                            "fourth",
+                            input,
+                            item,
+                            i
+                        );
                         break;
                     case "fifth":
-                        this.piece_5 = input[4].valueAsNumber;
-                        this.setForm(this.piece_5, item);
-                        this.state = "checked_" + (i + 1);
+                        this.setValue(
+                            this.piece_5,
+                            
+                            "fifth",
+                            input,
+                            item,
+                            i
+                        );
                         break;
                     case "sixth":
-                        this.piece_6 = input[5].valueAsNumber;
-                        this.setForm(this.piece_6, item);
-                        this.state = "checked_" + (i + 1);
+                        this.setValue(
+                            this.piece_6,
+                            
+                            "sixth",
+                            input,
+                            item,
+                            i
+                        );
                         break;
                     default:
                         break;
@@ -433,17 +616,10 @@ export default {
             }
         },
         // second-(a) step
-        setForm(piece, item) {
-            if (piece > 0) {
-                this.newPiece = piece;
-                this.newSize = item.size;
-                this.newPrice = item.price;
-            }
-
-            if (piece > 10) {
-                alert("Too much");
-                this.newPiece = "";
-            }
+        setDatas(piece, item) {
+            this.newPiece = piece;
+            this.newSize = item.size;
+            this.newPrice = item.price;
         },
         // first step
         onChange(event) {
@@ -451,67 +627,113 @@ export default {
             this.counter = 0;
             this.newPiece = "";
             this.resetPieces();
-            if (!event && this.form.length > 0) {
-                this.deleteItem();
-            }
-            if (this.form.length === 0) this.setOpenState();
+            //if (this.form.length === 0) this.setOpenState();
         }
     }
 };
 </script>
 
 <style scoped>
+.confirm-btn {
+    visibility: hidden;
+}
+
+/* Warning box */
+
+#warning-box {
+    background: whitesmoke;
+    color: rgb(9, 55, 115);
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 5px black;
+    width: 400px;
+    height: 200px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    z-index: 3;
+}
+
+.alert-icon {
+    width: 35px;
+    height: 35px;
+}
+
+#warning-message {
+    padding: 20px;
+}
+
+.warning-header {
+    width: 100%;
+    height: 40px;
+    background: rgb(250, 230, 100);
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+}
+
+.icon-title {
+    display: flex;
+    justify-content: flex-start;
+    margin: auto 10px;
+    height: 40px;
+    align-items: center;
+}
+
+.icon-title h5 {
+    text-transform: uppercase;
+    margin: auto 10px;
+}
+
+#close-btn {
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    color: whitesmoke;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 0 0 0;
+    border: none;
+    margin: auto 10px;
+    font-weight: 700;
+}
+
+#close-btn:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
 .table-stacked {
     display: none !important;
 }
 
-.table,
-.selected-item {
+.table {
     width: 95%;
     margin: 0 auto;
-}
-
-.table{
     margin-top: 30px;
     box-shadow: 2px 2px 10px black;
 }
 
-#first-row ,
-#second-row ,
-#third-row ,
-#fourth-row ,
-#fifth-row ,
+#first-row,
+#second-row,
+#third-row,
+#fourth-row,
+#fifth-row,
 #sixth-row {
     color: rgb(9, 55, 115);
-}
-
-.selected-item {
-    padding-top: 25px;
-}
-
-.selected-item ul {
-    padding: 25px 0;
-}
-
-.selected-item li {
-    list-style: none;
-    margin-left: 10px;
-    color: whitesmoke;
-}
-
-.selected-item fieldset {
-    padding-bottom: 10px;
-    box-shadow: 3px 3px 9px black;
-    background: linear-gradient(135deg, rgb(9, 55, 115), rgb(51, 100, 179));
-}
-
-.selected-item legend {
-    text-align: center;
-    border: 1px solid lightskyblue;
-    background: lightskyblue;
-    color: rgb(9, 55, 115);
-    font-size: 20px;
-    width: 200px;
 }
 
 .t-head {
@@ -525,40 +747,13 @@ export default {
     background: lightskyblue;
 }
 
-.check-switch {
-    z-index: 0;
+td, th {
+    vertical-align: middle;
 }
 
 .piece-input {
     width: 100px;
     height: 30px;
-}
-
-#submit-btn {
-    background: RebeccaPurple;
-    width: 230px;
-    height: 40px;
-    box-shadow: 2px 2px 5px black;
-    border: none;
-    margin-left: 3px;
-    color: whitesmoke;
-    margin: 30px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-#submit-btn:active {
-    box-shadow: none !important;
-    background-color: rebeccapurple !important;
-    color: whitesmoke !important;
-}
-
-#submit-btn:hover {
-    color: rebeccapurple;
-    background: whitesmoke;
-    border: 1px solid rebeccapurple;
-    box-shadow: none;
-    transition: 0.4s ease-in-out 0s;
 }
 
 .input-disabled {
@@ -572,16 +767,12 @@ export default {
     display: none;
 }
 
-#total {
-    width: 230px;
-    background: lightskyblue;
-    color: rgb(9, 55, 115);
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
 .add-piece {
     display: flex;
+}
+
+input {
+    width: 100px !important;
 }
 
 .input-cell {
@@ -591,7 +782,7 @@ export default {
     text-align: center;
 }
 
-.btn {
+#btn_ {
     width: 30px;
     height: 30px;
     border-radius: 5px;
@@ -599,7 +790,8 @@ export default {
     color: white;
     background: rgb(40, 160, 40);
     display: flex;
-    text-align: center;
+    visibility: hidden;
+    align-items: center;
     justify-content: center;
     font-size: 10px;
 }
@@ -608,24 +800,6 @@ export default {
     background: rgb(9, 55, 115);
     color: white;
     text-align: center;
-}
-
-#open-message {
-    color: #ced4da;
-}
-
-input[type=number]:not(.browser-default) {
-    margin: 0;
-    font-size: 16px;
-    background-color: whitesmoke;
-    height: 30px;
-    width: 50px;
-    border: 2px solid #ced4da;
-    border-radius: 5px;
-}
-
-td, th {
-    vertical-align: middle;
 }
 
 @media (max-width: 768px) {
@@ -650,7 +824,7 @@ td, th {
     }
 
     .add-piece {
-        background: rgb(9, 55, 115);
+        background: #292b2c;
     }
 
     .input-cell {
@@ -661,11 +835,5 @@ td, th {
     #submit-btn {
         margin: 20px auto;
     }
-
-    table {
-        width: 85% !important;
-    }
-
-
 }
 </style>
