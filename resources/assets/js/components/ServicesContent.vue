@@ -63,7 +63,7 @@
                                     We provide separate insurance for your
                                     luggage.
                                 </p>
-                                <router-link class="more" to="/services/luggage-insurance">read more ></router-link>
+                                <router-link :app="app" class="more" to="/services/luggage-insurance">read more ></router-link>
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,8 @@
 
 <script>
 export default {
-    name: "ServicesContent"
+    name: "ServicesContent",
+    props: ["app"]
 };
 </script>
 
