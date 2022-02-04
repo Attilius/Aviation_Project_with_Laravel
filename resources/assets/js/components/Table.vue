@@ -72,64 +72,7 @@
 
         <!-- Required warning box -->
 
-        <div id="warning-box">
-            <div class="warning-header">
-                <div class="icon-title">
-                    <b-img
-                        class="alert-icon"
-                        fluid
-                        :src="'../images/alert.png'"
-                        alt="alert-icon"
-                    ></b-img>
-                    <h5>warning</h5>
-                </div>
-
-                <button id="close-btn" @click="onClickCancel" v-if="!app.user">
-                    X
-                </button>
-                <button id="close-btn" @click="onClick" v-else>X</button>
-            </div>
-
-            <br />
-            <p id="warning-message" v-if="!app.user">
-                You must have been logged in before use this service!
-            </p>
-            <p v-else-if="wrong_data.state">
-                The value could at least 1 or at most 10!
-            </p>
-            <p id="warning-message" v-else>
-                Must have been selected at least one item of insurance before
-                submitting!
-            </p>
-            <div class="btn-group" v-if="!app.user">
-                <button
-                    style="marginRight: 30px"
-                    class="btn"
-                    @click="onClickLogin"
-                >
-                    Login
-                </button>
-                <button
-                    id="cancel-btn"
-                    style="marginLeft: 30px"
-                    class="btn"
-                    @click="onClickCancel"
-                >
-                    Cancel
-                </button>
-            </div>
-            <button
-                style="margin: 10px"
-                class="btn"
-                @click="inputReset"
-                v-else-if="wrong_data.state"
-            >
-                Ok
-            </button>
-            <button style="margin: 10px" class="btn" @click="onClick" v-else>
-                Ok
-            </button>
-        </div>
+        
         <SelectedItemDisplay :form="form" />
         <ServiceSubmit :form="form" @onCangeFormContent="updateFormContent($event)" @onChangeDisplay="updateDisplay($event)" />
     </div>
@@ -536,7 +479,6 @@ export default {
                 }
             }
         },
-
         
         setValue(key, inputId, input, item, i) {
             this.inputValueController(inputId, i);
@@ -553,7 +495,6 @@ export default {
                     case "first":
                         this.setValue(
                             this.piece_1,
-                            
                             "first",
                             input,
                             item,
@@ -563,7 +504,6 @@ export default {
                     case "second":
                         this.setValue(
                             this.piece_2,
-                            
                             "second",
                             input,
                             item,
@@ -573,7 +513,6 @@ export default {
                     case "third":
                         this.setValue(
                             this.piece_3,
-                            
                             "third",
                             input,
                             item,
@@ -583,7 +522,6 @@ export default {
                     case "fourth":
                         this.setValue(
                             this.piece_4,
-                            
                             "fourth",
                             input,
                             item,
@@ -593,7 +531,6 @@ export default {
                     case "fifth":
                         this.setValue(
                             this.piece_5,
-                            
                             "fifth",
                             input,
                             item,
@@ -603,7 +540,6 @@ export default {
                     case "sixth":
                         this.setValue(
                             this.piece_6,
-                            
                             "sixth",
                             input,
                             item,
