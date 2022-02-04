@@ -7,10 +7,10 @@
 
         <div id="success">
             <h5>Thank you for requesting our service!</h5>
-            <a class="link" href="/services">Back</a>
+            <router-link class="link" to="/services">Back</router-link>
         </div>
 
-        <Table id="table" :items="items" :fields="fields" @changeDisplay="updateDisplay($event)" />
+        <Table id="table" :app="app" :items="items" :fields="fields" @onChangeDisplay="updateDisplay($event)" />
     </div>
 </template>
 
@@ -18,7 +18,7 @@
 import Table from "./Table.vue";
 export default {
     name: "ServiceMainContent",
-    props: ['titles', 'text', 'important_text', 'items', 'fields'],
+    props: ['app', 'titles', 'text', 'important_text', 'items', 'fields'],
     components: {
         Table
     },
@@ -32,13 +32,13 @@ export default {
             document.getElementById("success").style.display = updatedDisplay;
             document.getElementById("table").style.display = "none";
             document.getElementById("content").style.height = "100vh";
-            this.changeDisplay();
+            this.onChangeDisplay();
             if (window.innerWidth > 768) window.scrollTo(0, 500);
             else window.scrollTo(0, 0);
         },
 
-        changeDisplay() {
-            this.$emit("changeDisplay", "200vh");
+        onChangeDisplay() {
+            this.$emit("onChangeDisplay", "200vh");
         },
 
         setContentHeight() {
