@@ -37,7 +37,7 @@
                 <div class="contact-data">
                     <font-awesome-icon class="icon" :icon="['fas', 'clock']" />
                     <div class="text-data tdata-4">
-                        <p>Mon–Sat: 8:00am–6:00pm Sunday: Closed</p>
+                        <p>Mon-Sat: 8:00am-6:00pm Sunday: Closed</p>
                     </div>
                 </div>
             </div>
