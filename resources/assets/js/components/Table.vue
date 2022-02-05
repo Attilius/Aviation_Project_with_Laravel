@@ -212,7 +212,7 @@ export default {
                         price: this.items.fifth.price,
                         checkbox: {
                             id: "checkbox-5",
-                            model: this.onChange(), 
+                            model: this.onChange()
                         },
                         input: {
                             id: "fifth",
@@ -232,7 +232,7 @@ export default {
                         price: this.items.sixth.price,
                         checkbox: {
                             id: "checkbox-6",
-                            model: this.checked_6, 
+                            model: this.onChange() 
                         },
                         input: {
                             id: "sixth",
