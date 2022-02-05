@@ -192,7 +192,7 @@ export default {
                         price: this.items.fourth.price,
                         checkbox: {
                             id: "checkbox-4",
-                            model: this.checked_4, 
+                            model: this.onChange() 
                         },
                         input: {
                             id: "fourth",
