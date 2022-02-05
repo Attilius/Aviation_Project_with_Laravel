@@ -152,7 +152,7 @@ export default {
                         price: this.items.second.price,
                         checkbox: {
                             id: "checkbox-2",
-                            model: this.checked_2, 
+                            model: this.onChange()
                         },
                         input: {
                             id: "second",
