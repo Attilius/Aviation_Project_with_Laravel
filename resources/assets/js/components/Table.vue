@@ -113,13 +113,6 @@ export default {
             piece_5: "",
             piece_6: "",
 
-            checked_1: false,
-            checked_2: false,
-            checked_3: false,
-            checked_4: false,
-            checked_5: false,
-            checked_6: false,
-
             tableRows: [
                 {
                     id: "first-row",
