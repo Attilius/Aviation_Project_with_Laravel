@@ -49,7 +49,7 @@
                                     class="piece-input"
                                     @input="addNumber(row.tableDatas.input.parameter)"
                                 ></b-form-input>
-                                <b-button @click="confirmPiece" class="confirm-btn">
+                                <b-button @click="confirmPiece(row.tableDatas.checkbox.model, row.tableDatas.checkbox.id, row.tableDatas.input.id)" class="confirm-btn">
                                     OK
                                 </b-button>
                             </div>
@@ -72,7 +72,7 @@
 
         <!-- Required warning box -->
 
-        
+        <Warning :app="app" :wrong_data="wrong_data" />
         <SelectedItemDisplay :form="form" />
         <ServiceSubmit :form="form" @onCangeFormContent="updateFormContent($event)" @onChangeDisplay="updateDisplay($event)" />
     </div>
@@ -81,12 +81,14 @@
 <script>
 import SelectedItemDisplay from "./SelectedItemDisplay.vue";
 import ServiceSubmit from "./ServiceSubmit.vue";
+import Warning from "./Warning.vue";
 export default {
     name: "Table",
     props: ["app", "items", "fields"],
     components: {
         SelectedItemDisplay,
-        ServiceSubmit
+        ServiceSubmit,
+        Warning
     },
 
     data() {
@@ -210,7 +212,7 @@ export default {
                         price: this.items.fifth.price,
                         checkbox: {
                             id: "checkbox-5",
-                            model: this.checked_5, 
+                            model: this.onChange(), 
                         },
                         input: {
                             id: "fifth",
@@ -261,24 +263,7 @@ export default {
 
 
 
-        onClick() {
-            this.setDisplay("warning-box", "none");
-            document.getElementById("insurances").style.border =
-                "2px solid gold";
-            document.getElementById("insurances").style.borderRadius =
-                "0.25rem";
-        },
-
-        onClickCancel() {
-            this.setDisplay("warning-box", "none");
-        },
-
-        onClickLogin() {
-            const path = location.hash.split("#");
-            this.$emit("onClickLogin", path[1]);
-            this.$router.push("/login");
-        },
-
+        
         setDisplay(element, property) {
             document.getElementById(element).style.display = property;
         },
@@ -380,14 +365,7 @@ export default {
             this.checked_6 = false;
         },
 
-        inputReset() {
-            this.onClickCancel();
-            this.setConfirmBtnVisible("btn_", "hidden");
-            document.getElementById(this.wrong_data.input_id).value = "";
-            this.wrong_data.state = false;
-            this.wrong_data.input_id = "";
-        },
-
+        
         inputValueController(inputId, cell_index) {
             const inputValueChecker = e => {
                 if (!e.target._value || e.target.valueAsNumber > 10) {
@@ -409,6 +387,7 @@ export default {
             });
 
             document.getElementById(inputId).addEventListener("paste", e => {
+                //console.log(e.target.valueAsNumber)
                 inputValueChecker(e);
             });
 
@@ -420,13 +399,16 @@ export default {
         },
 
         // third step
-        confirmPiece() {
+        confirmPiece(checkboxModel, checkboxId, inputId) {
             this.setDisplay("open-message", "none");
             this.setDisplay("total", "inline");
             this.setDisplay("item-list", "block");
             this.addNewForm();
-            this.resetCheckSwitchStates();
-            this.submitBtnController();
+            document.getElementById(checkboxId).checked = !checkboxModel;
+            document.getElementById(inputId).value = "";
+            document.getElementsByClassName("confirm-btn").forEach(item => {
+                item.style.visibility = "hidden";
+            });
         },
         // third-(b) step
         updatePiece(newPiece, size) {
@@ -559,10 +541,12 @@ export default {
         },
         // first step
         onChange(event) {
-            event = event;
-            this.counter = 0;
-            this.newPiece = "";
-            this.resetPieces();
+            return event;
+            //this.checked_5 = event;
+            //console.log(this.checked_5)
+            //this.counter = 0;
+            //this.newPiece = "";
+            //this.resetPieces();
             //if (this.form.length === 0) this.setOpenState();
         }
     }
@@ -572,84 +556,6 @@ export default {
 <style scoped>
 .confirm-btn {
     visibility: hidden;
-}
-
-/* Warning box */
-
-#warning-box {
-    background: whitesmoke;
-    color: rgb(9, 55, 115);
-    border-radius: 0.25rem;
-    box-shadow: 2px 2px 5px black;
-    width: 400px;
-    height: 200px;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    z-index: 3;
-}
-
-.alert-icon {
-    width: 35px;
-    height: 35px;
-}
-
-#warning-message {
-    padding: 20px;
-}
-
-.warning-header {
-    width: 100%;
-    height: 40px;
-    background: rgb(250, 230, 100);
-    border-radius: 0.25rem;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-}
-
-.icon-title {
-    display: flex;
-    justify-content: flex-start;
-    margin: auto 10px;
-    height: 40px;
-    align-items: center;
-}
-
-.icon-title h5 {
-    text-transform: uppercase;
-    margin: auto 10px;
-}
-
-#close-btn {
-    height: 25px;
-    width: 25px;
-    border-radius: 50px;
-    color: whitesmoke;
-    background: red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1px 0 0 0;
-    border: none;
-    margin: auto 10px;
-    font-weight: 700;
-}
-
-#close-btn:focus {
-    box-shadow: none !important;
-    border: none !important;
-}
-
-.btn-group {
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 10px;
 }
 
 .table-stacked {
