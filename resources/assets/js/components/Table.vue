@@ -542,12 +542,6 @@ export default {
         // first step
         onChange(event) {
             return event;
-            //this.checked_5 = event;
-            //console.log(this.checked_5)
-            //this.counter = 0;
-            //this.newPiece = "";
-            //this.resetPieces();
-            //if (this.form.length === 0) this.setOpenState();
         }
     }
 };
