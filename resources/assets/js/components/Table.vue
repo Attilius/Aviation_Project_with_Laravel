@@ -418,7 +418,6 @@ export default {
         },
         // third-(b) step
         updatePiece(newPiece, size) {
-            //this.resetPieces();
             this.form.forEach(item => {
                 if (item.size === size) {
                     item.piece = newPiece;
