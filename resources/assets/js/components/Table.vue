@@ -260,10 +260,6 @@ export default {
         };
     },
 
-    mounted() {
-        //this.checkSwitchUseController();
-    },
-
     methods: {
         updateFormContent(updateFormContent) {
             this.form = updateFormContent;
