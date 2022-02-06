@@ -90,8 +90,6 @@
             </b-tbody>
         </b-table-simple>
 
-        <!-- Required warning box -->
-
         <Warning :app="app" :wrong_data="wrong_data" />
         <SelectedItemDisplay :form="form" />
         <ServiceSubmit
