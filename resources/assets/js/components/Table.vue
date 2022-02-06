@@ -33,23 +33,43 @@
                             switch
                             size="lg"
                             class="check-switch"
-                            @change="onChange(row.tableDatas.checkbox.model)"
+                            @change="
+                                onChange(
+                                    row.tableDatas.checkbox.model,
+                                    row.tableDatas.input.id
+                                )
+                            "
                         ></b-form-checkbox>
                     </b-td>
                     <b-td class="add-piece">
                         <template v-if="row.tableDatas.checkbox.model == true">
                             <div class="input-cell">
                                 <b-form-input
-                                    v-model.number="row.tableDatas.input.model_number"
+                                    v-model.number="
+                                        row.tableDatas.input.model_number
+                                    "
                                     :id="row.tableDatas.input.id"
                                     type="number"
                                     min="1"
                                     max="10"
                                     placeholder="Max 10"
                                     class="piece-input"
-                                    @input="addNumber(row.tableDatas.input.parameter)"
+                                    @input="
+                                        addNumber(
+                                            row.tableDatas.input.parameter
+                                        )
+                                    "
                                 ></b-form-input>
-                                <b-button @click="confirmPiece(row.tableDatas.checkbox.model, row.tableDatas.checkbox.id, row.tableDatas.input.id)" class="confirm-btn">
+                                <b-button
+                                    @click="
+                                        confirmPiece(
+                                            row.tableDatas.checkbox.model,
+                                            row.tableDatas.checkbox.id,
+                                            row.tableDatas.input.id
+                                        )
+                                    "
+                                    class="confirm-btn"
+                                >
                                     OK
                                 </b-button>
                             </div>
@@ -58,11 +78,11 @@
                         <template v-else>
                             <div class="input-cell">
                                 <b-form-input
-                                type="number"
-                                placeholder="Max 10"
-                                class="piece-input"
-                                disabled
-                            ></b-form-input>
+                                    type="number"
+                                    placeholder="Max 10"
+                                    class="piece-input"
+                                    disabled
+                                ></b-form-input>
                             </div>
                         </template>
                     </b-td>
@@ -74,7 +94,11 @@
 
         <Warning :app="app" :wrong_data="wrong_data" />
         <SelectedItemDisplay :form="form" />
-        <ServiceSubmit :form="form" @onCangeFormContent="updateFormContent($event)" @onChangeDisplay="updateDisplay($event)" />
+        <ServiceSubmit
+            :form="form"
+            @onCangeFormContent="updateFormContent($event)"
+            @onChangeDisplay="updateDisplay($event)"
+        />
     </div>
 </template>
 
@@ -125,7 +149,7 @@ export default {
                         price: this.items.first.price,
                         checkbox: {
                             id: "checkbox-1",
-                            model: this.onChange() 
+                            model: this.onChange()
                         },
                         input: {
                             id: "first",
@@ -165,7 +189,7 @@ export default {
                         price: this.items.third.price,
                         checkbox: {
                             id: "checkbox-3",
-                            model: this.onChange() 
+                            model: this.onChange()
                         },
                         input: {
                             id: "third",
@@ -185,7 +209,7 @@ export default {
                         price: this.items.fourth.price,
                         checkbox: {
                             id: "checkbox-4",
-                            model: this.onChange() 
+                            model: this.onChange()
                         },
                         input: {
                             id: "fourth",
@@ -225,7 +249,7 @@ export default {
                         price: this.items.sixth.price,
                         checkbox: {
                             id: "checkbox-6",
-                            model: this.onChange() 
+                            model: this.onChange()
                         },
                         input: {
                             id: "sixth",
@@ -233,12 +257,12 @@ export default {
                             parameter: this.items.sixth
                         }
                     }
-                },
+                }
             ]
         };
     },
 
-   mounted() {
+    mounted() {
         //this.checkSwitchUseController();
     },
 
@@ -251,18 +275,14 @@ export default {
             this.$emit("onChangeDisplay", updateDisplay);
         },
 
-
-
-
-
-
-        
         setDisplay(element, property) {
             document.getElementById(element).style.display = property;
         },
 
         setConfirmBtnVisible(cell_index, property) {
-            document.querySelectorAll(".input-cell")[cell_index].lastChild.style.visibility = property;
+            document.querySelectorAll(".input-cell")[
+                cell_index
+            ].lastChild.style.visibility = property;
         },
 
         /*checkSwitchUseController() {
@@ -290,8 +310,6 @@ export default {
                     });
             });
         },*/
-
-        
 
         getAmount(piece, price) {
             return piece * parseInt(price);
@@ -358,7 +376,6 @@ export default {
             this.checked_6 = false;
         },
 
-        
         inputValueController(inputId, cell_index) {
             const inputValueChecker = e => {
                 if (!e.target._value || e.target.valueAsNumber > 10) {
@@ -396,9 +413,20 @@ export default {
             this.setDisplay("open-message", "none");
             this.setDisplay("total", "inline");
             this.setDisplay("item-list", "block");
-            this.addNewForm();
+            if (!this.form.length) this.addNewForm();
+            else {
+                this.form.forEach(item => {
+                    if (item.size !== this.newSize && this.newSize) {
+                        this.addNewForm();
+                    } else {
+                        this.updatePiece(this.newPiece, this.newSize);
+                    }
+                });
+            }
+            
             document.getElementById(checkboxId).checked = !checkboxModel;
             document.getElementById(inputId).value = "";
+            document.getElementById(inputId).disabled = true;
             document.getElementsByClassName("confirm-btn").forEach(item => {
                 item.style.visibility = "hidden";
             });
@@ -407,14 +435,16 @@ export default {
         updatePiece(newPiece, size) {
             //this.resetPieces();
             this.form.forEach(item => {
-                if (item.size == size) {
+                if (item.size === size) {
                     item.piece = newPiece;
                     item.amount = this.getAmount(newPiece, item.price);
-                    //this.newPiece = "";
+                    this.newPiece = 0;
+                    this.newSize = "";
                     //this.counter++;
                 }
             });
-            //this.resetPieces();
+            this.resetPieces();
+            console.log(this.form.length)
         },
 
         destroyItem(item) {
@@ -431,14 +461,17 @@ export default {
                 amount: this.getAmount(this.newPiece, this.newPrice),
                 state: this.state
             });
-            this.newPiece = "";
+           // this.newPiece = "";
             this.resetPieces();
         },
 
         setIdAttribute(index, btnIndex, attrValue) {
             document
                 .getElementById("list")
-                .children[index].children[btnIndex].setAttribute("id", attrValue);
+                .children[index].children[btnIndex].setAttribute(
+                    "id",
+                    attrValue
+                );
         },
 
         identifyTheButton(event, children, child, identifyString, piece) {
@@ -449,15 +482,17 @@ export default {
                     child.innerText.split(" ")[0] ===
                         this.form[i].size.split(" ")[0]
                 ) {
-                    if (identifyString === "edit") this.updatePiece(piece, this.form[i].size);
+                    if (identifyString === "edit")
+                        this.updatePiece(piece, this.form[i].size);
                     else this.destroyItem(this.form[i]);
                 }
             }
         },
-        
+
         setValue(key, inputId, input, item, i) {
             this.inputValueController(inputId, i);
             key = input[i].valueAsNumber;
+            console.log(key)
             if (!key) return;
             else this.setDatas(key, item);
             this.state = "checked_" + (i + 1);
@@ -468,58 +503,22 @@ export default {
             for (let i = 0; i < 6; i++) {
                 switch (input[i].id) {
                     case "first":
-                        this.setValue(
-                            this.piece_1,
-                            "first",
-                            input,
-                            item,
-                            i
-                        );
+                        this.setValue(this.piece_1, "first", input, item, i);
                         break;
                     case "second":
-                        this.setValue(
-                            this.piece_2,
-                            "second",
-                            input,
-                            item,
-                            i
-                        );
+                        this.setValue(this.piece_2, "second", input, item, i);
                         break;
                     case "third":
-                        this.setValue(
-                            this.piece_3,
-                            "third",
-                            input,
-                            item,
-                            i
-                        );
+                        this.setValue(this.piece_3, "third", input, item, i);
                         break;
                     case "fourth":
-                        this.setValue(
-                            this.piece_4,
-                            "fourth",
-                            input,
-                            item,
-                            i
-                        );
+                        this.setValue(this.piece_4, "fourth", input, item, i);
                         break;
                     case "fifth":
-                        this.setValue(
-                            this.piece_5,
-                            "fifth",
-                            input,
-                            item,
-                            i
-                        );
+                        this.setValue(this.piece_5, "fifth", input, item, i);
                         break;
                     case "sixth":
-                        this.setValue(
-                            this.piece_6,
-                            "sixth",
-                            input,
-                            item,
-                            i
-                        );
+                        this.setValue(this.piece_6, "sixth", input, item, i);
                         break;
                     default:
                         break;
@@ -533,7 +532,11 @@ export default {
             this.newPrice = item.price;
         },
         // first step
-        onChange(event) {
+        onChange(event, inputId) {
+            if (event) {
+                document.getElementById(inputId).disabled = false;
+                document.getElementById(inputId).value = "";
+            }
             return event;
         }
     }
@@ -576,7 +579,8 @@ export default {
     background: lightskyblue;
 }
 
-td, th {
+td,
+th {
     vertical-align: middle;
 }
 
