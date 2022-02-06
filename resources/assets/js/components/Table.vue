@@ -425,7 +425,6 @@ export default {
                     item.amount = this.getAmount(newPiece, item.price);
                     this.newPiece = 0;
                     this.newSize = "";
-                    //this.counter++;
                 }
             });
             this.resetPieces();
