@@ -361,15 +361,6 @@ export default {
             this.piece_6 = "";
         },
 
-        resetCheckSwitchStates() {
-            this.checked_1 = false;
-            this.checked_2 = false;
-            this.checked_3 = false;
-            this.checked_4 = false;
-            this.checked_5 = false;
-            this.checked_6 = false;
-        },
-
         inputValueController(inputId, cell_index) {
             const inputValueChecker = e => {
                 if (!e.target._value || e.target.valueAsNumber > 10) {
