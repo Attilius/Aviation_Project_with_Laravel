@@ -61,14 +61,6 @@ export default {
         },
 
         clkd(e) {
-            /*for (let i = 0; i < this.form.length; i++) {
-                this.setIdAttribute(i, 2, this.form[i].state + "delete");
-            }
-            const children = document.getElementById("list").childNodes;
-
-            children.forEach(child => {
-                this.identifyTheButton(e, children, child, "delete");
-            });*/
             e.target.parentElement.setAttribute("id", "del6")
             //console.log(delId)
             console.dir(e.target.parentElement.id)
