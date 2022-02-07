@@ -5,7 +5,7 @@
             <fieldset id="item-list">
                 <legend>Selected item(s)</legend>
                 <ul id="list">
-                    <li v-for="item in form" :key="item.size">
+                    <li :id="item.state" v-for="item in form" :key="item.size">
                         {{ item.size }} {{ item.price }} x {{ item.piece }} =>
                         <strong>{{ item.amount }} €</strong>
                         <button @click="clke" class="icon edit">
@@ -61,8 +61,12 @@ export default {
         },
 
         clkd(e) {
-            e.target.parentElement.setAttribute("id", "del6")
-            console.dir(e.target.parentElement.id)
+            //console.log(e.target.parentElement.parentElement.id)
+            this.form.forEach((item, index) => {
+                if(e.target.parentElement.parentElement.id === item.state) {
+                    console.log(index)
+                }
+            });
         },
 
         setOpenState() {
