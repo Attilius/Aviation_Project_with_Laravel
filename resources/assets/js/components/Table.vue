@@ -401,7 +401,6 @@ export default {
             this.setDisplay("item-list", "block");
             this.addNewForm();
             document.getElementById(checkboxId).checked = !checkboxModel;
-            //console.dir(document.getElementById(checkboxId))
             document.getElementById(checkboxId).disabled = true;
             document.getElementById(inputId).value = "";
             document.getElementById(inputId).disabled = true;
