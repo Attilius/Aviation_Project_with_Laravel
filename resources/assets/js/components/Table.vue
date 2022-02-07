@@ -417,7 +417,6 @@ export default {
                 amount: this.getAmount(this.newPiece, this.newPrice),
                 state: this.state
             });
-           // this.newPiece = "";
             this.resetPieces();
         },
 
