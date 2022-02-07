@@ -68,6 +68,7 @@
                                             row.tableDatas.input.id
                                         )
                                     "
+                                    id="btn_"
                                     class="confirm-btn"
                                 >
                                     OK
@@ -398,42 +399,15 @@ export default {
             this.setDisplay("open-message", "none");
             this.setDisplay("total", "inline");
             this.setDisplay("item-list", "block");
-            if (!this.form.length) this.addNewForm();
-            else {
-                this.form.forEach(item => {
-                    if (item.size !== this.newSize && this.newSize) {
-                        this.addNewForm();
-                    } else {
-                        this.updatePiece(this.newPiece, this.newSize);
-                    }
-                });
-            }
-            
+            this.addNewForm();
             document.getElementById(checkboxId).checked = !checkboxModel;
+            //console.dir(document.getElementById(checkboxId))
+            document.getElementById(checkboxId).disabled = true;
             document.getElementById(inputId).value = "";
             document.getElementById(inputId).disabled = true;
             document.getElementsByClassName("confirm-btn").forEach(item => {
                 item.style.visibility = "hidden";
             });
-        },
-        // third-(b) step
-        updatePiece(newPiece, size) {
-            this.form.forEach(item => {
-                if (item.size === size) {
-                    item.piece = newPiece;
-                    item.amount = this.getAmount(newPiece, item.price);
-                    this.newPiece = 0;
-                    this.newSize = "";
-                }
-            });
-            this.resetPieces();
-            console.log(this.form.length)
-        },
-
-        destroyItem(item) {
-            let index;
-            index = this.form.indexOf(item);
-            this.form.splice(index, 1);
         },
         // third-(a) step
         addNewForm() {
@@ -448,34 +422,9 @@ export default {
             this.resetPieces();
         },
 
-        setIdAttribute(index, btnIndex, attrValue) {
-            document
-                .getElementById("list")
-                .children[index].children[btnIndex].setAttribute(
-                    "id",
-                    attrValue
-                );
-        },
-
-        identifyTheButton(event, children, child, identifyString, piece) {
-            for (let i = 0; i < children.length; i++) {
-                if (
-                    event.target.parentElement.id ===
-                        this.form[i].state + identifyString &&
-                    child.innerText.split(" ")[0] ===
-                        this.form[i].size.split(" ")[0]
-                ) {
-                    if (identifyString === "edit")
-                        this.updatePiece(piece, this.form[i].size);
-                    else this.destroyItem(this.form[i]);
-                }
-            }
-        },
-
         setValue(key, inputId, input, item, i) {
             this.inputValueController(inputId, i);
             key = input[i].valueAsNumber;
-            console.log(key)
             if (!key) return;
             else this.setDatas(key, item);
             this.state = "checked_" + (i + 1);
