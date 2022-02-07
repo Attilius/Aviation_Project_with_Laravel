@@ -62,7 +62,6 @@ export default {
 
         clkd(e) {
             e.target.parentElement.setAttribute("id", "del6")
-            //console.log(delId)
             console.dir(e.target.parentElement.id)
         },
 
