@@ -26,6 +26,12 @@
 export default {
     name: "SelectedItemDisplay",
     props: ["form"],
+    watch: {
+        form: function(newVal) {
+            if (newVal.length) {
+            }
+        }
+    },
 
     mounted() {
         if (!this.form.length) {
@@ -55,14 +61,17 @@ export default {
         },
 
         clkd(e) {
-            for (let i = 0; i < this.form.length; i++) {
+            /*for (let i = 0; i < this.form.length; i++) {
                 this.setIdAttribute(i, 2, this.form[i].state + "delete");
             }
             const children = document.getElementById("list").childNodes;
 
             children.forEach(child => {
                 this.identifyTheButton(e, children, child, "delete");
-            });
+            });*/
+            e.target.parentElement.setAttribute("id", "del6")
+            //console.log(delId)
+            console.dir(e.target.parentElement.id)
         },
 
         setOpenState() {
@@ -73,6 +82,50 @@ export default {
 
         setDisplay(element, property) {
             document.getElementById(element).style.display = property;
+        },
+
+        setIdAttribute(index, btnIndex, attrValue) {
+            document
+                .getElementById("list")
+                .children[index].children[btnIndex].setAttribute(
+                    "id",
+                    attrValue
+                );
+        },
+
+        identifyTheButton(event, children, child, identifyString, piece) {
+            for (let i = 0; i < children.length; i++) {
+                if (
+                    event.target.parentElement.id ===
+                        this.form[i].state + identifyString &&
+                    child.innerText.split(" ")[0] ===
+                        this.form[i].size.split(" ")[0]
+                ) {
+                    if (identifyString === "edit")
+                        this.updatePiece(piece, this.form[i].size);
+                    else this.destroyItem(this.form[i]);
+                }
+            }
+        },
+
+        destroyItem(item) {
+            let index;
+            index = this.form.indexOf(item);
+            this.form.splice(index, 1);
+            if (!this.form.length) {
+                this.setOpenState();
+            }
+        },
+
+        updatePiece(newPiece, size) {
+            this.form.forEach(item => {
+                if (item.size === size) {
+                    item.piece = newPiece;
+                    item.amount = this.getAmount(newPiece, item.price);
+                    this.newPiece = 0;
+                    this.newSize = "";
+                }
+            });
         }
     }
 };
