@@ -87,14 +87,23 @@ export default {
 
         inputReset() {
             this.onClickCancel();
-            this.setConfirmBtnVisible("btn_", "hidden");
+            document.querySelectorAll(".input-cell").forEach((item, index) => {
+                if (!item.firstChild.disabled) {
+                    this.setConfirmBtnVisible(index, "hidden");
+                }
+            });
+            
             document.getElementById(this.wrong_data.input_id).value = "";
-            this.wrong_data.state = false;
-            this.wrong_data.input_id = "";
         },
 
         setDisplay(element, property) {
             document.getElementById(element).style.display = property;
+        },
+
+        setConfirmBtnVisible(cell_index, property) {
+            document.querySelectorAll(".input-cell")[
+                cell_index
+            ].lastChild.style.visibility = property;
         },
     }
 };
