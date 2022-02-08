@@ -8,11 +8,11 @@
                     <li :id="item.state" v-for="item in form" :key="item.size">
                         {{ item.size }} {{ item.price }} x {{ item.piece }} =>
                         <strong>{{ item.amount }} €</strong>
-                        <button @click="clke" class="icon edit">
-                            <font-awesome-icon :icon="['far', 'edit']" />
+                        <button @click="clk" class="btn edit">
+                            Edit
                         </button>
-                        <button @click="clkd" class="icon delete">
-                            <font-awesome-icon :icon="['fas', 'eraser']" />
+                        <button @click="clk" class="btn delete">
+                            Delete
                         </button>
                     </li>
                 </ul>
@@ -28,7 +28,12 @@ export default {
     props: ["form"],
     watch: {
         form: function(newVal) {
-            if (newVal.length) {
+            if (!newVal.length) {
+                this.setOpenState();
+
+                document.getElementsByClassName("check-switch").forEach(item => {
+                    item.firstChild.disabled = false;
+                });
             }
         }
     },
@@ -49,7 +54,8 @@ export default {
         },
 
         clke(e) {
-            let piece = 2;
+            console.log(e.target.innerText)
+           /* let piece = 2;
             for (let i = 0; i < this.form.length; i++) {
                 this.setIdAttribute(i, 1, this.form[i].state + "edit");
             }
@@ -57,14 +63,24 @@ export default {
 
             children.forEach(child => {
                 this.identifyTheButton(e, children, child, "edit", piece);
-            });
+            });*/
         },
 
-        clkd(e) {
-            //console.log(e.target.parentElement.parentElement.id)
+        clk(e) {
+            /*console.log(e.target.innerText)
+            if (e.target.innerText === "DELETE") {
+                console.log("delete")
+            }
+            if (e.target.innerText === "EDIT") {
+                console.log("edit")
+            }*/
             this.form.forEach((item, index) => {
-                if(e.target.parentElement.parentElement.id === item.state) {
-                    console.log(index)
+                if(e.target.parentElement.id === item.state && e.target.innerText === "DELETE") {
+                    this.form.splice(index, 1);
+                }
+
+                if(e.target.parentElement.id === item.state && e.target.innerText === "EDIT") {
+                    console.log(e.target.parentElement.id, "=> update");
                 }
             });
         },
@@ -162,30 +178,32 @@ export default {
     color: #ced4da;
 }
 
-.icon {
+.btn {
     background: none;
     border: none;
     height: 20px;
-    width: 20px;
+    width: 40px;
     margin-left: 10px;
-    font-size: 1.1rem;
+    font-size: 0.6rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .edit {
-    color: rgb(40, 160, 40);
+    background: rgb(40, 160, 40);
+    color: whitesmoke;
 }
 
 .delete {
-    color: red;
+    background: red;
+    color: whitesmoke;
 }
 
-.icon:focus {
+.btn:focus {
     box-shadow: none !important;
     border: none !important;
-}
-
-.icon:active {
-    font-size: 1rem;
 }
 
 li {
