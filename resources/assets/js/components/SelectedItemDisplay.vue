@@ -106,15 +106,6 @@ export default {
             }
         },
 
-        destroyItem(item) {
-            let index;
-            index = this.form.indexOf(item);
-            this.form.splice(index, 1);
-            if (!this.form.length) {
-                this.setOpenState();
-            }
-        },
-
         updatePiece(newPiece, size) {
             this.form.forEach(item => {
                 if (item.size === size) {
