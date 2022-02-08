@@ -8,10 +8,10 @@
                     <li :id="item.state" v-for="item in form" :key="item.size">
                         {{ item.size }} {{ item.price }} x {{ item.piece }} =>
                         <strong>{{ item.amount }} €</strong>
-                        <button @click="clk" class="btn edit">
+                        <button @click="onChangeSelectedData" class="btn edit">
                             Edit
                         </button>
-                        <button @click="clk" class="btn delete">
+                        <button @click="onChangeSelectedData" class="btn delete">
                             Delete
                         </button>
                     </li>
@@ -53,14 +53,7 @@ export default {
             return totalAmount;
         },
 
-        clk(e) {
-            /*console.log(e.target.innerText)
-            if (e.target.innerText === "DELETE") {
-                console.log("delete")
-            }
-            if (e.target.innerText === "EDIT") {
-                console.log("edit")
-            }*/
+        onChangeSelectedData(e) {
             this.form.forEach((item, index) => {
                 if(e.target.parentElement.id === item.state && e.target.innerText === "DELETE") {
                     this.form.splice(index, 1);
@@ -82,7 +75,7 @@ export default {
             document.getElementById(element).style.display = property;
         },
 
-        updatePiece(newPiece, size) {
+        /*updatePiece(newPiece, size) {
             this.form.forEach(item => {
                 if (item.size === size) {
                     item.piece = newPiece;
@@ -91,7 +84,7 @@ export default {
                     this.newSize = "";
                 }
             });
-        }
+        }*/
     }
 };
 </script>
