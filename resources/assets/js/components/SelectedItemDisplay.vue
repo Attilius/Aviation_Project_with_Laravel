@@ -53,19 +53,6 @@ export default {
             return totalAmount;
         },
 
-        clke(e) {
-            console.log(e.target.innerText)
-           /* let piece = 2;
-            for (let i = 0; i < this.form.length; i++) {
-                this.setIdAttribute(i, 1, this.form[i].state + "edit");
-            }
-            const children = document.getElementById("list").childNodes;
-
-            children.forEach(child => {
-                this.identifyTheButton(e, children, child, "edit", piece);
-            });*/
-        },
-
         clk(e) {
             /*console.log(e.target.innerText)
             if (e.target.innerText === "DELETE") {
