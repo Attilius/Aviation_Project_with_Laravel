@@ -91,21 +91,6 @@ export default {
                 );
         },
 
-        identifyTheButton(event, children, child, identifyString, piece) {
-            for (let i = 0; i < children.length; i++) {
-                if (
-                    event.target.parentElement.id ===
-                        this.form[i].state + identifyString &&
-                    child.innerText.split(" ")[0] ===
-                        this.form[i].size.split(" ")[0]
-                ) {
-                    if (identifyString === "edit")
-                        this.updatePiece(piece, this.form[i].size);
-                    else this.destroyItem(this.form[i]);
-                }
-            }
-        },
-
         updatePiece(newPiece, size) {
             this.form.forEach(item => {
                 if (item.size === size) {
