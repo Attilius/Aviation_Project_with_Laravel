@@ -82,15 +82,6 @@ export default {
             document.getElementById(element).style.display = property;
         },
 
-        setIdAttribute(index, btnIndex, attrValue) {
-            document
-                .getElementById("list")
-                .children[index].children[btnIndex].setAttribute(
-                    "id",
-                    attrValue
-                );
-        },
-
         updatePiece(newPiece, size) {
             this.form.forEach(item => {
                 if (item.size === size) {
