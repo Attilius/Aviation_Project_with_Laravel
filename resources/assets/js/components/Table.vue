@@ -36,7 +36,8 @@
                             @change="
                                 onChange(
                                     row.tableDatas.checkbox.model,
-                                    row.tableDatas.input.id
+                                    row.tableDatas.input.id,
+                                    row.tableDatas.checkbox.id
                                 )
                             "
                         ></b-form-checkbox>
@@ -401,7 +402,8 @@ export default {
             this.setDisplay("item-list", "block");
             this.addNewForm();
             document.getElementById(checkboxId).checked = !checkboxModel;
-            document.getElementById(checkboxId).disabled = true;
+            document.getElementById(checkboxId).classList.replace("active","used");
+            //document.getElementById(checkboxId).disabled = true;
             document.getElementById(inputId).value = "";
             document.getElementById(inputId).disabled = true;
             document.getElementsByClassName("confirm-btn").forEach(item => {
@@ -462,12 +464,32 @@ export default {
             this.newPrice = item.price;
         },
         // first step
-        onChange(event, inputId) {
+        onChange(event, inputId, switchId) {
             if (event) {
+                document.getElementById(switchId).classList.add("active");
                 document.getElementById(inputId).disabled = false;
                 document.getElementById(inputId).value = "";
+                this.setActiveSwitch(event);
+            }
+            
+            if(!event) {
+                this.setActiveSwitch(event);
             }
             return event;
+        },
+
+        setActiveSwitch(e) {
+            const switches = document.getElementsByClassName("check-switch");
+            switches.forEach(item => {
+                if (e && !item.firstChild.classList.contains("active")) {
+                    item.firstChild.disabled = true;
+                }
+
+                if(!e && !item.firstChild.classList.contains("used")) {
+                    item.firstChild.classList.remove("active");
+                    item.firstChild.disabled = false;
+                } 
+            });
         }
     }
 };
