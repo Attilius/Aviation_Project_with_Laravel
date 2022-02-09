@@ -35,6 +35,18 @@ export default {
                     item.firstChild.disabled = false;
                 });
             }
+
+            if (newVal.length) {
+                document.getElementsByClassName("check-switch").forEach(item => {
+                    if (item.firstChild.classList.contains("used")) {
+                        item.firstChild.disabled = true;
+                    }
+                    
+                    if (!item.firstChild.classList.contains("used") && item.firstChild.classList.length < 2) {
+                        item.firstChild.disabled = false;
+                    }
+                });
+            }
         }
     },
 
@@ -57,6 +69,9 @@ export default {
             this.form.forEach((item, index) => {
                 if(e.target.parentElement.id === item.state && e.target.innerText === "DELETE") {
                     this.form.splice(index, 1);
+                    const idNumber = item.state.split("_")[1];
+                    // Set only checkswitch default state
+                    document.getElementById(`checkbox-${idNumber}`).classList.remove("used")
                 }
 
                 if(e.target.parentElement.id === item.state && e.target.innerText === "EDIT") {
@@ -71,8 +86,8 @@ export default {
             this.setDisplay("item-list", "none");
         },
 
-        setDisplay(element, property) {
-            document.getElementById(element).style.display = property;
+        setDisplay(elementId, property) {
+            document.getElementById(elementId).style.display = property;
         },
 
         /*updatePiece(newPiece, size) {
