@@ -1,24 +1,22 @@
 <template>
-    <div>
-        <div class="selected-item">
-            <p id="open-message">You have not selected any item yet*</p>
-            <fieldset id="item-list">
-                <legend>Selected item(s)</legend>
-                <ul id="list">
-                    <li :id="item.state" v-for="item in form" :key="item.size">
-                        {{ item.size }} {{ item.price }} x {{ item.piece }} =>
-                        <strong>{{ item.amount }} €</strong>
-                        <button @click="onChangeSelectedData" class="btn edit">
-                            Edit
-                        </button>
-                        <button @click="onChangeSelectedData" class="btn delete">
-                            Delete
-                        </button>
-                    </li>
-                </ul>
-                <h5 id="total">Total amount: {{ getTotalAmount() }} €</h5>
-            </fieldset>
-        </div>
+    <div class="selected-item">
+        <p id="open-message">You have not selected any item yet*</p>
+        <fieldset id="item-list">
+            <legend>Selected item(s)</legend>
+            <ul id="list">
+                <li :id="item.state" v-for="item in form" :key="item.size">
+                    {{ item.size }} {{ item.price }} x {{ item.piece }} =>
+                    <strong>{{ item.amount }} €</strong>
+                    <button @click="onChangeSelectedData" class="btn edit">
+                        Edit
+                    </button>
+                    <button @click="onChangeSelectedData" class="btn delete">
+                        Delete
+                    </button>
+                </li>
+            </ul>
+            <h5 id="total">Total amount: {{ getTotalAmount() }} €</h5>
+        </fieldset>
     </div>
 </template>
 
@@ -31,21 +29,28 @@ export default {
             if (!newVal.length) {
                 this.setOpenState();
 
-                document.getElementsByClassName("check-switch").forEach(item => {
-                    item.firstChild.disabled = false;
-                });
+                document
+                    .getElementsByClassName("check-switch")
+                    .forEach(item => {
+                        item.firstChild.disabled = false;
+                    });
             }
 
             if (newVal.length) {
-                document.getElementsByClassName("check-switch").forEach(item => {
-                    if (item.firstChild.classList.contains("used")) {
-                        item.firstChild.disabled = true;
-                    }
-                    
-                    if (!item.firstChild.classList.contains("used") && item.firstChild.classList.length < 2) {
-                        item.firstChild.disabled = false;
-                    }
-                });
+                document
+                    .getElementsByClassName("check-switch")
+                    .forEach(item => {
+                        if (item.firstChild.classList.contains("used")) {
+                            item.firstChild.disabled = true;
+                        }
+
+                        if (
+                            !item.firstChild.classList.contains("used") &&
+                            item.firstChild.classList.length < 2
+                        ) {
+                            item.firstChild.disabled = false;
+                        }
+                    });
             }
         }
     },
@@ -67,15 +72,25 @@ export default {
 
         onChangeSelectedData(e) {
             this.form.forEach((item, index) => {
-                if(e.target.parentElement.id === item.state && e.target.innerText === "DELETE") {
+                if (
+                    e.target.parentElement.id === item.state &&
+                    e.target.innerText === "DELETE"
+                ) {
                     this.form.splice(index, 1);
                     const idNumber = item.state.split("_")[1];
                     // Set only checkswitch default state
-                    document.getElementById(`checkbox-${idNumber}`).classList.remove("used")
+                    document
+                        .getElementById(`checkbox-${idNumber}`)
+                        .classList.remove("used");
                 }
 
-                if(e.target.parentElement.id === item.state && e.target.innerText === "EDIT") {
-                    console.log(e.target.parentElement.id, "=> update");
+                if (
+                    e.target.parentElement.id === item.state &&
+                    e.target.innerText === "EDIT"
+                ) {
+                    document.getElementById("update-form").style.visibility = "visible";
+                    document.getElementById("confirm-btn").style.visibility = "visible";
+                    this.updatePiece(e.target.parentElement.id);
                 }
             });
         },
@@ -90,16 +105,14 @@ export default {
             document.getElementById(elementId).style.display = property;
         },
 
-        /*updatePiece(newPiece, size) {
-            this.form.forEach(item => {
-                if (item.size === size) {
-                    item.piece = newPiece;
-                    item.amount = this.getAmount(newPiece, item.price);
-                    this.newPiece = 0;
-                    this.newSize = "";
-                }
+        updatePiece(param/*newSize*/) {
+          this.form.forEach(item => {
+              if (param === item.state) {
+                  console.log(item)
+              }
+                
             });
-        }*/
+        }
     }
 };
 </script>
@@ -179,4 +192,6 @@ li {
     padding: 10px;
     margin-bottom: 10px;
 }
+
+
 </style>
