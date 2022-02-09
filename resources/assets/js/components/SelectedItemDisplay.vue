@@ -88,8 +88,10 @@ export default {
                     e.target.parentElement.id === item.state &&
                     e.target.innerText === "EDIT"
                 ) {
-                    document.getElementById("update-form").style.visibility = "visible";
-                    document.getElementById("confirm-btn").style.visibility = "visible";
+                    document.getElementById("update-form").style.visibility =
+                        "visible";
+                    document.getElementById("confirm-btn").style.visibility =
+                        "visible";
                     this.updatePiece(e.target.parentElement.id);
                 }
             });
@@ -105,13 +107,16 @@ export default {
             document.getElementById(elementId).style.display = property;
         },
 
-        updatePiece(param/*newSize*/) {
-          this.form.forEach(item => {
-              if (param === item.state) {
-                  console.log(item)
-              }
-                
+        updatePiece(param, newSize) {
+            this.form.forEach((item, index) => {
+                if (param === item.state) {
+                    this.onChangePieceInForm(index, newSize);
+                }
             });
+        },
+
+        onChangePieceInForm(index, newSize) {
+            this.$emit("onChangePieceInForm", [index, newSize]);
         }
     }
 };
@@ -192,6 +197,4 @@ li {
     padding: 10px;
     margin-bottom: 10px;
 }
-
-
 </style>
