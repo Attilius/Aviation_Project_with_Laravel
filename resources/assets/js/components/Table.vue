@@ -93,6 +93,7 @@
         </b-table-simple>
 
         <Warning :app="app" :wrong_data="wrong_data" />
+        <UpdateForm />
         <SelectedItemDisplay :form="form" />
         <ServiceSubmit
             :form="form"
@@ -106,13 +107,15 @@
 import SelectedItemDisplay from "./SelectedItemDisplay.vue";
 import ServiceSubmit from "./ServiceSubmit.vue";
 import Warning from "./Warning.vue";
+import UpdateForm from "./UpdateForm.vue";
 export default {
     name: "Table",
     props: ["app", "items", "fields"],
     components: {
         SelectedItemDisplay,
         ServiceSubmit,
-        Warning
+        Warning,
+        UpdateForm
     },
 
     data() {
