@@ -288,6 +288,7 @@ export default {
             this.form.forEach((item, index) => {
                 if (index === updatePieceInForm[0]) {
                     item.piece = updatePieceInForm[1];
+                    item.amount = this.getAmount(updatePieceInForm[1], item.price);
                 }
             })
         },
