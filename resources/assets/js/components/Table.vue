@@ -94,7 +94,7 @@
 
         <Warning :app="app" :wrong_data="wrong_data" />
         <UpdateForm />
-        <SelectedItemDisplay :form="form" />
+        <SelectedItemDisplay :form="form" @onChangePieceInForm="updatePieceInForm($event)"/>
         <ServiceSubmit
             :form="form"
             @onCangeFormContent="updateFormContent($event)"
@@ -282,6 +282,14 @@ export default {
             document.querySelectorAll(".input-cell")[
                 cell_index
             ].lastChild.style.visibility = property;
+        },
+
+        updatePieceInForm(updatePieceInForm) {
+            this.form.forEach((item, index) => {
+                if (index === updatePieceInForm[0]) {
+                    item.piece = updatePieceInForm[1];
+                }
+            })
         },
 
         /*checkSwitchUseController() {
