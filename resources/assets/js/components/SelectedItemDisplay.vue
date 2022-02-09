@@ -92,7 +92,7 @@ export default {
                         "visible";
                     document.getElementById("confirm-btn").style.visibility =
                         "visible";
-                    this.updatePiece(e.target.parentElement.id);
+                    this.updatePiece(e.target.parentElement.id, 2);
                 }
             });
         },
