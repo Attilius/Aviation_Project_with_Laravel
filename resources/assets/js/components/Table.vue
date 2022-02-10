@@ -93,12 +93,8 @@
         </b-table-simple>
 
         <Warning :app="app" :wrong_data="wrong_data" />
-        <SelectedItemDisplay
-            :form="form"
-            :updateState="updateState"
-            @onChangePieceInForm="updatePieceInForm($event)"
-            @onChangeUpdateState="modifyUpdateState($event)"
-        />
+        
+        <SelectedItemDisplay :form="form" @onChangePieceInForm="updatePieceInForm($event)"/>
         <ServiceSubmit
             :form="form"
             @onCangeFormContent="updateFormContent($event)"
@@ -111,6 +107,7 @@
 import SelectedItemDisplay from "./SelectedItemDisplay.vue";
 import ServiceSubmit from "./ServiceSubmit.vue";
 import Warning from "./Warning.vue";
+
 export default {
     name: "Table",
     props: ["app", "items", "fields"],
@@ -130,7 +127,6 @@ export default {
                 state: false,
                 input_id: ""
             },
-            updateState: false,
 
             form: [],
 
@@ -291,17 +287,36 @@ export default {
             this.form.forEach((item, index) => {
                 if (index === updatePieceInForm[0]) {
                     item.piece = updatePieceInForm[1];
-                    item.amount = this.getAmount(
-                        updatePieceInForm[1],
-                        item.price
-                    );
+                    item.amount = this.getAmount(updatePieceInForm[1], item.price);
                 }
-            });
+            })
         },
 
-        modifyUpdateState(modifyUpdateState) {
-            this.updateState = modifyUpdateState;
-        },
+        /*checkSwitchUseController() {
+            const checkSwitches = [
+                "checkbox-1",
+                "checkbox-2",
+                "checkbox-3",
+                "checkbox-4",
+                "checkbox-5",
+                "checkbox-6"
+            ];
+
+            checkSwitches.forEach(checkSwitch => {
+                document
+                    .getElementById(checkSwitch)
+                    .addEventListener("mouseover", () => {
+                        if (!this.app.user) {
+                            checkSwitches.forEach(checkSwitch => {
+                                document.getElementById(
+                                    checkSwitch
+                                ).disabled = true;
+                            });
+                            this.setDisplay("warning-box", "flex");
+                        }
+                    });
+            });
+        },*/
 
         getAmount(piece, price) {
             return piece * parseInt(price);
@@ -398,9 +413,8 @@ export default {
             this.setDisplay("item-list", "block");
             this.addNewForm();
             document.getElementById(checkboxId).checked = !checkboxModel;
-            document
-                .getElementById(checkboxId)
-                .classList.replace("active", "used");
+            document.getElementById(checkboxId).classList.replace("active","used");
+            //document.getElementById(checkboxId).disabled = true;
             document.getElementById(inputId).value = "";
             document.getElementById(inputId).disabled = true;
             document.getElementsByClassName("confirm-btn").forEach(item => {
@@ -468,8 +482,8 @@ export default {
                 document.getElementById(inputId).value = "";
                 this.setActiveSwitch(event);
             }
-
-            if (!event) {
+            
+            if(!event) {
                 this.setActiveSwitch(event);
             }
             return event;
@@ -482,10 +496,10 @@ export default {
                     item.firstChild.disabled = true;
                 }
 
-                if (!e && !item.firstChild.classList.contains("used")) {
+                if(!e && !item.firstChild.classList.contains("used")) {
                     item.firstChild.classList.remove("active");
                     item.firstChild.disabled = false;
-                }
+                } 
             });
         }
     }
