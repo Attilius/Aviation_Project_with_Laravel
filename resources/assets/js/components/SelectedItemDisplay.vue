@@ -1,5 +1,6 @@
 <template>
     <div class="selected-item">
+        <div id="shadow"></div>
         <p id="open-message">You have not selected any item yet*</p>
         <fieldset id="item-list">
             <legend>Selected item(s)</legend>
@@ -17,13 +18,23 @@
             </ul>
             <h5 id="total">Total amount: {{ getTotalAmount() }} €</h5>
         </fieldset>
+        <UpdateForm
+            :form="form"
+            :updateId="updateId"
+            @onChangePieceInForm="updatePieceInForm($event)"
+            @onChangeUpdateState="modifyUpdateState($event)"
+        />
     </div>
 </template>
 
 <script>
+import UpdateForm from "./UpdateForm.vue";
 export default {
     name: "SelectedItemDisplay",
-    props: ["form"],
+    props: ["form", "updateState"],
+    components: {
+        UpdateForm
+    },
     watch: {
         form: function(newVal) {
             if (!newVal.length) {
@@ -52,7 +63,21 @@ export default {
                         }
                     });
             }
+        },
+
+        updateState: function(newValue) {
+            if (newValue) {
+                document.getElementById("shadow").style.display = "block";
+            } else {
+                document.getElementById("shadow").style.display = "none";
+            }
         }
+    },
+
+    data() {
+        return {
+            updateId: ""
+        };
     },
 
     mounted() {
@@ -88,11 +113,10 @@ export default {
                     e.target.parentElement.id === item.state &&
                     e.target.innerText === "EDIT"
                 ) {
-                    document.getElementById("update-form").style.visibility =
-                        "visible";
-                    document.getElementById("confirm-btn").style.visibility =
-                        "visible";
-                    this.updatePiece(e.target.parentElement.id, 2);
+                    document.getElementById("update-form").style.display =
+                        "flex";
+                    this.onChangeUpdateState();
+                    this.updateId = e.target.parentElement.id;
                 }
             });
         },
@@ -107,22 +131,33 @@ export default {
             document.getElementById(elementId).style.display = property;
         },
 
-        updatePiece(param, newSize) {
-            this.form.forEach((item, index) => {
-                if (param === item.state) {
-                    this.onChangePieceInForm(index, newSize);
-                }
-            });
+        updatePieceInForm(updatePieceInForm) {
+            this.$emit("onChangePieceInForm", updatePieceInForm)
         },
 
-        onChangePieceInForm(index, newSize) {
-            this.$emit("onChangePieceInForm", [index, newSize]);
+        onChangeUpdateState() {
+            this.$emit("onChangeUpdateState", true)
+        },
+
+        modifyUpdateState(modifyUpdateState) {
+            this.$emit("onChangeUpdateState", modifyUpdateState)
         }
     }
 };
 </script>
 
 <style scoped>
+#shadow {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(1, 1, 1, 0.6);
+    z-index: 1;
+    display: none;
+}
+
 .selected-item {
     padding-top: 25px;
     width: 95%;
