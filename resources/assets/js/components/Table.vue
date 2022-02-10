@@ -292,32 +292,6 @@ export default {
             })
         },
 
-        /*checkSwitchUseController() {
-            const checkSwitches = [
-                "checkbox-1",
-                "checkbox-2",
-                "checkbox-3",
-                "checkbox-4",
-                "checkbox-5",
-                "checkbox-6"
-            ];
-
-            checkSwitches.forEach(checkSwitch => {
-                document
-                    .getElementById(checkSwitch)
-                    .addEventListener("mouseover", () => {
-                        if (!this.app.user) {
-                            checkSwitches.forEach(checkSwitch => {
-                                document.getElementById(
-                                    checkSwitch
-                                ).disabled = true;
-                            });
-                            this.setDisplay("warning-box", "flex");
-                        }
-                    });
-            });
-        },*/
-
         getAmount(piece, price) {
             return piece * parseInt(price);
         },
@@ -395,7 +369,6 @@ export default {
             });
 
             document.getElementById(inputId).addEventListener("paste", e => {
-                //console.log(e.target.valueAsNumber)
                 inputValueChecker(e);
             });
 
