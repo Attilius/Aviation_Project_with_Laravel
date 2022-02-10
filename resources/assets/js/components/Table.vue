@@ -303,32 +303,6 @@ export default {
             this.updateState = modifyUpdateState;
         },
 
-        /*checkSwitchUseController() {
-            const checkSwitches = [
-                "checkbox-1",
-                "checkbox-2",
-                "checkbox-3",
-                "checkbox-4",
-                "checkbox-5",
-                "checkbox-6"
-            ];
-
-            checkSwitches.forEach(checkSwitch => {
-                document
-                    .getElementById(checkSwitch)
-                    .addEventListener("mouseover", () => {
-                        if (!this.app.user) {
-                            checkSwitches.forEach(checkSwitch => {
-                                document.getElementById(
-                                    checkSwitch
-                                ).disabled = true;
-                            });
-                            this.setDisplay("warning-box", "flex");
-                        }
-                    });
-            });
-        },*/
-
         getAmount(piece, price) {
             return piece * parseInt(price);
         },
@@ -427,7 +401,6 @@ export default {
             document
                 .getElementById(checkboxId)
                 .classList.replace("active", "used");
-            //document.getElementById(checkboxId).disabled = true;
             document.getElementById(inputId).value = "";
             document.getElementById(inputId).disabled = true;
             document.getElementsByClassName("confirm-btn").forEach(item => {
