@@ -74,17 +74,13 @@ export default {
             this.form.forEach((item, index) => {
                 if (param === item.state) {
                     this.onChangePieceInForm(index, newPiece);
-                    this.onChangeUpdateState();
+                    this.onChangeShadowState();
                 }
             });
         },
 
         onChangePieceInForm(index, newPiece) {
             this.$emit("onChangePieceInForm", [index, newPiece]);
-        },
-
-        onChangeUpdateState() {
-            this.$emit("onChangeUpdateState", false)
         }
     }
 };
