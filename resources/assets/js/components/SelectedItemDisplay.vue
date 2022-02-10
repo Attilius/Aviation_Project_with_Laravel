@@ -22,7 +22,6 @@
             :form="form"
             :updateId="updateId"
             @onChangePieceInForm="updatePieceInForm($event)"
-            @onChangeUpdateState="modifyUpdateState($event)"
         />
     </div>
 </template>
@@ -31,7 +30,7 @@
 import UpdateForm from "./UpdateForm.vue";
 export default {
     name: "SelectedItemDisplay",
-    props: ["form", "updateState"],
+    props: ["form"],
     components: {
         UpdateForm
     },
@@ -62,14 +61,6 @@ export default {
                             item.firstChild.disabled = false;
                         }
                     });
-            }
-        },
-
-        updateState: function(newValue) {
-            if (newValue) {
-                document.getElementById("shadow").style.display = "block";
-            } else {
-                document.getElementById("shadow").style.display = "none";
             }
         }
     },
@@ -132,32 +123,17 @@ export default {
         },
 
         updatePieceInForm(updatePieceInForm) {
-            this.$emit("onChangePieceInForm", updatePieceInForm)
+            this.$emit("onChangePieceInForm", updatePieceInForm);
         },
 
         onChangeUpdateState() {
-            this.$emit("onChangeUpdateState", true)
-        },
-
-        modifyUpdateState(modifyUpdateState) {
-            this.$emit("onChangeUpdateState", modifyUpdateState)
+            this.$emit("onChangeUpdateState", true);
         }
     }
 };
 </script>
 
 <style scoped>
-#shadow {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(1, 1, 1, 0.6);
-    z-index: 1;
-    display: none;
-}
-
 .selected-item {
     padding-top: 25px;
     width: 95%;
