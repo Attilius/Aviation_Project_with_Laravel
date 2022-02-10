@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div id="shadow"></div>
         <div id="warning-box">
             <div class="warning-header">
                 <div class="icon-title">
@@ -69,10 +70,10 @@ export default {
     methods: {
         onClick() {
             this.setDisplay("warning-box", "none");
-            document.getElementById("insurances").style.border =
+            /*document.getElementById("insurances").style.border =
                 "2px solid gold";
             document.getElementById("insurances").style.borderRadius =
-                "0.25rem";
+                "0.25rem";*/
         },
 
         onClickCancel() {
@@ -92,8 +93,6 @@ export default {
                     this.setConfirmBtnVisible(index, "hidden");
                 }
             });
-            
-            document.getElementById(this.wrong_data.input_id).value = "";
         },
 
         setDisplay(element, property) {
@@ -104,12 +103,23 @@ export default {
             document.querySelectorAll(".input-cell")[
                 cell_index
             ].lastChild.style.visibility = property;
-        },
+        }
     }
 };
 </script>
 
 <style scoped>
+#shadow {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(1, 1, 1, 0.6);
+    z-index: 1;
+    display: none;
+}
+
 /* Warning box */
 
 #warning-box {
