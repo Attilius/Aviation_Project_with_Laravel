@@ -113,8 +113,8 @@ watch: {
 
 .submit-btn-disabled {
     margin: 20px 30px;
-    background: rebeccapurple;
-    color: whitesmoke;
+    background: rebeccapurple !important;
+    color: whitesmoke !important;
     box-shadow: 2px 2px 5px black !important;
     border: 1px solid rebeccapurple !important;
 }
@@ -127,7 +127,6 @@ watch: {
 
 .submit-btn-enabled {
     margin: 20px 30px;
-    border: none;
     box-shadow: 2px 2px 5px black !important;
     border: 1px solid rebeccapurple !important;
     transition: all 0.3s ease;
