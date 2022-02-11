@@ -74,7 +74,6 @@ export default {
             this.form.forEach((item, index) => {
                 if (param === item.state) {
                     this.onChangePieceInForm(index, newPiece);
-                    this.onChangeShadowState();
                 }
             });
         },
