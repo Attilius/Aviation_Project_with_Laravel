@@ -92,7 +92,7 @@
             </b-tbody>
         </b-table-simple>
 
-        <Warning :app="app" :wrong_data="wrong_data" />
+        <Warning :app="app" :isWrongData="isWrongData" />
         
         <SelectedItemDisplay :form="form" @onChangePieceInForm="updatePieceInForm($event)"/>
         <ServiceSubmit
@@ -122,23 +122,11 @@ export default {
             newSize: "",
             newPrice: "",
             newPiece: "",
+            piece: "",
             state: "",
-            wrong_data: {
-                state: false,
-                input_id: ""
-            },
+            isWrongData: false,
 
             form: [],
-
-            counter: 0,
-
-            piece_1: "",
-            piece_2: "",
-            piece_3: "",
-            piece_4: "",
-            piece_5: "",
-            piece_6: "",
-
             tableRows: [
                 {
                     id: "first-row",
@@ -350,12 +338,11 @@ export default {
 
         inputValueController(inputId, cell_index) {
             const inputValueChecker = e => {
-                if (!e.target._value || e.target.valueAsNumber > 10) {
+                if (!e.target._value || e.target.valueAsNumber > 10 || !e.target.valueAsNumber) {
                     e.target.value = "";
-                    this.wrong_data.state = true;
-                    this.wrong_data.input_id = inputId;
-                    this.setDisplay("warning-box", "flex");
+                    this.isWrongData = true
                     this.setConfirmBtnVisible(cell_index, "hidden");
+                    this.setDisplay("warning-box", "flex");
                 } else this.setConfirmBtnVisible(cell_index, "visible");
             };
 
@@ -365,7 +352,7 @@ export default {
             });
 
             document.getElementById(inputId).addEventListener("keydown", e => {
-                if (e.key === "Backspace") e.target._value = "";
+                if (e.key === "Backspace") e.target.value = "";
             });
 
             document.getElementById(inputId).addEventListener("paste", e => {
@@ -373,9 +360,7 @@ export default {
             });
 
             document.getElementById(inputId).addEventListener("change", e => {
-                if (e.target._value > 10)
-                    this.setConfirmBtnVisible(cell_index, "hidden");
-                else this.setConfirmBtnVisible(cell_index, "visible");
+                inputValueChecker(e);
             });
         },
 
@@ -387,7 +372,6 @@ export default {
             this.addNewForm();
             document.getElementById(checkboxId).checked = !checkboxModel;
             document.getElementById(checkboxId).classList.replace("active","used");
-            //document.getElementById(checkboxId).disabled = true;
             document.getElementById(inputId).value = "";
             document.getElementById(inputId).disabled = true;
             document.getElementsByClassName("confirm-btn").forEach(item => {
@@ -406,11 +390,11 @@ export default {
             this.resetPieces();
         },
 
-        setValue(key, inputId, input, item, i) {
+        setValue(inputId, input, item, i) {
             this.inputValueController(inputId, i);
-            key = input[i].valueAsNumber;
-            if (!key) return;
-            else this.setDatas(key, item);
+            this.piece = input[i].valueAsNumber;
+            if (!this.piece) return;
+            else this.setDatas(this.piece, item);
             this.state = "checked_" + (i + 1);
         },
         // second step
@@ -419,22 +403,22 @@ export default {
             for (let i = 0; i < 6; i++) {
                 switch (input[i].id) {
                     case "first":
-                        this.setValue(this.piece_1, "first", input, item, i);
+                        this.setValue("first", input, item, i);
                         break;
                     case "second":
-                        this.setValue(this.piece_2, "second", input, item, i);
+                        this.setValue("second", input, item, i);
                         break;
                     case "third":
-                        this.setValue(this.piece_3, "third", input, item, i);
+                        this.setValue("third", input, item, i);
                         break;
                     case "fourth":
-                        this.setValue(this.piece_4, "fourth", input, item, i);
+                        this.setValue("fourth", input, item, i);
                         break;
                     case "fifth":
-                        this.setValue(this.piece_5, "fifth", input, item, i);
+                        this.setValue("fifth", input, item, i);
                         break;
                     case "sixth":
-                        this.setValue(this.piece_6, "sixth", input, item, i);
+                        this.setValue("sixth", input, item, i);
                         break;
                     default:
                         break;
