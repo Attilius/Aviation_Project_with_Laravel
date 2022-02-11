@@ -355,10 +355,6 @@ export default {
                 if (e.key === "Backspace") e.target.value = "";
             });
 
-            document.getElementById(inputId).addEventListener("paste", e => {
-                inputValueChecker(e);
-            });
-
             document.getElementById(inputId).addEventListener("change", e => {
                 inputValueChecker(e);
             });
