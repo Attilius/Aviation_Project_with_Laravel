@@ -9,17 +9,8 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
                     <ul class="menu">
-                        <li>
-                            <router-link to="/" v-currentpage>Home</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/about" v-currentpage>About</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/services" v-currentpage>Services</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/contact" v-currentpage>Contact</router-link>
+                        <li v-for="item in menuItems" :key="item.name">
+                            <router-link :to="item.path" v-currentpage>{{ item.name }}</router-link>
                         </li>
                         <b-nav-item-dropdown>
                             <template #button-content>
