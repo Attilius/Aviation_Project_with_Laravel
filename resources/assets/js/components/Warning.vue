@@ -23,7 +23,7 @@
             <p id="warning-message" v-if="!app.user">
                 You must have been logged in before use this service!
             </p>
-            <p v-else-if="wrong_data.state">
+            <p v-else-if="isWrongData">
                 The value could at least 1 or at most 10!
             </p>
             <p id="warning-message" v-else>
@@ -51,7 +51,7 @@
                 style="margin: 10px"
                 class="btn"
                 @click="inputReset"
-                v-else-if="wrong_data.state"
+                v-else-if="isWrongData"
             >
                 Ok
             </button>
@@ -65,7 +65,7 @@
 <script>
 export default {
     name: "Warning",
-    props: ["app", "wrong_data"],
+    props: ["app", "isWrongData"],
 
     methods: {
         onClick() {
