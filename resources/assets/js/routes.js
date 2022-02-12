@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import TravelGuide from './pages/TravelGuide';
+import London from './pages/cities/London';
 import NewYork from './pages/cities/NewYork';
 import Paris from './pages/cities/Paris';
 import PageNotFound from './pages/PageNotFound';
@@ -81,6 +82,11 @@ export default
             path: '/travel-guide',
             component: TravelGuide,
             name: 'TravelGuide'
+        },
+        {
+            path: '/travel-guide/london',
+            component: London,
+            name: 'London'
         },
         {
             path: '/travel-guide/new-york',
