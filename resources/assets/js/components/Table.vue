@@ -354,6 +354,14 @@ export default {
             document.getElementById(inputId).addEventListener("keydown", e => {
                 if (e.key === "Backspace") e.target.value = "";
             });
+
+            document.getElementById(inputId).addEventListener("change", e => {
+                inputValueChecker(e);
+            });
+            
+            document.getElementById(inputId).addEventListener("paste", e => {
+                inputValueChecker(e);
+            });
         },
 
         // third step
