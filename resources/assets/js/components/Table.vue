@@ -568,6 +568,14 @@ input {
     .piece-input {
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        color: white !important;
+        border-bottom: 1px solid #ced4da !important;
+    }
+
+    .piece-input::placeholder {
+        color: white !important;
+        text-align: center;
     }
 
     .focus {
@@ -587,6 +595,10 @@ input {
 
     #submit-btn {
         margin: 20px auto;
+    }
+
+    td {
+        text-align: center;
     }
 }
 </style>
