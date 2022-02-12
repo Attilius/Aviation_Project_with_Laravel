@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import TravelGuide from './pages/TravelGuide';
 import NewYork from './pages/cities/NewYork';
+import Paris from './pages/cities/Paris';
 import PageNotFound from './pages/PageNotFound';
 
 export default
@@ -85,6 +86,11 @@ export default
             path: '/travel-guide/new-york',
             component: NewYork,
             name: 'NewYork'
+        },
+        {
+            path: '/travel-guide/paris',
+            component: Paris,
+            name: 'Paris'
         },
         { 
             path: '*',
