@@ -178,12 +178,12 @@ export default {
 .wrapper {
     background: url("../../img/airport-bg.jpg");
     background-size: cover;
-    height: 200vh;
+    height: 250vh;
     width: 100%;
 }
 
 .skin {
-    height: 200vh;
+    height: 250vh;
     width: 100%;
     background: rgba(9, 55, 115, 0.8);
     display: flex;
@@ -191,14 +191,23 @@ export default {
     justify-content: space-around;
 }
 
+.main-content {
+    position: relative;
+    top: -280px;
+}
+
 @media (max-width: 770px) {
     .animated-header {
         display: none;
     }
 
+    .main-content {
+        top: -20px;
+    }
+
     .wrapper,
     .skin {
-        height: 500vh;
+        height: 350vh;
     }
 }
 </style>
