@@ -6,14 +6,21 @@
             <legend>Selected item(s)</legend>
             <ul id="list">
                 <li :id="item.state" v-for="item in form" :key="item.size">
-                    {{ item.size }} {{ item.price }} x {{ item.piece }} =>
-                    <strong>{{ item.amount }} €</strong>
-                    <button @click="onChangeSelectedData" class="btn edit">
-                        Edit
-                    </button>
-                    <button @click="onChangeSelectedData" class="btn delete">
-                        Delete
-                    </button>
+                    <div class="text-content">
+                        {{ item.size }} {{ item.price }} x {{ item.piece }} =>
+                        <strong>{{ item.amount }} €</strong>
+                    </div>
+                    <div class="btn-group">
+                        <button @click="onChangeSelectedData" class="btn edit">
+                            Edit
+                        </button>
+                        <button
+                            @click="onChangeSelectedData"
+                            class="btn delete"
+                        >
+                            Delete
+                        </button>
+                    </div>
                 </li>
             </ul>
             <h5 id="total">Total amount: {{ getTotalAmount() }} €</h5>
@@ -89,7 +96,7 @@ export default {
         onChangeSelectedData(e) {
             this.form.forEach((item, index) => {
                 if (
-                    e.target.parentElement.id === item.state &&
+                    e.target.parentElement.parentElement.id === item.state &&
                     e.target.innerText === "DELETE"
                 ) {
                     this.form.splice(index, 1);
@@ -101,13 +108,13 @@ export default {
                 }
 
                 if (
-                    e.target.parentElement.id === item.state &&
+                    e.target.parentElement.parentElement.id === item.state &&
                     e.target.innerText === "EDIT"
                 ) {
                     document.getElementById("update-form").style.display =
                         "flex";
                     this.onChangeUpdateState();
-                    this.updateId = e.target.parentElement.id;
+                    this.updateId = e.target.parentElement.parentElement.id;
                 }
             });
         },
@@ -207,5 +214,16 @@ li {
     color: rgb(9, 55, 115);
     padding: 10px;
     margin-bottom: 10px;
+}
+
+.text-content {
+    width: 60%;
+}
+
+.btn-group {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 </style>
