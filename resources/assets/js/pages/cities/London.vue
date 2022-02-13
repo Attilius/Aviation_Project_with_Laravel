@@ -326,6 +326,9 @@ export default {
                                 data.attractions.length +
                                 data.hotels.length +
                                 data.restaurants.length;
+                            
+                            (this.array_length <= 9) ? document.getElementById("show-more").style.visibility = "hidden" :
+                            document.getElementById("show-more").style.visibility = "visible";
 
                             for (let i = 0; i < data.attractions.length; i++) {
                                 this.addresses_all.push(data.attractions[i]);
@@ -360,6 +363,9 @@ export default {
                             this.addresses_all = data;
                             this.array_length = data.length;
                             this.addresses_less = [];
+
+                            (this.array_length <= 9) ? document.getElementById("show-more").style.visibility = "hidden" :
+                            document.getElementById("show-more").style.visibility = "visible";
 
                             for (let l = 0; l < data.length && l < 9; l++) {
                                 this.addresses_less.push(data[l]);
