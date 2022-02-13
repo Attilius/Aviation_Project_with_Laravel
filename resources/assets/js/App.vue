@@ -129,7 +129,7 @@ export default {
                     area: "Europe",
                     location: "Zurich"
                 }
-            ],
+            ]
         };
     },
 
@@ -143,13 +143,13 @@ export default {
                 if (location.hash.split("/")[2] === card.id) {
                     this.setCurrent_time(card.area, card.location);
                 }
-            }); 
+            });
         }
     },
 
     created() {
         if (this.area && this.location) {
-           this.setCurrent_time(this.area, this.location); 
+            this.setCurrent_time(this.area, this.location);
         }
     },
 
@@ -171,7 +171,10 @@ export default {
         udateAreaAndLocation(udateAreaAndLocation) {
             this.area = udateAreaAndLocation[0];
             this.location = udateAreaAndLocation[1];
-            this.setCurrent_time(udateAreaAndLocation[0], udateAreaAndLocation[1]);
+            this.setCurrent_time(
+                udateAreaAndLocation[0],
+                udateAreaAndLocation[1]
+            );
         },
 
         updatePageContent(updatePageContent) {
@@ -184,7 +187,10 @@ export default {
             fetch(`/api/?area=${area}&location=${location}`)
                 .then(response => response.json())
                 .then(data => {
-                    const time = data.datetime.split("T")[1].split(".")[0].split(":");
+                    const time = data.datetime
+                        .split("T")[1]
+                        .split(".")[0]
+                        .split(":");
                     this.current_time = time[0] + ":" + time[1];
                 });
         },
