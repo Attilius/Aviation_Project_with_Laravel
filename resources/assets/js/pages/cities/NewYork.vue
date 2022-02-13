@@ -317,7 +317,7 @@ export default {
         fetchData(addressesItem) {
             setTimeout(() => {
                 if (addressesItem === "see all") {
-                    fetch(`/api/new-york?service=all&cityName=${this.cityName}`)
+                    fetch(`/api/${this.cityName.toLowerCase()}?service=all&cityName=${this.cityName}`)
                         .then(response => response.json())
                         .then(data => {
                             this.addresses_all = [];
@@ -326,6 +326,9 @@ export default {
                                 data.attractions.length +
                                 data.hotels.length +
                                 data.restaurants.length;
+
+                            (this.array_length <= 9) ? document.getElementById("show-more").style.visibility = "hidden" :
+                            document.getElementById("show-more").style.visibility = "visible";
 
                             for (let i = 0; i < data.attractions.length; i++) {
                                 this.addresses_all.push(data.attractions[i]);
@@ -353,7 +356,7 @@ export default {
                         });
                 } else {
                     fetch(
-                        `/api/new-york?service=${addressesItem}&cityName=${this.cityName}`
+                        `/api/${this.cityName.toLowerCase()}?service=${addressesItem}&cityName=${this.cityName}`
                     )
                         .then(response => response.json())
                         .then(data => {
@@ -361,7 +364,10 @@ export default {
                             this.array_length = data.length;
                             this.addresses_less = [];
 
-                            for (let l = 0; l < 9; l++) {
+                            (data.length <= 9) ? document.getElementById("show-more").style.visibility = "hidden" :
+                            document.getElementById("show-more").style.visibility = "visible";
+
+                            for (let l = 0; l < data.length && l < 9; l++) {
                                 this.addresses_less.push(data[l]);
                             }
                         });
