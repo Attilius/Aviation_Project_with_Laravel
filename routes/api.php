@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+$cities = ["/london", "/new-york", "/paris"];
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -27,13 +27,15 @@ Route::get('/private-jet-rent', function() {
     return $response -> json();
 });
 
-Route::get('/new-york', function() {
+foreach ($cities as $value) {
+    Route::get($value, function() {
     $service = request('service');
     $cityName = request('cityName');
 
     $response = Zttp::get("https://travelguide-api.herokuapp.com/addresses/$service/$cityName");
     return $response -> json();
 });
+}
 
 Route::get('/', function() {
     $area = request('area');
