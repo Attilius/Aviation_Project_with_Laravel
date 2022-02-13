@@ -179,7 +179,7 @@ export default {
                 name: "London",
                 currency: "GBP",
                 language: "English",
-                travelling_time: "10h20",
+                travelling_time: "1h50",
                 city_code: "LON",
                 adjective: "City of the empire state",
                 quotes:
@@ -191,7 +191,7 @@ export default {
                 article_continue:
                     "influencing commerce, entertainment, research, technology, education, politics, tourism, dining, art, fashion, and sports, and is the most photographed city in the world. Home to the headquarters of the United Nations, New York is an important center for international diplomacy, and has sometimes been called the capital of the world. Situated on one of the world's largest natural harbors, New York City is composed of five boroughs, each of which is coextensive with a respective county of the State of New York. The five boroughs—Brooklyn (Kings County), Queens (Queens County), Manhattan (New York County), the Bronx (Bronx County), and Staten Island (Richmond County)—were created when local governments were consolidated into a single municipal entity in 1898. The city and its metropolitan area constitute the premier gateway for legal immigration to the United States. New York is waiting for you to discover...",
                 map:
-                    "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d193614.05059428743!2d-74.0614249!3d40.6911623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2shu!4v1639769543137!5m2!1sen!2shu"
+                    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281062214!2d-0.24168183442752886!3d51.52877184100476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2zTG9uZG9uLCBFZ3llc8O8bHQgS2lyw6FseXPDoWc!5e0!3m2!1shu!2shu!4v1644763975810!5m2!1shu!2shu"
             },
             cityName: "London",
             addresses_all: [],
