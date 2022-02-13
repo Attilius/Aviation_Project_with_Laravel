@@ -317,7 +317,7 @@ export default {
         fetchData(addressesItem) {
             setTimeout(() => {
                 if (addressesItem === "see all") {
-                    fetch(`/api/paris?service=all&cityName=${this.cityName}`)
+                    fetch(`/api/${this.cityName.toLowerCase()}?service=all&cityName=${this.cityName}`)
                         .then(response => response.json())
                         .then(data => {
                             this.addresses_all = [];
@@ -353,7 +353,7 @@ export default {
                         });
                 } else {
                     fetch(
-                        `/api/paris?service=${addressesItem}&cityName=${this.cityName}`
+                        `/api/${this.cityName.toLowerCase()}?service=${addressesItem}&cityName=${this.cityName}`
                     )
                         .then(response => response.json())
                         .then(data => {
@@ -361,7 +361,7 @@ export default {
                             this.array_length = data.length;
                             this.addresses_less = [];
 
-                            for (let l = 0; l < 9; l++) {
+                            for (let l = 0; l < data.length && l < 9; l++) {
                                 this.addresses_less.push(data[l]);
                             }
                         });
