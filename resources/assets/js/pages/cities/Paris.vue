@@ -171,15 +171,15 @@ export default {
             isClickShadow: false,
 
             city: {
-                header_video: "/video/New_York.mp4",
-                header_video_poster: "/../images/NewYork.jpg",
+                header_video: "/video/Paris.mp4",
+                header_video_poster: "/../images/Paris_.jpg",
                 video: "/video/New_York2.mp4",
-                poster: "/../images/New-York-Statue-of-Liberty.jpg",
+                poster: "/../images/Paris-Tour-Eiffel.jpg",
                 country: "France",
                 name: "Paris",
                 currency: "Euro",
                 language: "French",
-                travelling_time: "2h",
+                travelling_time: "1h33",
                 city_code: "PAR",
                 adjective: "City of the Love",
                 quotes:
