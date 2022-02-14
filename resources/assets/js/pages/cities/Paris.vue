@@ -183,7 +183,7 @@ export default {
                 city_code: "PAR",
                 adjective: "City of the Love",
                 quotes:
-                    "“I love New York, even though it isn't mine, the way something has to be, a tree or a street or a house, something, anyway, that belongs to me because I belong to it.”",
+                    "“If you are lucky enough to have lived in Paris as a young man, then wherever you go for the rest of your life, it stays with you, for Paris is a moveable feast.”",
                 author:
                     "―Truman Capote, writer “Breakfast at Tiffany's” (1924-84)",
                 article:
