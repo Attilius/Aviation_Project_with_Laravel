@@ -185,7 +185,7 @@ export default {
                 quotes:
                     "“If you are lucky enough to have lived in Paris as a young man, then wherever you go for the rest of your life, it stays with you, for Paris is a moveable feast.”",
                 author:
-                    "―Truman Capote, writer “Breakfast at Tiffany's” (1924-84)",
+                    "―Ernest Hemingway",
                 article:
                     "New York City is also the most densely populated major city in the United States. Located at the southern tip of the State of New York, the city is the center of the New York metropolitan area, the largest metropolitan area in the world by urban area. With over 20 million people in its metropolitan statistical area and 23,582,649 in its combined statistical area as of 2020, New York is one of the world's most populous megacities. New York City has been described as the cultural, financial, and media capital of the world, significantly",
                 article_continue:
