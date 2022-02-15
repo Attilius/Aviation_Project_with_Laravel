@@ -175,7 +175,7 @@ export default {
                 header_video_poster: "/../images/NewYork.jpg",
                 video: "/video/New_York2.mp4",
                 poster: "/../images/New-York-Statue-of-Liberty.jpg",
-                country: "United States Of America",
+                country: "Canada",
                 name: "Montreal",
                 currency: "USA Dollar",
                 language: "English",
