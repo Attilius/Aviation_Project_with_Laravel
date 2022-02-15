@@ -179,7 +179,7 @@ export default {
                 name: "Montreal",
                 currency: "USA Dollar",
                 language: "English",
-                travelling_time: "10h20",
+                travelling_time: "8h18",
                 city_code: "MON",
                 adjective: "City of the empire state",
                 quotes:
