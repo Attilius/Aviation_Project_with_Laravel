@@ -173,7 +173,7 @@ export default {
             city: {
                 header_video: "/video/Paris.mp4",
                 header_video_poster: "/../images/Paris_.jpg",
-                video: "/video/New_York2.mp4",
+                video: "/video/Paris2.mp4",
                 poster: "/../images/Paris-Tour-Eiffel.jpg",
                 country: "France",
                 name: "Paris",
