@@ -185,7 +185,7 @@ export default {
                 quotes:
                     "“London opens to you like a novel itself… It is divided into chapters, the chapters into scenes, the scenes into sentences; it opens to you like a series of rooms, doors and passages. Mayfair to Piccadilly to Soho to the Strand.”",
                 author:
-                    "―Truman Capote, writer “Breakfast at Tiffany's” (1924-84)",
+                    "―Anna Quindlen",
                 article:
                     "New York City is also the most densely populated major city in the United States. Located at the southern tip of the State of New York, the city is the center of the New York metropolitan area, the largest metropolitan area in the world by urban area. With over 20 million people in its metropolitan statistical area and 23,582,649 in its combined statistical area as of 2020, New York is one of the world's most populous megacities. New York City has been described as the cultural, financial, and media capital of the world, significantly",
                 article_continue:
