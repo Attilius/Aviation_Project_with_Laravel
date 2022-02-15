@@ -183,7 +183,7 @@ export default {
                 city_code: "LON",
                 adjective: "City of the empire state",
                 quotes:
-                    "“I love New York, even though it isn't mine, the way something has to be, a tree or a street or a house, something, anyway, that belongs to me because I belong to it.”",
+                    "“London opens to you like a novel itself… It is divided into chapters, the chapters into scenes, the scenes into sentences; it opens to you like a series of rooms, doors and passages. Mayfair to Piccadilly to Soho to the Strand.”",
                 author:
                     "―Truman Capote, writer “Breakfast at Tiffany's” (1924-84)",
                 article:
