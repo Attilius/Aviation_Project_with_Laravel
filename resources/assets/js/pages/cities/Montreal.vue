@@ -176,7 +176,7 @@ export default {
                 video: "/video/New_York2.mp4",
                 poster: "/../images/New-York-Statue-of-Liberty.jpg",
                 country: "United States Of America",
-                name: "New York",
+                name: "Montreal",
                 currency: "USA Dollar",
                 language: "English",
                 travelling_time: "10h20",
