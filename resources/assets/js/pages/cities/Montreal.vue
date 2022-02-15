@@ -180,7 +180,7 @@ export default {
                 currency: "USA Dollar",
                 language: "English",
                 travelling_time: "10h20",
-                city_code: "NYC",
+                city_code: "MON",
                 adjective: "City of the empire state",
                 quotes:
                     "“I love New York, even though it isn't mine, the way something has to be, a tree or a street or a house, something, anyway, that belongs to me because I belong to it.”",
