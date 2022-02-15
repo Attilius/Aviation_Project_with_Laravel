@@ -177,7 +177,7 @@ export default {
                 poster: "/../images/New-York-Statue-of-Liberty.jpg",
                 country: "Canada",
                 name: "Montreal",
-                currency: "USA Dollar",
+                currency: "Canadian Dollar",
                 language: "English",
                 travelling_time: "8h18",
                 city_code: "MON",
