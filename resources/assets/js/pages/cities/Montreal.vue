@@ -183,7 +183,7 @@ export default {
                 city_code: "MON",
                 adjective: "City of the empire state",
                 quotes:
-                    "“I love New York, even though it isn't mine, the way something has to be, a tree or a street or a house, something, anyway, that belongs to me because I belong to it.”",
+                    "“This is my home territory. I still find it the most colorful and exciting city on the continent. I love Montreal. I love the clash of the two cultures, I love the scenery - I love every blessed centimeter of Montreal, if that doesn't sound too extravagant. It's a city I'm very attached to.”",
                 author:
                     "―Truman Capote, writer “Breakfast at Tiffany's” (1924-84)",
                 article:
