@@ -181,7 +181,7 @@ export default {
                 language: "English",
                 travelling_time: "8h18",
                 city_code: "MON",
-                adjective: "City of the empire state",
+                adjective: "City of the Mont-Royal",
                 quotes:
                     "“This is my home territory. I still find it the most colorful and exciting city on the continent. I love Montreal. I love the clash of the two cultures, I love the scenery - I love every blessed centimeter of Montreal, if that doesn't sound too extravagant. It's a city I'm very attached to.”",
                 author:
