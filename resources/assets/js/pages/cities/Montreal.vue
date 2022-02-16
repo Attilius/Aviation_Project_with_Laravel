@@ -193,14 +193,14 @@ export default {
                 map:
                     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d193614.05059428743!2d-74.0614249!3d40.6911623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2shu!4v1639769543137!5m2!1sen!2shu"
             },
-            cityName: "New-York",
+            cityName: "Montreal",
             addresses_all: [],
             addresses_less: [],
             collection_of_favorites: [],
             addressesPageContent: {},
             show_more: true,
             area: "America",
-            location: "New_York",
+            location: "Montreal",
             openAddressPage: false
         };
     },
