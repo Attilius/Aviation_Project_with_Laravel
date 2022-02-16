@@ -185,7 +185,7 @@ export default {
                 quotes:
                     "“This is my home territory. I still find it the most colorful and exciting city on the continent. I love Montreal. I love the clash of the two cultures, I love the scenery - I love every blessed centimeter of Montreal, if that doesn't sound too extravagant. It's a city I'm very attached to.”",
                 author:
-                    "―Truman Capote, writer “Breakfast at Tiffany's” (1924-84)",
+                    "―Irving Layton",
                 article:
                     "New York City is also the most densely populated major city in the United States. Located at the southern tip of the State of New York, the city is the center of the New York metropolitan area, the largest metropolitan area in the world by urban area. With over 20 million people in its metropolitan statistical area and 23,582,649 in its combined statistical area as of 2020, New York is one of the world's most populous megacities. New York City has been described as the cultural, financial, and media capital of the world, significantly",
                 article_continue:
