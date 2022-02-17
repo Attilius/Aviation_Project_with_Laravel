@@ -87,7 +87,7 @@ export default {
                     city: "montreal",
                     price: "535 €*",
                     area: "America",
-                    location: "Montreal"
+                    location: "Toronto"
                 },
                 {
                     id: "munich",
@@ -148,9 +148,7 @@ export default {
     },
 
     created() {
-        if (this.area && this.location) {
-            this.setCurrent_time(this.area, this.location);
-        }
+        this.setCurrent_time(this.area, this.location);
     },
 
     methods: {
@@ -171,10 +169,6 @@ export default {
         udateAreaAndLocation(udateAreaAndLocation) {
             this.area = udateAreaAndLocation[0];
             this.location = udateAreaAndLocation[1];
-            this.setCurrent_time(
-                udateAreaAndLocation[0],
-                udateAreaAndLocation[1]
-            );
         },
 
         updatePageContent(updatePageContent) {
@@ -187,11 +181,15 @@ export default {
             fetch(`/api/?area=${area}&location=${location}`)
                 .then(response => response.json())
                 .then(data => {
-                    const time = data.datetime
-                        .split("T")[1]
-                        .split(".")[0]
-                        .split(":");
-                    this.current_time = time[0] + ":" + time[1];
+                    try {
+                        const time = data.datetime
+                            .split("T")[1]
+                            .split(".")[0]
+                            .split(":");
+                        this.current_time = time[0] + ":" + time[1];
+                    } catch (error) {
+                        console.log(error);
+                    }
                 });
         },
 
