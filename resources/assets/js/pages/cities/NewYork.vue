@@ -1,16 +1,16 @@
 <template>
     <div>
         <div v-if="openAddressPage">
-            <AddressesPage 
+            <AddressesPage
                 v-if="openAddressPage"
                 :addressesPageContent="addressesPageContent"
                 @changeOpenAddressPageState="updateOpenAddressPageState($event)"
             />
         </div>
-        
+
         <div id="wrapper" class="wrapper" v-else>
             <div id="shadow"></div>
-            
+
             <VideoPlayer
                 :isPlay="isPlay"
                 :city="city"
@@ -77,10 +77,11 @@
                                         >favorite_border</i
                                     >
                                 </div>
-                                <span 
+                                <span
                                     class="name"
                                     @click="showAddressesContent(address.id)"
-                                >{{ address.name }}</span>
+                                    >{{ address.name }}</span
+                                >
                                 <span class="hover-label"
                                     >Click add or remove this item for your
                                     favorites</span
@@ -116,10 +117,11 @@
                                         >favorite_border</i
                                     >
                                 </div>
-                                <span 
-                                    class="name" 
+                                <span
+                                    class="name"
                                     @click="showAddressesContent(address.id)"
-                                >{{ address.name }}</span>
+                                    >{{ address.name }}</span
+                                >
                                 <span class="hover-label"
                                     >Click add or remove this item for your
                                     favorites</span
@@ -134,8 +136,12 @@
                 </div>
             </div>
             <footer>
-                <router-link class="footer-menu" to="/">Lorem Airlines</router-link>
-                <router-link class="footer-menu" to="/travel-guide">Travel Guide</router-link>
+                <router-link class="footer-menu" to="/"
+                    >Lorem Airlines</router-link
+                >
+                <router-link class="footer-menu" to="/travel-guide"
+                    >Travel Guide</router-link
+                >
             </footer>
         </div>
     </div>
@@ -204,7 +210,7 @@ export default {
             openAddressPage: false
         };
     },
-    
+
     watch: {
         openAddressPage: function(newValue, oldValue) {
             if (newValue) return;
@@ -269,12 +275,17 @@ export default {
                 favorite.addEventListener("click", () => {
                     if (favorite.textContent !== "favorite") {
                         favorite.textContent = "favorite";
-                        this.collection_of_favorites.push(this.cityName + '_' + names[index].textContent);
-                        this.collection_of_favorites = [...new Set(this.collection_of_favorites)]; //makes array with unique content
-                    }
-                    else {
+                        this.collection_of_favorites.push(
+                            this.cityName + "_" + names[index].textContent
+                        );
+                        this.collection_of_favorites = [
+                            ...new Set(this.collection_of_favorites)
+                        ]; //makes array with unique content
+                    } else {
                         favorite.textContent = "favorite_border";
-                        const removeIndex = this.collection_of_favorites.indexOf(this.cityName + '_' + names[index].textContent);
+                        const removeIndex = this.collection_of_favorites.indexOf(
+                            this.cityName + "_" + names[index].textContent
+                        );
                         this.collection_of_favorites.splice(removeIndex, 1);
                     }
                 });
@@ -317,58 +328,98 @@ export default {
         fetchData(addressesItem) {
             setTimeout(() => {
                 if (addressesItem === "see all") {
-                    fetch(`/api/${this.cityName.toLowerCase()}?service=all&cityName=${this.cityName}`)
+                    fetch(
+                        `/api/${this.cityName.toLowerCase()}?service=all&cityName=${
+                            this.cityName
+                        }`
+                    )
                         .then(response => response.json())
                         .then(data => {
-                            this.addresses_all = [];
-                            this.addresses_less = [];
-                            this.array_length =
-                                data.attractions.length +
-                                data.hotels.length +
-                                data.restaurants.length;
+                            try {
+                                this.addresses_all = [];
+                                this.addresses_less = [];
+                                this.array_length =
+                                    data.attractions.length +
+                                    data.hotels.length +
+                                    data.restaurants.length;
 
-                            (this.array_length <= 9) ? document.getElementById("show-more").style.visibility = "hidden" :
-                            document.getElementById("show-more").style.visibility = "visible";
+                                this.array_length <= 9
+                                    ? (document.getElementById(
+                                          "show-more"
+                                      ).style.visibility = "hidden")
+                                    : (document.getElementById(
+                                          "show-more"
+                                      ).style.visibility = "visible");
 
-                            for (let i = 0; i < data.attractions.length; i++) {
-                                this.addresses_all.push(data.attractions[i]);
-                            }
+                                for (
+                                    let i = 0;
+                                    i < data.attractions.length;
+                                    i++
+                                ) {
+                                    this.addresses_all.push(
+                                        data.attractions[i]
+                                    );
+                                }
 
-                            for (let l = 0; l < 3; l++) {
-                                this.addresses_less.push(data.attractions[l]);
-                            }
+                                for (let l = 0; l < 3; l++) {
+                                    this.addresses_less.push(
+                                        data.attractions[l]
+                                    );
+                                }
 
-                            for (let i = 0; i < data.hotels.length; i++) {
-                                this.addresses_all.push(data.hotels[i]);
-                            }
+                                for (let i = 0; i < data.hotels.length; i++) {
+                                    this.addresses_all.push(data.hotels[i]);
+                                }
 
-                            for (let l = 0; l < 3; l++) {
-                                this.addresses_less.push(data.hotels[l]);
-                            }
+                                for (let l = 0; l < 3; l++) {
+                                    this.addresses_less.push(data.hotels[l]);
+                                }
 
-                            for (let i = 0; i < data.restaurants.length; i++) {
-                                this.addresses_all.push(data.restaurants[i]);
-                            }
+                                for (
+                                    let i = 0;
+                                    i < data.restaurants.length;
+                                    i++
+                                ) {
+                                    this.addresses_all.push(
+                                        data.restaurants[i]
+                                    );
+                                }
 
-                            for (let l = 0; l < 3; l++) {
-                                this.addresses_less.push(data.restaurants[l]);
+                                for (let l = 0; l < 3; l++) {
+                                    this.addresses_less.push(
+                                        data.restaurants[l]
+                                    );
+                                }
+                            } catch (error) {
+                                console.log(error);
                             }
                         });
                 } else {
                     fetch(
-                        `/api/${this.cityName.toLowerCase()}?service=${addressesItem}&cityName=${this.cityName}`
+                        `/api/${this.cityName.toLowerCase()}?service=${addressesItem}&cityName=${
+                            this.cityName
+                        }`
                     )
                         .then(response => response.json())
                         .then(data => {
-                            this.addresses_all = data;
-                            this.array_length = data.length;
-                            this.addresses_less = [];
+                            try {
+                                this.addresses_all = data;
+                                this.array_length = data.length;
+                                this.addresses_less = [];
 
-                            (data.length <= 9) ? document.getElementById("show-more").style.visibility = "hidden" :
-                            document.getElementById("show-more").style.visibility = "visible";
+                                data.length <= 9
+                                    ? (document.getElementById(
+                                          "show-more"
+                                      ).style.visibility = "hidden")
+                                    : (document.getElementById(
+                                          "show-more"
+                                      ).style.visibility = "visible");
 
-                            for (let l = 0; l < data.length && l < 9; l++) {
-                                this.addresses_less.push(data[l]);
+                                for (let l = 0; l < data.length && l < 9; l++) {
+                                    this.addresses_less.push(data[l]);
+                                }
+                            } catch (error) {
+                                console.log(error);
                             }
                         });
                 }
@@ -620,5 +671,4 @@ footer {
     border: none !important;
     box-shadow: none !important;
 }
-
 </style>
