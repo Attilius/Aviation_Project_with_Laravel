@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/private-jet-rent', function() {
+Route::get('/private-jet-rent', function () {
     $departure_location = request('departure_location');
     $destination = request('destination');
 
@@ -28,16 +28,16 @@ Route::get('/private-jet-rent', function() {
 });
 
 foreach ($cities as $value) {
-    Route::get($value, function() {
-    $service = request('service');
-    $cityName = request('cityName');
+    Route::get($value, function () {
+        $service = request('service');
+        $cityName = request('cityName');
 
-    $response = Zttp::get("https://travelguide-api.herokuapp.com/addresses/$service/$cityName");
-    return $response -> json();
-});
+        $response = Zttp::get("https://travelguide-api.herokuapp.com/addresses/$service/$cityName");
+        return $response -> json();
+    });
 }
 
-Route::get('/', function() {
+Route::get('/', function () {
     $area = request('area');
     $location = request('location');
 
