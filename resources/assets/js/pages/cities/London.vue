@@ -174,7 +174,7 @@ export default {
                 header_video: "/video/New_York.mp4",
                 header_video_poster: "/../images/NewYork.jpg",
                 video: "/video/New_York2.mp4",
-                poster: "/../images/New-York-Statue-of-Liberty.jpg",
+                poster: "/../images/London-BigBen.jpg",
                 country: "United Kingdom",
                 name: "London",
                 currency: "GBP",
