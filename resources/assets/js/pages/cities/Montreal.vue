@@ -178,7 +178,7 @@ export default {
                 country: "Canada",
                 name: "Montreal",
                 currency: "Canadian Dollar",
-                language: "English",
+                language: "English/French",
                 travelling_time: "8h18",
                 city_code: "MON",
                 adjective: "City of the Mont-Royal",
@@ -187,9 +187,9 @@ export default {
                 author:
                     "―Irving Layton",
                 article:
-                    "New York City is also the most densely populated major city in the United States. Located at the southern tip of the State of New York, the city is the center of the New York metropolitan area, the largest metropolitan area in the world by urban area. With over 20 million people in its metropolitan statistical area and 23,582,649 in its combined statistical area as of 2020, New York is one of the world's most populous megacities. New York City has been described as the cultural, financial, and media capital of the world, significantly",
+                    "Montreal is the second-most populous city in Canada and most populous city in the Canadian province of Quebec. Founded in 1642 as Ville-Marie, or 'City of Mary', it is named after Mount Royal, the triple-peaked hill in the heart of the city. The city is centred on the Island of Montreal, which obtained its name from the same origin as the city, and a few much smaller peripheral islands, the largest of which is Île Bizard. The city is situated 196 km (122 mi) east of",
                 article_continue:
-                    "influencing commerce, entertainment, research, technology, education, politics, tourism, dining, art, fashion, and sports, and is the most photographed city in the world. Home to the headquarters of the United Nations, New York is an important center for international diplomacy, and has sometimes been called the capital of the world. Situated on one of the world's largest natural harbors, New York City is composed of five boroughs, each of which is coextensive with a respective county of the State of New York. The five boroughs—Brooklyn (Kings County), Queens (Queens County), Manhattan (New York County), the Bronx (Bronx County), and Staten Island (Richmond County)—were created when local governments were consolidated into a single municipal entity in 1898. The city and its metropolitan area constitute the premier gateway for legal immigration to the United States. New York is waiting for you to discover...",
+                    "the national capital Ottawa, and 258 km (160 mi) southwest of the provincial capital, Quebec City. Historically the commercial capital of Canada, Montreal was surpassed in population and in economic strength by Toronto in the 1970s.[30] It remains an important centre of commerce, aerospace, transport, finance, pharmaceuticals, technology, design, education, art, culture, tourism, food, fashion, video game development, film, and world affairs. Montreal has the second-highest number of consulates in North America, serves as the location of the headquarters of the International Civil Aviation Organization, and was named a UNESCO City of Design in 2006. Montreal has hosted multiple international conferences and events, including the 1967 International and Universal Exposition and the 1976 Summer Olympics. It is the only Canadian city to have held the Summer Olympics. Montreal is waiting for you to discover...",
                 map:
                     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d357585.076521621!2d-74.01048414282262!3d45.557699585064015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a541c64b70d%3A0x654e3138211fefef!2zTW9udHLDqWFsLCBRdcOpYmVjLCBLYW5hZGE!5e0!3m2!1shu!2shu!4v1645034165359!5m2!1shu!2shu"
             },
