@@ -200,7 +200,7 @@ export default {
             addressesPageContent: {},
             show_more: true,
             area: "America",
-            location: "Montreal",
+            location: "Toronto",
             openAddressPage: false
         };
     },
