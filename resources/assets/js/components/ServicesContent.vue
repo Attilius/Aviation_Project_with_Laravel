@@ -201,7 +201,13 @@
 <script>
 export default {
     name: "ServicesContent",
-    props: ["app"]
+    props: ["app"],
+
+    data() {
+        return {
+            service_cards: {}
+        }
+    }
 };
 </script>
 
