@@ -141,14 +141,22 @@ export default {
         if (location.reload) {
             this.cards.forEach(card => {
                 if (location.hash.split("/")[2] === card.id) {
-                    this.setCurrent_time(card.area, card.location);
+                    try {
+                       this.setCurrent_time(card.area, card.location); 
+                    } catch (error) {
+                        console.log(error)
+                    }
                 }
             });
         }
     },
 
     created() {
-        this.setCurrent_time(this.area, this.location);
+        try {
+            this.setCurrent_time(this.area, this.location);
+        } catch (error) {
+            console.log(error)
+        }
     },
 
     methods: {
@@ -178,19 +186,23 @@ export default {
         },
 
         setCurrent_time(area, location) {
-            fetch(`/api/?area=${area}&location=${location}`)
-                .then(response => response.json())
-                .then(data => {
-                    try {
-                        const time = data.datetime
-                            .split("T")[1]
-                            .split(".")[0]
-                            .split(":");
-                        this.current_time = time[0] + ":" + time[1];
-                    } catch (error) {
-                        console.log(error);
-                    }
-                });
+            try {
+                fetch(`/api/?area=${area}&location=${location}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        try {
+                            const time = data.datetime
+                                .split("T")[1]
+                                .split(".")[0]
+                                .split(":");
+                            this.current_time = time[0] + ":" + time[1];
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    });
+            } catch (error) {
+                console.log(error);
+            }
         },
 
         setCurrent_year() {
