@@ -185,7 +185,7 @@ export default {
             }, 600);
         },
 
-        setCurrent_time(area, location) {
+        /*setCurrent_time(area, location) {
             try {
                 fetch(`/api/?area=${area}&location=${location}`)
                     .then(response => response.json())
@@ -203,7 +203,7 @@ export default {
             } catch (error) {
                 console.log(error);
             }
-        },
+        },*/
 
         setCurrent_year() {
             const today = new Date();
