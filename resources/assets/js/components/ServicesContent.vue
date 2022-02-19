@@ -205,7 +205,7 @@ export default {
 
     data() {
         return {
-            service_cards: {}
+            service_cards: []
         }
     }
 };
