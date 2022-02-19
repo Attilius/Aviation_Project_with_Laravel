@@ -207,46 +207,46 @@ export default {
         return {
             service_cards: [
                 {
-                    img: "",
-                    alt: "",
-                    icon: [],
-                    title: "",
-                    description: ""
+                    img: "images/travel-insurance.jpg",
+                    alt: "travel-insurance",
+                    icon: ['fas', 'passport'],
+                    title: "Travel insurance",
+                    description: "The safety of our passengers is important to us."
                 },
                 {
-                    img: "",
-                    alt: "",
-                    icon: [],
-                    title: "",
-                    description: ""
+                    img: "images/luggage-insurance.jpg",
+                    alt: "luggage-insurance",
+                    icon: ['fas', 'suitcase-rolling'],
+                    title: "Luggage insurance",
+                    description: "We provide separate insurance for your luggage."
                 },
                 {
-                    img: "",
-                    alt: "",
-                    icon: [],
-                    title: "",
-                    description: ""
+                    img: "images/premium-confort.png",
+                    alt: "premium-confort",
+                    icon: ['fas', 'mug-hot'],
+                    title: "Premium comfort",
+                    description: "If you want extra comfort on a longer journey that crosses continents."
                 },
                 {
-                    img: "",
-                    alt: "",
-                    icon: [],
-                    title: "",
-                    description: ""
+                    img: "images/private-jet.jpg",
+                    alt: "private-jet",
+                    icon: ['fab', 'avianex'],
+                    title: "Private jet rent",
+                    description: "Our company offers you the possibility to rent a private jet."
                 },
                 {
-                    img: "",
-                    alt: "",
-                    icon: [],
-                    title: "",
-                    description: ""
+                    img: "images/plane-group.jpg",
+                    alt: "plane-group",
+                    icon: ['fas', 'users'],
+                    title: "Group discount",
+                    description: "Share the experience with your friends. We offer a special discount for groups."
                 },
                 {
-                    img: "",
-                    alt: "",
-                    icon: [],
-                    title: "",
-                    description: ""
+                    img: "images/travel-cancellation.jpg",
+                    alt: "travel-cancellation",
+                    icon: ['fas', 'ban'],
+                    title: "Booking cancellation",
+                    description: "In this case, you can cancel your booking at any time before departure."
                 },
             ]
         }
