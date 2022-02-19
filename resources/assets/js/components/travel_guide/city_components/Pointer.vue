@@ -13,14 +13,17 @@ export default {
 
     methods: {
         goDown() {
-            window.scroll({
-                top: 700,
-                left: 0,
-                behavior: "smooth"
-            });
+            let speed = 2;
+            let interval = speed * 3;
+            let id = setInterval(function() {
+                window.scrollBy(0, 2);
+                if (window.scrollY == 700) {
+                    clearInterval(id);
+                }
+            }, interval);
         }
     }
-}
+};
 </script>
 
 <style scoped>
