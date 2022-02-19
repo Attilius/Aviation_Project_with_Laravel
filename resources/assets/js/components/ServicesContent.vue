@@ -205,7 +205,50 @@ export default {
 
     data() {
         return {
-            service_cards: []
+            service_cards: [
+                {
+                    img: "",
+                    alt: "",
+                    icon: [],
+                    title: "",
+                    description: ""
+                },
+                {
+                    img: "",
+                    alt: "",
+                    icon: [],
+                    title: "",
+                    description: ""
+                },
+                {
+                    img: "",
+                    alt: "",
+                    icon: [],
+                    title: "",
+                    description: ""
+                },
+                {
+                    img: "",
+                    alt: "",
+                    icon: [],
+                    title: "",
+                    description: ""
+                },
+                {
+                    img: "",
+                    alt: "",
+                    icon: [],
+                    title: "",
+                    description: ""
+                },
+                {
+                    img: "",
+                    alt: "",
+                    icon: [],
+                    title: "",
+                    description: ""
+                },
+            ]
         }
     }
 };
