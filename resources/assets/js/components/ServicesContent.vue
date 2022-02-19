@@ -11,11 +11,11 @@
                 ></b-img>
             </div>
             <div class="services-content">
-                <div class="service">
+                <div class="service" v-for=" card in service_cards" :key="card.title">
                     <div class="container-1">
                         <b-img
                             class="service-img"
-                            :src="'images/travel-insurance.jpg'"
+                            :src="card.img"
                             fluid
                             alt="Services"
                         ></b-img>
@@ -24,164 +24,14 @@
                                 <div class="icon-box">
                                     <font-awesome-icon
                                         class="icon"
-                                        :icon="['fas', 'passport']"
+                                        :icon="card.icon"
                                     />
                                 </div>
-                                <h4 class="title">Travel insurance</h4>
+                                <h4 class="title">{{card.title}}</h4>
                             </div>
                             <div class="hover-content">
-                                <p>
-                                    The safety of our passengers is important to
-                                    us.
-                                </p>
+                                <p>{{card.description}}</p>
                                 <router-link class="more" to="/services/travel-insurance">read more ></router-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service">
-                    <div class="container-1">
-                        <b-img
-                            class="service-img"
-                            :src="'images/luggage-insurance.jpg'"
-                            fluid
-                            alt="Services"
-                        ></b-img>
-                        <div class="overlay">
-                            <div class="services-title">
-                                <div class="icon-box">
-                                    <font-awesome-icon
-                                        class="icon"
-                                        :icon="['fas', 'suitcase-rolling']"
-                                    />
-                                </div>
-                                <h4 class="title">Luggage insurance</h4>
-                            </div>
-                            <div class="hover-content">
-                                <p>
-                                    We provide separate insurance for your
-                                    luggage.
-                                </p>
-                                <router-link :app="app" class="more" to="/services/luggage-insurance">read more ></router-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service">
-                    <div class="container-1">
-                        <b-img
-                            class="service-img"
-                            :src="'images/premium-confort.png'"
-                            fluid
-                            alt="Services"
-                        ></b-img>
-                        <div class="overlay">
-                            <div class="services-title">
-                                <div class="icon-box">
-                                    <font-awesome-icon
-                                        class="icon"
-                                        :icon="['fas', 'mug-hot']"
-                                    />
-                                </div>
-                                <h4 class="title">Premium comfort</h4>
-                            </div>
-                            <div class="hover-content">
-                                <p>
-                                    If you want extra comfort on a longer
-                                    journey that crosses continents.
-                                </p>
-                                <router-link class="more" to="/services/premium-comfort">read more ></router-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service">
-                    <div class="container-1">
-                        <b-img
-                            class="service-img"
-                            :src="'images/private-jet.jpg'"
-                            fluid
-                            alt="Services"
-                        ></b-img>
-                        <div class="overlay">
-                            <div class="services-title">
-                                <div class="icon-box">
-                                    <font-awesome-icon
-                                        class="icon"
-                                        :icon="['fab', 'avianex']"
-                                    />
-                                </div>
-                                <h4 class="title">Private jet rent</h4>
-                            </div>
-                            <div class="hover-content">
-                                <p>
-                                    Our company offers you the possibility to
-                                    rent a private jet.
-                                </p>
-                                <router-link class="more" to="/services/private-jet-rent">read more ></router-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service">
-                    <div class="container-1">
-                        <b-img
-                            class="service-img"
-                            :src="'images/plane-group.jpg'"
-                            fluid
-                            alt="Services"
-                        ></b-img>
-                        <div class="overlay">
-                            <div class="services-title">
-                                <div class="icon-box">
-                                    <font-awesome-icon
-                                        class="icon"
-                                        :icon="['fas', 'users']"
-                                    />
-                                </div>
-                                <h4 class="title">Group discount</h4>
-                            </div>
-                            <div class="hover-content">
-                                <p>
-                                    Share the experience with your friends. We
-                                    offer a special discount for groups.
-                                </p>
-                                <router-link class="more" to="/services/group-discount">read more ></router-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service">
-                    <div class="container-1">
-                        <b-img
-                            class="service-img"
-                            :src="'images/travel-cancellation.jpg'"
-                            fluid
-                            alt="Services"
-                        ></b-img>
-                        <div class="overlay">
-                            <div class="services-title">
-                                <div class="icon-box">
-                                    <font-awesome-icon
-                                        class="icon"
-                                        :icon="['fas', 'ban']"
-                                    />
-                                </div>
-                                <h4 class="title">
-                                    Booking cancellation
-                                </h4>
-                            </div>
-                            <div class="hover-content">
-                                <p>
-                                    In this case, you can cancel your booking at
-                                    any time before departure.
-                                </p>
-                                <router-link class="more" to="/services/booking-cancellation">read more ></router-link>
                             </div>
                         </div>
                     </div>
