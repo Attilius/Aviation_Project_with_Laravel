@@ -14,9 +14,9 @@ export default {
     methods: {
         goDown() {
             let speed = 2;
-            let interval = speed * 3;
+            let interval = speed * 2;
             let id = setInterval(function() {
-                window.scrollBy(0, 2);
+                window.scrollBy(0, 1);
                 if (window.scrollY == 700) {
                     clearInterval(id);
                 }
