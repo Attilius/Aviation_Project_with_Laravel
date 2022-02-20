@@ -41,6 +41,6 @@ Route::get('/', function () {
     $area = request('area');
     $location = request('location');
 
-    $response = Zttp::get("https://worldtimeapi.org/api/timezone/$area/$location");
+    $response = Zttp::get("https://api.aladhan.com/v1/currentTime?zone=$area/$location");
     return $response -> json();
 });
