@@ -29,8 +29,8 @@ export default {
             loginPath: "/",
             current_time: "",
             current_year: "",
-            area: "Europe",
-            location: "Budapest",
+            area: "",
+            location: "",
 
             cards: [
                 {
