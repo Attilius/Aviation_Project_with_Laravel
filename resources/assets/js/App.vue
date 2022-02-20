@@ -177,6 +177,7 @@ export default {
         udateAreaAndLocation(udateAreaAndLocation) {
             this.area = udateAreaAndLocation[0];
             this.location = udateAreaAndLocation[1];
+            this.setCurrent_time(this.area, this.location);
         },
 
         updatePageContent(updatePageContent) {
@@ -185,25 +186,21 @@ export default {
             }, 600);
         },
 
-        /*setCurrent_time(area, location) {
+        setCurrent_time(area, location) {
             try {
                 fetch(`/api/?area=${area}&location=${location}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        try {
-                            const time = data.datetime
-                                .split("T")[1]
-                                .split(".")[0]
-                                .split(":");
-                            this.current_time = time[0] + ":" + time[1];
-                        } catch (error) {
-                            console.log(error);
-                        }
-                    });
+                        .then(response => response.json())
+                        .then(data => {
+                            try {
+                                this.current_time = data.data;
+                            } catch (error) {
+                                console.log(error);
+                            }
+                        });
             } catch (error) {
                 console.log(error);
             }
-        },*/
+        },
 
         setCurrent_year() {
             const today = new Date();
