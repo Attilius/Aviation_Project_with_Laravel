@@ -151,14 +151,6 @@ export default {
         }
     },
 
-    created() {
-        try {
-            this.setCurrent_time(this.area, this.location);
-        } catch (error) {
-            console.log(error)
-        }
-    },
-
     methods: {
         init() {
             this.loading = true;
