@@ -190,6 +190,10 @@ export default {
     cursor: pointer;
 }
 
+.social-icon:hover {
+    color: rgb(43, 123, 223)
+}
+
 .social-icon:active {
     font-size: 1.4rem;
 }
