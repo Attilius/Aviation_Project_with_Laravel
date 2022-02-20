@@ -96,11 +96,14 @@ export default {
         },
 
         goDown() {
-            window.scroll({
-                top: 1000,
-                left: 0,
-                behavior: "smooth"
-            });
+            let speed = 2;
+            let interval = speed * 2;
+            let id = setInterval(function() {
+                window.scrollBy(0, 1);
+                if (window.scrollY == 700) {
+                    clearInterval(id);
+                }
+            }, interval);
         }
     }
 };
