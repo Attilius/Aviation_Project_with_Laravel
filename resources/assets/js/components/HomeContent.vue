@@ -131,6 +131,12 @@
                     </div>
                 </div>
             </div>
+
+            <router-link to="/travel-guide"
+                ><b-button id="submit-btn" class="travel-guide-btn"
+                    >More destinations</b-button
+                ></router-link
+            >
         </main>
     </div>
 </template>
@@ -673,13 +679,17 @@ a:hover {
 }
 
 .top-destinations {
-    height: 60vh;
+    height: 45vh;
     width: 100%;
     background: whitesmoke;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     padding-right: 100px;
+}
+
+.travel-guide-btn {
+    margin: 0 auto;
 }
 
 @keyframes flight {
