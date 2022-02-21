@@ -31,7 +31,7 @@
                             </div>
                             <div class="hover-content">
                                 <p>{{card.description}}</p>
-                                <router-link class="more" to="/services/travel-insurance">read more ></router-link>
+                                <router-link class="more" :to="card.path">read more ></router-link>
                             </div>
                         </div>
                     </div>
@@ -60,6 +60,7 @@ export default {
                     img: "images/travel-insurance.jpg",
                     alt: "travel-insurance",
                     icon: ['fas', 'passport'],
+                    path: "/services/travel-insurance",
                     title: "Travel insurance",
                     description: "The safety of our passengers is important to us."
                 },
@@ -67,6 +68,7 @@ export default {
                     img: "images/luggage-insurance.jpg",
                     alt: "luggage-insurance",
                     icon: ['fas', 'suitcase-rolling'],
+                    path: "/services/luggage-insurance",
                     title: "Luggage insurance",
                     description: "We provide separate insurance for your luggage."
                 },
@@ -74,6 +76,7 @@ export default {
                     img: "images/premium-confort.png",
                     alt: "premium-confort",
                     icon: ['fas', 'mug-hot'],
+                    path: "/services/premium-comfort",
                     title: "Premium comfort",
                     description: "If you want extra comfort on a longer journey that crosses continents."
                 },
@@ -81,6 +84,7 @@ export default {
                     img: "images/private-jet.jpg",
                     alt: "private-jet",
                     icon: ['fab', 'avianex'],
+                    path: "/services/private-jet-rent",
                     title: "Private jet rent",
                     description: "Our company offers you the possibility to rent a private jet."
                 },
@@ -88,6 +92,7 @@ export default {
                     img: "images/plane-group.jpg",
                     alt: "plane-group",
                     icon: ['fas', 'users'],
+                    path: "/services/group-discount",
                     title: "Group discount",
                     description: "Share the experience with your friends. We offer a special discount for groups."
                 },
@@ -95,6 +100,7 @@ export default {
                     img: "images/travel-cancellation.jpg",
                     alt: "travel-cancellation",
                     icon: ['fas', 'ban'],
+                    path: "/services/booking-cancellation",
                     title: "Booking cancellation",
                     description: "In this case, you can cancel your booking at any time before departure."
                 },
