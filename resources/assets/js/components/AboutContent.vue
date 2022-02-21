@@ -253,7 +253,7 @@ h3 {
 
 .content {
     width: 100%;
-    height: 86vh;
+    height: 100vh;
     background-color: rgb(51, 100, 179);
     display: flex;
     justify-content: space-between;
@@ -271,7 +271,6 @@ h3 {
     padding: 25px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
