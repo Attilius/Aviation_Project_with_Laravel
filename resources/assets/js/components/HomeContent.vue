@@ -112,23 +112,26 @@
         <main>
             <h5>Popular destinations</h5>
             <h6>Explore the world with us</h6>
-        </main>
 
-        <div class="top-destinations">
-            <div
-                v-for="card in app.random_cards"
-                :key="card.id"
-                :id="card.id"
-                class="card"
-                @click="onChangePageContent(card.id), onChangeAreaAndLocation([card.area, card.location])"
-            >
-                <h4><span>from</span>{{ card.price }}</h4>
-                <div class="skin-cover">
-                    <h6>{{ card.country }}</h6>
-                    <h5>{{ card.city }}</h5>
+            <div class="top-destinations">
+                <div
+                    v-for="card in app.random_cards"
+                    :key="card.id"
+                    :id="card.id"
+                    class="card"
+                    @click="
+                        onChangePageContent(card.id),
+                            onChangeAreaAndLocation([card.area, card.location])
+                    "
+                >
+                    <h4><span>from</span>{{ card.price }}</h4>
+                    <div class="skin-cover">
+                        <h6>{{ card.country }}</h6>
+                        <h5>{{ card.city }}</h5>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </template>
 
@@ -138,7 +141,7 @@ export default {
     name: "HomeContent",
     props: ["app"],
     components: {
-        Chat,
+        Chat
     },
 
     data() {
@@ -171,10 +174,7 @@ export default {
             ],
             selected_radio: "",
 
-            
-
             cityUri: ""
-            
         };
     },
 
@@ -190,7 +190,7 @@ export default {
 
     methods: {
         onChangeAreaAndLocation([cardArea, cardLocation]) {
-            this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation])
+            this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation]);
         },
 
         onChangePageContent(cardId) {
@@ -673,13 +673,13 @@ a:hover {
 }
 
 .top-destinations {
-    height: 150vh;
+    height: 60vh;
     width: 100%;
     background: whitesmoke;
     display: grid;
-    grid-template-columns: repeat(4, 3fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-    padding: 50px 100px;
+    padding-right: 100px;
 }
 
 @keyframes flight {
