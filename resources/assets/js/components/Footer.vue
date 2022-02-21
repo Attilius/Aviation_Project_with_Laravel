@@ -123,7 +123,7 @@
             <div class="copy">
                 <span>Created by</span>
                 <font-awesome-icon class="icon" :icon="['far', 'copyright']" />
-                <span>{{ app.current_year }} Attilus</span>
+                <span>{{ app.current_year }} Attilius</span>
             </div>
         </div>
     </footer>
