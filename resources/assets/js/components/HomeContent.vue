@@ -116,7 +116,7 @@
 
         <div class="top-destinations">
             <div
-                v-for="card in app.cards"
+                v-for="card in app.random_cards"
                 :key="card.id"
                 :id="card.id"
                 class="card"
