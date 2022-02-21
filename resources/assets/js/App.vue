@@ -129,7 +129,9 @@ export default {
                     area: "Europe",
                     location: "Zurich"
                 }
-            ]
+            ],
+
+            random_cards: []
         };
     },
 
@@ -137,14 +139,15 @@ export default {
         M.AutoInit();
         this.init();
         this.setCurrent_year();
+        this.createRandomCards();
 
         if (location.reload) {
             this.cards.forEach(card => {
                 if (location.hash.split("/")[2] === card.id) {
                     try {
-                       this.setCurrent_time(card.area, card.location); 
+                        this.setCurrent_time(card.area, card.location);
                     } catch (error) {
-                        console.log(error)
+                        console.log(error);
                     }
                 }
             });
@@ -160,6 +163,20 @@ export default {
                 this.loading = false;
                 this.initiated = true;
             });
+        },
+
+        createRandomCards() {
+            const length = this.cards.length;
+            const usedIndexes = [];
+
+            for (let i = 0; i < 4; i++) {
+                const card_index = Math.floor(Math.random() * length);
+
+                if (!usedIndexes.length || !usedIndexes.includes(card_index)) {
+                    usedIndexes.push(card_index);
+                    this.random_cards.push(this.cards[card_index]);
+                } else i--;
+            }
         },
 
         updateLoginPath(updateLoginPath) {
@@ -181,14 +198,14 @@ export default {
         setCurrent_time(area, location) {
             try {
                 fetch(`/api/?area=${area}&location=${location}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            try {
-                                this.current_time = data.data;
-                            } catch (error) {
-                                console.log(error);
-                            }
-                        });
+                    .then(response => response.json())
+                    .then(data => {
+                        try {
+                            this.current_time = data.data;
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    });
             } catch (error) {
                 console.log(error);
             }
