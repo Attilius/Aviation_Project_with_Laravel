@@ -37,8 +37,20 @@
                     </div>
                 </div>
             </div>
+            <h3>Discover all over the world with us</h3>
             <div class="main">
-                <h3>Discover all over the world with us</h3>
+                <div
+                v-for="card in app.cards"
+                :key="card.id"
+                :id="card.id"
+                class="card"
+                @click="onChangePageContent(card.id), onChangeAreaAndLocation([card.area, card.location])"
+            >
+                <div class="skin-cover">
+                    <h6>{{ card.country }}</h6>
+                    <h5>{{ card.city }}</h5>
+                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -48,6 +60,7 @@
 import Header from "../components/travel_guide/TravelGuideHeader.vue";
 export default {
     name: "TravelGuide",
+    props: ["app"],
     components: {
         Header,
     },
@@ -63,6 +76,14 @@ export default {
     },
 
     methods: {
+        onChangeAreaAndLocation([cardArea, cardLocation]) {
+            this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation])
+        },
+
+        onChangePageContent(cardId) {
+            this.$emit("onChangePageContent", cardId);
+        },
+        
         setPopup(url, name, settings) {
             this.popupWindow.url = url;
             this.popupWindow.name = name;
@@ -222,13 +243,17 @@ export default {
 
 .main {
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    background: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    grid-gap: 20px;
+    padding: 50px auto;
 }
 
-.main h3 {
+h3 {
     color: rgb(5, 55, 115);
     text-shadow: 2px 2px 5px silver;
+    text-align: center;
 }
 </style>
