@@ -137,6 +137,18 @@
                     >More destinations</b-button
                 ></router-link
             >
+            <div class="other-services">
+                <div class="car-rent">
+                    <div class="skin_">
+                        <h5 class="outer-service-title-car">Rental car</h5>
+                    </div>
+                </div>
+                <div class="hotel-booking">
+                    <div class="skin_">
+                        <h5 class="outer-service-title-hotel">Book hotel</h5>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </template>
@@ -531,7 +543,7 @@ input:focus {
 
 main {
     width: 80%;
-    height: 100vh;
+    height: 110vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -566,6 +578,63 @@ main {
 
 .travel-guide-btn {
     margin: 0 auto;
+}
+
+.other-services {
+    width: 100%;
+    height: 200px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skin_ {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+}
+
+.outer-service-title-car, .outer-service-title-hotel {
+    color: whitesmoke;
+    margin-top: 70px;
+}
+
+.outer-service-title-car {
+    text-align: end;
+    padding-right: 100px;
+}
+
+.outer-service-title-hotel {
+    text-align: start;
+    padding-left: 100px;
+}
+
+.car-rent {
+    height: 100%;
+    width: 48%;
+    background-image: url("../../img/car.jpg");
+    background-repeat: no-repeat;
+    background-position-y: -70px;
+    background-size: 100%;
+    transition: all 1s ease 0s;
+}
+
+.hotel-booking {
+    height: 100%;
+    width: 48%;
+    background-image: url("../../img/hotel.jpg");
+    background-repeat: no-repeat;
+    background-position-y: -80px;
+    background-size: 100%;
+    transition: all 1s ease 0s;
+}
+
+.car-rent:hover, .hotel-booking:hover {
+    background-size: 110%;
+    background-position-y: -100px;
+    transition: all 1s ease 0s;
 }
 
 /*-------- Cities settings -----------*/
@@ -626,7 +695,7 @@ main {
 
 #paris {
     background: url("../../img/paris.jpg");
-    background-position-x: -70px;
+    background-position-x: -87px;
     background-size: cover;
 }
 
@@ -674,7 +743,7 @@ a:hover {
     width: 100%;
     text-align: center;
     padding: 5px 0 0 70px;
-    margin: 0 0 70px 150px;
+    margin: 0 0 70px 140px;
     transform: rotate(45deg);
 }
 
