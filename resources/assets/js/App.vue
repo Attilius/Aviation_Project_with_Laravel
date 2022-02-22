@@ -37,7 +37,7 @@ export default {
                     id: "athens",
                     country: "greece",
                     city: "athens",
-                    price: "150 €*",
+                    price: "150 €",
                     area: "Europe",
                     location: "Athens"
                 },
@@ -45,7 +45,7 @@ export default {
                     id: "barcelona",
                     country: "spain",
                     city: "barcelona",
-                    price: "160 €*",
+                    price: "160 €",
                     area: "Europe",
                     location: "Madrid"
                 },
@@ -53,7 +53,7 @@ export default {
                     id: "cairo",
                     country: "egypt",
                     city: "cairo",
-                    price: "935 €*",
+                    price: "935 €",
                     area: "Africa",
                     location: "Cairo"
                 },
@@ -61,7 +61,7 @@ export default {
                     id: "istanbul",
                     country: "turkey",
                     city: "istanbul",
-                    price: "180 €*",
+                    price: "180 €",
                     area: "Europe",
                     location: "Istanbul"
                 },
@@ -69,7 +69,7 @@ export default {
                     id: "lisbon",
                     country: "portugal",
                     city: "lisbon",
-                    price: "160 €*",
+                    price: "160 €",
                     area: "Europe",
                     location: "Lisbon"
                 },
@@ -77,7 +77,7 @@ export default {
                     id: "london",
                     country: "united kingdom",
                     city: "london",
-                    price: "159 €*",
+                    price: "159 €",
                     area: "Europe",
                     location: "London"
                 },
@@ -85,7 +85,7 @@ export default {
                     id: "montreal",
                     country: "canada",
                     city: "montreal",
-                    price: "535 €*",
+                    price: "535 €",
                     area: "America",
                     location: "Toronto"
                 },
@@ -93,7 +93,7 @@ export default {
                     id: "munich",
                     country: "germany",
                     city: "munich",
-                    price: "170 €*",
+                    price: "170 €",
                     area: "Europe",
                     location: "Berlin"
                 },
@@ -101,7 +101,7 @@ export default {
                     id: "new-york",
                     country: "united states of america",
                     city: "new york",
-                    price: "497 €*",
+                    price: "497 €",
                     area: "America",
                     location: "New_York"
                 },
@@ -109,7 +109,7 @@ export default {
                     id: "paris",
                     country: "france",
                     city: "paris",
-                    price: "100 €*",
+                    price: "100 €",
                     area: "Europe",
                     location: "Paris"
                 },
@@ -117,7 +117,7 @@ export default {
                     id: "rome",
                     country: "italy",
                     city: "rome",
-                    price: "160 €*",
+                    price: "160 €",
                     area: "Europe",
                     location: "Rome"
                 },
@@ -125,7 +125,7 @@ export default {
                     id: "zurich",
                     country: "switzerland",
                     city: "zurich",
-                    price: "165 €*",
+                    price: "165 €",
                     area: "Europe",
                     location: "Zurich"
                 }
