@@ -110,8 +110,8 @@
         </b-row>
 
         <main>
-            <h5>Popular destinations</h5>
-            <h6>Explore the world with us</h6>
+            <h5 class="main-title">Popular destinations</h5>
+            <h6 class="main-subtitle">Explore the world with us</h6>
 
             <div class="top-destinations">
                 <div
@@ -537,8 +537,21 @@ main {
     flex-direction: column;
 }
 
-main h5 {
+.main-title {
+    margin-top: 50px;
+    text-align: center;
     text-transform: uppercase;
+    color: rgb(5, 55, 115);
+    text-shadow: 2px 2px 5px silver;
+    font-weight: 600;
+}
+
+.main-subtitle {
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgb(5, 55, 115);
+    text-shadow: 2px 2px 5px silver;
+    font-weight: 400;
 }
 
 .top-destinations {
