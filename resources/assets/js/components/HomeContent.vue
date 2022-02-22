@@ -132,8 +132,8 @@
                 </div>
             </div>
 
-            <router-link to="/travel-guide"
-                ><b-button id="submit-btn" class="travel-guide-btn"
+            <router-link to="/travel-guide" class="travel-guide-btn"
+                ><b-button id="submit-btn"
                     >More destinations</b-button
                 ></router-link
             >
@@ -527,16 +527,36 @@ input:focus {
     -webkit-animation: flight 1.5s ease-in-out;
 }
 
-/*---------Main content settings-------*/
+/*-------- Main content settings ------*/
 
 main {
-    margin: 50px 0 0 100px;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 main h5 {
     text-transform: uppercase;
 }
-/* Cities settings */
+
+.top-destinations {
+    height: 45vh;
+    width: 100%;
+    background: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.travel-guide-btn {
+    margin: 0 auto;
+}
+
+/*-------- Cities settings -----------*/
+
 #athens {
     background: url("../../img/athens.jpg");
     background-position-x: -80px;
@@ -609,7 +629,7 @@ main h5 {
     background-size: cover;
 }
 
-/* Card settings */
+/*------------ Card settings -------------*/
 
 .card {
     height: 320px;
@@ -635,7 +655,7 @@ a:hover {
 }
 
 .card h4 {
-    background: rebeccapurple;
+    background: green;
     height: 3rem;
     color: whitesmoke;
     width: 100%;
@@ -678,20 +698,6 @@ a:hover {
     margin: 0;
 }
 
-.top-destinations {
-    height: 45vh;
-    width: 100%;
-    background: whitesmoke;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    padding-right: 100px;
-}
-
-.travel-guide-btn {
-    margin: 0 auto;
-}
-
 @keyframes flight {
     from {
         left: -1000px;
@@ -700,6 +706,8 @@ a:hover {
         left: 0px;
     }
 }
+
+/*----------- Responsive settings ------------*/
 
 @media (max-width: 1355px) {
     .A320 {
