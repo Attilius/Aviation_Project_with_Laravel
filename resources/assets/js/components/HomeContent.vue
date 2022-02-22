@@ -139,14 +139,14 @@
             >
             <div class="other-services">
                 <div class="car-rent">
-                    <div class="skin_">
+                    <a class="skin_" target="_blank" href="https://www.rentalcars.com/">
                         <h5 class="outer-service-title-car">Rental car</h5>
-                    </div>
+                    </a>
                 </div>
                 <div class="hotel-booking">
-                    <div class="skin_">
+                    <a class="skin_" target="_blank" href="https://www.booking.com/">
                         <h5 class="outer-service-title-hotel">Book hotel</h5>
-                    </div>
+                    </a>
                 </div>
             </div>
         </main>
@@ -594,6 +594,7 @@ main {
     background: rgba(0, 0, 0, .5);
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .outer-service-title-car, .outer-service-title-hotel {
