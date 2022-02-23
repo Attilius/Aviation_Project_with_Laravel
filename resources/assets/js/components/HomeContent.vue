@@ -29,7 +29,6 @@
                                 <input
                                     id="departure_place"
                                     type="text"
-                                    class="validate"
                                 />
                                 <label id="label-departure" for="from"
                                     >Departure from*</label
@@ -46,7 +45,6 @@
                                 <input
                                     id="arriving_place"
                                     type="text"
-                                    class="validate"
                                 />
                                 <label id="label-arriving" for="from"
                                     >Arriving at*</label
