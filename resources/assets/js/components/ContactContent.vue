@@ -90,6 +90,7 @@ export default {
 
     mounted() {
         this.setInputFocusLabelColor();
+        this.scrollPage(0,0);
         $('#icon_message').val();
         M.textareaAutoResize($('#icon_message'));
     },
@@ -125,7 +126,14 @@ export default {
                     input.label.style.color = "#9e9e9e";
                 });
             });
-        }
+        },
+
+        scrollPage(positionY, positionX) {
+            window.scroll({
+                top: positionY,
+                left: positionX
+            });
+        },
     }
 };
 </script>
