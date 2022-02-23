@@ -106,6 +106,19 @@ export default {
                 },
             ]
         }
+    },
+
+    mounted() {
+        this.scrollPage(0,0);
+    },
+
+    methods: {
+        scrollPage(positionY, positionX) {
+            window.scroll({
+                top: positionY,
+                left: positionX
+            });
+        },
     }
 };
 </script>
