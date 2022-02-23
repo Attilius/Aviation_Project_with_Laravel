@@ -82,6 +82,32 @@
                                 />
                             </div>
 
+                            <div class="input-field">
+                                    <i class="material-icons prefix"
+                                        >account_circle</i
+                                    >
+                                    <input
+                                        id="icon_prefix"
+                                        type="text"
+                                        class="validate"
+                                        value="1 adult"
+                                    />
+                                    <label for="icon_prefix" class="active">Passengers*</label>
+                            </div>
+
+                            <div class="input-field">
+                                    <i class="material-icons prefix"
+                                        >airline_seat_recline_extra</i
+                                    >
+                                    <input
+                                        id="icon_prefix"
+                                        type="text"
+                                        class="validate"
+                                        value="ECONOMY"
+                                    />
+                                    <label for="icon_prefix" class="active">Cabin*</label>
+                            </div>
+
                             <b-row class="travel-type">
                                 <b-form-radio
                                     class="radio"
@@ -139,12 +165,20 @@
             >
             <div class="other-services">
                 <div class="car-rent">
-                    <a class="skin_" target="_blank" href="https://www.rentalcars.com/">
+                    <a
+                        class="skin_"
+                        target="_blank"
+                        href="https://www.rentalcars.com/"
+                    >
                         <h5 class="outer-service-title-car">Rental car</h5>
                     </a>
                 </div>
                 <div class="hotel-booking">
-                    <a class="skin_" target="_blank" href="https://www.booking.com/">
+                    <a
+                        class="skin_"
+                        target="_blank"
+                        href="https://www.booking.com/"
+                    >
                         <h5 class="outer-service-title-hotel">Book hotel</h5>
                     </a>
                 </div>
@@ -408,8 +442,12 @@ label {
 }
 
 input {
-    width: 190px;
+    width: 190px !important;
     padding: 20px;
+}
+
+.input-field {
+    width: 200px;
 }
 
 .input-field input[type="text"]:focus {
@@ -591,13 +629,14 @@ main {
 .skin_ {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     cursor: pointer;
 }
 
-.outer-service-title-car, .outer-service-title-hotel {
+.outer-service-title-car,
+.outer-service-title-hotel {
     color: whitesmoke;
     margin-top: 70px;
 }
@@ -632,7 +671,8 @@ main {
     transition: all 1s ease 0s;
 }
 
-.car-rent:hover, .hotel-booking:hover {
+.car-rent:hover,
+.hotel-booking:hover {
     background-size: 110%;
     background-position-y: -100px;
     transition: all 1s ease 0s;
