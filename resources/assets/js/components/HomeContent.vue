@@ -89,7 +89,6 @@
                                     <input
                                         id="icon_prefix"
                                         type="text"
-                                        class="validate"
                                         value="1 adult"
                                     />
                                     <label for="icon_prefix" class="active">Passengers*</label>
@@ -102,7 +101,6 @@
                                     <input
                                         id="icon_prefix"
                                         type="text"
-                                        class="validate"
                                         value="ECONOMY"
                                     />
                                     <label for="icon_prefix" class="active">Cabin*</label>
