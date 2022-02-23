@@ -169,6 +169,10 @@ export default {
         }, 10);
     },
 
+    mounted() {
+        this.scrollPage(0,0);
+    },
+
     methods: {
         count(index, item, intval) {
             const counters_container = document.getElementById(
@@ -182,7 +186,14 @@ export default {
                     clearInterval(intval);
                 }
             }
-        }
+        },
+
+        scrollPage(positionY, positionX) {
+            window.scroll({
+                top: positionY,
+                left: positionX
+            });
+        },
     },
 
     computed: {
