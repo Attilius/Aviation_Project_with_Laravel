@@ -573,6 +573,10 @@ input:focus {
     -webkit-animation: flight 1.5s ease-in-out;
 }
 
+#icon_prefix{
+    cursor: pointer;
+}
+
 /*-------- Main content settings ------*/
 
 main {
