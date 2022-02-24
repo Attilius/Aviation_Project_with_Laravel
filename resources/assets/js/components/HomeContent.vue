@@ -97,7 +97,7 @@
                                         >airline_seat_recline_extra</i
                                     >
                                     <input
-                                        id="icon_prefix"
+                                        id="input-select"
                                         type="text"
                                         value="ECONOMY"
                                         @click="onSelect"
@@ -246,7 +246,16 @@ export default {
     methods: {
         onSelect() {
             const select = document.getElementsByClassName("select-list");
+            const selectItems = document.querySelectorAll(".select-list li");
+            const selectInput = document.getElementById("input-select");
             select[0].style.display = "block";
+            
+            selectItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    selectInput.value = item.textContent.toUpperCase();
+                    select[0].style.display = "none";
+                });
+            });
         },
 
         onChangeAreaAndLocation([cardArea, cardLocation]) {
@@ -585,7 +594,7 @@ input:focus {
     -webkit-animation: flight 1.5s ease-in-out;
 }
 
-#icon_prefix{
+#icon_prefix, #input-select {
     cursor: pointer;
 }
 
