@@ -15,7 +15,7 @@
                         value="Adult"
                         @click="onSelect"
                     />
-                    <ul class="select-list">
+                    <ul class="select-passengers-list">
                         <li>Baby</li>
                         <li>Child</li>
                         <li>Adult</li>
@@ -33,7 +33,23 @@
 
 <script>
 export default {
-    name: "Passengers"
+    name: "Passengers",
+
+    methods: {
+        onSelect() {
+            const select = document.getElementsByClassName("select-passengers-list");
+            const selectItems = document.querySelectorAll(".select-passengers-list li");
+            const selectInput = document.getElementById("input-select");
+            select[0].style.display = "block";
+            
+            selectItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    selectInput.value = item.textContent.toUpperCase();
+                    select[0].style.display = "none";
+                });
+            });
+        },
+    }
 };
 </script>
 
@@ -48,6 +64,7 @@ export default {
     top: 30%;
     left: 35%;
     z-index: 11;
+    display: none;
 }
 
 header {
@@ -78,6 +95,10 @@ header h5 {
 
 #input-select {
     width: 20vw !important;
+}
+
+.select-passengers-list {
+    display: none;
 }
 
 .input-field i {
