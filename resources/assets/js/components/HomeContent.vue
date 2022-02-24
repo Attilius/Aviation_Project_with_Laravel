@@ -100,7 +100,14 @@
                                         id="icon_prefix"
                                         type="text"
                                         value="ECONOMY"
+                                        @click="onSelect"
                                     />
+                                    <ul class="select-list">
+                                        <li>economy</li>
+                                        <li>premium economy</li>
+                                        <li>business</li>
+                                        <li>first class</li>
+                                    </ul>
                                     <label for="icon_prefix" class="active">Cabin*</label>
                             </div>
 
@@ -237,6 +244,11 @@ export default {
     },
 
     methods: {
+        onSelect() {
+            const select = document.getElementsByClassName("select-list");
+            select[0].style.display = "block";
+        },
+
         onChangeAreaAndLocation([cardArea, cardLocation]) {
             this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation]);
         },
@@ -577,6 +589,28 @@ input:focus {
     cursor: pointer;
 }
 
+.select-list {
+    width: 95%;
+    height: 120px;
+    border: 1px solid #9e9e9e;
+    background: whitesmoke;
+    margin-left: 45px;
+    position: absolute;
+    top: 0;
+    z-index: 11;
+    display: none;
+}
+
+.select-list li {
+    text-transform: uppercase;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+.select-list li:hover {
+    background: #6a1b9a;
+    color: white;
+}
 /*-------- Main content settings ------*/
 
 main {
