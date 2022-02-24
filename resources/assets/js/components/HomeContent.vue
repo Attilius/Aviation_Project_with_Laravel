@@ -89,6 +89,7 @@
                                         type="text"
                                         value="1 adult"
                                     />
+                                    <Passengers />
                                     <label for="icon_prefix" class="active">Passengers*</label>
                             </div>
 
@@ -192,11 +193,13 @@
 
 <script>
 import Chat from "./Chat.vue";
+import Passengers from "./Passengers.vue"
 export default {
     name: "HomeContent",
     props: ["app"],
     components: {
-        Chat
+        Chat,
+        Passengers
     },
 
     data() {
