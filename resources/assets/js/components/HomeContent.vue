@@ -89,7 +89,6 @@
                                         type="text"
                                         value="1 adult"
                                     />
-                                    <Passengers />
                                     <label for="icon_prefix" class="active">Passengers*</label>
                             </div>
 
@@ -188,6 +187,7 @@
                 </div>
             </div>
         </main>
+        <Passengers />
     </div>
 </template>
 
