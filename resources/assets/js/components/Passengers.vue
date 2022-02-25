@@ -24,6 +24,9 @@
                     <label for="icon_prefix" class="active">Passenger 1</label>
                 </div>
             </div>
+            <b-button id="add-passenger-btn" class="btn"><i class="material-icons prefix"
+                        >add_circle_outline</i
+                    > Add a passenger</b-button>
         </div>
         <footer>
             <b-button class="btn" @click="confirmPassengers">Continue</b-button>
@@ -129,6 +132,32 @@ header h5 {
 .input-field i {
     font-size: 2.5rem;
     color: rgb(5, 55, 115);
+}
+
+#add-passenger-btn {
+    width: 45%;
+    margin: 0 25px;
+    background: none;
+    color: rebeccapurple;
+    border: none;
+    box-shadow: none;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+}
+
+#add-passenger-btn i {
+    margin-right: 10px;
+}
+
+#add-passenger-btn:hover {
+    background: rebeccapurple;
+    color: whitesmoke;
+}
+
+#add-passenger-btn:focus {
+    border: none !important;
+    box-shadow: none !important;
 }
 
 footer {
