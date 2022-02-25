@@ -87,7 +87,7 @@ export default {
             const deleteBtns = document.getElementsByClassName("delete");
             
             this.newPassengers.push({ id: this.newPassengers.length + 1 });
-            console.log(this.newPassengers.length)
+
             if (this.newPassengers.length > 2) {
                 formContent[0].style.overflowY = "scroll";
             }
