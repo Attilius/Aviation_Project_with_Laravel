@@ -90,6 +90,10 @@ export default {
 
             if (this.newPassengers.length > 2) {
                 formContent[0].style.overflowY = "scroll";
+                deleteBtns.forEach(btn => {
+                    btn.style.visibility = "visible";
+                    btn.style.right = -110 + "px";
+                });
             }
         }
     }
