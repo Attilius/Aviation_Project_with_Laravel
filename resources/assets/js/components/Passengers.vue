@@ -206,7 +206,8 @@ header h5 {
     right: -130px;
     font-size: 1.5rem !important;
     cursor: pointer;
-    width: 1.5rem
+    width: 1.5rem;
+    visibility: hidden;
 }
 
 /*----- FOOTER -------*/
