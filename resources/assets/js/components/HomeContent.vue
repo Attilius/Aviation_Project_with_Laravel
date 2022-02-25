@@ -249,7 +249,7 @@ export default {
 
     methods: {
         setPassengers() {
-            document.getElementsByClassName("passengers")[0].style.display = "block";
+            document.getElementsByClassName("passengers")[0].style.display = "flex";
         },
 
         onSelect() {
