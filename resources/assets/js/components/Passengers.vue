@@ -10,7 +10,7 @@
                         >account_circle</i
                     >
                     <input
-                        id="input-select"
+                        id="input-passengers-select"
                         type="text"
                         value="Adult"
                         @click="onSelect"
@@ -26,7 +26,7 @@
             </div>
         </div>
         <footer>
-            <b-button class="btn">Continue</b-button>
+            <b-button class="btn" @click="confirmPassengers">Continue</b-button>
         </footer>
     </div>
 </template>
@@ -39,7 +39,7 @@ export default {
         onSelect() {
             const select = document.getElementsByClassName("select-passengers-list");
             const selectItems = document.querySelectorAll(".select-passengers-list li");
-            const selectInput = document.getElementById("input-select");
+            const selectInput = document.getElementById("input-passengers-select");
             select[0].style.display = "block";
             
             selectItems.forEach(item => {
@@ -49,6 +49,12 @@ export default {
                 });
             });
         },
+
+        confirmPassengers() {
+            const passengersBox = document.getElementById("pasengers-box");
+
+            passengersBox.style.display = "none";
+        }
     }
 };
 </script>
@@ -64,7 +70,6 @@ export default {
     top: 30%;
     left: 35%;
     z-index: 11;
-    display: none;
 }
 
 header {
@@ -93,12 +98,32 @@ header h5 {
     padding: 10px;
 }
 
-#input-select {
-    width: 20vw !important;
+.select-passengers-list {
+    width: 20vw;
+    height: 120px;
+    border: 1px solid #9e9e9e;
+    background: whitesmoke;
+    margin-left: 45px;
+    position: absolute;
+    top: 0;
+    z-index: 11;
+    display: none;
 }
 
-.select-passengers-list {
-    display: none;
+.select-passengers-list li {
+    text-transform: uppercase;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+.select-passengers-list li:hover {
+    background: #6a1b9a;
+    color: white;
+}
+
+#input-passengers-select {
+    width: 20vw !important;
+    cursor: pointer;
 }
 
 .input-field i {
