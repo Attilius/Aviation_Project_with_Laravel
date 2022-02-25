@@ -88,6 +88,7 @@
                                         id="icon_prefix"
                                         type="text"
                                         value="1 adult"
+                                        @click="setPassengers"
                                     />
                                     <label for="icon_prefix" class="active">Passengers*</label>
                             </div>
@@ -187,7 +188,7 @@
                 </div>
             </div>
         </main>
-        <Passengers />
+        <Passengers class="passengers"/>
     </div>
 </template>
 
@@ -247,6 +248,10 @@ export default {
     },
 
     methods: {
+        setPassengers() {
+            document.getElementsByClassName("passengers")[0].style.display = "block";
+        },
+
         onSelect() {
             const select = document.getElementsByClassName("select-list");
             const selectItems = document.querySelectorAll(".select-list li");
@@ -623,6 +628,11 @@ input:focus {
     background: #6a1b9a;
     color: white;
 }
+
+.passengers {
+    display: none;
+}
+
 /*-------- Main content settings ------*/
 
 main {
