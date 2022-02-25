@@ -1,14 +1,16 @@
 <template>
     <div id="pasengers-box">
         <header>
-            <h5>Passengers (1)</h5>
+            <h5>Passengers ({{ newPassengers.length }})</h5>
         </header>
         <div class="select-form-content">
-            <div class="passenger">
+            <div
+                class="passenger"
+                v-for="passeneger in newPassengers"
+                :key="passeneger.id"
+            >
                 <div class="input-field">
-                    <i class="material-icons prefix"
-                        >account_circle</i
-                    >
+                    <i class="material-icons prefix">account_circle</i>
                     <input
                         id="input-passengers-select"
                         type="text"
@@ -21,12 +23,18 @@
                         <li>Adult</li>
                         <li>Senior</li>
                     </ul>
-                    <label for="icon_prefix" class="active">Passenger 1</label>
+                    <label for="icon_prefix" class="active">Passenger {{ passeneger.id }}</label>
+                    <i class="material-icons prefix delete">cancel</i>
                 </div>
             </div>
-            <b-button id="add-passenger-btn" class="btn"><i class="material-icons prefix"
-                        >add_circle_outline</i
-                    > Add a passenger</b-button>
+
+            <b-button
+                id="add-passenger-btn"
+                class="btn"
+                @click="addNewPassenger"
+                ><i class="material-icons prefix">add_circle_outline</i> Add a
+                passenger</b-button
+            >
         </div>
         <footer>
             <b-button class="btn" @click="confirmPassengers">Continue</b-button>
@@ -38,16 +46,32 @@
 export default {
     name: "Passengers",
 
+    data() {
+        return {
+            newPassengers: [
+                {
+                    id: 1
+                }
+            ]
+        };
+    },
+
     methods: {
         onSelect() {
-            const select = document.getElementsByClassName("select-passengers-list");
-            const selectItems = document.querySelectorAll(".select-passengers-list li");
-            const selectInput = document.getElementById("input-passengers-select");
+            const select = document.getElementsByClassName(
+                "select-passengers-list"
+            );
+            const selectItems = document.querySelectorAll(
+                ".select-passengers-list li"
+            );
+            const selectInput = document.getElementById(
+                "input-passengers-select"
+            );
             select[0].style.display = "block";
-            
+
             selectItems.forEach(item => {
                 item.addEventListener("click", () => {
-                    selectInput.value = item.textContent.toUpperCase();
+                    selectInput.value = item.textContent;
                     select[0].style.display = "none";
                 });
             });
@@ -55,8 +79,18 @@ export default {
 
         confirmPassengers() {
             const passengersBox = document.getElementById("pasengers-box");
-
             passengersBox.style.display = "none";
+        },
+
+        addNewPassenger() {
+            const formContent = document.getElementsByClassName("select-form-content");
+            const deleteBtns = document.getElementsByClassName("delete");
+            
+            this.newPassengers.push({ id: this.newPassengers.length + 1 });
+            console.log(this.newPassengers.length)
+            if (this.newPassengers.length > 2) {
+                formContent[0].style.overflowY = "scroll";
+            }
         }
     }
 };
@@ -64,7 +98,7 @@ export default {
 
 <style scoped>
 #pasengers-box {
-    height: 40vh;
+    height: 50vh;
     width: 30vw;
     background: whitesmoke;
     box-shadow: 2px 2px 5px #c9c9c9;
@@ -72,11 +106,15 @@ export default {
     position: absolute;
     top: 30%;
     left: 35%;
+    display: none;
+    flex-direction: column;
     z-index: 11;
 }
 
+/*-------- HEADER --------*/
+
 header {
-    height: 5vh;
+    height: 15%;
     width: 100%;
     position: sticky;
 }
@@ -88,9 +126,12 @@ header h5 {
     text-transform: uppercase;
 }
 
+/*---------- MAIN CONTENT ----------*/
+
 .select-form-content {
-    height: 20vh;
-    width: 100%;
+    height: 70%;
+    overflow-y: hidden;
+    padding: 0.5rem;
 }
 
 .passenger {
@@ -114,7 +155,6 @@ header h5 {
 }
 
 .select-passengers-list li {
-    text-transform: uppercase;
     padding: 0.25rem;
     cursor: pointer;
 }
@@ -138,7 +178,7 @@ header h5 {
     width: 45%;
     margin: 0 25px;
     background: none;
-    color: rebeccapurple;
+    color: royalblue;
     border: none;
     box-shadow: none;
     font-size: 1rem;
@@ -151,7 +191,7 @@ header h5 {
 }
 
 #add-passenger-btn:hover {
-    background: rebeccapurple;
+    background: royalblue;
     color: whitesmoke;
 }
 
@@ -160,16 +200,36 @@ header h5 {
     box-shadow: none !important;
 }
 
+.delete {
+    position: absolute;
+    top: -20px;
+    right: -130px;
+    font-size: 1.5rem !important;
+    cursor: pointer;
+    width: 1.5rem
+}
+
+/*----- FOOTER -------*/
+
 footer {
-    height: 15vh;
+    height: 15%;
     width: 100%;
+    background: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
+    border-top: 1px solid #c9c9c9;
 }
 
 .btn {
     background: rebeccapurple;
     color: whitesmoke;
+}
+
+@media (max-width: 1350px) {
+    #add-passenger-btn {
+        width: 55%;
+    }
 }
 </style>
