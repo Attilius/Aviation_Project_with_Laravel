@@ -27,7 +27,7 @@
                     <label for="icon_prefix" class="active"
                         >Passenger {{ passeneger.number }}</label
                     >
-                    <i class="material-icons prefix delete">cancel</i>
+                    <i class="material-icons prefix delete" @click="deletePassenger">cancel</i>
                 </div>
             </div>
 
@@ -95,6 +95,15 @@ export default {
             this.setDeleteBtnPosition();
         },
 
+        deletePassenger(e) {
+            this.newPassengers.forEach((passenger, index) => {
+                if (passenger.id === e.target.parentNode.parentNode.id) {
+                    this.newPassengers.splice(index,1);
+                    this.setDeleteBtnVisibility();
+                }
+            });
+        },
+
         setDeleteBtnVisibility() {
             const deleteBtns = document.getElementsByClassName("delete");
 
@@ -104,7 +113,7 @@ export default {
                         btn.style.visibility = "visible";
                     });
                 }, 1);
-            }
+            } else deleteBtns.forEach(btn => { btn.style.visibility = "hidden"; });
         },
 
         setDeleteBtnPosition() {
