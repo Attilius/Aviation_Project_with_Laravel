@@ -76,13 +76,13 @@ export default {
             selectItems.forEach(item => {
                 item.addEventListener("click", () => {
                     selectInput.value = item.textContent;
-                    this.setPassengerType(id, item.textContent);
+                    this.savePassengerType(id, item.textContent);
                     select.style.display = "none";
                 });
             });
         },
 
-        setPassengerType(id, type) {
+        savePassengerType(id, type) {
             this.newPassengers.forEach(passenger => {
                 if (passenger.id === id) {
                     passenger.type = type;
