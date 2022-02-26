@@ -58,30 +58,35 @@ export default {
             newPassengers: [
                 {
                     id: "passenger-1",
-                    number: 1
+                    number: 1,
+                    type: "Adult"
                 }
             ]
         };
     },
 
     methods: {
-        onSelect() {
-            const select = document.getElementsByClassName(
-                "select-passengers-list"
-            );
-            const selectItems = document.querySelectorAll(
-                ".select-passengers-list li"
-            );
-            const selectInput = document.getElementById(
-                "input-passengers-select"
-            );
-            select[0].style.display = "block";
+        onSelect(e) {
+            const id = e.target.parentNode.parentNode.id;
+            const select = e.target.parentNode.parentNode.children[0].children[2];
+            const selectItems = e.target.parentNode.parentNode.children[0].children[2].children;
+            const selectInput = e.target.parentNode.parentNode.children[0].children[1];
+            select.style.display = "block";
 
             selectItems.forEach(item => {
                 item.addEventListener("click", () => {
                     selectInput.value = item.textContent;
-                    select[0].style.display = "none";
+                    this.setPassengerType(id, item.textContent);
+                    select.style.display = "none";
                 });
+            });
+        },
+
+        setPassengerType(id, type) {
+            this.newPassengers.forEach(passenger => {
+                if (passenger.id === id) {
+                    passenger.type = type;
+                }
             });
         },
 
