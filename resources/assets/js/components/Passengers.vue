@@ -5,6 +5,7 @@
         </header>
         <div class="select-form-content">
             <div
+                :id="passeneger.id"
                 class="passenger"
                 v-for="passeneger in newPassengers"
                 :key="passeneger.id"
@@ -23,7 +24,9 @@
                         <li>Adult</li>
                         <li>Senior</li>
                     </ul>
-                    <label for="icon_prefix" class="active">Passenger {{ passeneger.id }}</label>
+                    <label for="icon_prefix" class="active"
+                        >Passenger {{ passeneger.number }}</label
+                    >
                     <i class="material-icons prefix delete">cancel</i>
                 </div>
             </div>
@@ -50,7 +53,8 @@ export default {
         return {
             newPassengers: [
                 {
-                    id: 1
+                    id: "passenger-1",
+                    number: 1
                 }
             ]
         };
@@ -83,17 +87,39 @@ export default {
         },
 
         addNewPassenger() {
-            const formContent = document.getElementsByClassName("select-form-content");
+            this.newPassengers.push({
+                id: `passenger-${this.newPassengers.length + 1}`,
+                number: this.newPassengers.length + 1
+            });
+            this.setDeleteBtnVisibility();
+            this.setDeleteBtnPosition();
+        },
+
+        setDeleteBtnVisibility() {
             const deleteBtns = document.getElementsByClassName("delete");
-            
-            this.newPassengers.push({ id: this.newPassengers.length + 1 });
+
+            if (this.newPassengers.length > 1) {
+                setTimeout(() => {
+                    deleteBtns.forEach(btn => {
+                        btn.style.visibility = "visible";
+                    });
+                }, 1);
+            }
+        },
+
+        setDeleteBtnPosition() {
+            const formContent = document.getElementsByClassName(
+                "select-form-content"
+            );
+            const deleteBtns = document.getElementsByClassName("delete");
 
             if (this.newPassengers.length > 2) {
                 formContent[0].style.overflowY = "scroll";
-                deleteBtns.forEach(btn => {
-                    btn.style.visibility = "visible";
-                    btn.style.right = -110 + "px";
-                });
+                setTimeout(() => {
+                    deleteBtns.forEach(btn => {
+                        btn.style.right = -115 + "px";
+                    });
+                }, 1);
             }
         }
     }
