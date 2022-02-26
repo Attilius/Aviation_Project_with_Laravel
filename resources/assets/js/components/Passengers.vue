@@ -90,6 +90,12 @@ export default {
             });
         },
 
+        setPassengerType() {
+            this.newPassengers.forEach(passenger => {
+                document.getElementById(passenger.id).children[0].children[1].value = passenger.type;
+            });
+        },
+
         confirmPassengers() {
             const passengersBox = document.getElementById("pasengers-box");
             passengersBox.style.display = "none";
@@ -109,6 +115,7 @@ export default {
                 if (passenger.id === e.target.parentNode.parentNode.id) {
                     this.newPassengers.splice(index, 1);
                     this.setPassengerIdAndNumber();
+                    this.setPassengerType();
                     this.setDeleteBtnVisibility();
                 }
             });
