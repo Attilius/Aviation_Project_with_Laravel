@@ -188,7 +188,7 @@
                 </div>
             </div>
         </main>
-        <Passengers class="passengers"/>
+        <Passengers class="passengers" @changePassengersValue="updatePassengersValue($event)"/>
     </div>
 </template>
 
@@ -232,7 +232,7 @@ export default {
                 { value: "New York", text: "New York" }
             ],
             selected_radio: "",
-            passengers_value: "1 adult",
+            passengers_value: "1 Adult",
             cityUri: ""
         };
     },
@@ -248,6 +248,10 @@ export default {
     },
 
     methods: {
+        updatePassengersValue(updatePassengersValue) {
+            this.passengers_value = updatePassengersValue;
+        },
+
         setPassengers() {
             document.getElementsByClassName("passengers")[0].style.display = "flex";
         },
