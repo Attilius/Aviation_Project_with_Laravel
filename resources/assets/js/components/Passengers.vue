@@ -19,10 +19,10 @@
                         @click="onSelect"
                     />
                     <ul class="select-passengers-list">
-                        <li>Infant</li>
-                        <li>Child</li>
+                        <li>Infant (0-23 months)</li>
+                        <li>Child (2-17 years)</li>
                         <li>Adult</li>
-                        <li>Senior</li>
+                        <li>Senior (65 years and older)</li>
                     </ul>
                     <label for="icon_prefix" class="active"
                         >Passenger {{ passeneger.number }}</label
@@ -79,7 +79,8 @@ export default {
             selectItems.forEach(item => {
                 item.addEventListener("click", () => {
                     selectInput.value = item.textContent;
-                    this.savePassengerType(id, item.textContent);
+                    const type = item.textContent.split(" ")[0];
+                    this.savePassengerType(id, type);
                     select.style.display = "none";
                 });
             });
