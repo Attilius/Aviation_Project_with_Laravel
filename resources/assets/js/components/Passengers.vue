@@ -19,7 +19,7 @@
                         @click="onSelect"
                     />
                     <ul class="select-passengers-list">
-                        <li>Baby</li>
+                        <li>Infant</li>
                         <li>Child</li>
                         <li>Adult</li>
                         <li>Senior</li>
@@ -68,9 +68,12 @@ export default {
     methods: {
         onSelect(e) {
             const id = e.target.parentNode.parentNode.id;
-            const select = e.target.parentNode.parentNode.children[0].children[2];
-            const selectItems = e.target.parentNode.parentNode.children[0].children[2].children;
-            const selectInput = e.target.parentNode.parentNode.children[0].children[1];
+            const select =
+                e.target.parentNode.parentNode.children[0].children[2];
+            const selectItems =
+                e.target.parentNode.parentNode.children[0].children[2].children;
+            const selectInput =
+                e.target.parentNode.parentNode.children[0].children[1];
             select.style.display = "block";
 
             selectItems.forEach(item => {
@@ -92,13 +95,47 @@ export default {
 
         setPassengerType() {
             this.newPassengers.forEach(passenger => {
-                document.getElementById(passenger.id).children[0].children[1].value = passenger.type;
+                document.getElementById(
+                    passenger.id
+                ).children[0].children[1].value = passenger.type;
             });
         },
 
         confirmPassengers() {
             const passengersBox = document.getElementById("pasengers-box");
             passengersBox.style.display = "none";
+
+            if (this.newPassengers.length === 1) {
+                const passenger = `1 ${this.newPassengers[0].type}`;
+                this.changePassengersValue(passenger);
+            }
+
+            if (this.newPassengers.length > 1) {
+                let counter = 1;
+
+                for (let i = 1; i < this.newPassengers.length; i++) {
+                    if (
+                        this.newPassengers[0].type ===
+                        this.newPassengers[i].type
+                    )
+                        counter++;
+                    else counter = counter;
+                }
+
+                for (let i = 0; i < this.newPassengers.length; i++) {
+                    if (counter === this.newPassengers.length) {
+                        const passengers = `${this.newPassengers.length} ${
+                            this.newPassengers[0].type === "Child"
+                                ? this.newPassengers[0].type.concat("ren")
+                                : this.newPassengers[0].type.concat("s")
+                        }`;
+                        this.changePassengersValue(passengers);
+                    } else {
+                        const passengers = `${this.newPassengers.length} Passengers`;
+                        this.changePassengersValue(passengers);
+                    }
+                }
+            }
         },
 
         changePassengersValue(value) {
@@ -129,8 +166,8 @@ export default {
 
         setPassengerIdAndNumber() {
             this.newPassengers.forEach((passenger, index) => {
-                passenger.id = `passenger-${index + 1}`,
-                passenger.number = index + 1
+                (passenger.id = `passenger-${index + 1}`),
+                    (passenger.number = index + 1);
             });
         },
 
