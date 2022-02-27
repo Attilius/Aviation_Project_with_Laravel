@@ -104,7 +104,8 @@ export default {
         addNewPassenger() {
             this.newPassengers.push({
                 id: `passenger-${this.newPassengers.length + 1}`,
-                number: this.newPassengers.length + 1
+                number: this.newPassengers.length + 1,
+                type: "Adult"
             });
             this.setDeleteBtnVisibility();
             this.setDeleteBtnPosition();
@@ -117,6 +118,7 @@ export default {
                     this.setPassengerIdAndNumber();
                     this.setPassengerType();
                     this.setDeleteBtnVisibility();
+                    this.setDeleteBtnPosition();
                 }
             });
         },
@@ -154,6 +156,13 @@ export default {
                 setTimeout(() => {
                     deleteBtns.forEach(btn => {
                         btn.style.right = -115 + "px";
+                    });
+                }, 1);
+            } else {
+                formContent[0].style.overflowY = "hidden";
+                setTimeout(() => {
+                    deleteBtns.forEach(btn => {
+                        btn.style.right = -130 + "px";
                     });
                 }, 1);
             }
