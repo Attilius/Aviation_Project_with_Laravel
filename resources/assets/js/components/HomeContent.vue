@@ -205,32 +205,6 @@ export default {
 
     data() {
         return {
-            selected_from: null,
-            options_from: [
-                {
-                    value: null,
-                    text: "Please select your location of departure",
-                    disabled: true
-                },
-                { value: "Budapest", text: "Budapest" },
-                { value: "London", text: "London" },
-                { value: "Paris", text: "Paris" },
-                { value: "Munich", text: "Munich" },
-                { value: "New York", text: "New York" }
-            ],
-            selected_to: null,
-            options_to: [
-                {
-                    value: null,
-                    text: "Please select your destination",
-                    disabled: true
-                },
-                { value: "Budapest", text: "Budapest" },
-                { value: "London", text: "London" },
-                { value: "Paris", text: "Paris" },
-                { value: "Munich", text: "Munich" },
-                { value: "New York", text: "New York" }
-            ],
             selected_radio: "",
             passengers_value: "1 Adult",
             cityUri: ""
