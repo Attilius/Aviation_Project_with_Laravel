@@ -101,6 +101,10 @@ export default {
             passengersBox.style.display = "none";
         },
 
+        changePassengersValue(value) {
+            this.$emit("changePassengersValue", value);
+        },
+
         addNewPassenger() {
             this.newPassengers.push({
                 id: `passenger-${this.newPassengers.length + 1}`,
