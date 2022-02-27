@@ -87,7 +87,7 @@
                                     <input
                                         id="icon_prefix"
                                         type="text"
-                                        value="1 adult"
+                                        :value="passengers_value"
                                         @click="setPassengers"
                                     />
                                     <label for="icon_prefix" class="active">Passengers*</label>
@@ -232,7 +232,7 @@ export default {
                 { value: "New York", text: "New York" }
             ],
             selected_radio: "",
-
+            passengers_value: "1 adult",
             cityUri: ""
         };
     },
