@@ -35,7 +35,6 @@
                                     <li
                                         v-for="airport in airports"
                                         :key="airport.id"
-                                        @click="selectAirport"
                                     >
                                         <div class="airport">
                                             <i
@@ -257,6 +256,7 @@ export default {
         test() {
             document.getElementsByClassName("airports")[0].style.display =
                 "block";
+            this.selectAirport();  
         },
 
         selectAirport() {
@@ -269,6 +269,9 @@ export default {
                     console.dir(field.children[1].children[0].textContent)
                     departure_input.value = field.children[1].children[0].textContent;
                     label.classList.add("active");
+                    if (departure_input.value) {
+                        document.getElementsByClassName("airports")[0].style.display = "none";
+                    }
                 });
             });
         },
