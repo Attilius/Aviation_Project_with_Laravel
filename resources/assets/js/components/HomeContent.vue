@@ -661,6 +661,11 @@ input:focus {
     height: 50px;
     width: 100%;
     border-top: 1px solid #ced4da;
+    cursor: pointer;
+}
+
+.airports li:hover {
+    background: #ced4da;
 }
 
 .airport {
@@ -695,6 +700,10 @@ input:focus {
 #city_,
 #country_ {
     margin-bottom: 0 !important;
+}
+
+#country_ {
+    color: rgb(5, 55, 115);
 }
 
 /*-------- Main content settings ------*/
