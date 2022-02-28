@@ -35,6 +35,7 @@
                                     <li
                                         v-for="airport in airports"
                                         :key="airport.id"
+                                        @click="selectAirport"
                                     >
                                         <div class="airport">
                                             <i
@@ -44,13 +45,12 @@
                                             >
                                             <div class="data_">
                                                 <span id="city_"
-                                                    >{{ airport.city }},
-                                                    {{ airport.airport }}</span
+                                                    >{{ airport.city + ", " + airport.airport }}
+                                                </span
                                                 >
                                                 <span id="country_"
-                                                    >{{ airport.IATA_code }}-{{
-                                                        airport.country
-                                                    }}</span
+                                                    >{{ airport.IATA_code + "-" + airport.country}}
+                                                </span
                                                 >
                                             </div>
                                         </div>
@@ -258,6 +258,21 @@ export default {
             document.getElementsByClassName("airports")[0].style.display =
                 "block";
         },
+
+        selectAirport() {
+            const departure_input = document.getElementById("departure_place");
+            const label = document.getElementById("label-departure")
+            const selectFields = document.querySelectorAll(".airport");
+
+            selectFields.forEach(field => {
+                field.addEventListener("click", () => {
+                    console.dir(field.children[1].children[0].textContent)
+                    departure_input.value = field.children[1].children[0].textContent;
+                    label.classList.add("active");
+                });
+            });
+        },
+
         updatePassengersValue(updatePassengersValue) {
             this.passengers_value = updatePassengersValue;
         },
