@@ -32,12 +32,26 @@
                                     @click="test"
                                 />
                                 <ul class="airports">
-                                    <li v-for="airport in airports" :key="airport.id">
+                                    <li
+                                        v-for="airport in airports"
+                                        :key="airport.id"
+                                    >
                                         <div class="airport">
-                                            <i id="rotate-90deg" class="material-icons">flight</i>
+                                            <i
+                                                id="rotate-90deg"
+                                                class="material-icons"
+                                                >flight</i
+                                            >
                                             <div class="data_">
-                                                <span id="city_">{{airport.city}}, {{airport.airport}}</span>
-                                                <span id="country_">{{airport.IATA_code}}-{{airport.country}}</span>
+                                                <span id="city_"
+                                                    >{{ airport.city }},
+                                                    {{ airport.airport }}</span
+                                                >
+                                                <span id="country_"
+                                                    >{{ airport.IATA_code }}-{{
+                                                        airport.country
+                                                    }}</span
+                                                >
                                             </div>
                                         </div>
                                     </li>
@@ -54,10 +68,7 @@
 
                             <div class="input-field">
                                 <i class="material-icons prefix">flight_land</i>
-                                <input
-                                    id="arriving_place"
-                                    type="text"
-                                />
+                                <input id="arriving_place" type="text" />
                                 <label id="label-arriving" for="from"
                                     >Arriving at*</label
                                 >
@@ -93,35 +104,39 @@
                             </div>
 
                             <div class="input-field">
-                                    <i class="material-icons prefix"
-                                        >account_circle</i
-                                    >
-                                    <input
-                                        id="icon_prefix"
-                                        type="text"
-                                        :value="passengers_value"
-                                        @click="setPassengers"
-                                    />
-                                    <label for="icon_prefix" class="active">Passengers*</label>
+                                <i class="material-icons prefix"
+                                    >account_circle</i
+                                >
+                                <input
+                                    id="icon_prefix"
+                                    type="text"
+                                    :value="passengers_value"
+                                    @click="setPassengers"
+                                />
+                                <label for="icon_prefix" class="active"
+                                    >Passengers*</label
+                                >
                             </div>
 
                             <div class="input-field">
-                                    <i class="material-icons prefix"
-                                        >airline_seat_recline_extra</i
-                                    >
-                                    <input
-                                        id="input-select"
-                                        type="text"
-                                        value="ECONOMY"
-                                        @click="onSelect"
-                                    />
-                                    <ul class="select-list">
-                                        <li>economy</li>
-                                        <li>premium economy</li>
-                                        <li>business</li>
-                                        <li>first class</li>
-                                    </ul>
-                                    <label for="icon_prefix" class="active">Cabin*</label>
+                                <i class="material-icons prefix"
+                                    >airline_seat_recline_extra</i
+                                >
+                                <input
+                                    id="input-select"
+                                    type="text"
+                                    value="ECONOMY"
+                                    @click="onSelect"
+                                />
+                                <ul class="select-list">
+                                    <li>economy</li>
+                                    <li>premium economy</li>
+                                    <li>business</li>
+                                    <li>first class</li>
+                                </ul>
+                                <label for="icon_prefix" class="active"
+                                    >Cabin*</label
+                                >
                             </div>
 
                             <b-row class="travel-type">
@@ -200,7 +215,10 @@
                 </div>
             </div>
         </main>
-        <Passengers class="passengers" @changePassengersValue="updatePassengersValue($event)"/>
+        <Passengers
+            class="passengers"
+            @changePassengersValue="updatePassengersValue($event)"
+        />
     </div>
 </template>
 
@@ -237,14 +255,16 @@ export default {
 
     methods: {
         test() {
-            document.getElementsByClassName("airports")[0].style.display = "block";
+            document.getElementsByClassName("airports")[0].style.display =
+                "block";
         },
         updatePassengersValue(updatePassengersValue) {
             this.passengers_value = updatePassengersValue;
         },
 
         setPassengers() {
-            document.getElementsByClassName("passengers")[0].style.display = "flex";
+            document.getElementsByClassName("passengers")[0].style.display =
+                "flex";
         },
 
         onSelect() {
@@ -252,7 +272,7 @@ export default {
             const selectItems = document.querySelectorAll(".select-list li");
             const selectInput = document.getElementById("input-select");
             select[0].style.display = "block";
-            
+
             selectItems.forEach(item => {
                 item.addEventListener("click", () => {
                     selectInput.value = item.textContent.toUpperCase();
@@ -597,7 +617,8 @@ input:focus {
     -webkit-animation: flight 1.5s ease-in-out;
 }
 
-#icon_prefix, #input-select {
+#icon_prefix,
+#input-select {
     cursor: pointer;
 }
 
@@ -669,13 +690,12 @@ input:focus {
     flex-direction: column;
     justify-content: center;
     font-size: 12px;
-};
-
-#city_, #country_ {
-    margin-bottom: 0 !important;
 }
 
-
+#city_,
+#country_ {
+    margin-bottom: 0 !important;
+}
 
 /*-------- Main content settings ------*/
 
