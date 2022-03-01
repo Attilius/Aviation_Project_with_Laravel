@@ -34,6 +34,7 @@ export default {
 #pointer {
     font-size: 4rem;
     transform: rotateX(180deg);
+    color: whitesmoke;
 }
 
 .pointer {
