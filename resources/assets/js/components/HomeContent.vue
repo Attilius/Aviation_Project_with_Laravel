@@ -143,7 +143,7 @@
                                 >
                             </b-row>
                             <b-button type="submit" id="submit-btn"
-                                >BOOK NOW</b-button
+                                >Search flights</b-button
                             >
                         </b-row>
                     </b-form>
