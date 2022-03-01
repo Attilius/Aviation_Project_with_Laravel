@@ -463,7 +463,7 @@ body {
     color: rgb(9, 55, 115);
     text-transform: uppercase;
     text-shadow: 2px 2px 5px silver;
-    padding-bottom: 250px;
+    padding-bottom: 350px;
 }
 
 .travel-type {
