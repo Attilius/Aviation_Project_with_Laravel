@@ -22,7 +22,8 @@
                     <h1 class="title-bottom">fly with us</h1>
                     <b-form @submit="onBooking">
                         <b-row class="travelling-datas">
-                            <div class="input-field">
+                            <div class="destinations">
+                                <div class="input-field">
                                 <i class="material-icons prefix"
                                     >flight_takeoff</i
                                 >
@@ -77,6 +78,8 @@
                                     data-success=""
                                 ></span>
                             </div>
+                            </div>
+                            
 
                             <div class="input-field">
                                 <i class="material-icons prefix">today</i>
@@ -124,14 +127,14 @@
                                 <input
                                     id="input-select"
                                     type="text"
-                                    value="ECONOMY"
+                                    value="Economy"
                                     @click="onSelect"
                                 />
                                 <ul class="select-list">
-                                    <li>economy</li>
-                                    <li>premium economy</li>
-                                    <li>business</li>
-                                    <li>first class</li>
+                                    <li>Economy</li>
+                                    <li>Premium economy</li>
+                                    <li>Business</li>
+                                    <li>First class</li>
                                 </ul>
                                 <label for="icon_prefix" class="active"
                                     >Cabin*</label
@@ -256,6 +259,7 @@ export default {
         test() {
             document.getElementsByClassName("airports")[0].style.display =
                 "block";
+            document.body.classList.add("stop-scrolling");
             this.selectAirport();  
         },
 
@@ -266,11 +270,11 @@ export default {
 
             selectFields.forEach(field => {
                 field.addEventListener("click", () => {
-                    console.dir(field.children[1].children[0].textContent)
                     departure_input.value = field.children[1].children[0].textContent;
                     label.classList.add("active");
                     if (departure_input.value) {
                         document.getElementsByClassName("airports")[0].style.display = "none";
+                        document.body.classList.remove("stop-scrolling");
                     }
                 });
             });
@@ -293,7 +297,7 @@ export default {
 
             selectItems.forEach(item => {
                 item.addEventListener("click", () => {
-                    selectInput.value = item.textContent.toUpperCase();
+                    selectInput.value = item.textContent;
                     select[0].style.display = "none";
                 });
             });
@@ -468,17 +472,30 @@ body {
     color: rgb(9, 55, 115);
     text-transform: uppercase;
     text-shadow: 2px 2px 5px silver;
+    padding-bottom: 250px;
 }
 
-.travelling-datas,
 .travel-type {
-    padding: 5px;
-    width: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .travelling-datas {
+    background: whitesmoke;
     justify-content: space-between;
+    padding: 20px;
     margin-left: 0;
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    top: 370px;
+    left: -30px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 5px #ced4da;
+    flex-wrap: wrap;
 }
 
 .radio {
@@ -500,7 +517,6 @@ label {
 }
 
 input {
-    width: 190px !important;
     padding: 20px;
 }
 
@@ -653,14 +669,14 @@ input:focus {
 }
 
 .select-list li {
-    text-transform: uppercase;
+    text-transform: capitalize;
     padding: 0.25rem;
     cursor: pointer;
 }
 
 .select-list li:hover {
-    background: #6a1b9a;
-    color: white;
+    background: #ced4da;
+    color: rgb(5, 55, 115);
 }
 
 .passengers {
@@ -670,12 +686,16 @@ input:focus {
 .airports {
     width: 450px;
     height: 200px;
+    background: whitesmoke;
     border: 1px solid grey;
     overflow-y: scroll;
     display: none;
+    z-index: 11 !important;
+    position: fixed;
 }
 
 .airports li {
+    background: whitesmoke;
     height: 50px;
     width: 100%;
     border-top: 1px solid #ced4da;
@@ -721,6 +741,32 @@ input:focus {
 }
 
 #country_ {
+    color: rgb(5, 55, 115);
+}
+
+.destinations {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.destinations .input-field {
+    width: 50% !important;
+    height: 50% !important;
+}
+
+#departure_place,
+#arriving_place {
+    width: 80% !important;
+}
+
+.stop-scrolling {
+height: 100%;
+overflow: hidden;
+}
+
+.material-icons {
     color: rgb(5, 55, 115);
 }
 
