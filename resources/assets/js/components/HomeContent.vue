@@ -24,62 +24,45 @@
                         <b-row class="travelling-datas">
                             <div class="destinations">
                                 <div class="input-field">
-                                <i class="material-icons prefix"
-                                    >flight_takeoff</i
-                                >
-                                <input
-                                    id="departure_place"
-                                    type="text"
-                                    @click="test"
-                                />
-                                <ul class="airports">
-                                    <li
-                                        v-for="airport in airports"
-                                        :key="airport.id"
+                                    <i class="material-icons prefix"
+                                        >flight_takeoff</i
                                     >
-                                        <div class="airport">
-                                            <i
-                                                id="rotate-90deg"
-                                                class="material-icons"
-                                                >flight</i
-                                            >
-                                            <div class="data_">
-                                                <span id="city_"
-                                                    >{{ airport.city + ", " + airport.airport }}
-                                                </span
-                                                >
-                                                <span id="country_"
-                                                    >{{ airport.IATA_code + "-" + airport.country}}
-                                                </span
-                                                >
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <label id="label-departure" for="from"
-                                    >Departure from*</label
-                                >
-                                <span
-                                    class="helper-text"
-                                    data-error="Please enter a departure city."
-                                    data-success=""
-                                ></span>
-                            </div>
+                                    <input
+                                        id="departure_place"
+                                        type="text"
+                                        @click="showAirports(`departure_place`,`label-departure`)"
+                                    />
+                                    <Airports />
+                                    <label id="label-departure" for="from"
+                                        >Departure from*</label
+                                    >
+                                    <span
+                                        class="helper-text"
+                                        data-error="Please enter a departure city."
+                                        data-success=""
+                                    ></span>
+                                </div>
 
-                            <div class="input-field">
-                                <i class="material-icons prefix">flight_land</i>
-                                <input id="arriving_place" type="text" />
-                                <label id="label-arriving" for="from"
-                                    >Arriving at*</label
-                                >
-                                <span
-                                    class="helper-text"
-                                    data-error="Please enter an arrival city."
-                                    data-success=""
-                                ></span>
+                                <div class="input-field">
+                                    <i class="material-icons prefix"
+                                        >flight_land</i
+                                    >
+                                    <input
+                                        id="arriving_place"
+                                        type="text"
+                                        @click="showAirports(`arriving_place`, `label-arriving`)"
+                                    />
+                                    <Airports />
+                                    <label id="label-arriving" for="from"
+                                        >Arriving at*</label
+                                    >
+                                    <span
+                                        class="helper-text"
+                                        data-error="Please enter an arrival city."
+                                        data-success=""
+                                    ></span>
+                                </div>
                             </div>
-                            </div>
-                            
 
                             <div class="input-field">
                                 <i class="material-icons prefix">today</i>
@@ -227,18 +210,18 @@
 <script>
 import Chat from "./Chat.vue";
 import Passengers from "./Passengers.vue";
-import AirportsDatas from "../../json/airports.json";
+import Airports from "./Airports.vue";
 export default {
     name: "HomeContent",
     props: ["app"],
     components: {
         Chat,
-        Passengers
+        Passengers,
+        Airports
     },
 
     data() {
         return {
-            airports: AirportsDatas.airports,
             selected_radio: "",
             passengers_value: "1 Adult",
             cityUri: ""
@@ -256,26 +239,34 @@ export default {
     },
 
     methods: {
-        test() {
+        showAirports(input_id, label_id) {
             document.getElementsByClassName("airports")[0].style.display =
                 "block";
             document.body.classList.add("stop-scrolling");
-            this.selectAirport();  
+
+            if (input_id === "arriving_place") {
+                    document.getElementsByClassName("airports")[0].style.left = `${100}%`;
+            } else document.getElementsByClassName("airports")[0].style.left = 0;
+
+            this.selectAirport(input_id, label_id);
         },
 
-        selectAirport() {
-            const departure_input = document.getElementById("departure_place");
-            const label = document.getElementById("label-departure")
+        selectAirport(input_id,label_id) {
+            const input = document.getElementById(input_id);
+            const label = document.getElementById(label_id);
             const selectFields = document.querySelectorAll(".airport");
 
             selectFields.forEach(field => {
                 field.addEventListener("click", () => {
-                    departure_input.value = field.children[1].children[0].textContent;
+                    input.value =
+                        field.children[1].children[0].textContent;
                     label.classList.add("active");
-                    if (departure_input.value) {
-                        document.getElementsByClassName("airports")[0].style.display = "none";
+                    
+                        document.getElementsByClassName(
+                            "airports"
+                        )[0].style.display = "none";
                         document.body.classList.remove("stop-scrolling");
-                    }
+                    
                 });
             });
         },
@@ -683,67 +674,6 @@ input:focus {
     display: none;
 }
 
-.airports {
-    width: 450px;
-    height: 200px;
-    background: whitesmoke;
-    border: 1px solid grey;
-    overflow-y: scroll;
-    display: none;
-    z-index: 11 !important;
-    position: fixed;
-}
-
-.airports li {
-    background: whitesmoke;
-    height: 50px;
-    width: 100%;
-    border-top: 1px solid #ced4da;
-    cursor: pointer;
-}
-
-.airports li:hover {
-    background: #ced4da;
-}
-
-.airport {
-    height: 50px;
-    width: 100%;
-    display: flex;
-}
-
-.airport i {
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-}
-
-#rotate-90deg {
-    transform: rotate(90deg);
-    color: rgb(5, 55, 115);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.data_ {
-    width: 80%;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 12px;
-}
-
-#city_,
-#country_ {
-    margin-bottom: 0 !important;
-}
-
-#country_ {
-    color: rgb(5, 55, 115);
-}
-
 .destinations {
     width: 100%;
     height: 30%;
@@ -762,8 +692,8 @@ input:focus {
 }
 
 .stop-scrolling {
-height: 100%;
-overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
 
 .material-icons {
