@@ -71,6 +71,10 @@ export default {
     justify-content: center;
 }
 
+.info i {
+    color: whitesmoke;
+}
+
 #rotate-90deg {
     transform: rotate(90deg);
 }
