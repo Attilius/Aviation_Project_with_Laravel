@@ -252,6 +252,10 @@ export default {
     }
 }
 
+.pointer i {
+    color: whitesmoke;
+}
+
 .main {
     height: 100vh;
     width: 100%;
