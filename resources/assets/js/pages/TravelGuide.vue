@@ -199,7 +199,9 @@ export default {
 }
 
 .link:hover {
-    text-decoration: underline;
+    width: 21.5%;
+    margin-right: 23.5%;
+    border-bottom: 1px solid whitesmoke;
 }
 
 .share {
