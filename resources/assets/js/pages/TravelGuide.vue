@@ -75,6 +75,10 @@ export default {
         };
     },
 
+    mounted() {
+
+    },
+
     methods: {
         onChangeAreaAndLocation([cardArea, cardLocation]) {
             this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation])
