@@ -125,7 +125,14 @@ export default {
                     clearInterval(id);
                 }
             }, interval);
-        }
+        },
+
+        scrollPage(positionY, positionX) {
+            window.scroll({
+                top: positionY,
+                left: positionX
+            });
+        },
     }
 };
 </script>
