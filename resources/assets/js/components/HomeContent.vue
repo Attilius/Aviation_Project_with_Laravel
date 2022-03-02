@@ -30,7 +30,12 @@
                                     <input
                                         id="departure_place"
                                         type="text"
-                                        @click="showAirports(`departure_place`,`label-departure`)"
+                                        @click="
+                                            showAirports(
+                                                `departure_place`,
+                                                `label-departure`
+                                            )
+                                        "
                                     />
                                     <Airports />
                                     <label id="label-departure" for="from"
@@ -50,7 +55,12 @@
                                     <input
                                         id="arriving_place"
                                         type="text"
-                                        @click="showAirports(`arriving_place`, `label-arriving`)"
+                                        @click="
+                                            showAirports(
+                                                `arriving_place`,
+                                                `label-arriving`
+                                            )
+                                        "
                                     />
                                     <Airports />
                                     <label id="label-arriving" for="from"
@@ -245,30 +255,51 @@ export default {
             document.body.classList.add("stop-scrolling");
 
             if (input_id === "arriving_place") {
-                    document.getElementsByClassName("airports")[0].style.left = `${100}%`;
-            } else document.getElementsByClassName("airports")[0].style.left = 0;
+                document.getElementsByClassName(
+                    "airports"
+                )[0].style.left = `${100}%`;
+            } else
+                document.getElementsByClassName("airports")[0].style.left = 0;
 
             this.selectAirport(input_id, label_id);
         },
 
-        selectAirport(input_id,label_id) {
-            const input = document.getElementById(input_id);
+        selectAirport(input_id, label_id) {
+            let input = document.getElementById(input_id);
             const label = document.getElementById(label_id);
             const selectFields = document.querySelectorAll(".airport");
 
             selectFields.forEach(field => {
                 field.addEventListener("click", () => {
-                    input.value =
-                        field.children[1].children[0].textContent;
+                    input.value = field.children[1].children[0].textContent;
                     label.classList.add("active");
-                    
-                        document.getElementsByClassName(
-                            "airports"
-                        )[0].style.display = "none";
-                        document.body.classList.remove("stop-scrolling");
-                    
+                    this.validateInput()
+                    document.getElementsByClassName(
+                        "airports"
+                    )[0].style.display = "none";
+                    document.body.classList.remove("stop-scrolling");
+                    input = document;
                 });
             });
+        },
+
+        validateInput() {
+            const departure = document.getElementById("departure_place");
+            const arriving = document.getElementById("arriving_place");
+            const departureLabel = document.getElementById("label-departure");
+            const arrivingLabel = document.getElementById("label-arriving");
+
+            if (departure.value && departure.value === arriving.value) {
+                arriving.value = arriving.value;
+                departure.value = "";
+                departureLabel.classList.remove("active");
+            } 
+            
+            if (arriving.value && departure.value === arriving.value) {
+                departure.value = departure.value;
+                arriving.value = "";
+                arrivingLabel.classList.remove("active");
+            } 
         },
 
         updatePassengersValue(updatePassengersValue) {
