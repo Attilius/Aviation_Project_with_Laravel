@@ -1117,5 +1117,9 @@ a:hover {
         flex-direction: column;
         margin-bottom: 50px;
     }
+
+    .travelling-datas {
+        height: 70vh;
+    }
 }
 </style>
