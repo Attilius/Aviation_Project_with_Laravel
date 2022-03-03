@@ -1100,13 +1100,17 @@ a:hover {
     .under-left {
         display: none;
     }
-    
+
     .title-top {
         font-size: 2rem;
     }
 
     .title-bottom {
         font-size: 2.5rem;
+    }
+
+    .content {
+        height: 100vh;
     }
 }
 </style>
