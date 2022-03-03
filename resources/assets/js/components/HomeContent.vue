@@ -1097,6 +1097,10 @@ a:hover {
 }
 
 @media (max-width: 576px) {
+    .under-left {
+        display: none;
+    }
+    
     .title-top {
         font-size: 2rem;
     }
