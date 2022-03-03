@@ -255,7 +255,6 @@ export default {
 
         inputs.forEach(input => {
             input.addEventListener("input", (e) => {
-                //console.log(`${input.id} => ${input.value}`)
                 airports.forEach(airport => {
                     if (airport.city.startsWith(e.target.value)) {
                         selectedAirports.push(airport);
