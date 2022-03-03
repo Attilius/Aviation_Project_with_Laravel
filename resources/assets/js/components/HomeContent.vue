@@ -1112,5 +1112,10 @@ a:hover {
     .content {
         height: 100vh;
     }
+    
+    .destinations {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
 }
 </style>
