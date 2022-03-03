@@ -19,15 +19,10 @@
 </template>
 
 <script>
-import AirportsDatas from "../../json/airports.json";
+
 export default {
     name: "Airports",
-
-    data() {
-        return {
-            airports: AirportsDatas.airports
-        }
-    }
+    props: ["airports"]
 }
 </script>
 
