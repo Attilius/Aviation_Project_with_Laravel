@@ -37,7 +37,7 @@
                                             )
                                         "
                                     />
-                                    <Airports />
+                                    <Airports :airports="airports" />
                                     <label id="label-departure" for="from"
                                         >Departure from*</label
                                     >
@@ -62,7 +62,7 @@
                                             )
                                         "
                                     />
-                                    <Airports />
+                                    <Airports :airports="airports" />
                                     <label id="label-arriving" for="from"
                                         >Arriving at*</label
                                     >
@@ -221,6 +221,7 @@
 import Chat from "./Chat.vue";
 import Passengers from "./Passengers.vue";
 import Airports from "./Airports.vue";
+import AirportsDatas from "../../json/airports.json";
 export default {
     name: "HomeContent",
     props: ["app"],
@@ -234,7 +235,8 @@ export default {
         return {
             selected_radio: "",
             passengers_value: "1 Adult",
-            cityUri: ""
+            cityUri: "",
+            airports: AirportsDatas.airports
         };
     },
 
@@ -246,6 +248,23 @@ export default {
             minDate: new Date(Date.now())
         });
         this.getCityName();
+
+        const inputs = document.getElementsByTagName("input");
+        const airports = AirportsDatas.airports;
+        const selectedAirports = [];
+
+        inputs.forEach(input => {
+            input.addEventListener("input", (e) => {
+                //console.log(`${input.id} => ${input.value}`)
+                airports.forEach(airport => {
+                    if (airport.city.startsWith(e.target.value)) {
+                        selectedAirports.push(airport);
+                        this.airports = [... new Set(selectedAirports)];
+                    }
+                });
+            });
+        });
+        
     },
 
     methods: {
