@@ -36,7 +36,7 @@
                                                 `label-departure`
                                             )
                                         "
-                                        @keyup="filterAirportsData"
+                                        @keyup="filterAirportsData(`departure_place`)"
                                     />
                                     <Airports :airports="airports" />
                                     <label id="label-departure" for="from"
@@ -268,8 +268,8 @@ export default {
     },
 
     methods: {
-        filterAirportsData() {
-            const departure_input = document.getElementById("departure_place");
+        filterAirportsData(input_id) {
+            const departure_input = document.getElementById(input_id);
             let filter = departure_input.value.toUpperCase();
             let li_items = document.querySelectorAll(".airports li");
             var city;
