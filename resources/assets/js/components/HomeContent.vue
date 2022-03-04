@@ -254,8 +254,8 @@ export default {
 
     methods: {
         filterAirportsData(input_id) {
-            const departure_input = document.getElementById(input_id);
-            let filter = departure_input.value.toUpperCase();
+            const input = document.getElementById(input_id);
+            let filter = input.value.toUpperCase();
             let li_items = document.querySelectorAll(".airports li");
             var city;
             var country;
