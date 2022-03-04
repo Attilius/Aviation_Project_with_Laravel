@@ -62,6 +62,7 @@
                                                 `label-arriving`
                                             )
                                         "
+                                        @keyup="filterAirportsData(`arriving_place`)"
                                     />
                                     <Airports :airports="airports" />
                                     <label id="label-arriving" for="from"
