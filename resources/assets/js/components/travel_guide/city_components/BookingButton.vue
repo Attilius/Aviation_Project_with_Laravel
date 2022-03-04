@@ -38,6 +38,10 @@ export default {
     color: whitesmoke;
 }
 
+.btn i {
+    color: whitesmoke;
+}
+
 #rotate-90deg {
     transform: rotate(90deg);
 }
