@@ -36,6 +36,7 @@
                                                 `label-departure`
                                             )
                                         "
+                                        @keyup="filterAirportsData"
                                     />
                                     <Airports :airports="airports" />
                                     <label id="label-departure" for="from"
@@ -249,7 +250,7 @@ export default {
         });
         this.getCityName();
 
-        const inputs = document.getElementsByTagName("input");
+        /*const inputs = document.getElementsByTagName("input");
         const airports = AirportsDatas.airports;
         const selectedAirports = [];
 
@@ -262,11 +263,29 @@ export default {
                     }
                 });
             });
-        });
+        });*/
         
     },
 
     methods: {
+        filterAirportsData() {
+            const departure_input = document.getElementById("departure_place");
+            let filter = departure_input.value.toUpperCase();
+            let li_items = document.querySelectorAll(".airports li");
+            var city;
+            var country;
+
+            for (let i = 0; i < li_items.length; i++) {
+                city = li_items[i].children[0].children[1].children[0].textContent;
+                country = li_items[i].children[0].children[1].children[1].textContent;
+                if (city.toUpperCase().indexOf(filter) > -1 || country.toUpperCase().indexOf(filter) > -1) {
+                    li_items[i].style.display = "";
+                } else {
+                    li_items[i].style.display = "none";
+                }
+            }
+        },
+
         showAirports(input_id, label_id) {
             document.getElementsByClassName("airports")[0].style.display =
                 "block";
