@@ -250,22 +250,6 @@ export default {
             minDate: new Date(Date.now())
         });
         this.getCityName();
-
-        /*const inputs = document.getElementsByTagName("input");
-        const airports = AirportsDatas.airports;
-        const selectedAirports = [];
-
-        inputs.forEach(input => {
-            input.addEventListener("input", (e) => {
-                airports.forEach(airport => {
-                    if (airport.city.startsWith(e.target.value)) {
-                        selectedAirports.push(airport);
-                        this.airports = [... new Set(selectedAirports)];
-                    }
-                });
-            });
-        });*/
-        
     },
 
     methods: {
