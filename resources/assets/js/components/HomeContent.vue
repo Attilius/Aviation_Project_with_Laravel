@@ -291,12 +291,33 @@ export default {
                 li_items[i].style.display = "";
             }
 
-            if (input_id === "arriving_place") {
+            if (input_id === "arriving_place" && window.innerWidth > 576) {
                 document.getElementsByClassName(
                     "airports"
                 )[0].style.left = `${100}%`;
-            } else
+            } else if (
+                input_id === "arriving_place" &&
+                window.innerWidth <= 576
+            ) {
+                document.getElementsByClassName(
+                    "airports"
+                )[0].style.top = `${210}%`;
+            }
+
+            if (input_id === "departure_place" && window.innerWidth <= 576) {
                 document.getElementsByClassName("airports")[0].style.left = 0;
+                document.getElementsByClassName(
+                    "airports"
+                )[0].style.top = `${70}%`;
+            } else if (
+                input_id === "departure_place" &&
+                window.innerWidth > 576
+            ) {
+                document.getElementsByClassName("airports")[0].style.left = 0;
+                document.getElementsByClassName(
+                    "airports"
+                )[0].style.top = `${120}%`;
+            }
 
             this.selectAirport(input_id, label_id);
         },
