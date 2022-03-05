@@ -38,7 +38,7 @@
                                         "
                                         @keyup="filterAirportsData(`departure_place`)"
                                     />
-                                    <Airports :airports="airports" />
+                                    <Airports :app="app" />
                                     <label id="label-departure" for="from"
                                         >Departure from*</label
                                     >
@@ -64,7 +64,7 @@
                                         "
                                         @keyup="filterAirportsData(`arriving_place`)"
                                     />
-                                    <Airports :airports="airports" />
+                                    <Airports :app="app" />
                                     <label id="label-arriving" for="from"
                                         >Arriving at*</label
                                     >
@@ -223,7 +223,7 @@
 import Chat from "./Chat.vue";
 import Passengers from "./Passengers.vue";
 import Airports from "./Airports.vue";
-import AirportsDatas from "../../json/airports.json";
+
 export default {
     name: "HomeContent",
     props: ["app"],
@@ -237,8 +237,7 @@ export default {
         return {
             selected_radio: "",
             passengers_value: "1 Adult",
-            cityUri: "",
-            airports: AirportsDatas.airports
+            cityUri: ""
         };
     },
 
@@ -275,6 +274,11 @@ export default {
             document.getElementsByClassName("airports")[0].style.display =
                 "block";
             document.body.classList.add("stop-scrolling");
+            let li_items = document.querySelectorAll(".airports li");
+
+            for (let i = 0; i < li_items.length; i++) {
+                li_items[i].style.display = "";
+            }
 
             if (input_id === "arriving_place") {
                 document.getElementsByClassName(
@@ -295,7 +299,7 @@ export default {
                 field.addEventListener("click", () => {
                     input.value = field.children[1].children[0].textContent;
                     label.classList.add("active");
-                    this.validateInput()
+                    this.validateInput(input_id);
                     document.getElementsByClassName(
                         "airports"
                     )[0].style.display = "none";
@@ -305,19 +309,19 @@ export default {
             });
         },
 
-        validateInput() {
+        validateInput(id) {
             const departure = document.getElementById("departure_place");
             const arriving = document.getElementById("arriving_place");
             const departureLabel = document.getElementById("label-departure");
             const arrivingLabel = document.getElementById("label-arriving");
 
-            if (departure.value && departure.value === arriving.value) {
+            if (departure.value && departure.value === arriving.value && id === "arriving_place") {
                 arriving.value = arriving.value;
                 departure.value = "";
                 departureLabel.classList.remove("active");
             } 
             
-            if (arriving.value && departure.value === arriving.value) {
+            if (arriving.value && departure.value === arriving.value && id === "departure_place") {
                 departure.value = departure.value;
                 arriving.value = "";
                 arrivingLabel.classList.remove("active");
