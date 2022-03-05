@@ -1191,5 +1191,33 @@ a:hover {
     .travelling-datas {
         height: 70vh;
     }
+
+    main {
+        height: 220vh;
+    }
+
+    .top-destinations {
+        grid-template-columns: repeat(1, 4fr);
+    }
+
+    .other-services {
+        position: relative;
+        bottom: -1000px;
+        left: 0;
+        flex-direction: column;
+    }
+
+    .car-rent, .hotel-booking {
+        background-position: center;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .car-rent:hover,
+    .hotel-booking:hover {
+    background-size: 100%;
+    background-position-y: 0;
+}
+    
 }
 </style>
