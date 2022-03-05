@@ -14,6 +14,7 @@
 
 <script>
 import M from "materialize-css";
+import AirportsDatas from "../json/airports.json";
 export default {
     name: "app",
 
@@ -131,7 +132,8 @@ export default {
                 }
             ],
 
-            random_cards: []
+            random_cards: [],
+            airports: AirportsDatas.airports
         };
     },
 
