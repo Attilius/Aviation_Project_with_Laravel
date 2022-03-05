@@ -1207,7 +1207,8 @@ a:hover {
         flex-direction: column;
     }
 
-    .car-rent, .hotel-booking {
+    .car-rent,
+    .hotel-booking {
         background-position: center;
         width: 100%;
         margin-top: 50px;
@@ -1215,9 +1216,8 @@ a:hover {
 
     .car-rent:hover,
     .hotel-booking:hover {
-    background-size: 100%;
-    background-position-y: 0;
-}
-    
+        background-size: 100%;
+        background-position-y: 0;
+    }
 }
 </style>
