@@ -36,7 +36,11 @@
                                                 `label-departure`
                                             )
                                         "
-                                        @keyup="filterAirportsData(`departure_place`)"
+                                        @keyup="
+                                            filterAirportsData(
+                                                `departure_place`
+                                            )
+                                        "
                                     />
                                     <Airports :app="app" />
                                     <label id="label-departure" for="from"
@@ -62,7 +66,9 @@
                                                 `label-arriving`
                                             )
                                         "
-                                        @keyup="filterAirportsData(`arriving_place`)"
+                                        @keyup="
+                                            filterAirportsData(`arriving_place`)
+                                        "
                                     />
                                     <Airports :app="app" />
                                     <label id="label-arriving" for="from"
@@ -155,7 +161,7 @@
                                 >
                             </b-row>
                             <b-button type="submit" id="submit-btn"
-                                >Search flights</b-button
+                                >Booking now</b-button
                             >
                         </b-row>
                     </b-form>
@@ -260,9 +266,14 @@ export default {
             var country;
 
             for (let i = 0; i < li_items.length; i++) {
-                city = li_items[i].children[0].children[1].children[0].textContent;
-                country = li_items[i].children[0].children[1].children[1].textContent;
-                if (city.toUpperCase().indexOf(filter) > -1 || country.toUpperCase().indexOf(filter) > -1) {
+                city =
+                    li_items[i].children[0].children[1].children[0].textContent;
+                country =
+                    li_items[i].children[0].children[1].children[1].textContent;
+                if (
+                    city.toUpperCase().indexOf(filter) > -1 ||
+                    country.toUpperCase().indexOf(filter) > -1
+                ) {
                     li_items[i].style.display = "";
                 } else {
                     li_items[i].style.display = "none";
@@ -315,17 +326,25 @@ export default {
             const departureLabel = document.getElementById("label-departure");
             const arrivingLabel = document.getElementById("label-arriving");
 
-            if (departure.value && departure.value === arriving.value && id === "arriving_place") {
+            if (
+                departure.value &&
+                departure.value === arriving.value &&
+                id === "arriving_place"
+            ) {
                 arriving.value = arriving.value;
                 departure.value = "";
                 departureLabel.classList.remove("active");
-            } 
-            
-            if (arriving.value && departure.value === arriving.value && id === "departure_place") {
+            }
+
+            if (
+                arriving.value &&
+                departure.value === arriving.value &&
+                id === "departure_place"
+            ) {
                 departure.value = departure.value;
                 arriving.value = "";
                 arrivingLabel.classList.remove("active");
-            } 
+            }
         },
 
         updatePassengersValue(updatePassengersValue) {
@@ -739,13 +758,13 @@ input:focus {
 }
 
 .destinations .input-field {
-    width: 50% !important;
+    width: 50%;
     height: 50% !important;
 }
 
 #departure_place,
 #arriving_place {
-    width: 80% !important;
+    width: 80%;
 }
 
 .stop-scrolling {
@@ -1109,6 +1128,49 @@ a:hover {
         display: none;
     }
 
+    .right {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .travelling-datas {
+        height: 100%;
+        left: 0;
+        top: 280px;
+        flex-direction: column;
+    }
+
+    .travel-type {
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 5%;
+    }
+
+    .destinations {
+        margin: 0 !important;
+        flex-direction: column;
+    }
+
+    .input-field {
+        width: 100% !important;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    #departure_date,
+    #return_date {
+        width: 88%;
+    }
+
+    #departure_place,
+    #arriving_place {
+        width: 88% !important;
+    }
+
     .title-top {
         font-size: 2rem;
     }
@@ -1120,7 +1182,7 @@ a:hover {
     .content {
         height: 100vh;
     }
-    
+
     .destinations {
         flex-direction: column;
         margin-bottom: 50px;
