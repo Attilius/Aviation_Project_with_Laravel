@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="airports">
-            <li v-for="airport in airports" :key="airport.id">
+            <li v-for="airport in app.airports" :key="airport.id">
                 <div class="airport">
                     <i id="rotate-90deg" class="material-icons">flight</i>
                     <div class="data_">
@@ -19,10 +19,9 @@
 </template>
 
 <script>
-
 export default {
     name: "Airports",
-    props: ["airports"]
+    props: ["app"]
 }
 </script>
 
