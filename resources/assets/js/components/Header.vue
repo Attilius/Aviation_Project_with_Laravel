@@ -102,6 +102,11 @@ export default {
     font-family: Poppins, sans-serif;
 }
 
+.nav-link:focus, .dropdown-toggle:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
 .navbar {
     background: rgb(9, 55, 115) !important;
     height: 8vh;
@@ -161,8 +166,7 @@ li:hover::before {
     height: 58.55px;
 }
 
-li:hover,
-.dropdown-item:hover {
+li:hover {
     background-color: rebeccapurple;
 }
 
@@ -183,8 +187,7 @@ a {
     align-items: center;
 }
 
-a:hover,
-.select-lang:hover {
+a:hover {
     color: whitesmoke;
 }
 
@@ -220,7 +223,7 @@ a:focus {
 @media (max-width: 974px) {
     .menu {
         flex-direction: column;
-        height: 300px;
+        height: 50vh;
     }
 
     li {
@@ -236,12 +239,8 @@ a:focus {
         height: 0;
     }
 
-    li:hover .select-lang:focus {
-        background: rgb(9, 55, 115);
-    }
-
-    li:hover .select-lang {
-        background-color: transparent;
+    li:hover {
+        background: transparent;
     }
 
     .navbar-light .navbar-toggler {
