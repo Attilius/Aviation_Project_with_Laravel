@@ -1,6 +1,10 @@
 <template>
     <div>
-        <Header class="header" :app="app" @onClickLogin="updateLoginPath($event)" />
+        <Header
+            class="header"
+            :app="app"
+            @onClickLogin="updateLoginPath($event)"
+        />
         <div class="content">
             <div class="shadow">
                 <h1>Sorry! This page is not found...</h1>
@@ -16,13 +20,20 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 export default {
     name: "PageNotFound",
-    props: ['app'],
+    props: ["app"],
 
     components: {
-        Header, 
+        Header,
         Footer
+    },
+
+    mounted() {
+        window.scroll({
+            top: 0,
+            left: 0
+        });
     }
-}
+};
 </script>
 
 <style scoped>
@@ -45,7 +56,7 @@ export default {
 .shadow {
     height: 100vh;
     width: 100%;
-    background: rgba(1, 1, 1, .4);
+    background: rgba(1, 1, 1, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,13 +69,18 @@ export default {
 
 .shadow .btn {
     background: rebeccapurple;
-    transition: all .5s ease 0s;
+    transition: all 0.5s ease 0s;
 }
 
 .shadow .btn:hover {
     background: whitesmoke;
     color: rebeccapurple;
-    transition: all .5s ease 0s;
+    transition: all 0.5s ease 0s;
 }
 
+@media(max-width: 992px) {
+    .shadow h1 {
+        font-size: 3rem;
+    }
+}
 </style>
