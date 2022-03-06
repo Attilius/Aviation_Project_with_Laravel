@@ -82,5 +82,20 @@ export default {
     .shadow h1 {
         font-size: 3rem;
     }
+
+    .content {
+        background-position-x: -250px;
+    }
 }
+
+@media(max-width: 768px) {
+    .shadow h1 {
+        font-size: 2.5rem;
+    }
+
+    .content {
+        background-position-x: -500px;
+    }
+}
+
 </style>
