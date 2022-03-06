@@ -98,4 +98,14 @@ export default {
     }
 }
 
+@media(max-width: 576px) {
+    .shadow h1 {
+        font-size: 2rem;
+    }
+
+    .content {
+        background-position-x: -750px;
+    }
+}
+
 </style>
