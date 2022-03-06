@@ -108,4 +108,19 @@ export default {
     }
 }
 
+@media(max-width: 480px) {
+    .shadow h1 {
+        font-size: 1rem;
+    }
+
+    .content {
+        background-position-x: -900px;
+    }
+
+    .btn {
+        width: 35%;
+        font-size: .5rem;
+    }
+}
+
 </style>
