@@ -90,9 +90,9 @@ Vue.component('spinner', require('vue-simple-spinner'));
 Vue.component('b-carousel', BCarousel);
 Vue.component('b-carousel-slide', BCarouselSlide);
 
-import * as mdbvue from 'mdbvue'
-for (const component in mdbvue) {
-    Vue.component(component, mdbvue[component])
+import * as mdb from 'mdb-ui-kit';
+for (const component in mdb) {
+    Vue.component(component, mdb[component])
   }
 
 const router = new VueRouter({ routes });
