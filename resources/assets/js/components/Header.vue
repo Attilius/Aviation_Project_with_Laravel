@@ -264,6 +264,10 @@ a:focus {
     color: whitesmoke;
 }
 
+.dropdown-item {
+    background: rgb(9, 55, 115);
+}
+
 @media (max-width: 974px) {
     .menu {
         flex-direction: column;
