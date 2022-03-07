@@ -1240,5 +1240,10 @@ a:hover {
         background-size: 100%;
         background-position-y: 0;
     }
+
+    .travel-guide-btn {
+        position: relative;
+        top: 1025px;
+    }
 }
 </style>
