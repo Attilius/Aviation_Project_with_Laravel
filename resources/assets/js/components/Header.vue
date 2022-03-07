@@ -10,9 +10,47 @@
                 <b-navbar-nav class="ml-auto">
                     <ul class="menu">
                         <li v-for="item in menuItems" :key="item.name">
-                            <router-link :to="item.path" v-currentpage>{{ item.name }}</router-link>
+                            <router-link :to="item.path" v-currentpage>{{
+                                item.name
+                            }}</router-link>
                         </li>
-                        <b-nav-item-dropdown>
+                        <li>
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuLink"
+                                role="button"
+                                data-mdb-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                {{ app.user ? app.user.name : "Login" }}
+                            </a>
+                            <div
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink"
+                            >
+                                <div v-if="!app.user">
+                                    <router-link
+                                        to="/login"
+                                        class="dropdown-item"
+                                        >Login</router-link
+                                    >
+                                    <router-link
+                                        to="/register"
+                                        class="dropdown-item"
+                                        >Register</router-link
+                                    >
+                                </div>
+                                <a
+                                    v-else
+                                    @click="logout"
+                                    href="javascript:;"
+                                    class="dropdown-item"
+                                    >Logout</a
+                                >
+                            </div>
+                        </li>
+                        <!-- <b-nav-item-dropdown>
                             <template #button-content>
                                 <a class="menu-item">
                                     {{ app.user ? app.user.name : "Login" }}
@@ -39,9 +77,9 @@
                                     >Logout</a
                                 >
                             </div>
-                        </b-nav-item-dropdown>
+                        </b-nav-item-dropdown> -->
                     </ul>
-                    <font-awesome-icon class="icon" :icon="['far', 'user']" />
+                    <!-- <font-awesome-icon class="icon" :icon="['far', 'user']" /> -->
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
@@ -49,6 +87,7 @@
 </template>
 
 <script>
+
 export default {
     name: "Navbar",
     props: ["app"],
@@ -57,22 +96,22 @@ export default {
         return {
             menuItems: [
                 {
-                name: "Home",
-                path: "/"
-            },
+                    name: "Home",
+                    path: "/"
+                },
                 {
-                name: "About",
-                path: "/about"
-            },
+                    name: "About",
+                    path: "/about"
+                },
                 {
-                name: "Services",
-                path: "/services"
-            },
+                    name: "Services",
+                    path: "/services"
+                },
                 {
-                name: "Contact",
-                path: "/contact"
-            },
-            ] 
+                    name: "Contact",
+                    path: "/contact"
+                }
+            ]
         };
     },
 
@@ -102,7 +141,8 @@ export default {
     font-family: Poppins, sans-serif;
 }
 
-.nav-link:focus, .dropdown-toggle:focus {
+.nav-link:focus,
+.dropdown-toggle:focus {
     border: none !important;
     box-shadow: none !important;
 }
@@ -218,6 +258,10 @@ a:focus {
 
 .dropdown_menu {
     background-color: rgb(9, 55, 115);
+}
+
+#navbarDropdownMenuLink {
+    color: whitesmoke;
 }
 
 @media (max-width: 974px) {
