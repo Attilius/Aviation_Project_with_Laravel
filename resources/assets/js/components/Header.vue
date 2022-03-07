@@ -268,6 +268,10 @@ a:focus {
     background: rgb(9, 55, 115);
 }
 
+.dropdown-item:hover {
+    background: rgb(9, 55, 115);
+}
+
 @media (max-width: 974px) {
     .menu {
         flex-direction: column;
