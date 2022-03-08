@@ -223,7 +223,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     background: transparent;
-    transition: 0.15s all ease-in 0s;
+    transition: 0.2s all ease-in 0s;
     position: relative;
     z-index: 1;
 }
@@ -237,7 +237,7 @@ a:hover {
     width: 100%;
     z-index: -1;
     background-color: rebeccapurple;
-    transition: 0.15s all ease-in 0s;
+    transition: 0.2s all ease-in-out 0s;
 }
 
 .menu-item:hover::before {
