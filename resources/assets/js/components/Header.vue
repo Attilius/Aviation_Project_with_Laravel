@@ -9,12 +9,55 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
                     <ul class="menu">
-                        <li v-for="item in menuItems" :key="item.name">
+                        <li class="menu-item" v-for="item in menuItems" :key="item.name">
                             <router-link :to="item.path" v-currentpage>{{
                                 item.name
                             }}</router-link>
                         </li>
-                        <li>
+                        <li class="menu-item" v-if="!app.user">
+                            <router-link to="/login">Login</router-link>
+                        </li>
+                        <li class="menu-item" v-if="!app.user">
+                            <router-link to="/register">Register</router-link>
+                        </li>
+                        <li v-else class="nav-item dropdown menu-item">
+                            <a
+                                class="nav-link dropdown-toggle d-flex align-items-center"
+                                href="#"
+                                id="navbarDropdownMenuLink"
+                                role="button"
+                                data-mdb-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                {{ app.user ? app.user.name : "" }}
+                                <img
+                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (1).webp"
+                                    class="rounded-circle"
+                                    height="30"
+                                    alt="Portrait of user"
+                                    loading="lazy"
+                                />
+                            </a>
+                            <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >My profile</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >Settings</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--<li>
                             <a
                                 class="nav-link dropdown-toggle"
                                 href="#"
@@ -50,7 +93,7 @@
                                 >
                             </div>
                         </li>
-                        <!-- <b-nav-item-dropdown>
+                         <b-nav-item-dropdown>
                             <template #button-content>
                                 <a class="menu-item">
                                     {{ app.user ? app.user.name : "Login" }}
@@ -87,7 +130,6 @@
 </template>
 
 <script>
-
 export default {
     name: "Navbar",
     props: ["app"],
@@ -174,7 +216,7 @@ a:hover {
     background: none;
 }
 
-li {
+.menu-item {
     list-style: none;
     padding: 0 10px;
     display: flex;
@@ -186,7 +228,7 @@ li {
     z-index: 1;
 }
 
-li::before {
+.menu-item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -198,7 +240,7 @@ li::before {
     transition: 0.15s all ease-in 0s;
 }
 
-li:hover::before {
+.menu-item:hover::before {
     top: 0;
     bottom: unset;
     height: 100%;
@@ -206,7 +248,7 @@ li:hover::before {
     height: 58.55px;
 }
 
-li:hover {
+.menu-item:hover {
     background-color: rebeccapurple;
 }
 
@@ -256,16 +298,26 @@ a:focus {
     display: inline;
 }
 
-.dropdown_menu {
-    background-color: rgb(9, 55, 115);
+.dropdown-menu {
+    height: 120px;
+}
+
+.dropdown-menu li {
+    background: rgb(9, 55, 115);
+    height: 40px;
+    width: 100%;
+}
+
+.dropdown-menu li .dropdown-item {
+    height: 40px;
 }
 
 #navbarDropdownMenuLink {
     color: whitesmoke;
 }
 
-.dropdown-item {
-    background: rgb(9, 55, 115);
+#navbarDropdownMenuLink img {
+    margin: 0 5px;
 }
 
 .dropdown-item:hover {
