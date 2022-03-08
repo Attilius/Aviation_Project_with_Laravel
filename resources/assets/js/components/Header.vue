@@ -9,7 +9,11 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
                     <ul class="menu">
-                        <li class="menu-item" v-for="item in menuItems" :key="item.name">
+                        <li
+                            class="menu-item"
+                            v-for="item in menuItems"
+                            :key="item.name"
+                        >
                             <router-link :to="item.path" v-currentpage>{{
                                 item.name
                             }}</router-link>
@@ -20,7 +24,11 @@
                         <li class="menu-item" v-if="!app.user">
                             <router-link to="/register">Register</router-link>
                         </li>
-                        <li v-else class="nav-item dropdown menu-item">
+                        <li
+                            v-else
+                            id="dropdown"
+                            class="nav-item dropdown menu-item"
+                        >
                             <a
                                 class="nav-link dropdown-toggle d-flex align-items-center"
                                 href="#"
@@ -39,6 +47,7 @@
                                 />
                             </a>
                             <ul
+                                id="dropdown-menu"
                                 class="dropdown-menu"
                                 aria-labelledby="navbarDropdownMenuLink"
                             >
@@ -155,6 +164,19 @@ export default {
                 }
             ]
         };
+    },
+
+    mounted() {
+        const dropdownMenu = document.getElementById("dropdown-menu");
+        const dropdown = document.getElementById("dropdown");
+
+        dropdownMenu.addEventListener("mouseleave", () => {
+            dropdownMenu.classList.remove("show");
+        });
+
+        dropdown.addEventListener("click", () => {
+            dropdownMenu.classList.add("show");
+        });
     },
 
     methods: {
