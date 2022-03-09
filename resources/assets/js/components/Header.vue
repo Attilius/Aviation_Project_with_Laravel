@@ -19,7 +19,7 @@
                             }}</router-link>
                         </li>
                         <li class="menu-item" v-if="!app.user">
-                            <router-link to="/login">Login</router-link>
+                            <router-link to="/login" @click="onLogin">Login</router-link>
                         </li>
                         <li class="menu-item" v-if="!app.user">
                             <router-link to="/register">Register</router-link>
@@ -37,9 +37,9 @@
                                 data-mdb-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                {{ app.user ? app.user.name : "" }}
+                                {{ app.user.name }}
                                 <img
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (1).webp"
+                                    :src="'images/attilius.jpg'"
                                     class="rounded-circle"
                                     height="30"
                                     alt="Portrait of user"
@@ -62,7 +62,12 @@
                                     >
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Logout</a>
+                                    <a
+                                        class="dropdown-item"
+                                        href="javascript:;"
+                                        @click="logout"
+                                        >Logout</a
+                                    >
                                 </li>
                             </ul>
                         </li>
@@ -170,26 +175,33 @@ export default {
         const dropdownMenu = document.getElementById("dropdown-menu");
         const dropdown = document.getElementById("dropdown");
 
-        dropdownMenu.addEventListener("mouseleave", () => {
-            dropdownMenu.classList.remove("show");
-        });
+        if ((dropdownMenu, dropdown)) {
+            dropdownMenu.addEventListener("mouseleave", () => {
+                dropdownMenu.classList.remove("show");
+            });
 
-        dropdown.addEventListener("click", () => {
-            dropdownMenu.classList.add("show");
-        });
+            dropdown.addEventListener("click", () => {
+                dropdownMenu.classList.add("show");
+            });
+        }
     },
 
     methods: {
         logout() {
+            const path = location.hash.split("#")[1];
             this.app.req.post("auth/logout").then(() => {
                 this.app.user = null;
-                this.$router.push("/login");
             });
-            this.onClickLogin();
+            this.onClickLogin(path);
         },
 
-        onClickLogin() {
-            this.$emit("onClickLogin", "/");
+        onLogin() {
+            const path = location.hash.split("#")[1];
+            this.onClickLogin(path);
+        },
+
+        onClickLogin(path) {
+            this.$emit("onClickLogin", path);
         }
     }
 };
