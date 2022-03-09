@@ -18,6 +18,13 @@ export default {
         Header,
         ServicesContent,
         Footer
+    },
+
+    methods: {
+        updateLoginPath(updateLoginPath) {
+            this.$emit("onClickLogin", updateLoginPath);
+        },
+
     }
 }
 </script>
