@@ -8,6 +8,7 @@
                     </li>
                 </ul>
             </div>
+            <h1>Login</h1>
             <div class="login-form">
                 <b-img
                     class="logo"
@@ -103,6 +104,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.skin h1 {
+    color: whitesmoke;
 }
 
 .login-form {
