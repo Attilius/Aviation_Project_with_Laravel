@@ -31,6 +31,10 @@ export default {
     },
 
     methods: {
+        updateLoginPath(updateLoginPath) {
+            this.$emit("onClickLogin", updateLoginPath);
+        },
+
         updatePageContent(updatePageContent) {
             this.$emit("onChangePageContent", updatePageContent);
         },
