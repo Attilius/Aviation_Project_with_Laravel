@@ -19,6 +19,13 @@ export default {
         Header,
         ContactContent,
         Footer
+    },
+
+    methods: {
+        updateLoginPath(updateLoginPath) {
+            this.$emit("onClickLogin", updateLoginPath);
+        },
+
     }
 }
 </script>
