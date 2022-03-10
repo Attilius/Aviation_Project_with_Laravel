@@ -1,7 +1,7 @@
 <template>
     <div class="login-container">
         <div class="skin">
-            <h1>Login</h1>
+            <h4>Login</h4>
             <div class="login-form">
                 <b-img
                     class="logo"
@@ -111,7 +111,7 @@ export default {
     align-items: center;
 }
 
-.skin h1 {
+.skin h4 {
     color: whitesmoke;
 }
 
