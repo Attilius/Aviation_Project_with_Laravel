@@ -9,20 +9,48 @@
                 </ul>
             </div>
             <h4>CREATE AN ACCOUNT</h4>
-            <b-form @submit.prevent="onSubmit">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" v-model="name" />
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" v-model="email" />
-                <label for="password">Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    v-model="password"
-                />
-                <input type="submit" value="Sign Up" />
-            </b-form>
+            <div class="login-form">
+                <b-img
+                    class="logo"
+                    :src="'../images/logo.png'"
+                    alt="logo"
+                ></b-img>
+                <b-form id="form" @submit.prevent="onSubmit">
+                    <div class="input-field">
+                        <input id="name" type="text" class="validate" />
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            class="validate"
+                            v-model="email"
+                        />
+                        <label for="email">Email</label>
+                        <span v-if="!email && errors.length" class="helper-text"
+                            >Email is requred!</span
+                        >
+                    </div>
+                    <div class="input-field">
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            class="validate"
+                            v-model="password"
+                        />
+                        <label for="password">Password</label>
+                        <span
+                            v-if="!password && errors.length"
+                            class="helper-text"
+                            >Password is requred!</span
+                        >
+                    </div>
+                    <input id="submit" type="submit" value="Login" />
+                </b-form>
+            </div>
         </div>
     </div>
 </template>
@@ -98,5 +126,52 @@ export default {
 
 .skin h4 {
     color: whitesmoke;
+}
+
+.login-form {
+    height: 60%;
+    width: 30%;
+    border: 1px solid whitesmoke;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 55, 115, 0.7);
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+}
+
+#form {
+    width: 80%;
+}
+
+#form .input-field {
+    width: 100%;
+    color: whitesmoke;
+}
+
+#form .input-field input {
+    color: whitesmoke;
+}
+
+.helper-text {
+    color: red;
+}
+
+#submit {
+    height: 3em;
+    width: 8em;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: auto;
+    background: rebeccapurple;
+    color: whitesmoke;
+    box-shadow: none;
+    border: none;
 }
 </style>
