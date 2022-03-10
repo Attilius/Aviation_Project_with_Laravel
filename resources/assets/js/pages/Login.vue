@@ -1,13 +1,6 @@
 <template>
     <div class="login-container">
         <div class="skin">
-            <div class="alert alert-danger" v-if="errors.length">
-                <ul>
-                    <li v-for="(error, index) in errors" :key="index">
-                        {{ error }}
-                    </li>
-                </ul>
-            </div>
             <h1>Login</h1>
             <div class="login-form">
                 <b-img
@@ -17,21 +10,33 @@
                 ></b-img>
                 <b-form id="form" @submit.prevent="onSubmit">
                     <div class="input-field">
-                        <input id="email" type="email" class="validate" />
-                        <label for="email">Email*</label>
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            class="validate"
+                            v-model="email"
+                        />
+                        <label for="email">Email</label>
                         <span
+                            v-if="!email && errors.length"
                             class="helper-text"
-                            data-error="wrong"
-                            ></span
+                            >Email is requred!</span
                         >
                     </div>
                     <div class="input-field">
-                        <input id="password" type="password" class="validate" />
-                        <label for="password">Password*</label>
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            class="validate"
+                            v-model="password"
+                        />
+                        <label for="password">Password</label>
                         <span
+                            v-if="!password && errors.length"
                             class="helper-text"
-                            data-error="wrong"
-                            ></span
+                            >Password is requred!</span
                         >
                     </div>
                     <input type="submit" value="Login" />
@@ -127,7 +132,20 @@ export default {
     width: 150px;
 }
 
+#form {
+    width: 80%;
+}
+
 #form .input-field {
     width: 100%;
+    color: whitesmoke;
+}
+
+#form .input-field input {
+    color: whitesmoke;
+}
+
+.helper-text {
+    color: red;
 }
 </style>
