@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="register-container">
         <div class="alert alert-danger" v-if="errors.length">
             <ul>
                 <li v-for="(error, index) in errors" :key="index">
@@ -65,3 +65,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.register-container {
+    background-image: url("../../img/login-register_bg.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+</style>
