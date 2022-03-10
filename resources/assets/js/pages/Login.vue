@@ -39,7 +39,7 @@
                             >Password is requred!</span
                         >
                     </div>
-                    <input type="submit" value="Login" />
+                    <input id="submit" type="submit" value="Login" />
                 </b-form>
             </div>
         </div>
@@ -147,5 +147,18 @@ export default {
 
 .helper-text {
     color: red;
+}
+
+#submit {
+    height: 3em;
+    width: 8em;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: auto;
+    background: rebeccapurple;
+    color: whitesmoke;
+    box-shadow: none;
+    border: none;
 }
 </style>
