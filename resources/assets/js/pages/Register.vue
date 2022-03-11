@@ -11,7 +11,7 @@
                 <b-form id="form" @submit.prevent="onSubmit">
                     <div class="input-field">
                         <input id="name" type="text" class="validate" />
-                        <label for="name">Name</label>
+                        <label for="name">Name*</label>
                         <span v-if="!email && errors.length" class="helper-text"
                             >Name is requred!</span
                         >
@@ -24,7 +24,7 @@
                             class="validate"
                             v-model="email"
                         />
-                        <label for="email">Email</label>
+                        <label for="email">Email*</label>
                         <span v-if="!email && errors.length" class="helper-text"
                             >Email is requred!</span
                         >
@@ -37,7 +37,7 @@
                             class="validate"
                             v-model="password"
                         />
-                        <label for="password">Password</label>
+                        <label for="password">Password*</label>
                         <span
                             v-if="!password && errors.length"
                             class="helper-text"
@@ -52,7 +52,7 @@
                             class="validate"
                             v-model="password"
                         />
-                        <label for="password">Confirm Password</label>
+                        <label for="password">Confirm Password*</label>
                         <span
                             v-if="!password && errors.length"
                             class="helper-text"
@@ -67,7 +67,6 @@
 </template>
 
 <script>
-import $ from "jquery";
 export default {
     name: "Register",
     props: ["app"],
