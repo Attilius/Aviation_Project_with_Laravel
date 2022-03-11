@@ -1,13 +1,13 @@
 <template>
     <div class="register-container">
         <div class="skin">
-            <div class="alert alert-danger" v-if="errors.length">
+            <!--<div class="alert alert-danger" v-if="errors.length">
                 <ul>
                     <li v-for="(error, index) in errors" :key="index">
                         {{ error }}
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <h4>CREATE AN ACCOUNT</h4>
             <div class="login-form">
                 <b-img
@@ -19,6 +19,9 @@
                     <div class="input-field">
                         <input id="name" type="text" class="validate" />
                         <label for="name">Name</label>
+                        <span v-if="!email && errors.length" class="helper-text"
+                            >Name is requred!</span
+                        >
                     </div>
                     <div class="input-field">
                         <input
@@ -56,6 +59,7 @@
 </template>
 
 <script>
+import $ from "jquery";
 export default {
     name: "Register",
     props: ["app"],
