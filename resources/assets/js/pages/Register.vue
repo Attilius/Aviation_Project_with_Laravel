@@ -44,6 +44,21 @@
                             >Password is requred!</span
                         >
                     </div>
+                    <div class="input-field">
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            class="validate"
+                            v-model="password"
+                        />
+                        <label for="password">Confirm Password</label>
+                        <span
+                            v-if="!password && errors.length"
+                            class="helper-text"
+                            >Confirm password is requred!</span
+                        >
+                    </div>
                     <input id="submit" type="submit" value="Login" />
                 </b-form>
             </div>
@@ -126,7 +141,7 @@ export default {
 }
 
 .login-form {
-    height: 60%;
+    height: 80%;
     width: 30%;
     border: 1px solid whitesmoke;
     border-radius: 0.25rem;
