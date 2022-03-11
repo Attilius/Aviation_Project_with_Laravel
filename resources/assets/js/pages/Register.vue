@@ -94,12 +94,16 @@ export default {
             if (!this.password) {
                 this.errors.push("Password is requred!");
             }
+            if (!this.confirmPassword) {
+                this.errors.push("Confirm password is requred!");
+            }
 
             if (!this.errors.length) {
                 const data = {
                     name: this.name,
                     email: this.email,
-                    password: this.password
+                    password: this.password,
+                    confirmPassword: this.confirmPassword
                 };
 
                 this.app.req
