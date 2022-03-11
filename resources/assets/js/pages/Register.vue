@@ -46,11 +46,11 @@
                     </div>
                     <div class="input-field">
                         <input
-                            id="password"
+                            id="confirmPassword"
                             type="password"
-                            name="password"
+                            name="confirmPassword"
                             class="validate"
-                            v-model="password"
+                            v-model="confirmPassword"
                         />
                         <label for="password">Confirm Password*</label>
                         <span
@@ -76,6 +76,7 @@ export default {
             name: "",
             email: "",
             password: "",
+            confirmPassword: "",
             errors: []
         };
     },
