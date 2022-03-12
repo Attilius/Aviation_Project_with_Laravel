@@ -1,5 +1,6 @@
 <template>
     <div class="register-container">
+        <nav></nav>
         <div class="skin">
             <h4>CREATE AN ACCOUNT</h4>
             <div class="login-form">
@@ -142,6 +143,15 @@ export default {
 
 .skin h4 {
     color: whitesmoke;
+}
+
+nav {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(5, 55, 115);
+    position: absolute;
+    top: 0;
+    margin-bottom: 20px;
 }
 
 .login-form {
