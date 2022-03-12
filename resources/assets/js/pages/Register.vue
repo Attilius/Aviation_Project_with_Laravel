@@ -1,7 +1,9 @@
 <template>
     <div class="register-container">
         <nav>
-           <router-link class="back-link" to="/"> <i class="material-icons">chevron_left</i> Back to home page </router-link>
+            <router-link class="back-link" to="/">
+                <i class="material-icons">chevron_left</i> Back to home page
+            </router-link>
         </nav>
         <div class="skin">
             <h4>CREATE AN ACCOUNT</h4>
@@ -41,6 +43,12 @@
                             v-model="password"
                         />
                         <label for="password">Password*</label>
+                        <div
+                            v-if="!password || (password && !errors.length)"
+                            class="form-helper"
+                        >
+                            The password must have been 8 characters length
+                        </div>
                         <span
                             v-if="!password && errors.length"
                             class="helper-text"
@@ -209,6 +217,10 @@ nav i {
 
 #form .input-field input {
     color: whitesmoke;
+}
+
+.form-helper {
+    font-size: 0.8rem;
 }
 
 .helper-text {
