@@ -165,7 +165,7 @@ nav i {
 
 .back-link {
     height: 40px;
-    width: 20%;
+    width: 13%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,6 +173,7 @@ nav i {
 
 .back-link:hover {
     color: whitesmoke;
+    justify-content: space-between;
 }
 
 .login-form {
