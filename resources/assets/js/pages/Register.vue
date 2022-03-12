@@ -1,7 +1,7 @@
 <template>
     <div class="register-container">
         <nav>
-            <i class="material-icons">chevron_left</i> Back to home page   
+           <router-link class="back-link" to="/"> <i class="material-icons">chevron_left</i> Back to home page </router-link>
         </nav>
         <div class="skin">
             <h4>CREATE AN ACCOUNT</h4>
@@ -160,6 +160,18 @@ nav {
 }
 
 nav i {
+    color: whitesmoke;
+}
+
+.back-link {
+    height: 40px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-link:hover {
     color: whitesmoke;
 }
 
