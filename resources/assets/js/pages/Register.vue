@@ -1,6 +1,8 @@
 <template>
     <div class="register-container">
-        <nav></nav>
+        <nav>
+            <i class="material-icons">chevron_left</i> Back to home page   
+        </nav>
         <div class="skin">
             <h4>CREATE AN ACCOUNT</h4>
             <div class="login-form">
@@ -152,6 +154,13 @@ nav {
     position: absolute;
     top: 0;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav i {
+    color: whitesmoke;
 }
 
 .login-form {
