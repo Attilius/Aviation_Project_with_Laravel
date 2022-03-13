@@ -132,6 +132,10 @@ nav {
     justify-content: center;
 }
 
+nav i {
+    color: whitesmoke;
+}
+
 .login-form {
     height: 60%;
     width: 30%;
