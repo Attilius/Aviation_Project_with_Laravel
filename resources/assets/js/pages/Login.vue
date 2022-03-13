@@ -1,5 +1,10 @@
 <template>
     <div class="login-container">
+        <nav>
+            <router-link class="back-link" to="/">
+                <i class="material-icons">chevron_left</i> Back to home page
+            </router-link>
+        </nav>
         <div class="skin">
             <h4>Login</h4>
             <div class="login-form">
