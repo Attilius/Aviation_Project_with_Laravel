@@ -144,6 +144,11 @@ nav i {
     justify-content: center;
 }
 
+.back-link:hover {
+    color: whitesmoke;
+    justify-content: space-between;
+}
+
 .login-form {
     height: 60%;
     width: 30%;
