@@ -149,6 +149,11 @@ nav i {
     justify-content: space-between;
 }
 
+.back-link:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
 .login-form {
     height: 60%;
     width: 30%;
