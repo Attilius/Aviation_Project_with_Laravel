@@ -120,6 +120,18 @@ export default {
     color: whitesmoke;
 }
 
+nav {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(5, 55, 115);
+    position: absolute;
+    top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .login-form {
     height: 60%;
     width: 30%;
