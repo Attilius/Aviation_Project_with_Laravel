@@ -136,6 +136,14 @@ nav i {
     color: whitesmoke;
 }
 
+.back-link {
+    height: 40px;
+    width: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .login-form {
     height: 60%;
     width: 30%;
