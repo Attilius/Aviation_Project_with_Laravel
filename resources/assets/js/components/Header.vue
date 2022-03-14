@@ -136,7 +136,6 @@
                             </div>
                         </b-nav-item-dropdown> -->
                     </ul>
-                    <!-- <font-awesome-icon class="icon" :icon="['far', 'user']" /> -->
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
