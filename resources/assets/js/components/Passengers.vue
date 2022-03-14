@@ -277,7 +277,7 @@ header h5 {
 }
 
 .select-passengers-list li:hover {
-    background: #6a1b9a;
+    background: #ced4da;
     color: white;
 }
 
