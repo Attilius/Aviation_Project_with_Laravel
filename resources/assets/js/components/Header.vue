@@ -179,7 +179,7 @@ export default {
                 dropdownMenu.classList.remove("show");
             });
 
-            dropdown.addEventListener("click", () => {
+            dropdown.addEventListener("mouseover", () => {
                 dropdownMenu.classList.add("show");
             });
         }
