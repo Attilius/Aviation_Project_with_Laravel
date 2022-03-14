@@ -182,6 +182,10 @@ export default {
             dropdown.addEventListener("mouseover", () => {
                 dropdownMenu.classList.add("show");
             });
+
+            dropdown.addEventListener("mouseleave", () => {
+                dropdownMenu.classList.remove("show");
+            });
         }
     },
 
