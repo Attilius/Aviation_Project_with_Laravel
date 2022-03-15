@@ -67,6 +67,7 @@ export default {
 
     mounted() {
         const addBtn = document.getElementById("add-passenger-btn");
+        const selectPassengersList = document.getElementById("select-passengers-list");
 
         addBtn.addEventListener("mouseover", () => {
             addBtn.children[0].style.color = "whitesmoke";
@@ -74,6 +75,11 @@ export default {
 
         addBtn.addEventListener("mouseleave", () => {
             addBtn.children[0].style.color = "royalblue";
+        });
+
+        selectPassengersList.addEventListener("mouseleave", () => {
+            selectPassengersList.style.display = "none";
+            document.getElementById("input-passengers-select").blur();
         });
     },
 
