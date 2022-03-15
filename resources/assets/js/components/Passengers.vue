@@ -71,6 +71,10 @@ export default {
         addBtn.addEventListener("mouseover", () => {
             addBtn.children[0].style.color = "whitesmoke";
         });
+
+        addBtn.addEventListener("mouseleave", () => {
+            addBtn.children[0].style.color = "royalblue";
+        });
     },
 
     methods: {
