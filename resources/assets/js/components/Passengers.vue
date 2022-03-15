@@ -305,6 +305,7 @@ header h5 {
 
 #add-passenger-btn i {
     margin-right: 10px;
+    color: royalblue;
 }
 
 #add-passenger-btn:hover {
