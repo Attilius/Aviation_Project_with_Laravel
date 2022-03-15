@@ -65,6 +65,14 @@ export default {
         };
     },
 
+    mounted() {
+        const addBtn = document.getElementById("add-passenger-btn");
+
+        addBtn.addEventListener("mouseover", () => {
+            addBtn.children[0].style.color = "whitesmoke";
+        });
+    },
+
     methods: {
         onSelect(e) {
             const id = e.target.parentNode.parentNode.id;
