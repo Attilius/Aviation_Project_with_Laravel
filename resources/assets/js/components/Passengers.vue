@@ -18,7 +18,7 @@
                         value="Adult"
                         @click="onSelect"
                     />
-                    <ul class="select-passengers-list">
+                    <ul id="select-passengers-list" class="select-passengers-list">
                         <li>Infant (0-23 months)</li>
                         <li>Child (2-17 years)</li>
                         <li>Adult</li>
