@@ -21,16 +21,18 @@
                 <div class="msg">Got any questions? I'm happy to help.</div>
             </div>
             <div id="message">
-                <textarea
-                    id="text"
-                    name="message"
-                    cols="30"
-                    rows="10"
-                    placeholder="Write a message"
-                ></textarea>
-                <button id="send" type="submit">
-                    <font-awesome-icon :icon="['fas', 'paper-plane']" />
-                </button>
+                <form>
+                    <textarea
+                        id="text"
+                        name="message"
+                        cols="30"
+                        rows="10"
+                        placeholder="Write a message"
+                    ></textarea>
+                    <button id="send" type="submit">
+                        <font-awesome-icon :icon="['fas', 'paper-plane']" />
+                    </button>
+                </form>
             </div>
         </div>
         <button id="chat" class="chat" @click="onClick">
@@ -64,7 +66,6 @@ export default {
             }
         }
     }
-
 };
 </script>
 
@@ -166,6 +167,11 @@ export default {
     background: whitesmoke;
     border-top: 1px solid #ced4da;
     border-radius: 0 0 0.75rem 0.75rem;
+}
+
+#message form {
+    width: 100%;
+    height: 50px;
 }
 
 #text {
