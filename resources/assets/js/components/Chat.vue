@@ -195,6 +195,11 @@ export default {
     border-bottom-right-radius: 0.5rem;
 }
 
+#send:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
 .online {
     width: 15px;
     height: 15px;
