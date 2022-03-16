@@ -258,6 +258,7 @@ export default {
 
         document.getElementById("select-list").addEventListener("mouseleave", () => {
             document.getElementById("select-list").style.display = "none";
+            document.getElementById("input-select").blur();
         });
     },
 
