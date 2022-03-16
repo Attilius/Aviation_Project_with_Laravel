@@ -131,7 +131,7 @@
                                     value="Economy"
                                     @click="onSelect"
                                 />
-                                <ul class="select-list">
+                                <ul id="select-list" class="select-list">
                                     <li>Economy</li>
                                     <li>Premium economy</li>
                                     <li>Business</li>
