@@ -275,6 +275,10 @@ p,
     padding-bottom: 10px;
 }
 
+.person-datas .input-field {
+    width: 100%;
+}
+
 .message {
     width: 40%;
     height: 100px;
