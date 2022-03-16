@@ -255,6 +255,10 @@ export default {
             minDate: new Date(Date.now())
         });
         this.getCityName();
+
+        document.getElementById("select-list").addEventListener("mouseleave", () => {
+            document.getElementById("select-list").style.display = "none";
+        });
     },
 
     methods: {
