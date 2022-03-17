@@ -58,8 +58,8 @@ export default {
     methods: {
         onSubmit(event) {
             event.preventDefault();
-            this.message = document.getElementById('text').value;
-            document.getElementById('text').value = '';
+            this.message = document.getElementById("text").value;
+            document.getElementById("text").value = "";
             alert(JSON.stringify(this.message));
         },
 
