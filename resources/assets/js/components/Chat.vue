@@ -319,7 +319,6 @@ img {
 .received-chats-img {
     display: inline-block;
     width: 30px;
-    float: left;
 }
 
 .received-msg {
@@ -369,12 +368,6 @@ img {
     float: left;
     width: 55%;
     margin-left: 45%;
-}
-
-.outgoing-chats-img {
-    display: inline-block;
-    width: 30px;
-    float: right;
 }
 
 </style>
