@@ -12,7 +12,7 @@
                 <h6 class="help-desk">Help Desk</h6>
             </div>
 
-           <!-- <div class="received-message-row">
+            <!-- <div class="received-message-row">
                 <b-img
                     class="call-center-message"
                     :src="'images/call-center.jpg'"
@@ -25,34 +25,43 @@
                 <div class="msg" v-if="message">{{ message }}</div>
             </div> -->
 
- <div class="chat-page">
-            <div class="msg-inbox">
-                <div class="chats">
-                    <div class="msg-page">
+            <div class="chat-page">
+                <div class="msg-inbox">
+                    <div class="chats">
+                        <div class="msg-page">
+                            <div class="received-chats">
+                                <div class="received-chats-img">
+                                    <img
+                                        src="images/call-center.jpg"
+                                        alt="call-center"
+                                    />
+                                </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                        <p>
+                                            Got any questions? I'm happy to
+                                            help.
+                                        </p>
+                                        <span class="time"
+                                            >11:01 PM | March</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div class="received-chats">
-                        <div class="received-chats-img">
-                            <img src="images/call-center.jpg" alt="call-center">
-                        </div>
-                        <div class="received-msg">
-                            <div class="received-msg-inbox">
-                                <p>Got any questions? I'm happy to help.</p>
-                                <span class="time">11:01 PM | March</span>
+                            <div class="outgoing-chats">
+                                <div class="outgoing-chats-msg">
+                                    <p>
+                                        Hi! I'm fine and you? We spoke a long
+                                        time ago.
+                                    </p>
+                                    <span class="time">11:01 PM | March</span>
+                                </div>
                             </div>
                         </div>
-                        </div>
-
-                        <div class="outgoing-chats">
-                            <div class="outgoing-chats-msg">
-                                <p>Hi! I'm fine and you? We spoke a long time ago.</p>
-                                <span class="time">11:01 PM | March</span>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
-        </div>
 
             <div id="message">
                 <b-form @submit="onSubmit">
@@ -294,7 +303,6 @@ export default {
 img {
     max-width: 100%;
     border-radius: 50%;
-
 }
 
 .chat-page {
@@ -323,17 +331,18 @@ img {
 
 .received-msg {
     display: inline-block;
-    padding: 0 0 0 10px;
     vertical-align: top;
     width: 92%;
 }
 
 .received-msg-inbox {
-    width: 57%;
+    width: 60%;
+    position: relative;
+    top: 0;
 }
 
 .received-msg-inbox p {
-    background: #efefef none repeat scroll 0 0;
+    background: #dfdfdf none repeat scroll 0 0;
     border-radius: 10px;
     color: #646464;
     font-size: 14px;
@@ -369,5 +378,4 @@ img {
     width: 55%;
     margin-left: 45%;
 }
-
 </style>
