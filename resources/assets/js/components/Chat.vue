@@ -308,7 +308,7 @@ img {
 }
 
 .chats {
-    padding: 30px 15px 0 25px;
+    padding: 30px 15px 0 15px;
 }
 
 .msg-page {
@@ -346,13 +346,13 @@ img {
 .time {
     color: #777;
     display: block;
-    font-size: 12px;
+    font-size: 10px;
     margin: 8px 0 0;
 }
 
 .outgoing-chats {
     overflow: hidden;
-    margin: 26px 20px;
+    margin: 26px 0;
 }
 
 .outgoing-chats-msg p {
@@ -367,7 +367,7 @@ img {
 
 .outgoing-chats-msg {
     float: left;
-    width: 46%;
+    width: 55%;
     margin-left: 45%;
 }
 
