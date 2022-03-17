@@ -11,7 +11,8 @@
                 <div class="online"></div>
                 <h6 class="help-desk">Help Desk</h6>
             </div>
-            <div class="received-message-row">
+
+           <!-- <div class="received-message-row">
                 <b-img
                     class="call-center-message"
                     :src="'images/call-center.jpg'"
@@ -22,7 +23,37 @@
             </div>
             <div class="sent-message-row">
                 <div class="msg" v-if="message">{{ message }}</div>
+            </div> -->
+
+ <div class="chat-page">
+            <div class="msg-inbox">
+                <div class="chats">
+                    <div class="msg-page">
+
+                        <div class="received-chats">
+                        <div class="received-chats-img">
+                            <img src="images/call-center.jpg" alt="call-center">
+                        </div>
+                        <div class="received-msg">
+                            <div class="received-msg-inbox">
+                                <p>Got any questions? I'm happy to help.</p>
+                                <span class="time">11:01 PM | March</span>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="outgoing-chats">
+                            <div class="outgoing-chats-msg">
+                                <p>Hi! I'm fine and you? We spoke a long time ago.</p>
+                                <span class="time">11:01 PM | March</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+        </div>
+
             <div id="message">
                 <b-form @submit="onSubmit">
                     <textarea
@@ -259,4 +290,91 @@ export default {
 .active {
     display: block;
 }
+
+img {
+    max-width: 100%;
+    border-radius: 50%;
+
+}
+
+.chat-page {
+    padding: 0;
+}
+
+.msg-inbox {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.chats {
+    padding: 30px 15px 0 25px;
+}
+
+.msg-page {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.received-chats-img {
+    display: inline-block;
+    width: 30px;
+    float: left;
+}
+
+.received-msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 92%;
+}
+
+.received-msg-inbox {
+    width: 57%;
+}
+
+.received-msg-inbox p {
+    background: #efefef none repeat scroll 0 0;
+    border-radius: 10px;
+    color: #646464;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+
+.time {
+    color: #777;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+}
+
+.outgoing-chats {
+    overflow: hidden;
+    margin: 26px 20px;
+}
+
+.outgoing-chats-msg p {
+    background: #007bff none repeat scroll 0 0;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+
+.outgoing-chats-msg {
+    float: left;
+    width: 46%;
+    margin-left: 45%;
+}
+
+.outgoing-chats-img {
+    display: inline-block;
+    width: 30px;
+    float: right;
+}
+
 </style>
