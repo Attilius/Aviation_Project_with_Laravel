@@ -11,7 +11,7 @@
                 <div class="online"></div>
                 <h6 class="help-desk">Help Desk</h6>
             </div>
-            <div class="message-row">
+            <div class="received-message-row">
                 <b-img
                     class="call-center-message"
                     :src="'images/call-center.jpg'"
@@ -20,8 +20,11 @@
                 ></b-img>
                 <div class="msg">Got any questions? I'm happy to help.</div>
             </div>
+            <div class="sent-message-row">
+                <div class="msg" v-if="message">{{ message }}</div>
+            </div>
             <div id="message">
-                <form>
+                <b-form @submit="onSubmit">
                     <textarea
                         id="text"
                         name="message"
@@ -32,7 +35,7 @@
                     <button id="send" type="submit">
                         <font-awesome-icon :icon="['fas', 'paper-plane']" />
                     </button>
-                </form>
+                </b-form>
             </div>
         </div>
         <button id="chat" class="chat" @click="onClick">
@@ -47,11 +50,19 @@ export default {
     name: "Chat",
     data() {
         return {
-            counter: 0
+            counter: 0,
+            message: ""
         };
     },
 
     methods: {
+        onSubmit(event) {
+            event.preventDefault();
+            this.message = document.getElementById('text').value;
+            document.getElementById('text').value = '';
+            alert(JSON.stringify(this.message));
+        },
+
         onClick() {
             this.counter++;
             if (this.counter === 1) {
@@ -142,11 +153,20 @@ export default {
     margin: 10px;
 }
 
-.message-row {
+.received-message-row {
     width: 80%;
     height: 50px;
     display: flex;
     justify-content: flex-start;
+}
+
+.sent-message-row {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+    margin-right: 10px;
 }
 
 .msg {
@@ -155,7 +175,7 @@ export default {
     padding: 5px 10px;
     position: relative;
     top: 30px;
-    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    border-radius: 0.5rem;
 }
 
 #message {
