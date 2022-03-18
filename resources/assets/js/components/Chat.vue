@@ -97,7 +97,26 @@ export default {
     mounted() {
         document.getElementById("chat-form").addEventListener("submit", ()=> {
             setTimeout(() => {
-                console.log("Answer")
+                var answer = `<div class="received-chats">
+                                <div class="received-chats-img">
+                                    <img
+                                        src="images/call-center.jpg"
+                                        alt="call-center"
+                                    />
+                                </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                        <p>
+                                            Hello! What can I help you?
+                                        </p>
+                                        <span class="time"
+                                            >11:01 PM | March</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>`
+
+                document.getElementById("msg-page").innerHTML += answer;
             }, 5000)
         })
     },
