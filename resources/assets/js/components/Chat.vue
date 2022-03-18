@@ -52,8 +52,7 @@
                             <div class="outgoing-chats">
                                 <div class="outgoing-chats-msg">
                                     <p>
-                                        Hi! I'm fine and you? We spoke a long
-                                        time ago.
+                                        {{ message }}
                                     </p>
                                     <span class="time">11:01 PM | March</span>
                                 </div>
