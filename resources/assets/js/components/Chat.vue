@@ -97,7 +97,7 @@ export default {
     mounted() {
         document.getElementById("chat-form").addEventListener("submit", ()=> {
             setTimeout(() => {
-                var answer = ``
+                var answer = "Hello! What can I help you?";
 
                 document.getElementById("msg-page").innerHTML += answer;
             }, 5000)
