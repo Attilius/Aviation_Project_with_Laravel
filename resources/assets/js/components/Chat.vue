@@ -28,7 +28,7 @@
             <div class="chat-page">
                 <div class="msg-inbox">
                     <div class="chats">
-                        <div class="msg-page">
+                        <div id="msg-page" class="msg-page">
                             <div class="received-chats">
                                 <div class="received-chats-img">
                                     <img
@@ -64,7 +64,7 @@
             </div>
 
             <div id="message">
-                <b-form @submit="onSubmit">
+                <b-form id="chat-form" @submit="onSubmit">
                     <textarea
                         id="text"
                         name="message"
@@ -93,6 +93,13 @@ export default {
             counter: 0,
             message: ""
         };
+    },
+    mounted() {
+        document.getElementById("chat-form").addEventListener("submit", ()=> {
+            setTimeout(() => {
+                console.log("Answer")
+            }, 5000)
+        })
     },
 
     methods: {
