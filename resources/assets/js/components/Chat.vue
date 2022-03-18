@@ -49,7 +49,7 @@
                                 </div>
                             </div>
 
-                            <div class="outgoing-chats">
+                            <div class="outgoing-chats" v-if="message">
                                 <div class="outgoing-chats-msg">
                                     <p>
                                         {{ message }}
@@ -57,6 +57,7 @@
                                     <span class="time">11:01 PM | March</span>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
