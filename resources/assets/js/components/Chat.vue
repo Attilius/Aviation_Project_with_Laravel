@@ -325,12 +325,16 @@ img {
 }
 
 .chats {
-    padding: 30px 15px 0 15px;
+    padding: 0 15px;
 }
 
 .msg-page {
     height: 400px;
     overflow-y: auto;
+}
+
+.received-chats {
+    margin: 26px 0;
 }
 
 .received-chats-img {
