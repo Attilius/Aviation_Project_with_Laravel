@@ -333,12 +333,15 @@ img {
 }
 
 .msg-page {
-    height: 430px;
+    max-height: 430px;
     overflow-y: auto;
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
 }
 
 .received-chats {
-    margin: 26px 0;
+    margin-bottom: 26px;
 }
 
 .received-chats-img {
@@ -386,6 +389,8 @@ img {
 
 .outgoing-chats {
     overflow: hidden;
+    margin-bottom: 26px;
+    padding-right: 10px;
 }
 
 .outgoing-chats-msg p {
