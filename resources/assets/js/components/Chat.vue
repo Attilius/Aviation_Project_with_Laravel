@@ -11,20 +11,7 @@
                 <div class="online"></div>
                 <h6 class="help-desk">Help Desk</h6>
             </div>
-
-            <!-- <div class="received-message-row">
-                <b-img
-                    class="call-center-message"
-                    :src="'images/call-center.jpg'"
-                    fluid
-                    alt="operator"
-                ></b-img>
-                <div class="msg">Got any questions? I'm happy to help.</div>
-            </div>
-            <div class="sent-message-row">
-                <div class="msg" v-if="message">{{ message }}</div>
-            </div> -->
-
+            
             <div class="chat-page">
                 <div class="msg-inbox">
                     <div class="chats">
