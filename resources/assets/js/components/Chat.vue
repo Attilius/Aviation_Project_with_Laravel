@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
                             </div>
-
+<!--
                             <div class="outgoing-chats" v-if="message">
                                 <div class="outgoing-chats-msg">
                                     <p>
@@ -57,7 +57,7 @@
                                     <span class="outgoing-time">11:01 PM | March</span>
                                 </div>
                             </div>
-
+-->
                         </div>
                     </div>
                 </div>
@@ -95,21 +95,49 @@ export default {
         };
     },
     mounted() {
-        document.getElementById("chat-form").addEventListener("submit", ()=> {
+        document.getElementById("chat-form").addEventListener("submit", ()=> {       
             setTimeout(() => {
-                var answer = "Hello! What can I help you?";
+                const answers = ["Hello! What can I help you?", "I'll be watching in a moment", "Is this your first time here?"];
+                const index = Math.floor(Math.random()*answers.length);
+                const time = "11:01 PM | March";
+                const operatorAnswer = `<div data-v-3f23c80f class="received-chats">
+                                <div data-v-3f23c80f class="received-chats-img">
+                                    <img data-v-3f23c80f
+                                        src="images/call-center.jpg"
+                                        alt="call-center"
+                                    />
+                                </div>
+                                <div data-v-3f23c80f class="received-msg">
+                                    <div data-v-3f23c80f class="received-msg-inbox">
+                                        <p data-v-3f23c80f>
+                                            ${answers[index]}
+                                        </p>
+                                        <span data-v-3f23c80f class="received-time">
+                                            ${time}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>`;
 
-                document.getElementById("msg-page").innerHTML += answer;
-            }, 5000)
-        })
+                document.getElementById("msg-page").innerHTML += operatorAnswer;
+            }, 5000);
+        });
     },
 
     methods: {
         onSubmit(event) {
             event.preventDefault();
-            this.message = document.getElementById("text").value;
+            const userAnswer = `<div data-v-3f23c80f class="outgoing-chats">
+                                <div data-v-3f23c80f class="outgoing-chats-msg">
+                                    <p data-v-3f23c80f>
+                                        ${document.getElementById("text").value}
+                                    </p>
+                                    <span data-v-3f23c80f class="outgoing-time">11:01 PM | March</span>
+                                </div>
+                            </div>`;
+
+            document.getElementById("msg-page").innerHTML += userAnswer;
             document.getElementById("text").value = "";
-            alert(JSON.stringify(this.message));
         },
 
         onClick() {
@@ -321,7 +349,6 @@ img {
 .msg-inbox {
     border: 1px solid #ccc;
     overflow: hidden;
-    padding-bottom: 30px;
 }
 
 .chats {
@@ -329,7 +356,7 @@ img {
 }
 
 .msg-page {
-    height: 400px;
+    height: 430px;
     overflow-y: auto;
 }
 
@@ -382,7 +409,6 @@ img {
 
 .outgoing-chats {
     overflow: hidden;
-    margin: 26px 0;
 }
 
 .outgoing-chats-msg p {
