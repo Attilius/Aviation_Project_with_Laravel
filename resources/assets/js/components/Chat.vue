@@ -42,7 +42,7 @@
                                             Got any questions? I'm happy to
                                             help.
                                         </p>
-                                        <span class="time"
+                                        <span class="received-time"
                                             >11:01 PM | March</span
                                         >
                                     </div>
@@ -54,7 +54,7 @@
                                     <p>
                                         {{ message }}
                                     </p>
-                                    <span class="time">11:01 PM | March</span>
+                                    <span class="outgoing-time">11:01 PM | March</span>
                                 </div>
                             </div>
 
@@ -360,11 +360,20 @@ img {
     width: 100%;
 }
 
-.time {
+.received-time {
     color: #777;
     display: block;
     font-size: 10px;
     margin: 8px 0 0;
+    float: left;
+}
+
+.outgoing-time {
+    color: #777;
+    display: block;
+    font-size: 10px;
+    margin: 8px 0 0;
+    text-align: right;
 }
 
 .outgoing-chats {
@@ -378,8 +387,8 @@ img {
     border-radius: 10px;
     font-size: 14px;
     margin: 0;
-    padding: 5px 10px 5px 12px;
-    width: 100%;
+    padding: 5px 10px;
+    display: inline-block;
 }
 
 .outgoing-chats-msg {
