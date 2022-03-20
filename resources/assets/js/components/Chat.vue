@@ -72,32 +72,34 @@ export default {
         };
     },
     mounted() {
-        document.getElementById("chat-form").addEventListener("submit", ()=> {       
+        document.getElementById("chat-form").addEventListener("submit", ()=> { 
+            const timeOut = Math.floor(Math.random()*9)*1000;  
+    
             setTimeout(() => {
                 const answers = ["Hello! What can I help you?", "I'll be watching in a moment", "Is this your first time here?"];
                 const index = Math.floor(Math.random()*answers.length);
                 const time = "11:01 PM | March";
                 const operatorAnswer = `<div data-v-3f23c80f class="received-chats">
-                                <div data-v-3f23c80f class="received-chats-img">
-                                    <img data-v-3f23c80f
-                                        src="images/call-center.jpg"
-                                        alt="call-center"
-                                    />
-                                </div>
-                                <div data-v-3f23c80f class="received-msg">
-                                    <div data-v-3f23c80f class="received-msg-inbox">
-                                        <p data-v-3f23c80f>
-                                            ${answers[index]}
-                                        </p>
-                                        <span data-v-3f23c80f class="received-time">
-                                            ${time}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>`;
+                                            <div data-v-3f23c80f class="received-chats-img">
+                                                <img data-v-3f23c80f
+                                                    src="images/call-center.jpg"
+                                                    alt="call-center"
+                                                />
+                                            </div>
+                                            <div data-v-3f23c80f class="received-msg">
+                                                <div data-v-3f23c80f class="received-msg-inbox">
+                                                    <p data-v-3f23c80f>
+                                                        ${answers[index]}
+                                                    </p>
+                                                    <span data-v-3f23c80f class="received-time">
+                                                        ${time}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>`;
 
                 document.getElementById("msg-page").innerHTML += operatorAnswer;
-            }, 5000);
+            }, timeOut);
         });
     },
 
@@ -105,13 +107,13 @@ export default {
         onSubmit(event) {
             event.preventDefault();
             const userAnswer = `<div data-v-3f23c80f class="outgoing-chats">
-                                <div data-v-3f23c80f class="outgoing-chats-msg">
-                                    <p data-v-3f23c80f>
-                                        ${document.getElementById("text").value}
-                                    </p>
-                                    <span data-v-3f23c80f class="outgoing-time">11:01 PM | March</span>
-                                </div>
-                            </div>`;
+                                    <div data-v-3f23c80f class="outgoing-chats-msg">
+                                        <p data-v-3f23c80f>
+                                            ${document.getElementById("text").value}
+                                        </p>
+                                        <span data-v-3f23c80f class="outgoing-time">11:01 PM | March</span>
+                                    </div>
+                                </div>`;
 
             document.getElementById("msg-page").innerHTML += userAnswer;
             document.getElementById("text").value = "";
