@@ -101,13 +101,15 @@ export default {
                 document.getElementById("msg-page").scrollTop += document.getElementById("msg-page").scrollHeight;
             }, timeOut);
         });
+
+
     },
 
     methods: {
         onSubmit(event) {
             event.preventDefault();
             const userAnswer = `<div data-v-3f23c80f class="outgoing-chats">
-                                    <div data-v-3f23c80f class="outgoing-chats-msg">
+                                    <div data-v-3f23c80f class="outgoing-chats-msg clearfix">
                                         <p data-v-3f23c80f>
                                             ${document.getElementById("text").value}
                                         </p>
@@ -410,5 +412,9 @@ img {
     float: left;
     width: 55%;
     margin-left: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 </style>
