@@ -67,8 +67,7 @@ export default {
     name: "Chat",
     data() {
         return {
-            counter: 0,
-            message: ""
+            counter: 0
         };
     },
     mounted() {
@@ -97,7 +96,7 @@ export default {
                                                 </div>
                                             </div>
                                         </div>`;
-                                        
+
                 document.getElementById("msg-page").innerHTML += operatorAnswer;
                 document.getElementById("msg-page").scrollTop += document.getElementById("msg-page").scrollHeight;
             }, timeOut);
