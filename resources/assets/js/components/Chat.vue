@@ -30,7 +30,7 @@
                                             help.
                                         </p>
                                         <span class="received-time"
-                                            >11:01 PM | March</span
+                                            >{{ currentTime }}</span
                                         >
                                     </div>
                                 </div>
@@ -67,7 +67,8 @@ export default {
     name: "Chat",
     data() {
         return {
-            counter: 0
+            counter: 0,
+            currentTime: ""
         };
     },
     mounted() {
@@ -75,9 +76,9 @@ export default {
             const timeOut = Math.floor(Math.random()*9)*1000;  
     
             setTimeout(() => {
+                const currentTime = this.getCurrentDateAndTime();
                 const answers = ["Hello!","Hi!","What?","Ok!","Hello! What can I help you?", "I'll be watching in a moment", "Is this your first time here?"];
                 const index = Math.floor(Math.random()*answers.length);
-                const time = "11:01 PM | March";
                 const operatorAnswer = `<div data-v-3f23c80f class="received-chats">
                                             <div data-v-3f23c80f class="received-chats-img">
                                                 <img data-v-3f23c80f
@@ -91,7 +92,7 @@ export default {
                                                         ${answers[index]}
                                                     </p>
                                                     <span data-v-3f23c80f class="received-time">
-                                                        ${time}
+                                                        ${currentTime}
                                                     </span>
                                                 </div>
                                             </div>
@@ -106,14 +107,32 @@ export default {
     },
 
     methods: {
+        getCurrentDateAndTime() {
+            const time = new Date();
+            let currentTime;
+            if (time.getHours() <= 12 && time.getMinutes() === 0) {
+                if (time.getHours() < 10 && time.getMinutes() < 10) {
+                    currentTime = `${'0' + time.getHours()}:${'0' + time.getMinutes()} AM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+                }
+                currentTime = `${time.getHours()}:${time.getMinutes()} AM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+            } else {
+                if (time.getMinutes() < 10) {
+                    currentTime = `${time.getHours()}:${'0' + time.getMinutes()} PM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+                }
+                currentTime = `${time.getHours()}:${time.getMinutes()} PM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+            }
+            return currentTime;
+        },
+
         onSubmit(event) {
+            const currentTime = this.getCurrentDateAndTime();
             event.preventDefault();
             const userAnswer = `<div data-v-3f23c80f class="outgoing-chats">
                                     <div data-v-3f23c80f class="outgoing-chats-msg clearfix">
                                         <p data-v-3f23c80f>
                                             ${document.getElementById("text").value}
                                         </p>
-                                        <span data-v-3f23c80f class="outgoing-time">11:01 PM | March</span>
+                                        <span data-v-3f23c80f class="outgoing-time">${currentTime}</span>
                                     </div>
                                 </div>`;
 
@@ -125,6 +144,7 @@ export default {
         onClick() {
             this.counter++;
             if (this.counter === 1) {
+                this.currentTime = this.getCurrentDateAndTime();
                 document.getElementById("default").style.display = "none";
                 document.getElementById("active").style.display = "flex";
                 document.getElementById("chat-window").style.display = "block";
