@@ -97,8 +97,9 @@ export default {
                                                 </div>
                                             </div>
                                         </div>`;
-
+                                        
                 document.getElementById("msg-page").innerHTML += operatorAnswer;
+                document.getElementById("msg-page").scrollTop += document.getElementById("msg-page").scrollHeight;
             }, timeOut);
         });
     },
@@ -116,6 +117,7 @@ export default {
                                 </div>`;
 
             document.getElementById("msg-page").innerHTML += userAnswer;
+            document.getElementById("msg-page").scrollTop += document.getElementById("msg-page").scrollHeight;
             document.getElementById("text").value = "";
         },
 
@@ -338,7 +340,7 @@ img {
     max-height: 430px;
     overflow-y: auto;
     position: absolute;
-    bottom: 30px;
+    bottom: 35px;
     left: 10px;
 }
 
