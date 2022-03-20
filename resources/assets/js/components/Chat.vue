@@ -75,7 +75,7 @@ export default {
             const timeOut = Math.floor(Math.random()*9)*1000;  
     
             setTimeout(() => {
-                const answers = ["Hello! What can I help you?", "I'll be watching in a moment", "Is this your first time here?"];
+                const answers = ["Hello!","Hi!","What?","Ok!","Hello! What can I help you?", "I'll be watching in a moment", "Is this your first time here?"];
                 const index = Math.floor(Math.random()*answers.length);
                 const time = "11:01 PM | March";
                 const operatorAnswer = `<div data-v-3f23c80f class="received-chats">
@@ -364,6 +364,10 @@ img {
     width: 60%;
     position: relative;
     top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .received-msg-inbox p {
@@ -373,7 +377,7 @@ img {
     font-size: 14px;
     margin: 0;
     padding: 5px 10px 5px 12px;
-    width: 100%;
+    display: inline-block;
 }
 
 .received-time {
