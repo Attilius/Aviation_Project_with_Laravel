@@ -375,5 +375,9 @@ footer {
         width: 100%;
         left: 0;
     }
+
+    .select-passengers-list {
+    width: 70%;
+    }
 }
 </style>
