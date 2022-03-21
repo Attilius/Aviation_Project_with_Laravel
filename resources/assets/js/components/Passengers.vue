@@ -369,4 +369,11 @@ footer {
         width: 55%;
     }
 }
+
+@media (max-width: 576px) {
+    #pasengers-box {
+        width: 100%;
+        left: 0;
+    }
+}
 </style>
