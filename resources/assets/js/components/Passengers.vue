@@ -377,7 +377,11 @@ footer {
     }
 
     .select-passengers-list {
-    width: 70%;
+        width: 70vw;
+    }
+
+    #input-passengers-select {
+        width: 70vw !important;
     }
 }
 </style>
