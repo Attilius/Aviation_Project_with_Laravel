@@ -374,6 +374,8 @@ footer {
     #pasengers-box {
         width: 100%;
         left: 0;
+        box-shadow: none !important;
+        border-radius: none !important;
     }
 
     .select-passengers-list {
