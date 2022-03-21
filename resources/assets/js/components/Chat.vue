@@ -113,19 +113,21 @@ export default {
             if (time.getHours() < 12) {
 
                 if (time.getHours() < 10 && time.getMinutes() < 10) {
-                    currentTime = `0${time.getHours()}:0${time.getMinutes()} AM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+                    currentTime = `0${time.getHours()}:0${time.getMinutes()} AM | ${time.getDate()}-${(time.getMonth()+1 < 10) ? `0${time.getMonth()+1}` : time.getMonth()+1}-${time.getFullYear()}`;
                 } else if (time.getHours() < 10) {
-                    currentTime = `0${time.getHours()}:${time.getMinutes()} AM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+                    currentTime = `0${time.getHours()}:${time.getMinutes()} AM | ${time.getDate()}-${(time.getMonth()+1 < 10) ? `0${time.getMonth()+1}` : time.getMonth()+1}-${time.getFullYear()}`;
+                } else if (time.getMinutes() < 10) {
+                    currentTime = `${time.getHours()}:0${time.getMinutes()} AM | ${time.getDate()}-${(time.getMonth()+1 < 10) ? `0${time.getMonth()+1}` : time.getMonth()+1}-${time.getFullYear()}`;
                 } else {
-                    currentTime = `${time.getHours()}:${time.getMinutes()} AM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+                    currentTime = `${time.getHours()}:${time.getMinutes()} AM | ${time.getDate()}-${(time.getMonth()+1 < 10) ? `0${time.getMonth()+1}` : time.getMonth()+1}-${time.getFullYear()}`;
                 }
                 
             } else {
 
                 if (time.getMinutes() < 10) {
-                    currentTime = `${time.getHours()}:0${time.getMinutes()} PM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+                    currentTime = `${time.getHours()}:0${time.getMinutes()} PM | ${time.getDate()}-${(time.getMonth()+1 < 10) ? `0${time.getMonth()+1}` : time.getMonth()+1}-${time.getFullYear()}`;
                 } else {
-                    currentTime = `${time.getHours()}:${time.getMinutes()} PM | ${time.getDate()}-${time.getMonth()+1}-${time.getFullYear()}`;
+                    currentTime = `${time.getHours()}:${time.getMinutes()} PM | ${time.getDate()}-${(time.getMonth()+1 < 10) ? `0${time.getMonth()+1}` : time.getMonth()+1}-${time.getFullYear()}`;
                 }
                 
             }
