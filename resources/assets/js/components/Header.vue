@@ -52,9 +52,7 @@
                                 aria-labelledby="navbarDropdownMenuLink"
                             >
                                 <li>
-                                    <a class="dropdown-item" href="#"
-                                        >My profile</a
-                                    >
+                                    <router-link class="dropdown-item" to="/profile">My profile</router-link>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#"
