@@ -10,6 +10,8 @@ import BookingCancellation from './pages/BookingCancellation';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Bookings from './pages/Bookings';
+import UserProfile from './pages/UserProfile';
 import TravelGuide from './pages/TravelGuide';
 import London from './pages/cities/London';
 import Montreal from './pages/cities/Montreal';
@@ -78,6 +80,16 @@ export default
             path: '/register',
             component: Register,
             name: 'Register'
+        },
+        {
+            path: '/bookings',
+            component: Bookings,
+            name: 'Bookings'
+        },
+        {
+            path: '/profile',
+            component: UserProfile,
+            name: 'UserProfile'
         },
         {
             path: '/travel-guide',
