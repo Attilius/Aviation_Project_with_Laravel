@@ -55,9 +55,7 @@
                                     <router-link class="dropdown-item" to="/profile">My profile</router-link>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#"
-                                        >Bookings</a
-                                    >
+                                    <router-link class="dropdown-item" to="/bookings">Bookings</router-link>
                                 </li>
                                 <li>
                                     <a
