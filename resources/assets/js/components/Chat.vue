@@ -42,13 +42,14 @@
 
             <div id="message">
                 <b-form id="chat-form" @submit="onSubmit">
-                    <textarea
+                    <!--<textarea
                         id="text"
                         name="message"
                         cols="30"
                         rows="10"
                         placeholder="Write a message"
-                    ></textarea>
+                    ></textarea> -->
+                    <input type="text" name="message" id="text" placeholder="Write a message">
                     <button id="send" type="submit">
                         <font-awesome-icon :icon="['fas', 'paper-plane']" />
                     </button>
@@ -71,39 +72,17 @@ export default {
             currentTime: ""
         };
     },
-    mounted() {
-        document.getElementById("chat-form").addEventListener("submit", ()=> { 
-            const timeOut = Math.floor(Math.random()*9)*1000;  
     
-            setTimeout(() => {
-                const currentTime = this.getCurrentDateAndTime();
-                const answers = ["Hello!","Hi!","What?","Ok!","Hello! What can I help you?", "I'll be watching in a moment", "Is this your first time here?"];
-                const index = Math.floor(Math.random()*answers.length);
-                const operatorAnswer = `<div data-v-3f23c80f class="received-chats">
-                                            <div data-v-3f23c80f class="received-chats-img">
-                                                <img data-v-3f23c80f
-                                                    src="images/call-center.jpg"
-                                                    alt="call-center"
-                                                />
-                                            </div>
-                                            <div data-v-3f23c80f class="received-msg">
-                                                <div data-v-3f23c80f class="received-msg-inbox">
-                                                    <p data-v-3f23c80f>
-                                                        ${answers[index]}
-                                                    </p>
-                                                    <span data-v-3f23c80f class="received-time">
-                                                        ${currentTime}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>`;
+    mounted() {
+        document.getElementById('chat-form').addEventListener('submit', this.sendOperatorAnswer);
 
-                document.getElementById("msg-page").innerHTML += operatorAnswer;
-                document.getElementById("msg-page").scrollTop += document.getElementById("msg-page").scrollHeight;
-            }, timeOut);
+        const msgInput = document.getElementById('text');
+        msgInput.addEventListener('keypress', (e) => {
+            if (e.code === 'Enter') {
+                this.onSubmit(e);
+                this.sendOperatorAnswer();
+            }
         });
-
-
     },
 
     methods: {
@@ -134,9 +113,40 @@ export default {
             return currentTime;
         },
 
-        onSubmit(event) {
+        sendOperatorAnswer() {
+            const timeOut = Math.floor(Math.random()*9)*1000;  
+    
+            setTimeout(() => {
+                const currentTime = this.getCurrentDateAndTime();
+                const answers = ["Hello!","Hi!","What?","Ok!","Hello! What can I help you?", "I'll be watching in a moment", "Is this your first time here?"];
+                const index = Math.floor(Math.random()*answers.length);
+                const operatorAnswer = `<div data-v-3f23c80f class="received-chats">
+                                            <div data-v-3f23c80f class="received-chats-img">
+                                                <img data-v-3f23c80f
+                                                    src="images/call-center.jpg"
+                                                    alt="call-center"
+                                                />
+                                            </div>
+                                            <div data-v-3f23c80f class="received-msg">
+                                                <div data-v-3f23c80f class="received-msg-inbox">
+                                                    <p data-v-3f23c80f>
+                                                        ${answers[index]}
+                                                    </p>
+                                                    <span data-v-3f23c80f class="received-time">
+                                                        ${currentTime}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>`;
+
+                document.getElementById("msg-page").innerHTML += operatorAnswer;
+                document.getElementById("msg-page").scrollTop += document.getElementById("msg-page").scrollHeight;
+            }, timeOut);
+        },
+
+        onSubmit(e) {
             const currentTime = this.getCurrentDateAndTime();
-            event.preventDefault();
+            e.preventDefault();
             const userAnswer = `<div data-v-3f23c80f class="outgoing-chats">
                                     <div data-v-3f23c80f class="outgoing-chats-msg clearfix">
                                         <p data-v-3f23c80f>
@@ -284,8 +294,8 @@ export default {
 }
 
 #text {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 60%;
     padding: 10px 50px 10px 10px;
     border: none;
     background: whitesmoke;
