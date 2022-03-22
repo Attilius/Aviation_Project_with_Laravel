@@ -58,7 +58,7 @@
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#"
-                                        >Settings</a
+                                        >Bookings</a
                                     >
                                 </li>
                                 <li>
