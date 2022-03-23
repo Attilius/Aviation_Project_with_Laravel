@@ -4,7 +4,11 @@
             <h4>Edit your profile</h4>
         </header>
         <section>
-            <div class="menu"></div>
+            <div class="menu">
+                <ul>
+                    <li>Delete account</li>
+                </ul>
+            </div>
             <div class="content"></div>
         </section>
     </div>
@@ -42,12 +46,20 @@ section {
 
 .menu {
     height: 100%;
-    width: 20%;
+    width: 15%;
     border-right: 1px solid whitesmoke;
+}
+
+.menu ul {
+    margin-left: 20%;
+}
+
+.menu ul li {
+    color: whitesmoke;
 }
 
 .content {
     height: 100%;
-    width: 80%;
+    width: 85%;
 }
 </style>
