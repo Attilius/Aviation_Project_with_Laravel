@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper">
         <header>
             <h4>Your Bookings</h4>
         </header>
