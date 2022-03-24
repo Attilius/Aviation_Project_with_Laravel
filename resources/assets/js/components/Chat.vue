@@ -42,13 +42,6 @@
 
             <div id="message">
                 <b-form id="chat-form" @submit="onSubmit">
-                    <!--<textarea
-                        id="text"
-                        name="message"
-                        cols="30"
-                        rows="10"
-                        placeholder="Write a message"
-                    ></textarea> -->
                     <input type="text" name="message" id="text" placeholder="Write a message">
                     <button id="send" type="submit">
                         <font-awesome-icon :icon="['fas', 'paper-plane']" />
@@ -109,8 +102,7 @@ export default {
                     currentTime = `${time.getHours()}:0${time.getMinutes()} PM | ${time.getDate()}-${(time.getMonth()+1 < 10) ? `0${time.getMonth()+1}` : time.getMonth()+1}-${time.getFullYear()}`;
                 } else {
                     currentTime = `${time.getHours()}:${time.getMinutes()} PM | ${time.getDate()}-${(time.getMonth()+1 < 10) ? `0${time.getMonth()+1}` : time.getMonth()+1}-${time.getFullYear()}`;
-                }
-                
+                } 
             }
             return currentTime;
         },
