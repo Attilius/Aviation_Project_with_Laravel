@@ -80,7 +80,9 @@ export default {
         msgInput.addEventListener('keypress', (e) => {
             if (e.code === 'Enter') {
                 this.onSubmit(e);
-                this.sendOperatorAnswer();
+                if (this.onSubmit(e)) {
+                    this.sendOperatorAnswer();
+                }
             }
         });
     },
@@ -145,20 +147,26 @@ export default {
         },
 
         onSubmit(e) {
-            const currentTime = this.getCurrentDateAndTime();
-            e.preventDefault();
-            const userAnswer = `<div data-v-3f23c80f class="outgoing-chats">
-                                    <div data-v-3f23c80f class="outgoing-chats-msg clearfix">
-                                        <p data-v-3f23c80f>
-                                            ${document.getElementById("text").value}
-                                        </p>
-                                        <span data-v-3f23c80f class="outgoing-time">${currentTime}</span>
-                                    </div>
-                                </div>`;
+            if (document.getElementById("text").value) {
+                const currentTime = this.getCurrentDateAndTime();
+                e.preventDefault();
+                const userAnswer = `<div data-v-3f23c80f class="outgoing-chats">
+                                        <div data-v-3f23c80f class="outgoing-chats-msg clearfix">
+                                            <p data-v-3f23c80f>
+                                                ${document.getElementById("text").value}
+                                            </p>
+                                            <span data-v-3f23c80f class="outgoing-time">${currentTime}</span>
+                                        </div>
+                                    </div>`;
 
-            document.getElementById("msg-page").innerHTML += userAnswer;
-            document.getElementById("msg-page").scrollTop += document.getElementById("msg-page").scrollHeight;
-            document.getElementById("text").value = "";
+                document.getElementById("msg-page").innerHTML += userAnswer;
+                document.getElementById("msg-page").scrollTop += document.getElementById("msg-page").scrollHeight;
+                document.getElementById("text").value = "";
+                return true;
+            } else {
+                e.preventDefault();
+                return false;
+            }
         },
 
         onClick() {
