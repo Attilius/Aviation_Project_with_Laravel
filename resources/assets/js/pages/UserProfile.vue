@@ -30,7 +30,6 @@ export default {
 header {
     width: 70%;
     height: 80px;
-    border-bottom: 1px solid whitesmoke;
     padding-top: 10px;
     margin: 0 auto;
 }
@@ -47,7 +46,6 @@ section {
 .menu {
     height: 100%;
     width: 15%;
-    border-right: 1px solid whitesmoke;
 }
 
 .menu ul {
@@ -59,7 +57,8 @@ section {
 }
 
 .content {
-    height: 100%;
-    width: 85%;
+    height: 85vh;
+    width: 75%;
+    border: 1px solid whitesmoke;
 }
 </style>
