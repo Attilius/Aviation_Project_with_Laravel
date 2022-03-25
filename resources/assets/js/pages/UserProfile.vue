@@ -60,5 +60,6 @@ section {
     height: 85vh;
     width: 75%;
     border: 1px solid whitesmoke;
+    background: transparent;
 }
 </style>
