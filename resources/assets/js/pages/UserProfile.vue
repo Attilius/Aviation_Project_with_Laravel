@@ -69,12 +69,19 @@ section {
     justify-content: flex-start;
 }
 
+.content h6 {
+    margin-left: 30px;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
 .icon {
     height: 200px;
     width: 200px;
     background: transparent;
     border: 1px solid whitesmoke;
-    margin: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
 }
 
 i {
