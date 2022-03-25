@@ -10,6 +10,7 @@
                 </ul>
             </div>
             <div class="content">
+                <h6>Profile image</h6>
                 <div class="icon"><i class="material-icons">perm_identity</i></div>
             </div>
         </section>
@@ -63,6 +64,9 @@ section {
     width: 75%;
     border: 1px solid whitesmoke;
     background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .icon {
