@@ -11,7 +11,10 @@
             </div>
             <div class="content">
                 <h6>Profile image</h6>
-                <div class="icon"><i class="material-icons">perm_identity</i></div>
+                <div class="icon">
+                    <i class="material-icons">perm_identity</i>
+                    <div class="button">Change picture</div>
+                    </div>
             </div>
         </section>
     </div>
@@ -79,14 +82,28 @@ section {
     height: 200px;
     width: 200px;
     background: transparent;
-    border: 1px solid whitesmoke;
+    border: 1px solid royalblue;
+    border-radius: 0.25rem;
     margin-left: 30px;
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 i {
     color: whitesmoke;
     font-size: 150px;
+}
+
+.button {
+    width: 100%;
+    height: 20%;
+    background: royalblue;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 </style>
