@@ -9,7 +9,9 @@
                     <li>Delete account</li>
                 </ul>
             </div>
-            <div class="content"></div>
+            <div class="content">
+                <div class="icon"><i class="material-icons">perm_identity</i></div>
+            </div>
         </section>
     </div>
 </template>
@@ -62,4 +64,18 @@ section {
     border: 1px solid whitesmoke;
     background: transparent;
 }
+
+.icon {
+    height: 200px;
+    width: 200px;
+    background: transparent;
+    border: 1px solid whitesmoke;
+    margin: 20px;
+}
+
+i {
+    color: whitesmoke;
+    font-size: 150px;
+}
+
 </style>
