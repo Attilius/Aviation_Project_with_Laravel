@@ -15,6 +15,8 @@
                     <i class="material-icons">perm_identity</i>
                     <div class="button">Change picture</div>
                 </div>
+                <label class="profile_label" for="fullName">Full name</label>
+                <input class="profile_input" type="text" name="fullName" id="fullName">
             </div>
         </section>
     </div>
@@ -109,5 +111,17 @@ i {
 
 .button:hover {
     background: rgb(50, 80, 180);
+}
+
+.profile_label {
+    color: whitesmoke;
+    margin-left: 30px;
+    padding-top: 20px;
+}
+
+.profile_input {
+    width: 30% !important;
+    border-bottom-color: whitesmoke !important;
+    margin-left: 30px !important;
 }
 </style>
