@@ -16,7 +16,7 @@
                     <div class="button">Change picture</div>
                 </div>
                 <label class="profile_label" for="fullName">Full name</label>
-                <input class="profile_input" type="text" name="fullName" id="fullName">
+                <input class="profile_input" type="text" name="fullName" id="fullName" :value="app.user.name">
             </div>
         </section>
     </div>
@@ -24,7 +24,8 @@
 
 <script>
 export default {
-    name: "UserProfile"
+    name: "UserProfile",
+    props: ['app']
 };
 </script>
 
@@ -120,8 +121,9 @@ i {
 }
 
 .profile_input {
-    width: 30% !important;
+    width: 20% !important;
     border-bottom-color: whitesmoke !important;
     margin-left: 30px !important;
+    color: whitesmoke;
 }
 </style>
