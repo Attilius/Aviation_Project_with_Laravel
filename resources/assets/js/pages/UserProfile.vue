@@ -14,7 +14,7 @@
                 <div class="icon">
                     <i class="material-icons">perm_identity</i>
                     <div class="button">Change picture</div>
-                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -104,6 +104,6 @@ i {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
-
 </style>
