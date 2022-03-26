@@ -117,14 +117,14 @@ i {
 }
 
 .profile_label {
-    color: whitesmoke;
+    color: lightgray;
     margin-left: 30px;
     padding-top: 20px;
 }
 
 .profile_input {
     width: 20% !important;
-    border-bottom-color: whitesmoke !important;
+    border-bottom-color: lightgray !important;
     margin-left: 30px !important;
     color: whitesmoke;
 }
