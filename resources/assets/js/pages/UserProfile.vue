@@ -106,4 +106,8 @@ i {
     justify-content: center;
     cursor: pointer;
 }
+
+.button:hover {
+    background: rgb(50, 80, 180);
+}
 </style>
