@@ -21,6 +21,10 @@
                 <input class="profile_input" type="email" name="email" id="email" :value="app.user.email">
                 <label class="profile_label" for="phone">Phone</label>
                 <input class="profile_input" type="tel" name="phone" id="phone">
+
+                <div class="btn-group">
+                    
+                </div>
             </div>
         </section>
     </div>
