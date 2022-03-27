@@ -23,8 +23,8 @@
                 <input class="profile_input" type="tel" name="phone" id="phone">
 
                 <div class="btn-group">
-                    <input type="submit" value="Save profile">
-                    <button>Cancel</button>
+                    <input class="btn-save" type="submit" value="Save profile">
+                    <button class="btn-cancel">Cancel</button>
                 </div>
             </div>
         </section>
@@ -141,5 +141,6 @@ i {
     display: flex;
     justify-content: space-around;
     margin-left: 20px;
+    margin-top: 10px;
 }
 </style>
