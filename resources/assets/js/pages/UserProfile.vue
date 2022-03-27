@@ -23,7 +23,8 @@
                 <input class="profile_input" type="tel" name="phone" id="phone">
 
                 <div class="btn-group">
-                    
+                    <input type="submit" value="Save profile">
+                    <button>Cancel</button>
                 </div>
             </div>
         </section>
