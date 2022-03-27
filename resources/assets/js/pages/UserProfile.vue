@@ -143,4 +143,17 @@ i {
     margin-left: 20px;
     margin-top: 10px;
 }
+
+.btn-save {
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.btn-cancel {
+    border: none !important;
+    background-color: transparent;
+    color: whitesmoke;
+}
 </style>
