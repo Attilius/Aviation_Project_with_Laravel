@@ -135,4 +135,11 @@ i {
     margin-left: 30px !important;
     color: whitesmoke;
 }
+
+.btn-group {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+}
 </style>
