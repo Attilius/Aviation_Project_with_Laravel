@@ -19,6 +19,8 @@
                 <input class="profile_input" type="text" name="fullName" id="fullName" :value="app.user.name">
                 <label class="profile_label" for="email">Email</label>
                 <input class="profile_input" type="email" name="email" id="email" :value="app.user.email">
+                <label class="profile_label" for="phone">Phone</label>
+                <input class="profile_input" type="tel" name="phone" id="phone">
             </div>
         </section>
     </div>
