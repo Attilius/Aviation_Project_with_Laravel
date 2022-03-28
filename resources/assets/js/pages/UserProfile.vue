@@ -164,4 +164,9 @@ i {
     border-radius: 0.25rem;
 }
 
+.btn-cancel:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
 </style>
