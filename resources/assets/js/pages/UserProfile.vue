@@ -149,6 +149,7 @@ i {
     color: whitesmoke;
     border: none !important;
     box-shadow: none !important;
+    border-radius: 0.25rem;
 }
 
 .btn-cancel {
