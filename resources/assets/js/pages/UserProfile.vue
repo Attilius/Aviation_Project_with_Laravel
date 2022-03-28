@@ -158,4 +158,9 @@ i {
     color: whitesmoke;
     width: 117.38px;
 }
+
+.btn-cancel:hover {
+    background-color: rebeccapurple;
+}
+
 </style>
