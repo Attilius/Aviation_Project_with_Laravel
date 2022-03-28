@@ -161,6 +161,7 @@ i {
 
 .btn-cancel:hover {
     background-color: rebeccapurple;
+    border-radius: 0.25rem;
 }
 
 </style>
