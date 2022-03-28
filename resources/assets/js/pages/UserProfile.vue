@@ -156,5 +156,6 @@ i {
     border: none !important;
     background-color: transparent;
     color: whitesmoke;
+    width: 117.38px;
 }
 </style>
