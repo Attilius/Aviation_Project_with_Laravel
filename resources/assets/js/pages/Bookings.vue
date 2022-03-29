@@ -5,8 +5,12 @@
         </header>
         <div class="container">
             <p id="empty-msg">Currently don't have booking.</p>
+
+            <div class="btn-group">
+                    <input class="btn-save" type="submit" value="Save profile">
+                    <router-link class="btn-cancel" to="/">Cancel</router-link>
+                </div>
         </div>
-        
     </div>
 </template>
 
@@ -39,6 +43,42 @@ header h4 {
 #empty-msg {
     color: whitesmoke;
     margin-top: 20px;
+}
+
+.btn-group {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.btn-save {
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0.25rem;
+}
+
+.btn-cancel {
+    border: none !important;
+    background-color: transparent;
+    color: whitesmoke;
+    width: 117.38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cancel:hover {
+    background-color: rebeccapurple;
+    border-radius: 0.25rem;
+}
+
+.btn-cancel:focus {
+    border: none !important;
+    box-shadow: none !important;
 }
 
 </style>
