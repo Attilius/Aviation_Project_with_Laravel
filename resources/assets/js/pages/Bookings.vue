@@ -3,6 +3,7 @@
         <header>
             <h4>Your Bookings</h4>
         </header>
+        <p>Currently don't have booking.</p>
     </div>
 </template>
 
