@@ -4,7 +4,7 @@
             <h4>Your Bookings</h4>
         </header>
         <div class="container">
-            <p>Currently don't have booking.</p>
+            <p id="empty-msg">Currently don't have booking.</p>
         </div>
         
     </div>
@@ -34,6 +34,11 @@ header {
 header h4 {
     color: whitesmoke;
     margin: 0;
+}
+
+#empty-msg {
+    color: whitesmoke;
+    margin-top: 20px;
 }
 
 </style>
