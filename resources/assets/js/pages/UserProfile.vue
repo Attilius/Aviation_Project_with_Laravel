@@ -157,6 +157,9 @@ i {
     background-color: transparent;
     color: whitesmoke;
     width: 117.38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-cancel:hover {
