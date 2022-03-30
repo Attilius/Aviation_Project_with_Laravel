@@ -7,7 +7,7 @@
             <p id="empty-msg">Currently don't have booking.</p>
 
             <div class="btn-group">
-                <input class="btn-save" type="submit" value="Delete Booking" />
+                <input v-if="bookings" class="btn-save" type="submit" value="Delete Booking" />
                 <router-link class="btn-cancel" to="/">Cancel</router-link>
             </div>
         </div>
@@ -16,7 +16,13 @@
 
 <script>
 export default {
-    name: "Bookings"
+    name: "Bookings",
+    
+    data() {
+        return{
+            bookings: ''
+        }
+    }
 };
 </script>
 
@@ -69,6 +75,7 @@ header h4 {
     background-color: transparent;
     color: whitesmoke;
     width: 117.38px;
+    height: 57.25px;
     display: flex;
     align-items: center;
     justify-content: center;
