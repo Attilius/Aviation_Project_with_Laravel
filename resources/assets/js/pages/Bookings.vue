@@ -7,17 +7,17 @@
             <p id="empty-msg">Currently don't have booking.</p>
 
             <div class="btn-group">
-                    <input class="btn-save" type="submit" value="Delete Booking">
-                    <router-link class="btn-cancel" to="/">Cancel</router-link>
-                </div>
+                <input class="btn-save" type="submit" value="Delete Booking" />
+                <router-link class="btn-cancel" to="/">Cancel</router-link>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Bookings'
-}
+    name: "Bookings"
+};
 </script>
 
 <style scoped>
@@ -80,5 +80,4 @@ header h4 {
     border: none !important;
     box-shadow: none !important;
 }
-
 </style>
