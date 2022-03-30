@@ -40,6 +40,10 @@ header h4 {
     margin: 0;
 }
 
+.container {
+    padding: 0;
+}
+
 #empty-msg {
     color: whitesmoke;
     margin-top: 20px;
