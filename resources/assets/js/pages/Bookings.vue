@@ -49,7 +49,6 @@ header h4 {
     width: 30%;
     display: flex;
     justify-content: space-around;
-    margin-left: 20px;
     margin-top: 10px;
 }
 
