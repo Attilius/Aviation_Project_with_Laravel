@@ -7,7 +7,7 @@
             <p id="empty-msg">Currently don't have booking.</p>
 
             <div class="btn-group">
-                    <input class="btn-save" type="submit" value="Save profile">
+                    <input class="btn-save" type="submit" value="Delete Booking">
                     <router-link class="btn-cancel" to="/">Cancel</router-link>
                 </div>
         </div>
