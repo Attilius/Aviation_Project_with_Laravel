@@ -2,7 +2,7 @@
     <div>
         <div class="wrapper">
             <Header id="header" class="header" />
-            <div class="content_">
+            <div id="content" class="content_">
                 <div class="skin">
                     <div class="head-content">
                         <h2 class="title">Explore the world with us</h2>
