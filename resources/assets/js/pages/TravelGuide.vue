@@ -77,6 +77,9 @@ export default {
 
     mounted() {
         this.scrollPage(0, 0);
+
+        const cities = ['athens', 'barcelona', 'cairo', 'istanbul', 'lisbon', 'london', 'montreal', 'munich', 'new-york', 'paris', 'rome', 'zurich'];
+       
     },
 
     methods: {
@@ -158,7 +161,7 @@ export default {
 .content_ {
     width: 100%;
     height: 100vh;
-    background: url("../../img/new-york.jpg");
+    /*background: url("../../img/new-york.jpg");*/
     background-size: cover;
     background-position: top;
     margin: 0 auto;
