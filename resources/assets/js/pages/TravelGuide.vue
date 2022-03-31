@@ -79,7 +79,7 @@ export default {
         this.scrollPage(0, 0);
 
         const cities = ['athens', 'barcelona', 'cairo', 'istanbul', 'lisbon', 'london', 'montreal', 'munich', 'new-york', 'paris', 'rome', 'zurich'];
-       
+        document.getElementById('content').style.backgroundImage = "url('../../img/paris.jpg')";
     },
 
     methods: {
