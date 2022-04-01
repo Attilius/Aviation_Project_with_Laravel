@@ -173,7 +173,10 @@ i {
 }
 
 @media(max-width: 576px) {
-
+    .content h6 {
+        text-align: center;
+        margin: 20px 0;
+    }
 }
 
 </style>
