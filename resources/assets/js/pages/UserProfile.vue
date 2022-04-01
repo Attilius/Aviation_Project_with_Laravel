@@ -185,6 +185,11 @@ i {
     .profile_input[data-v-f1e2079e] {
         width: 80% !important;
     }
+
+    .btn-group {
+        width: 80%;
+        margin: 10px 0;
+    }
 }
 
 </style>
