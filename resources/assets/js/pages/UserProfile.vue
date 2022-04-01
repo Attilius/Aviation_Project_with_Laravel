@@ -177,6 +177,10 @@ i {
         text-align: center;
         margin: 20px 0;
     }
+
+    .icon {
+        margin: 10px auto;
+    }
 }
 
 </style>
