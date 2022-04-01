@@ -172,4 +172,8 @@ i {
     box-shadow: none !important;
 }
 
+@media(max-width: 576px) {
+
+}
+
 </style>
