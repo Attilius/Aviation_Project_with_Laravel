@@ -4,7 +4,7 @@
             <h4>Your Bookings</h4>
         </header>
         <div class="container">
-            <p id="empty-msg">Currently don't have booking.</p>
+            <p v-if="!bookings" id="empty-msg">Currently don't have booking.</p>
 
             <div class="btn-group">
                 <input v-if="bookings" class="btn-save" type="submit" value="Delete Booking" />
