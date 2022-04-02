@@ -6,6 +6,10 @@
         <div class="container">
             <p v-if="!bookings" id="empty-msg">Currently don't have booking.</p>
 
+            <div class="booking-box">
+
+            </div>
+
             <div class="btn-group">
                 <input v-if="bookings" class="btn-save" type="submit" value="Delete Booking" />
                 <router-link class="btn-cancel" to="/">Cancel</router-link>
@@ -89,5 +93,11 @@ header h4 {
 .btn-cancel:focus {
     border: none !important;
     box-shadow: none !important;
+}
+
+.booking-box {
+    height: 100px;
+    width: 100%;
+    background: lightblue;
 }
 </style>
