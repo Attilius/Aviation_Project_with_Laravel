@@ -6,9 +6,7 @@
         <div class="container">
             <p v-if="!bookings" id="empty-msg">Currently don't have booking.</p>
 
-            <div class="booking-box">
-
-            </div>
+            <div class="booking-box"></div>
 
             <div class="btn-group">
                 <input v-if="bookings" class="btn-save" type="submit" value="Delete Booking" />
@@ -99,5 +97,6 @@ header h4 {
     height: 100px;
     width: 100%;
     background: lightblue;
+    margin-top: 15px;
 }
 </style>
