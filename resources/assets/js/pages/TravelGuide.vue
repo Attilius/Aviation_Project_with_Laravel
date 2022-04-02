@@ -85,7 +85,7 @@ export default {
             const cities = ['athens.jpg', 'barcelona.jpg', 'cairo.png', 'istanbul.jpg', 'lisbon.png', 'london.jpeg', 'montreal.jpg', 'munich.jpg', 'new-york.jpg', 'paris.jpg', 'rome.jpg', 'zurich.jpg'];
             const index = Math.floor(Math.random() * cities.length);
             
-            document.getElementById('content').style.backgroundImage = `url('../../img/${cities[index]}')`;
+            //document.getElementById('content').style.backgroundImage = `url('../../img/${cities[index]}')`;
         },
 
         onChangeAreaAndLocation([cardArea, cardLocation]) {
@@ -166,7 +166,7 @@ export default {
 .content_ {
     width: 100%;
     height: 100vh;
-    /*background: url("../../img/new-york.jpg");*/
+    background: url("../../img/new-york.jpg");
     background-size: cover;
     background-position: top;
     margin: 0 auto;
