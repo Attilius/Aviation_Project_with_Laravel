@@ -84,8 +84,8 @@ export default {
         randomBackground() {
             const cities = ['athens.jpg', 'barcelona.jpg', 'cairo.png', 'istanbul.jpg', 'lisbon.png', 'london.jpeg', 'montreal.jpg', 'munich.jpg', 'new-york.jpg', 'paris.jpg', 'rome.jpg', 'zurich.jpg'];
             const index = Math.floor(Math.random() * cities.length);
-            console.dir(document.getElementById('content'))
-            document.getElementById('content').style.background = `url('../../img/${cities[index]}')`;
+            
+            document.getElementById('content').style.backgroundImage = `url('../../img/${cities[index]}')`;
         },
 
         onChangeAreaAndLocation([cardArea, cardLocation]) {
