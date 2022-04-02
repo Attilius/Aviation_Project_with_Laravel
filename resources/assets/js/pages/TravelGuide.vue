@@ -77,12 +77,17 @@ export default {
 
     mounted() {
         this.scrollPage(0, 0);
-        const cities = ['athens', 'barcelona', 'cairo', 'istanbul', 'lisbon', 'london', 'montreal', 'munich', 'new-york', 'paris', 'rome', 'zurich'];
-        const index = Math.floor(Math.random() * cities.length);
-        document.getElementById('content').style.backgroundImage = `url('../../img/${cities[index]}.jpg')`;
+        this.randomBackground();
     },
 
     methods: {
+        randomBackground() {
+            const cities = ['athens.jpg', 'barcelona.jpg', 'cairo.png', 'istanbul.jpg', 'lisbon.png', 'london.jpeg', 'montreal.jpg', 'munich.jpg', 'new-york.jpg', 'paris.jpg', 'rome.jpg', 'zurich.jpg'];
+            const index = Math.floor(Math.random() * cities.length);
+            console.dir(document.getElementById('content'))
+            document.getElementById('content').style.background = `url('../../img/${cities[index]}')`;
+        },
+
         onChangeAreaAndLocation([cardArea, cardLocation]) {
             this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation])
         },
@@ -161,7 +166,7 @@ export default {
 .content_ {
     width: 100%;
     height: 100vh;
-    background: url("../../img/new-york.jpg");
+    /*background: url("../../img/new-york.jpg");*/
     background-size: cover;
     background-position: top;
     margin: 0 auto;
