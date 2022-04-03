@@ -138,7 +138,7 @@ nav i {
 
 .back-link {
     height: 40px;
-    width: 13%;
+    width: 11%;
     display: flex;
     align-items: center;
     justify-content: center;
