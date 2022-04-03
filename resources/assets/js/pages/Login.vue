@@ -207,4 +207,14 @@ nav i {
     }
 }
 
+@media(max-width: 576px) {
+    .back-link {
+        width: 40%;
+    }
+
+    .login-form {
+        width: 80%;
+    }
+}
+
 </style>
