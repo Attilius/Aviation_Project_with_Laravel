@@ -201,4 +201,10 @@ nav i {
     border: none;
 }
 
+@media(max-width: 1350px) {
+    .back-link {
+        width: 13%;
+    }
+}
+
 </style>
