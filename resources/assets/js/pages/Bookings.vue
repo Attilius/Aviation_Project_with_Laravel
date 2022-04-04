@@ -10,6 +10,7 @@
                 <div class="header">
                     <h6>Your Departure Flight</h6>
                     <h5>Paris (PAR) > Montreal (MON)</h5>
+                    <p>Monday, April 04, 2022</p>
                 </div>
             </div>
 
@@ -116,12 +117,22 @@ header h4 {
     color: rgb(5, 55, 115);
     margin: 0;
     padding: 10px;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .booking-box .header h5 {
     color: royalblue;
     margin: 0;
     padding: 0 10px;
+    font-weight: 600;
+}
+
+.booking-box .header p {
+    color: rgb(5, 55, 115);
+    margin: 0;
+    padding: 5px 10px;
+    font-weight: 600;
 }
 
 </style>
