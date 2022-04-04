@@ -6,7 +6,12 @@
         <div class="container">
             <p v-if="!bookings" id="empty-msg">Currently don't have booking.</p>
 
-            <div class="booking-box"></div>
+            <div class="booking-box">
+                <div class="header">
+                    <h6>Your Departure Flight</h6>
+                    <h5>Paris (PAR) > Montreal (MON)</h5>
+                </div>
+            </div>
 
             <div class="btn-group">
                 <input v-if="bookings" class="btn-save" type="submit" value="Delete Booking" />
@@ -99,4 +104,24 @@ header h4 {
     background: whitesmoke;
     margin-top: 15px;
 }
+
+.booking-box .header {
+    height: 100px;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.booking-box .header h6 {
+    text-transform: uppercase;
+    color: rgb(5, 55, 115);
+    margin: 0;
+    padding: 10px;
+}
+
+.booking-box .header h5 {
+    color: royalblue;
+    margin: 0;
+    padding: 0 10px;
+}
+
 </style>
