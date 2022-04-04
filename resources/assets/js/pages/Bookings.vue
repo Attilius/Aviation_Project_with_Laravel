@@ -13,7 +13,12 @@
                     <p>Monday, April 04, 2022</p>
                 </div>
                 <div class="bottom">
+                    <div class="top">
 
+                    </div>
+                    <div class="footer">
+
+                    </div>
                 </div>
             </div>
 
@@ -143,6 +148,20 @@ header h4 {
     width: 95%;
     border: 2px solid lightgray;
     margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom .top {
+    height: 50%;
+    width: 100%;
+}
+
+.bottom .footer {
+    height: 45%;
+    width: 100%;
+    background-color: rgb(237, 237, 237);
 }
 
 </style>
