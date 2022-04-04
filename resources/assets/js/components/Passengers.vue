@@ -339,7 +339,7 @@ header h5 {
 .delete {
     position: absolute;
     top: -20px;
-    right: -130px;
+    right: -200px !important;
     font-size: 1.5rem !important;
     cursor: pointer;
     width: 1.5rem;
@@ -368,6 +368,11 @@ footer {
     #add-passenger-btn {
         width: 55%;
     }
+
+    .delete {
+        right: -130px !important;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -384,6 +389,10 @@ footer {
 
     #input-passengers-select {
         width: 70vw !important;
+    }
+
+    .delete {
+        right: -5px !important;
     }
 }
 </style>
