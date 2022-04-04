@@ -94,9 +94,9 @@ header h4 {
 }
 
 .booking-box {
-    height: 100px;
+    height: 300px;
     width: 100%;
-    background: lightblue;
+    background: whitesmoke;
     margin-top: 15px;
 }
 </style>
