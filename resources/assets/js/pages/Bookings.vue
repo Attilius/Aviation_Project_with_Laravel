@@ -12,6 +12,9 @@
                     <h5>Paris (PAR) > Montreal (MON)</h5>
                     <p>Monday, April 04, 2022</p>
                 </div>
+                <div class="bottom">
+
+                </div>
             </div>
 
             <div class="btn-group">
@@ -116,7 +119,7 @@ header h4 {
     text-transform: uppercase;
     color: rgb(5, 55, 115);
     margin: 0;
-    padding: 10px;
+    padding: 10px 25px;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -124,15 +127,22 @@ header h4 {
 .booking-box .header h5 {
     color: royalblue;
     margin: 0;
-    padding: 0 10px;
+    padding: 0 25px;
     font-weight: 600;
 }
 
 .booking-box .header p {
     color: rgb(5, 55, 115);
     margin: 0;
-    padding: 5px 10px;
+    padding: 5px 25px;
     font-weight: 600;
+}
+
+.bottom {
+    height: 175px;
+    width: 95%;
+    border: 2px solid lightgray;
+    margin: 10px auto;
 }
 
 </style>
