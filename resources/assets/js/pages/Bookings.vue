@@ -17,7 +17,9 @@
 
                     </div>
                     <div class="footer">
-                        <div></div>
+                        <div>
+                            <span>LA2222</span>
+                        </div>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -167,6 +169,13 @@ header h4 {
     height: 45%;
     width: 100%;
     background-color: rgb(237, 237, 237);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer div {
+    padding: auto;
 }
 
 </style>
