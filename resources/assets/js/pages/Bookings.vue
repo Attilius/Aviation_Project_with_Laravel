@@ -22,8 +22,8 @@
                         </div>
                         <div></div>
                         <div>
-                            <p class="dep"><span class="time">2:15 PM</span>Paris, Charles De Gaulle</p>
-                            <p class="arr"><span class="time">4:45 PM</span>Montreal, Metropolitan Area</p>
+                            <p class="dep"><span class="time">2:15 PM </span>Paris, Charles De Gaulle</p>
+                            <p class="arr"><span class="time">4:45 PM </span>Montreal, Metropolitan Area</p>
                         </div>
                         <div></div>
                         <div></div>
@@ -187,6 +187,7 @@ header h4 {
 
 .dep, .arr {
     margin: 0;
+    margin-right: 10px;
 }
 
 </style>
