@@ -22,8 +22,8 @@
                         </div>
                         <div></div>
                         <div>
-                            <p><span>2:15 PM</span>Paris, Charles De Gaulle</p>
-                            <p><span>4:45 PM</span>Montreal, Metropolitan Area</p>
+                            <p class="dep"><span class="time">2:15 PM</span>Paris, Charles De Gaulle</p>
+                            <p class="arr"><span class="time">4:45 PM</span>Montreal, Metropolitan Area</p>
                         </div>
                         <div></div>
                         <div></div>
@@ -179,6 +179,14 @@ header h4 {
 
 .footer div {
     padding: auto;
+}
+
+.time {
+    color: rgb(0, 60, 255)
+}
+
+.dep, .arr {
+    margin: 0;
 }
 
 </style>
