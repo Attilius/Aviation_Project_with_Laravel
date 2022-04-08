@@ -21,7 +21,10 @@
                             <span>LA2222</span>
                         </div>
                         <div></div>
-                        <div></div>
+                        <div>
+                            <p><span>2:15 PM</span>Paris, Charles De Gaulle</p>
+                            <p><span>4:45 PM</span>Montreal, Metropolitan Area</p>
+                        </div>
                         <div></div>
                         <div></div>
                         <div></div>
