@@ -33,7 +33,10 @@
                             <p>Aircraft</p>
                             <p>Airbus A320</p>
                         </div>
-                        <div></div>
+                        <div>
+                            <p>Class</p>
+                            <p>Economy</p>
+                        </div>
                     </div>
                 </div>
             </div>
