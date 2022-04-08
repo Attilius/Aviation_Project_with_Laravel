@@ -29,7 +29,10 @@
                             <p>Operated by</p>
                             <p>Lorem Airlines</p>
                         </div>
-                        <div></div>
+                        <div>
+                            <p>Aircraft</p>
+                            <p>Airbus A320</p>
+                        </div>
                         <div></div>
                     </div>
                 </div>
