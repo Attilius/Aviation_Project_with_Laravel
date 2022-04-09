@@ -18,7 +18,7 @@
                     </div>
                     <div class="footer">
                         <div class="footer-box">
-                            <p>LA2222</p>
+                            <p class="item">LA2222</p>
                         </div>
                         <div></div>
                         <div class="footer-box">
@@ -27,15 +27,15 @@
                         </div>
                         <div class="footer-box">
                             <p class="title">Operated by</p>
-                            <p>Lorem Airlines</p>
+                            <p class="item">Lorem Airlines</p>
                         </div>
                         <div class="footer-box">
                             <p class="title">Aircraft</p>
-                            <p>Airbus A320</p>
+                            <p class="item">Airbus A320</p>
                         </div>
                         <div class="footer-box">
                             <p class="title">Class</p>
-                            <p>Economy</p>
+                            <p class="item">Economy</p>
                         </div>
                     </div>
                 </div>
@@ -199,7 +199,7 @@ header h4 {
     margin: 0;
     margin-right: 10px;
     color: rgb(5, 55, 115);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .footer-box p {
@@ -208,6 +208,11 @@ header h4 {
 
 .title {
     color: gray;
+}
+
+.item {
+    color: rgb(5, 55, 115);
+    font-weight: 700;
 }
 
 </style>
