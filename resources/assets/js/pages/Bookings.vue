@@ -198,6 +198,8 @@ header h4 {
 .dep, .arr {
     margin: 0;
     margin-right: 10px;
+    color: rgb(5, 55, 115);
+    font-weight: 400;
 }
 
 .footer-box p {
