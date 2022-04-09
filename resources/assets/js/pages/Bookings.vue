@@ -204,4 +204,8 @@ header h4 {
     margin: 0;
 }
 
+.title {
+    color: gray;
+}
+
 </style>
