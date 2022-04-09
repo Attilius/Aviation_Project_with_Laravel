@@ -26,15 +26,15 @@
                             <p class="arr"><span class="time">4:45 PM </span>Montreal, Metropolitan Area</p>
                         </div>
                         <div class="footer-box">
-                            <p>Operated by</p>
+                            <p class="title">Operated by</p>
                             <p>Lorem Airlines</p>
                         </div>
                         <div class="footer-box">
-                            <p>Aircraft</p>
+                            <p class="title">Aircraft</p>
                             <p>Airbus A320</p>
                         </div>
                         <div class="footer-box">
-                            <p>Class</p>
+                            <p class="title">Class</p>
                             <p>Economy</p>
                         </div>
                     </div>
