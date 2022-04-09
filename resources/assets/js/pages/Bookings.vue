@@ -17,23 +17,23 @@
 
                     </div>
                     <div class="footer">
-                        <div>
-                            <span>LA2222</span>
+                        <div class="footer-box">
+                            <p>LA2222</p>
                         </div>
                         <div></div>
-                        <div>
+                        <div class="footer-box">
                             <p class="dep"><span class="time">2:15 PM </span>Paris, Charles De Gaulle</p>
                             <p class="arr"><span class="time">4:45 PM </span>Montreal, Metropolitan Area</p>
                         </div>
-                        <div>
+                        <div class="footer-box">
                             <p>Operated by</p>
                             <p>Lorem Airlines</p>
                         </div>
-                        <div>
+                        <div class="footer-box">
                             <p>Aircraft</p>
                             <p>Airbus A320</p>
                         </div>
-                        <div>
+                        <div class="footer-box">
                             <p>Class</p>
                             <p>Economy</p>
                         </div>
@@ -198,6 +198,10 @@ header h4 {
 .dep, .arr {
     margin: 0;
     margin-right: 10px;
+}
+
+.footer-box p {
+    margin: 0;
 }
 
 </style>
