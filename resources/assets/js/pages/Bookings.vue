@@ -37,6 +37,10 @@
                             <p class="title">Class</p>
                             <p class="item">Economy</p>
                         </div>
+                        <div class="footer-box">
+                            <p class="title">Passengers</p>
+                            <p class="item">1 Adult</p>
+                        </div>
                     </div>
                 </div>
             </div>
