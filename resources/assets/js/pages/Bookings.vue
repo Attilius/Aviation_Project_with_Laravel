@@ -20,7 +20,9 @@
                         <div class="footer-box">
                             <p class="item">LA2222</p>
                         </div>
-                        <div></div>
+                        <div>
+                            <p class="dots"><span class="big">.</span>...<span class="big">.</span></p>
+                        </div>
                         <div class="footer-box">
                             <p class="dep"><span class="time">2:15 PM </span>Paris, Charles De Gaulle</p>
                             <p class="arr"><span class="time">4:45 PM </span>Montreal, Metropolitan Area</p>
@@ -217,6 +219,17 @@ header h4 {
 .item {
     color: rgb(5, 55, 115);
     font-weight: 700;
+}
+
+.dots {
+    transform: rotate(90deg);
+    margin-top: 20px;
+    font-size: 1rem;
+    color: slategray;
+}
+
+.big {
+    font-size: 5rem;
 }
 
 </style>
