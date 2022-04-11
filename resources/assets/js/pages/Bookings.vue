@@ -224,7 +224,7 @@ header h4 {
 .dots {
     transform: rotate(90deg);
     margin-top: 20px;
-    font-size: 1rem;
+    font-size: 1.7rem;
     color: slategray;
     position: relative;
     left: 40px;
