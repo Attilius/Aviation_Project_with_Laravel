@@ -227,7 +227,7 @@ header h4 {
     font-size: 1rem;
     color: slategray;
     position: relative;
-    left: 30px;
+    left: 40px;
 }
 
 .big {
