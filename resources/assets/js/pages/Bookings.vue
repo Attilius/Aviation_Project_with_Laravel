@@ -226,6 +226,8 @@ header h4 {
     margin-top: 20px;
     font-size: 1rem;
     color: slategray;
+    position: relative;
+    left: 30px;
 }
 
 .big {
