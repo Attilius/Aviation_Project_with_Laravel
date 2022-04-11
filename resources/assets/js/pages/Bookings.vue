@@ -233,6 +233,8 @@ header h4 {
 
 .big {
     font-size: 5rem;
+    position: relative;
+    top: 2.45px;
 }
 
 </style>
