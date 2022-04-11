@@ -228,6 +228,7 @@ header h4 {
     color: slategray;
     position: relative;
     left: 40px;
+    bottom: 3px;
 }
 
 .big {
