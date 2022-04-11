@@ -206,6 +206,13 @@ header h4 {
     margin-right: 10px;
     color: rgb(5, 55, 115);
     font-weight: 500;
+    padding-top: 5px;
+    position: relative;
+    left: -5px;
+}
+
+.arr {
+    padding-bottom: 3px;
 }
 
 .footer-box p {
