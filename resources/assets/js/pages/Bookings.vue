@@ -14,7 +14,14 @@
                 </div>
                 <div class="bottom">
                     <div class="top">
-
+                        <div class="t">
+                                <span class="time">2:15 PM</span>
+                                <p class="dep">Paris (CDG)</p>
+                            </div>
+                            <div class="b">
+                                <span class="time">4:45 PM</span>
+                                <p class="arr">Montreal (YMA)</p>
+                            </div>
                     </div>
                     <div class="footer">
                         <div class="footer-box">
