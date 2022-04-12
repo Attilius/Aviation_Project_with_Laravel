@@ -213,9 +213,7 @@ header h4 {
     color: rgb(5, 55, 115);
     font-weight: 500;
     padding-top: 5px;
-    position: relative;
-    left: -5px;
-    display: inline-block;
+    display: inline;
 }
 
 .arr {
@@ -253,6 +251,9 @@ header h4 {
 
 .t, .b {
     display: "flex";
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
 }
 
 </style>
