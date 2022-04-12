@@ -24,8 +24,14 @@
                             <p class="dots"><span class="big">.</span>...<span class="big">.</span></p>
                         </div>
                         <div class="footer-box">
-                            <p class="dep"><span class="time">2:15 PM </span>Paris, Charles De Gaulle</p>
-                            <p class="arr"><span class="time">4:45 PM </span>Montreal, Metropolitan Area</p>
+                            <div class="t">
+                                <span class="time">2:15 PM</span>
+                                <p class="dep">Paris, Charles De Gaulle</p>
+                            </div>
+                            <div class="b">
+                                <span class="time">4:45 PM</span>
+                                <p class="arr">Montreal, Metropolitan Area</p>
+                            </div>
                         </div>
                         <div class="footer-box">
                             <p class="title">Operated by</p>
@@ -209,6 +215,7 @@ header h4 {
     padding-top: 5px;
     position: relative;
     left: -5px;
+    display: inline-block;
 }
 
 .arr {
@@ -242,6 +249,10 @@ header h4 {
     font-size: 5rem;
     position: relative;
     top: 2.45px;
+}
+
+.t, .b {
+    display: "flex";
 }
 
 </style>
