@@ -70,7 +70,7 @@
                             >Confirm password is requred!</span
                         >
                     </div>
-                    <input id="submit" type="submit" value="Login" />
+                    <input id="submit" type="submit" value="Sign Up" />
                 </b-form>
             </div>
         </div>
