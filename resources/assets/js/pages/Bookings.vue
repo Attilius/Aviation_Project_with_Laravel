@@ -14,14 +14,15 @@
                 </div>
                 <div class="bottom">
                     <div class="top">
-                        <div class="t">
-                                <span class="time">2:15 PM</span>
-                                <p class="dep">Paris (CDG)</p>
-                            </div>
-                            <div class="b">
-                                <span class="time">4:45 PM</span>
-                                <p class="arr">Montreal (YMA)</p>
-                            </div>
+                        <div class="tp">
+                            <span class="time">2:15 PM</span>
+                            <p class="dep">Paris (CDG)</p>
+                        </div>
+                        <div class="bn">
+                            <span class="time">4:45 PM</span>
+                            <p class="arr">Montreal (YMA)</p>
+                        </div>
+                        <p class="title">Trip duration: 08h30</p>
                     </div>
                     <div class="footer">
                         <div class="footer-box">
@@ -262,6 +263,13 @@ header h4 {
     align-items: center;
     justify-content: space-around;
     margin: 10px auto;
+}
+
+.tp, .bn {
+    display: "flex";
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
 }
 
 </style>
