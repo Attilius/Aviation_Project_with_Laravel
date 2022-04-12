@@ -254,6 +254,7 @@ header h4 {
     width: 300px;
     align-items: center;
     justify-content: space-around;
+    margin: 10px auto;
 }
 
 </style>
