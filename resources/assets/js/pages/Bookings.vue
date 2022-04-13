@@ -280,4 +280,8 @@ header h4 {
     margin-bottom: 5px;
 }
 
+.tp, .bn, .trip-duration {
+    margin-left: 70px;
+}
+
 </style>
