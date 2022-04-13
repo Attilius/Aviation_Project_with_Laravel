@@ -22,7 +22,7 @@
                             <span class="time">4:45 PM</span>
                             <p class="arr">Montreal (YMA)</p>
                         </div>
-                        <p class="title">Trip duration: 08h30</p>
+                        <p class="title trip-duration">Trip duration: 08h30</p>
                     </div>
                     <div class="footer">
                         <div class="footer-box">
