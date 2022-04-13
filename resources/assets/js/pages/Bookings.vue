@@ -272,4 +272,8 @@ header h4 {
     justify-content: space-around;
 }
 
+.bn {
+    margin-bottom: 5px;
+}
+
 </style>
