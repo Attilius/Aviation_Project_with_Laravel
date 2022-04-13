@@ -25,7 +25,9 @@
                         </div>
                         <p class="title trip-duration">Trip duration: 08h30</p>
                         </div>
-                        
+                        <div class="right-block">
+                            
+                        </div>
                     </div>
                     <div class="footer">
                         <div class="footer-box">
