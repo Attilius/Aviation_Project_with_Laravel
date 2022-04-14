@@ -199,9 +199,7 @@ header h4 {
 
 .bottom .top {
     height: 50%;
-}
-
-.top {
+    width: 100%;
     display: "flex";
 }
 
