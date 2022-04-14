@@ -19,11 +19,11 @@
                                 <span class="time">2:15 PM</span>
                                 <p class="dep">Paris (CDG)</p>
                             </div>
-                        <div class="bn">
-                            <span class="time">4:45 PM</span>
-                            <p class="arr">Montreal (YMA)</p>
-                        </div>
-                        <p class="title trip-duration">Trip duration: 08h30</p>
+                            <div class="bn">
+                                <span class="time">4:45 PM</span>
+                                <p class="arr">Montreal (YMA)</p>
+                            </div>
+                            <p class="title trip-duration">Trip duration: 08h30</p>
                         </div>
                         <div class="right-block">
                             <h4>Price</h4>
@@ -200,6 +200,10 @@ header h4 {
 .bottom .top {
     height: 50%;
     width: 100%;
+}
+
+.top {
+    display: "flex";
 }
 
 .bottom .footer {
