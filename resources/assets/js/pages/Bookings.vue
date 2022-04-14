@@ -16,9 +16,9 @@
                     <div class="top">
                         <div class="left-block">
                             <div class="tp">
-                            <span class="time">2:15 PM</span>
-                            <p class="dep">Paris (CDG)</p>
-                        </div>
+                                <span class="time">2:15 PM</span>
+                                <p class="dep">Paris (CDG)</p>
+                            </div>
                         <div class="bn">
                             <span class="time">4:45 PM</span>
                             <p class="arr">Montreal (YMA)</p>
@@ -26,7 +26,7 @@
                         <p class="title trip-duration">Trip duration: 08h30</p>
                         </div>
                         <div class="right-block">
-                            
+                            <h4>Price</h4>
                         </div>
                     </div>
                     <div class="footer">
