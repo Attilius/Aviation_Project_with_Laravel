@@ -14,7 +14,7 @@
                 </div>
                 <div class="bottom">
                     <div class="top">
-                        <div class="left-block">
+                        <div>
                             <div class="tp">
                                 <span class="time">2:15 PM</span>
                                 <p class="dep">Paris (CDG)</p>
@@ -291,6 +291,12 @@ header h4 {
 
 .tp, .bn, .trip-duration {
     margin-left: 70px;
+}
+
+.right-block {
+    height: 100%;
+    width: 50%;
+    background-color: green;
 }
 
 </style>
