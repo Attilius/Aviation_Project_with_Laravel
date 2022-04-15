@@ -203,6 +203,10 @@ header h4 {
     display: "flex";
 }
 
+.top div {
+    width: 50%;
+}
+
 .bottom .footer {
     height: 45%;
     width: 100%;
