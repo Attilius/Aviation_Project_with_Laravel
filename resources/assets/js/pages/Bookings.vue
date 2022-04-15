@@ -203,6 +203,12 @@ header h4 {
     display: "flex";
 }
 
+.top div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .top div, .top div h4 {
     width: 50%;
     display: inline;
