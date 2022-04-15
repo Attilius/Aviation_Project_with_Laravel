@@ -205,6 +205,7 @@ header h4 {
 
 .top div {
     width: 50%;
+    display: inline;
 }
 
 .bottom .footer {
