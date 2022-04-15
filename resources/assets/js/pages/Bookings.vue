@@ -295,6 +295,10 @@ header h4 {
     margin-left: 70px;
 }
 
+.trip-duration {
+    display: inline;
+}
+
 .right-block {
     height: 100%;
     width: 50%;
