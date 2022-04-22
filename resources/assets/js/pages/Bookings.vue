@@ -302,6 +302,9 @@ header h4 {
 
 .price {
     display: inline;
+    float: right;
+    position: relative;
+    top: -75px;
 }
 
 </style>
