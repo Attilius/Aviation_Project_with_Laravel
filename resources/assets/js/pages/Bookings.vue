@@ -14,7 +14,7 @@
                 </div>
                 <div class="bottom">
                     <div class="top">
-                        <div>
+                       <div>
                             <div class="tp">
                                 <span class="time">2:15 PM</span>
                                 <p class="dep">Paris (CDG)</p>
@@ -25,9 +25,9 @@
                             </div>
                             <p class="title trip-duration">Trip duration: 08h30</p>
                         </div>
-                        <div>
+                        
                             <h4>Price</h4>
-                        </div>
+                        
                     </div>
                     <div class="footer">
                         <div class="footer-box">
