@@ -300,4 +300,8 @@ header h4 {
     background-color: green;
 }
 
+.price {
+    display: inline;
+}
+
 </style>
