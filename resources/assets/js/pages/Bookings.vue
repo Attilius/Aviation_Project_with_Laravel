@@ -26,7 +26,7 @@
                             <p class="title trip-duration">Trip duration: 08h30</p>
                         </div>
                         
-                            <h4>Price</h4>
+                            <h4 class="price">Price</h4>
                         
                     </div>
                     <div class="footer">
