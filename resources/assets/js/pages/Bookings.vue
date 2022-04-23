@@ -294,12 +294,6 @@ header h4 {
     display: inline;
 }
 
-.right-block {
-    height: 100%;
-    width: 50%;
-    background-color: green;
-}
-
 .price {
     display: inline;
     float: right;
