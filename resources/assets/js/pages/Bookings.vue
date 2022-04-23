@@ -305,6 +305,7 @@ header h4 {
     float: right;
     position: relative;
     top: -75px;
+    margin-right: 100px;
 }
 
 </style>
