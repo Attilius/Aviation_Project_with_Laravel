@@ -307,4 +307,8 @@ header h4 {
     color: whitesmoke;
 }
 
+.price-box {
+    border: 1px solid rebeccapurple;
+}    
+
 </style>
