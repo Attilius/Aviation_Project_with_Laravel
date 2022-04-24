@@ -25,8 +25,10 @@
                             </div>
                             <p class="title trip-duration">Trip duration: 08h30</p>
                         </div>
-                        
+                        <div class="price-box">
                             <h4 class="price">Price $100</h4>
+                        </div>
+                            
                         
                     </div>
                     <div class="footer">
