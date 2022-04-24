@@ -311,6 +311,7 @@ header h4 {
     border: 1px solid rebeccapurple;
     height: 100%;
     width: 50%;
+    position: relative;
     
 }    
 
