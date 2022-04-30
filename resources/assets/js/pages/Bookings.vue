@@ -311,6 +311,7 @@ header h4 {
     width: 50%;
     position: relative;
     top: -79px;
+    left: 50%;
 }    
 
 </style>
