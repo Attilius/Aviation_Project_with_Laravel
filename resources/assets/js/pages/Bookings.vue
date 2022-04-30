@@ -299,7 +299,6 @@ header h4 {
 .price {
     display: inline;
     float: right;
-    position: relative;
     margin-right: 100px;
     padding: 20px;
     background-color: green;
