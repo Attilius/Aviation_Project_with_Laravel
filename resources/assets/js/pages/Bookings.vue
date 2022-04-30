@@ -300,6 +300,7 @@ header h4 {
     display: inline;
     float: right;
     margin-right: 100px;
+    margin-top: 2.5px;
     padding: 20px;
     background-color: green;
     color: whitesmoke;
