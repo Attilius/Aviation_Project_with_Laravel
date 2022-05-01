@@ -308,7 +308,7 @@ header h4 {
 
 .price-box {
     border: 2px solid rebeccapurple;
-    height: 100%;
+    height: 110%;
     width: 50%;
     position: relative;
     top: -79px;
