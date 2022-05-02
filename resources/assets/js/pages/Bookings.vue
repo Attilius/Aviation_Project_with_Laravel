@@ -314,6 +314,10 @@ header h4 {
     position: relative;
     top: -82px;
     left: 50%;
-}    
+}
+
+.promotion-box {
+    
+}
 
 </style>
