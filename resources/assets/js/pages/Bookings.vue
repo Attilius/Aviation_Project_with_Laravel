@@ -319,6 +319,7 @@ header h4 {
 .promotion-box {
     height: 20%;
     width: 10%;
+    background-color: rebeccapurple;
 }
 
 </style>
