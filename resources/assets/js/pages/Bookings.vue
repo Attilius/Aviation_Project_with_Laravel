@@ -26,7 +26,7 @@
                             <p class="title trip-duration">Trip duration: 08h30</p>
                         </div>
                         <div class="price-box">
-                            <div class="promotion-box"></div>
+                            <div class="promotion-box">Special price</div>
                             <h4 class="price">Price $100</h4>
                         </div>
                             
@@ -318,8 +318,9 @@ header h4 {
 
 .promotion-box {
     height: 30%;
-    width: 20%;
+    width: 25%;
     background-color: rebeccapurple;
+    color: whitesmoke;
 }
 
 </style>
