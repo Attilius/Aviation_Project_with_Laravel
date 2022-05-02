@@ -317,8 +317,8 @@ header h4 {
 }
 
 .promotion-box {
-    height: 20%;
-    width: 10%;
+    height: 30%;
+    width: 20%;
     background-color: rebeccapurple;
 }
 
