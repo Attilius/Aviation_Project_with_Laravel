@@ -317,7 +317,7 @@ header h4 {
 }
 
 .promotion-box {
-    
+    height: 10px;
 }
 
 </style>
