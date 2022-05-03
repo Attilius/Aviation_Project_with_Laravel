@@ -322,6 +322,7 @@ header h4 {
     background-color: rebeccapurple;
     color: whitesmoke;
     display: flex;
+    align-items: center;
 }
 
 </style>
