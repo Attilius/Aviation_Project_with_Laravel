@@ -323,6 +323,7 @@ header h4 {
     color: whitesmoke;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 </style>
