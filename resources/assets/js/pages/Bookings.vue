@@ -304,6 +304,7 @@ header h4 {
     padding: 15px;
     background-color: green;
     color: whitesmoke;
+    position: relative;
 }
 
 .price-box {
