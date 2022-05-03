@@ -321,6 +321,7 @@ header h4 {
     width: 25%;
     background-color: rebeccapurple;
     color: whitesmoke;
+    display: flex;
 }
 
 </style>
