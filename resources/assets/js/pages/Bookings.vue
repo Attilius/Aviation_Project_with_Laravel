@@ -325,6 +325,7 @@ header h4 {
     display: flex;
     align-items: center;
     justify-content: center;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 }
 
 </style>
