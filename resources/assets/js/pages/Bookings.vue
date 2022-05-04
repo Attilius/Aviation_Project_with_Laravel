@@ -305,7 +305,7 @@ header h4 {
     background-color: green;
     color: whitesmoke;
     position: relative;
-    top: -40px;
+    top: -25px;
 }
 
 .price-box {
