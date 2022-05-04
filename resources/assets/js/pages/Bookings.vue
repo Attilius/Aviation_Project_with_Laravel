@@ -324,7 +324,7 @@ header h4 {
     color: whitesmoke;
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 15px;
     clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 }
 
