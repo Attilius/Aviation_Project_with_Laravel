@@ -27,7 +27,7 @@
                         </div>
                         <div class="price-box">
                             <div class="promotion-box">Special price</div>
-                            <h4 class="price">Price $100</h4>
+                            <h5 class="price">Price $100</h5>
                         </div>
                             
                         
