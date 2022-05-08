@@ -159,6 +159,7 @@ header h4 {
     width: 100%;
     background: whitesmoke;
     margin-top: 15px;
+    border-radius: 0.25rem;
 }
 
 .booking-box .header {
