@@ -302,7 +302,6 @@ header h4 {
     float: right;
     margin-right: 100px;
     padding: 15px;
-    background-color: green;
     color: whitesmoke;
     position: relative;
     top: -25px;
