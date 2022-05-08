@@ -167,6 +167,7 @@ header h4 {
     width: 100%;
     background-color: lightblue;
     border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
 }
 
 .booking-box .header h6 {
