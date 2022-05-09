@@ -6,7 +6,7 @@
         <div class="container">
             <p v-if="!bookings" id="empty-msg">Currently don't have booking.</p>
 
-            <div class="booking-box">
+            <div v-else class="booking-box">
                 <div class="header">
                     <h6>Your Departure Flight</h6>
                     <h5>Paris (PAR) > Montreal (MON)</h5>
