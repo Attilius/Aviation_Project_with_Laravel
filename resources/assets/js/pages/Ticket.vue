@@ -10,7 +10,7 @@
                 <div>
                     <div class="tp">
                         <span class="time">2:15 PM</span>
-                        <p class="dep">Paris (CDG)</p>
+                        <p class="dep">{{flight.departureAirport}}</p>
                     </div>
                     <div class="bn">
                         <span class="time">4:45 PM</span>
@@ -71,7 +71,8 @@ export default {
         return {
             flight: {
                 from: "Paris (PAR)",
-                to: "Montreal (MON)"
+                to: "Montreal (MON)",
+                departureAirport: "Paris (CDG)"
             }
         }
     }
