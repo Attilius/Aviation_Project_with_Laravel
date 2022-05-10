@@ -20,7 +20,7 @@
                 </div>
                 <div class="price-box">
                     <div class="promotion-box">Special price</div>
-                    <h5 class="price">Total price: $100</h5>
+                    <h5 class="price">Total price: {{flight.totalPrice}}</h5>
                 </div>
             </div>
             <div class="footer">
@@ -74,7 +74,8 @@ export default {
                 to: "Montreal (MON)",
                 departureAirport: "Paris (CDG)",
                 arrivalAirport: "Montreal (YMA)",
-                tripDuration: "08h30"
+                tripDuration: "08h30",
+                totalPrice: "$100"
             }
         }
     }
