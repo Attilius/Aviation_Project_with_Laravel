@@ -16,7 +16,7 @@
                         <span class="time">4:45 PM</span>
                         <p class="arr">{{flight.arrivalAirport}}</p>
                     </div>
-                    <p class="title trip-duration">Trip duration: 08h30</p>
+                    <p class="title trip-duration">Trip duration: {{flight.tripDuration}}</p>
                 </div>
                 <div class="price-box">
                     <div class="promotion-box">Special price</div>
@@ -73,7 +73,8 @@ export default {
                 from: "Paris (PAR)",
                 to: "Montreal (MON)",
                 departureAirport: "Paris (CDG)",
-                arrivalAirport: "Montreal (YMA)"
+                arrivalAirport: "Montreal (YMA)",
+                tripDuration: "08h30"
             }
         }
     }
