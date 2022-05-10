@@ -14,7 +14,7 @@
                     </div>
                     <div class="bn">
                         <span class="time">4:45 PM</span>
-                        <p class="arr">Montreal (YMA)</p>
+                        <p class="arr">{{flight.arrivalAirport}}</p>
                     </div>
                     <p class="title trip-duration">Trip duration: 08h30</p>
                 </div>
@@ -72,7 +72,8 @@ export default {
             flight: {
                 from: "Paris (PAR)",
                 to: "Montreal (MON)",
-                departureAirport: "Paris (CDG)"
+                departureAirport: "Paris (CDG)",
+                arrivalAirport: "Montreal (YMA)"
             }
         }
     }
