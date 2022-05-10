@@ -2,7 +2,7 @@
     <div>
         <div class="header">
             <h6>Your Departure Flight</h6>
-            <h5>Paris (PAR) > Montreal (MON)</h5>
+            <h5>{{flight.from}} > Montreal (MON)</h5>
             <p>Monday, April 04, 2022</p>
         </div>
         <div class="bottom">
@@ -65,7 +65,15 @@
 
 <script>
 export default {
-    name: "Ticket"
+    name: "Ticket",
+
+    data() {
+        return {
+            flight: {
+                from: "Paris (PAR)"
+            }
+        }
+    }
 };
 </script>
 
