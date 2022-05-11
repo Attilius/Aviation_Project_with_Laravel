@@ -34,7 +34,7 @@
                 </div>
                 <div class="footer-box">
                     <div class="t">
-                        <span class="time">2:15 PM</span>
+                        <span class="time">{{flight.arrivalTime}}</span>
                         <p class="dep">Paris, Charles De Gaulle</p>
                     </div>
                     <div class="b">
@@ -77,7 +77,8 @@ export default {
                 tripDuration: "08h30",
                 totalPrice: "$100",
                 departureTime: "2:15 PM",
-                arrivalTime: "4:45 PM"
+                arrivalTime: "4:45 PM",
+
             }
         }
     }
