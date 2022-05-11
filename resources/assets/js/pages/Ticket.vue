@@ -25,7 +25,7 @@
             </div>
             <div class="footer">
                 <div class="footer-box">
-                    <p class="item">LA2222</p>
+                    <p class="item">{{flight.flightNumber}}</p>
                 </div>
                 <div>
                     <p class="dots">
@@ -78,6 +78,7 @@ export default {
                 totalPrice: "$100",
                 departureTime: "2:15 PM",
                 arrivalTime: "4:45 PM",
+                flightNumber: "LA2222"
 
             }
         }
