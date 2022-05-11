@@ -34,11 +34,11 @@
                 </div>
                 <div class="footer-box">
                     <div class="t">
-                        <span class="time">{{flight.arrivalTime}}</span>
+                        <span class="time">{{flight.departureTime}}</span>
                         <p class="dep">Paris, Charles De Gaulle</p>
                     </div>
                     <div class="b">
-                        <span class="time">4:45 PM</span>
+                        <span class="time">{{flight.arrivalTime}}</span>
                         <p class="arr">Montreal, Metropolitan Area</p>
                     </div>
                 </div>
