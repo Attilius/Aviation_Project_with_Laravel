@@ -3,7 +3,7 @@
         <div class="header">
             <h6>Your Departure Flight</h6>
             <h5>{{flight.from}} > {{flight.to}}</h5>
-            <p>Monday, April 04, 2022</p>
+            <p>{{flight.departureDate}}</p>
         </div>
         <div class="bottom">
             <div class="top">
@@ -78,7 +78,8 @@ export default {
                 totalPrice: "$100",
                 departureTime: "2:15 PM",
                 arrivalTime: "4:45 PM",
-                flightNumber: "LA2222"
+                flightNumber: "LA2222",
+                departureDate: "Monday, April 04, 2022"
 
             }
         }
