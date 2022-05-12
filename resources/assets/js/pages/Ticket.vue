@@ -10,11 +10,11 @@
                 <div>
                     <div class="tp">
                         <span class="time">{{flight.departureTime}}</span>
-                        <p class="dep">{{flight.departureAirport}}</p>
+                        <p class="dep">{{flight.departureAirportCode}}</p>
                     </div>
                     <div class="bn">
                         <span class="time">{{flight.arrivalTime}}</span>
-                        <p class="arr">{{flight.arrivalAirport}}</p>
+                        <p class="arr">{{flight.arrivalAirportCode}}</p>
                     </div>
                     <p class="title trip-duration">Trip duration: {{flight.tripDuration}}</p>
                 </div>
@@ -72,8 +72,8 @@ export default {
             flight: {
                 from: "Paris (PAR)",
                 to: "Montreal (MON)",
-                departureAirport: "Paris (CDG)",
-                arrivalAirport: "Montreal (YMA)",
+                departureAirportCode: "Paris (CDG)",
+                arrivalAirportCode: "Montreal (YMA)",
                 tripDuration: "08h30",
                 totalPrice: "$100",
                 departureTime: "2:15 PM",
