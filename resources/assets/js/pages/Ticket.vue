@@ -48,7 +48,7 @@
                 </div>
                 <div class="footer-box">
                     <p class="title">Aircraft</p>
-                    <p class="item">Airbus A320</p>
+                    <p class="item">{{flight.airplaneType}}</p>
                 </div>
                 <div class="footer-box">
                     <p class="title">Class</p>
@@ -80,7 +80,8 @@ export default {
                 arrivalTime: "4:45 PM",
                 flightNumber: "LA2222",
                 departureDate: "Monday, April 04, 2022",
-                cabinClass: "Economy"
+                cabinClass: "Economy",
+                airplaneType: "Airbus A320"
 
             }
         }
