@@ -56,7 +56,7 @@
                 </div>
                 <div class="footer-box">
                     <p class="title">Passengers</p>
-                    <p class="item">1 Adult</p>
+                    <p class="item">{{flight.passengers}}</p>
                 </div>
             </div>
         </div>
@@ -81,7 +81,8 @@ export default {
                 flightNumber: "LA2222",
                 departureDate: "Monday, April 04, 2022",
                 cabinClass: "Economy",
-                airplaneType: "Airbus A320"
+                airplaneType: "Airbus A320",
+                passengers: "1 Adult"
 
             }
         }
