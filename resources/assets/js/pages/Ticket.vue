@@ -52,7 +52,7 @@
                 </div>
                 <div class="footer-box">
                     <p class="title">Class</p>
-                    <p class="item">Economy</p>
+                    <p class="item">{{flight.cabinClass}}</p>
                 </div>
                 <div class="footer-box">
                     <p class="title">Passengers</p>
@@ -79,7 +79,8 @@ export default {
                 departureTime: "2:15 PM",
                 arrivalTime: "4:45 PM",
                 flightNumber: "LA2222",
-                departureDate: "Monday, April 04, 2022"
+                departureDate: "Monday, April 04, 2022",
+                cabinClass: "Economy"
 
             }
         }
