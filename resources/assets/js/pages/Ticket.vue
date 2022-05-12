@@ -44,7 +44,7 @@
                 </div>
                 <div class="footer-box">
                     <p class="title">Operated by</p>
-                    <p class="item">Lorem Airlines</p>
+                    <p class="item">{{flight.airlines}}</p>
                 </div>
                 <div class="footer-box">
                     <p class="title">Aircraft</p>
@@ -82,7 +82,8 @@ export default {
                 departureDate: "Monday, April 04, 2022",
                 cabinClass: "Economy",
                 airplaneType: "Airbus A320",
-                passengers: "1 Adult"
+                passengers: "1 Adult",
+                airlines: "Lorem Airlines"
 
             }
         }
