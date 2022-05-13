@@ -3,7 +3,7 @@
         <div class="header">
             <h6>Your Departure Flight</h6>
             <h5>{{ flight.from }} > {{ flight.to }}</h5>
-            <p>{{flight.departureDate}}</p>
+            <p>{{ flight.departureDate }}</p>
         </div>
         <div class="bottom">
             <div class="top">
