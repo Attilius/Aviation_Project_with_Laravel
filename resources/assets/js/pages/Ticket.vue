@@ -25,7 +25,7 @@
             </div>
             <div class="footer">
                 <div class="footer-box">
-                    <p class="item">{{flight.flightNumber}}</p>
+                    <p class="item">{{ flight.flightNumber }}</p>
                 </div>
                 <div>
                     <p class="dots">
