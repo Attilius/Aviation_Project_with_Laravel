@@ -56,7 +56,7 @@
                 </div>
                 <div class="footer-box">
                     <p class="title">Passengers</p>
-                    <p class="item">{{flight.passengers}}</p>
+                    <p class="item">{{ flight.passengers}}</p>
                 </div>
             </div>
         </div>
