@@ -39,7 +39,7 @@
                     </div>
                     <div class="b">
                         <span class="time">{{ flight.arrivalTime }}</span>
-                        <p class="arr">{{flight.arrivalAirport}}</p>
+                        <p class="arr">{{ flight.arrivalAirport}}</p>
                     </div>
                 </div>
                 <div class="footer-box">
