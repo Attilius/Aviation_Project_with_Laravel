@@ -74,6 +74,7 @@ export default {
                 to: "Montreal (MON)",
                 departureCity: "Paris",
                 departureAirportCode: "(CDG)",
+                arrivalCity: "Montreal",
                 arrivalAirportCode: "Montreal (YMA)",
                 tripDuration: "08h30",
                 totalPrice: "$100",
