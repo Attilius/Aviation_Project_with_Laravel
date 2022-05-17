@@ -72,6 +72,7 @@ export default {
             flight: {
                 from: "Paris (PAR)",
                 to: "Montreal (MON)",
+                departureCity: "Paris",
                 departureAirportCode: "Paris (CDG)",
                 arrivalAirportCode: "Montreal (YMA)",
                 tripDuration: "08h30",
