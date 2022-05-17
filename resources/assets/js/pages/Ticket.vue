@@ -14,7 +14,7 @@
                     </div>
                     <div class="bn">
                         <span class="time">{{ flight.arrivalTime }}</span>
-                        <p class="arr">{{ flight.arrivalAirportCode }}</p>
+                        <p class="arr">{{ flight.arrivalCity }} {{ flight.arrivalAirportCode }}</p>
                     </div>
                     <p class="title trip-duration">Trip duration: {{ flight.tripDuration }}</p>
                 </div>
