@@ -86,7 +86,6 @@ export default {
                 airlines: "Lorem Airlines",
                 departureAirport: "Paris, Charles De Gaulle",
                 arrivalAirport: "Montreal, Metropolitan Area"
-
             }
         }
     }
