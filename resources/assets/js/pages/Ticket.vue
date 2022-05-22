@@ -25,7 +25,7 @@
             </div>
             <div class="footer">
                 <div class="footer-box">
-                    <p class="title"></p>
+                    <p class="title">Flight number</p>
                     <p class="item">{{ flight.flightNumber }}</p>
                 </div>
                 <div>
