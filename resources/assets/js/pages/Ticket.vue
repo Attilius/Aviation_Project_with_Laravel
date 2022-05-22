@@ -249,7 +249,7 @@ export default {
     height: 111%;
     width: 50%;
     position: relative;
-    top: -83px;
+    top: -85px;
     left: 50%;
 }
 
