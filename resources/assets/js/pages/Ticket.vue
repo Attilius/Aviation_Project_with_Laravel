@@ -246,10 +246,10 @@ export default {
 
 .price-box {
     border: 2px solid rebeccapurple;
-    height: 110%;
+    height: 111%;
     width: 50%;
     position: relative;
-    top: -82px;
+    top: -83px;
     left: 50%;
 }
 
