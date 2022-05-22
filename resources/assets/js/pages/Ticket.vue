@@ -250,7 +250,7 @@ export default {
     width: 50%;
     position: relative;
     top: -85px;
-    left: 50%;
+    left: 50.2%;
 }
 
 .promotion-box {
