@@ -266,6 +266,7 @@ export default {
 
 .total-price {
     border: 1px solid rebeccapurple;
+    padding: 0 10px;
 }
 
 </style>
