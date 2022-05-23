@@ -65,7 +65,7 @@ header h4 {
 }
 
 .btn-group {
-    width: 30%;
+    width: 25%;
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
