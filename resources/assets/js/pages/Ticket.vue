@@ -20,7 +20,7 @@
                 </div>
                 <div class="price-box">
                     <div class="promotion-box">Special price</div>
-                    <h5 class="price">Total price: <strong>{{ flight.totalPrice }}</strong></h5>
+                    <h5 class="price">Total price: <strong class="total-price">{{ flight.totalPrice }}</strong></h5>
                 </div>
             </div>
             <div class="footer">
