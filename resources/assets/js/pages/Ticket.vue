@@ -263,4 +263,9 @@ export default {
     padding-left: 15px;
     clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 }
+
+.total-price {
+    border: 1px solid rebeccapurple;
+}
+
 </style>
