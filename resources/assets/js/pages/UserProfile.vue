@@ -137,7 +137,7 @@ i {
 }
 
 .btn-group {
-    width: 30%;
+    width: 25%;
     display: flex;
     justify-content: space-around;
     margin-left: 20px;
