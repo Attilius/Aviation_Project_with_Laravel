@@ -178,6 +178,7 @@ i {
 
 .menu ul li:hover {
     background-color: rebeccapurple;
+    margin-right: 75px;
 }
 
 @media(max-width: 576px) {
