@@ -176,6 +176,10 @@ i {
     cursor: pointer;
 }
 
+.menu ul li:hover {
+    background-color: rebeccapurple;
+}
+
 @media(max-width: 576px) {
     .content h6 {
         text-align: center;
