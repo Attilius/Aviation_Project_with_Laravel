@@ -172,6 +172,10 @@ i {
     box-shadow: none !important;
 }
 
+.menu ul li {
+    cursor: pointer;
+}
+
 @media(max-width: 576px) {
     .content h6 {
         text-align: center;
