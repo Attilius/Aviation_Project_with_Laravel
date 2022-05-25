@@ -6,7 +6,7 @@
         <section>
             <div class="menu">
                 <ul>
-                    <li>Delete account</li>
+                    <li> <a href="/">Delete account</a></li>
                 </ul>
             </div>
             <div class="content">
