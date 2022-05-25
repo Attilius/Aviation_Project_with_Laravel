@@ -174,6 +174,7 @@ i {
 
 .menu ul li a:hover {
     background-color: rebeccapurple;
+    color: white;
     margin-right: 70px;
     padding: 2px;
 }
