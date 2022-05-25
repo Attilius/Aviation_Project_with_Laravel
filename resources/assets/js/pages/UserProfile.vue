@@ -172,10 +172,6 @@ i {
     box-shadow: none !important;
 }
 
-.menu ul li {
-    cursor: pointer;
-}
-
 .menu ul li:hover {
     background-color: rebeccapurple;
     margin-right: 70px;
