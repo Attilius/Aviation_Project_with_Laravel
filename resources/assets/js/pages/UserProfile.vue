@@ -175,7 +175,6 @@ i {
 .menu ul li a:hover {
     background-color: rebeccapurple;
     color: white;
-    padding: 2px;
 }
 
 @media(max-width: 576px) {
