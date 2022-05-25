@@ -172,7 +172,7 @@ i {
     box-shadow: none !important;
 }
 
-.menu ul li:hover {
+.menu ul li a:hover {
     background-color: rebeccapurple;
     margin-right: 70px;
     padding: 2px;
