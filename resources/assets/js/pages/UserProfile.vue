@@ -172,6 +172,10 @@ i {
     box-shadow: none !important;
 }
 
+.menu ul li a {
+    padding: 5px 10px;
+}
+
 .menu ul li a:hover {
     background-color: rebeccapurple;
     color: white;
