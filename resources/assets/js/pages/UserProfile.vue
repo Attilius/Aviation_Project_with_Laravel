@@ -184,6 +184,7 @@ i {
 .menu ul li a:focus {
     border: none !important;
     box-shadow: none !important;
+    color: rebeccapurple;
 }
 
 @media(max-width: 576px) {
