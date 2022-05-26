@@ -185,6 +185,7 @@ i {
     border: none !important;
     box-shadow: none !important;
     color: rebeccapurple;
+    background-color: whitesmoke;
 }
 
 @media(max-width: 576px) {
