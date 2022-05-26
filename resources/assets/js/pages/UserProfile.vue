@@ -183,6 +183,7 @@ i {
 
 .menu ul li a:focus {
     border: none !important;
+    box-shadow: none !important;
 }
 
 @media(max-width: 576px) {
