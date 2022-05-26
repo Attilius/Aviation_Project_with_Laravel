@@ -181,6 +181,10 @@ i {
     color: white;
 }
 
+.menu ul li a:focus {
+    border: none !important;
+}
+
 @media(max-width: 576px) {
     .content h6 {
         text-align: center;
