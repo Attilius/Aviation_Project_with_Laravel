@@ -40,17 +40,20 @@
             <h3>Discover all over the world with us</h3>
             <div class="main">
                 <div
-                v-for="card in app.cards"
-                :key="card.id"
-                :id="card.id"
-                class="card"
-                @click="onChangePageContent(card.id), onChangeAreaAndLocation([card.area, card.location])"
-            >
-                <div class="skin-cover">
-                    <h6>{{ card.country }}</h6>
-                    <h5>{{ card.city }}</h5>
+                    v-for="card in app.cards"
+                    :key="card.id"
+                    :id="card.id"
+                    class="card"
+                    @click="
+                        onChangePageContent(card.id),
+                            onChangeAreaAndLocation([card.area, card.location])
+                    "
+                >
+                    <div class="skin-cover">
+                        <h6>{{ card.country }}</h6>
+                        <h5>{{ card.city }}</h5>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -62,7 +65,7 @@ export default {
     name: "TravelGuide",
     props: ["app"],
     components: {
-        Header,
+        Header
     },
 
     data() {
@@ -71,7 +74,7 @@ export default {
                 url: "",
                 name: "",
                 positionAndSize: ""
-            },
+            }
         };
     },
 
@@ -82,20 +85,33 @@ export default {
 
     methods: {
         randomBackground() {
-            const cities = ['athens.jpg', 'barcelona.jpg', 'cairo.png', 'istanbul.jpg', 'lisbon.png', 'london.jpeg', 'montreal.jpg', 'munich.jpg', 'new-york.jpg', 'paris.jpg', 'rome.jpg', 'zurich.jpg'];
+            const cities = [
+                "athens.jpg",
+                "barcelona.jpg",
+                "cairo.png",
+                "istanbul.jpg",
+                "lisbon.png",
+                "london.jpeg",
+                "montreal.jpg",
+                "munich.jpg",
+                "new-york.jpg",
+                "paris.jpg",
+                "rome.jpg",
+                "zurich.jpg"
+            ];
             const index = Math.floor(Math.random() * cities.length);
-            
+
             //document.getElementById('content').style.backgroundImage = `url('../../img/${cities[index]}')`;
         },
 
         onChangeAreaAndLocation([cardArea, cardLocation]) {
-            this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation])
+            this.$emit("onChangeAreaAndLocation", [cardArea, cardLocation]);
         },
 
         onChangePageContent(cardId) {
             this.$emit("onChangePageContent", cardId);
         },
-        
+
         setPopup(url, name, settings) {
             this.popupWindow.url = url;
             this.popupWindow.name = name;
@@ -144,7 +160,7 @@ export default {
                 top: positionY,
                 left: positionX
             });
-        },
+        }
     }
 };
 </script>
@@ -233,7 +249,7 @@ export default {
 }
 
 .social-icon:hover {
-    color: rgb(43, 123, 223)
+    color: rgb(43, 123, 223);
 }
 
 .social-icon:active {
