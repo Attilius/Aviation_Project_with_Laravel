@@ -55,6 +55,11 @@
                     </div>
                 </div>
             </div>
+            <footer>
+                <router-link class="footer-menu" to="/"
+                    >Lorem Airlines</router-link
+                >
+            </footer>
         </div>
     </div>
 </template>
