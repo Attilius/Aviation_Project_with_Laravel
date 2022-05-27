@@ -312,5 +312,6 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
+    bottom: -320px;
 }
 </style>
