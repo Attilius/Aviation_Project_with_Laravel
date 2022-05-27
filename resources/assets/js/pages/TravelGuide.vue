@@ -302,4 +302,14 @@ h3 {
     text-shadow: 2px 2px 5px silver;
     text-align: center;
 }
+
+footer {
+    width: 100%;
+    height: 60px;
+    background: rgb(5, 55, 115);
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 </style>
