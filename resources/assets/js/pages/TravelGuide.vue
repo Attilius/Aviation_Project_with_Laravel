@@ -314,4 +314,9 @@ footer {
     position: relative;
     bottom: -320px;
 }
+
+.footer-menu {
+    color: whitesmoke;
+    padding: 0 10px;
+}
 </style>
