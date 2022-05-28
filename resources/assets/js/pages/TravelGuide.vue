@@ -319,4 +319,8 @@ footer {
     color: whitesmoke;
     padding: 0 10px;
 }
+
+.footer-menu:hover {
+    
+}
 </style>
