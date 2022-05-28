@@ -329,6 +329,7 @@ footer {
 }
 
 .footer-menu:focus {
-    
+    border: none !important;
+    box-shadow: none !important;
 }
 </style>
