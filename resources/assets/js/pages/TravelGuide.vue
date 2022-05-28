@@ -321,6 +321,6 @@ footer {
 }
 
 .footer-menu:hover {
-    
+    text-decoration: underline;
 }
 </style>
