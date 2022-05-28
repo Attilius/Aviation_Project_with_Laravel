@@ -323,4 +323,8 @@ footer {
 .footer-menu:hover {
     text-decoration: underline;
 }
+
+.footer-menu:first-child {
+    
+}
 </style>
