@@ -325,7 +325,7 @@ footer {
 }
 
 .footer-menu:first-child {
-    border-right: 1px solid whitesmoke;
+    border-right: 1px solid
 }
 
 .footer-menu:focus {
