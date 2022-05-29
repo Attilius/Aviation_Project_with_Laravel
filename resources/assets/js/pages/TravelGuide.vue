@@ -324,10 +324,6 @@ footer {
     text-decoration: underline;
 }
 
-.footer-menu:first-child {
-
-}
-
 .footer-menu:focus {
     border: none !important;
     box-shadow: none !important;
