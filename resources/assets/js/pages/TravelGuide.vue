@@ -325,7 +325,7 @@ footer {
 }
 
 .footer-menu:first-child {
-    border-right
+
 }
 
 .footer-menu:focus {
