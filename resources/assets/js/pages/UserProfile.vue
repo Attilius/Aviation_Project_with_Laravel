@@ -7,6 +7,7 @@
             <div class="menu">
                 <ul>
                     <li> <a href="/">Menu-1</a></li>
+                    <li> <a href="/">Menu-2</a></li>
                     <li> <a href="/">Delete account</a></li>
                 </ul>
             </div>
