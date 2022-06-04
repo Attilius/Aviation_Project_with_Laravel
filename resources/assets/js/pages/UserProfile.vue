@@ -6,7 +6,7 @@
         <section>
             <div class="menu">
                 <ul>
-                    <li> <a href="/">Favorit places</a></li>
+                    <li> <a href="/favorit-places">Favorit places</a></li>
                     <li> <a href="/">Used services</a></li>
                     <li> <a href="/">Travel plans</a></li>
                     <li> <a href="/">Business travels</a></li>
