@@ -86,6 +86,8 @@ export default {
     mounted() {
         this.scrollPage(0, 0);
         this.randomBackground();
+
+        const socialIcons = document.querySelectorAll('.social-icon');
     },
 
     methods: {
