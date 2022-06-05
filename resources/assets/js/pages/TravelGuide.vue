@@ -88,6 +88,8 @@ export default {
         this.randomBackground();
 
         const socialIcons = document.querySelectorAll('.social-icon');
+
+        socialIcons.forEach(item => {});
     },
 
     methods: {
