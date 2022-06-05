@@ -89,7 +89,9 @@ export default {
 
         const socialIcons = document.querySelectorAll('.social-icon');
 
-        socialIcons.forEach(item => {});
+        socialIcons.forEach(item => {
+            item.addEventListener();
+        });
     },
 
     methods: {
