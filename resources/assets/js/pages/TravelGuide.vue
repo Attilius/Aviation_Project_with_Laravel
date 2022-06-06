@@ -78,7 +78,7 @@ export default {
             popupWindow: {
                 url: "",
                 name: "",
-                positionAndSize: ""
+                positionAndSize: "left=500,top=300,width=500,height=320"
             }
         };
     },
