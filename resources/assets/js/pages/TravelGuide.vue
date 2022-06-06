@@ -133,7 +133,7 @@ export default {
         },
 
         openPopup() {
-
+            window.open();
         },
 
         openPopup1() {
