@@ -132,6 +132,10 @@ export default {
             this.popupWindow.positionAndSize = settings;
         },
 
+        openPopup() {
+
+        },
+
         openPopup1() {
             this.setPopup(
                 "https://facebook.com/",
