@@ -135,7 +135,8 @@ export default {
         openPopup() {
             window.open(
                 this.popupWindow.url,
-                this.popupWindow.name
+                this.popupWindow.name,
+                this.popupWindow.positionAndSize
             );
         },
 
