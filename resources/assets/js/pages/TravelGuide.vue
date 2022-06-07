@@ -94,7 +94,7 @@ export default {
                     this.setPopup("https://facebook.com/","Facebook");
                     this.openPopup();
                 }
-                if(item.id === 'twitter') console.log('twitter');
+                if(item.id === 'twitter') {}
             });
         });
     },
