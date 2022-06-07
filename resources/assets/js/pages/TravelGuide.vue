@@ -23,7 +23,6 @@
                                         id="facebook"
                                         class="social-icon"
                                         :icon="['fab', 'facebook-f']"
-                                        @click="openPopup1"
                                     />
                                     <font-awesome-icon
                                         id="twitter"
