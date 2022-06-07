@@ -91,7 +91,9 @@ export default {
 
         socialIcons.forEach(item => {
             item.addEventListener("click", () => {
-                if(item.id === 'facebook') {}
+                if(item.id === 'facebook') {
+                    this.setPopup("https://facebook.com/","Facebook");
+                }
                 if(item.id === 'twitter') console.log('twitter');
             });
         });
