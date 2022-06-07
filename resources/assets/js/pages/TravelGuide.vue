@@ -78,7 +78,7 @@ export default {
             popupWindow: {
                 url: "",
                 name: "",
-                positionAndSize: "left=500,top=300,width=500,height=320"
+                positionAndSize: ""
             }
         };
     },
@@ -128,7 +128,7 @@ export default {
             this.$emit("onChangePageContent", cardId);
         },
 
-        setPopup(url, name, settings) {
+        setPopup(url, name, settings = "left=500,top=300,width=500,height=320") {
             this.popupWindow.url = url;
             this.popupWindow.name = name;
             this.popupWindow.positionAndSize = settings;
