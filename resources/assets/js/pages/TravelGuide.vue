@@ -93,6 +93,7 @@ export default {
             item.addEventListener("click", () => {
                 if(item.id === 'facebook') {
                     this.setPopup("https://facebook.com/","Facebook");
+                    this.openPopup();
                 }
                 if(item.id === 'twitter') console.log('twitter');
             });
