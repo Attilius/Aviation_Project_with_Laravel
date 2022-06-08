@@ -145,11 +145,6 @@ export default {
         },
 
         openPopup1() {
-            this.setPopup(
-                "https://facebook.com/",
-                "Facebook",
-                "left=500,top=300,width=500,height=320"
-            );
         },
 
         openPopup2() {
