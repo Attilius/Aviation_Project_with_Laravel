@@ -96,6 +96,7 @@ export default {
                 }
                 if(item.id === 'twitter') {
                     this.setPopup("https://twitter.com/","Twitter");
+                    this.openPopup();
                 }
             });
         });
