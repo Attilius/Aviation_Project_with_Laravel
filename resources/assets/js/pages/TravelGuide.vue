@@ -144,9 +144,6 @@ export default {
             );
         },
 
-        openPopup1() {
-        },
-
         openPopup2() {
             this.setPopup(
                 "https://twitter.com/",
