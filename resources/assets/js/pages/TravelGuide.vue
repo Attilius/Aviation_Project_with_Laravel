@@ -28,7 +28,6 @@
                                         id="twitter"
                                         class="social-icon"
                                         :icon="['fab', 'twitter']"
-                                        @click="openPopup2"
                                     />
                                 </div>
                             </div>
