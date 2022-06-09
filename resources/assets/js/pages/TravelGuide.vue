@@ -151,7 +151,6 @@ export default {
                 "left=500,top=300,width=500,height=320"
             );
             window.open(
-                this.popupWindow.url
             );
         },
 
