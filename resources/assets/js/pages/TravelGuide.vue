@@ -144,9 +144,6 @@ export default {
             );
         },
 
-        openPopup2() {
-        },
-
         goDown() {
             let speed = 2;
             let interval = speed * 2;
