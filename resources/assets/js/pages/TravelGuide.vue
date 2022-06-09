@@ -152,8 +152,7 @@ export default {
             );
             window.open(
                 this.popupWindow.url,
-                this.popupWindow.name,
-                this.popupWindow.positionAndSize
+                this.popupWindow.name
             );
         },
 
