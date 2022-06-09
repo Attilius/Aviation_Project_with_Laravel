@@ -150,8 +150,6 @@ export default {
                 "Twitter",
                 "left=500,top=300,width=500,height=320"
             );
-            window.open(
-            );
         },
 
         goDown() {
