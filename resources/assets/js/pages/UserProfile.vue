@@ -11,7 +11,7 @@
                     <li> <a href="/travel-plans_">Travel plans</a></li>
                     <li> <a href="/business-travels_">Business travels</a></li>
                     <li> <a href="/feedbacks_">Feedbacks</a></li>
-                    <li> <a href="/options_">Options</a></li>
+                    <li> <a href="/options">Options</a></li>
                     <li> <a href="/">Delete account</a></li>
                 </ul>
             </div>
