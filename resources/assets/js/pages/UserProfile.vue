@@ -25,7 +25,7 @@
                 <input class="profile-input" type="text" name="fullName" id="fullName" :value="app.user.name">
                 <label class="profile-label" for="email">Email</label>
                 <input class="profile-input" type="email" name="email" id="email" :value="app.user.email">
-                <label class="profile-label" for="phone">Phone</label>
+                <label class="profile_label" for="phone">Phone</label>
                 <input class="profile_input" type="tel" name="phone" id="phone">
 
                 <div class="btn-group">
