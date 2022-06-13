@@ -21,7 +21,7 @@
                     <i class="material-icons">perm_identity</i>
                     <div class="button">Change picture</div>
                 </div>
-                <label class="profile-label" for="fullName">Full name</label>
+                <label class="profile_label" for="fullName">Full name</label>
                 <input class="profile_input" type="text" name="fullName" id="fullName" :value="app.user.name">
                 <label class="profile_label" for="email">Email</label>
                 <input class="profile_input" type="email" name="email" id="email" :value="app.user.email">
