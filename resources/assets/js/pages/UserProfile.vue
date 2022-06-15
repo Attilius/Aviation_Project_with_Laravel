@@ -135,7 +135,7 @@ i {
     padding-top: 20px;
 }
 
-.profile_input {
+.profile-input {
     width: 20% !important;
     border-bottom-color: lightgray !important;
     margin-left: 30px !important;
