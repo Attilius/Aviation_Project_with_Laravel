@@ -129,7 +129,7 @@ i {
     background: rgb(50, 80, 180);
 }
 
-.profile_label {
+.profile-label {
     color: lightgray;
     margin-left: 30px;
     padding-top: 20px;
