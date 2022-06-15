@@ -204,7 +204,7 @@ i {
         margin: 10px auto;
     }
 
-    .profile_input[data-v-f1e2079e] {
+    .profile-input[data-v-f1e2079e] {
         width: 80% !important;
     }
 
