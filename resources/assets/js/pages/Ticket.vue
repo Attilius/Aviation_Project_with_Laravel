@@ -34,7 +34,7 @@
                     </p>
                 </div>
                 <div class="footer-box">
-                    <div class="t">
+                    <div class="departure-top">
                         <span class="time">{{ flight.departureTime }}</span>
                         <p class="dep">{{ flight.departureAirport }}</p>
                     </div>
