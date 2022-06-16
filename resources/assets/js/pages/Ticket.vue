@@ -203,7 +203,7 @@ export default {
     top: 2.45px;
 }
 
-.t, .b {
+.departure-top, .b {
     display: "flex";
     width: 300px;
     align-items: center;
