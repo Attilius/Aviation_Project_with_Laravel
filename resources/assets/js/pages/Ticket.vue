@@ -218,7 +218,7 @@ export default {
     justify-content: space-around;
 }
 
-.tp {
+.top-departure {
     margin-top: 10px;
 }
 
