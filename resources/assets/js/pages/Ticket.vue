@@ -8,7 +8,7 @@
         <div class="bottom">
             <div class="top">
                 <div>
-                    <div class="tp">
+                    <div class="top-departure">
                         <span class="time">{{ flight.departureTime }}</span>
                         <p class="dep">{{ flight.departureCity }} {{ flight.departureAirportCode }}</p>
                     </div>
