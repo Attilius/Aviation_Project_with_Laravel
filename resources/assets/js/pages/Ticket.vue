@@ -222,7 +222,7 @@ export default {
     margin-top: 10px;
 }
 
-.bn {
+.bottom-arrival {
     margin-bottom: 5px;
 }
 
