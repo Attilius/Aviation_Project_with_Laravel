@@ -226,7 +226,7 @@ export default {
     margin-bottom: 5px;
 }
 
-.top-departure, .bn, .trip-duration {
+.top-departure, .bottom-arrival, .trip-duration {
     margin-left: 70px;
 }
 
