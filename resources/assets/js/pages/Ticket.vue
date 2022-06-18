@@ -211,7 +211,7 @@ export default {
     margin: 10px auto;
 }
 
-.top-departure, .bn {
+.top-departure, .bottom-arrival {
     display: "flex";
     width: 300px;
     align-items: center;
