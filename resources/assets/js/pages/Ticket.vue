@@ -10,7 +10,7 @@
                 <div>
                     <div class="top-departure">
                         <span class="time">{{ flight.departureTime }}</span>
-                        <p class="dep">{{ flight.departureCity }} {{ flight.departureAirportCode }}</p>
+                        <p class="departure">{{ flight.departureCity }} {{ flight.departureAirportCode }}</p>
                     </div>
                     <div class="bottom-arrival">
                         <span class="time">{{ flight.arrivalTime }}</span>
