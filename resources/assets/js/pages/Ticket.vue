@@ -36,7 +36,7 @@
                 <div class="footer-box">
                     <div class="footer-departure-top">
                         <span class="time">{{ flight.departureTime }}</span>
-                        <p class="dep">{{ flight.departureAirport }}</p>
+                        <p class="departure">{{ flight.departureAirport }}</p>
                     </div>
                     <div class="arrival-bottom">
                         <span class="time">{{ flight.arrivalTime }}</span>
