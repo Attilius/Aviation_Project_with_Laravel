@@ -197,7 +197,7 @@ export default {
     bottom: 3px;
 }
 
-.big {
+.big-dot {
     font-size: 5rem;
     position: relative;
     top: 2.45px;
