@@ -161,7 +161,7 @@ export default {
     color: rgb(0, 60, 255);
 }
 
-.dep, .arr {
+.departure, .arr {
     margin: 0;
     margin-right: 10px;
     color: rgb(5, 55, 115);
