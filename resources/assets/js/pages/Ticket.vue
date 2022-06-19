@@ -30,7 +30,7 @@
                 </div>
                 <div>
                     <p class="dots">
-                        <span class="big">.</span>...<span class="big">.</span>
+                        <span class="big-dot">.</span>...<span class="big">.</span>
                     </p>
                 </div>
                 <div class="footer-box">
