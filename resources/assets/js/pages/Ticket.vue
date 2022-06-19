@@ -170,7 +170,7 @@ export default {
     display: inline;
 }
 
-.arr {
+.arrival {
     padding-bottom: 3px;
 }
 
