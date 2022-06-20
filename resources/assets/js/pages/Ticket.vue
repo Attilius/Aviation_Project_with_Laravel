@@ -45,7 +45,7 @@
                 </div>
                 <div class="footer-box">
                     <p class="title">Operated by</p>
-                    <p class="item">{{ flight.airlines }}</p>
+                    <p class="data">{{ flight.airlines }}</p>
                 </div>
                 <div class="footer-box">
                     <p class="title">Aircraft</p>
