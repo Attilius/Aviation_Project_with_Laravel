@@ -182,7 +182,7 @@ export default {
     color: gray;
 }
 
-.item {
+.data {
     color: rgb(5, 55, 115);
     font-weight: 700;
 }
