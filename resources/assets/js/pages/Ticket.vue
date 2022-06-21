@@ -23,7 +23,7 @@
                     <h5 class="price">Total price: <strong class="total-price">{{ flight.totalPrice }}</strong></h5>
                 </div>
             </div>
-            <div class="footer">
+            <div class="bottom">
                 <div class="footer-box">
                     <p class="title">Flight number</p>
                     <p class="data">{{ flight.flightNumber }}</p>
