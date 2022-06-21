@@ -127,7 +127,7 @@ export default {
     font-weight: 600;
 }
 
-.bottom {
+.footer {
     height: 175px;
     width: 95%;
     border: 2px solid lightgray;
