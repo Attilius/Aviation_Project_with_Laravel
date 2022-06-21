@@ -5,7 +5,7 @@
             <h5>{{ flight.from }} > {{ flight.to }}</h5>
             <p>{{ flight.departureDate }}</p>
         </div>
-        <div class="bottom">
+        <div class="footer">
             <div class="top">
                 <div>
                     <div class="top-departure">
