@@ -137,7 +137,7 @@ export default {
     justify-content: space-between;
 }
 
-.bottom .top {
+.footer .top {
     height: 50%;
     width: 100%;
     display: "flex";
