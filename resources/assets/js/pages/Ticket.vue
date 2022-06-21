@@ -152,7 +152,7 @@ export default {
     align-items: center;
 }
 
-.footer div {
+.bottom div {
     padding: auto;
     margin-right: 20px;
 }
