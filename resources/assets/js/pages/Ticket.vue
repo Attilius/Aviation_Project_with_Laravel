@@ -47,7 +47,7 @@
                     <p class="title">Operated by</p>
                     <p class="data">{{ flight.airlines }}</p>
                 </div>
-                <div class="footer-box">
+                <div class="bottom-box">
                     <p class="title">Aircraft</p>
                     <p class="data">{{ flight.airplaneType }}</p>
                 </div>
