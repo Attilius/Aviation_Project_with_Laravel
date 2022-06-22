@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="bottom">
-                <div class="footer-box">
+                <div class="bottom-box">
                     <p class="title">Flight number</p>
                     <p class="data">{{ flight.flightNumber }}</p>
                 </div>
