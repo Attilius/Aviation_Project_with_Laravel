@@ -33,7 +33,7 @@
                         <span class="big-dot">.</span>...<span class="big-dot">.</span>
                     </p>
                 </div>
-                <div class="footer-box">
+                <div class="bottom-box">
                     <div class="footer-departure-top">
                         <span class="time">{{ flight.departureTime }}</span>
                         <p class="departure">{{ flight.departureAirport }}</p>
