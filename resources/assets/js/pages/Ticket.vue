@@ -43,7 +43,7 @@
                         <p class="arrival">{{ flight.arrivalAirport }}</p>
                     </div>
                 </div>
-                <div class="footer-box">
+                <div class="bottom-box">
                     <p class="title">Operated by</p>
                     <p class="data">{{ flight.airlines }}</p>
                 </div>
