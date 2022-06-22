@@ -143,7 +143,7 @@ export default {
     display: "flex";
 }
 
-.bottom .footer {
+.footer .footer {
     height: 45%;
     width: 100%;
     background-color: rgb(237, 237, 237);
