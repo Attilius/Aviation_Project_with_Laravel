@@ -203,7 +203,7 @@ export default {
     top: 2.45px;
 }
 
-.footer-departure-top, .arrival-bottom {
+.bottom-departure-top, .bottom-arrival-bottom {
     display: "flex";
     width: 300px;
     align-items: center;
