@@ -174,7 +174,7 @@ export default {
     padding-bottom: 3px;
 }
 
-.footer-box p {
+.bottom-box p {
     margin: 0;
 }
 
