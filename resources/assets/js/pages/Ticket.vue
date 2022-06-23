@@ -55,7 +55,7 @@
                     <p class="title">Class</p>
                     <p class="data">{{ flight.cabinClass }}</p>
                 </div>
-                <div class="footer-box">
+                <div class="bottom-box">
                     <p class="title">Passengers</p>
                     <p class="data">{{ flight.passengers }}</p>
                 </div>
