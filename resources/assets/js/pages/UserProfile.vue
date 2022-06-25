@@ -7,7 +7,7 @@
             <div class="menu">
                 <ul>
                     <li> <a href="/favorit-places">Favorit places</a></li>
-                    <li> <a href="/used-services_">Used services</a></li>
+                    <li> <a href="/used-services">Used services</a></li>
                     <li> <a href="/travel-plans_">Travel plans</a></li>
                     <li> <a href="/business-travels_">Business travels</a></li>
                     <li> <a href="/feedbacks_">Feedbacks</a></li>
