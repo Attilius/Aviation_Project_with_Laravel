@@ -9,7 +9,7 @@
                     <li> <a href="/favorit-places">Favorit places</a></li>
                     <li> <a href="/used-services">Used services</a></li>
                     <li> <a href="/travel-plans">Travel plans</a></li>
-                    <li> <a href="/business-travels_">Business travels</a></li>
+                    <li> <a href="/business-travels">Business travels</a></li>
                     <li> <a href="/feedbacks_">Feedbacks</a></li>
                     <li> <a href="/options_">Options</a></li>
                     <li> <a href="/">Delete account</a></li>
